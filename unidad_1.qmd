@@ -6,8 +6,6 @@ format:
 jupyter: python3
 ---
 
-# Introducción a la Algoritmia y a la Programación
-
 ## Introducción
 
 Como en todas las disciplinas, la Ingeniería de Software y la Programación de Sistemas en general tienen un **lenguaje técnico** específico. La utilización de ciertos términos y el compartir de ciertos conceptos agiliza el diálogo y mejora la comprensión con los pares.
