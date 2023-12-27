@@ -4,6 +4,8 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 
 ## Docentes de la Cátedra
 
+- **Prof. Titular:** Méndez, Mariano
+
 - Bulacios, Juan Pablo
 - Notari, Pablo
 - Rastrelli, Aldana
