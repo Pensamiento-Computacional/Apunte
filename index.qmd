@@ -1,9 +1,0 @@
-# Pensamiento Computacional {.unnumbered}
-
-Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo Básico Común de la Facultad de Ingeniería - UBA.
-
-## Docentes de la Cátedra
-
-- Bulacios, Juan Pablo
-- Notari, Pablo
-- Rastrelli, Aldana
