@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pensamiento Computacional",
+    "section": "",
+    "text": "Pensamiento Computacional\nBienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo Básico Común de la Facultad de Ingeniería - UBA."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "Rosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando\nPython Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+  },
+  {
+    "objectID": "index.html#los-docentes-de-la-cátedra-son",
+    "href": "index.html#los-docentes-de-la-cátedra-son",
+    "title": ".",
+    "section": "Los docentes de la Cátedra son:",
+    "text": "Los docentes de la Cátedra son:\nBulacios, Juan Pablo Notari, Pablo Rastrelli, Aldana"
+  },
+  {
+    "objectID": "index.html#docentes-de-la-cátedra",
+    "href": "index.html#docentes-de-la-cátedra",
+    "title": "Pensamiento Computacional",
+    "section": "Docentes de la Cátedra",
+    "text": "Docentes de la Cátedra\n\nBulacios, Juan Pablo\nNotari, Pablo\nRastrelli, Aldana"
+  },
+  {
+    "objectID": "unidad_1.html",
+    "href": "unidad_1.html",
+    "title": "2  Introducción a la Algoritmia y a la Programación",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+  },
+  {
+    "objectID": "intro.html#fundamentación",
+    "href": "intro.html#fundamentación",
+    "title": "1  La Materia",
+    "section": "1.1 Fundamentación",
+    "text": "1.1 Fundamentación\nEl pensamiento computacional es una disciplina que ha sido definida como “el conjunto de procesos de pensamiento implicados en la formulación de problemas y sus soluciones, de manera que dichas soluciones sean representadas de una forma que puedan ser efectivamente ejecutadas por un agente de procesamiento de información”, entendiendo por esto último a un humano, una máquina o una combinación de ambos.\nReconoce antecedentes en trabajos de la Carnegie Mellon University de la década de 1960 y del Massachusetts Institute of Technology de alrededor de 1980, aunque su auge en la educación superior llegó con la primera década del siglo XXI.\nLas herramientas básicas en las que se funda el pensamiento computacional son la descomposición, la abstracción, el reconocimiento de patrones y la algoritmia. Está ampliamente aceptado que estas herramientas no sirven solamente a los profesionales de Ciencias de la Computación y de Informática, sino a cualquier persona que deba resolver problemas, con lo cual el pensamiento computacional deviene una técnica de resolución de problemas. Actualmente, los y las profesionales de la Ingeniería requieren de una capacidad analítica que les permita resolver problemas, y en ese sentido el pensamiento computacional se convierte en un soporte invaluable de esa competencia (cada vez más las ciencias de la computación y la informática constituyen una ciencia básica para todas las ingenierías).\nSi bien el pensamiento computacional no necesariamente requiere del uso de computadoras, la programación de computadoras se convierte en su complemento ideal. En primer lugar, porque permite comprobar, mediante la codificación de un algoritmo en un programa, la validez de la solución encontrada al problema, de manera sencilla y prácticamente inmediata. En segundo lugar, porque la programación incentiva la creatividad, la capacidad para la autoorganización y el trabajo en equipo. En tercer lugar, porque la programación constituye un recurso habitual del trabajo en el campo profesional de la ingeniería."
+  },
+  {
+    "objectID": "intro.html#objetivos-generales",
+    "href": "intro.html#objetivos-generales",
+    "title": "1  La Materia",
+    "section": "1.2 Objetivos Generales",
+    "text": "1.2 Objetivos Generales\nEl objetivo general de la asignatura es que los/as estudiantes adquieran habilidades de resolución de problemas de ingeniería mediante el soporte de un lenguaje de programación multiparadigma."
+  },
+  {
+    "objectID": "unidad_1.html#introducción",
+    "href": "unidad_1.html#introducción",
+    "title": "2  Introducción a la Algoritmia y a la Programación",
+    "section": "2.1 Introducción",
+    "text": "2.1 Introducción\nComo en todas las disciplinas, la Ingeniería de Software y la Programación de Sistemas en general tienen un lenguaje técnico específico. La utilización de ciertos términos y el compartir de ciertos conceptos agiliza el diálogo y mejora la comprensión con los pares.\nEn este capítulo vamos a hacer una breve introducción de ciertos conceptos, ideas y modelos que van a permitirnos establecer acuerdos y manejar un lenguaje común.\n\n2.1.1 La Computadora\nUna computadora es un dispositivo físico de procesamiento de datos, con un propósito general. Todos los programas que escribiremos serán ejecutados (o corridos) en una computadora. Una computadora es capaz de procesar datos y obtener nueva información o resultados.\n\n\n2.1.2 Software y Hardware\nToda computadora funciona con software y hardware. El software es el conjunto de herramientas abstractas (programas), y se le llama componente lógica del modelo computacional. El hardware es el componente físico del dispositivo. Básicamente, el software dice qué hacer, y el hardware lo hace.\n\n¿Es indispensable tener una computadora para crear un algoritmo?\nLa respuesta, sorprendentemente, es no: muchos de los algoritmos que se utilizan de forma computacional hoy en día fueron diseñados varias décadas atrás. Pero la implementación de un algoritmo depende del grado de avance del hardware y la tecnología disponible.\n\n\n\n2.1.3 Sistema Operativo\nEl sistema operaativo es el programa encargado de administrar los recursos del sistema. Los recursos (como la memoria, por ejemplo) son disputados entre diferentes programas o procesos ejecutándose al mismo tiempo. El sistema operativo es el que decide cómo administrar y asignar los recursos disponibles.\nLos sistemas operativos más comunes el día de hoy son: Windows, Linux, iOS, Android; por ejemplo.\n\n\n2.1.4 Algoritmo\nUn algoritmo es una serie finita de pasos precisos para alcanzar un objetivo.\n\n“serie”: porque son continuados uno detrás del otro, de forma ordenada.\n“finita”: porque no pueden ser pasos infinitos, en algún momento deben terminar.\n“pasos precisos”: porque en un algoritmo se debe ser lo más específico posible.\n\n\nEjemplo Un algoritmo puede ser una receta de cocina: tiene una serie finita de pasos (son ordenados, uno detrás de otro, finitos porque en algún momento deben terminar), que son precisos (porque tienen indicaciones de cuánto agregar de cada ingrediente, cómo incorporarlo a la preparación, etc) y están orientados en alcanzar un objetivo (obtener una comida en particular).\n\n\n2.1.4.1 Creación de un Algoritmo\nLa forma en la que trabajaremos la creación de un algoritmo es siguiendo los siguientes pasos: 1. Análisis del problema: entender el objetivo y los posibles casos puntuales del mismo. 2. Primer borrador de solución: confeccionar una idea generalizada de cómo podría resolverse el problema. 3. División del problema en partes: dividir el problema en partes ayuda a descomponer un problema complejo en varios más sencillos. 4. Ensamble de las partes para la versión final del algoritmo: acoplar todo el conjunto de partes del problema para lograr el objetivo general.\nEstos cuatro pasos podrán iterarse (repetirse) la cantidad de veces que sean necesarios, para poder lograr acercarnos más a la solución en cada iteración.\n\n\n\n2.1.5 Programa\nUn programa es un algoritmo escrito en un lenguaje de programación.\n\n\n2.1.6 Lenguaje de Programación\nUn lenguaje de programación es un protocolo de comunicación.\nUn protocolo es un conjunto de normas consensuadas.\nCuando logramos que un lenguaje pueda ser comprendido por el humano y por la máquina, tenemos una comunicación efectiva en donde podremos hacer programas y pedirle a la máquina que los ejecute.\nUn buen ejemplo de cómo una computadora interpreta nuestras instrucciones sin pensar al respecto, sin tener sentido común y sin ambigüedades, es este video. La computadora lo único que hace es interpretar de forma explícita lo que nosotros le pedimos que haga.\nUn lenguaje de programación tiene reglas estrictas que se deben respetar y no se admiten ambiguedades o sobreentendidos.\n\n\n2.1.7 Entorno de Desarrollo\nUn entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, editar, compilar y ejecutar programas.\n\nEn la materia utilizaremos un entorno de desarrollo llamado Replit, que nos permite escribir código en un editor de texto, compilarlo y ejecutarlo en un mismo lugar de forma online. Pero existen muchos otros entornos de desarrollo, como por ejemplo Visual Studio Code, Eclipse, NetBeans, etc."
+  },
+  {
+    "objectID": "unidad_1.html#programa",
+    "href": "unidad_1.html#programa",
+    "title": "2  Introducción a la Algoritmia y a la Programación",
+    "section": "2.2 Programa",
+    "text": "2.2 Programa"
+  },
+  {
+    "objectID": "unidad_1.html#lenguaje-python",
+    "href": "unidad_1.html#lenguaje-python",
+    "title": "2  Introducción a la Algoritmia y a la Programación",
+    "section": "2.2 Lenguaje Python",
+    "text": "2.2 Lenguaje Python\nEn este curso utilizaremos el lenguaje de programación Python. Python es un lenguaje de programación de propósito general, que se utiliza en muchos ámbitos de la industria y la academia.\nPython es un lenguaje realmente fácil de aprender, con una curva de aprendizaje muy suave. Es un lenguaje de alto nivel, lo que significa que es un lenguaje que se asemeja mucho al lenguaje natural, y que no requiere de conocimientos de bajo nivel para poder utilizarlo.\n\n2.2.1 Hola, Mundo!\nEl primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.\nEn Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:\nprint(\"Hola, Mundo!\")\nprint es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es \"Hola, Mundo!\". Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.\nDe la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:\nprint(\"Hola, me llamo Ana y soy programadora\")\nAl igual que Ana, al hacer nuestro primer ‘Hola, Mundo!’ nos convertimos en programadores. ¡Felicitaciones!\nA partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes."
+  }
+]
