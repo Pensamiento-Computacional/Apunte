@@ -1,4 +1,4 @@
-# La Materia
+# La Materia {.unnumbered}
 
 ## Fundamentación 
 El pensamiento computacional es una disciplina que ha sido definida como “el conjunto de procesos de pensamiento implicados en la formulación de problemas y sus soluciones, de manera que dichas soluciones sean representadas de una forma que puedan ser efectivamente ejecutadas por un agente de procesamiento de información”, entendiendo por esto último a un humano, una máquina o una

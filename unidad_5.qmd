@@ -1,5 +1,9 @@
+---
+title: "Entrada y Salida de Información"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
 # Entrada y Salida de Información
-
-This is a book created from markdown and executable code.
-
-See @knuth84 for additional discussion of literate programming.
