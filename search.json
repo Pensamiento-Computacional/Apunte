@@ -46,48 +46,41 @@
     "href": "unidad_1.html#lenguaje-python",
     "title": "1  Introducción a la Algoritmia y a la Programación",
     "section": "2.2 Lenguaje Python",
-    "text": "2.2 Lenguaje Python\nEn este curso utilizaremos el lenguaje de programación Python. Python es un lenguaje de programación de propósito general, que se utiliza en muchos ámbitos de la industria y la academia.\nPython es un lenguaje realmente fácil de aprender, con una curva de aprendizaje muy suave. Es un lenguaje de alto nivel, lo que significa que es un lenguaje que se asemeja mucho al lenguaje natural, y que no requiere de conocimientos de bajo nivel para poder utilizarlo.\n\n2.2.1 Hola, Mundo!\nEl primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.\nEn Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:\n\n\nCode\nprint(\"Hola, Mundo!\")\n\n\nHola, Mundo!\n\n\nprint es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es \"Hola, Mundo!\". Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.\nDe la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:\n\n\nCode\nprint(\"Hola, me llamo Ana y soy programadora\")\n\n\nHola, me llamo Ana y soy programadora\n\n\nAl igual que Ana, al hacer nuestro primer ‘Hola, Mundo!’ nos convertimos en programadores. ¡Felicitaciones!\nA partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes."
+    "text": "2.2 Lenguaje Python\nEn este curso utilizaremos el lenguaje de programación Python. Python es un lenguaje de programación de propósito general, que se utiliza en muchos ámbitos de la industria y la academia.\nPython es un lenguaje realmente fácil de aprender, con una curva de aprendizaje muy suave. Es un lenguaje de alto nivel, lo que significa que es un lenguaje que se asemeja mucho al lenguaje natural, y que no requiere de conocimientos de bajo nivel para poder utilizarlo.\n\n2.2.1 Hola, Mundo!\nEl primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.\nEn Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:\n\nprint(\"Hola, Mundo!\")\n\nHola, Mundo!\n\n\nprint es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es \"Hola, Mundo!\". Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.\nDe la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:\n\nprint(\"Hola, me llamo Ana y soy programadora\")\n\nHola, me llamo Ana y soy programadora\n\n\nAl igual que Ana, al hacer nuestro primer ‘Hola, Mundo!’ nos convertimos en programadores. ¡Felicitaciones!\nA partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes."
   },
   {
     "objectID": "unidad_2.html",
     "href": "unidad_2.html",
     "title": "2  Tipos de Datos, Expresiones y Funciones",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+    "text": "3 Tipos de Datos, Expresiones y Funciones"
   },
   {
     "objectID": "unidad_3.html",
     "href": "unidad_3.html",
     "title": "3  Estructuras de Control",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+    "text": "4 Estructuras de Control"
   },
   {
     "objectID": "unidad_4.html",
     "href": "unidad_4.html",
     "title": "4  Tipos de Datos Estructurados",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+    "text": "5 Tipos de Datos Estructurados"
   },
   {
     "objectID": "unidad_5.html",
     "href": "unidad_5.html",
     "title": "5  Entrada y Salida de Información",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+    "text": "6 Entrada y Salida de Información"
   },
   {
     "objectID": "unidad_6.html",
     "href": "unidad_6.html",
     "title": "6  Bibliotecas",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Rosita Wachenchauzer (2012) for additional discussion of literate programming.\n\n\n\n\nRosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando Python Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "Referencias",
-    "section": "",
-    "text": "Rosita Wachenchauzer, otros. 2012. “Aprendiendo a Programar Usando\nPython Como Herramienta.” https://drive.google.com/file/d/0B0KKEIBDHL7tdEQ3bFZ2M3VrZzA/view?resourcekey=0-uMkBoDSnoZjQWxDvcBwQ4g."
+    "text": "7 Bibliotecas"
   }
 ]
