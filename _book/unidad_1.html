@@ -96,6 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -187,6 +189,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Referencias</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./guia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Guía de Ejercicios</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -210,6 +218,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lenguaje-python" id="toc-lenguaje-python" class="nav-link" data-scroll-target="#lenguaje-python"><span class="header-section-number">1.2</span> Lenguaje Python</a>
   <ul class="collapse">
   <li><a href="#hola-mundo" id="toc-hola-mundo" class="nav-link" data-scroll-target="#hola-mundo"><span class="header-section-number">1.2.1</span> Hola, Mundo!</a></li>
+  </ul></li>
+  <li><a href="#anexo-replit" id="toc-anexo-replit" class="nav-link" data-scroll-target="#anexo-replit"><span class="header-section-number">1.3</span> Anexo: Replit</a>
+  <ul class="collapse">
+  <li><a href="#creación-de-una-nueva-cuenta" id="toc-creación-de-una-nueva-cuenta" class="nav-link" data-scroll-target="#creación-de-una-nueva-cuenta"><span class="header-section-number">1.3.1</span> Creación de una nueva cuenta</a></li>
+  <li><a href="#creación-de-un-nuevo-proyecto" id="toc-creación-de-un-nuevo-proyecto" class="nav-link" data-scroll-target="#creación-de-un-nuevo-proyecto"><span class="header-section-number">1.3.2</span> Creación de un nuevo proyecto</a></li>
+  <li><a href="#uso-del-nuevo-proyecto" id="toc-uso-del-nuevo-proyecto" class="nav-link" data-scroll-target="#uso-del-nuevo-proyecto"><span class="header-section-number">1.3.3</span> Uso del nuevo proyecto</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -245,10 +259,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="software-y-hardware" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="software-y-hardware"><span class="header-section-number">1.1.2</span> Software y Hardware</h3>
 <p>Toda computadora funciona con software y hardware. El software es el conjunto de herramientas abstractas (programas), y se le llama <strong>componente lógica</strong> del modelo computacional. El hardware es el <strong>componente físico</strong> del dispositivo. Básicamente, el software dice qué hacer, y el hardware lo hace.</p>
-<blockquote class="blockquote">
-<p><strong>¿Es indispensable tener una computadora para crear un algoritmo?</strong><br>
-La respuesta, sorprendentemente, es no: muchos de los algoritmos que se utilizan de forma computacional hoy en día fueron diseñados varias décadas atrás. Pero la implementación de un algoritmo depende del grado de avance del hardware y la tecnología disponible.</p>
-</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>¿Es indispensable tener una computadora para crear un algoritmo?</strong><br>
+
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La respuesta, sorprendentemente, es no: muchos de los algoritmos que se utilizan de forma computacional hoy en día fueron diseñados varias décadas atrás. Pero la implementación de un algoritmo depende del grado de avance del hardware y la tecnología disponible.</p>
+</div>
+</div>
 </section>
 <section id="sistema-operativo" class="level3" data-number="1.1.3">
 <h3 data-number="1.1.3" class="anchored" data-anchor-id="sistema-operativo"><span class="header-section-number">1.1.3</span> Sistema Operativo</h3>
@@ -279,7 +303,8 @@ La respuesta, sorprendentemente, es no: muchos de los algoritmos que se utilizan
 <section id="lenguaje-de-programación" class="level3" data-number="1.1.6">
 <h3 data-number="1.1.6" class="anchored" data-anchor-id="lenguaje-de-programación"><span class="header-section-number">1.1.6</span> Lenguaje de Programación</h3>
 <p>Un lenguaje de programación es un <strong>protocolo de comunicación</strong>.<br>
-Un protocolo es un <strong>conjunto de normas consensuadas</strong>.</p>
+Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
+<span class="math inline">\(\implies\)</span> Entonces, un lenguaje de programación es un conjunto de normas consensuadas, entre la persona y la máquina, para poder comunicarse.</p>
 <p>Cuando logramos que un <em>lenguaje</em> pueda ser comprendido por el humano y por la máquina, tenemos una comunicación efectiva en donde podremos hacer programas y pedirle a la máquina que los ejecute.</p>
 <p>Un buen ejemplo de cómo una computadora interpreta nuestras instrucciones sin pensar al respecto, sin tener sentido común y sin ambigüedades, es <a href="https://www.youtube.com/watch?v=cDA3_5982h8">este video</a>. La computadora lo único que hace es <em>interpretar</em> de forma explícita lo que nosotros le pedimos que haga.</p>
 <p>Un lenguaje de programación tiene reglas estrictas que se deben respetar y no se admiten ambiguedades o sobreentendidos.</p>
@@ -308,13 +333,107 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.</p>
 <p><code>print</code> es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es <code>"Hola, Mundo!"</code>. Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.</p>
 <p>De la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Ana y soy programadora"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Rosita y soy programadora"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hola, me llamo Ana y soy programadora</code></pre>
+<pre><code>Hola, me llamo Rosita y soy programadora</code></pre>
 </div>
 </div>
-<p>Al igual que Ana, al hacer nuestro primer ‘Hola, Mundo!’ nos convertimos en programadores. ¡Felicitaciones!</p>
+<p>Al igual que Rosita, al hacer nuestro primer ‘Hola, Mundo!’ nos convertimos en programadores. ¡Felicitaciones!</p>
 <p>A partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes.</p>
+</section>
+</section>
+<section id="anexo-replit" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="anexo-replit"><span class="header-section-number">1.3</span> Anexo: Replit</h2>
+<section id="creación-de-una-nueva-cuenta" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="creación-de-una-nueva-cuenta"><span class="header-section-number">1.3.1</span> Creación de una nueva cuenta</h3>
+<p>Para utilizar replit vamos a ingresar a <a href="https://replit.com/">https://replit.com/</a>.<br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_start.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Página de inicio de Replit</figcaption>
+</figure>
+</div>
+<p>Vamos a presionar luego en <code>Sign Up</code>, donde va a pedir crear una cuenta, o iniciar sesión si ya tenemos una. Una de nuestras opciones es, si tenemos una cuenta google ya creada, iniciar sesión con eso. De lo contrario, podemos crear una cuenta nueva con un mail.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_signup.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Página de creación de cuenta de Replit</figcaption>
+</figure>
+</div>
+</section>
+<section id="creación-de-un-nuevo-proyecto" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="creación-de-un-nuevo-proyecto"><span class="header-section-number">1.3.2</span> Creación de un nuevo proyecto</h3>
+<p>Una vez creada la cuenta e iniciado sesión, vamos a ver esta pantalla:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_home.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Home de Replit</figcaption>
+</figure>
+</div>
+<p>En la misma vamos a ver muchas opciones, pero la que nosotros nos interesa es el botón de <code>+ Create Repl</code>, que nos va a permitir crear un nuevo proyecto.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_create_repl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Botón de creación de un nuevo proyecto en Replit</figcaption>
+</figure>
+</div>
+<p>Se va a abrir la siguiente ventana: <img src="./imgs/unidad_1/replit_create_repl2.png" class="img-fluid" alt="Ventana de creación de un nuevo proyecto en Replit"></p>
+<p>Donde vamos a buscar y elegir en “Templates” el lenguaje de programación Python. Luego, vamos a asignarle un nombre y seleccionar “Create repl”.<br>
+Se debería ver algo así:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_create_repl3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Ventana completa de creación de un nuevo proyecto en Replit</figcaption>
+</figure>
+</div>
+</section>
+<section id="uso-del-nuevo-proyecto" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="uso-del-nuevo-proyecto"><span class="header-section-number">1.3.3</span> Uso del nuevo proyecto</h3>
+<p>Los espacios o proyectos en replit se llaman <code>Workspace</code>, que significa <code>espacio de trabajo</code>. En este espacio de trabajo vamos a poder escribir código, ejecutarlo, y ver los resultados de la ejecución.</p>
+<p>Una vez creado el espacio de trabajo, se nos va a abrir una pantalla donde vamos a ver varias cosas.</p>
+<p>Inicialmente, tenemos en el centro el espacio de edición de código, donde vamos a escribir nuestro programa. <img src="./imgs/unidad_1/replit_workspace1.png" class="img-fluid" alt="Espacio de edición de código"></p>
+<p>En la parte superior, vamos a ver un botón de <code>Run</code>, que nos va a permitir ejecutar el programa que escribimos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_workspace2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Botón de ejecución de código</figcaption>
+</figure>
+</div>
+<p>En la parte derecha, vamos a ver el resultado de la ejecución del programa. En este caso, como no escribimos nada, no hay nada para mostrar.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_workspace3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Resultado de la ejecución de código</figcaption>
+</figure>
+</div>
+<p>Finalmente, en la parte izquierda vamos a tener el menú de archivos, donde vamos a poder crear nuevos archivos, borrarlos, etc. También tiene el acceso a otras herramientas que de momento no vamos a estar usando.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_1/replit_workspace4.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Menú de archivos</figcaption>
+</figure>
+</div>
+<p>Vamos a ver que en el menú de archivos ya tenemos un archivo creado, llamado <code>main.py</code>. Este archivo es el archivo principal de nuestro programa, y es el que se ejecuta cuando presionamos el botón de <code>Run</code>.<br>
+Si bien podemos tener otros archivos, el único que se ejecuta cuando presionamos <code>Run</code> es <code>main.py</code>. Por lo tanto, es importante que nuestro programa principal o lo que nosotros queremos correr, esté en este archivo. Lo que podemos hacer, es crear otros archivos para ir guardando nuestro código y ejercicios anteriores sin necesidad de que se ejecuten cada vez que presionamos <code>Run</code>.</p>
+<blockquote class="blockquote">
+<p><strong>¡Probemos el espacio de trabajo!</strong> Vamos a escribir en el archivo <code>main.py</code> el siguiente código: <code>print("Hola, Mundo!")</code>. Luego, vamos a presionar el botón de <code>Run</code> y vamos a ver el resultado en la parte derecha de la pantalla.</p>
+</blockquote>
+<p>¡Felicitaciones! Ya escribiste tu primer programa en Python.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Lograste ver el resultado? ¿Qué pasa si presionás el botón de <code>Run</code> varias veces seguidas?<br>
+</p>
+</div>
+</div>
 
 
 </section>

@@ -1,0 +1,89 @@
+# Guía de Ejercicios {.unnumbered}
+
+## Guía 1: Introducción a la Algoritmia y la Programación
+
+:::{.callout-note}
+### Recomendación
+En esta guía nos dedicaremos a introducirnos en los conceptos de programación y algoritmo. 
+Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.youtube.com/watch?v=cDA3_5982h8) para recordar cómo entiende la computadora nuestras instrucciones.
+:::
+
+1. Se tiene que explicar a una máquina exactamente cómo servir un vaso de jugo (de los que vienen en cartón) de la heladera. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para lograr el objetivo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+2. Se tiene que explicar a una máquina exactamente cómo hacer una tostada con queso, pensá qué ingredientes se necesitan con sus cantidades, cómo tiene que ser el espacio de trabajo y los elementos que va a necesitar usar. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para hacer una tostada con queso. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+3. Se te pide que organices una colecta de alimentos no perecederos por la Ciudad de Buenos Aires. Contamos con algunos automóviles y camionetas de voluntarios, un listado de donaciones, listado de los alimentos a donar, la disponibilidad horaria y la dirección en la cual se dejan los alimentos. La colecta se realiza en un solo día. ¿Cómo la organizarías? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+4. Tenés que enviar invitaciones personalizadas para tu cumpleaños. Cada invitación tiene que mencionar el nombre de la persona y la relación que tiene con vos. Contamos con una impresora a la que le das el texto a enviar, un listado con los nombres de los invitados y la relación que cada uno tiene con vos. ¿Cómo redactarías el texto de la invitación? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+5. Se te encargó definir qué datos son necesarios para el registro de estudiantes en un curso de inglés. ¿Qué datos crees que deberían ser obligatorios y cuáles opcionales?  ¿Y si el curso es de cocina? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+6. Contás con un listado de cosas a comprar y tenes que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+7. Con el anexo de Replit de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `“¡Hola mundo!”`.
+
+## Guía 2: Tipos de Datos, Expresiones y Funciones
+
+### Variables y Tipos de Dato
+
+1. Guardar el texto "Hola, Mundo!" en una variable e imprimirla por pantalla.
+
+2. Guardar los números 1, 2 y 3 en tres variables distintas e imprimirlos por pantalla.
+
+3. a. Guardar los números 1, 2 y 3 en tres variables distintas y luego sumarlos e imprimir el resultado por pantalla.\
+    b. Repetir con las distintas operaciones disponibles que se vieron en la unidad 2: resta, multiplicación, división, división entera, resto, potencia; combinando los números entre sí.
+
+4. Crear un programa que le solicite al usuario:
+    a. Su nombre y lo imprima por pantalla.
+    b. Su edad y la imprima por pantalla.
+    c. Su edad, le sume 1, y la imprima por pantalla.
+
+5. Crear un programa que le solicite al usuario un número, y que determine si es par mostrando en pantalla un los mensajes "par" o "impar" según corresponda.\
+Para determinr si un número es par o impar, podés ver qué pasa cuando lo dividís por 2. Si el resto es 0, es par, si el resto es 1, es impar. ¿Qué operador vimos para obtener el resto?
+
+6. Escribir un programa que le pida al usuario su año de nacimiento, y que le diga qué edad tiene en el año actual.
+
+7. Crear un programa que le solciite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:
+    a. Primero, usando 5 variables para cada entero.
+    b. Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?
+
+8. Crear una **función** que reciba un número y que devuelva el valor absoluto.
+
+9. Crear una **función** que reciba un número y que devuelva `True` si es par, y `False` si es impar.
+
+10. Crear una **función** que reciba un número y un string, y que devuelva ambos concatenados dentro de un nuevo string.
+
+11. Crear una **función** que reciba dos enteros y que devuelva el resto y el cociente entre ellos.
+
+12. Crear una función que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: "Apellido, Nombre".
+
+13. Hacer una **función** que reciba una palabra y devuelva la cantidad de letras que tiene.
+
+14. a. Hacer una **función** que reciba una palabra y que imprima los primeros 5 caracteres únicamente. Ejemplo: Si se recibe "pensamiento" se debe imprimir "pensa".
+    b. Hacer una **función** que reciba una palabra y que imprima sólo los caracteres ubicados en posiciones pares. Ejemplo: Si se recibe "pensamiento" se debe imprimir "pnaino".
+    c. Hacer una **función** que reciba una palabra y que imprima la palabra dada vuelta. Ejemplo: Si se recibe "materia" se debe imprimir "airetam".
+
+15. Hacer una **funcion** que reciba una palabra, le borre todas las letras "a" e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe "casa" se debe imprimir "cs".
+
+16. Analizar qué tipo de dato (o error) se obtiene al hacer las siguientes operaciones:
+    a. `5 / 2`
+    b. `5 // 2`
+    c. `5 % 2`
+    d. `5 ** 2`
+    e. `5.0 / 2`
+    f. `5.0 // 2`
+    g. `5.0 % 2`
+    h. `5.0 ** 2`
+    i. `5 / 2.0`
+    j. `5 // 2.0`
+    k. `5 % 2.0`
+    l. `5 ** 2.0`
+    m. `5.0 / 2.0`
+    n. `5.0 // 2.0`
+    o. `5.0 % 2.0`
+    p. `5.0 ** 2.0`
+    r. `"Hola" * 2`
+    r. `"Hola" + 2`
+    s. `"Hola" + "2"`
+    t. `x = "Hola"`\
+       `x += " mundo"`
