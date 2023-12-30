@@ -61,6 +61,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -168,11 +170,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#guía-1-introducción-a-la-algoritmia-y-la-programación" id="toc-guía-1-introducción-a-la-algoritmia-y-la-programación" class="nav-link active" data-scroll-target="#guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</a></li>
-  <li><a href="#guía-2-tipos-de-datos-expresiones-y-funciones" id="toc-guía-2-tipos-de-datos-expresiones-y-funciones" class="nav-link" data-scroll-target="#guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</a>
-  <ul class="collapse">
-  <li><a href="#variables-y-tipos-de-dato" id="toc-variables-y-tipos-de-dato" class="nav-link" data-scroll-target="#variables-y-tipos-de-dato">Variables y Tipos de Dato</a></li>
-  </ul></li>
+  <li><a href="#recomendaciones-al-realizar-las-guías" id="toc-recomendaciones-al-realizar-las-guías" class="nav-link active" data-scroll-target="#recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</a></li>
+  <li><a href="#guía-1-introducción-a-la-algoritmia-y-la-programación" id="toc-guía-1-introducción-a-la-algoritmia-y-la-programación" class="nav-link" data-scroll-target="#guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</a></li>
+  <li><a href="#guía-2-tipos-de-datos-expresiones-y-funciones" id="toc-guía-2-tipos-de-datos-expresiones-y-funciones" class="nav-link" data-scroll-target="#guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</a></li>
   </ul>
 </nav>
     </div>
@@ -196,6 +196,26 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="recomendaciones-al-realizar-las-guías" class="level2">
+<h2 class="anchored" data-anchor-id="recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</h2>
+<ul>
+<li>Prestá atención al leer el enunciado. En particular:
+<ul>
+<li>Si se pide una función que <em>devuelva</em> o <em>calcule</em> un valor, la función debe tener una función <code>return</code>.</li>
+<li>Si se pide una función que <em>imprima</em> un valor, la función debe tener un <code>print</code>.</li>
+<li>Si se pide una función que <em>pida</em> o <em>pregunte</em> algo al usuario, la función debe tener un <code>input</code>.</li>
+<li>A menos que se diga específicamente “pedirle al usuario”, no es necesario que el programa contenga <code>input</code>. En todo caso, hacer que la función reciba el o los datos por parámetro.</li>
+</ul></li>
+<li>Cada ejercicio puede tener muchas soluciones posibles. Una vez que encuentres una solución, en lugar de pasar al siguiente ejercicio, pensá si se te ocurre una solución cuya codificación sea más simple.</li>
+<li>Es muy importante que el código sea lo más claro y legible posible.
+<ul>
+<li>En particular, nombres de funciones y variables deben ser descriptivos.</li>
+<li>También prestá atención a los espacios en blanco y a la indentación.</li>
+</ul></li>
+<li>No documentes en exceso, pero tampoco ahorres documentación necesaria.</li>
+<li>Probá siempre que el código cumpla con lo solicitado.</li>
+</ul>
+</section>
 <section id="guía-1-introducción-a-la-algoritmia-y-la-programación" class="level2">
 <h2 class="anchored" data-anchor-id="guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</h2>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -223,8 +243,6 @@ Recomendación
 </section>
 <section id="guía-2-tipos-de-datos-expresiones-y-funciones" class="level2">
 <h2 class="anchored" data-anchor-id="guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</h2>
-<section id="variables-y-tipos-de-dato" class="level3">
-<h3 class="anchored" data-anchor-id="variables-y-tipos-de-dato">Variables y Tipos de Dato</h3>
 <ol type="1">
 <li><p>Guardar el texto “Hola, Mundo!” en una variable e imprimirla por pantalla.</p></li>
 <li><p>Guardar los números 1, 2 y 3 en tres variables distintas e imprimirlos por pantalla.</p></li>
@@ -239,10 +257,10 @@ Recomendación
 <li>Su edad y la imprima por pantalla.</li>
 <li>Su edad, le sume 1, y la imprima por pantalla.</li>
 </ol></li>
-<li><p>Crear un programa que le solicite al usuario un número, y que determine si es par mostrando en pantalla un los mensajes “par” o “impar” según corresponda.<br>
-Para determinr si un número es par o impar, podés ver qué pasa cuando lo dividís por 2. Si el resto es 0, es par, si el resto es 1, es impar. ¿Qué operador vimos para obtener el resto?</p></li>
+<li><p>Crear un programa que le solicite al usuario un número, y que devuelva el resto obtenido de dividirlo por 2.<br>
+¿Qué operador vimos para obtener el resto?</p></li>
 <li><p>Escribir un programa que le pida al usuario su año de nacimiento, y que le diga qué edad tiene en el año actual.</p></li>
-<li><p>Crear un programa que le solciite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:</p>
+<li><p>Crear un programa que le solicite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:</p>
 <ol type="a">
 <li>Primero, usando 5 variables para cada entero.</li>
 <li>Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?</li>
@@ -258,7 +276,7 @@ Para determinr si un número es par o impar, podés ver qué pasa cuando lo divi
 <li>Hacer una <strong>función</strong> que reciba una palabra y que imprima sólo los caracteres ubicados en posiciones pares. Ejemplo: Si se recibe “pensamiento” se debe imprimir “pnaino”.</li>
 <li>Hacer una <strong>función</strong> que reciba una palabra y que imprima la palabra dada vuelta. Ejemplo: Si se recibe “materia” se debe imprimir “airetam”.</li>
 </ol></li>
-<li><p>Hacer una <strong>funcion</strong> que reciba una palabra, le borre todas las letras “a” e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe “casa” se debe imprimir “cs”.</p></li>
+<li><p>Hacer una <strong>funcion</strong> que reciba una palabra, le borre todas las letras “a” e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe “casa” se debe imprimir “cs”. Pista: usar <em>slices</em>.</p></li>
 <li><p>Analizar qué tipo de dato (o error) se obtiene al hacer las siguientes operaciones:</p>
 <ol type="a">
 <li><code>5 / 2</code></li>
@@ -283,10 +301,18 @@ Para determinr si un número es par o impar, podés ver qué pasa cuando lo divi
 <li><code>x = "Hola"</code><br>
 <code>x += " mundo"</code></li>
 </ol></li>
+<li><ol type="a">
+<li>Escribir una función que convierta un valor dado en grado Celcius, a Fahrenheit. Recordar que la fórmula para la conversión es: <code>F = 9/5 * C + 32</code>.</li>
+<li>Escribir una función que convierta un valor dado en grados Fahrenheit, a Celcius. Usar la misma fórmula anterior.</li>
+</ol></li>
+<li><p>Escribir una función que calcule el área de un triángulo recibiendo como parámetros su base y su altura.</p></li>
+<li><p>Siendo el cálculo de la norma de un vector <span class="math inline">\(v\)</span> en <span class="math inline">\(R^3\)</span>:<br>
+<span class="math display">\[||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2}\]</span><br>
+Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes <span class="math inline">\(v_1\)</span>, <span class="math inline">\(v_2\)</span> y <span class="math inline">\(v_3\)</span> del mismo.</p></li>
+<li><p><strong>Desafío</strong> (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>), dadas sus coordenadas <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(y_1\)</span> e <span class="math inline">\(y_2\)</span>.</p></li>
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

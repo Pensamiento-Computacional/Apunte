@@ -1,5 +1,19 @@
 # Guía de Ejercicios {.unnumbered}
 
+## Recomendaciones al realizar las guías
+
+- Prestá atención al leer el enunciado. En particular:
+    - Si se pide una función que *devuelva* o *calcule* un valor, la función debe tener una función `return`.
+    - Si se pide una función que *imprima* un valor, la función debe tener un `print`.
+    - Si se pide una función que *pida* o *pregunte* algo al usuario, la función debe tener un `input`.
+    - A menos que se diga específicamente "pedirle al usuario", no es necesario que el programa contenga `input`. En todo caso, hacer que la función reciba el o los datos por parámetro.
+- Cada ejercicio puede tener muchas soluciones posibles. Una vez que encuentres una solución, en lugar de pasar al siguiente ejercicio, pensá si se te ocurre una solución cuya codificación sea más simple.
+- Es muy importante que el código sea lo más claro y legible posible.
+    - En particular, nombres de funciones y variables deben ser descriptivos.
+    - También prestá atención a los espacios en blanco y a la indentación.
+- No documentes en exceso, pero tampoco ahorres documentación necesaria.
+- Probá siempre que el código cumpla con lo solicitado.
+
 ## Guía 1: Introducción a la Algoritmia y la Programación
 
 :::{.callout-note}
@@ -24,8 +38,6 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
 
 ## Guía 2: Tipos de Datos, Expresiones y Funciones
 
-### Variables y Tipos de Dato
-
 1. Guardar el texto "Hola, Mundo!" en una variable e imprimirla por pantalla.
 
 2. Guardar los números 1, 2 y 3 en tres variables distintas e imprimirlos por pantalla.
@@ -38,12 +50,12 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
     b. Su edad y la imprima por pantalla.
     c. Su edad, le sume 1, y la imprima por pantalla.
 
-5. Crear un programa que le solicite al usuario un número, y que determine si es par mostrando en pantalla un los mensajes "par" o "impar" según corresponda.\
-Para determinr si un número es par o impar, podés ver qué pasa cuando lo dividís por 2. Si el resto es 0, es par, si el resto es 1, es impar. ¿Qué operador vimos para obtener el resto?
+5. Crear un programa que le solicite al usuario un número, y que devuelva el resto obtenido de dividirlo por 2.\
+¿Qué operador vimos para obtener el resto?
 
 6. Escribir un programa que le pida al usuario su año de nacimiento, y que le diga qué edad tiene en el año actual.
 
-7. Crear un programa que le solciite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:
+7. Crear un programa que le solicite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:
     a. Primero, usando 5 variables para cada entero.
     b. Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?
 
@@ -63,7 +75,7 @@ Para determinr si un número es par o impar, podés ver qué pasa cuando lo divi
     b. Hacer una **función** que reciba una palabra y que imprima sólo los caracteres ubicados en posiciones pares. Ejemplo: Si se recibe "pensamiento" se debe imprimir "pnaino".
     c. Hacer una **función** que reciba una palabra y que imprima la palabra dada vuelta. Ejemplo: Si se recibe "materia" se debe imprimir "airetam".
 
-15. Hacer una **funcion** que reciba una palabra, le borre todas las letras "a" e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe "casa" se debe imprimir "cs".
+15. Hacer una **funcion** que reciba una palabra, le borre todas las letras "a" e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe "casa" se debe imprimir "cs". Pista: usar *slices*.
 
 16. Analizar qué tipo de dato (o error) se obtiene al hacer las siguientes operaciones:
     a. `5 / 2`
@@ -87,3 +99,15 @@ Para determinr si un número es par o impar, podés ver qué pasa cuando lo divi
     s. `"Hola" + "2"`
     t. `x = "Hola"`\
        `x += " mundo"`
+
+17. a. Escribir una función que convierta un valor dado en grado Celcius, a Fahrenheit. Recordar que la fórmula para la conversión es: `F = 9/5 * C + 32`.
+    b. Escribir una función que convierta un valor dado en grados Fahrenheit, a Celcius. Usar la misma fórmula anterior.
+
+18. Escribir una función que calcule el área de un triángulo recibiendo como parámetros su base y su altura.
+
+19. Siendo el cálculo de la norma de un vector $v$ en $R^3$:\
+    $$||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2}$$\
+    Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes $v_1$, $v_2$ y $v_3$ del mismo.
+
+20. **Desafío** (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes $x$ e $y$), dadas sus coordenadas $x_1$, $x_2$, $y_1$ e $y_2$.
+
