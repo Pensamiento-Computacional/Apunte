@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -173,6 +207,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#recomendaciones-al-realizar-las-guías" id="toc-recomendaciones-al-realizar-las-guías" class="nav-link active" data-scroll-target="#recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</a></li>
   <li><a href="#guía-1-introducción-a-la-algoritmia-y-la-programación" id="toc-guía-1-introducción-a-la-algoritmia-y-la-programación" class="nav-link" data-scroll-target="#guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</a></li>
   <li><a href="#guía-2-tipos-de-datos-expresiones-y-funciones" id="toc-guía-2-tipos-de-datos-expresiones-y-funciones" class="nav-link" data-scroll-target="#guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</a></li>
+  <li><a href="#guía-3-estructuras-de-control" id="toc-guía-3-estructuras-de-control" class="nav-link" data-scroll-target="#guía-3-estructuras-de-control">Guía 3: Estructuras de Control</a>
+  <ul class="collapse">
+  <li><a href="#decisiones" id="toc-decisiones" class="nav-link" data-scroll-target="#decisiones">1. Decisiones</a></li>
+  <li><a href="#ciclos" id="toc-ciclos" class="nav-link" data-scroll-target="#ciclos">2. Ciclos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -311,8 +350,210 @@ Recomendación
 Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes <span class="math inline">\(v_1\)</span>, <span class="math inline">\(v_2\)</span> y <span class="math inline">\(v_3\)</span> del mismo.</p></li>
 <li><p><strong>Desafío</strong> (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>), dadas sus coordenadas <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(y_1\)</span> e <span class="math inline">\(y_2\)</span>.</p></li>
 </ol>
+</section>
+<section id="guía-3-estructuras-de-control" class="level2">
+<h2 class="anchored" data-anchor-id="guía-3-estructuras-de-control">Guía 3: Estructuras de Control</h2>
+<section id="decisiones" class="level3">
+<h3 class="anchored" data-anchor-id="decisiones">1. Decisiones</h3>
+<ol type="1">
+<li><p>Escribir una función que, dado un número entero <span class="math inline">\(n\)</span>, calcule si es impar o no.</p></li>
+<li><p>Escribir una implementación propia de la función <span class="math inline">\(abs\)</span>, que devuelva el valor absoluto de cualquier valor que reciba. Ejemplo: <code>mi_abs(5)</code> devuelve <code>5</code> y <code>mi_abs(-5)</code> devuelve <code>5</code>. Pista: No se puede usar la función predefinida <code>abs</code>.</p></li>
+<li><p>Escribir una función que reciba un número y devuelva <code>True</code> si es entero y <code>False</code> si no lo es. Pista: no se puede usar la función <code>isinstance</code>.</p></li>
+<li><p>Escribir una función para determinar si una letra recibida es vocal o no. La misma debe devolver un valor booleano. Luego, escribir una función para determinar si una letra es consonante o no.</p>
+<ol type="a">
+<li>Resolver <em>sin</em> el uso de <code>in</code> ni <code>not in</code>.</li>
+<li>Resolver <em>usando</em> <code>in</code> y <code>not in</code>.</li>
+<li>Resolver para que la función identifique tanto mayúsculas como minúsculas. Pista: investigar los métodos <code>lower</code> y <code>upper</code> de string.</li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: <code>in</code> y <code>not in</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Conocés el uso de <code>in</code>?</p>
+<p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>False</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li><p>Escribir funciones que resuelvan los siguientes problemas:</p>
+<ol type="a">
+<li>Dado un año, que devuelva si es bisiesto. Nota: un año es bisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400.</li>
+<li>Dado un mes y un año, que devuelva la cantidad de días correspondientes.</li>
+<li>Pedirle al usuario su día y mes de cumpleaños. El programa debe imprimir un mensaje indicando a qué signo corresponde el usuario.</li>
+</ol>
+<pre><code>Aries: 21 de marzo al 20 de abril.
+Tauro: 21 de abril al 20 de mayo.
+Geminis: 21 de mayo al 21 de junio.
+Cancer: 22 de junio al 23 de julio.
+Leo: 24 de julio al 23 de agosto.
+Virgo: 24 de agosto al 23 de septiembre.
+Libra: 24 de septiembre al 22 de octubre.
+Escorpio: 23 de octubre al 22 de noviembre.
+Sagitario: 23 de noviembre al 21 de diciembre.
+Capricornio: 22 de diciembre al 20 de enero.
+Acuario: 21 de enero al 19 de febrero.
+Piscis: 20 de febrero al 20 de marzo.</code></pre></li>
+<li><p>Piedra, papel o tijera: escribir un programa de “Piedra, papel o tijera” tal que sea imposible que el usuario gane. El usuario debe ingresar <strong>R</strong> (piedra), <strong>P</strong> (papel), o <strong>T</strong> (tijera) y la computadora debe siempre ganarle. Ejemplo:</p>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: R
+¡Papel! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: P
+¡Tijera! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: T
+¡Piedra! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: M
+Esa jugada no está disponible.</code></pre></li>
+<li><p>Suponiendo que el primer día del año fue lunes, escribir una función que reciba un número con el día del año (de 1 a 366) y devuelva el día de la semana que le toca. Por ejemplo: si se recibe ‘3’, debe devolver “miércoles”, y si se recibe ‘9’, debe devolver “martes”.</p></li>
+</ol>
+</section>
+<section id="ciclos" class="level3">
+<h3 class="anchored" data-anchor-id="ciclos">2. Ciclos</h3>
+<ol type="1">
+<li><p>Escribir función que:</p>
+<ol type="a">
+<li>Imprima por pantalla todos los números entre 10 y 20.</li>
+<li>Salude a todas las personas de esta lista <code>[Flaminia, Iara, Agostina, Priscila, Sol, Lucía]</code> con el mensaje <code>"Hola &lt;nombre&gt;! Vamos a aprender a programar"</code>.</li>
+<li>Le pida al usuario que ingrese 5 números y le muestre la suma total de todos ellos.</li>
+<li>Imprima por pantalla todos los números entre 100 y 199 que sean divisibles por 7.</li>
+<li>Reciba dos números, y recorra todos los números entre ellos, imprimiendo en pantalla si es par o impar. Por ejemplo, recibiendo 1 y 3, debe imprimir:</li>
+</ol>
+<pre><code>1 es impar
+2 es par
+3 es impar</code></pre></li>
+<li><p>Se quiere hacer un programa para enseñar a los niños las tablas de multiplicar del 1 al 10. Crear una función que reciba un número e imprima por pantalla la tabla de multiplicar de ese número. Ejemplo:</p>
+<pre><code>mostrar_tablas_para(1)</code></pre>
+<p>debe imprimir:</p>
+<pre><code>1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10</code></pre>
+<pre><code>mostrar_tablas_para(-2)</code></pre>
+<p>debe imprimir:</p>
+<pre><code>Error: El número debe ser positivo y estar entre 1 y 10</code></pre></li>
+<li><p>Crear una función que cante el feliz cumpleaños. Dado un entero, debe imprimir ‘Que los cumplas feliz’ en distintas líneas por esa cantidad de veces.</p></li>
+<li><ol type="a">
+<li>Necesitamos escribir un programa de cobro en el supermercado. La función debe recibir un número entero que representa el monto a pagar y debe permitir al usuario que ingrese valores, hasta que el pago se haya realizado en su totalidad. Además, le debe ir indicando cuánto le queda por pagar. El programa no da vuelto.</li>
+</ol>
+<p>Ejemplo: <code>Su total a pagar es: 500  Ingrese el monto a pagar: 100  Pendientes: 400. Ingrese el monto a pagar: 200  Pendientes: 200. Ingrese el monto a pagar: 200  Pendientes: 0. Gracias por su compra.</code></p>
+<ol start="2" type="a">
+<li>Hacer que el programa anterior dé vuelto:</li>
+</ol>
+<p>Ejemplo: <code>Su total a pagar es: 500  Ingrese el monto a pagar: 100  Pendientes: 400. Ingrese el monto a pagar: 200  Pendientes: 200. Ingrese el monto a pagar: 300  Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></p></li>
+<li><p>Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa “X”, el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese “X”. Se puede reutilizar la función del ejercicio 9 de esta guía.</p>
+<p>Ejemplo: <code>Hola! Esto es Tablas de Multiplicar  Ingrese un número o "X" para salir: 1  1 x 1 = 1  1 x 2 = 2  1 x 3 = 3  1 x 4 = 4  1 x 5 = 5  1 x 6 = 6  1 x 7 = 7  1 x 8 = 8  1 x 9 = 9  1 x 10 = 10  Ingrese un número o "X" para salir: -2  Error: El número debe ser positivo y estar entre 1 y 10  Ingrese un número o "X" para salir: X  ¡Adios!</code></p></li>
+<li><p><strong>Manejo de contraseñas</strong></p>
+<ol type="a">
+<li>Escribir un programa que contenga una constraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.</li>
+<li>Modificar el programa anterior para que solamente permita una cantidad fija de intentos.</li>
+<li>Modificar el programa anterior para que sea una función que devuelva si el usuario ingresó o no la contraseña correctamente, mediante un valor booleano (<code>True</code> o <code>False</code>).</li>
+</ol></li>
+<li><ol type="a">
+<li><p>Hacer una función que reciba un número del 1 al 10, y luego permita al usuario poder adivinar ese número, ingresando valores repetidamente. Para cada ingreso del usuario, el programa debe indicarle si su numero es menor o mayor al número a adivinar. Una vez que el usuario ingresa el número correcto, lo felicita y termina.</p></li>
+<li><p>Repetir permitiendo únicamente 3 intentos.</p></li>
+<li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
+</ol>
+<p>::: {.cell execution_count=5} <code>{.python .cell-code}  import random  numero_a_adivinar = random.randint(1, 10)  print(numero_a_adivinar)</code></p>
+<p>::: {.cell-output .cell-output-stdout} <code>2</code> ::: :::</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: Librerías
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Sabías que Python tiene muchas librerías que podés usar para hacer cosas más complejas? Por ejemplo, la librería <code>random</code> tiene funciones para generar números aleatorios. También hay otras librerías como <code>Pandas</code> para trabajar con datos, <code>Matplotlib</code> para hacer gráficos, <code>Numpy</code> para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.</p>
+<p>Una librería es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una librería, primero tenemos que importarla. Por ejemplo, para usar la librería <code>random</code>, tenemos que poner <code>import random</code> al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la librería, como <code>random.randint(1, 10)</code>.</p>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li><ol type="a">
+<li>Queremos modelar una máquina de sacar juguetes. Debemos hacer una función que reciba un número que representa la cantidad de fichas <span class="math inline">\(x\)</span> que necesita la máquina para funcionar. Se debe imprimir un mensaje en pantalla que indique “Ingresá <span class="math inline">\(x\)</span> fichas para comenzar”. El usuario deberá ingresar entonces letras “F”, que representan a las fichas. Notar que si se ingresa algo distinto a “F”, se ignora.</li>
+</ol>
+<p>Se debe seguir solicitando fichas siempre que no se haya alcanzado la cantidad necesaria para funcionar. Cuando se haya alcanzado la cantidad necesaria, se debe imprimir un mensaje que indique “¡A jugar!”. Ejemplo:</p>
+<pre><code>Ingresá 2 fichas para comenzar: F
+Ingresá 2 fichas para comenzar: B
+Ingresá 2 fichas para comenzar: Hola
+Ingresá 2 fichas para comenzar: F
+¡A jugar!</code></pre>
+<ol start="2" type="a">
+<li>Modificar el programa anterior para que vaya mostrando la cantidad de fichas que faltan para comenzar a jugar. Ejemplo:</li>
+</ol>
+<pre><code>Ingresá 2 fichas para comenzar: F
+Ingresá 1 fichas para comenzar: B
+Ingresá 1 fichas para comenzar: ficha
+Ingresá 1 fichas para comenzar: F
+¡A jugar!</code></pre></li>
+<li><p>Crear una función que calcule si un número es primo o no. Un número es primo cuando solamente es divisible por sí mismo y por 1. Pista: usar el operador módulo <code>%</code>.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio): Crear una función que reciba un número entero e imprima los números primos entre 0 y el número ingresado.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
+<ol type="a">
+<li><p>Crear una función que reciba dos números, y devuelva la suma de todos los números múltiplos de 7 entre esos dos números. Por ejemplo, si recibe 3 y 25, debe devolver 7 + 14 + 21 = 42. Si recibe 3 y 4, debe devolver 0, ya que no hay múltiplos de 7 entre esos dos números.</p></li>
+<li><p>Repetir calculando el promedio en vez de la suma.</p></li>
+<li><p>Repetir calculando únicamente el promedio entre los primeros 3 múltiplos de 7 encontrados. Pista: usar <code>break</code>.</p></li>
+<li><p>Repetir calculando únicamente el promedio entre los múltiplos de 7 encontrados que no sean múltiplos de 2. Pista: usar <code>continue</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio):</p>
+<ol type="a">
+<li>Escribir una función que dada la cantidad de ejercicios de un examen, y el porcentaje de ejercicios bien resueltos necesario para aprobar dicho examen, revise un grupo de exámenes.</li>
+</ol>
+<p>Para ello, en cada paso debe preguntarle al usuario la cantidad de ejercicios resueltos por el alumno, o pedirle que ingrese “*” para salir. Debe mostrar por pantalla el porcentaje correspondiente a la cantidad de ejercicios resueltos respecto a la cantidad de ejercicios del examen y una leyenda que indique si aprobó o no.</p>
+<ol start="2" type="a">
+<li>Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.<br>
+Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o “*“. De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.</li>
+</ol></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
