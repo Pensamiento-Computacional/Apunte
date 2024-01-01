@@ -745,6 +745,7 @@ def ingresar_numeros():
 \
 
 ---
+
 \
 
 > **Ejemplo**
@@ -767,4 +768,106 @@ Escribir una función que cuente la cantidad de vocales que tiene una cadena de 
 
 Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.\
 :::
+\
 
+---
+
+\
+
+## Map
+La función `map` aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los resultados.
+
+```{python}
+def obtener_cuadrado(x):
+  return x**2
+
+lista = [1, 2, 3, 4]
+lista_cuadrados = list(map(obtener_cuadrado, lista))
+print(lista_cuadrados)
+```
+
+La sintaxis es:
+
+```python
+map(<funcion>, <secuencia>)
+```
+
+La función `map` devuelve un objeto de tipo `map`, por lo que en general lo vamos a convertir a una lista usando `list()`. Sin embargo, el tipo `map` es iterable, por lo que podríamos recorrerlo con un ciclo `for`:
+
+```{python}
+for n in lista_cuadrados:
+  print(n)
+```
+
+:::{.callout-tip}
+Las funciones a pasar como parámetro a `map` devuelven *valores transformados* del elemento original. Lo que hace `map` es aplicarla a cada uno de los elementos de la secuencia original.
+:::
+
+## Filter
+La función `filter` aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los elementos para los cuales la función devuelve `True`.
+
+```{python}
+def es_par(x):
+  return x % 2 == 0
+
+lista = [1, 2, 3, 4]
+lista_pares = list(filter(es_par, lista))
+print(lista_pares)
+```
+
+La sintaxis es:
+
+```python
+filter(<funcion>, <secuencia>)
+```
+
+La función `filter` devuelve un objeto de tipo `filter`, por lo que en general lo vamos a convertir a una lista usando `list()`. Sin embargo, el tipo `filter` es iterable, por lo que podríamos recorrerlo con un ciclo `for`:
+
+```{python}
+for n in lista_pares:
+  print(n)
+```
+
+:::{.callout-tip}
+Las funciones a pasar como parámetro a `filter` devuelven *valores booleanos* del elemento original. Lo que hace `filter` es filtrar la secuencia original y quedarse sólo con los valores para los cuales la función devuelve `True`.
+:::
+
+> **Ejemplo**
+Escribir una función que reciba una lista de números y devuelva una lista con los números positivos de la lista original.
+
+```{python}
+def es_positivo(x):
+  return x > 0
+
+def quitar_negativos_o_cero(lista):
+  return list(filter(es_positivo, lista))
+
+lista = [1, -2, 3, -4, 5, 0]
+lista_positivos = quitar_negativos_o_cero(lista)
+print(lista_positivos)
+```
+
+> **Ejemplo**
+Escribir una función que reciba una lista de nombres y devuelva una lista con los mismos nombres pero con la primer letra en mayúscula.
+
+```{python}
+def capitalizar_nombre(nombre):
+  return nombre.capitalize()
+
+def capitalizar_lista(lista):
+  return list(map(capitalizar_nombre, lista))
+
+lista = ["pilar", "barbie", "violeta"]
+lista_capitalizada = capitalizar_lista(lista)
+print(lista_capitalizada)
+```
+
+:::{.callout-important}
+### Ejercicio Desafío
+Se está procesando una base de datos para entrenar un modelo de Machine Learning. La base de datos contiene información de personas, y cada persona está representada por una tupla de 2 elementos: nombre, edad.\
+Escribir una función que reciba una lista de estas tuplas. La función debe devolver la lista ordenada por edad; y filtrada de forma que sólo queden los nombres de las personas mayores de edad (>18). Además, los nombres deben estar en mayúscula.\
+Ejemplo:\
+Si se tiene `[("sol", 40), ("priscila", 15), ("agostina", 30)]`\
+una vez ejecutada, la función debe devolver:
+`[("AGOSTINA",30), ("SOL",40)]`
+:::
