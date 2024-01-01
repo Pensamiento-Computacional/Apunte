@@ -303,11 +303,11 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
 
     c. Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:
 
-    ```{python}
-    import random
-    numero_a_adivinar = random.randint(1, 10)
-    print(numero_a_adivinar)
-    ```
+```{python}
+import random
+numero_a_adivinar = random.randint(1, 10)
+print(numero_a_adivinar)
+```
 
 :::{.callout-note collapse="true"}
 ### Tip: Librerías
@@ -354,7 +354,7 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
     d. Repetir calculando únicamente el promedio entre los múltiplos de 7 encontrados que no sean múltiplos de 2. Pista: usar `continue`.
 
-12. **Desafío** (no obligatorio):
+12. **Desafío** (obligatorio):
 
     a. Escribir una función que dada la cantidad de ejercicios de un examen, y el porcentaje de ejercicios bien resueltos necesario para aprobar dicho examen, revise un grupo de exámenes. 
 

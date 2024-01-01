@@ -1,9 +1,770 @@
 ---
-title: "Tipos de Datos Estructurados"
+title: "Tipos de Estructuras de Datos"
 format:
   html:
     code-fold: false
 jupyter: python3
 ---
 
-## Subtitle
+## Introducción: Secuencias
+
+Una secuencia es una serie de elementos ordenados que se suceden unos a otros.
+
+Una secuencia en Python es un grupo de elementos con una organización interna, que se alojan de manera contigua en memoria.
+
+Las secuencias son tipos de datos que pueden ser iterados, y que tienen un orden definido. Las secuencias más comunes son los rangos, las cadenas de caracteres, las listas y las tuplas. En este capítulo vamos a ver las características de cada una de ellas y cómo podemos manipularlas.
+
+## Rangos
+Los rangos ya los hemos visto antes, pero lo que no habíamos definido es que son secuencias. Los rangos representan específicamente una secuencia de números inmutable.
+
+Los rangos se definen con la función `range()`, que recibe como parámetros el inicio, el fin y el paso. El inicio es opcional y por defecto es 0, el paso también es opcional y por defecto es 1.
+
+:::{.callout-note}
+Para más información de los rangos, ver la [unidad 3](#ciclo-for).
+:::
+
+## Cadenas de Caracteres
+
+Un `string` es un tipo de secuencia que sólo admite caracteres como elementos. Los strings son inmutables, es decir, no se pueden modificar una vez creados.
+
+Internamente, cada uno de los caracteres se almacenará de forma contigua en memoria. Es por esto que podemos acceder a cada uno de los caracteres de un string a través de su índice haciendo uso de  `[]`.
+
+|Índice| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+|Letra| H | o | l | a |   | M | u | n | d | o |
+
+Hasta ahora, vimos que:
+
+1. Las cadenas de caracteres pueden ser concatenadas con el operador `+`:
+
+```{python}
+saludo = "Hola"
+despedida = "Chau"
+print(saludo + despedida)
+```
+
+2. Las cadenas de caracteres pueden ser *sliceadas* o incluso acceder a un único elemento usando `[]`:
+
+```{python}
+saludo = "Hola Mundo"
+print(saludo[0:4])
+print(saludo[5])
+```
+
+Podemos agregar también que:
+
+3. Las cadenas de caracteres pueden ser multiplicadas por un número entero (y el resultado es la concatenación de la cadena consigo misma esa cantidad de veces):
+
+```{python}
+saludo = "Hola"
+print(saludo * 3)
+```
+
+Adicional a esas 3 operaciones, las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten manipularlas. Veamos algunos de ellos.
+
+### Métodos de Cadenas de Caracteres
+
+Todos los métodos de las cadenas de caracteres devuelven una nueva cadena de caracteres o un valor, y no modifican la cadena original (ya que las cadenas de caracteres son inmutables).
+
+#### Longitud de una Cadena
+Se puede averiguar la cantidad de caracteres que conforman una cadena utilizando la función predefinida `len()`:
+
+```{python}
+print(len("Pensamiento Computacional"))
+```
+
+Existe también una cadena especial, la cadena vacía (ya la hemos visto antes), que es la cadena que no contiene ningún caracter entre las comillas. La longitud de la cadena vacía es 0.
+
+:::{.callout-tip collapse="true"}
+### Tip: Len e Índices de la Cadena
+
+Es interesante notar lo siguiente: si tenemos una cadena de caracteres de longitud `n`, los índices de la cadena van desde `0` hasta `n-1`. Esto es porque el índice `n` no existe, ya que el primer índice es `0` y el último es `n-1`.
+
+Veámoslo con un ejemplo: tenemos el caracter `Hola`.
+
+|Índice| 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+|Letra| H | o | l | a |
+
+La longitud de la cadena es 4, pero el último índice es 3. Si intentamos acceder al índice 4, nos dará un error:
+
+```python
+saludo = "Hola"
+print(saludo[4])
+```
+```{error}
+IndexError: string index out of range
+```
+
+Lo que nos indica el error es que el índice está fuera del rango de la cadena. Esto es porque el índice `4` no existe, ya que el último índice es `3`. El largo de la cadena es `4`, y el último índice disponible es `4-1=3`.
+
+- Los índices positivos (entre `0` y `len(s) - 1`) son los caracteres de la cadena del primero al último.
+- Los índices negativos (entre `-len(s)` y `-1`) proveen una notación que hace más fácil indicar cuál es el último caracter de la cadena: `s[-1]` es el último caracter, `s[-2]` es el penúltimo, y así sucesivamente.
+
+```{python}
+saludo = "Hola"
+print(saludo[-1])
+print(saludo[-2])
+print(saludo[-3])
+print(saludo[-4])
+```
+
+Además, el uso de índices negativos también es válido para *slices*:
+  
+```{python}
+saludo = "Hola"
+print(saludo[-3:-1])
+```
+
+Al usar índices negativos, es importante no salirse del rango de los índices permitidos.
+:::
+
+#### Recorriendo Cadenas de Caracteres
+Dijimos que los strings son secuencias, y por lo tanto podemos iterar sobre ellos. Esto significa que podemos recorrerlos con un ciclo `for`:
+
+```{python}
+saludo = "Hola Mundo"
+for caracter in saludo:
+    print(caracter)
+```
+
+Si bien esto ya lo habíamos nombrado en la sección anterior como una posibilidad, ahora sabemos por qué: todas las secuencias son iterables, y por lo tanto, podemos recorrerlas.
+
+#### Buscando Subcadenas
+El operador `in` nos permite saber si una subcadena se encuentra dentro de otra cadena. En la guía de la unidad 3 te pedimos que investigues acerca del operador `in` y `not in` para el ejercicio de vocales y consonantes. 
+
+`a in b` es una expresión (¿qué era una expresión?, repasar de ser necesario la [unidad 3](#expresiones-booleanas)) que devuelve `True` si `a` es una subcadena de `b`, y `False` en caso contrario.
+
+```{python}
+print( "Hola" in "Hola Mundo")
+```
+
+Al ser una expresión booleana, se puede usar como condición tanto de un `if` como de un `while`:
+
+```{python}
+if "Hola" in "Hola Mundo":
+    print("Se encontró una subcadena!")
+```
+
+>**Ejercicio**
+1. Investigar, para un string dado $s$, cuál es el resultado del slice `s[:]`
+2. Investigar, para un string dado $s$, cuál es el resultado del slice `s[j:]` con $j$ un número entero negativo.
+
+#### Inmutabilidad
+Las cadenas son inmutables. Esto significa que no se pueden modificar una vez creadas. Por ejemplo, si queremos cambiar un caracter de una cadena, no podemos hacerlo:
+
+```python
+saludo = "Hola Mundo"
+saludo[0] = "h"
+```
+
+```error
+TypeError: 'str' object does not support item assignment
+```
+
+Si queremos realizar una modificación sobre una cadena, lo que tenemos que hacer es crear una nueva cadena con la modificación que queremos:
+
+```python
+saludo = "Hola Mundo"
+saludo = "h" + saludo[1:]
+print(saludo)
+```
+
+#### Otros Métodos de Cadenas de Caracteres
+Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten manipularlas. Algunos ya los vimos, como `len()`, `in` y `not in`. Veamos otros.
+
+| Método | Descripción | Ejemplo |
+|---|---|---|
+| `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
+| `count(subcadena)` | Devuelve la cantidad de veces que aparece la subcadena en la cadena | `"Hola mundo".count("o")` devuelve `2` |
+| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra | `"Hola mundo".find("mundo")` devuelve `5` |
+| `upper()` | Devuelve una copia de la cadena con todos los caracteres en mayúscula | `"Hola mundo".upper()` devuelve `"HOLA MUNDO"` |
+| `lower()` | Devuelve una copia de la cadena con todos los caracteres en minúscula | `"Hola mundo".lower()` devuelve `"hola mundo"` |
+| `strip()` | Devuelve una copia de la cadena sin los espacios en blanco al principio y al final | `" Hola mundo ".strip()` devuelve `"Hola mundo"`. |
+| `strip(subcadena)` | Devuelve una copia de la cadena sin los caracteres de la subcadena al principio y al final. Sólo funciona para quitar elementos de los extremos del string | `"Hola mundo".strip("do")` devuelve `"Hola mun"` |
+| `replace(subcadena1, subcadena2)` | Devuelve una copia de la cadena reemplazando todas las apariciones de la subcadena1 por la subcadena2 | `"Hola mundo".replace("mundo", "amigos")` devuelve `"Hola amigos"` |
+| `split()` | Devuelve una lista de subcadenas separando la cadena por los espacios en blanco | `"Hola mundo  ".split()` devuelve `["Hola", "mundo"]` |
+| `split(separador)` | Devuelve una lista de subcadenas separando la cadena por el separador | `"Hola, mundo".split(", ")` devuelve `["Hola", "mundo"]` |
+| `isdigit()` | Devuelve `True` si todos los caracteres de la cadena son dígitos, `False` en caso contrario | `"123".isdigit()` devuelve `True` |
+| `isalpha()` | Devuelve `True` si todos los caracteres de la cadena son letras, `False` en caso contrario | `"Hola".isalpha()` devuelve `True` |
+| `isalnum()` | Devuelve `True` si todos los caracteres de la cadena son letras o dígitos, `False` en caso contrario | `"Hola123".isalnum()` devuelve `True` |
+| `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
+| `index(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o produce un error si no se encuentra | `"Hola mundo".index("mundo")` devuelve `5` |
+
+## Tuplas
+Las tuplas son una secuencia de elementos inmutable. Esto significa que no se pueden modificar una vez creadas. En Python, el tipo de dato asociado a las tuplas se llama `tuple` y se definen con paréntesis `()`:
+
+```python
+tupla = (1, 2, 3)
+```
+
+Las tuplas pueden tener elementos de cualquier tipo, es decir, pueden ser heterogéneas. Por ejemplo, podemos tener una tupla con un número, un string y un booleano:
+
+```python
+tupla = (1, "Hola", True)
+```
+
+Una tupla de un sólo elemento (unitaria) debe definirse de la siguiente manera:
+
+```python
+tupla = (1,)
+```
+La coma al final es necesaria para diferenciar una tupla de un número entre paréntesis `(1)`.
+\
+
+Ejemplos de tuplas podrían ser:
+
+- Una fecha, representada como una tupla de 3 elementos: día, mes y año: `(1, 1, 2020)`
+- Datos de una persona: `(nombre, edad, dni)`: `("Carla", 30, 12345678)`
+
+Incluso es posible anidar tuplas, como por ejemplo guardar, para una persona, la fecha de nacimiento: `("Carla", 30, 12345678, (1, 1, 1990))`
+
+### Tuplas como Secuencias
+Como las tuplas son secuencias, al igual que las cadenas, podemos utilizar la misma notación de índices para obtener cada uno de sus elementos y, de la misma forma que las cadenas, los elementos comienzan a enumerarse en su posición desde el `0`:
+
+```{python}
+fecha = (1, 12, 2020)
+print(fecha[0])
+```
+
+También podemos usar la notación de rangos, o *slices*, para obtener subconjuntos de la tupla. Esto es algo típico de las secuencias:
+
+```{python}
+fecha = (1, 12, 2020)
+print(fecha[0:2])
+```
+
+### Tuplas como Inmutables
+Al igual que con las cadenas, las componentes de las tuplas no pueden ser modificadas. Es decir, no puedo cambiar los valores de una tupla una vez creada:
+
+```python
+fecha = (1, 12, 2020)
+fecha[0] = 2
+```
+
+```{error}
+TypeError: 'tuple' object does not support item assignment
+```
+
+### Longitud de una Tupla
+La longitud de una tupla se puede obtener con la función predefinida `len()`, que devuelve la cantidad de elementos o componentes que tiene esa tupla:
+
+```{python}
+fecha = (1, 12, 2020)
+print(len(fecha))
+```
+
+Una tupla vacía es una tupla que no tiene elementos: `()`. La longitud de una tupla vacía es 0.
+
+>**Ejercicio**
+Calcular la longitud de la tupla anidada `("Carla", 30, 12345678, (1, 1, 1990))`. ¿Cuántos elementos tiene?
+
+### Empaquetado y desempaquetado de tuplas
+Si a una variable se le asigna una secuencia de valores separados por comas, el valor de esa variable será la tupla formada por esos valores.
+Ejemplo:
+
+```{python}
+a = 1
+b = 2
+c = 3
+d = a, b, c
+
+print(d)
+```
+
+A esto se le llama *empaquetado*.
+\
+
+De forma similar, si se tiene una tupla de largo $k$, se puede asignar cada uno de los elementos de la tupla a $k$ variables distintas. Esto se llama *desempaquetado*.
+
+```{python}
+d = (1, 2, 3)
+a, b, c = d
+
+print(a)
+print(b)
+print(c)
+```
+
+:::{.callout-warning}
+### ¡Cuidado!
+Si estamos desempaquetando una tupla de largo $k$ pero lo hacemos en una cantidad de variables menor a $k$, se producirá un error.
+
+```python
+d = (1, 2, 3)
+a, b = d
+```
+
+Obtendremos:
+```error
+ValueError: too many values to unpack
+o
+ValueError: not enough values to unpack
+```
+:::
+
+## Listas
+Las listas, al igual que las tuplas, también pueden usarse para modelar datos compuestos, pero cuya cantidad y valor varían a lo largo del tiempo. Son secuencias *mutables*, y vienen dotadas de una variedad de operaciones muy útiles.
+
+La notación para lista es una secuencia de valores entre corchetes y separados por comas.
+
+```python
+lista = [1, 2, 3]
+
+lista_vacia = []
+```
+
+### Longitud de una Lista
+La longitud de una lista se puede obtener con la función predefinida `len()`, que devuelve la cantidad de elementos que tiene esa lista:
+
+```{python}
+lista = [1, 2, 3]
+print(len(lista))
+```
+
+### Listas como Secuencias
+De la misma forma que venimos haciendo con las cadenas y las tuplas, podremos acceder a los elementos de una lista a través de su índice, *slicear* y recorrerla con un ciclo `for`.
+
+```{python}
+lista = [1, 2, 3]
+print(lista[0])
+```
+
+```{python}
+lista = ["Civil", "Informática", "Química", "Industrial"]
+print(lista[1:3])
+```
+
+```{python}
+lista = ["Civil", "Informática", "Química", "Industrial"]
+for elemento in lista:
+    print(elemento)
+```
+
+### Listas como Mutables
+A diferencia de las tuplas, las listas son mutables. Esto significa que podemos modificar sus elementos una vez creadas.
+
+- Para cambiar un elemento de una lista, se usa la notación de índices:
+
+```{python}
+lista = [1, 2, 3]
+lista[0] = 4
+print(lista)
+```
+
+- Para agregar un elemento al final de una lista, se usa el método `append()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.append(4)
+print(lista)
+```
+
+- Para agregar un elemento en una posición específica de una lista, se usa el método `insert()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.insert(0, 4)
+print(lista)
+```
+
+El método ingresa el número `4` en la posición `0` de la lista, y desplaza el resto de los elementos hacia la derecha.
+
+```{python}
+lista = [1, 2, 3]
+lista.insert(1, 3)
+print(lista)
+```
+
+El método ingresa el número `3` en la posición `1` de la lista, y desplaza el resto de los elementos hacia la derecha.
+
+Las listas no controlan si se insertan elementos repetidos, por lo que si queremos exigir unicidad, debemos hacerlo mediante otras herramientas en nuestro código.
+
+- Para eliminar un elemento de una lista, se usa el método `remove()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.remove(2)
+print(lista)
+```
+
+Remove busca el elemento `2` en la lista y lo elimina. Si el elemento no existe, se produce un error.
+
+Si el valor está repetido, se eliminará la primera aparición del elemento, empezando por la izquierda.
+
+```{python}
+lista = [1, 2, 3, 2]
+lista.remove(2)
+print(lista)
+```
+
+- Para quitar el último elemento de una lista, se usa el método `pop()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.pop()
+print(lista)
+```
+
+El método `pop()` devuelve el elemento que se eliminó de la lista. Si la lista está vacía, se produce un error.
+
+```{python}
+lista = [1, 2, 3]
+elemento = lista.pop()
+print(elemento)
+```
+
+- Para quitar un elemento de una lista en una posición específica, se usa el método `pop()` con un índice:
+
+```{python}
+lista = [1, 2, 3]
+lista.pop(1)
+print(lista)
+```
+
+Al igual que antes, el método `pop()` devuelve el elemento que se eliminó de la lista. Si la lista está vacía, se produce un error.
+
+- `extend()` agrega los elementos de una lista al final de otra. Es lo mismo que concatenar dos listas con el operador `+`:
+
+```{python} 
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista1.extend(lista2)
+print(lista1)
+```
+
+### Referencias de Listas
+```{python}
+a = [1,2,3,4]
+b = a
+a.pop()
+
+print(b)
+```
+
+Se dice que `b` es una referencia a `a`. Esto significa que `b` no es una copia de `a`, sino que es `a` misma. Por lo tanto, si modificamos `a`, también modificamos `b`.
+
+Una forma de crear una copia de una lista es usando el método `copy()`:
+
+```{python}
+a = [1,2,3,4]
+b = a.copy()
+a.pop()
+
+print(b)
+```
+
+### Búsqueda de Elementos en una Lista
+- Para saber si un elemento se encuentra en una lista, se puede utilizar el operador `in`:
+
+```{python}
+lista = [1, 2, 3]
+print(2 in lista)
+```
+
+Como vemos, el operador `in` es válido para todas las secuencias, incluyendo tuplas y cadenas.
+
+- Para averiguar la posición de un valor dentro de una lista, usaremos el método `index()`:
+
+```{python}
+lista = ["a", "b", "t", "z"]
+print(lista.index("t"))
+```
+
+Si el valor no se encuentra en la lista, se produce un error.\
+Si el valor se encuentra repetido, se devuelve la posición de la primera aparición del elemento, empezando por la izquierda.
+
+### Iterando sobre Listas
+Las listas son secuencias, y por lo tanto podemos iterar sobre ellas. Esto significa que podemos recorrerlas con un ciclo `for`:
+
+```{python}
+lista = [1, 2, 3]
+for elemento in lista:
+    print(elemento)
+```
+
+Esta forma de recorrer elementos usando `for` es utilizable con todos los tipos de secuencias.
+
+### Ordenando Listas
+Nos puede interesar que los elementos de una lista estén ordenados según algún criterio. Python provee dos operaciones para obtener una lista ordenada a partir de la desordenada.
+
+- `sorted(s)` devuelve una lista ordenada con los elementos de la secuencia `s`. La secuencia `s` no se modifica.
+
+```{python}
+lista = [3, 1, 2]
+lista_nueva = sorted(lista)
+
+print(lista)
+print(lista_nueva)
+```
+
+- `s.sort()` ordena la lista `s` en el lugar. Es decir, modifica la lista `s` y no devuelve nada.
+
+```{python}
+lista = [3, 1, 2]
+lista.sort()
+
+print(lista)
+```
+
+Tanto el método `sort()` como el método `sorted()` ordenan la lista en orden ascendente. Si queremos ordenarla en orden descendente, podemos usar el parámetro `reverse`:
+
+```{python}
+lista = [3, 1, 2]
+lista.sort(reverse=True)
+print(lista)
+```
+
+Existe un método `reverse` (no disponible en Replit) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando *slices*, como ya vimos: `lista[::-1]`.
+
+:::{.callout-warning collapse="true"}
+### ¡Cuidado con los Ordenamientos!
+1. Todos los elementos de la secuencia deben ser comparables entre sí. Si no lo son, se producirá un error. Por ejemplo, no se puede ordenar una lista que contenga números y strings.
+
+2. Al ordenar, las letras en minúscula no valen lo mismo que las letras en mayúscula. Si queremos ordenar "hola" y "HOLA" (por ejemplo), tenemos que compararlas convirtiendo todo a minúscula o todo a mayúscula.\
+De lo contrario, se ordena poniendo las mayúsculas primero y luego las minúsculas.
+Es decir, para una lista con los valores `["hola", "HOLA"]`, el ordenamiento será `["HOLA", "hola"]`.
+
+¿Existe una forma mejor de hacerlo? Sí. Usando *keys* de ordenamiento:
+```{python}
+lista = ["hola", "HOLA"]
+lista.sort(key=str.lower)
+print(lista)
+```
+Lo importante de momento es que sepas que existe esta forma de ordenar. A *key* se le puede pasar una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `str.lower` convierte todo a minúscula antes de intentar ordenar.
+:::
+
+### Listas por Comprensión
+Las listas por comprensión son una forma de crear listas de forma concisa y elegante.
+
+Por ejemplo, si queremos crear una lista con los números del 1 al 10, podemos hacerlo de la siguiente forma:
+
+```{python}
+numeros = []
+for i in range(1, 11):
+    numeros.append(i)
+print(numeros)
+```
+
+Sin embargo, podemos hacerlo de forma más concisa usando una lista por comprensión:
+
+```{python}
+numeros = [i for i in range(1, 11)]
+print(numeros)
+```
+
+La sintaxis de una lista por comprensión es la siguiente:
+
+```python
+[<expresión> for <elemento> in <secuencia>]
+```
+
+La expresión se evalúa para cada elemento de la secuencia, y el resultado de esa evaluación se agrega a la lista.
+
+### Listas anidadas
+Las listas también puede estar anidadas, es decir, una lista puede contener a otras listas. Por ejemplo, podemos tener una lista de listas de números:
+
+```python
+valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+Aquía $valores$ es una lista que contiene 3 elementos, que a su vez son también listas. Entonces, `valores[0]` sería la lista `[1,2,3]`. Si quisiéramos, por ejemplo, acceder al número `2` de dicha lista, tendríamos que volver a acceder al índice `1` de la lista `valores[0]`:
+
+```{python}
+valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+numero = valores[0][1]
+print(numero)
+```
+
+:::{.callout-note} 
+### Generalización
+Este concepto de listas anidadas se puede generalizar a cualquier secuencia anidada. Por ejemplo, una tupla de tuplas, o una lista de tuplas, o una tupla de listas, etc.
+
+```{python}
+tupla = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
+numero = tupla[1][2]
+print(numero)
+```
+
+```{python}
+lista = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+numero = lista[2][0]
+print(numero)
+```
+
+```{python}
+tupla = ([1, 2, 3], [4, 5, 6], [7, 8, 9])
+numero = tupla[0][1]
+print(numero)
+```
+
+Incluso se puede reemplazar un elemento anidado por otro:
+
+```{python}
+tupla = ([1, 2, 3], [4, 5, 6], [7, 8, 9])
+tupla[0][1] = 10
+print(tupla)
+```
+
+Esto es válido siempre y cuando el *elemento* a reemplazar esté dentro de una secuencia *mutable*. En el caso de arriba, estamos cambiando el valor de una lista, que se encuentra dentro de la tupla. La tupla no cambia: sigue teniendo 3 listas guardadas.
+
+Si quisiéramos editar una tupla guardada dentro de una lista, no funcionaría:
+  
+```python
+lista = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+lista[0][1] = 10
+print(lista)
+```
+
+```{error}
+TypeError: 'tuple' object does not support item assignment
+```
+:::
+
+Las listas anidadas suelen usarse para representar matrices. Para ello, se puede pensar que cada lista representa una fila de la matriz, y cada elemento de la lista representa un elemento de la fila. Por ejemplo, la matriz:
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+se puede representar como la lista de listas:
+
+```python
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+::: {.callout-important}
+### Ejercicio Desafío
+Escribir una función que reciba una cantidad de filas y una cantidad de columnas y devuelva una matriz de ceros de ese tamaño. Usar listas por comprensión.\
+Ejemplo: `matrix(2,3)` devuelve `[[0, 0, 0], [0, 0, 0]]`
+:::
+\
+
+> **Ejemplo**
+Dada una lista de tuplas de dos elementos (precio, producto), desempaquetar la lista en dos listas separadas: una con los precios y otra con los productos.
+
+```{python}
+lista = [(100, "Coca Cola"), (200, "Pepsi"), (300, "Sprite")]
+
+precios = []
+productos = []
+
+for precio, producto in lista: # Acá estamos desempaquetando: precio, producto
+    precios.append(precio)
+    productos.append(producto)
+
+print(precios)
+print(productos)
+```
+
+## Listas y Cadenas
+Vimos que las cadenas tienen el método `split`, que nos permite separar una cadena en una lista de subcadenas. Por ejemplo:
+
+```{python}
+cadena = "Esta es una      cadena con    espacios   varios"
+lista = cadena.split()
+
+print(lista)
+```
+
+También podemos hacer lo contrario: podemos unir una lista de subcadenas en una cadena usando el método `join`:
+
+```{python}
+lista = ["Esta", "es", "una", "cadena", "con", "espacios", "varios"]
+cadena = " ".join(lista)
+
+print(cadena)
+```
+
+La sintaxis del método join es:
+  
+```python
+<separador>.join(<lista>)
+```
+
+El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio `" "`, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.
+
+## Operaciones de las Secuencias
+Tanto las cadenas, como las tuplas y las listas son secuencias, y por lo tanto comparten una serie de operaciones que podemos realizar sobre ellas.
+
+| Operación | Descripción |
+|---|---|
+| `x in s` | Devuelve `True` si el elemento `x` se encuentra en la secuencia `s`, `False` en caso contrario |
+| `s + t ` | Concatena las secuencias `s` y `t` |
+| `s * n` | Repite la secuencia `s` `n` veces |
+| `s[i]` | Devuelve el elemento de la secuencia `s` en la posición `i` |
+| `s[i:j:k]` | Devuelve un *slice* de la secuencia `s` desde la posición `i` hasta la posición `j` (no incluída), con pasos de a `k` |
+| `len(s)` | Devuelve la cantidad de elementos de la secuencia `s` |
+| `min(s)` | Devuelve el elemento mínimo de la secuencia `s` |
+| `max(s)` | Devuelve el elemento máximo de la secuencia `s` |
+| `sum(s)` | Devuelve la suma de los elementos de la secuencia `s` |
+| `enumerate(s)` | Devuelve una secuencia de tuplas de la forma `(i, s[i])` para cada elemento de la secuencia `s` |
+| `count(x)` | Devuelve la cantidad de veces que aparece el elemento `x` en la secuencia `s` |
+| `index(x)` | Devuelve el índice de la primera aparición del elemento `x` en la secuencia `s` |
+
+:::{.callout-tip}
+Te recomendamos que pruebes cada una de estas operaciones con las distintas secuencias que vimos en este capítulo.
+:::
+
+Además, es posible crear una lista o tupla a partir de cualquier otra secuencia, usando las funciones `list` y `tuple` respectivamente:
+  
+```{python}
+lista = list("Hola")
+print(lista)
+```
+
+```{python}
+tupla = tuple("Hola")
+print(tupla)
+```
+
+```{python}
+lista = list( (1, 2, 3) ) # Convertimos una tupla en una lista
+print(lista)
+```
+
+Esta última es particularmente útil cuando necesitamos trabajar con una tupla, pero como son inmutables, la convertimos a lista para manipularla sin problemas.
+
+>**Ejemplo**
+Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.
+
+```python
+def ingresar_numeros():
+    numeros = []
+    numero = int(input("Ingrese un número: "))
+
+    while numero != 0:
+        numeros.append(numero)
+        numero = int(input("Ingrese un número: "))
+    return numeros
+```
+\
+
+---
+\
+
+> **Ejemplo**
+Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.\
+Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.
+
+```{python}
+def contar_letras(cadena):
+    return len(cadena)
+
+lista = ["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]
+lista.sort(key=contar_letras)
+
+print(lista)
+```
+
+:::{.callout-important}
+### Ejercicio Desafío
+Escribir una función que cuente la cantidad de vocales que tiene una cadena de caracteres, y devuelva su valor. Debe considerar mayúsculas y minúsculas. Pista: podés usar la función para saber si una letra es vocal que hiciste en la unidad 3.
+
+Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.\
+:::
+
