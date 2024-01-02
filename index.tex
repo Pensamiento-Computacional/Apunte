@@ -234,7 +234,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, interior hidden, sharp corners, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -364,9 +364,9 @@ conjunto de herramientas abstractas (programas), y se le llama
 \textbf{componente físico} del dispositivo. Básicamente, el software
 dice qué hacer, y el hardware lo hace.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{¿Es indispensable tener una computadora para crear un
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{\textbf{¿Es indispensable tener una computadora para crear un
 algoritmo?}\\
-}, rightrule=.15mm, toprule=.15mm, left=2mm]
+}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 La respuesta, sorprendentemente, es no: muchos de los algoritmos que se
 utilizan de forma computacional hoy en día fueron diseñados varias
@@ -688,7 +688,7 @@ resultado en la parte derecha de la pantalla.
 
 ¡Felicitaciones! Ya escribiste tu primer programa en Python.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 ¿Lograste ver el resultado? ¿Qué pasa si presionás el botón de
 \texttt{Run} varias veces seguidas?\\
@@ -732,7 +732,7 @@ En este curso, la comunicación de los programas con el mundo exterior se
 realizará casi exclusivamente con el usuario por medio de la consola (o
 terminal, la presentamos en la unidad anterior en el anexo de Replit).
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Esto no significa que todos los programas siempre se comuniquen con el
 usuario para todo. Pensemos en las aplicaciones que usamos generalmente,
@@ -820,7 +820,7 @@ flotante son aproximados, y no pueden representar todos los valores de
 forma exacta. Esto es algo que vamos a tener que tener en cuenta cuando
 trabajemos con números de punto flotante.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Uso de punto}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Uso de punto}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Notemos que para representar números de punto flotante, usamos el punto
 (\texttt{.}) y no la coma (\texttt{,}). Esto es porque en Python, la
@@ -948,7 +948,7 @@ Python'' respectivamente. Luego podemos usar esas variables como parte
 de cualquier expresión, y en el momento de evaluarla, Python reemplazará
 las variables por su valor asociado.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Variables y Constantes}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Variables y Constantes}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Si el dato es inmutable (no puede cambiar) durante la ejecución del
 programa, se dice que ese dato es una \textbf{constante}. Si tiene la
@@ -973,7 +973,7 @@ Hola
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Nombres de Variables}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Nombres de Variables}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 No se puede usar el mismo nombre para dos datos diferentes a la vez; una
 variable puede referenciar un sólo dato por vez. Si se usa un mismo
@@ -1048,7 +1048,7 @@ escritas por uno o más programadores.
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Python es Case Sensitive}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Python es Case Sensitive}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Python es Case Sensitive, es decir, distingue entre mayúsculas y
 minúsculas.\\
@@ -1092,7 +1092,7 @@ Varias cosas a notar del código:
   misma.\\
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Sangría}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Sangría}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 La sangría puede ingresarse utilizando dos o más espacios, o presionando
 la tecla Tab. Es importante prestar atención en no mezclar espacios con
@@ -1100,7 +1100,7 @@ tabs, para evitar ``confundir'' al intérprete.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Firma de la función}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Firma de la función}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 La firma de una función es la primera línea de la misma, donde se indica
 el nombre de la función y los parámetros que recibe. La firma permite
@@ -1349,7 +1349,7 @@ queremos mostrarle al usuario.
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 A partir de la guía 2, a menos que el ejercicio diga específicamente
 ``pedirle al usuario'', no se debe usar \texttt{input}, sino que todo
@@ -1477,7 +1477,7 @@ La función debería trabajar únicamente con los datos que se le hayan
 pasado por parámetro o que se le pidan al usuario dentro de ella, pero
 no debería utilizar nada que esté por fuera de la misma.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Python nos deja usar cosas por fuera de la función y sin recibir los
 datos por parámetro, porque es un lenguaje muy benevolente. Pero está
@@ -1519,7 +1519,7 @@ Esto está bien
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Como podemos observar los nombres de los argumentos cuando se invoca y
 en la definición de la firma pueden ser los mismos o distintos. En este
@@ -1582,7 +1582,7 @@ la parte imaginaria. \\
 no contiene ningún caracter) \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{¿Por qué se llaman ``cadenas de caracteres''?}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{¿Por qué se llaman ``cadenas de caracteres''?}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Porque son una cadena de caracteres, es decir, una secuencia de
 caracteres. Por ejemplo, la cadena ``Hola'' está formada por los
@@ -1716,7 +1716,7 @@ Entonces, si queremos acceder al caracter \texttt{"H"}, tenemos que usar
 la posición 0. Si queremos acceder al caracter \texttt{"a"}, tenemos que
 usar la posición 3.\\
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Para acceder a un caracter de una cadena, usamos los corchetes
 (\texttt{{[}{]}}) y dentro de ellos la posición del caracter que
@@ -1788,7 +1788,7 @@ Por ejemplo:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Imprimiendo Strings y Variables (Iterpolación de Cadenas)}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Imprimiendo Strings y Variables (Iterpolación de Cadenas)}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Existen muchas formas de concatenar variables con texto.
 
@@ -1833,7 +1833,7 @@ El siguiente código va a fallar:
 Como vemos, la consola nos arroja un error, o en términos simples
 decimos que ``explotó''.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{¿Qué es un error?}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{¿Qué es un error?}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Los errores son información que nos da la consola para que podamos
 corregir nuestro código.
@@ -1922,7 +1922,7 @@ Ejemplo:
 \section{Bonus Track: Algunas Funciones Predefinidas de
 Python}\label{bonus-track-algunas-funciones-predefinidas-de-python}}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Te recomendamos que te animes a probar estas funciones, para ver qué
 hacen y terminar de entenderlas.
@@ -2117,7 +2117,7 @@ Veamos algunos ejemplos:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Te recomendamos probar estas expresiones para ver qué valores devuelven.
 Podés hacerlo de dos formas:
@@ -2277,7 +2277,7 @@ True
 False
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-caution-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Prioridad de Operadores}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Prioridad de Operadores}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-caution-color!10!white]
 
 Las expresiones lógicas complejas (con más de un operador), se resuelven
 al igual que en matemáticas: respetando precedencias y de izquierda a
@@ -2598,7 +2598,7 @@ ejemplo}
   \texttt{else}.
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Sabías que\ldots{} ?}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Sabías que\ldots{} ?}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 En Python se consideran \emph{verdaderos} (True) también todos los
 valores numéricos distintos de 0, las cadenas de caracteres que no sean
@@ -2640,7 +2640,7 @@ o también:
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-important-color!10!white]
 
 Debemos calcular el pago de una persona empleada en nuestra empresa. El
 cálculo debe hacerse por la cantidad de horas trabajadas, y se le debe
@@ -2656,7 +2656,7 @@ b) Empleado/a con 30 horas o más y sin infantes a cargo.\\
 c) Empleado/a con menos de 30 horas y con infantes a cargo.\\
 d) Empleado/a con 30 horas o más y con infantes a cargo.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Ayuda: Flujo de la resolución}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Ayuda: Flujo de la resolución}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 \begin{figure}[H]
 
@@ -2743,7 +2743,7 @@ que con una única página en el manual de procedimientos será suficiente.
 Sin embargo, los algoritmos que venimos escribiendo se parecen más al
 primer procedimiento que al segundo. ¿Cómo podemos mejorarlos?
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Ciclos}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Ciclos}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 El \textbf{ciclo}, \textbf{bucle} o \textbf{sentencia iterativa} es una
 instrucción que permite ejecutar un bloque de código varias veces. En
@@ -2832,7 +2832,7 @@ Si le pasamos dos, los toma como \texttt{start} y \texttt{end}.\\
 Y si le pasamos tres, los toma como \texttt{start}, \texttt{end} y
 \texttt{step}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 ¿Te suena quizás a algo que ya vimos? Quizás\ldots{} ¿los \emph{slices}
 de las cadenas de caracteres?
@@ -3025,7 +3025,7 @@ El \textbf{paso} es la porción de código que modifica el estado previo.
 En general, se refiere a la modificación de las variables que participan
 de la condición.\\
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Con los ciclos \texttt{while} hay que tener mucho cuidado de no caer en
 un loop infinito. Esto sucede cuando la condición siempre es verdadera,
@@ -3174,7 +3174,7 @@ y 20, excepto los múltiplos de 4:
 19
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Notemos que tanto para el uso de \texttt{break} como de
 \texttt{continue}, si el código se encuentra con uno de ellos en la
@@ -3459,7 +3459,7 @@ del cuerpo es la que modifica la condición.
 \hfill\break
 \hfill\break
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Escribir un programa que pida al usuario un número entero positivo y
 muestre por pantalla todos los números pares desde 1 hasta ese número.\\
@@ -3468,7 +3468,7 @@ Resolver primero usando un ciclo \texttt{while} y luego usando un ciclo
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Escribir un programa que pida al usuario un número par. Mientras el
 usuario ingrese números que no cumplan con lo pedido, se lo debe volver
@@ -3509,7 +3509,7 @@ Los rangos se definen con la función \texttt{range()}, que recibe como
 parámetros el inicio, el fin y el paso. El inicio es opcional y por
 defecto es 0, el paso también es opcional y por defecto es 1.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Para más información de los rangos, ver la
 \protect\hyperlink{ciclo-for}{unidad 3}.
@@ -3636,7 +3636,7 @@ Existe también una cadena especial, la cadena vacía (ya la hemos visto
 antes), que es la cadena que no contiene ningún caracter entre las
 comillas. La longitud de la cadena vacía es 0.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip: Len e Índices de la Cadena}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip: Len e Índices de la Cadena}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Es interesante notar lo siguiente: si tenemos una cadena de caracteres
 de longitud \texttt{n}, los índices de la cadena van desde \texttt{0}
@@ -3907,7 +3907,7 @@ de la subcadena en la cadena, o produce un error si no se encuentra &
 \texttt{"Hola\ mundo".index("mundo")} devuelve \texttt{5} \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Te recomendamos que te animes a probar estas funciones, para ver qué
 hacen y terminar de entenderlas.
@@ -4092,7 +4092,7 @@ se llama \emph{desempaquetado}.
 3
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado!}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 Si estamos desempaquetando una tupla de largo \(k\) pero lo hacemos en
 una cantidad de variables menor a \(k\), se producirá un error.
@@ -4572,7 +4572,7 @@ Existe un método \texttt{reverse} (no disponible en Replit) que invierte
 la lista sin ordenarla. Una forma de reemplazarlo es usando
 \emph{slices}, como ya vimos: \texttt{lista{[}::-1{]}}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado con los Ordenamientos!}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Cuidado con los Ordenamientos!}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-warning-color!10!white]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4691,7 +4691,7 @@ son también listas. Entonces, \texttt{valores{[}0{]}} sería la lista
 2
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Generalización}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Generalización}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Este concepto de listas anidadas se puede generalizar a cualquier
 secuencia anidada. Por ejemplo, una tupla de tuplas, o una lista de
@@ -4792,7 +4792,7 @@ se puede representar como la lista de listas:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-important-color!10!white]
 
 Escribir una función que reciba una cantidad de filas y una cantidad de
 columnas y devuelva una matriz de ceros de ese tamaño. Usar listas por
@@ -4926,7 +4926,7 @@ elemento \texttt{x} en la secuencia \texttt{s} \\
 elemento \texttt{x} en la secuencia \texttt{s} \\
 \end{longtable}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Te recomendamos que pruebes cada una de estas operaciones con las
 distintas secuencias que vimos en este capítulo.
@@ -5022,7 +5022,7 @@ Luego, usar esa función como \emph{key} para ordenar la siguiente lista:
 ['Año', 'Messi', 'Arañas', 'Camiseta', 'Murcielago', 'Onomatopeya']
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-important-color!10!white]
 
 Escribir una función que cuente la cantidad de vocales que tiene una
 cadena de caracteres, y devuelva su valor. Debe considerar mayúsculas y
@@ -5088,7 +5088,7 @@ recorrerlo con un ciclo \texttt{for}:
 16
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Las funciones a pasar como parámetro a \texttt{map} devuelven
 \emph{valores transformados} del elemento original. Lo que hace
@@ -5144,7 +5144,7 @@ lo que podríamos recorrerlo con un ciclo \texttt{for}:
 4
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 Las funciones a pasar como parámetro a \texttt{filter} devuelven
 \emph{valores booleanos} del elemento original. Lo que hace
@@ -5200,7 +5200,7 @@ mayúscula.
 ['Pilar', 'Barbie', 'Violeta']
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 Tanto \texttt{map} como \texttt{filter} son aplicables a cualquiera de
 las secuencias vistas (rangos, cadena de caracteres, listas, tuplas).
@@ -5213,7 +5213,7 @@ las secuencias vistas (rangos, cadena de caracteres, listas, tuplas).
 
 \hfill\break
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Ejercicio Desafío}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-important-color!10!white]
 
 Se está procesando una base de datos para entrenar un modelo de Machine
 Learning. La base de datos contiene información de personas, y cada
@@ -5324,7 +5324,7 @@ Programación}
 
 \markright{Guía 1: Introducción a la Algoritmia y la Programación}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 En esta guía nos dedicaremos a introducirnos en los conceptos de
 programación y algoritmo. Para los primeros seis ejercicios, te
@@ -5606,7 +5606,7 @@ Control}\label{guuxeda-3-estructuras-de-control}}
   \end{enumerate}
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip: \texttt{in} y \texttt{not\ in}}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip: \texttt{in} y \texttt{not\ in}}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white]
 
 ¿Conocés el uso de \texttt{in}?
 
@@ -5879,10 +5879,10 @@ Error: El número debe ser positivo y estar entre 1 y 10
 \end{Shaded}
 
 \begin{verbatim}
-2
+6
 \end{verbatim}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, coltitle=black, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, arc=.35mm, breakable, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Tip: Librerías}, rightrule=.15mm, toprule=.15mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Tip: Librerías}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white]
 
 ¿Sabías que Python tiene muchas librerías que podés usar para hacer
 cosas más complejas? Por ejemplo, la librería \texttt{random} tiene
@@ -6109,7 +6109,7 @@ Datos}\label{guuxeda-4-tipos-de-estructuras-de-datos}}
   \texttt{\textquotesingle{}Hola\textquotesingle{}} debe devolver
   \texttt{3}. Restricción: no se permite el uso de ciclos for/while.
 \item
-  ** Desafío** (obligatorio):
+  \textbf{Desafío} (obligatorio):
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -6165,25 +6165,29 @@ Datos}\label{guuxeda-4-tipos-de-estructuras-de-datos}}
     Imprimir los números del 40 al 20 en orden decreciente, saltando de
     2 en 2.
   \item
-    Imprimir los números pares del 2 al 100 inclusive, saltando de 2 en
-    2.
-  \item
     Crear una lista con los números del 4 al 10. Luego, acceder con el
     \emph{índice} a los elementos que contienen a los números 4, 6 y 9 e
     impimirlos por pantalla. Pista: recordar que los índices comienzan
     en 0.
   \end{enumerate}
 \item
-  Escribir una función que reciba una lista y devuelva \texttt{True} si
-  su longitud es par y \texttt{False} si su longitud es impar.
-\item
-  Escribir una función que reciba una lista de números cualesquiera y
-  devuelva el elemento máximo y el mínimo.
-\item
-  Escribir una función que reciba una lista de números y devuelva otra
-  lista con los mismos números ordenados de menor a mayor. Por ejemplo,
-  si recibe \texttt{{[}5,\ 10,\ 7,\ 3{]}} debe devolver
-  \texttt{{[}3,\ 5,\ 7,\ 10{]}}.
+  Escribir una función que reciba:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Una lista y devuelva \texttt{True} si su longitud es par y
+    \texttt{False} si su longitud es impar.\\
+  \item
+    Una lista de números cualesquiera y devuelva el elemento máximo y el
+    mínimo.
+  \item
+    Una lista de números y devuelva otra lista con los mismos números
+    ordenados de menor a mayor. Por ejemplo, si recibe
+    \texttt{{[}5,\ 10,\ 7,\ 3{]}} debe devolver
+    \texttt{{[}3,\ 5,\ 7,\ 10{]}}.
+  \end{enumerate}
 \item
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -6211,7 +6215,7 @@ Datos}\label{guuxeda-4-tipos-de-estructuras-de-datos}}
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    Hacer una función que la lista por parámetro e imprima la
+    Hacer una función que reciba la lista por parámetro e imprima la
     información de cada país con el siguiente formato:
   \end{enumerate}
 
@@ -6220,7 +6224,8 @@ País: <nombre> - Copas: <cantidad>
 \end{verbatim}
 
   Si y sólo si el país es ``Argentina'', se debe imprimir el nombre con
-  3 estrellas: \texttt{"Argentina⭐⭐⭐"}. Usar el operador \texttt{+=}.
+  3 estrellas: \texttt{"Argentina⭐⭐⭐"}. Usar el operador abreviado
+  \texttt{+=}.
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -6254,8 +6259,10 @@ País: <nombre> - Copas: <cantidad>
   \end{enumerate}
 \item
   Escribir una función que reciba dos vectores y devuelva su producto
-  escalar. El producto escalar se calcula como:
-  \(v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\).
+  escalar. El producto escalar se calcula como: Siendo
+  \(v1 = (v1_1, v1_2, ..., v1_n)\) y \(v2 = (v2_1, v2_2, ..., v2_n)\),
+  entonces\\
+  \[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]
   Si los vectores no tienen las mismas dimensiones, la función debe
   devolver \texttt{None}.
 \item
@@ -6275,11 +6282,11 @@ País: <nombre> - Copas: <cantidad>
     parámetro. Devolver la tupla modificada.
   \item
     Repetir el ejercicio anterior, pero con una lista.
+  \item
+    Repetir ambos si ahora, en vez de recibir un índice, se recibe el
+    valor a eliminar. Si no se contiene al valor, se devuelve la
+    estructura tal cual se recibió.
   \end{enumerate}
-\item
-  Escribir una función que reciba una lista y un valor, y devuelva la
-  lista con dicho valor eliminado de sus elementos. Si la lista no
-  contiene al valor, se devuelve tal cual se recibió.
 \item
   Escribir una función que reciba una lista y un número \(n\). Para
   dicho número \(n\), debe imprimir los últimos \(n\) elementos de la
@@ -6299,37 +6306,151 @@ País: <nombre> - Copas: <cantidad>
   \texttt{{[}{[}1,\ 2{]},\ {[}3,\ 4{]}{]}} y la tupla \texttt{(0,\ 1)},
   debe devolver \texttt{2}.
 \item
+  Se tiene una lista de supermercado escrita como string con productos
+  separados por coma:
+  \texttt{"pan,\ arroz,\ pescado,\ jugo,\ fideos,..."}.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Escribir una función que reciba la cadena de caracteres de los
+    productos de supermercado y devuelva una lista con cada uno de los
+    productos por separado:
+    \texttt{{[}\textquotesingle{}pan\textquotesingle{},\ \textquotesingle{}arroz\textquotesingle{},\ \textquotesingle{}pescado\textquotesingle{},\ \textquotesingle{}jugo\textquotesingle{},\ \textquotesingle{}fideos\textquotesingle{},\ ...{]}}.
+  \item
+    Se tiene además otra cadena de caracteres con los precios de cada
+    producto: \texttt{"100,\ 50,\ 200,\ 80,\ 30,..."}. Escribir una
+    función que reciba ambas cadenas y devuelva una lista con tuplas de
+    (producto, precio):
+    \texttt{{[}(\textquotesingle{}pan\textquotesingle{},\ 100),\ (\textquotesingle{}arroz\textquotesingle{},\ 50),\ (\textquotesingle{}pescado\textquotesingle{},\ 200),\ (\textquotesingle{}jugo\textquotesingle{},\ 80),\ (\textquotesingle{}fideos\textquotesingle{},\ 30),\ ...{]}}.
+  \item
+    Para la función del punto anterior, escribir otra función que reciba
+    la lista de tuplas y devuelva el precio total de la lista de
+    compras.
+  \end{enumerate}
+\item
+  Se quiere crear una lista de supermercado, solicitándole al usuario
+  productos hasta que ingrese el valor `X'. La función debe devolver los
+  productos en un string, separados por comas. Ejemplo: si se ingresa
+  `pan', `arroz', `pescado', `X', debe devolver
+  \texttt{"pan,\ arroz,\ pescado"}.
+\item
+  Hacer una función que reciba una lista de palabras, las ordene en
+  orden alfabético y luego las una en un string separadas por espacios.
+  Ejemplo: si recibe
+  \texttt{{[}\textquotesingle{}hola\textquotesingle{},\ \textquotesingle{}como\textquotesingle{},\ \textquotesingle{}estas\textquotesingle{}{]}},
+  debe devolver \texttt{"como\ estas\ hola"}.
+\item
   \textbf{Desafio} (obligatorio): Escribir una función que reciba un
   tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el
   resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de
-  tamaño 4x4. \[$
+  tamaño 4x4. \[
   \begin{bmatrix}
   1 & 0 & 0 & 0 \\
   0 & 1 & 0 & 0 \\
   0 & 0 & 1 & 0 \\
   0 & 0 & 0 & 1 \\
   \end{bmatrix}
-  \]\$
+  \]
 \item
   \textbf{Desafio} (obligatorio): Escribir una función que reciba una
   matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz
   \texttt{{[}{[}1,\ 2,\ 3{]},\ {[}4,\ 5,\ 6{]}{]}}, debe devolver
-  \texttt{{[}{[}1,\ 4{]},\ {[}2,\ 5{]},\ {[}3,\ 6{]}{]}}. \$\$\$
-
-  \begin{bmatrix}
-  1 & 2 & 3  \\
-  4 & 5 & 6  \\
-  \end{bmatrix}
+  \texttt{{[}{[}1,\ 4{]},\ {[}2,\ 5{]},\ {[}3,\ 6{]}{]}}.
 \end{enumerate}
 
-\implies
+Si se recibe:
+
+\begin{bmatrix}
+1 & 2 & 3  \\
+4 & 5 & 6  \\
+\end{bmatrix}
+
+Se debe devolver:
+
 \begin{bmatrix}
 1 & 4 \\
 2 & 5 \\
 3 & 6 \\
 \end{bmatrix}
 
-\$\$\$
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\item
+  \textbf{Desafio} (no obligatorio): Agenda Simplificada\\
+  Escribir una función que reciba una cadena a buscar y una lista de
+  tuplas \texttt{(nombre\_completo,\ telefono)}, y busque dentro de la
+  lista todas las entradas que contengan en el nombre completo la cadena
+  recibida (puede ser el nombre, el apellido o sólo una parte de
+  cualquiera de ellos). Debe devolver una lista con todas las tuplas
+  encontradas.
+\item
+  \textbf{Desafio} (no obligatorio): Sistema de facturación
+  simplificado.\\
+  Se cuenta con una lista ordenada de productos con tuplas de
+  (identificador, descripción, precio), y una lista de los productos a
+  facturar, con tuplas de (identificador, cantidad).
+\end{enumerate}
+
+Se desea generar una factura que incluya la cantidad, la descripción, el
+precio unitario y el pre- cio total de cada producto comprado, y al
+final imprima el total general.
+
+Escribir una función que reciba ambas listas e imprima por pantalla la
+factura solicitada.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  \textbf{Super Desafio} (no obligatorio): Batalla Naval\\
+  Se tiene una matriz de 10x10 que representa un tablero. Cada celda
+  contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que
+  en este caso, sólo hay barcos unitarios que ocupan un espacio).
+\end{enumerate}
+
+La posición de los barcos se representa con tuplas de (fila, columna).
+Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa
+con la tupla (1, 3).
+
+Escribir una función que cree un tablero con 10 barcos ubicados
+aleatoriamente (usar la libreria \texttt{random}), y que permita al
+usuario intentar adivinar dónde están.
+
+El usuario luego ingresa una posición, y la máquina indica si había un
+barco en esa posición (mostrando un mensaje por pantalla ``¡Hundido!'')
+o no (``¡Agua!'').
+
+El usuario gana cuando hunde todos los barcos del tablero. Si se
+equivoca más de 5 veces, pierde.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, opacityback=0, opacitybacktitle=0.6, bottomrule=.15mm, toprule=.15mm, coltitle=black, breakable, colback=white, leftrule=.75mm, titlerule=0mm, bottomtitle=1mm, toptitle=1mm, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Batalla Naval: Modo Supervivencia}, arc=.35mm, left=2mm, colbacktitle=quarto-callout-important-color!10!white]
+
+¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario
+también pueda poner barcos y la máquina intente adivinar dónde están.
+Una posibilidad es que el usuario tenga su propio tablero en un papel, y
+una vez cada uno, la máquina y el usuario elijan una posición para
+atacar.
+
+Te dejamos unos tips:
+
+\begin{itemize}
+\tightlist
+\item
+  Las posiciones son limitadas por el tablero 10x10
+\item
+  Las posiciones no deberían repetirse
+\end{itemize}
+
+¿Se te ocurre una forma fácil de generar y guardar todas las posiciones
+posibles del tablero, e ir sacando de a una para que no se repitan?
+¿Quién pensás que ganaría, la máquina o el usuario? En este caso, el
+usuario y la máquina tienen intentos ilimitados itercalados hasta que
+alguno de los dos gane.
+
+\end{tcolorbox}
 
 
 

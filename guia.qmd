@@ -484,21 +484,23 @@ $$
 
 17. **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
 
-Si se recibe:
+    Si se recibe:
+    $$
+    \begin{bmatrix}
+    1 & 2 & 3  \\
+    4 & 5 & 6  \\
+    \end{bmatrix}
+    $$
 
-\begin{bmatrix}
-1 & 2 & 3  \\
-4 & 5 & 6  \\
-\end{bmatrix}
+    Se debe devolver:
 
-
-Se debe devolver:
-
-\begin{bmatrix}
-1 & 4 \\
-2 & 5 \\
-3 & 6 \\
-\end{bmatrix}
+    $$
+    \begin{bmatrix}
+    1 & 4 \\
+    2 & 5 \\
+    3 & 6 \\
+    \end{bmatrix}
+    $$
 
 18. **Desafio** (no obligatorio): Agenda Simplificada\
 Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nombre_completo, telefono)`, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.
@@ -506,32 +508,32 @@ Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nom
 19. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
 Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).
 
-Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el pre-
-cio total de cada producto comprado, y al final imprima el total general.
+    Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.
 
-Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
+    Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
 
 20. **Super Desafio** (no obligatorio): Batalla Naval\
-Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).
 
-La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3). 
+    Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).
 
-Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`), y que permita al usuario intentar adivinar dónde están.
+    La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3). 
 
-El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
+    Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`), y que permita al usuario intentar adivinar dónde están.
 
-El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.
+    El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
 
-:::{.callout-important}
-### Batalla Naval: Modo Supervivencia
+    El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.
 
-¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.
+    :::{.callout-important collapse="true"}
+    ### Batalla Naval: Modo Supervivencia
 
-Te dejamos unos tips:
+    ¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.
 
-- Las posiciones son limitadas por el tablero 10x10
-- Las posiciones no deberían repetirse
+    Te dejamos unos tips:
 
-¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
-En este caso, el usuario y la máquina tienen intentos ilimitados itercalados hasta que alguno de los dos gane.
-:::
+    - Las posiciones son limitadas por el tablero 10x10
+    - Las posiciones no deberían repetirse
+
+    ¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
+    En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.
+    :::

@@ -279,7 +279,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para más información de los rangos, ver la <a href="#ciclo-for">unidad 3</a>.</p>
+<p>Para más información de los rangos, ver la <a href="unidad_3.html#ciclo-for">unidad 3</a>.</p>
 </div>
 </div>
 </section>
@@ -462,7 +462,7 @@ o</code></pre>
 <section id="buscando-subcadenas" class="level4" data-number="4.3.1.3">
 <h4 data-number="4.3.1.3" class="anchored" data-anchor-id="buscando-subcadenas"><span class="header-section-number">4.3.1.3</span> Buscando Subcadenas</h4>
 <p>El operador <code>in</code> nos permite saber si una subcadena se encuentra dentro de otra cadena. En la guía de la unidad 3 te pedimos que investigues acerca del operador <code>in</code> y <code>not in</code> para el ejercicio de vocales y consonantes.</p>
-<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
+<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="unidad_3.html#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Hola"</span> <span class="kw">in</span> <span class="st">"Hola Mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1171,6 +1171,26 @@ Ejemplo: <code>matrix(2,3)</code> devuelve <code>[[0, 0, 0], [0, 0, 0]]</code></
 <p>La sintaxis del método join es:</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>separador<span class="op">&gt;</span>.join(<span class="op">&lt;</span>lista<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio <code>" "</code>, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Adicional a las estructuras vistas (cadenas, rangos, listas y tuplas), también tenemos los <code>sets</code>. Los sets <strong>no</strong> son secuencias, y por lo tanto no tienen índices y no se pueden <em>slicear</em>. Sin embargo, son muy útiles para realizar operaciones de conjuntos, como unión, intersección, diferencia, etc.<br>
+</p>
+<p>La gracia de un set es que es desordenado (no tiene orden predeterminado) pero cada uno de sus elementos es único. Por lo que agregar varias veces el mismo elemento a un set (<code>set.add(elem)</code>) no tiene efecto, sólo se agrega la primera vez.<br>
+</p>
+<p>De sets vamos a ver más en la siguiente unidad, junto con los diccionarios.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="operaciones-de-las-secuencias" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="operaciones-de-las-secuencias"><span class="header-section-number">4.7</span> Operaciones de las Secuencias</h2>
@@ -1290,7 +1310,7 @@ Tip
 <p><br>
 </p>
 <blockquote class="blockquote">
-<p><strong>Ejemplo</strong> Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.<br>
+<p><strong>Ejercicio</strong> Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.<br>
 Luego, usar esa función como <em>key</em> para ordenar la siguiente lista: <code>["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]</code>.</p>
 </blockquote>
 <div class="cell" data-execution_count="51">

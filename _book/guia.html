@@ -387,25 +387,25 @@ Tip: <code>in</code> y <code>not in</code>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="256">
+<div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="257">
+<div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="258">
+<div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="259">
+<div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>False</code></pre>
 </div>
 </div>
@@ -505,7 +505,7 @@ Esa jugada no está disponible.</code></pre></li>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>6</code></pre>
+<pre><code>9</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -666,35 +666,57 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 0 &amp; 0 &amp; 0 &amp; 1 \\
 \end{bmatrix}
 \]</span></p></li>
-<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz <code>[[1, 2, 3], [4, 5, 6]]</code>, debe devolver <code>[[1, 4], [2, 5], [3, 6]]</code>.</p></li>
-</ol>
-<p>Si se recibe:</p>
-<span class="math display">\[\begin{bmatrix}
+<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz <code>[[1, 2, 3], [4, 5, 6]]</code>, debe devolver <code>[[1, 4], [2, 5], [3, 6]]</code>.</p>
+<p>Si se recibe: <span class="math display">\[
+\begin{bmatrix}
 1 &amp; 2 &amp; 3  \\
 4 &amp; 5 &amp; 6  \\
-\end{bmatrix}\]</span>
+\end{bmatrix}
+\]</span></p>
 <p>Se debe devolver:</p>
-<span class="math display">\[\begin{bmatrix}
+<p><span class="math display">\[
+\begin{bmatrix}
 1 &amp; 4 \\
 2 &amp; 5 \\
 3 &amp; 6 \\
-\end{bmatrix}\]</span>
-<ol start="18" type="1">
+\end{bmatrix}
+\]</span></p></li>
 <li><p><strong>Desafio</strong> (no obligatorio): Agenda Simplificada<br>
 Escribir una función que reciba una cadena a buscar y una lista de tuplas <code>(nombre_completo, telefono)</code>, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.</p></li>
 <li><p><strong>Desafio</strong> (no obligatorio): Sistema de facturación simplificado.<br>
-Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).</p></li>
-</ol>
-<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el pre- cio total de cada producto comprado, y al final imprima el total general.</p>
-<p>Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.</p>
-<ol start="20" type="1">
-<li><strong>Super Desafio</strong> (no obligatorio): Batalla Naval<br>
-Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).</li>
-</ol>
+Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).</p>
+<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.</p>
+<p>Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.</p></li>
+<li><p><strong>Super Desafio</strong> (no obligatorio): Batalla Naval<br>
+</p>
+<p>Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).</p>
 <p>La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3).</p>
 <p>Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria <code>random</code>), y que permita al usuario intentar adivinar dónde están.</p>
-<p>El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla “¡Hundido!”) o no (“¡Agua!”“).</p>
+<p>El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla “¡Hundido!”) o no (“¡Agua!”).</p>
 <p>El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Batalla Naval: Modo Supervivencia
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.</p>
+<p>Te dejamos unos tips:</p>
+<ul>
+<li>Las posiciones son limitadas por el tablero 10x10</li>
+<li>Las posiciones no deberían repetirse</li>
+</ul>
+<p>¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario? En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.</p>
+</div>
+</div>
+</div></li>
+</ol>
 
 
 </section>

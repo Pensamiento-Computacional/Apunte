@@ -693,6 +693,15 @@ La sintaxis del método join es:
 
 El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio `" "`, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.
 
+:::{.callout-note collapse="true"}
+### Set
+Adicional a las estructuras vistas (cadenas, rangos, listas y tuplas), también tenemos los `sets`. Los sets **no** son secuencias, y por lo tanto no tienen índices y no se pueden *slicear*. Sin embargo, son muy útiles para realizar operaciones de conjuntos, como unión, intersección, diferencia, etc.\
+
+La gracia de un set es que es desordenado (no tiene orden predeterminado) pero cada uno de sus elementos es único. Por lo que agregar varias veces el mismo elemento a un set (`set.add(elem)`) no tiene efecto, sólo se agrega la primera vez.\
+
+De sets vamos a ver más en la siguiente unidad, junto con los diccionarios.
+:::
+
 ## Operaciones de las Secuencias
 Tanto las cadenas, como las tuplas y las listas son secuencias, y por lo tanto comparten una serie de operaciones que podemos realizar sobre ellas.
 
@@ -753,7 +762,7 @@ def ingresar_numeros():
 
 \
 
-> **Ejemplo**
+> **Ejercicio**
 Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.\
 Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.
 
