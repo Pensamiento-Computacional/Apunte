@@ -478,7 +478,9 @@ o</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Ejercicio</strong> 1. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[:]</code> 2. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[j:]</code> con <span class="math inline">\(j\)</span> un número entero negativo.</p>
+<p><strong>Ejercicio</strong><br>
+1. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[:]</code><br>
+2. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[j:]</code> con <span class="math inline">\(j\)</span> un número entero negativo.</p>
 </blockquote>
 </section>
 <section id="inmutabilidad" class="level4" data-number="4.3.1.4">
@@ -521,7 +523,7 @@ o</code></pre>
 </tr>
 <tr class="odd">
 <td><code>find(subcadena)</code></td>
-<td>Devuelve el índice de la primera aparición de la subcadena en la cadena, o <code>-1</code> si no se encuentra</td>
+<td>Devuelve el índice de la primera aparición de la subcadena en la cadena, o <code>-1</code> si no se encuentra. Cada vez que se llama, devuelve la siguiente aparición</td>
 <td><code>"Hola mundo".find("mundo")</code> devuelve <code>5</code></td>
 </tr>
 <tr class="even">
@@ -586,6 +588,19 @@ o</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recomendación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.</p>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -963,7 +978,7 @@ Si el valor se encuentra repetido, se devuelve la posición de la primera aparic
 </div>
 <p>Existe un método <code>reverse</code> (no disponible en Replit) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando <em>slices</em>, como ya vimos: <code>lista[::-1]</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -972,7 +987,7 @@ Si el valor se encuentra repetido, se devuelve la posición de la primera aparic
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Todos los elementos de la secuencia deben ser comparables entre sí. Si no lo son, se producirá un error. Por ejemplo, no se puede ordenar una lista que contenga números y strings.</p></li>
@@ -1156,6 +1171,26 @@ Ejemplo: <code>matrix(2,3)</code> devuelve <code>[[0, 0, 0], [0, 0, 0]]</code></
 <p>La sintaxis del método join es:</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>separador<span class="op">&gt;</span>.join(<span class="op">&lt;</span>lista<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio <code>" "</code>, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Adicional a las estructuras vistas (cadenas, rangos, listas y tuplas), también tenemos los <code>sets</code>. Los sets <strong>no</strong> son secuencias, y por lo tanto no tienen índices y no se pueden <em>slicear</em>. Sin embargo, son muy útiles para realizar operaciones de conjuntos, como unión, intersección, diferencia, etc.<br>
+</p>
+<p>La gracia de un set es que es desordenado (no tiene orden predeterminado) pero cada uno de sus elementos es único. Por lo que agregar varias veces el mismo elemento a un set (<code>set.add(elem)</code>) no tiene efecto, sólo se agrega la primera vez.<br>
+</p>
+<p>De sets vamos a ver más en la siguiente unidad, junto con los diccionarios.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="operaciones-de-las-secuencias" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="operaciones-de-las-secuencias"><span class="header-section-number">4.7</span> Operaciones de las Secuencias</h2>
@@ -1259,7 +1294,7 @@ Tip
 </div>
 <p>Esta última es particularmente útil cuando necesitamos trabajar con una tupla, pero como son inmutables, la convertimos a lista para manipularla sin problemas.</p>
 <blockquote class="blockquote">
-<p><strong>Ejemplo</strong> Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.</p>
+<p><strong>Ejercicio</strong> Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.</p>
 </blockquote>
 <div class="sourceCode" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ingresar_numeros():</span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>    numeros <span class="op">=</span> []</span>
@@ -1275,7 +1310,7 @@ Tip
 <p><br>
 </p>
 <blockquote class="blockquote">
-<p><strong>Ejemplo</strong> Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.<br>
+<p><strong>Ejercicio</strong> Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.<br>
 Luego, usar esa función como <em>key</em> para ordenar la siguiente lista: <code>["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]</code>.</p>
 </blockquote>
 <div class="cell" data-execution_count="51">

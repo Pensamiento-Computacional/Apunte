@@ -212,6 +212,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#decisiones" id="toc-decisiones" class="nav-link" data-scroll-target="#decisiones">1. Decisiones</a></li>
   <li><a href="#ciclos" id="toc-ciclos" class="nav-link" data-scroll-target="#ciclos">2. Ciclos</a></li>
   </ul></li>
+  <li><a href="#guía-4-tipos-de-estructuras-de-datos" id="toc-guía-4-tipos-de-estructuras-de-datos" class="nav-link" data-scroll-target="#guía-4-tipos-de-estructuras-de-datos">Guía 4: Tipos de Estructuras de Datos</a>
+  <ul class="collapse">
+  <li><a href="#cadenas-de-caracteres" id="toc-cadenas-de-caracteres" class="nav-link" data-scroll-target="#cadenas-de-caracteres">Cadenas de caracteres</a></li>
+  <li><a href="#rangos-tuplas-y-listas" id="toc-rangos-tuplas-y-listas" class="nav-link" data-scroll-target="#rangos-tuplas-y-listas">Rangos, Tuplas y Listas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -500,7 +505,7 @@ Esa jugada no está disponible.</code></pre></li>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>7</code></pre>
+<pre><code>8</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -556,6 +561,161 @@ Ingresá 1 fichas para comenzar: F
 <li>Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.<br>
 Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o “*“. De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.</li>
 </ol></li>
+</ol>
+</section>
+</section>
+<section id="guía-4-tipos-de-estructuras-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="guía-4-tipos-de-estructuras-de-datos">Guía 4: Tipos de Estructuras de Datos</h2>
+<section id="cadenas-de-caracteres" class="level3">
+<h3 class="anchored" data-anchor-id="cadenas-de-caracteres">Cadenas de caracteres</h3>
+<ol type="1">
+<li><p>Escribir funciones que dada una cadena y un caracter:</p>
+<ol type="a">
+<li><p>Inserte el caracter entre cada letra de la cadena. Ejemplo: <code>'separar'</code> y <code>'-'</code> debería devolver <code>'s-e-p-a-r-a-r'</code>.<br>
+</p></li>
+<li><p>Reemplace todos los espacios por el caracter. Ejemplo: <code>'mi archivo de texto.txt'</code> y <code>'_</code>’ debería devolver <code>'mi_archivo_de_texto.txt'</code>.<br>
+</p></li>
+<li><p>Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: <code>'su clave es: 1540'</code> y <code>'*'</code> debería devolver <code>'su clave es: ****'</code>.<br>
+</p></li>
+<li><p>Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: <code>'2552552550'</code> y <code>'.'</code> debería devolver `’</p></li>
+<li><p>Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: <code>'su clave es: 1540'</code>, <code>'*'</code> y <code>3</code> debería devolver <code>'su clave es: ***0'</code>.</p></li>
+</ol></li>
+<li><p>Escribir una función que reciba una cadena que contiene un largo número entero y devuelva una cadena con el número y las separaciones de miles. Por ejemplo, si recibe <code>1234567890</code>, debe devolver <code>1.234.567.890</code>. Cuidado: no es lo mismo <code>123.456.789.0</code> que <code>1.234.567.890</code>. Tienen que ser separaciones de miles y quedar un número válido.</p></li>
+<li><p>Escribir funciones que dada una cadena de caracteres:</p>
+<ol type="a">
+<li>Devuelva la primera letra de cada palabra. Ejemplo: si se recibe <code>Ciclo Básico Común</code> se debe devolver <code>CBC</code>.</li>
+<li>Indique si se trata de un palíndromo. Por ejemplo, <code>anita lava la tina</code> es un palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda).</li>
+</ol></li>
+<li><p>Escribir funciones que dadas dos cadenas de caracteres:</p>
+<ol type="a">
+<li>Indique si la segunda cadena es subcadena de la primera. Por ejemplo, <code>'compu'</code> es subcadena de <code>'computacional'</code>.</li>
+<li>Devuelva la que sea anterior en orden alfábetico. Por ejemplo, si recibe <code>'kde'</code> y <code>'gnome'</code> debe devolver <code>'gnome'</code>.</li>
+</ol></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: <code>'Hola'</code> debe devolver <code>['H', 'O', 'L', 'A']</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: <code>'Algoritmos'</code> debe devolver <code>('l', 'g', 'r', 't', 'm', 's')</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
+<ol type="a">
+<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: <code>index</code> devolverá un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
+<li><p>Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>4</code>. Restricción: No se puede usar el método <code>len</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar <code>lambda</code>.</p></li>
+</ol>
+</section>
+<section id="rangos-tuplas-y-listas" class="level3">
+<h3 class="anchored" data-anchor-id="rangos-tuplas-y-listas">Rangos, Tuplas y Listas</h3>
+<ol type="1">
+<li><p>Usar un rango para:</p>
+<ol type="a">
+<li>Imprimir los números del 10 al 50 inclusive, saltando de 5 en 5.</li>
+<li>Imprimir los números del 40 al 20 en orden decreciente, saltando de 2 en 2.</li>
+<li>Crear una lista con los números del 4 al 10. Luego, acceder con el <em>índice</em> a los elementos que contienen a los números 4, 6 y 9 e impimirlos por pantalla. Pista: recordar que los índices comienzan en 0.</li>
+</ol></li>
+<li><p>Escribir una función que reciba:</p>
+<ol type="a">
+<li>Una lista y devuelva <code>True</code> si su longitud es par y <code>False</code> si su longitud es impar.<br>
+</li>
+<li>Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.</li>
+<li>Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe <code>[5, 10, 7, 3]</code> debe devolver <code>[3, 5, 7, 10]</code>.</li>
+</ol></li>
+<li><ol type="a">
+<li><p>Escribir una función que reciba una lista de nombres y un número, que representa el cupo. La función debe devolver en una lista a los nombres que no pudieron entrar al curso por falta de cupo. Ejemplo: <code>chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)</code> debe devolver <code>['Sol', 'Lucía']</code>.</p></li>
+<li><p>Modificar la función anterior para que devuelva únicamente a la última persona de la lista de la gente que pudo entrar. Ejemplo: <code>chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)</code> debe devolver <code>'Priscila'</code>, porque es la última que tuvo cupo.</p></li>
+</ol></li>
+<li><p>Dada la lista de tuplas <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]</code>, donde cada tupla contiene un país y la cantidad de mundiales que ganaron:</p>
+<ol type="a">
+<li>Hacer una función que reciba la lista por parámetro e imprima la información de cada país con el siguiente formato:</li>
+</ol>
+<pre><code>País: &lt;nombre&gt; - Copas: &lt;cantidad&gt;</code></pre>
+<p>Si y sólo si el país es “Argentina”, se debe imprimir el nombre con 3 estrellas: <code>"Argentina⭐⭐⭐"</code>. Usar el operador abreviado <code>+=</code>.</p>
+<ol start="2" type="a">
+<li><p>Hacer una función que reciba la lista por parámetro y devuelva la cantidad de mundiales que ganaron entre todos los países. Ejemplo: <code>contar_mundiales([("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)])</code> debe devolver <code>8</code>.</p></li>
+<li><p>Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.</p></li>
+<li><p>Hacer una función que reciba la lista por parámetro y devuelva una lista con los países que tienen más de una copa ganada.</p></li>
+</ol></li>
+<li><p>Escribir una función que reciba dos fichas de dominó y determine si <em>encajan</em> o no entre sí.</p>
+<ol type="a">
+<li>Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: <code>(3,4)</code> y <code>(5,4)</code>.</li>
+<li>Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: <code>'3-4'</code> y <code>'5-4'</code>.</li>
+</ol></li>
+<li><p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
+<span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p></li>
+<li><p>Se tiene una base de datos con nombres de libros de la siguiente forma <code>["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]</code>, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.</p></li>
+<li><ol type="a">
+<li><p>Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.</p></li>
+<li><p>Repetir el ejercicio anterior, pero con una lista.</p></li>
+<li><p>Repetir ambos si ahora, en vez de recibir un índice, se recibe el valor a eliminar. Si no se contiene al valor, se devuelve la estructura tal cual se recibió.</p></li>
+</ol></li>
+<li><p>Escribir una función que reciba una lista y un número <span class="math inline">\(n\)</span>. Para dicho número <span class="math inline">\(n\)</span>, debe imprimir los últimos <span class="math inline">\(n\)</span> elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe <code>[1, 2, 3, 4, 5]</code> y <code>n = 2</code>, debe imprimir <code>5</code>, <code>4</code> y devolver <code>[1, 2, 3]</code>.</p></li>
+<li><p>Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.</p></li>
+<li><p>Escribir una función que dado un valor <span class="math inline">\(n\)</span>, devuelva una lista con los números del 1 a <span class="math inline">\(n\)</span>. Restricción: usar listas por comprensión.</p></li>
+<li><p>Escribir una función que devuelva una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz <code>[[1, 2], [3, 4]]</code> y la tupla <code>(0, 1)</code>, debe devolver <code>2</code>.</p></li>
+<li><p>Se tiene una lista de supermercado escrita como string con productos separados por coma: <code>"pan, arroz, pescado, jugo, fideos,..."</code>.</p>
+<ol type="a">
+<li><p>Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: <code>['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]</code>.</p></li>
+<li><p>Se tiene además otra cadena de caracteres con los precios de cada producto: <code>"100, 50, 200, 80, 30,..."</code>. Escribir una función que reciba ambas cadenas y devuelva una lista con tuplas de (producto, precio): <code>[('pan', 100), ('arroz', 50), ('pescado', 200), ('jugo', 80), ('fideos', 30), ...]</code>.</p></li>
+<li><p>Para la función del punto anterior, escribir otra función que reciba la lista de tuplas y devuelva el precio total de la lista de compras.</p></li>
+</ol></li>
+<li><p>Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor ‘X’. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa ‘pan’, ‘arroz’, ‘pescado’, ‘X’, debe devolver <code>"pan, arroz, pescado"</code>.</p></li>
+<li><p>Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe <code>['hola', 'como', 'estas']</code>, debe devolver <code>"como estas hola"</code>.</p></li>
+<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4. <span class="math display">\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\]</span></p></li>
+<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz <code>[[1, 2, 3], [4, 5, 6]]</code>, debe devolver <code>[[1, 4], [2, 5], [3, 6]]</code>.</p>
+<p>Si se recibe: <span class="math display">\[
+\begin{bmatrix}
+1 &amp; 2 &amp; 3  \\
+4 &amp; 5 &amp; 6  \\
+\end{bmatrix}
+\]</span></p>
+<p>Se debe devolver:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6 \\
+\end{bmatrix}
+\]</span></p></li>
+<li><p><strong>Desafio</strong> (no obligatorio): Agenda Simplificada<br>
+Escribir una función que reciba una cadena a buscar y una lista de tuplas <code>(nombre_completo, telefono)</code>, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.</p></li>
+<li><p><strong>Desafio</strong> (no obligatorio): Sistema de facturación simplificado.<br>
+Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).</p>
+<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.</p>
+<p>Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.</p></li>
+<li><p><strong>Super Desafio</strong> (no obligatorio): Batalla Naval<br>
+</p>
+<p>Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).</p>
+<p>La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3).</p>
+<p>Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria <code>random</code>), y que permita al usuario intentar adivinar dónde están.</p>
+<p>El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla “¡Hundido!”) o no (“¡Agua!”).</p>
+<p>El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Batalla Naval: Modo Supervivencia
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.</p>
+<p>Te dejamos unos tips:</p>
+<ul>
+<li>Las posiciones son limitadas por el tablero 10x10</li>
+<li>Las posiciones no deberían repetirse</li>
+</ul>
+<p>¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario? En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.</p>
+</div>
+</div>
+</div></li>
 </ol>
 
 
