@@ -362,3 +362,162 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
     b. Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.\
     Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o "*". De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.
+
+## Guía 4: Tipos de Estructuras de Datos
+
+### Cadenas de caracteres
+
+1. Escribir funciones que dada una cadena y un caracter:
+
+    a. Inserte el caracter entre cada letra de la cadena. Ejemplo: `'separar'` y `'-'` debería devolver `'s-e-p-a-r-a-r'`.\
+    b. Reemplace todos los espacios por el caracter. Ejemplo: `'mi archivo de texto.txt'` y `'_`' debería devolver `'mi_archivo_de_texto.txt'`.\
+    c. Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: `'su clave es: 1540'` y `'*'` debería devolver `'su clave es: ****'`.\
+    d. Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: `'2552552550'` y `'.'` debería devolver `'
+
+    e. Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: `'su clave es: 1540'`, `'*'` y `3` debería devolver `'su clave es: ***0'`.
+
+2. Escribir una función que reciba una cadena que contiene un largo número entero y devuelva una cadena con el número y las separaciones de miles. Por ejemplo, si recibe `1234567890`, debe devolver `1.234.567.890`. Cuidado: no es lo mismo `123.456.789.0` que `1.234.567.890`. Tienen que ser separaciones de miles y quedar un número válido.
+
+3. Escribir funciones que dada una cadena de caracteres:
+
+    a. Devuelva la primera letra de cada palabra. Ejemplo: si se recibe `Ciclo Básico Común` se debe devolver `CBC`.
+    b. Indique si se trata de un palíndromo. Por ejemplo, `anita lava la tina` es un palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda).
+
+4. Escribir funciones que dadas dos cadenas de caracteres:
+
+    a. Indique si la segunda cadena es subcadena de la primera. Por ejemplo, `'compu'` es subcadena de `'computacional'`.
+    b. Devuelva la que sea anterior en orden alfábetico. Por ejemplo, si recibe `'kde'` y `'gnome'` debe devolver `'gnome'`.
+
+5. Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: `'Hola'` debe devolver `['H', 'O', 'L', 'A']`. Restricción: no se permite el uso de ciclos for/while.
+
+6. Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: `'Algoritmos'` debe devolver `('l', 'g', 'r', 't', 'm', 's')`. Restricción: no se permite el uso de ciclos for/while.
+
+7. Escribir una función que, dada una cadena de caracteres, devuelva el número de índice del último caracter. Por ejemplo, para la cadena `'Hola'` debe devolver `3`. Restricción: no se permite el uso de ciclos for/while.
+
+8. **Desafío** (obligatorio):
+
+    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: `index` devolverá un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
+
+    b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
+
+9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar `lambda`.
+
+### Rangos, Tuplas y Listas
+
+1. Usar un rango para:
+
+    a. Imprimir los números del 10 al 50 inclusive, saltando de 5 en 5.
+    b. Imprimir los números del 40 al 20 en orden decreciente, saltando de 2 en 2.
+    c. Crear una lista con los números del 4 al 10. Luego, acceder con el *índice* a los elementos que contienen a los números 4, 6 y 9 e impimirlos por pantalla. Pista: recordar que los índices comienzan en 0.
+
+2. Escribir una función que reciba:
+
+    a. Una lista y devuelva `True` si su longitud es par y `False` si su longitud es impar.\
+    b. Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.
+    c. Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe `[5, 10, 7, 3]` debe devolver `[3, 5, 7, 10]`.
+
+3. a. Escribir una función que reciba una lista de nombres y un número, que representa el cupo. La función debe devolver en una lista a los nombres que no pudieron entrar al curso por falta de cupo. Ejemplo: `chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)` debe devolver `['Sol', 'Lucía']`.
+
+    b. Modificar la función anterior para que devuelva únicamente a la última persona de la lista de la gente que pudo entrar. Ejemplo: `chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)` debe devolver `'Priscila'`, porque es la última que tuvo cupo.
+
+4. Dada la lista de tuplas `[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]`, donde cada tupla contiene un país y la cantidad de mundiales que ganaron:
+
+    a. Hacer una función que reciba la lista por parámetro e imprima la información de cada país con el siguiente formato:
+    ```
+    País: <nombre> - Copas: <cantidad>
+    ```
+
+    Si y sólo si el país es "Argentina", se debe imprimir el nombre con 3 estrellas: `"Argentina⭐⭐⭐"`. Usar el operador abreviado `+=`.
+
+    b. Hacer una función que reciba la lista por parámetro y devuelva la cantidad de mundiales que ganaron entre todos los países. Ejemplo: `contar_mundiales([("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)])` debe devolver `8`.
+
+    c. Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.
+
+    d. Hacer una función que reciba la lista por parámetro y devuelva una lista con los países que tienen más de una copa ganada.
+
+5. Escribir una función que reciba dos fichas de dominó y determine si *encajan* o no entre sí. 
+
+    a. Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: `(3,4)`  y `(5,4)`.
+    b. Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: `'3-4'` y `'5-4'`.
+
+6. Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
+$$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
+Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
+
+7. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.
+
+8. a. Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.
+
+    b. Repetir el ejercicio anterior, pero con una lista.
+
+    c. Repetir ambos si ahora, en vez de recibir un índice, se recibe el valor a eliminar. Si no se contiene al valor, se devuelve la estructura tal cual se recibió.
+
+9. Escribir una función que reciba una lista y un número $n$. Para dicho número $n$, debe imprimir los últimos $n$ elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe `[1, 2, 3, 4, 5]` y `n = 2`, debe imprimir `5`, `4` y devolver `[1, 2, 3]`.
+
+10. Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.
+
+11. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$. Restricción: usar listas por comprensión.
+
+12. Escribir una función que devuelva una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
+
+13. Se tiene una lista de supermercado escrita como string con productos separados por coma: `"pan, arroz, pescado, jugo, fideos,..."`. 
+
+    a. Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: `['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]`.
+
+    b. Se tiene además otra cadena de caracteres con los precios de cada producto: `"100, 50, 200, 80, 30,..."`. Escribir una función que reciba ambas cadenas y devuelva una lista con tuplas de (producto, precio): `[('pan', 100), ('arroz', 50), ('pescado', 200), ('jugo', 80), ('fideos', 30), ...]`.
+
+    c. Para la función del punto anterior, escribir otra función que reciba la lista de tuplas y devuelva el precio total de la lista de compras.
+
+14. Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor 'X'. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa 'pan', 'arroz', 'pescado', 'X', debe devolver `"pan, arroz, pescado"`.
+
+15. Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe `['hola', 'como', 'estas']`, debe devolver `"como estas hola"`.
+
+16. **Desafio** (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+17. **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
+
+Si se recibe:
+
+\begin{bmatrix}
+1 & 2 & 3  \\
+4 & 5 & 6  \\
+\end{bmatrix}
+
+
+Se debe devolver:
+
+\begin{bmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6 \\
+\end{bmatrix}
+
+18. **Desafio** (no obligatorio): Agenda Simplificada\
+Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nombre_completo, telefono)`, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.
+
+19. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
+Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).
+
+Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el pre-
+cio total de cada producto comprado, y al final imprima el total general.
+
+Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
+
+20. **Super Desafio** (no obligatorio): Batalla Naval\
+Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).
+
+La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3). 
+
+Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`), y que permita al usuario intentar adivinar dónde están.
+
+El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
+
+El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.

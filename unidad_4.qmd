@@ -146,8 +146,8 @@ if "Hola" in "Hola Mundo":
     print("Se encontró una subcadena!")
 ```
 
->**Ejercicio**
-1. Investigar, para un string dado $s$, cuál es el resultado del slice `s[:]`
+>**Ejercicio**\
+1. Investigar, para un string dado $s$, cuál es el resultado del slice `s[:]`\
 2. Investigar, para un string dado $s$, cuál es el resultado del slice `s[j:]` con $j$ un número entero negativo.
 
 #### Inmutabilidad
@@ -177,7 +177,7 @@ Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten 
 |---|---|---|
 | `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
 | `count(subcadena)` | Devuelve la cantidad de veces que aparece la subcadena en la cadena | `"Hola mundo".count("o")` devuelve `2` |
-| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra | `"Hola mundo".find("mundo")` devuelve `5` |
+| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra. Cada vez que se llama, devuelve la siguiente aparición | `"Hola mundo".find("mundo")` devuelve `5` |
 | `upper()` | Devuelve una copia de la cadena con todos los caracteres en mayúscula | `"Hola mundo".upper()` devuelve `"HOLA MUNDO"` |
 | `lower()` | Devuelve una copia de la cadena con todos los caracteres en minúscula | `"Hola mundo".lower()` devuelve `"hola mundo"` |
 | `strip()` | Devuelve una copia de la cadena sin los espacios en blanco al principio y al final | `" Hola mundo ".strip()` devuelve `"Hola mundo"`. |
@@ -190,6 +190,11 @@ Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten 
 | `isalnum()` | Devuelve `True` si todos los caracteres de la cadena son letras o dígitos, `False` en caso contrario | `"Hola123".isalnum()` devuelve `True` |
 | `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
 | `index(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o produce un error si no se encuentra | `"Hola mundo".index("mundo")` devuelve `5` |
+
+:::{.callout-note}
+### Recomendación
+Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.
+:::
 
 ## Tuplas
 Las tuplas son una secuencia de elementos inmutable. Esto significa que no se pueden modificar una vez creadas. En Python, el tipo de dato asociado a las tuplas se llama `tuple` y se definen con paréntesis `()`:
@@ -729,7 +734,7 @@ print(lista)
 
 Esta última es particularmente útil cuando necesitamos trabajar con una tupla, pero como son inmutables, la convertimos a lista para manipularla sin problemas.
 
->**Ejemplo**
+>**Ejercicio**
 Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.
 
 ```python

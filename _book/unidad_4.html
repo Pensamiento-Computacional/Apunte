@@ -279,7 +279,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para más información de los rangos, ver la <a href="unidad_3.html#ciclo-for">unidad 3</a>.</p>
+<p>Para más información de los rangos, ver la <a href="#ciclo-for">unidad 3</a>.</p>
 </div>
 </div>
 </section>
@@ -462,7 +462,7 @@ o</code></pre>
 <section id="buscando-subcadenas" class="level4" data-number="4.3.1.3">
 <h4 data-number="4.3.1.3" class="anchored" data-anchor-id="buscando-subcadenas"><span class="header-section-number">4.3.1.3</span> Buscando Subcadenas</h4>
 <p>El operador <code>in</code> nos permite saber si una subcadena se encuentra dentro de otra cadena. En la guía de la unidad 3 te pedimos que investigues acerca del operador <code>in</code> y <code>not in</code> para el ejercicio de vocales y consonantes.</p>
-<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="unidad_3.html#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
+<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Hola"</span> <span class="kw">in</span> <span class="st">"Hola Mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -478,7 +478,9 @@ o</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Ejercicio</strong> 1. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[:]</code> 2. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[j:]</code> con <span class="math inline">\(j\)</span> un número entero negativo.</p>
+<p><strong>Ejercicio</strong><br>
+1. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[:]</code><br>
+2. Investigar, para un string dado <span class="math inline">\(s\)</span>, cuál es el resultado del slice <code>s[j:]</code> con <span class="math inline">\(j\)</span> un número entero negativo.</p>
 </blockquote>
 </section>
 <section id="inmutabilidad" class="level4" data-number="4.3.1.4">
@@ -521,7 +523,7 @@ o</code></pre>
 </tr>
 <tr class="odd">
 <td><code>find(subcadena)</code></td>
-<td>Devuelve el índice de la primera aparición de la subcadena en la cadena, o <code>-1</code> si no se encuentra</td>
+<td>Devuelve el índice de la primera aparición de la subcadena en la cadena, o <code>-1</code> si no se encuentra. Cada vez que se llama, devuelve la siguiente aparición</td>
 <td><code>"Hola mundo".find("mundo")</code> devuelve <code>5</code></td>
 </tr>
 <tr class="even">
@@ -586,6 +588,19 @@ o</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recomendación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.</p>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -963,7 +978,7 @@ Si el valor se encuentra repetido, se devuelve la posición de la primera aparic
 </div>
 <p>Existe un método <code>reverse</code> (no disponible en Replit) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando <em>slices</em>, como ya vimos: <code>lista[::-1]</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -972,7 +987,7 @@ Si el valor se encuentra repetido, se devuelve la posición de la primera aparic
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Todos los elementos de la secuencia deben ser comparables entre sí. Si no lo son, se producirá un error. Por ejemplo, no se puede ordenar una lista que contenga números y strings.</p></li>
@@ -1259,7 +1274,7 @@ Tip
 </div>
 <p>Esta última es particularmente útil cuando necesitamos trabajar con una tupla, pero como son inmutables, la convertimos a lista para manipularla sin problemas.</p>
 <blockquote class="blockquote">
-<p><strong>Ejemplo</strong> Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.</p>
+<p><strong>Ejercicio</strong> Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.</p>
 </blockquote>
 <div class="sourceCode" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ingresar_numeros():</span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>    numeros <span class="op">=</span> []</span>
@@ -1433,7 +1448,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Tanto <code>map</code> como <code>filter</code> son aplicables a cualquier secuencia (rangos, cadena de caracteres, listas, tuplas).</p>
+<p>Tanto <code>map</code> como <code>filter</code> son aplicables a cualquiera de las secuencias vistas (rangos, cadena de caracteres, listas, tuplas).</p>
 </div>
 </div>
 <p><br>
