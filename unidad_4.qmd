@@ -774,7 +774,7 @@ Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "
 
 \
 
-## Map
+### Map
 La función `map` aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los resultados.
 
 ```{python}
@@ -800,10 +800,10 @@ for n in lista_cuadrados:
 ```
 
 :::{.callout-tip}
-Las funciones a pasar como parámetro a `map` devuelven *valores transformados* del elemento original. Lo que hace `map` es aplicarla a cada uno de los elementos de la secuencia original.
+Las funciones a pasar como parámetro a `map` devuelven *valores transformados* del elemento original. Lo que hace `map` es aplicar la función a cada uno de los elementos de la secuencia original.
 :::
 
-## Filter
+### Filter
 La función `filter` aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los elementos para los cuales la función devuelve `True`.
 
 ```{python}
@@ -861,6 +861,15 @@ lista = ["pilar", "barbie", "violeta"]
 lista_capitalizada = capitalizar_lista(lista)
 print(lista_capitalizada)
 ```
+
+:::{.callout-note}
+Tanto `map` como `filter` son aplicables a cualquiera de las secuencias vistas (rangos, cadena de caracteres, listas, tuplas).
+:::
+\
+
+---
+
+\
 
 :::{.callout-important}
 ### Ejercicio Desafío

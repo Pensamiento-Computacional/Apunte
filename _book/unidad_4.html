@@ -231,9 +231,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#listas-anidadas" id="toc-listas-anidadas" class="nav-link" data-scroll-target="#listas-anidadas"><span class="header-section-number">4.5.9</span> Listas anidadas</a></li>
   </ul></li>
   <li><a href="#listas-y-cadenas" id="toc-listas-y-cadenas" class="nav-link" data-scroll-target="#listas-y-cadenas"><span class="header-section-number">4.6</span> Listas y Cadenas</a></li>
-  <li><a href="#operaciones-de-las-secuencias" id="toc-operaciones-de-las-secuencias" class="nav-link" data-scroll-target="#operaciones-de-las-secuencias"><span class="header-section-number">4.7</span> Operaciones de las Secuencias</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">4.8</span> Map</a></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">4.9</span> Filter</a></li>
+  <li><a href="#operaciones-de-las-secuencias" id="toc-operaciones-de-las-secuencias" class="nav-link" data-scroll-target="#operaciones-de-las-secuencias"><span class="header-section-number">4.7</span> Operaciones de las Secuencias</a>
+  <ul class="collapse">
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">4.7.1</span> Map</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">4.7.2</span> Filter</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1308,9 +1310,8 @@ Ejercicio Desafío
 <hr>
 <p><br>
 </p>
-</section>
-<section id="map" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="map"><span class="header-section-number">4.8</span> Map</h2>
+<section id="map" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="map"><span class="header-section-number">4.7.1</span> Map</h3>
 <p>La función <code>map</code> aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los resultados.</p>
 <div class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_cuadrado(x):</span>
@@ -1346,12 +1347,12 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Las funciones a pasar como parámetro a <code>map</code> devuelven <em>valores transformados</em> del elemento original. Lo que hace <code>map</code> es aplicarla a cada uno de los elementos de la secuencia original.</p>
+<p>Las funciones a pasar como parámetro a <code>map</code> devuelven <em>valores transformados</em> del elemento original. Lo que hace <code>map</code> es aplicar la función a cada uno de los elementos de la secuencia original.</p>
 </div>
 </div>
 </section>
-<section id="filter" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="filter"><span class="header-section-number">4.9</span> Filter</h2>
+<section id="filter" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="filter"><span class="header-section-number">4.7.2</span> Filter</h3>
 <p>La función <code>filter</code> aplica una función a cada uno de los elementos de una secuencia, y devuelve una nueva secuencia con los elementos para los cuales la función devuelve <code>True</code>.</p>
 <div class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> es_par(x):</span>
@@ -1422,6 +1423,24 @@ Tip
 <pre><code>['Pilar', 'Barbie', 'Violeta']</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tanto <code>map</code> como <code>filter</code> son aplicables a cualquier secuencia (rangos, cadena de caracteres, listas, tuplas).</p>
+</div>
+</div>
+<p><br>
+</p>
+<hr>
+<p><br>
+</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1441,6 +1460,7 @@ una vez ejecutada, la función debe devolver: <code>[("AGOSTINA",30), ("SOL",40)
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
