@@ -521,3 +521,17 @@ Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente 
 El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
 
 El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.
+
+:::{.callout-important}
+### Batalla Naval: Modo Supervivencia
+
+¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.
+
+Te dejamos unos tips:
+
+- Las posiciones son limitadas por el tablero 10x10
+- Las posiciones no deberían repetirse
+
+¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
+En este caso, el usuario y la máquina tienen intentos ilimitados itercalados hasta que alguno de los dos gane.
+:::
