@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unidad_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Datos Estructurados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -493,10 +493,16 @@ Esa jugada no está disponible.</code></pre></li>
 <li><p>Hacer una función que reciba un número del 1 al 10, y luego permita al usuario poder adivinar ese número, ingresando valores repetidamente. Para cada ingreso del usuario, el programa debe indicarle si su numero es menor o mayor al número a adivinar. Una vez que el usuario ingresa el número correcto, lo felicita y termina.</p></li>
 <li><p>Repetir permitiendo únicamente 3 intentos.</p></li>
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
+</ol></li>
 </ol>
-<p>::: {.cell execution_count=5} <code>{.python .cell-code}  import random  numero_a_adivinar = random.randint(1, 10)  print(numero_a_adivinar)</code></p>
-<p>::: {.cell-output .cell-output-stdout} <code>2</code> ::: :::</p></li>
-</ol>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -541,7 +547,7 @@ Ingresá 1 fichas para comenzar: F
 <li><p>Repetir calculando únicamente el promedio entre los primeros 3 múltiplos de 7 encontrados. Pista: usar <code>break</code>.</p></li>
 <li><p>Repetir calculando únicamente el promedio entre los múltiplos de 7 encontrados que no sean múltiplos de 2. Pista: usar <code>continue</code>.</p></li>
 </ol></li>
-<li><p><strong>Desafío</strong> (no obligatorio):</p>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
 <ol type="a">
 <li>Escribir una función que dada la cantidad de ejercicios de un examen, y el porcentaje de ejercicios bien resueltos necesario para aprobar dicho examen, revise un grupo de exámenes.</li>
 </ol>
