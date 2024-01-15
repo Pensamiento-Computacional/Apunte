@@ -236,6 +236,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">4.7.1</span> Map</a></li>
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">4.7.2</span> Filter</a></li>
   </ul></li>
+  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios"><span class="header-section-number">4.8</span> Diccionarios</a>
+  <ul class="collapse">
+  <li><a href="#diccionarios-en-python" id="toc-diccionarios-en-python" class="nav-link" data-scroll-target="#diccionarios-en-python"><span class="header-section-number">4.8.1</span> Diccionarios en Python</a></li>
+  <li><a href="#accediendo-a-los-valores-de-un-diccionario" id="toc-accediendo-a-los-valores-de-un-diccionario" class="nav-link" data-scroll-target="#accediendo-a-los-valores-de-un-diccionario"><span class="header-section-number">4.8.2</span> Accediendo a los Valores de un Diccionario</a></li>
+  <li><a href="#iterando-elementos-del-diccionario" id="toc-iterando-elementos-del-diccionario" class="nav-link" data-scroll-target="#iterando-elementos-del-diccionario"><span class="header-section-number">4.8.3</span> Iterando Elementos del Diccionario</a></li>
+  <li><a href="#usos-de-un-diccionario" id="toc-usos-de-un-diccionario" class="nav-link" data-scroll-target="#usos-de-un-diccionario"><span class="header-section-number">4.8.4</span> Usos de un Diccionario</a></li>
+  <li><a href="#operaciones-de-los-diccionarios" id="toc-operaciones-de-los-diccionarios" class="nav-link" data-scroll-target="#operaciones-de-los-diccionarios"><span class="header-section-number">4.8.5</span> Operaciones de los Diccionarios</a></li>
+  <li><a href="#diccionarios-y-funciones" id="toc-diccionarios-y-funciones" class="nav-link" data-scroll-target="#diccionarios-y-funciones"><span class="header-section-number">4.8.6</span> Diccionarios y Funciones</a></li>
+  <li><a href="#ordenamiento-de-diccionarios" id="toc-ordenamiento-de-diccionarios" class="nav-link" data-scroll-target="#ordenamiento-de-diccionarios"><span class="header-section-number">4.8.7</span> Ordenamiento de Diccionarios</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1491,6 +1501,452 @@ Escribir una función que reciba una lista de estas tuplas. La función debe dev
 Ejemplo:<br>
 Si se tiene <code>[("sol", 40), ("priscila", 15), ("agostina", 30)]</code><br>
 una vez ejecutada, la función debe devolver: <code>[("AGOSTINA",30), ("SOL",40)]</code></p>
+</div>
+</div>
+</section>
+</section>
+<section id="diccionarios" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="diccionarios"><span class="header-section-number">4.8</span> Diccionarios</h2>
+<p>Un diccionario es una colección de pares clave-valor. Es una estructura de datos que nos permite guardar información de forma organizada, y acceder a ella de forma eficiente. Cada clave está asociada a un valor determinado.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_4/diccionarios1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Diccionario cuyas claves son dominios de internet (.ar, .es, .tv) y cuyos valores asociados son los países correspondientes.</figcaption>
+</figure>
+</div>
+<p>Las claves deben ser únicas, es decir, no puede haber dos claves iguales en un mismo diccionario. Los valores pueden repetirse. Si se asigna un valor a una clave ya existente, se reemplaza el valor anterior.</p>
+<p>Podemos acceder a un valor a través de su clave porque las claves son únicas, pero no a la inversa. Es decir, no podemos acceder a una clave a través de su valor, porque los valores pueden repetirse y podría haber varias claves asociadas al mismo valor.</p>
+<p>Además, los diccionarios no tienen un orden interno particular. Se consideran entonces iguales dos diccionarios si tienen las mismas claves asociadas a los mismos valores, independientemente del orden en que se hayan agregado.</p>
+<p>Al igual que las listas, los diccionarios son mutables. Esto significa que podemos modificar sus elementos una vez creados.</p>
+<ul>
+<li>Cualquier valor de tipo inmutable puede ser <code>clave</code> de un diccionario: cadenas, enteros tuplas.</li>
+<li>No hay restricciones para los <code>valores</code>, pueden ser de cualquier tipo: cadenas, enteros, tuplas, listas, otros diccionarios, etc.</li>
+</ul>
+<section id="diccionarios-en-python" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="diccionarios-en-python"><span class="header-section-number">4.8.1</span> Diccionarios en Python</h3>
+<p>Para definir un diccionario, se utilizan llaves <code>{}</code> y se separan las claves de los valores con dos puntos <code>:</code>. Cada par clave-valor se separa con comas <code>,</code>.</p>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>dominios <span class="op">=</span> {<span class="st">"ar"</span>: <span class="st">"Argentina"</span>, <span class="st">"es"</span>: <span class="st">"España"</span>, <span class="st">"tv"</span>: <span class="st">"Tuvalu"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>El tipo asociado a los diccionarios es <code>dict</code>:</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(dominios))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'dict'&gt;</code></pre>
+</div>
+</div>
+<p>Para declararlo vacío y luego ingresar valores, se lo declara como un par de llaves vacías. Luego, haciendo uso de la notación de corchetes <code>[]</code>, se le asigna un valor a una clave:</p>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>materias <span class="op">=</span> {}</span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>materias[<span class="st">"lunes"</span>] <span class="op">=</span> [<span class="dv">6103</span>, <span class="dv">7540</span>]</span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>materias[<span class="st">"martes"</span>] <span class="op">=</span> [<span class="dv">6201</span>]</span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>materias[<span class="st">"miércoles"</span>] <span class="op">=</span> [<span class="dv">6103</span>, <span class="dv">7540</span>]</span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>materias[<span class="st">"jueves"</span>] <span class="op">=</span> []</span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>materias[<span class="st">"viernes"</span>] <span class="op">=</span> [<span class="dv">6201</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En el código de arriba, se está creando una variable <code>materias</code> de tipo <code>dict</code>, y se le están asignando valores a las claves <code>"lunes"</code>, <code>"martes"</code>, <code>"miércoles"</code>, <code>"jueves"</code> y <code>"viernes"</code>.<br>
+Los valores asociados a cada clave son listas con los códigos de las materias que se dan esos días. El diccionario se ve algo así:</p>
+<pre><code>{
+    "lunes": [6103, 7540],
+    "martes": [6201],
+    "miércoles": [6103, 7540],
+    "jueves": [],
+    "viernes": [6201]
+}</code></pre>
+</section>
+<section id="accediendo-a-los-valores-de-un-diccionario" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="accediendo-a-los-valores-de-un-diccionario"><span class="header-section-number">4.8.2</span> Accediendo a los Valores de un Diccionario</h3>
+<p>Para acceder a los valores de un diccionario, se utiliza la notación de corchetes <code>[]</code> con la clave correspondiente:</p>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>cods_lunes <span class="op">=</span> materias[<span class="st">"lunes"</span>]</span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cods_lunes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6103, 7540]</code></pre>
+</div>
+</div>
+<p>Veamos que la clave “lunes” no va a ser igual a la clave “Lunes” o “LUNES”, porque como ya dijimos antes, Python es <em>case sensitive</em>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¡Cuidado! Acceso a Claves que no Existen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si intentamos acceder a una clave que no existe en el diccionario, se produce un error:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(materias[<span class="st">"sábado"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="{error}"><code>Traceback (most recent call last):
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'sábado'</code></pre>
+</div>
+</div>
+<p><br>
+Para evitar tratar de acceder a una clave que no existe, podemos verificar si una clave se encuentra o no en el diccionario haciendo uso del operador <code>in</code>:</p>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"sábado"</span> <span class="kw">in</span> materias:</span>
+<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(materias[<span class="st">"sábado"</span>])</span>
+<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb146-4"><a href="#cb146-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No hay clases el sábado"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>No hay clases el sábado</code></pre>
+</div>
+</div>
+<p>También podemos usar la función <code>get</code>, que recibe una clave <code>k</code>y un valor por omisión <code>v</code>, y devuelve el valor asociado a la clave <code>k</code>, en caso de existir, o el valor <code>v</code> en caso contrario.</p>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(materias.get(<span class="st">"sábado"</span>, <span class="st">"Error de clave: sábado"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error de clave: sábado</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(materias.get(<span class="st">"domingo"</span>,[]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<p>Como vemos el valor por omisión puede ser de cualquier tipo.</p>
+</section>
+<section id="iterando-elementos-del-diccionario" class="level3" data-number="4.8.3">
+<h3 data-number="4.8.3" class="anchored" data-anchor-id="iterando-elementos-del-diccionario"><span class="header-section-number">4.8.3</span> Iterando Elementos del Diccionario</h3>
+<section id="por-claves" class="level4" data-number="4.8.3.1">
+<h4 data-number="4.8.3.1" class="anchored" data-anchor-id="por-claves"><span class="header-section-number">4.8.3.1</span> Por Claves</h4>
+<p>Para iterar sobre las claves de un diccionario, podemos usar un ciclo <code>for</code>:</p>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dia <span class="kw">in</span> materias:</span>
+<span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>materias[dia]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El lunes tengo que cursar las materias [6103, 7540]
+El martes tengo que cursar las materias [6201]
+El miércoles tengo que cursar las materias [6103, 7540]
+El jueves tengo que cursar las materias []
+El viernes tengo que cursar las materias [6201]</code></pre>
+</div>
+</div>
+<p>También podemos obtener las claves del diccionario como una lista usando el método <code>keys()</code>:</p>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dia <span class="kw">in</span> materias.keys():</span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>materias[dia]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El lunes tengo que cursar las materias [6103, 7540]
+El martes tengo que cursar las materias [6201]
+El miércoles tengo que cursar las materias [6103, 7540]
+El jueves tengo que cursar las materias []
+El viernes tengo que cursar las materias [6201]</code></pre>
+</div>
+</div>
+</section>
+<section id="por-valores" class="level4" data-number="4.8.3.2">
+<h4 data-number="4.8.3.2" class="anchored" data-anchor-id="por-valores"><span class="header-section-number">4.8.3.2</span> Por Valores</h4>
+<p>Para iterar sobre los valores de un diccionario, podemos usar el método <code>values()</code>:</p>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> codigos <span class="kw">in</span> materias.values():</span>
+<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(codigos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6103, 7540]
+[6201]
+[6103, 7540]
+[]
+[6201]</code></pre>
+</div>
+</div>
+<p>Nótese que en este último ejemplo, no podemos obtener la clave a partir de los valores. Por eso no imprimimos los <code>días</code>.</p>
+</section>
+<section id="por-clave-valor" class="level4" data-number="4.8.3.3">
+<h4 data-number="4.8.3.3" class="anchored" data-anchor-id="por-clave-valor"><span class="header-section-number">4.8.3.3</span> Por Clave-Valor</h4>
+<p>Para iterar sobre los pares clave-valor de un diccionario, podemos usar el método <code>items()</code>, que nos devuelve un conjunto de tuplas donde el primer elemento de cada una es una clave y el segundo, su valor asociado <code>(clave,valor)</code>:</p>
+<div class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tupla <span class="kw">in</span> materias.items():</span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>  dia <span class="op">=</span> tupla[<span class="dv">0</span>]</span>
+<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>  codigos <span class="op">=</span> tupla[<span class="dv">1</span>]</span>
+<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>codigos<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El lunes tengo que cursar las materias [6103, 7540]
+El martes tengo que cursar las materias [6201]
+El miércoles tengo que cursar las materias [6103, 7540]
+El jueves tengo que cursar las materias []
+El viernes tengo que cursar las materias [6201]</code></pre>
+</div>
+</div>
+<p>También podemos desempaquetar las tuplas como vimos previamente:</p>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dia, codigos <span class="kw">in</span> materias.items():</span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>codigos<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El lunes tengo que cursar las materias [6103, 7540]
+El martes tengo que cursar las materias [6201]
+El miércoles tengo que cursar las materias [6103, 7540]
+El jueves tengo que cursar las materias []
+El viernes tengo que cursar las materias [6201]</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Como los diccionarios no son secuencias, no tienen orden, por lo que no podemos obtener porciones de un diccionario usando <em>slices</em> o <code>[:]</code> como hacíamos con otras estructuras de datos.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Acerca de la Iteración de un Diccionario
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El mayor beneficio de los diccionarios es que podemos acceder a sus valores de forma eficiente, a través de sus claves.<br>
+Si la única funcionalidad que necesitamos de un diccionario es iterarlo, entonces no estamos aprovechando su potencial. En ese caso, es preferible usar una o más listas o tuplas, que es más simple y más eficiente.<br>
+Iterar un diccionario es una funcionalidad adicional que nos brinda Python, pero no es su principal uso.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="usos-de-un-diccionario" class="level3" data-number="4.8.4">
+<h3 data-number="4.8.4" class="anchored" data-anchor-id="usos-de-un-diccionario"><span class="header-section-number">4.8.4</span> Usos de un Diccionario</h3>
+<p>Los diccionarios son muy versátiles. Se puede utilizar un diccionario para, por ejemplo, contar cuántas apariciones de cada palabra hay en un texto, o cuántas apariciones por cada letra.</p>
+<p>También se puede usar un diccionario para tener una agenda de contactos, donde la clave es el nombre de la persona y el valor el número de teléfono.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hashmaps: Dato interesante
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Los diccionarios de Python son implementados usando una estructura de datos llamada <em>hashmap</em>.<br>
+Para cada clave, se le calcula un valor numérico llamado <em>hash</em>, que es el que se usa para acceder al valor asociado a esa clave.<br>
+Cuando se recibe una clave, se le calcula su <em>hash</em> y se busca en el diccionario el valor asociado a ese <em>hash</em>.<br>
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="operaciones-de-los-diccionarios" class="level3" data-number="4.8.5">
+<h3 data-number="4.8.5" class="anchored" data-anchor-id="operaciones-de-los-diccionarios"><span class="header-section-number">4.8.5</span> Operaciones de los Diccionarios</h3>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>d[k]</code></td>
+<td>Devuelve el valor asociado a la clave <code>k</code></td>
+</tr>
+<tr class="even">
+<td><code>d[k] = v</code></td>
+<td>Asigna el valor <code>v</code> a la clave <code>k</code>. Si la clave no existe, la agrega al diccionario. Si ya existe, le actualiza el valor asociado.</td>
+</tr>
+<tr class="odd">
+<td><code>del d[k]</code></td>
+<td>Elimina la clave <code>k</code> y su valor asociado del diccionario <code>d</code></td>
+</tr>
+<tr class="even">
+<td><code>k in d</code></td>
+<td>Devuelve <code>True</code> si la clave <code>k</code> se encuentra en el diccionario <code>d</code>, <code>False</code> en caso contrario</td>
+</tr>
+<tr class="odd">
+<td><code>len(d)</code></td>
+<td>Devuelve la cantidad de pares clave-valor del diccionario <code>d</code></td>
+</tr>
+<tr class="even">
+<td><code>d.keys()</code></td>
+<td>Devuelve una lista con las claves del diccionario <code>d</code></td>
+</tr>
+<tr class="odd">
+<td><code>d.values()</code></td>
+<td>Devuelve una lista con los valores del diccionario <code>d</code></td>
+</tr>
+<tr class="even">
+<td><code>d.items()</code></td>
+<td>Devuelve una lista de tuplas con los pares clave-valor del diccionario <code>d</code></td>
+</tr>
+<tr class="odd">
+<td><code>d.clear()</code></td>
+<td>Elimina todos los pares clave-valor del diccionario <code>d</code></td>
+</tr>
+<tr class="even">
+<td><code>d.copy()</code></td>
+<td>Devuelve una copia del diccionario <code>d</code></td>
+</tr>
+<tr class="odd">
+<td><code>d.pop(k)</code></td>
+<td>Elimina la clave <code>k</code> y su valor asociado del diccionario <code>d</code>, y devuelve el valor asociado</td>
+</tr>
+<tr class="even">
+<td><code>d.popitem()</code></td>
+<td>Elimina un par clave-valor del diccionario <code>d</code>, y devuelve una tupla con la clave y el valor eliminados</td>
+</tr>
+<tr class="odd">
+<td><code>d.get(k, v)</code></td>
+<td>Devuelve el valor asociado a la clave <code>k</code> si la clave existe, o el valor <code>v</code> en caso contrario</td>
+</tr>
+<tr class="even">
+<td><code>d.update(d2)</code></td>
+<td>Agrega los pares clave-valor del diccionario <code>d2</code> al diccionario <code>d</code>. Si una clave ya existe en <code>d</code>, actualiza su valor asociado.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Existen más métodos de diccionarios, pero estos son los más utilizados y los que vamos a ver en la materia. Recomendamos que pruebes cada uno de ellos con los diccionarios que vimos en este capítulo.</p>
+</div>
+</div>
+</section>
+<section id="diccionarios-y-funciones" class="level3" data-number="4.8.6">
+<h3 data-number="4.8.6" class="anchored" data-anchor-id="diccionarios-y-funciones"><span class="header-section-number">4.8.6</span> Diccionarios y Funciones</h3>
+<p>Los diccionarios son mutables, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función.</p>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_alumno(alumnos, nombre, legajo):</span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>  alumnos[nombre] <span class="op">=</span> legajo</span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> {}</span>
+<span id="cb162-5"><a href="#cb162-5" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"Juan"</span>, <span class="dv">1234</span>)</span>
+<span id="cb162-6"><a href="#cb162-6" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"María"</span>, <span class="dv">5678</span>)</span>
+<span id="cb162-7"><a href="#cb162-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'Juan': 1234, 'María': 5678}</code></pre>
+</div>
+</div>
+</section>
+<section id="ordenamiento-de-diccionarios" class="level3" data-number="4.8.7">
+<h3 data-number="4.8.7" class="anchored" data-anchor-id="ordenamiento-de-diccionarios"><span class="header-section-number">4.8.7</span> Ordenamiento de Diccionarios</h3>
+<p>Tenemos algunas operaciones que nos permiten ordenar un diccionario:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dict()</code></td>
+<td>Crea un diccionario vacío</td>
+</tr>
+<tr class="even">
+<td><code>sorted(d)</code></td>
+<td>Devuelve una lista ordenada con las claves del diccionario <code>d</code></td>
+</tr>
+<tr class="odd">
+<td><code>dict(sorted(d.items()))</code></td>
+<td>Devuelve un diccionario ordenado con las claves del diccionario <code>d</code></td>
+</tr>
+</tbody>
+</table>
+<p>Si lo que necesitamos es ordenar diccionarios entre sí (por ejemplo, teniendo una lista de diccionarios), vamos a usar el parámetro <code>key</code> de la función <code>sorted</code>:</p>
+<div class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_nombre(alumno):</span>
+<span id="cb164-2"><a href="#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> alumno[<span class="st">"nombre"</span>]</span>
+<span id="cb164-3"><a href="#cb164-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb164-4"><a href="#cb164-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
+<span id="cb164-5"><a href="#cb164-5" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
+<span id="cb164-6"><a href="#cb164-6" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
+<span id="cb164-7"><a href="#cb164-7" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
+<span id="cb164-8"><a href="#cb164-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb164-9"><a href="#cb164-9" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span>obtener_nombre)</span>
+<span id="cb164-10"><a href="#cb164-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[{'nombre': 'Agostina', 'legajo': 9012}, {'nombre': 'Iara', 'legajo': 5678}, {'nombre': 'Priscila', 'legajo': 1234}]</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En el ejemplo de arriba, estamos ordenando una lista de diccionarios por el valor de la clave <code>"nombre"</code>.<br>
+El parámetro <code>key</code> recibe una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función <code>obtener_nombre</code> devuelve el valor de la clave <code>"nombre"</code> de cada diccionario, y es lo que se usa para ordenar.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio Desafío
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los diccionarios ordenados según la clave.<br>
+</p>
+<p>Ejemplo:<br>
+Si se tiene <code>[{"nombre": "Priscila", "legajo": 1234}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Agostina", "legajo": 9012}]</code> y se recibe la clave <code>nombre</code><br>
+una vez ejecutada, la función debe devolver:<br>
+<code>[{"nombre": "Agostina", "legajo": 9012}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Priscila", "legajo": 1234}]</code><br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lambda
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En el ejemplo anterior, la función <code>obtener_nombre</code> es muy simple, y sólo la usamos una vez.<br>
+En estos casos, podemos usar una <em>función lambda</em>, que es una función anónima que se declara en una sola línea.<br>
+</p>
+<div class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
+<span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
+<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
+<span id="cb166-5"><a href="#cb166-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb166-6"><a href="#cb166-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-7"><a href="#cb166-7" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span><span class="kw">lambda</span> alumno: alumno[<span class="st">"nombre"</span>])</span>
+<span id="cb166-8"><a href="#cb166-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[{'nombre': 'Agostina', 'legajo': 9012}, {'nombre': 'Iara', 'legajo': 5678}, {'nombre': 'Priscila', 'legajo': 1234}]</code></pre>
+</div>
+</div>
+<p>Lo que estamos haciendo es declarar una función que recibe un parámetro <code>alumno</code> y devuelve el valor de la clave <code>"nombre"</code> de ese diccionario.<br>
+La función se declara en una sola línea, y no tiene nombre.<br>
+La función se pasa como parámetro <code>key</code> a <code>sorted</code>, y se ejecuta para cada elemento de la lista antes de ordenar.</p>
+</div>
 </div>
 </div>
 

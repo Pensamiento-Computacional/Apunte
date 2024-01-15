@@ -216,6 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#cadenas-de-caracteres" id="toc-cadenas-de-caracteres" class="nav-link" data-scroll-target="#cadenas-de-caracteres">Cadenas de caracteres</a></li>
   <li><a href="#rangos-tuplas-y-listas" id="toc-rangos-tuplas-y-listas" class="nav-link" data-scroll-target="#rangos-tuplas-y-listas">Rangos, Tuplas y Listas</a></li>
+  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">Diccionarios</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -387,25 +388,25 @@ Tip: <code>in</code> y <code>not in</code>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>False</code></pre>
 </div>
 </div>
@@ -505,7 +506,7 @@ Esa jugada no está disponible.</code></pre></li>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>7</code></pre>
+<pre><code>2</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -577,7 +578,7 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 </p></li>
 <li><p>Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: <code>'su clave es: 1540'</code> y <code>'*'</code> debería devolver <code>'su clave es: ****'</code>.<br>
 </p></li>
-<li><p>Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: <code>'2552552550'</code> y <code>'.'</code> debería devolver `’</p></li>
+<li><p>Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: <code>'2552552550'</code> y <code>'.'</code> debería devolver <code>'255.255.255.0'</code></p></li>
 <li><p>Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: <code>'su clave es: 1540'</code>, <code>'*'</code> y <code>3</code> debería devolver <code>'su clave es: ***0'</code>.</p></li>
 </ol></li>
 <li><p>Escribir una función que reciba una cadena que contiene un largo número entero y devuelva una cadena con el número y las separaciones de miles. Por ejemplo, si recibe <code>1234567890</code>, debe devolver <code>1.234.567.890</code>. Cuidado: no es lo mismo <code>123.456.789.0</code> que <code>1.234.567.890</code>. Tienen que ser separaciones de miles y quedar un número válido.</p></li>
@@ -716,6 +717,136 @@ Batalla Naval: Modo Supervivencia
 </div>
 </div>
 </div></li>
+</ol>
+</section>
+<section id="diccionarios" class="level3">
+<h3 class="anchored" data-anchor-id="diccionarios">Diccionarios</h3>
+<ol type="1">
+<li>Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos. Por ejemplo:</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [(<span class="st">'Hola'</span>, <span class="st">'don Pepito'</span>), (<span class="st">'Hola'</span>, <span class="st">'don Jose'</span>), (<span class="st">'Buenos'</span>, <span class="st">'días'</span>)]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}</code></pre>
+<ol start="2" type="1">
+<li><p>Escriba una función que reciba una cadena y devuelva:</p>
+<ol type="a">
+<li>Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe <code>"Qué lindo día que hace hoy"</code> debe devolver: <code>{'qué': 2, 'lindo': 1, 'día': 1, 'hace': 1, 'hoy': 1}</code>.</li>
+<li>Un diccionario con la cantidad de apariciones de cada caracter en la cadena.</li>
+</ol></li>
+<li><p>Escribir una función que reciba una cantidad de iteraciones N.</p>
+<ol type="a">
+<li><p>Se deberá simular una persona que tira un dado N veces, y se deberá devolver un diccionario con la cantidad de apariciones de cada valor en el dado. Nota: para simular una tirada, usar <code>import random</code>y <code>random.randint(1, 6)</code>.</p></li>
+<li><p>Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.</p></li>
+</ol></li>
+<li><p>Escribir un programa que le pida al usuario que ingrese nombres.</p>
+<ol type="a">
+<li>Si el nombre se encuentra en la agenda, debe mostrar el teléfono.</li>
+<li>Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente.</li>
+</ol>
+<p>En ambos casos, El usuario puede utilizar la palabra “EXIT” para dejar de ingresar nombres.</p></li>
+<li><p>Escribir una función que reciba un texto y para cada caracter presente en el texto, devuelva la palabra más larga en la que se encuentra ese caracter.</p></li>
+<li><p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>nombre</th>
+<th>apellido</th>
+<th>dni</th>
+<th>carrera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Violeta</td>
+<td>Perez</td>
+<td>42000000</td>
+<td>Informática</td>
+</tr>
+<tr class="even">
+<td>Carla</td>
+<td>Guanca</td>
+<td>42001001</td>
+<td>Mecánica</td>
+</tr>
+<tr class="odd">
+<td>Manuela</td>
+<td>Gomez</td>
+<td>42002002</td>
+<td>Química</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Crear un diccionario que sirva para representar a cada persona. Debe contener las claves <code>nombre</code>, <code>apellido</code>, <code>dni</code> y <code>carrera</code>. Los diccionarios se deben guardan en una lista llamada <code>estudiantes</code>.</p></li>
+<li><p>Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el <code>codigo</code> y el valor la <code>nota</code> (del 1 al 10) obtenida.</p></li>
+<li><p>Agregar para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).</p></li>
+<li><p>Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.</p></li>
+</ol></li>
+<li><p>En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especia, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.</p></li>
+<li><p>Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.</p></li>
+<li><p>Se tiene un ticket de supermercado en forma de diccionario con los siguientes datos:</p>
+<ul>
+<li>Nombre del Producto</li>
+<li>Precio por Unidad</li>
+<li>Cantidad</li>
+</ul>
+<p>Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.</p></li>
+<li><p>Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la serie, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.</p>
+<ol type="a">
+<li>Resolver sin usar <code>filter</code></li>
+<li>Resolver usando <code>filter</code>.</li>
+</ol></li>
+<li><p>La profesora Llamel guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.</p>
+<p>Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).</p>
+<ol type="a">
+<li><p>Se pide haecr una funciónq ue dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad que rindieron los alumnos.</p></li>
+<li><p>Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.</p></li>
+</ol></li>
+<li><p>En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.</p>
+<p>Se pude hacer una función que reciba esta lista de diccinoarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.</p></li>
+<li><p>Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).</p>
+<ol type="a">
+<li>Crear un diccionario de ejemplo que represente esta situación.</li>
+<li>Teniendo esta lista de diccionarios, ordenarlos alfabéticamente por el nombre de los maratonistas.</li>
+<li>Teniendo esta lista de diccionarios, ordenar las maratones en tiempo ascendente según el tiempo que tardaron en correrlas.</li>
+</ol></li>
+<li><p><strong>Desafío</strong> (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo.</p>
+<p>Laura quiere entonces actualizar sus diccionarios, para que en vez de guardar el monto exacto del bono, guarde el porcentaje que le corresponde. Ejemplo: si en el 2019 su sueldo era de $1.000.000 y el bono que le dieron era de $40.000, el bono fue del 4% del sueldo.</p>
+<ol type="a">
+<li><p>Hacer una función que reciba la lista de diccionarios, y para cada una de las reviews, modifique el valor del bono por el porcentaje correspondiente.</p></li>
+<li><p>Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar <code>filter</code> y <code>map</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio): <strong>Donarg</strong> (<a href="https://www.donarg.com.ar/">https://www.donarg.com.ar/</a>) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 “Desafío Cuarentena” del FIUBA Consulting Club, destacándose entre más de 100 proyectos.</p>
+<p>Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.</p>
+<p>La base contiene los siguientes datos de cada posible donante:</p>
+<ul>
+<li>Nombre</li>
+<li>Apellido</li>
+<li>Edad</li>
+<li>Peso</li>
+<li>Fecha de la última donación. Puede ser ‘None’ si nunca donó. Dormato: (dia,mes,año)</li>
+<li>Fecha del último tatuaje. Puede ser ‘None’ si no tiene tatuajes. Formato: (dia,mes,año)</li>
+<li>Tipo de sangre. Puede ser ‘0+’, ‘0-’, ‘A+’, ‘A-’, ‘B+’, ‘B-’, ‘AB+’, ‘AB-’</li>
+</ul>
+<p>Los requisitos son:</p>
+<ul>
+<li>Tener entre 16 y 65 años</li>
+<li>Pesar más de 50 kilos</li>
+<li>Que hayan pasado 2 meses desde la última donación</li>
+<li>Que hayan pasado 6 meses desde el último tatuaje</li>
+</ul>
+<ol type="a">
+<li><p>Se pide hacer una función que reciba una lista de diccionarios con la información de cada posible donante, y devuelva una lista con los que cumplen los requisitos.</p></li>
+<li><p>Se pide hacer una función que priorice a los donantes que tienen sangre tipo 0 (positivo y negativo) por sobre todos los A, B y AB (positivos y negativos); ya que son los que más se necesitan. La función debe recibir la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos, y devolver una nueva lista ordenados de mayor a menor prioridad.</p></li>
+<li><p>Se pide hacer una función que reciba la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos y ordenada por prioridad, que se quede con los que son 0+ y 0-, y los ordene por órden alfabético de apellido.</p></li>
+</ol>
+<p><img src="./imgs/unidad_4/goti.png" width="200" height="200"></p>
+<blockquote class="blockquote">
+<p>Si querés saber más sobre el proyecto, podés visitar su página web:<br>
+<a href="https://www.donarg.com.ar/">https://www.donarg.com.ar/</a><br>
+o sacar turno para donar sangre en<br>
+<a href="https://www.donarg.com.ar/dondedono">https://www.donarg.com.ar/dondedono</a>.</p>
+</blockquote></li>
 </ol>
 
 

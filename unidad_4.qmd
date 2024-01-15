@@ -894,3 +894,265 @@ Si se tiene `[("sol", 40), ("priscila", 15), ("agostina", 30)]`\
 una vez ejecutada, la función debe devolver:
 `[("AGOSTINA",30), ("SOL",40)]`
 :::
+
+## Diccionarios
+Un diccionario es una colección de pares clave-valor. Es una estructura de datos que nos permite guardar información de forma organizada, y acceder a ella de forma eficiente. Cada clave está asociada a un valor determinado.
+
+![Diccionario cuyas claves son dominios de internet (.ar, .es, .tv) y cuyos valores asociados son los países correspondientes.](./imgs/unidad_4/diccionarios1.png)
+
+Las claves deben ser únicas, es decir, no puede haber dos claves iguales en un mismo diccionario. Los valores pueden repetirse. Si se asigna un valor a una clave ya existente, se reemplaza el valor anterior.
+
+Podemos acceder a un valor a través de su clave porque las claves son únicas, pero no a la inversa. Es decir, no podemos acceder a una clave a través de su valor, porque los valores pueden repetirse y podría haber varias claves asociadas al mismo valor.
+
+Además, los diccionarios no tienen un orden interno particular. Se consideran entonces iguales dos diccionarios si tienen las mismas claves asociadas a los mismos valores, independientemente del orden en que se hayan agregado.
+
+Al igual que las listas, los diccionarios son mutables. Esto significa que podemos modificar sus elementos una vez creados.
+
+- Cualquier valor de tipo inmutable puede ser `clave` de un diccionario: cadenas, enteros tuplas.
+- No hay restricciones para los `valores`, pueden ser de cualquier tipo: cadenas, enteros, tuplas, listas, otros diccionarios, etc.
+
+### Diccionarios en Python
+Para definir un diccionario, se utilizan llaves `{}` y se separan las claves de los valores con dos puntos `:`. Cada par clave-valor se separa con comas `,`.
+
+```{python}
+dominios = {"ar": "Argentina", "es": "España", "tv": "Tuvalu"}
+```
+
+El tipo asociado a los diccionarios es `dict`:
+```{python}
+print(type(dominios))
+```
+
+Para declararlo vacío y luego ingresar valores, se lo declara como un par de llaves vacías. Luego, haciendo uso de la notación de corchetes `[]`, se le asigna un valor a una clave:
+
+```{python}
+materias = {}
+materias["lunes"] = [6103, 7540]
+materias["martes"] = [6201]
+materias["miércoles"] = [6103, 7540]
+materias["jueves"] = []
+materias["viernes"] = [6201]
+```
+
+En el código de arriba, se está creando una variable `materias` de tipo `dict`, y se le están asignando valores a las claves `"lunes"`, `"martes"`, `"miércoles"`, `"jueves"` y `"viernes"`.\
+Los valores asociados a cada clave son listas con los códigos de las materias que se dan esos días.
+El diccionario se ve algo así:
+
+```
+{
+    "lunes": [6103, 7540],
+    "martes": [6201],
+    "miércoles": [6103, 7540],
+    "jueves": [],
+    "viernes": [6201]
+}
+```
+
+### Accediendo a los Valores de un Diccionario
+Para acceder a los valores de un diccionario, se utiliza la notación de corchetes `[]` con la clave correspondiente:
+
+```{python}
+cods_lunes = materias["lunes"]
+print(cods_lunes)
+```
+
+Veamos que la clave "lunes" no va a ser igual a la clave "Lunes" o "LUNES", porque como ya dijimos antes, Python es *case sensitive*.
+
+:::{.callout-warning}
+### ¡Cuidado! Acceso a Claves que no Existen
+Si intentamos acceder a una clave que no existe en el diccionario, se produce un error:
+
+```python
+print(materias["sábado"])
+```
+
+```{error}
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+KeyError: 'sábado'
+```
+:::
+
+\
+Para evitar tratar de acceder a una clave que no existe, podemos verificar si una clave se encuentra o no en el diccionario haciendo uso del operador `in`:
+
+```{python}
+if "sábado" in materias:
+    print(materias["sábado"])
+else:
+    print("No hay clases el sábado")
+```
+
+También podemos usar la función `get`, que recibe una clave `k`y un valor por omisión `v`, y devuelve el valor asociado a la clave `k`, en caso de existir, o el valor `v` en caso contrario.
+
+```{python}
+print(materias.get("sábado", "Error de clave: sábado"))
+```
+
+```{python}
+print(materias.get("domingo",[]))
+```
+
+Como vemos el valor por omisión puede ser de cualquier tipo.
+
+### Iterando Elementos del Diccionario
+
+#### Por Claves
+Para iterar sobre las claves de un diccionario, podemos usar un ciclo `for`:
+
+```{python}
+for dia in materias:
+    print(f"El {dia} tengo que cursar las materias {materias[dia]}")
+```
+
+También podemos obtener las claves del diccionario como una lista usando el método `keys()`:
+
+```{python}
+for dia in materias.keys():
+    print(f"El {dia} tengo que cursar las materias {materias[dia]}")
+```
+
+#### Por Valores
+Para iterar sobre los valores de un diccionario, podemos usar el método `values()`:
+
+```{python}
+for codigos in materias.values():
+    print(codigos)
+```
+
+Nótese que en este último ejemplo, no podemos obtener la clave a partir de los valores. Por eso no imprimimos los `días`.
+
+#### Por Clave-Valor
+Para iterar sobre los pares clave-valor de un diccionario, podemos usar el método `items()`, que nos devuelve un conjunto de tuplas donde el primer elemento de cada una es una clave y el segundo, su valor asociado `(clave,valor)`:
+
+```{python}
+for tupla in materias.items():
+  dia = tupla[0]
+  codigos = tupla[1]
+  print(f"El {dia} tengo que cursar las materias {codigos}")
+```
+
+También podemos desempaquetar las tuplas como vimos previamente:
+  
+```{python}
+for dia, codigos in materias.items():
+  print(f"El {dia} tengo que cursar las materias {codigos}")
+```
+
+:::{.callout-note}
+Como los diccionarios no son secuencias, no tienen orden, por lo que no podemos obtener porciones de un diccionario usando *slices* o `[:]` como hacíamos con otras estructuras de datos.
+:::
+
+:::{.callout-tip}
+### Acerca de la Iteración de un Diccionario
+El mayor beneficio de los diccionarios es que podemos acceder a sus valores de forma eficiente, a través de sus claves.\
+Si la única funcionalidad que necesitamos de un diccionario es iterarlo, entonces no estamos aprovechando su potencial. En ese caso, es preferible usar una o más listas o tuplas, que es más simple y más eficiente.\
+Iterar un diccionario es una funcionalidad adicional que nos brinda Python, pero no es su principal uso.
+:::
+
+### Usos de un Diccionario
+Los diccionarios son muy versátiles. Se puede utilizar un diccionario para, por ejemplo, contar cuántas apariciones de cada palabra hay en un texto, o cuántas apariciones por cada letra.
+
+También se puede usar un diccionario para tener una agenda de contactos, donde la clave es el nombre de la persona y el valor el número de teléfono.
+
+:::{.callout-note collapse="true"}
+### Hashmaps: Dato interesante
+Los diccionarios de Python son implementados usando una estructura de datos llamada *hashmap*.\
+Para cada clave, se le calcula un valor numérico llamado *hash*, que es el que se usa para acceder al valor asociado a esa clave.\
+Cuando se recibe una clave, se le calcula su *hash* y se busca en el diccionario el valor asociado a ese *hash*.\
+:::
+
+### Operaciones de los Diccionarios
+| Operación | Descripción |
+|---|---|
+| `d[k]` | Devuelve el valor asociado a la clave `k` |
+| `d[k] = v` | Asigna el valor `v` a la clave `k`. Si la clave no existe, la agrega al diccionario. Si ya existe, le actualiza el valor asociado. |
+| `del d[k]` | Elimina la clave `k` y su valor asociado del diccionario `d` |
+| `k in d` | Devuelve `True` si la clave `k` se encuentra en el diccionario `d`, `False` en caso contrario |
+| `len(d)` | Devuelve la cantidad de pares clave-valor del diccionario `d` |
+| `d.keys()` | Devuelve una lista con las claves del diccionario `d` |
+| `d.values()` | Devuelve una lista con los valores del diccionario `d` |
+| `d.items()` | Devuelve una lista de tuplas con los pares clave-valor del diccionario `d` |
+| `d.clear()` | Elimina todos los pares clave-valor del diccionario `d` |
+| `d.copy()` | Devuelve una copia del diccionario `d` |
+| `d.pop(k)` | Elimina la clave `k` y su valor asociado del diccionario `d`, y devuelve el valor asociado |
+| `d.popitem()` | Elimina un par clave-valor del diccionario `d`, y devuelve una tupla con la clave y el valor eliminados |
+| `d.get(k, v)` | Devuelve el valor asociado a la clave `k` si la clave existe, o el valor `v` en caso contrario |
+| `d.update(d2)` | Agrega los pares clave-valor del diccionario `d2` al diccionario `d`. Si una clave ya existe en `d`, actualiza su valor asociado. |
+
+:::{.callout-note}
+Existen más métodos de diccionarios, pero estos son los más utilizados y los que vamos a ver en la materia. Recomendamos que pruebes cada uno de ellos con los diccionarios que vimos en este capítulo.
+:::
+
+### Diccionarios y Funciones
+Los diccionarios son mutables, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función.
+
+```{python}
+def agregar_alumno(alumnos, nombre, legajo):
+  alumnos[nombre] = legajo
+
+alumnos = {}
+agregar_alumno(alumnos, "Juan", 1234)
+agregar_alumno(alumnos, "María", 5678)
+print(alumnos)
+```
+
+### Ordenamiento de Diccionarios
+Tenemos algunas operaciones que nos permiten ordenar un diccionario:
+
+| Operación | Descripción |
+|---|---|
+| `dict()` | Crea un diccionario vacío |
+| `sorted(d)` | Devuelve una lista ordenada con las claves del diccionario `d` |
+| `dict(sorted(d.items()))` | Devuelve un diccionario ordenado con las claves del diccionario `d` |
+
+Si lo que necesitamos es ordenar diccionarios entre sí (por ejemplo, teniendo una lista de diccionarios), vamos a usar el parámetro `key` de la función `sorted`:
+
+```{python}
+def obtener_nombre(alumno):
+  return alumno["nombre"]
+
+alumnos = [
+  {"nombre": "Priscila", "legajo": 1234},
+  {"nombre": "Iara", "legajo": 5678},
+  {"nombre": "Agostina", "legajo": 9012}
+]
+alumnos_ordenados = sorted(alumnos, key=obtener_nombre)
+print(alumnos_ordenados)
+```
+
+:::{.callout-note}
+En el ejemplo de arriba, estamos ordenando una lista de diccionarios por el valor de la clave `"nombre"`.\
+El parámetro `key` recibe una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `obtener_nombre` devuelve el valor de la clave `"nombre"` de cada diccionario, y es lo que se usa para ordenar.
+:::
+
+:::{.callout-important}
+### Ejercicio Desafío
+Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los diccionarios ordenados según la clave.\
+
+Ejemplo:\
+Si se tiene `[{"nombre": "Priscila", "legajo": 1234}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Agostina", "legajo": 9012}]` y se recibe la clave `nombre`\
+una vez ejecutada, la función debe devolver:\
+`[{"nombre": "Agostina", "legajo": 9012}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Priscila", "legajo": 1234}]`\
+:::
+
+:::{.callout-tip collapse="true"}
+### Lambda
+En el ejemplo anterior, la función `obtener_nombre` es muy simple, y sólo la usamos una vez.\
+En estos casos, podemos usar una *función lambda*, que es una función anónima que se declara en una sola línea.\
+
+```{python}
+alumnos = [
+  {"nombre": "Priscila", "legajo": 1234},
+  {"nombre": "Iara", "legajo": 5678},
+  {"nombre": "Agostina", "legajo": 9012}
+]
+
+alumnos_ordenados = sorted(alumnos, key=lambda alumno: alumno["nombre"])
+print(alumnos_ordenados)
+```
+
+Lo que estamos haciendo es declarar una función que recibe un parámetro `alumno` y devuelve el valor de la clave `"nombre"` de ese diccionario.\
+La función se declara en una sola línea, y no tiene nombre.\
+La función se pasa como parámetro `key` a `sorted`, y se ejecuta para cada elemento de la lista antes de ordenar.
+:::

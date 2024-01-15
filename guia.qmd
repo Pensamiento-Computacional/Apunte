@@ -372,7 +372,7 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
     a. Inserte el caracter entre cada letra de la cadena. Ejemplo: `'separar'` y `'-'` debería devolver `'s-e-p-a-r-a-r'`.\
     b. Reemplace todos los espacios por el caracter. Ejemplo: `'mi archivo de texto.txt'` y `'_`' debería devolver `'mi_archivo_de_texto.txt'`.\
     c. Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: `'su clave es: 1540'` y `'*'` debería devolver `'su clave es: ****'`.\
-    d. Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: `'2552552550'` y `'.'` debería devolver `'
+    d. Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: `'2552552550'` y `'.'` debería devolver `'255.255.255.0'`
 
     e. Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: `'su clave es: 1540'`, `'*'` y `3` debería devolver `'su clave es: ***0'`.
 
@@ -537,3 +537,125 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
     ¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
     En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.
     :::
+
+### Diccionarios
+
+1. Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos.
+Por ejemplo:
+
+```python
+l = [('Hola', 'don Pepito'), ('Hola', 'don Jose'), ('Buenos', 'días')]
+print(tuplas_a_diccionario(l))
+```
+
+```
+{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}
+```
+
+2. Escriba una función que reciba una cadena y devuelva:
+
+    a. Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe `"Qué lindo día que hace hoy"` debe devolver: `{'qué': 2, 'lindo': 1, 'día': 1, 'hace': 1, 'hoy': 1}`.
+    b. Un diccionario con la cantidad de apariciones de cada caracter  en la cadena.
+
+3. Escribir una función que reciba una cantidad de iteraciones N.
+    a. Se deberá simular una persona que tira un dado N veces, y se deberá devolver un diccionario con la cantidad de apariciones de cada valor en el dado. Nota: para simular una tirada, usar `import random`y `random.randint(1, 6)`.
+
+    b. Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.
+
+4. Escribir un programa que le pida al usuario que ingrese nombres. 
+
+    a. Si el nombre se encuentra en la agenda, debe mostrar el teléfono. 
+    b. Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente. 
+
+    En ambos casos, El usuario puede utilizar la palabra "EXIT" para dejar de ingresar nombres.
+
+5. Escribir una función que reciba un texto y para cada caracter presente en el texto, devuelva la palabra más larga en la que se encuentra ese caracter.
+
+6. Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes:
+
+    | nombre | apellido | dni | carrera |
+    | ------ | -------- | --- | ------- |
+    | Violeta   | Perez    | 42000000 | Informática |
+    | Carla    | Guanca | 42001001 | Mecánica |
+    | Manuela  | Gomez    | 42002002 | Química |
+
+    a. Crear un diccionario que sirva para representar a cada persona. Debe contener las claves `nombre`, `apellido`, `dni` y `carrera`. Los diccionarios se deben guardan en una lista llamada `estudiantes`.
+    b. Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el `codigo` y el valor la `nota` (del 1 al 10) obtenida.
+    c. Agregar para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).
+    
+    d. Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.
+
+7. En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especia, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.
+
+8. Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.
+
+9. Se tiene un ticket de supermercado en forma de diccionario con los siguientes datos:
+    
+    - Nombre del Producto
+    - Precio por Unidad
+    - Cantidad
+
+    Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.
+
+10. Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la serie, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.
+
+    a. Resolver sin usar `filter`
+    b. Resolver usando `filter`.
+
+13. La profesora Llamel guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
+
+    Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).
+
+    a. Se pide haecr una funciónq ue dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad que rindieron los alumnos.
+
+    b. Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.
+
+14. En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.
+
+    Se pude hacer una función que reciba esta lista de diccinoarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.
+
+15. Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).
+
+    a. Crear un diccionario de ejemplo que represente esta situación.
+    b. Teniendo esta lista de diccionarios, ordenarlos alfabéticamente por el nombre de los maratonistas.
+    c. Teniendo esta lista de diccionarios, ordenar las maratones en tiempo ascendente según el tiempo que tardaron en correrlas.
+
+16. **Desafío** (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo. 
+
+    Laura quiere entonces actualizar sus diccionarios, para que en vez de guardar el monto exacto del bono, guarde el porcentaje que le corresponde. Ejemplo: si en el 2019 su sueldo era de $1.000.000 y el bono que le dieron era de $40.000, el bono fue del 4% del sueldo. 
+
+    a. Hacer una función que reciba la lista de diccionarios, y para cada una de las reviews, modifique el valor del bono por el porcentaje correspondiente.
+
+    b. Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar `filter` y `map`. 
+
+17. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
+
+    Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.
+
+    La base contiene los siguientes datos de cada posible donante:
+    - Nombre
+    - Apellido
+    - Edad
+    - Peso
+    - Fecha de la última donación. Puede ser 'None' si nunca donó. Dormato: (dia,mes,año)
+    - Fecha del último tatuaje. Puede ser 'None' si no tiene tatuajes. Formato: (dia,mes,año)
+    - Tipo de sangre. Puede ser '0+', '0-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'
+    
+    Los requisitos son:
+    - Tener entre 16 y 65 años
+    - Pesar más de 50 kilos
+    - Que hayan pasado 2 meses desde la última donación
+    - Que hayan pasado 6 meses desde el último tatuaje
+    
+    a. Se pide hacer una función que reciba una lista de diccionarios con la información de cada posible donante, y devuelva una lista con los que cumplen los requisitos.
+
+    b. Se pide hacer una función que priorice a los donantes que tienen sangre tipo 0 (positivo y negativo) por sobre todos los A, B y AB (positivos y negativos); ya que son los que más se necesitan. La función debe recibir la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos, y devolver una nueva lista ordenados de mayor a menor prioridad.
+
+    c. Se pide hacer una función que reciba la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos y ordenada por prioridad, que se quede con los que son 0+ y 0-, y los ordene por órden alfabético de apellido.
+
+    <img src="./imgs/unidad_4/goti.png" width="200" height="200" />
+    
+    > Si querés saber más sobre el proyecto, podés visitar su página web:\
+    [https://www.donarg.com.ar/](https://www.donarg.com.ar/)\
+    o sacar turno para donar sangre en\
+    [https://www.donarg.com.ar/dondedono](https://www.donarg.com.ar/dondedono).
