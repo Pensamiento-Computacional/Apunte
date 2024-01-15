@@ -1040,7 +1040,7 @@ for dia, codigos in materias.items():
 ```
 
 :::{.callout-note}
-Como los diccionarios no son secuencias, no tienen orden, por lo que no podemos obtener porciones de un diccionario usando *slices* o `[:]` como hacíamos con otras estructuras de datos.
+Como los diccionarios no son secuencias, no tienen orden interno específico, por lo que no podemos obtener porciones de un diccionario usando *slices* o `[:]` como hacíamos con otras estructuras de datos.
 :::
 
 :::{.callout-tip}
