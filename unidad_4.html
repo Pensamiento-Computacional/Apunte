@@ -246,6 +246,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#diccionarios-y-funciones" id="toc-diccionarios-y-funciones" class="nav-link" data-scroll-target="#diccionarios-y-funciones"><span class="header-section-number">4.8.6</span> Diccionarios y Funciones</a></li>
   <li><a href="#ordenamiento-de-diccionarios" id="toc-ordenamiento-de-diccionarios" class="nav-link" data-scroll-target="#ordenamiento-de-diccionarios"><span class="header-section-number">4.8.7</span> Ordenamiento de Diccionarios</a></li>
   </ul></li>
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets"><span class="header-section-number">4.9</span> Sets</a>
+  <ul class="collapse">
+  <li><a href="#operaciones-con-sets" id="toc-operaciones-con-sets" class="nav-link" data-scroll-target="#operaciones-con-sets"><span class="header-section-number">4.9.1</span> Operaciones con Sets</a></li>
+  <li><a href="#ordenamiento-e-iteración-de-sets" id="toc-ordenamiento-e-iteración-de-sets" class="nav-link" data-scroll-target="#ordenamiento-e-iteración-de-sets"><span class="header-section-number">4.9.2</span> Ordenamiento e Iteración de Sets</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1947,6 +1952,135 @@ En estos casos, podemos usar una <em>función lambda</em>, que es una función a
 La función se declara en una sola línea, y no tiene nombre.<br>
 La función se pasa como parámetro <code>key</code> a <code>sorted</code>, y se ejecuta para cada elemento de la lista antes de ordenar.</p>
 </div>
+</div>
+</div>
+</section>
+</section>
+<section id="sets" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="sets"><span class="header-section-number">4.9</span> Sets</h2>
+<p>Un set es una estructura de datos mutable (como las listas y los diccionarios), que permite agregar y quitar elementos cumpliendo los requisitos de unicidad y búsqueda en tiempo constante. Además, es posible hacer operaciones entre sets como la unión, intersección y diferencia.</p>
+<p>La sintaxis de un set es con llaves <code>{}</code>, al igual que el diccionario, pero no contiene pares de clave-valor asociados, únicamente elementos.</p>
+<div class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4}</code></pre>
+</div>
+</div>
+<p>El set no permite tener elementos repetidos, por lo que tratar de agregar un elemento a un set en donde ya existe, no lo agrega por duplicado:</p>
+<div class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>s1.add(<span class="dv">1</span>)</span>
+<span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4}</code></pre>
+</div>
+</div>
+<p>Para unir dos sets, podemos usar el método <code>union</code>:</p>
+<div class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> {<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>}</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>s1.union(s2)</span>
+<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4}</code></pre>
+</div>
+</div>
+<p>También podemos ver la intersección, y la diferencia:</p>
+<div class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>intersection <span class="op">=</span> s1.intersection(s2)</span>
+<span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> s1.difference(s2)</span>
+<span id="cb174-3"><a href="#cb174-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="#cb174-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La intersección de s1 y s2 es </span><span class="sc">{</span>intersection<span class="sc">}</span><span class="ss"> y la diferencia es: </span><span class="sc">{</span>diff<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La intersección de s1 y s2 es {3, 4} y la diferencia es: {1, 2}</code></pre>
+</div>
+</div>
+<p>Para crear un set vacío, no podemos usar un par de llaves <code>{}</code>, porque esa es sintaxis para crear un diccionario vacío. Lo que tenemos que hacer es usar el método <code>set()</code>.</p>
+<div class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>legajos <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a>legajos.add(<span class="dv">105609</span>)</span>
+<span id="cb176-4"><a href="#cb176-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(legajos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{105609}</code></pre>
+</div>
+</div>
+<section id="operaciones-con-sets" class="level3" data-number="4.9.1">
+<h3 data-number="4.9.1" class="anchored" data-anchor-id="operaciones-con-sets"><span class="header-section-number">4.9.1</span> Operaciones con Sets</h3>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>s.add(x)</code></td>
+<td>Agrega el elemento <code>x</code> al set <code>s</code></td>
+</tr>
+<tr class="even">
+<td><code>s.remove(x)</code></td>
+<td>Elimina el elemento <code>x</code> del set <code>s</code>. Si <code>x</code> no se encuentra en <code>s</code>, se produce un error</td>
+</tr>
+<tr class="odd">
+<td><code>s.discard(x)</code></td>
+<td>Elimina el elemento <code>x</code> del set <code>s</code>. Si <code>x</code> no se encuentra en <code>s</code>, no se produce un error</td>
+</tr>
+<tr class="even">
+<td><code>s.clear()</code></td>
+<td>Elimina todos los elementos del set <code>s</code></td>
+</tr>
+<tr class="odd">
+<td><code>s.copy()</code></td>
+<td>Devuelve una copia del set <code>s</code></td>
+</tr>
+<tr class="even">
+<td><code>s.union(s2)</code></td>
+<td>Devuelve un set con los elementos de <code>s</code> y <code>s2</code></td>
+</tr>
+<tr class="odd">
+<td><code>s.intersection(s2)</code></td>
+<td>Devuelve un set con los elementos que están en <code>s</code> y en <code>s2</code></td>
+</tr>
+<tr class="even">
+<td><code>s.difference(s2)</code></td>
+<td>Devuelve un set con los elementos que están en <code>s</code> pero no en <code>s2</code></td>
+</tr>
+<tr class="odd">
+<td>len(s)</td>
+<td>Devuelve la cantidad de elementos en <code>s</code></td>
+</tr>
+<tr class="even">
+<td>x in s</td>
+<td>Devuelve True si el elemento <code>x</code> se encuentra en <code>s</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ordenamiento-e-iteración-de-sets" class="level3" data-number="4.9.2">
+<h3 data-number="4.9.2" class="anchored" data-anchor-id="ordenamiento-e-iteración-de-sets"><span class="header-section-number">4.9.2</span> Ordenamiento e Iteración de Sets</h3>
+<p>Un set es un conjunto de datos sin ordenar. Sin embargo, podemos de todas formas y si quisiéramos, ordenar los elementos haciendo uso de <code>sorted</code>. El método <code>sort()</code> no está disponible para los sets.</p>
+<div class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>}</span>
+<span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(s3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 4, 7, 8]</code></pre>
+</div>
+</div>
+<p>Los elementos también pueden iterarse:</p>
+<div class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a>s4 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> s4:</span>
+<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+2
+3
+4</code></pre>
 </div>
 </div>
 
