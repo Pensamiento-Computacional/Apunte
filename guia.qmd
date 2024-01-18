@@ -204,7 +204,7 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
 
 1. Escribir función que:
     a. Imprima por pantalla todos los números entre 10 y 20.
-    b. Salude a todas las personas de esta lista `[Flaminia, Iara, Agostina, Priscila, Sol, Lucía]` con el mensaje `"Hola <nombre>! Vamos a aprender a programar"`.
+    b. Salude a todas las personas de esta lista `[Flaminia, Serena, Agustina, Priscila, Sol, Agostina, Iara, Lu]` con el mensaje `"Hola <nombre>! Vamos a aprender a programar"`.
     c. Le pida al usuario que ingrese 5 números y le muestre la suma total de todos ellos.
     d. Imprima por pantalla todos los números entre 100 y 199 que sean divisibles por 7.
     e. Reciba dos números, y recorra todos los números entre ellos, imprimiendo en pantalla si es par o impar. Por ejemplo, recibiendo 1 y 3, debe imprimir:
@@ -637,7 +637,7 @@ print(tuplas_a_diccionario(l))
     - Apellido
     - Edad
     - Peso
-    - Fecha de la última donación. Puede ser 'None' si nunca donó. Dormato: (dia,mes,año)
+    - Fecha de la última donación. Puede ser 'None' si nunca donó. Formato: (dia,mes,año)
     - Fecha del último tatuaje. Puede ser 'None' si no tiene tatuajes. Formato: (dia,mes,año)
     - Tipo de sangre. Puede ser '0+', '0-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'
     
