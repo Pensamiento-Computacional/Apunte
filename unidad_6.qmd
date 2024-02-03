@@ -1,9 +1,485 @@
 ---
-title: "Bibliotecas"
+title: Librerías de Python
 format:
   html:
     code-fold: false
 jupyter: python3
 ---
 
-## Subtitle
+## Introducción
+
+Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de librerías que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las librerías?** La librerías son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos. 
+
+Entre las librerías disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas librerías y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.
+
+Asimismo, estas librerías se pueden clasificar según su aplicación y funcionalidad en: procesamiento de datos, visualización, aprendizaje automático, desarrollo web, procesamiento de lenguaje y de imágenes, entre otras. En este capítulo se analizarán tres de las librerías más reconocidas y ampliamente utilizadas de Python: **NumPy** y **Pandas** para procesamiento de datos y **Matplotlib**, para visualización.
+
+### ¿Cómo se utilizan las librerías?
+
+Para acceder a una librería y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos:
+
+-	La instalación se puede llevar a cabo desde el símbolo del sistema (o en inglés: “Command Prompt”), corriendo: `pip install –nombre_de_librería` o en el script de Google Colab, con el siguiente comando `! pip install –nombre_de_librería`
+
+
+-	Para importarla, en la parte superior de nuestro código debemos correr `import –nombre_de_librería as –nombre_de_librería_corto`. El alias o el nombre corto de la librería se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
+
+## NumPy
+
+NumPy es una librería de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas. 
+
+Como ya se mencionó anteriormente, para utilizarse se debe instalar e importar. Por convención, se suele importar como: 
+
+```{python}
+import numpy as np
+```
+
+NumPy incorpora una estructura de datos propia llamados **arrays** que es similar a la lista de Python, pero puede almacenar y operar con datos de manera mucho más eficiente. **¡El procesamiento de los arrays es hasta 50 veces más rápido!** Esta diferencia de velocidad se debe, en parte, a que **los arrays contienen datos homogéneos**, a diferencia de las listas que pueden contener distintos tipos de datos dentro.
+
+### ¿Qué es un **array**?
+
+Un **array** es un conjunto de elementos del mismo tipo, donde cada uno de ellos posee una posición y esta, es única para cada elemento. Para comprenderlo, analicemos el siguiente ejemplo: si pensamos en una matriz, lo primero que nos viene a la mente es una tabla con valores ordenados en filas y columnas, donde una fila es la línea horizontal y una columna es la vertical. Es decir, una matriz es un conjunto de elementos que posee una posición o índice determinado determinado por la fila y la columna, por lo que sería un array.
+
+También, es posible encontrar en la bibliografía el término **ndarray**, que es una abreviatura de "array N-dimensional", debido a que los arrays pueder ser de dimensión nula (0-D), unidimensional, bidimensional, tridimensional, etc, llamados comúnmente escalar, vector, matriz y tensor, respectivamente. En este capítulo se trabajará principalmente con vectores y matrices ya que consideramos que les será útil para aplicar los conocimientos de Numpy en otras materias.
+
+#### ¿Cómo se crea un **array**?
+
+Un array se crea usando la función `array()` a partir de listas o tuplas. Por ejemplo:
+
+```{python}
+a = np.array([1, 2, 3])
+print(a)
+```
+
+También, se pueden crear arrays particulares, constituídos por ceros con `zeros()` o por unos con `ones()`:
+
+```{python}
+# Creo un array de ceros con dos elementos
+a_ceros = np.zeros(2)
+print(a_ceros)
+```
+
+```{python}
+# Creo un array de unos con dos elementos
+a_unos = np.ones(2)
+print(a_unos)
+```
+
+Además, se pueden crear arrays con un rango de números, utilizando `arange()` o `linspace()`:
+
+```{python}
+# Creo un array con un rango que empieza en 2 hasta 9 y va de 2 en 2.
+a_rango = np.arange(2, 9, 2)
+print(a_rango)
+```
+
+```{python}
+# Creo un array con un rango formado por 4 números, que empieza en 2 hasta 8 (incluídos). 
+a_rango_2 = np.linspace(2, 8, num=4)
+print(a_rango_2)
+```
+
+Finalmente, para crear arrays de más dimensiones, se utilizan varias listas:
+
+```{python}
+matriz = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(matriz)
+```
+
+#### Atributos de un array
+
+Para caracterizar un array es necesario conocer sus dimensiones, utilizando `ndim`. De esta forma, se puede confirmar que el array llamado **matriz**, definido anteriormente, es bidimensional: 
+
+```{python}
+# Número de ejes o dimensiones de la matriz
+matriz.ndim
+```
+
+Otra característica de interés es su forma o `shape`: para las matrices bidimensionales, se muestra una tupla (n, m) con el número de filas n y de columnas m:
+
+```{python}
+# (n = filas, m = columnas)
+matriz.shape
+```
+
+```{python}
+# Número total de elementos de la matriz: 2 filas x 3 columnas = 6 elementos
+matriz.size
+```
+
+Al elemento de una matriz A que se encuentra en la **fila i-ésima y la columna j-ésima** se llama **aij**. De manera análoga, para acceder a un elemento de un array se debe indicar primero la posición de la fila y luego, de la columna:
+
+```{python}
+print('Elemento de la primera fila y segunda columna: ', matriz[0, 1])
+```
+
+O se puede elegir un rango de elementos en una fila o columna particular:
+
+```{python}
+print('Los elementos de la primera fila, columnas 0 y 1: ', matriz[0, 0:2])
+```
+
+```{python}
+print('Los elementos de la segunda columna, filas 0 y 1: ', matriz[0:2, 1])
+```
+
+#### Modificar arrays 
+
+De forma similar a lo aprendido con las listas de Python, se pueden modificar los arrays utilizando ciertas funciones. Para entender y aplicar las mismas, definamos un vector llamado a:
+
+```{python}
+a = np.array([2, 1, 5, 3, 7, 4, 6, 8])
+
+print(a)
+```
+
+A este vector, se le puede modificar la forma: pasando de ser `(8,)` a `(4,2)`, por dar un ejemplo:
+
+```{python}
+a_reshape = a.reshape(2, 4) # 2 filas y 4 columnas
+
+print(a_reshape)
+```
+
+También, se modría insertar una fila (`axis = 0`) o una columna (`axis = 1`) en una determinada posición. Por ejemplo:
+
+```{python}
+# Agregar fila de cincos en posición 1:
+print(np.insert(a_reshape, 1, 5, axis=0))
+```
+
+```{python}
+# Agregar columna de cincos en posición 1:
+print(np.insert(a_reshape, 1, 5, axis=1))
+```
+
+O lo que es equivalente:
+
+```{python}
+# Agregar columna de cincos en posición 1:
+print(np.insert(a_reshape, 1, [5, 5], axis=1))
+```
+
+::: {.callout-note}
+#### **Observemos los parámetros** \
+Note que a la función `insert()`, se le debe indicar: \
+- el array que se desea modificar \
+- la posición de la fila o columna que se desea agregar \
+- los valores a insertar. **¡Ojo con las dimensiones!** Para el ejemplo anterior, a_reshape tenía 2 filas, por lo que se debe agregar una columna con 2 elementos o una fila con 4. \
+- el eje que se agrega: una fila (axis = 0) o una columna (axis = 1) \
+:::
+
+También podríamos agregar una fila o una columna utilizando `append()` al final, como ocurría con las listas:
+
+```{python}
+# Agregar una última fila
+a_modificada = np.append(a_reshape, [[1, 2, 3, 4]], axis=0)
+print(a_modificada)
+```
+
+O eliminarlas con `delete()`
+
+```{python}
+# Eliminar la fila de la posición 2.
+print(np.delete(a_modificada, 2, axis=0))
+```
+
+Finalmente, podemos concatenar arrays, como los siguientes:
+
+```{python}
+a = np.array([2, 1, 5, 3])
+b = np.array([7, 4, 6, 8])
+
+# Concatenar a y b:
+c = np.concatenate((a, b))
+print(c)
+```
+
+Y ordenar los elementos de un array como numérico o alfabético, ascendente o descendente.
+
+```{python}
+print(np.sort(c))
+```
+
+### Operaciones aritméticas utilizando **array**
+
+Como se ha mencionado anteriormente, Numpy tiene un gran potencial para realizar operaciones, muy superior al de las listas de Python, gracias a la vectorización que es mucho más rápido que iterar sobre cada elementos. Por ejemplo, si quisieramos sumar dos listas de python necesitaríamos realizar un `for` y utilizar el método `zip():
+
+```{python}
+# Definir listas
+a = [2, 1, 5, 3]
+b = [7, 4, 6, 8]
+c = []
+
+# Sumar el primer elemento de a con el primero de b, el segundo elemento de a con el segundo de b y así sucesivamente
+for i, j in zip(a, b):
+  c.append(i + j)
+print(c)
+```
+
+Utlizando las funciones de Numpy, esto ya no es más necesario:
+
+```{python}
+# add() para sumar elemento a elemento de a y b
+c = np.add(a, b)
+print(c)
+```
+
+Una vez aclarado esto, **¡A calcular!**
+
+#### Operaciones básicas:
+
+A continuación se muestra una lista con las operaciones básicas junto con sus operadores asociados, funciones y ejemplos.
+
+| Operación | Operador | Función |
+| --- | --- | --- |
+| Suma | `+` | `add()` |
+| Resta | `-` | `subtract()` |
+| Multiplicación | `*` | `multiply()` |
+| División | `/` | `divide()` |
+| Potencia | `**` | `power()` |
+
+Definimos los vectores a y b con los que operaremos y veremos ejemplos:
+
+```{python}
+a = np.array([1, 3, 5, 7])
+b = np.array([1, 1, 2, 2])
+```
+
+- Suma:
+
+```{python}
+resultado_1 = a + b
+print("Suma usando +:", resultado_1) 
+
+resultado_2 = np.add(a, b)
+print("Suma usando add():", resultado_2) 
+```
+
+- Resta:
+
+```{python}
+resultado_1 = a - b
+print("Resta usando -:", resultado_1) 
+
+resultado_2 = np.subtract(a, b)
+print("Resta usando subtract():", resultado_2) 
+```
+
+- Multiplicación:
+
+```{python}
+resultado_1 = a * b
+print("Multiplicación usando *:", resultado_1) 
+
+resultado_2 = np.multiply(a, b)
+print("Multiplicación usando multiply():", resultado_2) 
+```
+
+- División:
+
+```{python}
+resultado_1 = a / b
+print("División usando /:", resultado_1) 
+
+resultado_2 = np.divide(a, b)
+print("División usando divide():", resultado_2) 
+```
+
+- Potencia:
+
+```{python}
+resultado_1 = a ** b
+print("Potencia usando **:", resultado_1) 
+
+resultado_2 = np.power(a, b)
+print("Potencia usando power():", resultado_2) 
+```
+
+::: {.callout-note}
+Note que si quisieramo operar con un vector b de elementos iguales, podríamos utilizar un escalar.
+:::
+
+```{python}
+b = np.array([2, 2, 2, 2])
+
+resultado_1 = a * b
+print("Usando un vector b = [2, 2, 2, 2]:", resultado_1) 
+
+resultado_2 = a * 2
+print("Usando un escalar b = 2:", resultado_2) 
+```
+
+#### Logaritmo:
+
+NumPy provee funciones para los logaritmos de base 2, 10 y e:
+
+| Base | Función |
+| --- | --- |
+| 2 | `log2()` |
+| 10 | `log10()` |
+| e | `log()` |
+
+Por ejemplo:
+
+```{python}
+# Ejemplo log2()
+print("Logaritmo base 2:", np.log2([2, 4, 8, 16]))
+# Ejemplo log10()
+print("Logaritmo base 10:", np.log10([10, 100, 1000, 10000]))
+# Ejemplo log()
+print("Logaritmo base e:", np.log([1, np.e, np.e**2]))
+```
+
+::: {.callout-note}
+Note que el número de Euler o número e es una constante incluída en NumPy como: `np.e`
+:::
+
+```{python}
+np.e
+```
+
+#### Funciones trigonométricas:
+
+A continuación, una lista con las funciones trigonométricas más utilizadas, que toman los valores en radianes:
+
+| Función trigonométrica | Función |
+| --- | --- |
+| seno | `sin()` |
+| coseno | `cos()` |
+| tangente | `tan()` |
+| arcoseno | `arcsin()` |
+| arcocoseno | `arccos()` |
+| arcotangente | `arctan()` |
+
+Por ejemplo:
+
+```{python}
+# Ejemplo de seno
+print("Seno de π / 2:", np.sin(np.pi / 2))
+
+# Ejemplo de arcoseno
+print(v np.arcsin(1))
+```
+
+```{python}
+# Ejemplo de coseno
+print("Coseno de π:", np.cos(np.pi))
+
+# Ejemplo de arcocoseno
+print("Arcoseno de -1:", np.arccos(-1))
+```
+
+```{python}
+# Ejemplo de tangente:
+print("Tangente de 0:", np.tan(0))
+
+# Ejemplo de arcotangente:
+print("Arcotangente de 0:", np.arctan(0))
+```
+
+::: {.callout-note}
+Note que el número π es una constante incluída en NumPy como: `np.pi`
+:::
+
+```{python}
+np.pi
+```
+
+Para convertir los radianes a grados y viceversa, se utiliza `deg2rad()` y `rad2deg()` respectivamente:
+
+```{python}
+print("De grados [90, 180, 270, 360] a radianes:", 
+      np.deg2rad([90, 180, 270, 360]))
+
+print("De radianes [π/2, π, 1.5*π, 2*π] a grados:", 
+      np.rad2deg([np.pi/2, np.pi, 1.5*np.pi, 2*np.pi]))
+```
+
+#### Operaciones con matrices:
+
+A continuación, una lista con las operaciones que les pueden ser de interés mientras estudian álgebra matricial:
+
+| Función | Descripción |
+| --- | --- |
+| `dot()` | Producto vectorial |
+| `transpose()` | Traspuesta |
+| `linalg.inv()` | Inversa |
+| `linalg.det()` | Determinante |
+
+Definimos las matrices 1 y 2 con los que operaremos y veremos ejemplos:
+
+```{python}
+# Crear matrices
+matriz_1 = np.array([[1, 3], [5, 7]])
+matriz_2 = np.array([[2, 6], [4, 8]])
+```
+
+```{python}
+print("Producto vectorial entre la matriz 1 y 2: \n", np.dot(matriz_1, matriz_2))
+```
+
+```{python}
+print("Traspuesta de la matriz 1: \n", np.transpose(matriz_1))
+```
+
+```{python}
+print("Inversa de la matriz 1: \n", np.linalg.inv(matriz_1))
+```
+
+```{python}
+print("Determinante de la matriz 1: \n", np.linalg.det(matriz_1))
+```
+
+::: {.callout-note}
+Note que así como existen constantes numéricas, existen las matrices particulares como las compuestas por ceros `np.zeros()`, por unos `np.ones()` y la matriz identidad `np.eyes`.
+:::
+
+```{python}
+print("Matriz de identidad de 3x3: \n", np.eye(3))
+```
+
+#### Más operaciones útiles:
+
+| Operaciones | Función | Descripción |
+| --- | --- | --- |
+| Máximo | `max()` | Valor máximo del array o del eje indicado |
+| Mínimo | `min()` | Valor mínimo del array o del eje indicado |
+| Suma | `sum()` | Suma de todos los elementos o del eje indicado |
+| Promedio | `mean()` | Promedio de todos los elementos o del eje indicado |
+
+Utilizando la matriz **data** como ejemplo:
+
+```{python}
+data = np.array([[1, 2], [5, 3], [4, 6]])
+```
+
+- Valor máximo
+
+```{python}
+print("Valor máximo de todo el array: ", data.max())
+print("Valores máximos de cada columna: ", data.max(axis=0))
+```
+
+- Valor mínimo
+
+```{python}
+print("Valor mínimo de todo el array: ", data.min())
+print("Valores mínimos de cada fila: ", data.min(axis=1))
+```
+
+- Suma de elementos:
+
+```{python}
+print("Suma de todos los elementos del array: ", data.sum())
+print("Suma de los elementos de cada fila: ", data.sum(axis=1))
+```
+
+- Promedio:
+
+```{python}
+print("Promedio de todos los elementos del array: ", data.mean())
+print("Promedio de los elementos de cada columna: ", data.mean(axis=0))
+```
+
+
