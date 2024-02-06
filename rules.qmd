@@ -1,0 +1,71 @@
+# Regimen de Cursada {.unnumbered}
+
+## Formas de Evaluación
+
+La cursada de la materia cuenta con dos parciales:
+
+- Primer Parcial
+    - Unidad 1
+    - Unidad 2
+    - Unidad 3
+    - Unidad 4
+- Segundo Parcial
+    - Unidad 5
+    - Unidad 6
+
+Cada parcial cuenta con un único recuperatorio.
+
+## Aprobación de la Cursada/Materia
+Se tiene dos formas de aprobación de la cursada:
+
+1. Regularización
+2. Promoción
+
+### Regularización
+Para regularizar la cursada, se deben aprobar los dos parciales (o recuperatorios) con un mínimo de nota de 4 (cuatro) en cada uno.\
+El promedio entre ambos parciales (o recuperatorios) debe ser mayor o igual a 4 (cuatro) y menor a 7 (siete).
+
+:::{.callout-tip collapse="true"}
+## ¿Cómo calculo Promedio?
+Sean:
+
+- `n1` la nota del primer parcial o recuperatorio del primer parcial
+- `n2` la nota del segundo parcial o recuperatorio del segundo parcial
+
+El promedio es: `(n1+n2)/2`
+:::
+
+La cursada regularizada habilita a rendir el examen final  integrador, para el cual se tienen 3 (tres) oportunidades de rendir (más información abajo).
+
+### Promoción
+Para promocionar la materia, se deben aprobar los dos parciales (o recuperatorios) con un mínimo de nota de 7 (siete) en cada uno.\
+El promedio entre ambos parciales (o recuperatorios) debe ser mayor o igual a 7 (siete).
+
+:::{.callout-tip collapse="true"}
+## Rendir Recuperatorios para Promoción
+Si se desea rendir el recuperatorio intentar subir la nota para la promoción, se debe tener en cuenta que la cátedra considerará únicamente válida la nota del último examen que se haya rendido.
+
+Ejemplo:
+
+```
+# caso 1
+parcial1 = 5
+recuperatorio1 = 7
+=> nota final parcial1 = 7
+
+# caso 2
+parcial1 = 5
+recuperatorio1 = 4
+=> nota final parcial1 = 4
+```
+:::
+
+### Examen Final Integrador
+El examen final integrador consta de una evaluación que incluye todos los temas de la materia. Los mismos se rinden al final del cuatrimestre. Se aprueba con una nota mayor o igual a 4 (cuatro).
+
+:::{.callout-warning }
+## Desaprobación de la Materia
+Si se desaprueba alguno de los parciales, el mismo puede recuperarse una sola vez.\
+Si se desapruba el recuperatorio, se debe volver a cursar la materia el cuatrimestre siguiente.\
+Si se desaprueba 3 (tres) veces el examen final integrador, se debe volver a cursar la materia el cuatrimestre siguiente.
+:::

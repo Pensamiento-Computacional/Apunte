@@ -359,7 +359,7 @@ Por ejemplo:
 print("Seno de π / 2:", np.sin(np.pi / 2))
 
 # Ejemplo de arcoseno
-print(v np.arcsin(1))
+# print(v, np.arcsin(1))
 ```
 
 ```{python}

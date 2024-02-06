@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - rules.qmd
     - unidad_1.qmd
     - unidad_2.qmd
     - unidad_3.qmd
