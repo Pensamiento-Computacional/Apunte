@@ -18,10 +18,9 @@ Asimismo, estas librerías se pueden clasificar según su aplicación y funciona
 
 Para acceder a una librería y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos:
 
--	La instalación se puede llevar a cabo desde el símbolo del sistema (o en inglés: “Command Prompt”), corriendo: `pip install –nombre_de_librería` o en el script de Google Colab, con el siguiente comando `! pip install –nombre_de_librería`
+-	**En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE, se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”), corriendo: `pip install –nombre_de_librería`. 
 
-
--	Para importarla, en la parte superior de nuestro código debemos correr `import –nombre_de_librería as –nombre_de_librería_corto`. El alias o el nombre corto de la librería se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
+-	Para importarla, en la parte superior de nuestro código debemos correr `import –nombre_de_librería as –nombre_corto_de_librería`. El alias o nombre corto de la librería se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
 
 ## NumPy
 
@@ -35,7 +34,7 @@ import numpy as np
 
 NumPy incorpora una estructura de datos propia llamados **arrays** que es similar a la lista de Python, pero puede almacenar y operar con datos de manera mucho más eficiente. **¡El procesamiento de los arrays es hasta 50 veces más rápido!** Esta diferencia de velocidad se debe, en parte, a que **los arrays contienen datos homogéneos**, a diferencia de las listas que pueden contener distintos tipos de datos dentro.
 
-### ¿Qué es un **array**?
+### **Arrays**
 
 Un **array** es un conjunto de elementos del mismo tipo, donde cada uno de ellos posee una posición y esta, es única para cada elemento. Para comprenderlo, analicemos el siguiente ejemplo: si pensamos en una matriz, lo primero que nos viene a la mente es una tabla con valores ordenados en filas y columnas, donde una fila es la línea horizontal y una columna es la vertical. Es decir, una matriz es un conjunto de elementos que posee una posición o índice determinado determinado por la fila y la columna, por lo que sería un array.
 
@@ -484,21 +483,21 @@ print("Promedio de los elementos de cada columna: ", data.mean(axis=0))
 
 ## Pandas
 
-Pandas es una librería de código abierto, diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.
+Pandas es una librería de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.
 
-Dado que se basa en la NumPy, luego de instalarse, se deben importar ambas librerías. Por convención, se suele importar como: 
+Dado que se basa en la NumPy, luego de instalarse, se deben importar ambas librerías. Por convención: 
 
 ```{python}
 import pandas as pd
 ```
 
-Pandas incorpora dos estructuras de datos llamados **Series** y  **DataFrame**.
+Pandas incorpora dos estructuras de datos llamados, **Series** y  **DataFrames**.
 
-### ¿Qué es una **Serie** y un **DataFrame**?
+### **Serie**
 
-Una **serie** es un vector (unidimensional) capaz de contener cualquier tipo de dato, como por ejemplo, números enteros o decimales, strings, objetos de Python, etc.
+Una **serie** es un vector **(unidimensional)** capaz de contener cualquier tipo de dato, como por ejemplo, números enteros o decimales, strings, objetos de Python, etc.
 
-Para crearlas, se puede partir de un escalar, una lista, un diccionario, etc. utilizando `pd.Serie()`:
+Para crearlas, se puede partir de un escalar, una lista, un diccionario, etc., utilizando `pd.Serie()`:
 
 ```{python}
 # Crear serie partiendo de una lista:
@@ -509,7 +508,7 @@ pd.Series(lista)
 
 Note que se ven dos líneas verticales de datos. A la derecha se observa una columna con los elementos de la lista antes creada, mientas que a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, por lo que si se deseara uno particular, se puede establecer utilizando `index`.
 
-El índice es de vital importancia ya que permite acceder a los elementos de la serie. Por ello, al establecer un índice en particular, su longitud debe ser acorde al número de elementos de la serie. De lo contrario, se mostrará un ValueError. 
+El índice es de vital importancia ya que permite acceder a los elementos de la serie. Es por ello que al colocar un índice en particular, su longitud debe ser acorde al número de elementos de la misma. De lo contrario, se mostrará un ValueError. 
 
 ```{python}
 # Crear serie partiendo de una lista, indicando el índice
@@ -538,15 +537,17 @@ a["x"]
 a[0]
 ```
 
-Otra propiedad interesante de las series (y de los DataFrames, como se verá a continuación) es la vectorización: así como los arrays, no requieren recorrer valor por valor en un for para realizar operaraciones. Por ejemplo:
+Otra característica interesante de las series (y de los DataFrames, como se verá a continuación) es la vectorización: así como los arrays, no requieren recorrer valor por valor en un for para realizar operaraciones. Por ejemplo:
 
 ```{python}
 a + a
 ```
 
-Por otro lado, un **DataFrame** es una estructura de datos tabular (bidimensional), compuesta por filas y columnas, que se asemeja a una hoja de cálculo de Excel.
+### **DataFrame**
 
-Para crearlos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes. En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario **data** para las columnas y de una lista **label** para el índice:
+Un **DataFrame** es una estructura de datos tabular **(bidimensional)**, compuesta por filas y columnas, que se asemeja a una hoja de cálculo de Excel. Para crearlos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes. 
+
+En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario **data** para las columnas y de una lista **label** para el índice:
 
 ```{python}
 data = {'columna_1': ['a', 'b', 'c', 'd', 'e', 'f'],
@@ -564,7 +565,7 @@ A continuación, se observa una tabla con métodos que nos permiten conocer las 
 
 | Método | Descripción |
 | --- | --- |
-| `info()` | Brinda información del DataFrame como número de filas y columna, el número de valores no nulos y el tipo de datos por columnas y el uso de la memoria. |
+| `info()` | Resume la información del DataFrame |
 | `shape` | Devuelve una tupla con el número de filas y columnas |
 | `size` | Número de elementos |
 | `columns` | Lista con los nombres de las columnas |
@@ -572,9 +573,9 @@ A continuación, se observa una tabla con métodos que nos permiten conocer las 
 | `dtypes` | Serie con los tipos de datos de las columnas |
 | `head()` | Muestra las primeras filas |
 | `tail()` | Muestra las últimas filas |
-| `df.describe()` | Resume la información de las columnas numéricas |
+| `df.describe()` | Brinda métricas de las columnas numéricas |
 
-Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFrame df** definido en la siguiente línea de código. Recuerda que muchas de ellas pueden ser utilizadas también para Series.
+Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFrame df** definido en la siguiente línea de código.
 
 ```{python}
 data = {'nombre': ['José Martínez', 'Rosa Díaz', 'Javier Garcíaz', 'Carmen López', 'Marisa Collado', 'Antonio Ruiz', 'Antonio Fernández', 
@@ -590,7 +591,7 @@ df
 ```
 
 Con `info()` se puede ver:
-- el índice en la primer línea, que es un rango de 0 a 13
+- el índice en la primera línea, que es un rango de 0 a 13
 - el número total de columnas en la segunda línea
 - el uso de la memoria en la última
 - una tabla con los nombres de las columnas en **Column**, la cantidad de valores no nulos en **Non-Null Count** y el tipo de dato en **Dtype** para cada una de ellas.
@@ -599,7 +600,7 @@ Con `info()` se puede ver:
 df.info()
 ```
 
-Note que utilizando `dtypes`, `columns` y `index` se obtiene parte de esta información:
+Note que utilizando `dtypes`, `columns` e `index` se obtiene parte de esta información:
 
 ```{python}
 # Tipo de dato por columna
@@ -628,7 +629,7 @@ df.shape
 df.size
 ```
 
-Asimismo, cuando no conocemos un DataFrame, puede ser importante ver los primeros 5 valores con `head()` y/o los últimos con `tail()`. Si se quisiera observar un número determinado de filas, sólo hay que especificarlo, por ejemplo:
+Asimismo, cuando no conocemos un DataFrame, puede ser importante ver las primeras 5 filas con `head()` o las últimas con `tail()`. Si se quisiera observar un número determinado, sólo hay que especificarlo, por ejemplo:
 
 ```{python}
 # Mostrar las primeras 3 filas.
@@ -646,7 +647,7 @@ Por otro lado, `describe()` devuelve un resumen descriptivo de las columnas de v
 df.describe()
 ```
 
-Estos métricas podrían obtenerse utilizando las funciones determinadas, como:
+Estas métricas podrían obtenerse utilizando funciones determinadas, como:
 - `count()`: contabiliza los valores no nulos
 - `mean()`: promedio
 - `min()`: valor mínimo
@@ -660,7 +661,7 @@ df.count()
 
 Finalmente, como ocurre con las series, **para acceder a los elementos de un DataFrame se puede indicar la posición o el nombre de la fila o columna**.
 
-Para acceder a una **fila** en particular, utilizamos `iloc[]` con un entero, una lita o rango de números que indican la posición o con `loc[]` indicando el valor del índice. 
+Para acceder a una **fila** en particular, utilizamos `iloc[]` con un entero, una lista de enteros o un rango de números que indican las posiciones o con `loc[]` indicando el valor del índice. 
 
 ```{python}
 # Mostrar la fila de posición 0:
@@ -678,7 +679,7 @@ df.iloc[[0, 3]]
 ```
 
 ```{python}
-# Mostrar las filas de posiciones entre 0 hasta 3:
+# Mostrar las filas de posiciones entre 0 hasta 3 (exclusive):
 df.iloc[:3]
 ```
 
@@ -692,7 +693,7 @@ df.head(3)
 df.loc[0]
 ```
 
-Por otro lado, para acceder a una **columna** se puede utilizar los nombres de la mismas con `DataFrame[columna]` o su equivalente `DataFrame.columna`.
+Por otro lado, para acceder a una **columna** se pueden utilizar los nombres de la mismas con `DataFrame[columna]` o su equivalente `DataFrame.columna`.
 
 ```{python}
 # Mostrar la columna "nombre"
@@ -718,7 +719,12 @@ df.loc[df.index[[0, 1, 2, 3]], ['nombre', 'edad']]
 
 #### Modificar un Dataframe
 
-A la hora de modificar un DataFrame puede ser que querramos cambiar la estructura del mismo, como los nombres de las columnas y de los índices, agregar una nueva filas o columna o reemplazar un dato en una determinada posición. A continuación, se enumeran distintos métodos para llevar a cabo estos cambios.
+A la hora de modificar un DataFrame puede ser que querramos:
+- cambiar la estructura del mismo, como los nombres de las columnas y de los índices,
+- agregar una nueva filas o columna
+- reemplazar un dato en una determinada posición.
+
+A continuación, se enumeran distintos métodos para llevar a cabo estos cambios.
 
 | Método | Descripción |
 | --- | --- |
@@ -726,13 +732,13 @@ A la hora de modificar un DataFrame puede ser que querramos cambiar la estructur
 | `reset_index()` | Reestablece el índice predefinido |
 | `rename()` | Renombra las columnas |
 | `insert()` | Agrega columnas |
-| `loc[]` | Agrega fila en un dado índice |
+| `loc[fila]` | Agrega una fila en un índice dado |
 | `drop()` | Elimina columnas y filas |
-| `loc[]` | Modifica un valor particular dado un índice y una columna |
+| `loc[fila, columna]` | Modifica un valor particular dado un índice y una columna |
 | `map()` | Busca un valor dado en una columna y lo reemplaza |
 | `replace()` | Reemplaza un valor dado en una columna |
 
-Por ejemplo, utilizando `set_index()` podemos transformar a la columna "nombre" en el nuevo índice, y para volver a tener el predefinido, usando `reset_index()`.
+Utilizando `set_index()` podemos, Por ejemplo, transformar a la columna "nombre" en el nuevo índice, y para volver al predefinido, usando `reset_index()`.
 
 ```{python}
 df = df.set_index(keys = "nombre")
@@ -752,7 +758,7 @@ df = df.rename(columns={"nombre": "nombre y apellido"})
 df.head()
 ```
 
-Para agregar una nueva columna, existe el método `insert()`, que requiere indicar a posición de la nueva columna, el nombre de la nueva columna, y los valores de la misma. Para ello, creamos una lista llamada **direccion** con 14 valores, para cada una de las personas del DataFrame.
+Para agregar una nueva columna, existe el método `insert()`, que requiere indicar La posición de la nueva columna, el nombre de la nueva columna, y los valores de la misma. Para ello, creamos una lista llamada **direccion** con 14 valores, para cada una de las personas del DataFrame.
 
 ```{python}
 # Valores de la nueva columna
@@ -763,7 +769,7 @@ df.insert(3, "direccion", direccion)
 df.head()
 ```
 
-Para agregar una nueva fila, e utiliza el ya conocido `loc[]`, que requiere indicar el índice y los valores de la misma. Para ello, creamos una lista llamada **nueva_fila** con valores para cada columna del DataFrame.
+Para agregar una nueva fila, se utiliza el ya conocido `loc[]`, que requiere indicar el índice y los valores de la misma. Para ello, creamos una lista llamada **nueva_fila** con valores para cada columna del DataFrame.
 
 ```{python}
 # Valores de la nueva fila
@@ -777,13 +783,13 @@ df.tail()
 Para eliminar una columna `(axis=1)` o fila `(axis=0)`, se utiliza `drop()`:
 
 ```{python}
-# Elimino columna "direccion", equivalente a del df["direccion"]
+# Elimino la columna "direccion", equivalente a del df["direccion"]
 df = df.drop('direccion', axis=1)  
 df.head()
 ```
 
 ```{python}
-# Elimino fila 14
+# Elimino la fila 14
 df = df.drop(14, axis=0) 
 df.tail()
 ```
@@ -791,14 +797,14 @@ df.tail()
 ::: {.callout-tip}
 ##### **Agregar columnas con operaciones** 
 
-Como se ha mencionado anteriormente, gracias a la vectorización se puedem agregar columnas partiendo de operaciones entre columnas existentes en el DataFrame
+Como se ha mencionado anteriormente, gracias a la **vectorización** se pueden agregar columnas partiendo de operaciones entre columnas existentes en el DataFrame.
 
 :::
 
-Por ejemplo, suponga que queremos ingresar una columna el índice de masa corporal de las personas, que se calcula de la siguiente manera: 
+Por ejemplo, suponga que queremos ingresar una columna el índice de masa corporal de las personas que se calcula de la siguiente manera: 
 
 $$
-IMC = \frac{Peso}{Altura^2}$$
+IMC = \frac{Peso(kg)}{Altura(m)^2}$$
 
 ```{python}
 # Crear la columna "IMC"
@@ -806,14 +812,14 @@ df["IMC"] = df["peso"] / df["altura"]**2
 df.head()
 ```
 
-De manera análoga, se puede crear la columna **dirección** sin utilizar `insert()`:
+De manera análoga, se puede crear la columna **dirección** sin utilizar `insert()`. Usando la lista **direccion**:
 
 ```{python}
 df["direccion"] = direccion
 df.head()
 ```
 
-Finalmente, para cambiar un valor determinado, como por ejemplo el peso de Javier García en la tercer fila:
+Finalmente, **para cambiar un valor determinado** se utiliza `loc[]`, como por ejemplo, agregar el peso de Javier García (tercera fila):
 
 ```{python}
 df.loc[2, 'peso'] = 92
@@ -855,16 +861,30 @@ df[(df['edad'] < 40) & (df['sexo'] == 'F')]
 df[(df['peso'] == 60.0) | (df['peso'] == 90.0)]
 ```
 
-Cuando se desea filtrar con un cierto rango, se pueden utilizar las condiciones antes mencionadas o la función `between()`.
+Cuando se desea filtrar con un cierto rango en una determinada columna, se pueden utilizar las condiciones antes mencionadas o la función `between()`.
 
 ```{python}
 # Equivalente a df[(df['edad'] > 25) & (df['edad'] < 40)]
 df[df['edad'].between(25, 40)]
 ```
 
+Finalmente, puede ser interesante encontrar aquellas las filas con datos faltantes o `NaN`. Para ello, se utiliza la función `isnull()` que devuelve `True` si el valor de la columna es nulo o NaN. Por ejemplo:
+
+```{python}
+df['IMC'].isnull()
+```
+
+Para visualizar aquella fila donde el índice de masa corporal es nulo, filtramos:
+
+```{python}
+df[df['IMC'].isnull() == True]
+```
+
+# En progreso!
+
 #### Otros métodos útiles
 
-A continuación, se muestra una lista con otros métodos muy útiles al analizar datos: 
+A continuación, se muestra una lista con métodos que resultan muy útiles a la hora de analizar datos: 
 
 | Método | Descripción |
 | --- | --- |
@@ -907,16 +927,4 @@ df.groupby(['sexo', 'direccion']).agg({'colesterol': [np.max, np.min], 'peso': [
 ```
 
 **En este caso se agrupa por sexo y dirección, y se informa para cada grupo el valor máximo y mínimo de colesterol y el promedio del peso de cada uno.**
-
-Finalmente las filas que contienen datos faltantes, es decir `NaN`, pueden ser identificados usando la función `isnull()`. Esta devuelve `True` si el valor de la columna es nulo o NaN. Por ejemplo:
-
-```{python}
-df['IMC'].isnull()
-```
-
-Para visualizar aquella línea donde el índice de masa corporal es nulo, filtramos:
-
-```{python}
-df[df['IMC'].isnull() == True]
-```
 
