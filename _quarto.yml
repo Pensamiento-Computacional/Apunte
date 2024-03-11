@@ -3,7 +3,7 @@ project:
 
 book:
   title: "Pensamiento Computacional"
-  author: "Aldana Rastrelli, Juan Pablo Bulacios, Pablo Notari"
+  author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamel Martínez, Pablo Notari"
   date: "12/27/2023"
   chapters:
     - index.qmd
