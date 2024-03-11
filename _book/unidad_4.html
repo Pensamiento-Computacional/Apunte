@@ -300,7 +300,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Para más información de los rangos, ver la <a href="#ciclo-for">unidad 3</a>.</p>
+<p>Para más información de los rangos, ver la <a href="unidad_3.html#ciclo-for">unidad 3</a>.</p>
 </div>
 </div>
 </section>
@@ -483,7 +483,7 @@ o</code></pre>
 <section id="buscando-subcadenas" class="level4" data-number="4.3.1.3">
 <h4 data-number="4.3.1.3" class="anchored" data-anchor-id="buscando-subcadenas"><span class="header-section-number">4.3.1.3</span> Buscando Subcadenas</h4>
 <p>El operador <code>in</code> nos permite saber si una subcadena se encuentra dentro de otra cadena. En la guía de la unidad 3 te pedimos que investigues acerca del operador <code>in</code> y <code>not in</code> para el ejercicio de vocales y consonantes.</p>
-<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
+<p><code>a in b</code> es una expresión (¿qué era una expresión?, repasar de ser necesario la <a href="unidad_3.html#expresiones-booleanas">unidad 3</a>) que devuelve <code>True</code> si <code>a</code> es una subcadena de <code>b</code>, y <code>False</code> en caso contrario.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"Hola"</span> <span class="kw">in</span> <span class="st">"Hola Mundo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1673,10 +1673,7 @@ El viernes tengo que cursar las materias [6201]</code></pre>
 <span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>  codigos <span class="op">=</span> tupla[<span class="dv">1</span>]</span>
 <span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>codigos<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>El lunes tengo que cursar las materias [6103, 7540]</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
+<pre><code>El lunes tengo que cursar las materias [6103, 7540]
 El martes tengo que cursar las materias [6201]
 El miércoles tengo que cursar las materias [6103, 7540]
 El jueves tengo que cursar las materias []
@@ -1685,8 +1682,8 @@ El viernes tengo que cursar las materias [6201]</code></pre>
 </div>
 <p>También podemos desempaquetar las tuplas como vimos previamente:</p>
 <div class="cell" data-execution_count="69">
-<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dia, codigos <span class="kw">in</span> materias.items():</span>
-<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>codigos<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dia, codigos <span class="kw">in</span> materias.items():</span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"El </span><span class="sc">{</span>dia<span class="sc">}</span><span class="ss"> tengo que cursar las materias </span><span class="sc">{</span>codigos<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>El lunes tengo que cursar las materias [6103, 7540]
 El martes tengo que cursar las materias [6201]
@@ -1839,13 +1836,13 @@ Note
 <h3 data-number="4.8.6" class="anchored" data-anchor-id="diccionarios-y-funciones"><span class="header-section-number">4.8.6</span> Diccionarios y Funciones</h3>
 <p>Los diccionarios son mutables, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función.</p>
 <div class="cell" data-execution_count="70">
-<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_alumno(alumnos, nombre, legajo):</span>
-<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>  alumnos[nombre] <span class="op">=</span> legajo</span>
-<span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> {}</span>
-<span id="cb163-5"><a href="#cb163-5" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"Juan"</span>, <span class="dv">1234</span>)</span>
-<span id="cb163-6"><a href="#cb163-6" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"María"</span>, <span class="dv">5678</span>)</span>
-<span id="cb163-7"><a href="#cb163-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> agregar_alumno(alumnos, nombre, legajo):</span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>  alumnos[nombre] <span class="op">=</span> legajo</span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> {}</span>
+<span id="cb162-5"><a href="#cb162-5" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"Juan"</span>, <span class="dv">1234</span>)</span>
+<span id="cb162-6"><a href="#cb162-6" aria-hidden="true" tabindex="-1"></a>agregar_alumno(alumnos, <span class="st">"María"</span>, <span class="dv">5678</span>)</span>
+<span id="cb162-7"><a href="#cb162-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Juan': 1234, 'María': 5678}</code></pre>
 </div>
@@ -1882,16 +1879,16 @@ Note
 </table>
 <p>Si lo que necesitamos es ordenar diccionarios entre sí (por ejemplo, teniendo una lista de diccionarios), vamos a usar el parámetro <code>key</code> de la función <code>sorted</code>:</p>
 <div class="cell" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_nombre(alumno):</span>
-<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> alumno[<span class="st">"nombre"</span>]</span>
-<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
-<span id="cb165-5"><a href="#cb165-5" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
-<span id="cb165-6"><a href="#cb165-6" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
-<span id="cb165-7"><a href="#cb165-7" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
-<span id="cb165-8"><a href="#cb165-8" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb165-9"><a href="#cb165-9" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span>obtener_nombre)</span>
-<span id="cb165-10"><a href="#cb165-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_nombre(alumno):</span>
+<span id="cb164-2"><a href="#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> alumno[<span class="st">"nombre"</span>]</span>
+<span id="cb164-3"><a href="#cb164-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb164-4"><a href="#cb164-4" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
+<span id="cb164-5"><a href="#cb164-5" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
+<span id="cb164-6"><a href="#cb164-6" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
+<span id="cb164-7"><a href="#cb164-7" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
+<span id="cb164-8"><a href="#cb164-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb164-9"><a href="#cb164-9" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span>obtener_nombre)</span>
+<span id="cb164-10"><a href="#cb164-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'nombre': 'Agostina', 'legajo': 9012}, {'nombre': 'Iara', 'legajo': 5678}, {'nombre': 'Priscila', 'legajo': 1234}]</code></pre>
 </div>
@@ -1945,14 +1942,14 @@ Lambda
 En estos casos, podemos usar una <em>función lambda</em>, que es una función anónima que se declara en una sola línea.<br>
 </p>
 <div class="cell" data-execution_count="72">
-<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
-<span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
-<span id="cb167-3"><a href="#cb167-3" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
-<span id="cb167-4"><a href="#cb167-4" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
-<span id="cb167-5"><a href="#cb167-5" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb167-6"><a href="#cb167-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb167-7"><a href="#cb167-7" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span><span class="kw">lambda</span> alumno: alumno[<span class="st">"nombre"</span>])</span>
-<span id="cb167-8"><a href="#cb167-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>alumnos <span class="op">=</span> [</span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Priscila"</span>, <span class="st">"legajo"</span>: <span class="dv">1234</span>},</span>
+<span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Iara"</span>, <span class="st">"legajo"</span>: <span class="dv">5678</span>},</span>
+<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"nombre"</span>: <span class="st">"Agostina"</span>, <span class="st">"legajo"</span>: <span class="dv">9012</span>}</span>
+<span id="cb166-5"><a href="#cb166-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb166-6"><a href="#cb166-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-7"><a href="#cb166-7" aria-hidden="true" tabindex="-1"></a>alumnos_ordenados <span class="op">=</span> <span class="bu">sorted</span>(alumnos, key<span class="op">=</span><span class="kw">lambda</span> alumno: alumno[<span class="st">"nombre"</span>])</span>
+<span id="cb166-8"><a href="#cb166-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alumnos_ordenados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'nombre': 'Agostina', 'legajo': 9012}, {'nombre': 'Iara', 'legajo': 5678}, {'nombre': 'Priscila', 'legajo': 1234}]</code></pre>
 </div>
@@ -1970,45 +1967,45 @@ La función se pasa como parámetro <code>key</code> a <code>sorted</code>, y se
 <p>Un set es una estructura de datos mutable (como las listas y los diccionarios), que permite agregar y quitar elementos cumpliendo los requisitos de unicidad y búsqueda en tiempo constante. Además, es posible hacer operaciones entre sets como la unión, intersección y diferencia.</p>
 <p>La sintaxis de un set es con llaves <code>{}</code>, al igual que el diccionario, pero no contiene pares de clave-valor asociados, únicamente elementos.</p>
 <div class="cell" data-execution_count="73">
-<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
-<span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
 <p>El set no permite tener elementos repetidos, por lo que tratar de agregar un elemento a un set en donde ya existe, no lo agrega por duplicado:</p>
 <div class="cell" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a>s1.add(<span class="dv">1</span>)</span>
-<span id="cb171-2"><a href="#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>s1.add(<span class="dv">1</span>)</span>
+<span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
 <p>Para unir dos sets, podemos usar el método <code>union</code>:</p>
 <div class="cell" data-execution_count="75">
-<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> {<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>}</span>
-<span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a>s1.union(s2)</span>
-<span id="cb173-3"><a href="#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> {<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>}</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>s1.union(s2)</span>
+<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
 <p>También podemos ver la intersección, y la diferencia:</p>
 <div class="cell" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>intersection <span class="op">=</span> s1.intersection(s2)</span>
-<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> s1.difference(s2)</span>
-<span id="cb175-3"><a href="#cb175-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb175-4"><a href="#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La intersección de s1 y s2 es </span><span class="sc">{</span>intersection<span class="sc">}</span><span class="ss"> y la diferencia es: </span><span class="sc">{</span>diff<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>intersection <span class="op">=</span> s1.intersection(s2)</span>
+<span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> s1.difference(s2)</span>
+<span id="cb174-3"><a href="#cb174-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="#cb174-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La intersección de s1 y s2 es </span><span class="sc">{</span>intersection<span class="sc">}</span><span class="ss"> y la diferencia es: </span><span class="sc">{</span>diff<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>La intersección de s1 y s2 es {3, 4} y la diferencia es: {1, 2}</code></pre>
 </div>
 </div>
 <p>Para crear un set vacío, no podemos usar un par de llaves <code>{}</code>, porque esa es sintaxis para crear un diccionario vacío. Lo que tenemos que hacer es usar el método <code>set()</code>.</p>
 <div class="cell" data-execution_count="77">
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>legajos <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb177-3"><a href="#cb177-3" aria-hidden="true" tabindex="-1"></a>legajos.add(<span class="dv">105609</span>)</span>
-<span id="cb177-4"><a href="#cb177-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(legajos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>legajos <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a>legajos.add(<span class="dv">105609</span>)</span>
+<span id="cb176-4"><a href="#cb176-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(legajos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{105609}</code></pre>
 </div>
@@ -2074,17 +2071,17 @@ La función se pasa como parámetro <code>key</code> a <code>sorted</code>, y se
 <h3 data-number="4.9.2" class="anchored" data-anchor-id="ordenamiento-e-iteración-de-sets"><span class="header-section-number">4.9.2</span> Ordenamiento e Iteración de Sets</h3>
 <p>Un set es un conjunto de datos sin ordenar. Sin embargo, podemos de todas formas y si quisiéramos, ordenar los elementos haciendo uso de <code>sorted</code>. El método <code>sort()</code> no está disponible para los sets.</p>
 <div class="cell" data-execution_count="78">
-<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>}</span>
-<span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(s3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>}</span>
+<span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(s3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 4, 7, 8]</code></pre>
 </div>
 </div>
 <p>Los elementos también pueden iterarse:</p>
 <div class="cell" data-execution_count="79">
-<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>s4 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
-<span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> s4:</span>
-<span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a>s4 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> s4:</span>
+<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 2

@@ -252,10 +252,10 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
 
     Ejemplo:
     ```
-    Su total a pagar es: 500
-    Ingrese el monto a pagar: 100
-    Pendientes: 400. Ingrese el monto a pagar: 200
-    Pendientes: 200. Ingrese el monto a pagar: 200
+    Su total a pagar es: 500\
+    Ingrese el monto a pagar: 100\
+    Pendientes: 400. Ingrese el monto a pagar: 200\
+    Pendientes: 200. Ingrese el monto a pagar: 200\
     Pendientes: 0. Gracias por su compra.
     ```
 
@@ -263,10 +263,10 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     
     Ejemplo:
     ```
-    Su total a pagar es: 500
-    Ingrese el monto a pagar: 100
-    Pendientes: 400. Ingrese el monto a pagar: 200
-    Pendientes: 200. Ingrese el monto a pagar: 300
+    Su total a pagar es: 500\
+    Ingrese el monto a pagar: 100\
+    Pendientes: 400. Ingrese el monto a pagar: 200\
+    Pendientes: 200. Ingrese el monto a pagar: 300\
     Pendientes: 0. Su vuelto es: 100. Gracias por su compra.
     ```
 
