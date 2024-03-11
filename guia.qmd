@@ -251,67 +251,47 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
 4. a. Necesitamos escribir un programa de cobro en el supermercado. La función debe recibir un número entero que representa el monto a pagar y debe permitir al usuario que ingrese valores, hasta que el pago se haya realizado en su totalidad. Además, le debe ir indicando cuánto le queda por pagar. El programa no da vuelto.
 
     Ejemplo:
+
     ```
     Su total a pagar es: 500
-
     Ingrese el monto a pagar: 100
-
     Pendientes: 400. Ingrese el monto a pagar: 200
-
     Pendientes: 200. Ingrese el monto a pagar: 200
-
     Pendientes: 0. Gracias por su compra.
     ```
 
     b. Hacer que el programa anterior dé vuelto:
     
     Ejemplo:
+
     ```
     Su total a pagar es: 500
-
     Ingrese el monto a pagar: 100
-
     Pendientes: 400. Ingrese el monto a pagar: 200
-
     Pendientes: 200. Ingrese el monto a pagar: 300
-
     Pendientes: 0. Su vuelto es: 100. Gracias por su compra.
     ```
 
 5. Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa "X", el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese "X". Se puede reutilizar la función del ejercicio 9 de esta guía.
 
     Ejemplo:
+
     ```
     Hola! Esto es Tablas de Multiplicar
-
     Ingrese un número o "X" para salir: 1
-
     1 x 1 = 1
-
     1 x 2 = 2
-
     1 x 3 = 3
-    
     1 x 4 = 4
-
     1 x 5 = 5
-    
     1 x 6 = 6
-
     1 x 7 = 7
-
     1 x 8 = 8
-
     1 x 9 = 9
-
     1 x 10 = 10
-
     Ingrese un número o "X" para salir: -2
-
     Error: El número debe ser positivo y estar entre 1 y 10
-
     Ingrese un número o "X" para salir: X
-    
     ¡Adios!
     ```
 
