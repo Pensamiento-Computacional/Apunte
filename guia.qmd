@@ -293,7 +293,7 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     ```
 
 6.  **Manejo de contraseñas**
-    a. Escribir un programa que contenga una constraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.
+    a. Escribir un programa que contenga una contraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.
     b. Modificar el programa anterior para que solamente permita una cantidad fija de intentos.
     c. Modificar el programa anterior para que sea una función que devuelva si el usuario ingresó o no la contraseña correctamente, mediante un valor booleano (`True` o `False`).
 
@@ -396,7 +396,7 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
 8. **Desafío** (obligatorio):
 
-    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: `index` devolverá un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
+    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: `index` arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
 
     b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
 
