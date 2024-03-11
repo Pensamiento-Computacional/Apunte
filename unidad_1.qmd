@@ -27,7 +27,7 @@ La respuesta, sorprendentemente, es no: muchos de los algoritmos que se utilizan
 :::
 
 ### Sistema Operativo
-El sistema operaativo es el programa encargado de administrar los recursos del sistema. Los recursos (como la memoria, por ejemplo) son disputados entre diferentes programas o procesos ejecutándose al mismo tiempo. El sistema operativo es el que decide cómo administrar y asignar los recursos disponibles.
+El sistema operativo es el programa encargado de administrar los recursos del sistema. Los recursos (como la memoria, por ejemplo) son disputados entre diferentes programas o procesos ejecutándose al mismo tiempo. El sistema operativo es el que decide cómo administrar y asignar los recursos disponibles.
 
 Los sistemas operativos más comunes el día de hoy son: Windows, Linux, iOS, Android; por ejemplo.
 
