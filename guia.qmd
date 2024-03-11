@@ -597,7 +597,7 @@ print(tuplas_a_diccionario(l))
 
     Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.
 
-10. Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la serie, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.
+10. Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.
 
     a. Resolver sin usar `filter`
     b. Resolver usando `filter`.
@@ -606,7 +606,7 @@ print(tuplas_a_diccionario(l))
 
     Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).
 
-    a. Se pide haecr una funciónq ue dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad que rindieron los alumnos.
+    a. Se pide hacer una función que dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad de los alumnos.
 
     b. Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.
 
