@@ -581,11 +581,11 @@ print(tuplas_a_diccionario(l))
 
     a. Crear un diccionario que sirva para representar a cada persona. Debe contener las claves `nombre`, `apellido`, `dni` y `carrera`. Los diccionarios se deben guardan en una lista llamada `estudiantes`.
     b. Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el `codigo` y el valor la `nota` (del 1 al 10) obtenida.
-    c. Agregar para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).
+    c. Crear código que agregue para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).
     
     d. Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.
 
-7. En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especia, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.
+7. En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especie, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.
 
 8. Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.
 
