@@ -458,7 +458,7 @@ Si los vectores no tienen las mismas dimensiones, la función debe devolver `Non
 
 11. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$. Restricción: usar listas por comprensión.
 
-12. Escribir una función que devuelva una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
+12. Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
 
 13. Se tiene una lista de supermercado escrita como string con productos separados por coma: `"pan, arroz, pescado, jugo, fideos,..."`. 
 
@@ -554,7 +554,7 @@ print(tuplas_a_diccionario(l))
 
 2. Escriba una función que reciba una cadena y devuelva:
 
-    a. Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe `"Qué lindo día que hace hoy"` debe devolver: `{'qué': 2, 'lindo': 1, 'día': 1, 'hace': 1, 'hoy': 1}`.
+    a. Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe `"Que lindo dia que hace hoy"` debe devolver: `{'que': 2, 'lindo': 1, 'dia': 1, 'hace': 1, 'hoy': 1}`.
     b. Un diccionario con la cantidad de apariciones de cada caracter  en la cadena.
 
 3. Escribir una función que reciba una cantidad de iteraciones N.
