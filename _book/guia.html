@@ -488,16 +488,16 @@ Esa jugada no está disponible.</code></pre></li>
 <li><ol type="a">
 <li>Necesitamos escribir un programa de cobro en el supermercado. La función debe recibir un número entero que representa el monto a pagar y debe permitir al usuario que ingrese valores, hasta que el pago se haya realizado en su totalidad. Además, le debe ir indicando cuánto le queda por pagar. El programa no da vuelto.</li>
 </ol>
-<p>Ejemplo: <code>Su total a pagar es: 500  Ingrese el monto a pagar: 100  Pendientes: 400. Ingrese el monto a pagar: 200  Pendientes: 200. Ingrese el monto a pagar: 200  Pendientes: 0. Gracias por su compra.</code></p>
+<p>Ejemplo: <code>Su total a pagar es: 500\  Ingrese el monto a pagar: 100\  Pendientes: 400. Ingrese el monto a pagar: 200\  Pendientes: 200. Ingrese el monto a pagar: 200\  Pendientes: 0. Gracias por su compra.</code></p>
 <ol start="2" type="a">
 <li>Hacer que el programa anterior dé vuelto:</li>
 </ol>
-<p>Ejemplo: <code>Su total a pagar es: 500  Ingrese el monto a pagar: 100  Pendientes: 400. Ingrese el monto a pagar: 200  Pendientes: 200. Ingrese el monto a pagar: 300  Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></p></li>
+<p>Ejemplo: <code>Su total a pagar es: 500\  Ingrese el monto a pagar: 100\  Pendientes: 400. Ingrese el monto a pagar: 200\  Pendientes: 200. Ingrese el monto a pagar: 300\  Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></p></li>
 <li><p>Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa “X”, el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese “X”. Se puede reutilizar la función del ejercicio 9 de esta guía.</p>
-<p>Ejemplo: <code>Hola! Esto es Tablas de Multiplicar  Ingrese un número o "X" para salir: 1  1 x 1 = 1  1 x 2 = 2  1 x 3 = 3  1 x 4 = 4  1 x 5 = 5  1 x 6 = 6  1 x 7 = 7  1 x 8 = 8  1 x 9 = 9  1 x 10 = 10  Ingrese un número o "X" para salir: -2  Error: El número debe ser positivo y estar entre 1 y 10  Ingrese un número o "X" para salir: X  ¡Adios!</code></p></li>
+<p>Ejemplo: <code>Hola! Esto es Tablas de Multiplicar\  Ingrese un número o "X" para salir: 1\  1 x 1 = 1\  1 x 2 = 2\  1 x 3 = 3\  1 x 4 = 4\  1 x 5 = 5\  1 x 6 = 6\  1 x 7 = 7\  1 x 8 = 8\  1 x 9 = 9\  1 x 10 = 10\  Ingrese un número o "X" para salir: -2\  Error: El número debe ser positivo y estar entre 1 y 10\  Ingrese un número o "X" para salir: X\  ¡Adios!</code></p></li>
 <li><p><strong>Manejo de contraseñas</strong></p>
 <ol type="a">
-<li>Escribir un programa que contenga una constraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.</li>
+<li>Escribir un programa que contenga una contraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.</li>
 <li>Modificar el programa anterior para que solamente permita una cantidad fija de intentos.</li>
 <li>Modificar el programa anterior para que sea una función que devuelva si el usuario ingresó o no la contraseña correctamente, mediante un valor booleano (<code>True</code> o <code>False</code>).</li>
 </ol></li>
@@ -512,7 +512,7 @@ Esa jugada no está disponible.</code></pre></li>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4</code></pre>
+<pre><code>9</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -603,7 +603,7 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
 <li><p><strong>Desafío</strong> (obligatorio):</p>
 <ol type="a">
-<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: <code>index</code> devolverá un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
+<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: <code>index</code> arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
 <li><p>Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>4</code>. Restricción: No se puede usar el método <code>len</code>.</p></li>
 </ol></li>
 <li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar <code>lambda</code>.</p></li>
@@ -656,7 +656,7 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <li><p>Escribir una función que reciba una lista y un número <span class="math inline">\(n\)</span>. Para dicho número <span class="math inline">\(n\)</span>, debe imprimir los últimos <span class="math inline">\(n\)</span> elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe <code>[1, 2, 3, 4, 5]</code> y <code>n = 2</code>, debe imprimir <code>5</code>, <code>4</code> y devolver <code>[1, 2, 3]</code>.</p></li>
 <li><p>Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.</p></li>
 <li><p>Escribir una función que dado un valor <span class="math inline">\(n\)</span>, devuelva una lista con los números del 1 a <span class="math inline">\(n\)</span>. Restricción: usar listas por comprensión.</p></li>
-<li><p>Escribir una función que devuelva una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz <code>[[1, 2], [3, 4]]</code> y la tupla <code>(0, 1)</code>, debe devolver <code>2</code>.</p></li>
+<li><p>Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz <code>[[1, 2], [3, 4]]</code> y la tupla <code>(0, 1)</code>, debe devolver <code>2</code>.</p></li>
 <li><p>Se tiene una lista de supermercado escrita como string con productos separados por coma: <code>"pan, arroz, pescado, jugo, fideos,..."</code>.</p>
 <ol type="a">
 <li><p>Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: <code>['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]</code>.</p></li>
@@ -736,7 +736,7 @@ Batalla Naval: Modo Supervivencia
 <ol start="2" type="1">
 <li><p>Escriba una función que reciba una cadena y devuelva:</p>
 <ol type="a">
-<li>Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe <code>"Qué lindo día que hace hoy"</code> debe devolver: <code>{'qué': 2, 'lindo': 1, 'día': 1, 'hace': 1, 'hoy': 1}</code>.</li>
+<li>Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe <code>"Que lindo dia que hace hoy"</code> debe devolver: <code>{'que': 2, 'lindo': 1, 'dia': 1, 'hace': 1, 'hoy': 1}</code>.</li>
 <li>Un diccionario con la cantidad de apariciones de cada caracter en la cadena.</li>
 </ol></li>
 <li><p>Escribir una función que reciba una cantidad de iteraciones N.</p>
@@ -785,10 +785,10 @@ Batalla Naval: Modo Supervivencia
 <ol type="a">
 <li><p>Crear un diccionario que sirva para representar a cada persona. Debe contener las claves <code>nombre</code>, <code>apellido</code>, <code>dni</code> y <code>carrera</code>. Los diccionarios se deben guardan en una lista llamada <code>estudiantes</code>.</p></li>
 <li><p>Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el <code>codigo</code> y el valor la <code>nota</code> (del 1 al 10) obtenida.</p></li>
-<li><p>Agregar para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).</p></li>
+<li><p>Crear código que agregue para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).</p></li>
 <li><p>Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.</p></li>
 </ol></li>
-<li><p>En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especia, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.</p></li>
+<li><p>En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especie, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.</p></li>
 <li><p>Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.</p></li>
 <li><p>Se tiene un ticket de supermercado en forma de diccionario con los siguientes datos:</p>
 <ul>
@@ -797,7 +797,7 @@ Batalla Naval: Modo Supervivencia
 <li>Cantidad</li>
 </ul>
 <p>Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.</p></li>
-<li><p>Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la serie, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.</p>
+<li><p>Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.</p>
 <ol type="a">
 <li>Resolver sin usar <code>filter</code></li>
 <li>Resolver usando <code>filter</code>.</li>
@@ -805,7 +805,7 @@ Batalla Naval: Modo Supervivencia
 <li><p>La profesora Llamel guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.</p>
 <p>Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).</p>
 <ol type="a">
-<li><p>Se pide haecr una funciónq ue dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad que rindieron los alumnos.</p></li>
+<li><p>Se pide hacer una función que dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad de los alumnos.</p></li>
 <li><p>Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.</p></li>
 </ol></li>
 <li><p>En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.</p>
