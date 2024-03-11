@@ -488,13 +488,39 @@ Esa jugada no está disponible.</code></pre></li>
 <li><ol type="a">
 <li>Necesitamos escribir un programa de cobro en el supermercado. La función debe recibir un número entero que representa el monto a pagar y debe permitir al usuario que ingrese valores, hasta que el pago se haya realizado en su totalidad. Además, le debe ir indicando cuánto le queda por pagar. El programa no da vuelto.</li>
 </ol>
-<p>Ejemplo: <code>Su total a pagar es: 500\  Ingrese el monto a pagar: 100\  Pendientes: 400. Ingrese el monto a pagar: 200\  Pendientes: 200. Ingrese el monto a pagar: 200\  Pendientes: 0. Gracias por su compra.</code></p>
+<p>Ejemplo:</p>
+<pre><code>Su total a pagar es: 500
+Ingrese el monto a pagar: 100
+Pendientes: 400. Ingrese el monto a pagar: 200
+Pendientes: 200. Ingrese el monto a pagar: 200
+Pendientes: 0. Gracias por su compra.</code></pre>
 <ol start="2" type="a">
 <li>Hacer que el programa anterior dé vuelto:</li>
 </ol>
-<p>Ejemplo: <code>Su total a pagar es: 500\  Ingrese el monto a pagar: 100\  Pendientes: 400. Ingrese el monto a pagar: 200\  Pendientes: 200. Ingrese el monto a pagar: 300\  Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></p></li>
+<p>Ejemplo:</p>
+<pre><code>Su total a pagar es: 500
+Ingrese el monto a pagar: 100
+Pendientes: 400. Ingrese el monto a pagar: 200
+Pendientes: 200. Ingrese el monto a pagar: 300
+Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></pre></li>
 <li><p>Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa “X”, el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese “X”. Se puede reutilizar la función del ejercicio 9 de esta guía.</p>
-<p>Ejemplo: <code>Hola! Esto es Tablas de Multiplicar\  Ingrese un número o "X" para salir: 1\  1 x 1 = 1\  1 x 2 = 2\  1 x 3 = 3\  1 x 4 = 4\  1 x 5 = 5\  1 x 6 = 6\  1 x 7 = 7\  1 x 8 = 8\  1 x 9 = 9\  1 x 10 = 10\  Ingrese un número o "X" para salir: -2\  Error: El número debe ser positivo y estar entre 1 y 10\  Ingrese un número o "X" para salir: X\  ¡Adios!</code></p></li>
+<p>Ejemplo:</p>
+<pre><code>Hola! Esto es Tablas de Multiplicar
+Ingrese un número o "X" para salir: 1
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+Ingrese un número o "X" para salir: -2
+Error: El número debe ser positivo y estar entre 1 y 10
+Ingrese un número o "X" para salir: X
+¡Adios!</code></pre></li>
 <li><p><strong>Manejo de contraseñas</strong></p>
 <ol type="a">
 <li>Escribir un programa que contenga una contraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.</li>
@@ -508,11 +534,11 @@ Esa jugada no está disponible.</code></pre></li>
 </ol></li>
 </ol>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>9</code></pre>
+<pre><code>3</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -730,8 +756,8 @@ Batalla Naval: Modo Supervivencia
 <ol type="1">
 <li>Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos. Por ejemplo:</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [(<span class="st">'Hola'</span>, <span class="st">'don Pepito'</span>), (<span class="st">'Hola'</span>, <span class="st">'don Jose'</span>), (<span class="st">'Buenos'</span>, <span class="st">'días'</span>)]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [(<span class="st">'Hola'</span>, <span class="st">'don Pepito'</span>), (<span class="st">'Hola'</span>, <span class="st">'don Jose'</span>), (<span class="st">'Buenos'</span>, <span class="st">'días'</span>)]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}</code></pre>
 <ol start="2" type="1">
 <li><p>Escriba una función que reciba una cadena y devuelva:</p>
