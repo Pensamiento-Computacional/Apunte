@@ -1,9 +1,320 @@
----
-title: "Entrada y Salida de Información"
-format:
-  html:
-    code-fold: false
-jupyter: python3
----
+5
 
-## Subtitle
+Cuando un programa se esta ejecutando los datos están en la memoria, pero cuando el programa termina los datos se pierden. 
+
+Para almacenar los datos de forma permanente se hace uso de **archivos**. Cada archivo se identifica con un nombre unico dentro de directorio o carpeta en que se encuentre. Por ejemplo dentro la carpeta *Documentos* puede existir solo un archivo con el nombre *Apuntes.txt*.
+
+Los archivos se utilizan para organizar los datos e intercambiarlos para distintos fines. El modo de trabajar con archivos es como trabajar con libros, se pueden abrir, leer, escribir y cerrar. Además se puede leer en orden o secuencialmente o yendo a un lugar especifico. 
+
+:::{.callout-note}
+Toda la organización de las computadoras esta basada en archivos y directorios.
+:::
+
+
+En python para abrir un archivo utilizamos la función ```open```
+
+``` python
+ruta_archivo = "alumnos.txt"
+archivo = open(ruta_archivo)
+```
+
+Esta función intentara abrir el archivo "alumnos.txt" y si tiene éxito en la variable archivo quedara un tipo de dato que nos permitira manipularlo. 
+
+La operación más frecuente con los archivos es leerlos de forma secuencial
+
+``` python
+archivo = open(ruta_archivo)
+linea = archivo.readline()
+
+while linea != '':
+  # hacer algo con la linea
+  linea = archivo.readline()
+
+archivo.close()
+```
+
+Este último bloque de código lee todas las lineas (renglones) del archivo hasta que no queden más. 
+
+El la variable ```archivo```, que mencionamos más arriba como un "tipo de dato que nos permitira manipularlo" guarda cual es la siguiente posición que debe leer y cuando se ejecuta ```archivo.readline()``` lee esa posición y avanza una posición más.
+
+La función ```close()``` cierra el archivo, esta operación es importante para mantener la consistencia de la información. Volveremos más adelante sobre este tema.
+
+> **Ejemplo**
+"alumnos.txt"
+```{txt}
+DNI;Nombre;Nota
+45123123;Juan Justo;8
+46456456;Mariano Moreno;6
+45098098;Aldana Cometti;9
+44765765;Pablo Neruda;2
+```
+
+
+En el ejemplo anterior leimos el archivo linea por linea, pero existe otra forma de leer un archivo. Veamos otro ejemplo. 
+
+
+``` python
+archivo = open(ruta_archivo)
+lineas = archivo.readlines()
+archivo.close()
+
+for linea in lineas:
+  # hacer algo con la linea
+  print(linea)
+
+```
+
+``` bash
+linea número 0 
+linea número 1 
+linea número 2 
+linea número 3 
+linea número 4 
+```
+
+**¿ Que diferencias hay entre el ejemplo de más arriba y éste ?**
+
+La diferencia pricipal y que condiciona el resto de los cambios es que en lugar de leer linea por linea utilizamos la funcion ```readlines()```. Esta función leer *todo* el contenido del archivo y devueve una lista donde cada elemento de la lista es un renglón. Por otro lado se llama a la función ```close()``` inmediatamente después de leer todo el archivo. ¿ Por qué ? ¿ Te animas a analizar todas las diferencias ? 
+
+
+### Tipos de acceso
+
+Cuando se abre un archivo hay que especificar para qué lo estamos abriendo, las opciones son: leer o escribir. Por defecto, si no especificamos nada, tal como vimos en los ejemplos anteriores, se abre para leer. 
+
+
+![Resumen de los tipos de acceso con los que se puede abrir un archivo.](./imgs/unidad_5/tipos_acceso.png)
+
+
+
+Veamos ejemplos de los casos más comunes
+
+> **Ejemplo Write (w)**
+
+``` python
+ruta_archivo_nuevo = "alumnos_nuevo.txt"
+archivo = open(ruta_archivo_nuevo, 'w')
+
+for x in range(5):
+  # hacer algo con la linea
+  archivo.write(f"linea número {x} \n")
+
+archivo.close()
+``` 
+
+::: {.callout-tip}
+En este ejemplo se puede ver el uso de ```\n``` ese caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva linea. 
+
+Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada linea va a ser ```\n```
+:::
+
+> **Ejemplo Read (r)**
+
+``` python
+archivo = open(ruta_archivo_nuevo, 'r')
+lineas = archivo.readlines()
+archivo.close()
+
+for linea in lineas:
+  # hacer algo con la linea
+  print(linea)
+
+```
+
+
+**Close**
+Al terminar de trabajar con un archivo, es importante cerrarlo, por diversos motivos: en
+algunos sistemas los archivos sólo pueden ser abiertos de a un programa por la vez; en otros, lo que se haya escrito no se guardará realmente hasta no cerrar el archivo.
+
+
+::: {.callout-tip}
+¿ Te animas a probar que pasa si intentas escribir en un archivo que fue abierto para lectura ('r') y a leer en uno que fue abierto para escritura ('w') ?
+:::
+
+Veamos un ejemplo en el que trabajaremos con dos archivos.
+
+> **Ejemplo**
+Obtener un el promedio de notas y guardarlo en un nuevo archivo llamado "promedio.txt"
+
+``` python
+# Abrimos el archivo de notas
+ruta_archivo = "alumnos.txt"
+archivo = open(ruta_archivo, 'r')
+lineas = archivo.readlines()
+archivo.close()
+
+# Leemos linea por linea cada nota 
+suma_notas = 0
+cantidad_notas = 0
+for linea in lineas[1:]:
+  nota = linea.split(";")[2].strip('\n')
+  suma_notas += int(nota)
+  cantidad_notas += 1
+
+# Guardamos el promedio en un nuevo archivo
+ruta_archivo_promedios = "promedio.txt"
+archivo = open(ruta_archivo_promedios, 'w')
+archivo.write(str(suma_notas/cantidad_notas))
+archivo.close()
+```
+
+
+Veamos el contenido del archivo "promedio.txt"
+
+``` python
+ruta_archivo = "promedio.txt"
+archivo = open(ruta_archivo, 'r')
+linea = archivo.readline()
+archivo.close()
+print(linea)
+```
+
+``` bash
+6.25
+```
+
+En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada linea en una lista que tiene 3 elementos, a nosostros nos interesa el elemento que esta en la posición 2, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva linea ```\n``` y nos permite leer la nota como un número. 
+
+Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer linea del archivo no nos interesa ya que contiene los nombres de cada campo. Esto se explica en [unidad 4](#listas-como-secuencias).
+
+
+### Tipos de archivos
+
+En la sección anterior utilizamos para todos los archivos la extención '.txt' el uso de extenciónes es una **convención**, una manera de nombrar las cosas que nos da una idea de lo que hay en el contenido del archivo. 
+
+Comunmente a los archivos que estuvimos usando como ejemplo se los nombra con la extención '.csv' las siglas de "comma separated values"[^3].
+
+
+### Conclusiones
+- Para utilizar un archivo desde un programa, es necesario abrirlo, y cuando ya no se lo
+necesite, se lo debe cerrar.
+- Las instrucciones más básicas para manejar un archivo son leer y escribir.
+- Los archivos de texto se procesan generalmente línea por línea y sirven para intercambiar información entre diversos programas o entre programas y humanos.
+
+
+
+## Menejo de errores
+
+Cuando cometemos un error de tipeo o utilizamos mal una sentencia el interprete nos muestra un error de sintaxis. En la practica lo vemos como un ```SintaxisError```, este tipo de errores se los llama errores sintácticos, la menera de resolverlo es revisar la sintáxis y corregirlo. 
+
+**Ejemplo: Función mal definida**
+
+``` python
+deff incrementar(n):
+  return n + 1
+```
+
+```
+ File ...., line 1
+    deff incrementar(n):
+         ^^^^^^^^^^^
+SyntaxError: invalid syntax
+```
+
+
+Cuando un programa se esta ejecutando y ocurre un error se crea una excepción, normalmente el programa detiene su ejecución y se imprime un mensaje. Este tipo de errores se los llama **errores de ejecución**, vamos a ver como manejarlos.
+
+
+
+**Ejemplo: División por cero**
+``` python
+dividendo = 10
+divisor = 0
+resultado = dividendo/divisor 
+```
+
+
+``` bash
+---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+File ...
+      1 dividendo = 10
+      2 divisor = 0
+----> 3 resultado = dividendo/divisor 
+ZeroDivisionError: division by zero
+```
+
+**Ejemplo: Acceso a un elemento que no existe**
+
+``` python
+lista = ["a","b"]
+segundo_elemento = lista[2]
+
+```
+``` bash
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+File /...
+      1 lista = ["a","b"]
+----> 2 segundo_elemento = lista[2]
+IndexError: list index out of range
+```
+
+**Ejemplo: Abrir un archivo que no existe**
+``` python
+archivo = open("archivo_falso.txt","r")
+```
+
+``` bash
+FileNotFoundError                         Traceback (most recent call last)
+File ...
+----> 1 archivo = open("archivo_falso.txt","r")
+FileNotFoundError: [Errno 2] No such file or directory: 'archivo_falso.txt'
+```
+
+En cada caso el mensaje de error tiene dos partes, la primera indica el tipo de error: 
+
+- `ZeroDivisionError`
+- `IndexError`
+- `FileNotFoundError`
+
+La segunda tiene una descripción: 
+
+- `division by zero`
+- `list index out of range`
+- `No such file or directory`
+
+Además nos da información contextual que puede indicar en la ejecucuión de qué linea se dió el error:  
+
+- Linea 3: `----> 3 resultado = dividendo/divisor`.
+- Linea 2: `----> 2 segundo_elemento = lista[2]`.
+- Linea 1: `----> 1 archivo = open("archivo_falso.txt","r")`.
+
+
+En algunas ocaciones es parte del programa manejar operaciones que puedan lanzar este tipo de excepciones sin que el programa detenga su ejecución, para estos casos Python nos provee las sentencias `try`y `except`. 
+
+
+
+**Ejemplo**
+
+``` python
+dividendo = 10
+divisor = 0
+try:
+  resultado = dividendo/divisor 
+except ZeroDivisionError:
+  print("No se puede dividir por cero.")
+
+```
+
+``` bash
+No se puede dividir por cero.
+```
+
+Como se ve en el ejemplo se "envuelve" la operación que puede generar ese tipo de excepción para que lo que resulte de esa operación se pueda controlar. Como vimos más arriba hay distintos tipos de excepciones, la lista completa se puede ver en [excepciones](https://docs.python.org/es/3/library/exceptions.html#base-classes).
+
+
+### Conclusiones
+
+- El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funcionalidad que se está programando. 
+- Los errores que se dan en tiempo de ejecución los podemos "atrapar" con el bloque ```try``.
+- Hay tipos de excepciones que describen distintos tipos de errores de ejecución.
+
+
+
+[^1]:[Split](https://docs.python.org/es/3/library/stdtypes.html#str.split)
+[^2]:[Strip](https://docs.python.org/es/3/library/stdtypes.html#str.strip)
+[^3]:[CSV](https://es.wikipedia.org/wiki/Valores_separados_por_comas)
+
+
+
+
