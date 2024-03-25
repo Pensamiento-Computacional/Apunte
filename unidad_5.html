@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pensamiento Computacional - 5&nbsp; Entrada y Salida de Información</title>
+<title>Pensamiento Computacional - 5&nbsp; Entrada y salida</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida de Información</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y salida</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unidad_5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida de Información</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y salida</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -175,7 +209,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#subtitle" id="toc-subtitle" class="nav-link active" data-scroll-target="#subtitle"><span class="header-section-number">5.1</span> Subtitle</a></li>
+  <li><a href="#archivos" id="toc-archivos" class="nav-link active" data-scroll-target="#archivos"><span class="header-section-number">5.1</span> Archivos</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-acceso" id="toc-tipos-de-acceso" class="nav-link" data-scroll-target="#tipos-de-acceso"><span class="header-section-number">5.1.1</span> Tipos de acceso</a></li>
+  <li><a href="#tipos-de-archivos" id="toc-tipos-de-archivos" class="nav-link" data-scroll-target="#tipos-de-archivos"><span class="header-section-number">5.1.2</span> Tipos de archivos</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">5.1.3</span> Conclusiones</a></li>
+  </ul></li>
+  <li><a href="#menejo-de-errores" id="toc-menejo-de-errores" class="nav-link" data-scroll-target="#menejo-de-errores"><span class="header-section-number">5.2</span> Menejo de errores</a>
+  <ul class="collapse">
+  <li><a href="#conclusiones-1" id="toc-conclusiones-1" class="nav-link" data-scroll-target="#conclusiones-1"><span class="header-section-number">5.2.1</span> Conclusiones</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -184,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida de Información</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y salida</span></h1>
 </div>
 
 
@@ -199,10 +242,252 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="subtitle" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="subtitle"><span class="header-section-number">5.1</span> Subtitle</h2>
+<section id="archivos" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="archivos"><span class="header-section-number">5.1</span> Archivos</h2>
+<p>Cuando un programa se esta ejecutando los datos están en la memoria, pero cuando el programa termina los datos se pierden.</p>
+<p>Para almacenar los datos de forma permanente se hace uso de <strong>archivos</strong>. Cada archivo se identifica con un nombre unico dentro de directorio o carpeta en que se encuentre. Por ejemplo dentro la carpeta <em>Documentos</em> puede existir solo un archivo con el nombre <em>Apuntes.txt</em>.</p>
+<p>Los archivos se utilizan para organizar los datos e intercambiarlos para distintos fines. El modo de trabajar con archivos es como trabajar con libros, se pueden abrir, leer, escribir y cerrar. Además se puede leer en orden o secuencialmente o yendo a un lugar especifico.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Toda la organización de las computadoras esta basada en archivos y directorios.</p>
+</div>
+</div>
+<p>En python para abrir un archivo utilizamos la función <code>open</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ruta_archivo <span class="op">=</span> <span class="st">"alumnos.txt"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esta función intentara abrir el archivo “alumnos.txt” y si tiene éxito en la variable archivo quedara un tipo de dato que nos permitira manipularlo.</p>
+<p>La operación más frecuente con los archivos es leerlos de forma secuencial</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>linea <span class="op">=</span> archivo.readline()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> linea <span class="op">!=</span> <span class="st">''</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># hacer algo con la linea</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  linea <span class="op">=</span> archivo.readline()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este último bloque de código lee todas las lineas (renglones) del archivo hasta que no queden más.</p>
+<p>El la variable <code>archivo</code>, que mencionamos más arriba como un “tipo de dato que nos permitira manipularlo” guarda cual es la siguiente posición que debe leer y cuando se ejecuta <code>archivo.readline()</code> lee esa posición y avanza una posición más.</p>
+<p>La función <code>close()</code> cierra el archivo, esta operación es importante para mantener la consistencia de la información. Volveremos más adelante sobre este tema.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo</strong> “alumnos.txt”</p>
+</blockquote>
+<pre class="{txt}"><code>DNI;Nombre;Nota
+45123123;Juan Justo;8
+46456456;Mariano Moreno;6
+45098098;Aldana Cometti;9
+44765765;Pablo Neruda;2</code></pre>
+<p>En el ejemplo anterior leimos el archivo linea por linea, pero existe otra forma de leer un archivo. Veamos otro ejemplo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> archivo.readlines()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>archivo.close()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linea <span class="kw">in</span> lineas:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># hacer algo con la linea</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(linea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">linea</span> número 0 </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">linea</span> número 1 </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">linea</span> número 2 </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">linea</span> número 3 </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">linea</span> número 4 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>¿ Que diferencias hay entre el ejemplo de más arriba y éste ?</strong></p>
+<p>La diferencia pricipal y que condiciona el resto de los cambios es que en lugar de leer linea por linea utilizamos la funcion <code>readlines()</code>. Esta función leer <em>todo</em> el contenido del archivo y devueve una lista donde cada elemento de la lista es un renglón. Por otro lado se llama a la función <code>close()</code> inmediatamente después de leer todo el archivo. ¿ Por qué ? ¿ Te animas a analizar todas las diferencias ?</p>
+<section id="tipos-de-acceso" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="tipos-de-acceso"><span class="header-section-number">5.1.1</span> Tipos de acceso</h3>
+<p>Cuando se abre un archivo hay que especificar para qué lo estamos abriendo, las opciones son: leer o escribir. Por defecto, si no especificamos nada, tal como vimos en los ejemplos anteriores, se abre para leer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./imgs/unidad_5/tipos_acceso.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Resumen de los tipos de acceso con los que se puede abrir un archivo.</figcaption>
+</figure>
+</div>
+<p>Veamos ejemplos de los casos más comunes</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo Write (w)</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ruta_archivo_nuevo <span class="op">=</span> <span class="st">"alumnos_nuevo.txt"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_nuevo, <span class="st">'w'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># hacer algo con la linea</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  archivo.write(<span class="ss">f"linea número </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En este ejemplo se puede ver el uso de <code>\n</code> ese caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva linea.</p>
+<p>Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada linea va a ser <code>\n</code></p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Ejemplo Read (r)</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_nuevo, <span class="st">'r'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> archivo.readlines()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>archivo.close()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linea <span class="kw">in</span> lineas:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># hacer algo con la linea</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(linea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Close</strong> Al terminar de trabajar con un archivo, es importante cerrarlo, por diversos motivos: en algunos sistemas los archivos sólo pueden ser abiertos de a un programa por la vez; en otros, lo que se haya escrito no se guardará realmente hasta no cerrar el archivo.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿ Te animas a probar que pasa si intentas escribir en un archivo que fue abierto para lectura (‘r’) y a leer en uno que fue abierto para escritura (‘w’) ?</p>
+</div>
+</div>
+<p>Veamos un ejemplo en el que trabajaremos con dos archivos.</p>
+<blockquote class="blockquote">
+<p><strong>Ejemplo</strong> Obtener un el promedio de notas y guardarlo en un nuevo archivo llamado “promedio.txt”</p>
+</blockquote>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo de notas</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ruta_archivo <span class="op">=</span> <span class="st">"alumnos.txt"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo, <span class="st">'r'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> archivo.readlines()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>archivo.close()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos linea por linea cada nota </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>suma_notas <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>cantidad_notas <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linea <span class="kw">in</span> lineas[<span class="dv">1</span>:]:</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  nota <span class="op">=</span> linea.split(<span class="st">";"</span>)[<span class="dv">2</span>].strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  suma_notas <span class="op">+=</span> <span class="bu">int</span>(nota)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  cantidad_notas <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos el promedio en un nuevo archivo</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>ruta_archivo_promedios <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_promedios, <span class="st">'w'</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>archivo.write(<span class="bu">str</span>(suma_notas<span class="op">/</span>cantidad_notas))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Veamos el contenido del archivo “promedio.txt”</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ruta_archivo <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo, <span class="st">'r'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>linea <span class="op">=</span> archivo.readline()</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>archivo.close()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">6.25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función <code>split()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nos permite separar cada linea en una lista que tiene 3 elementos, a nosostros nos interesa el elemento que esta en la posición 2, la nota; por otro lado también utilizamos la función <code>strip()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, esto remueve el caracter de nueva linea <code>\n</code> y nos permite leer la nota como un número.</p>
+<p>Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer linea del archivo no nos interesa ya que contiene los nombres de cada campo. Esto se explica en <a href="unidad_4.html#listas-como-secuencias">unidad 4</a>.</p>
+</section>
+<section id="tipos-de-archivos" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="tipos-de-archivos"><span class="header-section-number">5.1.2</span> Tipos de archivos</h3>
+<p>En la sección anterior utilizamos para todos los archivos la extención ‘.txt’ el uso de extenciónes es una <strong>convención</strong>, una manera de nombrar las cosas que nos da una idea de lo que hay en el contenido del archivo.</p>
+<p>Comunmente a los archivos que estuvimos usando como ejemplo se los nombra con la extención ‘.csv’ las siglas de “comma separated values”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+</section>
+<section id="conclusiones" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="conclusiones"><span class="header-section-number">5.1.3</span> Conclusiones</h3>
+<ul>
+<li>Para utilizar un archivo desde un programa, es necesario abrirlo, y cuando ya no se lo necesite, se lo debe cerrar.</li>
+<li>Las instrucciones más básicas para manejar un archivo son leer y escribir.</li>
+<li>Los archivos de texto se procesan generalmente línea por línea y sirven para intercambiar información entre diversos programas o entre programas y humanos.</li>
+</ul>
+</section>
+</section>
+<section id="menejo-de-errores" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="menejo-de-errores"><span class="header-section-number">5.2</span> Menejo de errores</h2>
+<p>Cuando cometemos un error de tipeo o utilizamos mal una sentencia el interprete nos muestra un error de sintaxis. En la practica lo vemos como un <code>SintaxisError</code>, este tipo de errores se los llama errores sintácticos, la menera de resolverlo es revisar la sintáxis y corregirlo.</p>
+<p><strong>Ejemplo: Función mal definida</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>deff incrementar(n):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> n <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code> File ...., line 1
+    deff incrementar(n):
+         ^^^^^^^^^^^
+SyntaxError: invalid syntax</code></pre>
+<p>Cuando un programa se esta ejecutando y ocurre un error se crea una excepción, normalmente el programa detiene su ejecución y se imprime un mensaje. Este tipo de errores se los llama <strong>errores de ejecución</strong>, vamos a ver como manejarlos.</p>
+<p><strong>Ejemplo: División por cero</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dividendo <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>divisor <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> dividendo<span class="op">/</span>divisor </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---------------------------------------------------------------------------</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ZeroDivisionError</span>                         Traceback <span class="er">(</span><span class="ex">most</span> recent call last<span class="kw">)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">File</span> ...</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span> dividendo = 10</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">2</span> divisor = 0</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">----</span><span class="op">&gt;</span> 3 resultado = dividendo/divisor </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ex">ZeroDivisionError:</span> division by zero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo: Acceso a un elemento que no existe</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"b"</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>segundo_elemento <span class="op">=</span> lista[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---------------------------------------------------------------------------</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">IndexError</span>                                Traceback <span class="er">(</span><span class="ex">most</span> recent call last<span class="kw">)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">File</span> /...</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span> lista = <span class="pp">[</span><span class="st">"a"</span><span class="ss">,</span><span class="st">"b"</span><span class="pp">]</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="ex">----</span><span class="op">&gt;</span> 2 segundo_elemento = lista<span class="pp">[</span><span class="ss">2</span><span class="pp">]</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">IndexError:</span> list index out of range</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo: Abrir un archivo que no existe</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(<span class="st">"archivo_falso.txt"</span>,<span class="st">"r"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FileNotFoundError</span>                         Traceback <span class="er">(</span><span class="ex">most</span> recent call last<span class="kw">)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">File</span> ...</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">----</span><span class="op">&gt;</span> 1 archivo = open<span class="er">(</span><span class="st">"archivo_falso.txt"</span><span class="ex">,</span><span class="st">"r"</span><span class="kw">)</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ex">FileNotFoundError:</span> [Errno 2] No such file or directory: <span class="st">'archivo_falso.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En cada caso el mensaje de error tiene dos partes, la primera indica el tipo de error:</p>
+<ul>
+<li><code>ZeroDivisionError</code></li>
+<li><code>IndexError</code></li>
+<li><code>FileNotFoundError</code></li>
+</ul>
+<p>La segunda tiene una descripción:</p>
+<ul>
+<li><code>division by zero</code></li>
+<li><code>list index out of range</code></li>
+<li><code>No such file or directory</code></li>
+</ul>
+<p>Además nos da información contextual que puede indicar en la ejecucuión de qué linea se dió el error:</p>
+<ul>
+<li>Linea 3: <code>----&gt; 3 resultado = dividendo/divisor</code>.</li>
+<li>Linea 2: <code>----&gt; 2 segundo_elemento = lista[2]</code>.</li>
+<li>Linea 1: <code>----&gt; 1 archivo = open("archivo_falso.txt","r")</code>.</li>
+</ul>
+<p>En algunas ocaciones es parte del programa manejar operaciones que puedan lanzar este tipo de excepciones sin que el programa detenga su ejecución, para estos casos Python nos provee las sentencias <code>try</code>y <code>except</code>.</p>
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dividendo <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>divisor <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  resultado <span class="op">=</span> dividendo<span class="op">/</span>divisor </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"No se puede dividir por cero."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> se puede dividir por cero.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como se ve en el ejemplo se “envuelve” la operación que puede generar ese tipo de excepción para que lo que resulte de esa operación se pueda controlar. Como vimos más arriba hay distintos tipos de excepciones, la lista completa se puede ver en <a href="https://docs.python.org/es/3/library/exceptions.html#base-classes">excepciones</a>.</p>
+<section id="conclusiones-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="conclusiones-1"><span class="header-section-number">5.2.1</span> Conclusiones</h3>
+<ul>
+<li>El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funcionalidad que se está programando.</li>
+<li>Los errores que se dan en tiempo de ejecución los podemos “atrapar” con el bloque `<code>try</code>.</li>
+<li>Hay tipos de excepciones que describen distintos tipos de errores de ejecución.</li>
+</ul>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://docs.python.org/es/3/library/stdtypes.html#str.split">Split</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://docs.python.org/es/3/library/stdtypes.html#str.strip">Strip</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">CSV</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
