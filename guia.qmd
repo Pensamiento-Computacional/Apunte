@@ -14,6 +14,13 @@
 - No documentes en exceso, pero tampoco ahorres documentación necesaria.
 - Probá siempre que el código cumpla con lo solicitado.
 
+:::{.callout-note}
+### Discord
+La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.\
+Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
+Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.
+:::
+
 ## Guía 1: Introducción a la Algoritmia y la Programación
 
 :::{.callout-note}

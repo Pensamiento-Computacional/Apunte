@@ -15,7 +15,6 @@ book:
     - unidad_4.qmd
     - unidad_5.qmd
     - unidad_6.qmd
-    - references.qmd
     - guia.qmd
 
 bibliography: references.bib
