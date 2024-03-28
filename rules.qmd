@@ -1,4 +1,4 @@
-# Regimen de Cursada {.unnumbered}
+# Regimen de Cursada, Calendario y Cursos {.unnumbered}
 
 ## Formas de Evaluación
 
@@ -23,17 +23,6 @@ Se tiene dos formas de aprobación de la cursada:
 
 ### Regularización
 Para regularizar la cursada, se deben aprobar los dos parciales (o recuperatorios) con un mínimo de nota de 4 (cuatro) en cada uno.\
-El promedio entre ambos parciales (o recuperatorios) debe ser mayor o igual a 4 (cuatro) y menor a 7 (siete).
-
-:::{.callout-tip collapse="true"}
-## ¿Cómo calculo Promedio?
-Sean:
-
-- `n1` la nota del primer parcial o recuperatorio del primer parcial
-- `n2` la nota del segundo parcial o recuperatorio del segundo parcial
-
-El promedio es: `(n1+n2)/2`
-:::
 
 La cursada regularizada habilita a rendir el examen final  integrador, para el cual se tienen 3 (tres) oportunidades de rendir (más información abajo).
 
@@ -66,6 +55,9 @@ El examen final integrador consta de una evaluación que incluye todos los temas
 :::{.callout-warning }
 ## Desaprobación de la Materia
 Si se desaprueba alguno de los parciales, el mismo puede recuperarse una sola vez.\
-Si se desapruba el recuperatorio, se debe volver a cursar la materia el cuatrimestre siguiente.\
+Si se desaprueba un recuperatorio, se debe volver a cursar la materia el cuatrimestre siguiente.\
 Si se desaprueba 3 (tres) veces el examen final integrador, se debe volver a cursar la materia el cuatrimestre siguiente.
 :::
+
+## Calendario y Cursos
+Se puede acceder al calendario de la cursada y a las aulas y horarios de los cursos a través del <a href="https://docs.google.com/spreadsheets/d/10Yq2xWmJWPjhRe5drH_XikpsTIGYoP5nQTfJhKuhSX4/edit?usp=sharing" target="_blank">siguiente link</a>.

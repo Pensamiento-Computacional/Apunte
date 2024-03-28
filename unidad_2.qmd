@@ -10,7 +10,7 @@ jupyter: python3
 En esta unidad vamos a centrarnos en la herramienta que vamos a emplear, que es Python. Vamos a hacer un programa sencillo, interactuar con el usuario y más.
 
 ### Flujo de Control de un Programa
-El flujo de control de un programa es la forma en la que se ejecutan las instrucciones de un programa. En Python, el flujo de control es secuencial, es decir, se ejecutan las instrucciones una detrás de otra. En otros lenguajes de programación, el flujo de control puede ser condicional o repetitivo.
+El flujo de control de un programa es la forma en la que se ejecutan las instrucciones de un programa. En Python, el flujo de control es secuencial, es decir, se ejecutan las instrucciones una detrás de otra.
 
 **Ejemplo:**
 ```{txt}
