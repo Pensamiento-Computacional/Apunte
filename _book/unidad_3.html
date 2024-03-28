@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -99,6 +106,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -107,12 +141,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estructuras de Control</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estructuras de Control</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -122,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Pensamiento Computacional</a> 
@@ -180,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unidad_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida de Información</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y salida</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -204,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -247,7 +281,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="decisiones" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="decisiones"><span class="header-section-number">3.1</span> Decisiones</h2>
@@ -270,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="expresiones-de-comparación"><span class="header-section-number">3.1.2</span> Expresiones de Comparación</h3>
 <p>Las expresiones booleanas se pueden construir usando los operadores de comparación: sirven para comparar valores entre sí, y permiten construir una pregunta en forma de código.</p>
 <p>Por ejemplo, si quisiéramos saber si <code>5</code> es mayor a <code>3</code>, podemos construir la expresión:</p>
-<div class="cell" data-execution_count="1">
+<div id="9af96ee6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
@@ -278,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Como 5 es en efecto mayor a 3, esta expresión, al ser evaluada, nos devuelve el valor <code>True</code>.</p>
 <p>Si quisiéramos saber si <code>5</code> es menor a <code>3</code>, podemos construir la expresión:</p>
-<div class="cell" data-execution_count="2">
+<div id="608c435b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
@@ -387,49 +423,49 @@ Tip
 </tbody>
 </table>
 <p>Algunos ejemplos:</p>
-<div class="cell" data-execution_count="3">
+<div id="ae366ae9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">and</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="8d51669e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">or</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="3ac0b86d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">and</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div id="47b33c0b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span> <span class="kw">or</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="27e4f443" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="03041636" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div id="6f8fef99" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
+<div id="0bb10254" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>False</code></pre>
@@ -450,21 +486,21 @@ Prioridad de Operadores
 <p>Las expresiones lógicas complejas (con más de un operador), se resuelven al igual que en matemáticas: respetando precedencias y de izquierda a derecha. También admiten el uso de <code>()</code> para alterar las precedencias.</p>
 <p>Sin embargo, si no tenemos precedencias explícitas con <code>()</code>, Python prioriza resolver primero los <code>and</code>, luego los <code>or</code> y por último los <code>not</code>.</p>
 <p>Ejemplos:</p>
-<div class="cell" data-execution_count="11">
+<div id="93880f2d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="kw">or</span> <span class="va">False</span> <span class="kw">and</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Por la prioridad del <code>and</code>, primero se resuelve <code>False and False</code>, que da <code>False</code>. Luego, se resuelve <code>True or False</code>, que da <code>True</code>.</p>
-<div class="cell" data-execution_count="12">
+<div id="fc181db5" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="va">True</span> <span class="kw">or</span> <span class="va">False</span> <span class="kw">or</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Como no hay <code>and</code>, se resuelve de izquierda a derecha. Primero se resuelve <code>True or False</code>, que da <code>True</code>. Luego, se resuelve <code>True or False</code>, que da <code>True</code>.</p>
-<div class="cell" data-execution_count="13">
+<div id="2addef01" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>(<span class="va">True</span> <span class="kw">or</span> <span class="va">False</span>) <span class="kw">and</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>False</code></pre>
@@ -489,17 +525,17 @@ Recordemos la instrucción <code>if</code> que acabamos de introducir y que sirv
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="imgs/unidad_3/if.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de Flujo para la instrucción <code>if</code></figcaption>
+<figcaption>Diagrama de Flujo para la instrucción <code>if</code></figcaption>
 </figure>
 </div>
 <p>Como ahora ya sabemos cómo construir condiciones de comparación, vamos a comparar si nuestro número <code>x</code> es mayor a <code>0</code>:</p>
-<div class="cell" data-execution_count="14">
+<div id="a32aed90" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo(x):</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Podemos probarlo:</p>
-<div class="cell" data-execution_count="15">
+<div id="3e3b822d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="dv">5</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="op">-</span><span class="dv">5</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -510,7 +546,7 @@ Recordemos la instrucción <code>if</code> que acabamos de introducir y que sirv
 <p>Como vemos, si el número es positivo, se imprime el mensaje. Pero si el número no es positivo, no se imprime nada. Necesitamos además agregar un mensaje “Número no positivo”, si es que la condición no se cumple.</p>
 <p>Modifiquemos el diseño: 1. Si <span class="math inline">\(x&gt;0\)</span>, se imprime “Número positivo”. 2. En caso contrario, se imprime “Número no positivo”.</p>
 <p>Podríamos probar con el siguiente código:</p>
-<div class="cell" data-execution_count="16">
+<div id="95066dca" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo(x):</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>)</span>
@@ -518,7 +554,7 @@ Recordemos la instrucción <code>if</code> que acabamos de introducir y que sirv
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número no positivo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Otra solución posible es:</p>
-<div class="cell" data-execution_count="17">
+<div id="8af76173" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo(x):</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>)</span>
@@ -526,7 +562,7 @@ Recordemos la instrucción <code>if</code> que acabamos de introducir y que sirv
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número no positivo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ambas están bien. Si lo probamos, vemos que funciona:</p>
-<div class="cell" data-execution_count="18">
+<div id="2636e48d" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="dv">5</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="op">-</span><span class="dv">5</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -550,11 +586,11 @@ Número no positivo</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="imgs/unidad_3/if-else.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de Flujo para la instrucción <code>if-else</code></figcaption>
+<figcaption>Diagrama de Flujo para la instrucción <code>if-else</code></figcaption>
 </figure>
 </div>
 <p>Por lo tanto, podemos reescribir nuestra función de la siguiente forma:</p>
-<div class="cell" data-execution_count="19">
+<div id="f59303e4" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo_o_no(x): <span class="co"># le cambiamos el nombre</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>)</span>
@@ -562,7 +598,7 @@ Número no positivo</code></pre>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número no positivo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Probemos:</p>
-<div class="cell" data-execution_count="20">
+<div id="06ca7bbe" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo_o_no(<span class="dv">5</span>)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo_o_no(<span class="op">-</span><span class="dv">5</span>)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>imprimir_si_positivo_o_no(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -578,7 +614,7 @@ Número no positivo</code></pre>
 <section id="múltiples-decisiones-consecutivas." class="level3" data-number="3.1.5">
 <h3 data-number="3.1.5" class="anchored" data-anchor-id="múltiples-decisiones-consecutivas."><span class="header-section-number">3.1.5</span> Múltiples decisiones consecutivas.</h3>
 <p>Supongamos que ahora queremos imprimir un mensaje distinto si el número es positivo, negativo o cero. Podríamos hacerlo con dos decisiones consecutivas:</p>
-<div class="cell" data-execution_count="21">
+<div id="f324d188" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo_negativo_o_cero(x):</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>) <span class="co"># cuerpo del primer if</span></span>
@@ -589,7 +625,7 @@ Número no positivo</code></pre>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="st">"Número negativo"</span>)    <span class="co"># todo esto es el cuerpo del primer else</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A esto se le llama <em>anidar</em>, y es donde dentro de unas ramas de la decisión (en este caso, la del <code>else</code>), se anida una nueva decisión. Pero no es la única forma de implementarlo. Podríamos hacerlo de la siguiente forma:</p>
-<div class="cell" data-execution_count="22">
+<div id="cc66b1ca" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_si_positivo_negativo_o_cero(x):</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Número positivo"</span>)</span>
@@ -602,7 +638,7 @@ Número no positivo</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="imgs/unidad_3/if-elif-else.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de Flujo para la instrucción <code>if-elif-else</code> del ejemplo</figcaption>
+<figcaption>Diagrama de Flujo para la instrucción <code>if-elif-else</code> del ejemplo</figcaption>
 </figure>
 </div>
 <ol type="1">
@@ -668,7 +704,7 @@ Ayuda: Flujo de la resolución
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="imgs/unidad_3/flujo-desafio.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de Flujo para el desafío</figcaption>
+<figcaption>Diagrama de Flujo para el desafío</figcaption>
 </figure>
 </div>
 </div>
@@ -739,7 +775,7 @@ Ciclos
 <section id="ciclo-for" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="ciclo-for"><span class="header-section-number">3.2.1</span> Ciclo <code>for</code></h3>
 <p>La instrucción <code>for</code> nos indica que queremos repetir un bloque de código una cierta cantidad de veces. Por ejemplo, si queremos imprimir los números del 1 al 10, podemos hacerlo de la siguiente forma:</p>
-<div class="cell" data-execution_count="23">
+<div id="8cd14f59" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -793,7 +829,7 @@ Note
 <p><strong>Ejemplo</strong><br>
 Se pide una función que imprima todos los números pares entre dos números dados <code>a</code> y <code>b</code>. Se considera que <code>a</code> y <code>b</code> son siempre números enteros positivos, y que <code>a</code> es menor que <code>b</code>.</p>
 </blockquote>
-<div class="cell" data-execution_count="24">
+<div id="c9d83289" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_pares(a, b):</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a, b):</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># si el resto de dividir por 2 es cero, es par</span></span>
@@ -816,7 +852,7 @@ Se pide una función que imprima todos los números pares entre dos números dad
 <p><strong>Ejemplo</strong><br>
 Se pide una función que imprima todos los números del 1 al 10, en orden inverso.</p>
 </blockquote>
-<div class="cell" data-execution_count="25">
+<div id="975d5d8c" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprimir_inverso():</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(i)</span>
@@ -841,7 +877,7 @@ Se pide una función que imprima todos los números del 1 al 10, en orden invers
 <h4 data-number="3.2.1.1" class="anchored" data-anchor-id="iterables"><span class="header-section-number">3.2.1.1</span> Iterables</h4>
 <p>Como dijimos más arriba, la expresión del <code>for</code> puede ser cualquier expresión que devuelva una secuencia de valores. A estas expresiones se las llama <em>iterables</em>.</p>
 <p>Un ciclo <code>for</code> también podría iterar sobre elementos de una lista (tema que vamos a ver más adelante), o sobre caracteres de una palabra. Por ejemplo:</p>
-<div class="cell" data-execution_count="26">
+<div id="a09ce09a" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">2</span>]:</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -852,7 +888,7 @@ Se pide una función que imprima todos los números del 1 al 10, en orden invers
 2</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div id="8cf40cac" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> <span class="st">"Hola"</span>:</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -867,7 +903,7 @@ a</code></pre>
 <section id="ciclo-while" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="ciclo-while"><span class="header-section-number">3.2.2</span> Ciclo <code>while</code></h3>
 <p>La instrucción <code>while</code> nos indica que queremos repetir un bloque de código <em>mientras</em> se cumpla una condición. Por ejemplo, si queremos imprimir los números del 1 al 10, podemos hacerlo de la siguiente forma:</p>
-<div class="cell" data-execution_count="28">
+<div id="bd25e05d" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">11</span>:</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
@@ -933,7 +969,7 @@ Repetir el ejercicio 7.b de la guía 2 usando un ciclo <code>while</code>. Repet
 <h4 data-number="3.2.3.1" class="anchored" data-anchor-id="break"><span class="header-section-number">3.2.3.1</span> Break</h4>
 <p>La declaración <code>break</code> se usa para salir inmediatamente de un bucle antes de que se complete su iteración normal. Cuando se encuentra una declaración <code>break</code> dentro de un bucle, el bucle <code>for</code> o <code>while</code> se detiene inmediatamente y continúa con la ejecución de las instrucciones que están después del mismo.</p>
 <p>Por ejemplo, supongamos que queremos encontrar al primer número múltiplo de 3 entre 10 y 30:</p>
-<div class="cell" data-execution_count="29">
+<div id="88639898" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> numero <span class="op">&lt;=</span> <span class="dv">30</span>:</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> numero <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -944,7 +980,7 @@ Repetir el ejercicio 7.b de la guía 2 usando un ciclo <code>while</code>. Repet
 <pre><code>El primer número múltiplo de 3 es: 12</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="30">
+<div id="e2d7e031" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numero <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">31</span>):</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> numero <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"El primer número múltiplo de 3 es:"</span>, numero)</span>
@@ -958,7 +994,7 @@ Repetir el ejercicio 7.b de la guía 2 usando un ciclo <code>while</code>. Repet
 <h4 data-number="3.2.3.2" class="anchored" data-anchor-id="continue"><span class="header-section-number">3.2.3.2</span> Continue</h4>
 <p>La declaración <code>continue</code> se usa para omitir el resto del código dentro de una iteración actual del bucle y continuar con la siguiente iteración. Cuando se encuentra una declaración <code>continue</code> dentro de un bucle, el bucle <code>for</code> o <code>while</code> salta a la siguiente iteración del bucle sin ejecutar las instrucciones que están después del <code>continue</code>.</p>
 <p>Por ejemplo, supongamos que queremos imprimir todos los números entre 1 y 20, excepto los múltiplos de 4:</p>
-<div class="cell" data-execution_count="31">
+<div id="b8c664ed" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> numero <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> numero <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -984,7 +1020,7 @@ Repetir el ejercicio 7.b de la guía 2 usando un ciclo <code>while</code>. Repet
 19</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="32">
+<div id="c090d624" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numero <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">21</span>):</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> numero <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">continue</span></span>
@@ -1025,7 +1061,7 @@ Note
 <h4 data-number="3.2.3.3" class="anchored" data-anchor-id="return"><span class="header-section-number">3.2.3.3</span> Return</h4>
 <p>Cuando estamos dentro de una función, la instrucción <code>return</code> nos permite devolver un valor y salir de la función. Ahora, si además estamos dentro de un ciclo, también nos permite salir del mismo sin ejecutar el resto del código.</p>
 <p>Por ejemplo:</p>
-<div class="cell" data-execution_count="33">
+<div id="7c0a85c8" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_primer_par_desde(n):</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(n, n<span class="op">+</span><span class="dv">10</span>):</span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Analizando si el número </span><span class="sc">{</span>num<span class="sc">}</span><span class="ss"> es par"</span>)</span>
@@ -1033,7 +1069,7 @@ Note
 <span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> num</span>
 <span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="34">
+<div id="88de5bdf" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>obtener_primer_par_desde(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analizando si el número 9 es par
@@ -1124,7 +1160,7 @@ De la misma forma, no tendría sentido hacer algo así:</p>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>cuerpo<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La mejor decisión que se puede tomar para el <cuerpo> de un bloque <code>while</code> es asumir que, durante toda su ejecución exceptuando la última línea, la condición se cumple. Es decir, que el cuerpo del bucle se ejecuta mientras la condición sea verdadera. Por lo tanto, si queremos modificar la condición, debemos hacerlo en la última línea del cuerpo.</cuerpo></p>
 <p>Por ejemplo, esto no es correcto:</p>
-<div class="cell" data-execution_count="35">
+<div id="6d906e99" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se deben imprimir los números 0, 1, 2</span></span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> numero <span class="op">&lt;</span> <span class="dv">3</span>:</span>
@@ -1138,7 +1174,7 @@ De la misma forma, no tendría sentido hacer algo así:</p>
 </div>
 <p>Como vemos, se imprimen los números 1, 2, 3; pero no el 0. Esto es porque estamos modificando la condición ni bien empieza el bucle, y no en la última línea del cuerpo.</p>
 <p>La forma correcta de hacerlo sería:</p>
-<div class="cell" data-execution_count="36">
+<div id="b439b743" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se deben imprimir los números 0, 1, 2</span></span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>numero <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> numero <span class="op">&lt;</span> <span class="dv">3</span>:</span>
@@ -1268,10 +1304,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1281,8 +1316,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1295,6 +1339,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1338,6 +1501,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1363,6 +1527,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1424,17 +1614,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./unidad_2.html" class="pagination-link">
+      <a href="./unidad_2.html" class="pagination-link  aria-label=" &lt;span="" de="" datos,="" expresiones="" y="" funciones&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad_4.html" class="pagination-link">
+      <a href="./unidad_4.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Tipos de Estructuras de Datos</span>">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

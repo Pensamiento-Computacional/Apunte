@@ -200,7 +200,7 @@ necesite, se lo debe cerrar.
 
 
 
-## Menejo de errores
+## Manejo de errores
 
 Cuando cometemos un error de tipeo o utilizamos mal una sentencia el interprete nos muestra un error de sintaxis. En la practica lo vemos como un ```SintaxisError```, este tipo de errores se los llama errores sintácticos, la menera de resolverlo es revisar la sintáxis y corregirlo. 
 
