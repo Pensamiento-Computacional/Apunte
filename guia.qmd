@@ -662,3 +662,63 @@ print(tuplas_a_diccionario(l))
     [https://www.donarg.com.ar/](https://www.donarg.com.ar/)\
     o sacar turno para donar sangre en\
     [https://www.donarg.com.ar/dondedono](https://www.donarg.com.ar/dondedono).
+
+## Guía 5: Entrada y Salida
+
+### Archivos
+
+1. Escribir una función llamada `count` que dado un archivo retorne la cantidad de filas que tiene. 
+
+
+2. Escribir una funcion llamada `cat` que dado un archivo imprima por pantalla todo el contenido. 
+    a. Agregar un parametro a la funcion llamado `blank` en caso de ser `True` no se impriman las lineas en blanco.
+
+3.  Escribir una función llamada `head` que dado un archivo y un número N retorne en una lista las primeras N lineas del archivo. 
+
+4. Escribir una función llamada `tail` que dado un archivo y un número N retorne en una lista las últimas N lineas del archivo. 
+
+5. Escribir una función llamada `touch` que dado el nombre de un archivo lo cree. Si el archivo exixte borra todo el contenido. 
+
+6. **Desafio** Utilizando las funciones de los ejercicios anteriores procesar un archivo con resultados de partidos de futbol. El formato del archivo es el siguiente:
+
+``` bash
+local;visita;goles_local;goles_visita;gano;penales
+real madrid;boca juniors;1;2;visita;N
+A.C. Milan; boca juniors;1;1;visita;S
+.
+.
+.
+```
+Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco.  Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.
+
+7. La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado `reporte_plagio.txt` la siguiente información:
+
+```bash
+archivo;palabras;apariciones
+archivo1.txt;765030;547
+```
+- archivo: es el nombre del archivo que se proceso.
+- palabras: es la cantidad de palabras de ese archivo.
+- apariciones: es la cantidad de veces que aparece una palabra especificada.
+
+En ejemplo de uso podría ser:
+
+```python
+archivos = ["archivo1.txt", "archivo2.txt"]
+procesar_archivos(archivos, "harry") # en esta función se tiene que analizar los archivos y dejar el resultado en  reporte_plagio.txt
+```
+
+
+### Manejo de Errores
+
+1. Crear una función que asegure la apertura de un archivo, si el archivo existe retorna el archivo, si no exixte imprime un mensaje descriptivo.
+
+2.**Desafio** Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: "A", "B", "C"... y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista `["L","O","O","O","L","L","L"]` donde "L" es libre y "O" es ocupada.
+Escribir una funcion que reciba el diccionario, la fila y la ubicación y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas devolver un mensaje descriptivo.
+
+3. 
+
+
+
+
+
