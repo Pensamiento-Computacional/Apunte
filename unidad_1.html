@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -99,6 +106,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -107,12 +141,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -122,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Pensamiento Computacional</a> 
@@ -150,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regimen de Cursada</span></a>
+ <span class="menu-text">Regimen de Cursada, Calendario y Cursos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,12 +225,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Referencias</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./guia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guía de Ejercicios</span></a>
   </div>
@@ -204,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -252,7 +280,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="introducción" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">1.1</span> Introducción</h2>
@@ -340,7 +370,7 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="hola-mundo"><span class="header-section-number">1.2.1</span> Hola, Mundo!</h3>
 <p>El primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.</p>
 <p>En Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:</p>
-<div class="cell" data-execution_count="1">
+<div id="5561dc00" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, Mundo!</code></pre>
@@ -348,7 +378,7 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 </div>
 <p><code>print</code> es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es <code>"Hola, Mundo!"</code>. Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.</p>
 <p>De la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:</p>
-<div class="cell" data-execution_count="2">
+<div id="31c72b2d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Rosita y soy programadora"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, me llamo Rosita y soy programadora</code></pre>
@@ -367,14 +397,14 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_start.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Página de inicio de Replit</figcaption>
+<figcaption>Página de inicio de Replit</figcaption>
 </figure>
 </div>
 <p>Vamos a presionar luego en <code>Sign Up</code>, donde va a pedir crear una cuenta, o iniciar sesión si ya tenemos una. Una de nuestras opciones es, si tenemos una cuenta google ya creada, iniciar sesión con eso. De lo contrario, podemos crear una cuenta nueva con un mail.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_signup.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Página de creación de cuenta de Replit</figcaption>
+<figcaption>Página de creación de cuenta de Replit</figcaption>
 </figure>
 </div>
 </section>
@@ -384,14 +414,14 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_home.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Home de Replit</figcaption>
+<figcaption>Home de Replit</figcaption>
 </figure>
 </div>
 <p>En la misma vamos a ver muchas opciones, pero la que nosotros nos interesa es el botón de <code>+ Create Repl</code>, que nos va a permitir crear un nuevo proyecto.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_create_repl.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Botón de creación de un nuevo proyecto en Replit</figcaption>
+<figcaption>Botón de creación de un nuevo proyecto en Replit</figcaption>
 </figure>
 </div>
 <p>Se va a abrir la siguiente ventana: <img src="./imgs/unidad_1/replit_create_repl2.png" class="img-fluid" alt="Ventana de creación de un nuevo proyecto en Replit"></p>
@@ -400,7 +430,7 @@ Se debería ver algo así:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_create_repl3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Ventana completa de creación de un nuevo proyecto en Replit</figcaption>
+<figcaption>Ventana completa de creación de un nuevo proyecto en Replit</figcaption>
 </figure>
 </div>
 </section>
@@ -413,21 +443,21 @@ Se debería ver algo así:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_workspace2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Botón de ejecución de código</figcaption>
+<figcaption>Botón de ejecución de código</figcaption>
 </figure>
 </div>
 <p>En la parte derecha, vamos a ver el resultado de la ejecución del programa. En este caso, como no escribimos nada, no hay nada para mostrar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_workspace3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Resultado de la ejecución de código</figcaption>
+<figcaption>Resultado de la ejecución de código</figcaption>
 </figure>
 </div>
 <p>Finalmente, en la parte izquierda vamos a tener el menú de archivos, donde vamos a poder crear nuevos archivos, borrarlos, etc. También tiene el acceso a otras herramientas que de momento no vamos a estar usando.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./imgs/unidad_1/replit_workspace4.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Menú de archivos</figcaption>
+<figcaption>Menú de archivos</figcaption>
 </figure>
 </div>
 <p>Vamos a ver que en el menú de archivos ya tenemos un archivo creado, llamado <code>main.py</code>. Este archivo es el archivo principal de nuestro programa, y es el que se ejecuta cuando presionamos el botón de <code>Run</code>.<br>
@@ -442,7 +472,7 @@ Si bien podemos tener otros archivos, el único que se ejecuta cuando presionamo
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -535,10 +565,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -548,8 +577,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -562,6 +600,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -605,6 +762,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -630,6 +788,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -691,17 +875,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rules.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Regimen de Cursada</span>
+      <a href="./rules.html" class="pagination-link  aria-label=" regimen="" de="" cursada,="" calendario="" y="" cursos"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Regimen de Cursada, Calendario y Cursos</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad_2.html" class="pagination-link">
+      <a href="./unidad_2.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Tipos de Datos, Expresiones y Funciones</span>">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
