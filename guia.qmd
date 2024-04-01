@@ -713,10 +713,28 @@ procesar_archivos(archivos, "harry") # en esta función se tiene que analizar lo
 
 1. Crear una función que asegure la apertura de un archivo, si el archivo existe retorna el archivo, si no exixte imprime un mensaje descriptivo.
 
-2.**Desafio** Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: "A", "B", "C"... y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista `["L","O","O","O","L","L","L"]` donde "L" es libre y "O" es ocupada.
+2. Crea un programa que pueda procesar un archivo que se compone del siguiente modo por cada fila se debe ejecutar la operacion de división `dividendo/divisor` y almacenar el resultado en un archivo llamado "resultados.csv". Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir "Error en la fila X" donde X es la fila que tiene errores. 
+
+```
+dividendo;divisor
+83848;389
+8762;78
+.
+.
+.
+```
+
+3. **Desafio** Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: "A", "B", "C"... y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista `["L","O","O","O","L","L","L"]` donde "L" es libre y "O" es ocupada.
 Escribir una funcion que reciba el diccionario, la fila y la ubicación y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas devolver un mensaje descriptivo.
 
-3. 
+Ejemplo
+```python
+sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
+reservar_butaca(sala, "A", 0)
+# En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]
+```
+
+
 
 
 
