@@ -1,5 +1,5 @@
 ---
-title: "Entrada y salida"
+title: "Entrada y Salida"
 format:
   html:
     code-fold: false

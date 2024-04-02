@@ -1,0 +1,10 @@
+# Contacto {.unnumbered}
+
+Por temas administrativos, podes contactar al plantel docente de la materia enviando un mail a:\
+```pc-cbc-docentes@googlegroups.com```
+
+Por otros temas, te recomendamos que te comuniques por el servidor de Discord.
+
+## Dejanos Feedback!
+
+Podés dejarnos feedback de las clases prácticas completando <a href="https://forms.gle/javW6JXGbmaayUUK8" target="_blank">este formulario</a>.

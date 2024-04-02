@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./contact.html" rel="next">
 <link href="./unidad_6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -188,6 +189,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Videos Teóricos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./unidad_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></span></a>
   </div>
@@ -213,7 +220,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unidad_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y salida</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -226,6 +233,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./guia.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Guía de Ejercicios</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contacto</span></a>
   </div>
 </li>
     </ul>
@@ -251,6 +264,11 @@ window.Quarto = {
   <li><a href="#cadenas-de-caracteres" id="toc-cadenas-de-caracteres" class="nav-link" data-scroll-target="#cadenas-de-caracteres">Cadenas de caracteres</a></li>
   <li><a href="#rangos-tuplas-y-listas" id="toc-rangos-tuplas-y-listas" class="nav-link" data-scroll-target="#rangos-tuplas-y-listas">Rangos, Tuplas y Listas</a></li>
   <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">Diccionarios</a></li>
+  </ul></li>
+  <li><a href="#guía-5-entrada-y-salida" id="toc-guía-5-entrada-y-salida" class="nav-link" data-scroll-target="#guía-5-entrada-y-salida">Guía 5: Entrada y Salida</a>
+  <ul class="collapse">
+  <li><a href="#archivos" id="toc-archivos" class="nav-link" data-scroll-target="#archivos">Archivos</a></li>
+  <li><a href="#manejo-de-errores" id="toc-manejo-de-errores" class="nav-link" data-scroll-target="#manejo-de-errores">Manejo de Errores</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -436,27 +454,27 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="3e6f61b9" class="cell" data-execution_count="1">
+<div id="533f15c1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="6bda6480" class="cell" data-execution_count="2">
+<div id="8ca9c51e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="8a6d7226" class="cell" data-execution_count="3">
+<div id="410d9d33" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="78d972b3" class="cell" data-execution_count="4">
+<div id="4d266b69" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
 </div>
 </div>
@@ -577,12 +595,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="b2b884bd" class="cell" data-execution_count="5">
+<div id="f6a5b3f3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>9</code></pre>
+<pre><code>7</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -924,6 +942,63 @@ o sacar turno para donar sangre en<br>
 <a href="https://www.donarg.com.ar/dondedono">https://www.donarg.com.ar/dondedono</a>.</p>
 </blockquote></li>
 </ol>
+</section>
+</section>
+<section id="guía-5-entrada-y-salida" class="level2">
+<h2 class="anchored" data-anchor-id="guía-5-entrada-y-salida">Guía 5: Entrada y Salida</h2>
+<section id="archivos" class="level3">
+<h3 class="anchored" data-anchor-id="archivos">Archivos</h3>
+<ol type="1">
+<li><p>Escribir una función llamada <code>count</code> que dado un archivo retorne la cantidad de filas que tiene.</p></li>
+<li><p>Escribir una funcion llamada <code>cat</code> que dado un archivo imprima por pantalla todo el contenido.</p>
+<ol type="a">
+<li>Agregar un parametro a la funcion llamado <code>blank</code> en caso de ser <code>True</code> no se impriman las lineas en blanco.</li>
+</ol></li>
+<li><p>Escribir una función llamada <code>head</code> que dado un archivo y un número N retorne en una lista las primeras N lineas del archivo.</p></li>
+<li><p>Escribir una función llamada <code>tail</code> que dado un archivo y un número N retorne en una lista las últimas N lineas del archivo.</p></li>
+<li><p>Escribir una función llamada <code>touch</code> que dado el nombre de un archivo lo cree. Si el archivo exixte borra todo el contenido.</p></li>
+<li><p><strong>Desafio</strong> Utilizando las funciones de los ejercicios anteriores procesar un archivo con resultados de partidos de futbol. El formato del archivo es el siguiente:</p></li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">local</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">goles_local</span><span class="kw">;</span><span class="ex">goles_visita</span><span class="kw">;</span><span class="ex">gano</span><span class="kw">;</span><span class="ex">penales</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">real</span> madrid<span class="kw">;</span><span class="ex">boca</span> juniors<span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">2</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">N</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">A.C.</span> Milan<span class="kw">;</span> <span class="ex">boca</span> juniors<span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">S</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco. Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.</p>
+<ol start="7" type="1">
+<li>La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado <code>reporte_plagio.txt</code> la siguiente información:</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo</span><span class="kw">;</span><span class="ex">palabras</span><span class="kw">;</span><span class="ex">apariciones</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo1.txt</span><span class="kw">;</span><span class="ex">765030</span><span class="kw">;</span><span class="ex">547</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>archivo: es el nombre del archivo que se proceso.</li>
+<li>palabras: es la cantidad de palabras de ese archivo.</li>
+<li>apariciones: es la cantidad de veces que aparece una palabra especificada.</li>
+</ul>
+<p>En ejemplo de uso podría ser:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>archivos <span class="op">=</span> [<span class="st">"archivo1.txt"</span>, <span class="st">"archivo2.txt"</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>procesar_archivos(archivos, <span class="st">"harry"</span>) <span class="co"># en esta función se tiene que analizar los archivos y dejar el resultado en  reporte_plagio.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="manejo-de-errores" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-errores">Manejo de Errores</h3>
+<ol type="1">
+<li><p>Crear una función que asegure la apertura de un archivo, si el archivo existe retorna el archivo, si no exixte imprime un mensaje descriptivo.</p></li>
+<li><p>Crea un programa que pueda procesar un archivo que se compone del siguiente modo por cada fila se debe ejecutar la operacion de división <code>dividendo/divisor</code> y almacenar el resultado en un archivo llamado “resultados.csv”. Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir “Error en la fila X” donde X es la fila que tiene errores.</p></li>
+</ol>
+<pre><code>dividendo;divisor
+83848;389
+8762;78
+.
+.
+.</code></pre>
+<ol start="3" type="1">
+<li><strong>Desafio</strong> Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: “A”, “B”, “C”… y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista <code>["L","O","O","O","L","L","L"]</code> donde “L” es libre y “O” es ocupada. Escribir una funcion que reciba el diccionario, la fila y la ubicación y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas devolver un mensaje descriptivo.</li>
+</ol>
+<p>Ejemplo</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sala <span class="op">=</span> {<span class="st">"A"</span>:[<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>], <span class="st">"B"</span>: [<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>]}</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>reservar_butaca(sala, <span class="st">"A"</span>, <span class="dv">0</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1324,6 +1399,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./contact.html" class="pagination-link" aria-label="Contacto">
+        <span class="nav-page-text">Contacto</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - rules.qmd
+    - material.qmd
     - unidad_1.qmd
     - unidad_2.qmd
     - unidad_3.qmd
@@ -16,6 +17,7 @@ book:
     - unidad_5.qmd
     - unidad_6.qmd
     - guia.qmd
+    - contact.qmd
 
 bibliography: references.bib
 
