@@ -1,4 +1,7 @@
-# Videos Teóricos {.unnumbered}
+# Videos Teóricos y Diapositivas {.unnumbered}
 
-Las clases teóricas son virtuales y asincrónicas.
-Los videos se encuentran en el <a href="https://drive.google.com/drive/folders/1jEqxJLcCdY9n79nHLWkjaZIlO4bH4tG9?usp=sharing" target="_blank">siguiente link</a>.
+El material de la materia (tanto videos teóricos como diapositivas usadas en la práctica) se encuentran en <a href="https://drive.google.com/drive/folders/1jEqxJLcCdY9n79nHLWkjaZIlO4bH4tG9?usp=sharing" target="_blank">siguiente link</a>.
+
+Las clases teóricas son virtuales y asincrónicas. Los videos se encuentran en el link de arriba, en la carpeta titulada "Teóricas".
+
+Las clases prácticas son presenciales. Las diapositivas usadas se encuentran en el link de arriba, en la carpeta titulada "Prácticas". Las mismas están organizadas por curso.
