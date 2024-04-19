@@ -454,25 +454,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="9cd5a474" class="cell" data-execution_count="1">
+<div id="1f54bf39" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="7e68c287" class="cell" data-execution_count="2">
+<div id="36c189d9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="312eb45f" class="cell" data-execution_count="3">
+<div id="0b8c6b77" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="36c9a28b" class="cell" data-execution_count="4">
+<div id="4ebca35b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -595,12 +595,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="68e158b1" class="cell" data-execution_count="5">
+<div id="80573965" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4</code></pre>
+<pre><code>10</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -691,7 +691,8 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
 <li><p><strong>Desafío</strong> (obligatorio):</p>
 <ol type="a">
-<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: <code>index</code> arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
+<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva la primer aparición de la palabra en el texto. Pista: <code>index</code> arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
+<li><p>Modificar la función anterior para que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: del método usado en el punto anterior, ¿conocemos algún parámetro adicional que le podamos pasar?</p></li>
 <li><p>Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>4</code>. Restricción: No se puede usar el método <code>len</code>.</p></li>
 </ol></li>
 <li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar <code>lambda</code>.</p></li>
@@ -726,7 +727,9 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <ol start="2" type="a">
 <li><p>Hacer una función que reciba la lista por parámetro y devuelva la cantidad de mundiales que ganaron entre todos los países. Ejemplo: <code>contar_mundiales([("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)])</code> debe devolver <code>8</code>.</p></li>
 <li><p>Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.</p></li>
-<li><p>Hacer una función que reciba la lista por parámetro y devuelva una lista con los países que tienen más de una copa ganada.</p></li>
+<li><p>Hacer una función que reciba la lista por parámetro y devuelva en una tupla: una lista con los países que tienen más de una copa ganada, y otra lista con valores booleanos que nos diga si la cantidad de copas es par o impar. Pista: ¿Cómo podemos usar <code>filter</code>? ¿Y <code>map</code>?<br>
+Ejemplo: <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]</code> devuelve:<br>
+<code>([("Argentina", 3), ("Uruguay", 2), ("Francia",2)] , [False, True, True])</code></p></li>
 </ol></li>
 <li><p>Escribir una función que reciba dos fichas de dominó y determine si <em>encajan</em> o no entre sí.</p>
 <ol type="a">
@@ -735,7 +738,6 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 </ol></li>
 <li><p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
 <span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p></li>
-<li><p>Se tiene una base de datos con nombres de libros de la siguiente forma <code>["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]</code>, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.</p></li>
 <li><ol type="a">
 <li><p>Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.</p></li>
 <li><p>Repetir el ejercicio anterior, pero con una lista.</p></li>
@@ -811,6 +813,8 @@ Batalla Naval: Modo Supervivencia
 </div>
 </div>
 </div></li>
+<li><p>Se tiene una base de datos con nombres de libros de la siguiente forma <code>["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]</code>, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.<br>
+Pista: tenés que usar un diccionario.</p></li>
 </ol>
 </section>
 <section id="diccionarios" class="level3">
