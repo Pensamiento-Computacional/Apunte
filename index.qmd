@@ -8,9 +8,11 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 
 - Balbiano, Jose Luis 
 - Bulacios, Juan
+- Cabibbo Arteaga, Nehuén Daniel
 - Cáceres, Fernando
 - Capón, Lucía
 - Carletti, Joaquin
+- Duzac, Emilia
 - Lopez, Fernando
 - Martinez Gorbik, Llamell Ailén
 - Méndez, Mariano

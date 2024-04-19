@@ -406,7 +406,9 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
 8. **Desafío** (obligatorio):
 
-    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: `index` arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
+    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva la primer aparición de la palabra en el texto. Pista: `index` arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
+    
+    b. Modificar la función anterior para que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: del método usado en el punto anterior, ¿conocemos algún parámetro adicional que le podamos pasar?
 
     b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
 
@@ -443,7 +445,10 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
     c. Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.
 
-    d. Hacer una función que reciba la lista por parámetro y devuelva una lista con los países que tienen más de una copa ganada.
+    d. Hacer una función que reciba la lista por parámetro y devuelva en una tupla: una lista con los países que tienen más de una copa ganada, y otra lista con valores booleanos que nos diga si la cantidad de copas es par o impar. Pista: ¿Cómo podemos usar `filter`? ¿Y `map`?\
+    Ejemplo: `[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]` devuelve:\
+    `([("Argentina", 3), ("Uruguay", 2), ("Francia",2)] , [False, True, True])`
+
 
 5. Escribir una función que reciba dos fichas de dominó y determine si *encajan* o no entre sí. 
 
@@ -454,23 +459,21 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 $$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
 Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
 
-7. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.
-
-8. a. Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.
+7. a. Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.
 
     b. Repetir el ejercicio anterior, pero con una lista.
 
     c. Repetir ambos si ahora, en vez de recibir un índice, se recibe el valor a eliminar. Si no se contiene al valor, se devuelve la estructura tal cual se recibió.
 
-9. Escribir una función que reciba una lista y un número $n$. Para dicho número $n$, debe imprimir los últimos $n$ elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe `[1, 2, 3, 4, 5]` y `n = 2`, debe imprimir `5`, `4` y devolver `[1, 2, 3]`.
+8. Escribir una función que reciba una lista y un número $n$. Para dicho número $n$, debe imprimir los últimos $n$ elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe `[1, 2, 3, 4, 5]` y `n = 2`, debe imprimir `5`, `4` y devolver `[1, 2, 3]`.
 
-10. Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.
+9. Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.
 
-11. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$. Restricción: usar listas por comprensión.
+10. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$. Restricción: usar listas por comprensión.
 
-12. Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
+11. Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
 
-13. Se tiene una lista de supermercado escrita como string con productos separados por coma: `"pan, arroz, pescado, jugo, fideos,..."`. 
+12. Se tiene una lista de supermercado escrita como string con productos separados por coma: `"pan, arroz, pescado, jugo, fideos,..."`. 
 
     a. Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: `['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]`.
 
@@ -478,11 +481,11 @@ Si los vectores no tienen las mismas dimensiones, la función debe devolver `Non
 
     c. Para la función del punto anterior, escribir otra función que reciba la lista de tuplas y devuelva el precio total de la lista de compras.
 
-14. Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor 'X'. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa 'pan', 'arroz', 'pescado', 'X', debe devolver `"pan, arroz, pescado"`.
+13. Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor 'X'. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa 'pan', 'arroz', 'pescado', 'X', debe devolver `"pan, arroz, pescado"`.
 
-15. Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe `['hola', 'como', 'estas']`, debe devolver `"como estas hola"`.
+14. Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe `['hola', 'como', 'estas']`, debe devolver `"como estas hola"`.
 
-16. **Desafio** (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.
+15. **Desafio** (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.
 $$
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
@@ -492,7 +495,7 @@ $$
 \end{bmatrix}
 $$
 
-17. **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
+16. **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
 
     Si se recibe:
     $$
@@ -512,17 +515,17 @@ $$
     \end{bmatrix}
     $$
 
-18. **Desafio** (no obligatorio): Agenda Simplificada\
+17. **Desafio** (no obligatorio): Agenda Simplificada\
 Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nombre_completo, telefono)`, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.
 
-19. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
+18. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
 Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).
 
     Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.
 
     Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
 
-20. **Super Desafio** (no obligatorio): Batalla Naval\
+19. **Super Desafio** (no obligatorio): Batalla Naval\
 
     Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).
 
@@ -547,6 +550,9 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
     ¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
     En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.
     :::
+
+20. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.\
+Pista: tenés que usar un diccionario.
 
 ### Diccionarios
 
