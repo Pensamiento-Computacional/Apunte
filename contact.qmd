@@ -5,6 +5,12 @@ Por temas administrativos, podes contactar al plantel docente de la materia envi
 
 Por otros temas, te recomendamos que te comuniques por el servidor de Discord.
 
+## Discord
+
+La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.\
+Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
+Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.
+
 ## Dejanos Feedback!
 
 Podés dejarnos feedback de las clases prácticas completando <a href="https://forms.gle/javW6JXGbmaayUUK8" target="_blank">este formulario</a>.
