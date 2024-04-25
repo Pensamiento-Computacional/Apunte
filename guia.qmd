@@ -400,9 +400,9 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
 5. Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: `'Hola'` debe devolver `['H', 'O', 'L', 'A']`. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar `map`.
 
-6. Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: `'Algoritmos'` debe devolver `('l', 'g', 'r', 't', 'm', 's')`. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar `filter`.
+6. Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: `'Algoritmos'` debe devolver `('l', 'g', 'r', 't', 'm', 's')`. Restricción: no se permite el uso de ciclos for/while.
 
-7. Escribir una función que, dada una cadena de caracteres, devuelva el número de índice de posición del último caracter. Por ejemplo, para la cadena `'Hola'` debe devolver `3`. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar `len`, y cuál es la relación con el índice de posición del último caracter.
+7. Escribir una función que, dada una cadena de caracteres, devuelva el número de índice de posición del último caracter. Por ejemplo, para la cadena `'Hola'` debe devolver `3`. Restricción: no se permite el uso de ciclos for/while.
 
 8. **Desafío** (obligatorio):
 
