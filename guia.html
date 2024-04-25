@@ -415,8 +415,8 @@ Recomendación
 <code>x += " mundo"</code></li>
 </ol></li>
 <li><ol type="a">
-<li>Escribir una función que convierta un valor dado en grado Celcius, a Fahrenheit. Recordar que la fórmula para la conversión es: <code>F = 9/5 * C + 32</code>.</li>
-<li>Escribir una función que convierta un valor dado en grados Fahrenheit, a Celcius. Usar la misma fórmula anterior.</li>
+<li>Escribir una función que convierta un valor dado en grado Celsius, a Fahrenheit. Recordar que la fórmula para la conversión es: <code>F = 9/5 * C + 32</code>.</li>
+<li>Escribir una función que convierta un valor dado en grados Fahrenheit, a Celsius. Usar la misma fórmula anterior.</li>
 </ol></li>
 <li><p>Escribir una función que calcule el área de un triángulo recibiendo como parámetros su base y su altura.</p></li>
 <li><p>Siendo el cálculo de la norma de un vector <span class="math inline">\(v\)</span> en <span class="math inline">\(R^3\)</span>:<br>
@@ -454,25 +454,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="42714564" class="cell" data-execution_count="1">
+<div id="4986e20a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="751df7b3" class="cell" data-execution_count="2">
+<div id="a9a3898d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="1a7f109c" class="cell" data-execution_count="3">
+<div id="de346088" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="1b465598" class="cell" data-execution_count="4">
+<div id="c4b5a413" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -595,7 +595,7 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="31e775b8" class="cell" data-execution_count="5">
+<div id="988b2af9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -686,9 +686,9 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <li>Indique si la segunda cadena es subcadena de la primera. Por ejemplo, <code>'compu'</code> es subcadena de <code>'computacional'</code>.</li>
 <li>Devuelva la que sea anterior en orden alfábetico. Por ejemplo, si recibe <code>'kde'</code> y <code>'gnome'</code> debe devolver <code>'gnome'</code>.</li>
 </ol></li>
-<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: <code>'Hola'</code> debe devolver <code>['H', 'O', 'L', 'A']</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: <code>'Hola'</code> debe devolver <code>['H', 'O', 'L', 'A']</code>. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar <code>map</code>.</p></li>
 <li><p>Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: <code>'Algoritmos'</code> debe devolver <code>('l', 'g', 'r', 't', 'm', 's')</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
-<li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice de posición del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
 <li><p><strong>Desafío</strong> (obligatorio):</p>
 <ol type="a">
 <li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva la primer aparición de la palabra en el texto. Pista: <code>index</code> arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
