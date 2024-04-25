@@ -107,8 +107,8 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
     t. `x = "Hola"`\
        `x += " mundo"`
 
-17. a. Escribir una función que convierta un valor dado en grado Celcius, a Fahrenheit. Recordar que la fórmula para la conversión es: `F = 9/5 * C + 32`.
-    b. Escribir una función que convierta un valor dado en grados Fahrenheit, a Celcius. Usar la misma fórmula anterior.
+17. a. Escribir una función que convierta un valor dado en grado Celsius, a Fahrenheit. Recordar que la fórmula para la conversión es: `F = 9/5 * C + 32`.
+    b. Escribir una función que convierta un valor dado en grados Fahrenheit, a Celsius. Usar la misma fórmula anterior.
 
 18. Escribir una función que calcule el área de un triángulo recibiendo como parámetros su base y su altura.
 
