@@ -82,7 +82,7 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
     b. Hacer una **función** que reciba una palabra y que imprima sólo los caracteres ubicados en posiciones pares. Ejemplo: Si se recibe "pensamiento" se debe imprimir "pnaino".
     c. Hacer una **función** que reciba una palabra y que imprima la palabra dada vuelta. Ejemplo: Si se recibe "materia" se debe imprimir "airetam".
 
-15. Hacer una **funcion** que reciba una palabra, le borre todas las letras "a" e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe "casa" se debe imprimir "cs". Pista: usar *slices*.
+15. Hacer una **funcion** que reciba una palabra, le borre todas las letras "a" e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe "casa" se debe imprimir "cs".
 
 16. Analizar qué tipo de dato (o error) se obtiene al hacer las siguientes operaciones:
     a. `5 / 2`
