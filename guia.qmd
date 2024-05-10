@@ -618,7 +618,7 @@ print(tuplas_a_diccionario(l))
     a. Resolver sin usar `filter`
     b. Resolver usando `filter`.
 
-13. La profesora Llamel guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
+13. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
 
     Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).
 

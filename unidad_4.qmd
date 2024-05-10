@@ -177,7 +177,7 @@ Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten 
 |---|---|---|
 | `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
 | `count(subcadena)` | Devuelve la cantidad de veces que aparece la subcadena en la cadena | `"Hola mundo".count("o")` devuelve `2` |
-| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra. Cada vez que se llama, devuelve la primer aparición. Puede recibir un parámetro adicional para buscar a partir de una posición particular. | `"Hola mundo".find("mundo")` devuelve `5`.`"Hola mundo".find("Hola",5)` devuelve `-1`. |
+| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra. Cada vez que se llama, devuelve la primer aparición. Puede recibir un parámetro adicional para buscar a partir de una posición particular. | `"Hola mundo".find("mundo")` devuelve `5`.`"Hola mundo".find("Hola",6)` devuelve `-1`. |
 | `upper()` | Devuelve una copia de la cadena con todos los caracteres en mayúscula | `"Hola mundo".upper()` devuelve `"HOLA MUNDO"` |
 | `lower()` | Devuelve una copia de la cadena con todos los caracteres en minúscula | `"Hola mundo".lower()` devuelve `"hola mundo"` |
 | `strip()` | Devuelve una copia de la cadena sin los espacios en blanco al principio y al final | `" Hola mundo ".strip()` devuelve `"Hola mundo"`. |
