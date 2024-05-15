@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -382,7 +382,7 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="hola-mundo"><span class="header-section-number">1.2.1</span> Hola, Mundo!</h3>
 <p>El primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.</p>
 <p>En Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:</p>
-<div id="daac44ab" class="cell" data-execution_count="1">
+<div id="c588a356" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, Mundo!</code></pre>
@@ -390,7 +390,7 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 </div>
 <p><code>print</code> es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es <code>"Hola, Mundo!"</code>. Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.</p>
 <p>De la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:</p>
-<div id="9b39c1ac" class="cell" data-execution_count="2">
+<div id="93b49c06" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Rosita y soy programadora"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, me llamo Rosita y soy programadora</code></pre>
@@ -577,6 +577,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -611,7 +629,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -887,12 +909,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./material.html" class="pagination-link  aria-label=" videos="" teóricos="" y="" diapositivas"="">
+      <a href="./material.html" class="pagination-link" aria-label="Videos Teóricos y Diapositivas">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Videos Teóricos y Diapositivas</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad_2.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Tipos de Datos, Expresiones y Funciones</span>">
+      <a href="./unidad_2.html" class="pagination-link" aria-label="Tipos de Datos, Expresiones y Funciones">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

@@ -51,10 +51,9 @@ La función ```close()``` cierra el archivo, esta operación es importante para 
 "alumnos.txt"
 ```{txt}
 DNI;Nombre;Nota
-45123123;Juan Justo;8
-46456456;Mariano Moreno;6
-45098098;Aldana Cometti;9
-44765765;Pablo Neruda;2
+45000001;Mariana Szischik;9
+46000001;Emilia Duzac;8
+46000001;Lucia Capon;9
 ```
 
 
@@ -153,8 +152,8 @@ archivo.close()
 # Leemos linea por linea cada nota 
 suma_notas = 0
 cantidad_notas = 0
-for linea in lineas[1:]:
-  nota = linea.split(";")[2].strip('\n')
+for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
+  nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
   suma_notas += int(nota)
   cantidad_notas += 1
 
@@ -310,19 +309,71 @@ No se puede dividir por cero.
 
 Como se ve en el ejemplo se "envuelve" la operación que puede generar ese tipo de excepción para que lo que resulte de esa operación se pueda controlar. Como vimos más arriba hay distintos tipos de excepciones, la lista completa se puede ver en [excepciones](https://docs.python.org/es/3/library/exceptions.html#base-classes).
 
+### Validaciones
+Las validaciones son técnicas que permiten asegurar que los valores con los que se vaya a
+operar estén dentro de determinado conjunto de posibilidades o que tengan ciertas características.
+
+Si bien quien invoca una función debe preocuparse de cumplir con las precondiciones de
+ésta, si las validaciones están hechas correctamente pueden devolver información valiosa para
+que el invocante pueda actuar en consecuencia.
+
+También se debe tener en cuenta qué hará nuestro código cuando una validación falle, ya que
+queremos darle información al invocante que le sirva para procesar el error. El error producido
+tiene que ser fácilmente reconocible.
+
+Ejemplo:
+
+```{python}
+def convertir_a_int(ingreso_usuario):
+  try:
+    return int(ingreso_usuario)
+  except ValueError:
+    print("El valor ingresado no es un número")
+
+convertir_a_int("cuarenta")
+```
+
+:::{.callout-note collapse="true}
+En Python también tenemos una forma de *arrojar* nosotros un error, es decir, hacer que la función falle y devuelva un mensaje de error. Esto se hace con la sentencia `raise`. No lo vemos en la materia, pero se usaría de la siguiente manera:
+
+```python
+def dividir(n1, n2):
+  if n2 == 0:
+    raise ZeroDivisionError("No se puede dividir por cero")
+  return n1/n2
+
+dividir(10, 0)
+```
+```
+ZeroDivisionError: No se puede dividir por cero
+```
+
+Arrojar o levantar excepciones es un tema complejo, porque además de arrojarlas, debemos ser capaces de capturarlas y manejarlas. Es por esto que no se incluye en el temario de la materia.
+:::
 
 ### Conclusiones
 
 - El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funcionalidad que se está programando. 
-- Los errores que se dan en tiempo de ejecución los podemos "atrapar" con el bloque ```try``.
+- Los errores que se dan en tiempo de ejecución los podemos "atrapar" con el bloque `try`.
 - Hay tipos de excepciones que describen distintos tipos de errores de ejecución.
 
+### Bonus Track: Tipos de Errores
+
+A continuación se presenta una tabla con los errores más comunes que se pueden encontrar al programar en Python.
+
+| Tipo de error | Descripción | Más Información |
+| --- | --- | --- |
+| SyntaxError | Error de sintaxis | Suele ser un error de tipeo o de uso incorrecto de una sentencia |
+| ZeroDivisionError | División por cero | Se produce cuando se intenta dividir por cero |
+| NameError | Variable no definida | Se produce cuando se intenta utilizar una variable que no fue definida |
+| IndexError | Índice fuera de rango | Se produce cuando se intenta acceder a un elemento de una secuencia, que no existe |
+| FileNotFoundError | Archivo no encontrado | Se produce cuando se intenta abrir un archivo que no existe |
+| TypeError | Tipo de dato incorrecto | Se produce cuando se intenta realizar una operación con un tipo de dato incorrecto |
+| ValueError | Valor incorrecto | Se produce cuando se intenta realizar una operación con un valor incorrecto |
+| KeyError | Clave no encontrada | Se produce cuando se intenta acceder a un elemento de un diccionario que no existe |
+| IOError | Error de entrada/salida | Se produce cuando se intenta realizar una operación de entrada/salida que no se puede realizar (por ejemplo, intentar acceder a un archivo) |
 
 
 [^1]:[Split](https://docs.python.org/es/3/library/stdtypes.html#str.split)
 [^2]:[Strip](https://docs.python.org/es/3/library/stdtypes.html#str.strip)
 [^3]:[CSV](https://es.wikipedia.org/wiki/Valores_separados_por_comas)
-
-
-
-

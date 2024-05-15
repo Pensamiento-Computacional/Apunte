@@ -375,7 +375,7 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
 ## Guía 4: Tipos de Estructuras de Datos
 
-### Cadenas de caracteres
+### 1. Cadenas de caracteres
 
 1. Escribir funciones que dada una cadena y un caracter:
 
@@ -414,7 +414,7 @@ Una librería es un conjunto de funciones que alguien más escribió y que podem
 
 9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar `lambda`.
 
-### Rangos, Tuplas y Listas
+### 2. Rangos, Tuplas y Listas
 
 1. Usar un rango para:
 
@@ -554,7 +554,7 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
 20. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.\
 Pista: tenés que usar un diccionario.
 
-### Diccionarios
+### 3. Diccionarios
 
 1. Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos.
 Por ejemplo:
@@ -678,78 +678,216 @@ print(tuplas_a_diccionario(l))
 
 ## Guía 5: Entrada y Salida
 
-### Archivos
+### 1. Archivos
 
-1. Escribir una función llamada `count` que dado un archivo retorne la cantidad de filas que tiene. 
+1. Escribir una función llamada `contar` (o `count`) que dado un archivo retorne la cantidad de filas que tiene. 
 
+2. Escribir una funcion llamada `imprimir`(o `cat`) que dado un archivo imprima por pantalla todo el contenido. 
+    a. Agregar un parametro a la funcion llamado `ignorar_vacias` (o `blank`) que en caso de ser `True`, no se impriman las lineas en blanco.
 
-2. Escribir una funcion llamada `cat` que dado un archivo imprima por pantalla todo el contenido. 
-    a. Agregar un parametro a la funcion llamado `blank` en caso de ser `True` no se impriman las lineas en blanco.
+3.  Escribir una función llamada `ver_encabezado` (o `head`) que dado un archivo y un número N retorne en una lista las primeras N lineas del archivo. 
 
-3.  Escribir una función llamada `head` que dado un archivo y un número N retorne en una lista las primeras N lineas del archivo. 
+4. Escribir una función llamada `ver_final` (o `tail`) que dado un archivo y un número N retorne en una lista las últimas N lineas del archivo. 
 
-4. Escribir una función llamada `tail` que dado un archivo y un número N retorne en una lista las últimas N lineas del archivo. 
+5. Escribir una función llamada `crear` (o `touch`) que dado el nombre de un archivo lo cree. Si el archivo exixte borra todo el contenido. 
 
-5. Escribir una función llamada `touch` que dado el nombre de un archivo lo cree. Si el archivo exixte borra todo el contenido. 
+6. Escribir una función, llamada `wc`, que dado un archivo de texto, lo procese e imprima por pantalla cuántas líneas, cuantas palabras y cuántos caracteres contiene el archivo.
 
-6. **Desafio** Utilizando las funciones de los ejercicios anteriores procesar un archivo con resultados de partidos de futbol. El formato del archivo es el siguiente:
+7. Escribir una función, llamada grep, que reciba una cadena y un archivo de texto, e imprima las líneas del archivo que contienen la cadena recibida.
 
-``` bash
-local;visita;goles_local;goles_visita;gano;penales
-real madrid;boca juniors;1;2;visita;N
-A.C. Milan; boca juniors;1;1;visita;S
-.
-.
-.
-```
-Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco.  Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.
+8. Se tiene un archivo con una pregunta, llamado `pregunta.txt`. Se pide leerlo y mostrar el contenido en consola. Luego, pedirle al usuario una respuesta, y guardarla en un archivo llamado `respuesta.txt`.
 
-7. La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado `reporte_plagio.txt` la siguiente información:
+9. Sea un diccionario cuyas claves y valores son cadenas.
 
-```bash
-archivo;palabras;apariciones
-archivo1.txt;765030;547
-```
-- archivo: es el nombre del archivo que se proceso.
-- palabras: es la cantidad de palabras de ese archivo.
-- apariciones: es la cantidad de veces que aparece una palabra especificada.
+    a. Escribir una función `guardar_diccionario` que reciba el diccionario y un nombre de archivo, y guarde el contenido del diccionario en el archivo, en formato CSV, con un par clave-valor por línea.
+    b. Escribir una función `cargar_diccionario` que reciba el nombre de un archivo con el formato mencionado en el punto anterior, y devuelva el diccionario original.
 
-En ejemplo de uso podría ser:
+10. **Desafio** (obligatorio): Distribución de Carga\
+Se tiene una base de datos en formato CSV con resultados de partidos de futbol. Como el archivo es muy grande, se quiere distribuir la base en varios archivos más pequeños.
+El formato del archivo es el siguiente:
 
-```python
-archivos = ["archivo1.txt", "archivo2.txt"]
-procesar_archivos(archivos, "harry") # en esta función se tiene que analizar los archivos y dejar el resultado en  reporte_plagio.txt
-```
+    ``` bash
+    local;visita;goles_local;goles_visita;gano;penales
+    real madrid;boca juniors;1;2;visita;N
+    A.C. Milan; boca juniors;1;1;visita;S
+    .
+    .
+    .
+    ```
 
+    Utilizando las funciones de los ejercicios 1 a 7, procesar el archivo: Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco.  Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco, el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.
 
-### Manejo de Errores
+11. La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado `reporte_plagio.txt` la siguiente información:
 
-1. Crear una función que asegure la apertura de un archivo, si el archivo existe retorna el archivo, si no exixte imprime un mensaje descriptivo.
+    ```bash
+    archivo;palabras;apariciones
+    archivo1.txt;765030;547
+    ```
+    - archivo: es el nombre del archivo que se proceso.
+    - palabras: es la cantidad de palabras de ese archivo.
+    - apariciones: es la cantidad de veces que aparece una palabra especificada.
 
-2. Crea un programa que pueda procesar un archivo que se compone del siguiente modo por cada fila se debe ejecutar la operacion de división `dividendo/divisor` y almacenar el resultado en un archivo llamado "resultados.csv". Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir "Error en la fila X" donde X es la fila que tiene errores. 
+    En ejemplo de uso podría ser:
 
-```
-dividendo;divisor
-83848;389
-8762;78
-.
-.
-.
-```
+    ```python
+    archivos = ["archivo1.txt", "archivo2.txt"]
+    procesar_archivos(archivos, "harry")
+    ```
+    En `procesar_archivos` se tiene que analizar los archivos y dejar el resultado en  reporte_plagio.txt
 
-3. **Desafio** Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: "A", "B", "C"... y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista `["L","O","O","O","L","L","L"]` donde "L" es libre y "O" es ocupada.
-Escribir una funcion que reciba el diccionario, la fila y la ubicación y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas devolver un mensaje descriptivo.
+12. Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.
 
-Ejemplo
-```python
-sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
-reservar_butaca(sala, "A", 0)
-# En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]
-```
+13. Se tiene un archivo CSV que contiene información sobre el stock de una librería.
 
+    ``` bash
+    Un posible ejemplo de este archivo es el siguiente: 
+        lapiceras;34512;50;120
+        cuadernos;41611;500;130
+        sacapuntas;62812;30;210
+    ```
 
+    Donde cada línea representa un producto y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto "X".
 
+14. En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula
+	Por ejemplo si se tienen los siguientes archivos:\
+	
+    (salas.txt)	
+    
+    ``` bash
+    D2
+    F1
+    E4
+    ```
 
+    (peliculas.txt)	
+    
+    ``` bash
+    Megamente
+    The Menu
+    Shrek
+    ```
 
+    El nuevo archivo deberá quedar:\
+    (funciones.csv)
 
+    ``` bash
+    D2;Megamente
+    F1;The Menu
+    E4;Shrek
+    ```
 
+15. Se tiene un archivo con información de ventas de productos en un supermercado. El archivo tiene el siguiente formato:
+
+    ``` bash
+    producto;precio;cantidad;fecha
+    arroz;50;100;2021-01-01
+    fideos;40;200;2021-01-01
+    arroz;50;100;2021-01-02
+    fideos;40;200;2021-01-02
+    arroz;50;100;2021-01-03
+    fideos;40;200;2021-01-03
+    ```
+
+    Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese producto en el archivo.
+
+16. Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: 'el archivo {nombre} no existe. Se crea y deja vacío.'.
+
+### 2. Manejo de Errores
+
+1. Crear una función que asegure la apertura de un archivo. Debe recibir un nombre y si el archivo existe, retorna el contenido archivo. Si no existe, imprime un mensaje descriptivo.
+
+2. Escribir una función que le pida al usuario que ingrese 5 números y le muestre la suma total de todos ellos. Si el valor ingresado no es un número, debe mostrar un mensaje de error y seguir pidiendo números.
+
+3. Escribir un programa que le pida números al usuario e imprima si son pares o impares. Si el usuario ingresa un valor que no es un número, el programa debe imprimir un mensaje de error y seguir pidiendo números. El programa termina cuando el usuario ingresa `"*"`.
+
+4. Un climatólogo tiene archivos donde guarda las temperaturas promedio de la Ciudad de Buenos Aires de cada mes. Cada línea es un número que representa la temperatura promedio del día. Por ejemplo:
+
+    ``` bash
+    25.5
+    26.0
+    24.5
+    # etc
+    ```
+
+    Como el climatólogo es humano, a veces se equivoca y tipea cosas que no son números. Por ejemplo: `25p3` o `25.5.5`. Se pide hacer una función que reciba el nombre del archivo y devuelva la temperatura promedio del archivo. Si en algún momento se encuentra con un valor que no es un número, debe ignorarlo y seguir con el resto de los valores.
+
+    Al final de la ejecución, debe devolverse el valor promedio y el porcentaje de valores que no pudieron ser procesados respecto del total.
+
+5. Crea un programa que pueda procesar un archivo: por cada fila, se debe ejecutar la operacion de división `dividendo/divisor` y almacenar el resultado en un archivo llamado "resultados.csv". Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir "Error en la fila X: {descripción específica del error}" donde X es la fila que tiene errores. 
+
+    ```
+    dividendo;divisor
+    83848;389
+    8762;78
+    .
+    .
+    .
+    ```
+
+6. **Desafio**: Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: "A", "B", "C"... y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista `["L","O","O","O","L","L","L"]` donde "L" es libre y "O" es ocupada.\ 
+
+    Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: `El asiento ya se encuentra ocupado`.
+
+    Ejemplo
+    ```python
+    sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
+    reservar_butaca(sala, "A", 0)
+    # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]
+    ```
+
+7. **Desafio** (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:
+
+    ```python
+    def dividir(n1, n2):
+        if n2 == 0:
+            raise ZeroDivisionError("No se puede dividir por cero")
+        return n1/n2
+
+    ```
+
+    La función puede lanzar una excepción `ZeroDivisionError` si el segundo número es 0 (es decir, la ejecución va a terminar con un error).
+    
+    a. Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías evitar que el programa termine con un error?
+
+    b. Se pide hacer un programa que le pida al usuario dos números, y muestre el resultado de la división usando la función `dividir` definida arriba. Si el usuario ingresa un 0 como segundo número, debe mostrar un mensaje de error y retornar `None`.
+
+    c. Considerar ahora también que el usuario podría ingresar algo que no es un número. En ese caso, debe mostrar un mensaje de error y seguir pidiendo números.
+
+8. **Desafío** (no obligatorio): El kiosko de la facultad quiere automatizar un letrero que tome datos de un programa y le cobre al estudiante.
+
+    Se tienen dos diccionarios, uno con un código y el producto, y otro con el código y el precio de cada producto.
+
+    ```python
+    opciones = {
+        1: "hamburguesas",
+        2: "milanesas",
+        3: "gaseosa",
+        4: "alfajor",
+        5: "papas fritas",
+        6: "agua"
+    }
+
+    valores = {
+        1:1000,
+        2:1500,
+        3:500,
+        4:300,
+        5:600,
+        6:350
+    }
+    ```
+
+    Se quiere hacer un programa que muestre la información de la siguiente forma en la pantalla:
+
+    ``` bash
+    1. hamburguesas - $1000
+    2. milanesas - $1500
+    3. gaseosa - $500
+    4. alfajor - $300
+    5. papas fritas - $600
+    6. agua - $350
+    ```
+
+    Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.
+
+    Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.
