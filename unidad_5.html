@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -230,7 +230,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#manejo-de-errores" id="toc-manejo-de-errores" class="nav-link" data-scroll-target="#manejo-de-errores"><span class="header-section-number">5.2</span> Manejo de errores</a>
   <ul class="collapse">
-  <li><a href="#conclusiones-1" id="toc-conclusiones-1" class="nav-link" data-scroll-target="#conclusiones-1"><span class="header-section-number">5.2.1</span> Conclusiones</a></li>
+  <li><a href="#validaciones" id="toc-validaciones" class="nav-link" data-scroll-target="#validaciones"><span class="header-section-number">5.2.1</span> Validaciones</a></li>
+  <li><a href="#conclusiones-1" id="toc-conclusiones-1" class="nav-link" data-scroll-target="#conclusiones-1"><span class="header-section-number">5.2.2</span> Conclusiones</a></li>
+  <li><a href="#bonus-track-tipos-de-errores" id="toc-bonus-track-tipos-de-errores" class="nav-link" data-scroll-target="#bonus-track-tipos-de-errores"><span class="header-section-number">5.2.3</span> Bonus Track: Tipos de Errores</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -295,10 +297,9 @@ Note
 <p><strong>Ejemplo</strong> “alumnos.txt”</p>
 </blockquote>
 <pre class="{txt}"><code>DNI;Nombre;Nota
-45123123;Juan Justo;8
-46456456;Mariano Moreno;6
-45098098;Aldana Cometti;9
-44765765;Pablo Neruda;2</code></pre>
+45000001;Mariana Szischik;9
+46000001;Emilia Duzac;8
+46000001;Lucia Capon;9</code></pre>
 <p>En el ejemplo anterior leimos el archivo linea por linea, pero existe otra forma de leer un archivo. Veamos otro ejemplo.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lineas <span class="op">=</span> archivo.readlines()</span>
@@ -386,8 +387,8 @@ Tip
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Leemos linea por linea cada nota </span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>suma_notas <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>cantidad_notas <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linea <span class="kw">in</span> lineas[<span class="dv">1</span>:]:</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  nota <span class="op">=</span> linea.split(<span class="st">";"</span>)[<span class="dv">2</span>].strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> linea <span class="kw">in</span> lineas[<span class="dv">1</span>:]: <span class="co"># la primer línea no contiene datos, solo los nombres de los campos</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  nota <span class="op">=</span> linea.split(<span class="st">";"</span>)[<span class="dv">2</span>].strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>) <span class="co"># nos quedamos con la nota</span></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  suma_notas <span class="op">+=</span> <span class="bu">int</span>(nota)</span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  cantidad_notas <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -485,13 +486,121 @@ SyntaxError: invalid syntax</code></pre>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"No se puede dividir por cero."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> se puede dividir por cero.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como se ve en el ejemplo se “envuelve” la operación que puede generar ese tipo de excepción para que lo que resulte de esa operación se pueda controlar. Como vimos más arriba hay distintos tipos de excepciones, la lista completa se puede ver en <a href="https://docs.python.org/es/3/library/exceptions.html#base-classes">excepciones</a>.</p>
-<section id="conclusiones-1" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="conclusiones-1"><span class="header-section-number">5.2.1</span> Conclusiones</h3>
+<section id="validaciones" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="validaciones"><span class="header-section-number">5.2.1</span> Validaciones</h3>
+<p>Las validaciones son técnicas que permiten asegurar que los valores con los que se vaya a operar estén dentro de determinado conjunto de posibilidades o que tengan ciertas características.</p>
+<p>Si bien quien invoca una función debe preocuparse de cumplir con las precondiciones de ésta, si las validaciones están hechas correctamente pueden devolver información valiosa para que el invocante pueda actuar en consecuencia.</p>
+<p>También se debe tener en cuenta qué hará nuestro código cuando una validación falle, ya que queremos darle información al invocante que le sirva para procesar el error. El error producido tiene que ser fácilmente reconocible.</p>
+<p>Ejemplo:</p>
+<div id="b65a07eb" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convertir_a_int(ingreso_usuario):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(ingreso_usuario)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El valor ingresado no es un número"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>convertir_a_int(<span class="st">"cuarenta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor ingresado no es un número</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>En Python también tenemos una forma de <em>arrojar</em> nosotros un error, es decir, hacer que la función falle y devuelva un mensaje de error. Esto se hace con la sentencia <code>raise</code>. No lo vemos en la materia, pero se usaría de la siguiente manera:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ZeroDivisionError</span>(<span class="st">"No se puede dividir por cero"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> n1<span class="op">/</span>n2</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>dividir(<span class="dv">10</span>, <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>ZeroDivisionError: No se puede dividir por cero</code></pre>
+<p>Arrojar o levantar excepciones es un tema complejo, porque además de arrojarlas, debemos ser capaces de capturarlas y manejarlas. Es por esto que no se incluye en el temario de la materia.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusiones-1" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="conclusiones-1"><span class="header-section-number">5.2.2</span> Conclusiones</h3>
 <ul>
 <li>El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funcionalidad que se está programando.</li>
-<li>Los errores que se dan en tiempo de ejecución los podemos “atrapar” con el bloque `<code>try</code>.</li>
+<li>Los errores que se dan en tiempo de ejecución los podemos “atrapar” con el bloque <code>try</code>.</li>
 <li>Hay tipos de excepciones que describen distintos tipos de errores de ejecución.</li>
 </ul>
+</section>
+<section id="bonus-track-tipos-de-errores" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="bonus-track-tipos-de-errores"><span class="header-section-number">5.2.3</span> Bonus Track: Tipos de Errores</h3>
+<p>A continuación se presenta una tabla con los errores más comunes que se pueden encontrar al programar en Python.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo de error</th>
+<th>Descripción</th>
+<th>Más Información</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SyntaxError</td>
+<td>Error de sintaxis</td>
+<td>Suele ser un error de tipeo o de uso incorrecto de una sentencia</td>
+</tr>
+<tr class="even">
+<td>ZeroDivisionError</td>
+<td>División por cero</td>
+<td>Se produce cuando se intenta dividir por cero</td>
+</tr>
+<tr class="odd">
+<td>NameError</td>
+<td>Variable no definida</td>
+<td>Se produce cuando se intenta utilizar una variable que no fue definida</td>
+</tr>
+<tr class="even">
+<td>IndexError</td>
+<td>Índice fuera de rango</td>
+<td>Se produce cuando se intenta acceder a un elemento de una secuencia, que no existe</td>
+</tr>
+<tr class="odd">
+<td>FileNotFoundError</td>
+<td>Archivo no encontrado</td>
+<td>Se produce cuando se intenta abrir un archivo que no existe</td>
+</tr>
+<tr class="even">
+<td>TypeError</td>
+<td>Tipo de dato incorrecto</td>
+<td>Se produce cuando se intenta realizar una operación con un tipo de dato incorrecto</td>
+</tr>
+<tr class="odd">
+<td>ValueError</td>
+<td>Valor incorrecto</td>
+<td>Se produce cuando se intenta realizar una operación con un valor incorrecto</td>
+</tr>
+<tr class="even">
+<td>KeyError</td>
+<td>Clave no encontrada</td>
+<td>Se produce cuando se intenta acceder a un elemento de un diccionario que no existe</td>
+</tr>
+<tr class="odd">
+<td>IOError</td>
+<td>Error de entrada/salida</td>
+<td>Se produce cuando se intenta realizar una operación de entrada/salida que no se puede realizar (por ejemplo, intentar acceder a un archivo)</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -585,6 +694,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -619,7 +746,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -895,12 +1026,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./unidad_4.html" class="pagination-link  aria-label=" &lt;span="" de="" estructuras="" datos&lt;="" span&gt;"="">
+      <a href="./unidad_4.html" class="pagination-link" aria-label="Tipos de Estructuras de Datos">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./unidad_6.html" class="pagination-link" aria-label="<span class='chapter-number'>6</span>&nbsp; <span class='chapter-title'>Librerías de Python</span>">
+      <a href="./unidad_6.html" class="pagination-link" aria-label="Librerías de Python">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Librerías de Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
