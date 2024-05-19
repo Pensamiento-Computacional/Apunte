@@ -891,3 +891,90 @@ El formato del archivo es el siguiente:
     Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.
 
     Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.
+
+# Guía 6: Librerías de Python
+
+## 1. Numpy
+
+1. Crear un array de 20 números espaciados uniformemente entre 0 y 10. Luego, imprimir:
+
+    a. La dimensión
+    b. La forma
+    c. El tamaño
+
+2. Crear un array llamado "arr" con números enteros del 0 al 9. Luego:
+
+    a. Cambiar su forma de manera tal que tenga 2 filas y 5 columnas
+    b. Insertar el valor 100 en la posición 3.
+
+3. Para el array `x = np.arange(10)`, calcular:
+
+    a. `y = x^2`
+    b. `y = 3x + 2`
+    c. `y = 1/(x+1)`
+    d. `y = log10(x)`
+
+4. Usando el array `y = 1/(x+1)` del ejercicio anterior:
+
+    a. Calcular la media de `y`.
+    b. Calcular la diferencia entre `y` y su media
+
+5. Repetir el ejercicio 4.2.2 de la Guía 4:
+
+    > Escribir una función que reciba:\
+        a. Una lista y devuelva True si su longitud es par y False si su longitud es impar.\
+        b. Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.\
+        c. Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe [5, 10, 7, 3] debe devolver [3, 5, 7, 10].
+
+6. Repetir el ejercicio 4.2.6. de la Guía 4:
+
+    > Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
+        $$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
+        Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
+
+7. Repetir el ejercicio 4.2.11 de la Guía 4:
+
+    > Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz [[1, 2], [3, 4]] y la tupla (0, 1), debe devolver 2.
+
+8. Repetir el ejercicio 4.2.15 de la Guía 4:
+
+    > Desafio (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.\
+    $$
+    \begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    \end{bmatrix}
+    $$
+
+9. Repetir el ejercicio 4.2.16 de la Guía 4:
+
+    > **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
+    Si se recibe:\
+    $$
+    \begin{bmatrix}
+    1 & 2 & 3  \\
+    4 & 5 & 6  \\
+    \end{bmatrix}
+    $$\
+    Se debe devolver:\
+    $$
+    \begin{bmatrix}
+    1 & 4 \\
+    2 & 5 \\
+    3 & 6 \\
+    \end{bmatrix}
+    $$\
+
+10. Una persona quiere cercar el frente de su casa con alambre. Los postes se deben poner a 1 metro de distancia entre sí. Hacer una función que reciba un número entero que sea la cantidad de metros a cubrir, y devuelva un array con la posición de los postes necesarios. Por ejemplo, si se reciben `5` metros, debe devolver: `[0.   1.25   2.5   3.75   5.]`
+
+11. Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el numero de reserva si está ocupado o 0 sino: `[1,2,3,0,7,6,4,0,0,8,9, ...]`.\
+Los asientos en el Jardín Japonés se van a organizar en forma de matriz, teniendo 5 filas de 10 asientos cada uno. Se quiere transformar la lista de asientos en una matriz. Hacer una función que reciba la lista de asientos y devuelva la matriz de asientos organizada por filas.
+
+    Ejemplo: Si se recibe `[1,2,3,0,7,6,4,0,0,8,9,10,0,13,11,12]`, se debe devolver: `[[1,2,3,0,7,6,4,0,0,8],[9,10,0,13,11,12]]`.
+
+12. **Desafio** (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`).
+
+    b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
+    Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.

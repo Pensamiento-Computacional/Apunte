@@ -18,6 +18,7 @@ Los archivos se utilizan para organizar los datos e intercambiarlos para distint
 Toda la organización de las computadoras esta basada en archivos y directorios.
 :::
 
+### Abriendo un Archivo
 
 En python para abrir un archivo utilizamos la función ```open```
 
@@ -27,6 +28,8 @@ archivo = open(ruta_archivo)
 ```
 
 Esta función intentara abrir el archivo "alumnos.txt" y si tiene éxito en la variable archivo quedara un tipo de dato que nos permitira manipularlo. 
+
+### Leyendo un Archivo
 
 La operación más frecuente con los archivos es leerlos de forma secuencial
 
@@ -43,7 +46,7 @@ archivo.close()
 
 Este último bloque de código lee todas las lineas (renglones) del archivo hasta que no queden más. 
 
-El la variable ```archivo```, que mencionamos más arriba como un "tipo de dato que nos permitira manipularlo" guarda cual es la siguiente posición que debe leer y cuando se ejecuta ```archivo.readline()``` lee esa posición y avanza una posición más.
+La variable ```archivo```, que mencionamos más arriba como un "tipo de dato que nos permitira manipularlo" guarda cual es la siguiente posición que debe leer y cuando se ejecuta ```archivo.readline()``` lee esa posición y avanza una posición más.
 
 La función ```close()``` cierra el archivo, esta operación es importante para mantener la consistencia de la información. Volveremos más adelante sobre este tema.
 
@@ -83,15 +86,43 @@ linea número 4
 
 La diferencia pricipal y que condiciona el resto de los cambios es que en lugar de leer linea por linea utilizamos la funcion ```readlines()```. Esta función leer *todo* el contenido del archivo y devueve una lista donde cada elemento de la lista es un renglón. Por otro lado se llama a la función ```close()``` inmediatamente después de leer todo el archivo. ¿ Por qué ? ¿ Te animas a analizar todas las diferencias ? 
 
+#### Resumen
+
+- `read()`: Lee todo el archivo y lo devuelve como una cadena de texto.
+- `readline()`: Lee una línea del archivo y la devuelve como una cadena de texto.
+- `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto.
+
+### Escribiendo en un archivo
+
+Python también tiene métodos para escribir archivos, los más comunes son:
+
+- `write()`: Escribe una cadena de texto en el archivo.
+- `writelines()`: Escribe una lista de cadenas de texto en el archivo.
+
+``` python
+ruta_archivo_nuevo = "saludo.txt"
+archivo = open(ruta_archivo_nuevo, 'w')
+
+archivo.write("Hola!\n")
+archivo.writelines(["¿Cómo estás?\n", "Espero que bien.\n"])
+archivo.close()
+```
+
+::: {.callout-tip}
+En este ejemplo se puede ver el uso de ```\n```. Este caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva linea.
+Ninguno de los métodos de escritura agrega automáticamente un salto de línea al final de lo que se escribe, a menos que se lo indiquemos explícitamente.
+
+Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada linea va a ser ```\n```
+:::
+
+Pero no todos los archivos pueden ser escritos, por ejemplo los archivos que se encuentran en modo lectura ('r'). ¿De qué depende? Depende del tipo de acceso con el que se abrió el archivo.
 
 ### Tipos de acceso
 
-Cuando se abre un archivo hay que especificar para qué lo estamos abriendo, las opciones son: leer o escribir. Por defecto, si no especificamos nada, tal como vimos en los ejemplos anteriores, se abre para leer. 
+Cuando se abre un archivo hay que especificar para qué lo estamos abriendo, las opciones en general son: leer o escribir. Por defecto, si no especificamos nada, tal como vimos en los ejemplos anteriores, se abre para leer. 
 
 
 ![Resumen de los tipos de acceso con los que se puede abrir un archivo.](./imgs/unidad_5/tipos_acceso.png)
-
-
 
 Veamos ejemplos de los casos más comunes
 
@@ -108,12 +139,6 @@ for x in range(5):
 archivo.close()
 ``` 
 
-::: {.callout-tip}
-En este ejemplo se puede ver el uso de ```\n``` ese caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva linea. 
-
-Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada linea va a ser ```\n```
-:::
-
 > **Ejemplo Read (r)**
 
 ``` python
@@ -127,15 +152,42 @@ for linea in lineas:
 
 ```
 
+> **Ejemplo Append (a)**
+``` python
+archivo = open(ruta_archivo_nuevo, 'a')
+archivo.write("linea número 5 \n") # agrega una nueva linea al final del archivo
+archivo.close()
+```
 
-**Close**
+### Close
 Al terminar de trabajar con un archivo, es importante cerrarlo, por diversos motivos: en
 algunos sistemas los archivos sólo pueden ser abiertos de a un programa por la vez; en otros, lo que se haya escrito no se guardará realmente hasta no cerrar el archivo.
+
+``` python
+archivo = open(ruta_archivo)
+lineas = archivo.readlines()
+archivo.close()
+```
+
+:::{.callout-warning}
+Cuando abrimos un archivo, queremos dejarlo abierto siempre la **menor cantidad de tiempo posible**. Si abrimos un archivo y no lo cerramos, estamos ocupando recursos del sistema que podrían ser utilizados por otros programas. Por lo que tenemos que pensar muy bien la forma de armar nuestro código para que los archivos se abran y cierren sólo cuando los necesitamos usar.
+:::
+
+Una forma de asegurarse de que un archivo se cierre es utilizar la sentencia `with`. Esta sentencia se encarga de cerrar el archivo automáticamente al finalizar el bloque de código que se le pasa.
+
+``` python
+with open(ruta_archivo) as archivo:
+  lineas = archivo.readlines()
+
+# Acá el archivo ya se cerró sólo
+```
 
 
 ::: {.callout-tip}
 ¿ Te animas a probar que pasa si intentas escribir en un archivo que fue abierto para lectura ('r') y a leer en uno que fue abierto para escritura ('w') ?
 :::
+
+### Ejemplos
 
 Veamos un ejemplo en el que trabajaremos con dos archivos.
 
