@@ -329,7 +329,7 @@ Note
 <h4 data-number="5.1.2.1" class="anchored" data-anchor-id="resumen"><span class="header-section-number">5.1.2.1</span> Resumen</h4>
 <ul>
 <li><code>read()</code>: Lee todo el archivo y lo devuelve como una cadena de texto.</li>
-<li><code>readline()</code>: Lee una línea del archivo y la devuelve como una cadena de texto.</li>
+<li><code>readline()</code>: Lee una línea del archivo y la devuelve como una cadena de texto. Cuando se llega al final del archivo, devuelve una cadena vacía.</li>
 <li><code>readlines()</code>: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto.</li>
 </ul>
 </section>
@@ -559,7 +559,7 @@ SyntaxError: invalid syntax</code></pre>
 <p>Si bien quien invoca una función debe preocuparse de cumplir con las precondiciones de ésta, si las validaciones están hechas correctamente pueden devolver información valiosa para que el invocante pueda actuar en consecuencia.</p>
 <p>También se debe tener en cuenta qué hará nuestro código cuando una validación falle, ya que queremos darle información al invocante que le sirva para procesar el error. El error producido tiene que ser fácilmente reconocible.</p>
 <p>Ejemplo:</p>
-<div id="dac467b2" class="cell" data-execution_count="1">
+<div id="252356e3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convertir_a_int(ingreso_usuario):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(ingreso_usuario)</span>
