@@ -89,7 +89,7 @@ La diferencia pricipal y que condiciona el resto de los cambios es que en lugar 
 #### Resumen
 
 - `read()`: Lee todo el archivo y lo devuelve como una cadena de texto.
-- `readline()`: Lee una línea del archivo y la devuelve como una cadena de texto.
+- `readline()`: Lee una línea del archivo y la devuelve como una cadena de texto. Cuando se llega al final del archivo, devuelve una cadena vacía.
 - `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto.
 
 ### Escribiendo en un archivo
