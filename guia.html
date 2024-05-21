@@ -458,25 +458,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="66455b58" class="cell" data-execution_count="1">
+<div id="e012e049" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="ba4b0106" class="cell" data-execution_count="2">
+<div id="25d86885" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="50bfec8e" class="cell" data-execution_count="3">
+<div id="96ebe3c1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="e7c589d2" class="cell" data-execution_count="4">
+<div id="facce9c1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -599,12 +599,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="ce127686" class="cell" data-execution_count="5">
+<div id="ba000a9b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>10</code></pre>
+<pre><code>5</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1050,7 +1050,11 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 .</code></pre></li>
 <li><p><strong>Desafio</strong>: Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: “A”, “B”, “C”… y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista <code>["L","O","O","O","L","L","L"]</code> donde “L” es libre y “O” es ocupada.&nbsp;</p>
 <p>Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: <code>El asiento ya se encuentra ocupado</code>.</p>
-<p>Ejemplo <code>python  sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}  reservar_butaca(sala, "A", 0)  # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</code></p></li>
+<p>Ejemplo
+  <pre><code>
+  sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
+  reservar_butaca(sala, "A", 0)  # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</code></pre>
+</p></li>
 <li><p><strong>Desafio</strong> (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
