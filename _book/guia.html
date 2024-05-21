@@ -1050,7 +1050,11 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 .</code></pre></li>
 <li><p><strong>Desafio</strong>: Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: “A”, “B”, “C”… y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista <code>["L","O","O","O","L","L","L"]</code> donde “L” es libre y “O” es ocupada.&nbsp;</p>
 <p>Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: <code>El asiento ya se encuentra ocupado</code>.</p>
-<p>Ejemplo <code>python  sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}  reservar_butaca(sala, "A", 0)  # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</code></p></li>
+<p>Ejemplo
+  <pre><code>
+  sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
+  reservar_butaca(sala, "A", 0)  # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</code></pre>
+</p></li>
 <li><p><strong>Desafio</strong> (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
