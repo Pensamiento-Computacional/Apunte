@@ -693,7 +693,7 @@ print(tuplas_a_diccionario(l))
 
 6. Escribir una función, llamada `wc`, que dado un archivo de texto, lo procese e imprima por pantalla cuántas líneas, cuantas palabras y cuántos caracteres contiene el archivo.
 
-7. Escribir una función, llamada grep, que reciba una cadena y un archivo de texto, e imprima las líneas del archivo que contienen la cadena recibida.
+7. Escribir una función, llamada `grep`, que reciba una cadena y un archivo de texto, e imprima las líneas del archivo que contienen la cadena recibida.
 
 8. Se tiene un archivo con una pregunta, llamado `pregunta.txt`. Se pide leerlo y mostrar el contenido en consola. Luego, pedirle al usuario una respuesta, y guardarla en un archivo llamado `respuesta.txt`.
 
@@ -919,24 +919,24 @@ El formato del archivo es el siguiente:
     a. Calcular la media de `y`.
     b. Calcular la diferencia entre `y` y su media
 
-5. Repetir el ejercicio 4.2.2 de la Guía 4:
+5. Repetir el ejercicio 4.2.2 de la Guía 4 usando NumPy:
 
     > Escribir una función que reciba:\
         a. Una lista y devuelva True si su longitud es par y False si su longitud es impar.\
         b. Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.\
         c. Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe [5, 10, 7, 3] debe devolver [3, 5, 7, 10].
 
-6. Repetir el ejercicio 4.2.6. de la Guía 4:
+6. Repetir el ejercicio 4.2.6. de la Guía 4 usando NumPy:
 
     > Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
         $$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
         Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
 
-7. Repetir el ejercicio 4.2.11 de la Guía 4:
+7. Repetir el ejercicio 4.2.11 de la Guía 4 usando NumPy:
 
     > Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz [[1, 2], [3, 4]] y la tupla (0, 1), debe devolver 2.
 
-8. Repetir el ejercicio 4.2.15 de la Guía 4:
+8. Repetir el ejercicio 4.2.15 de la Guía 4 usando NumPy:
 
     > Desafio (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.\
     $$
@@ -948,7 +948,7 @@ El formato del archivo es el siguiente:
     \end{bmatrix}
     $$
 
-9. Repetir el ejercicio 4.2.16 de la Guía 4:
+9. Repetir el ejercicio 4.2.16 de la Guía 4 usando NumPy:
 
     > **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
     Si se recibe:\
@@ -978,3 +978,72 @@ Los asientos en el Jardín Japonés se van a organizar en forma de matriz, tenie
 
     b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
     Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.
+
+## 2. Pandas
+
+1. Con el siguiente DataFrame df con información sobre las provincias Argentinas:
+
+```{python}
+import pandas as pd
+data = {
+    'Jurisdicción': [
+        'Ciudad Autónoma de Buenos Aires', 'Buenos Aires', 'Catamarca', 'Chaco', 'Chubut',
+        'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja',
+        'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis',
+        'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego, Antártida e Islas del Atlántico Sur',
+        'Tucumán'
+    ],
+    'Capital': [
+        '', 'La Plata', 'San Fernando del Valle de Catamarca', 'Resistencia', 'Rawson',
+        'Córdoba', 'Corrientes', 'Paraná', 'Formosa', 'San Salvador de Jujuy', 'Santa Rosa', 'La Rioja',
+        'Mendoza', 'Posadas', 'Neuquén', 'Viedma', 'Salta', 'San Juan', 'San Luis',
+        'Río Gallegos', 'Santa Fe', 'Santiago del Estero', 'Ushuaia', 'San Miguel de Tucumán'
+    ],
+    'Población (hab)': [
+        3075646, 17541141, 415438, 1204541, 618994, 3760450, 1120801, 1385961,
+        605193, 770881, 358428, 393531, 1990338, 1261294, 664057, 747610,
+        1424397, 781217, 508328, 365698, 3536418, 978313, 173715, 1694656
+    ],
+    'Superficie (km2)': [
+        205.9, 305907.4, 101486.1, 99763.3, 224302.3, 164707.8, 89123.3, 78383.7,
+        75488.3, 53244.2, 143492.5, 91493.7, 149069.2, 29911.4, 94422, 202168.6,
+        155340.5, 88296.2, 75347.1, 244457.5, 133249.1, 136934.3, 910324.4, 22592.1
+    ],
+    'PBI': [
+        154863803.5, 292689868, 6150949.159, 9832642.672, 17747854.21, 69363739.19,
+        7968012.982, 20743409.1, 3807057.419, 6484938.334, 6990262.458, 5590515.628,
+        33431369.11, 9646825.835, 22564106.16, 10264584.42, 13438834.91, 8262308.568,
+        11780849.36, 11663738.04, 81588690.27, 8387858.731, 7049276.383, 13856198.9
+    ],
+}
+
+df = pd.DataFrame(data)
+df.head()
+```
+
+    a. Crea una nueva columna con la densidad de población en (hab/km2)
+    b. Ordena el DataFrame según la densidad de población y superficie
+    c. ¿Cuántas provincias tienen una superficie mayor a 200.000km2?
+    d. ¿Cúantas provincias tienen un PBI que supera el 5% del PBI total? ¿Y que supere el 25%?
+    e. ¿Cual es la capital de Tierra del Fuego? Conociendo la Jurisdicción, observa su correspondiente en la columna Capital.
+    f. Agrega una nueva columna, con encabezado "Región" con las región a la que pertenece cada provincia: Noroeste, Cuyo, Patagonia, Noreste, Pampeana.
+    g. Agrupa por región, y calcula la población y superficie total, y el PBI promedio. 
+
+## 3. Matplotlib y Numpy
+
+1. Siendo x valores de 0 a 2 pi:
+
+    a. Grafica, con grilla, título y referencias apropiadas, la función seno de x.
+    b. Identifica el máximo de y. Gráficalo como un punto rojo
+
+2. Siendo x valores de 0 a 10:
+
+    a. Grafica, con grilla, título y referencias apropiadas, la función seno de x + x/2.
+    b. ¿Cúantes veces corta una recta y = 1.5 a la curva anterior? Realiza un gráfico de línea punteada que lo muestre
+
+## 4. Pandas y Matplotlib
+1- Realiza un gráfico de barras horizontales que muestre la cantidad de habitantes por jurisdicción. Las provincias con mayor población, deben ubicarse en la parte superior.
+
+2- En un gráfico de tort, muestra la superficie de cada región del país.
+
+3- Realiza una figura con 3 gráficos de barras por región: el de la izquierda que muestre el número de habitantes, el del centro la superficie y el de la derecha el PBI

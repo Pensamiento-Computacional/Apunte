@@ -335,7 +335,7 @@ Note
 <h2 data-number="6.2" class="anchored" data-anchor-id="numpy"><span class="header-section-number">6.2</span> NumPy</h2>
 <p>NumPy es una librería de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas.</p>
 <p>Como ya se mencionó anteriormente, para utilizarse se debe instalar e importar. Por convención, se suele importar como:</p>
-<div id="65cc5ca1" class="cell" data-execution_count="1">
+<div id="b2bfc687" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>NumPy incorpora una estructura de datos propia llamados <strong>arrays</strong> que es similar a la lista de Python, pero puede almacenar y operar con datos de manera mucho más eficiente: <strong>el procesamiento de los arrays es hasta 50 veces más rápido</strong>. Esta diferencia de velocidad se debe, en parte, a que <strong>los arrays contienen datos homogéneos</strong>, a diferencia de las listas que pueden contener distintos tipos de datos dentro.</p>
@@ -347,7 +347,7 @@ Note
 <section id="creación-de-un-array" class="level4" data-number="6.2.1.1">
 <h4 data-number="6.2.1.1" class="anchored" data-anchor-id="creación-de-un-array"><span class="header-section-number">6.2.1.1</span> Creación de un Array</h4>
 <p>Un array se crea usando la función <code>array()</code> a partir de listas o tuplas. Por ejemplo:</p>
-<div id="644826d5" class="cell" data-execution_count="2">
+<div id="bf9bc64e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -355,7 +355,7 @@ Note
 </div>
 </div>
 <p>También, se pueden crear arrays particulares, constituídos por ceros con <code>zeros()</code> o por unos con <code>ones()</code>:</p>
-<div id="70ba7242" class="cell" data-execution_count="3">
+<div id="0d775d75" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo un array de ceros con dos elementos</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>a_ceros <span class="op">=</span> np.zeros(<span class="dv">2</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_ceros)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -363,7 +363,7 @@ Note
 <pre><code>[0. 0.]</code></pre>
 </div>
 </div>
-<div id="d205ffb8" class="cell" data-execution_count="4">
+<div id="142c3594" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo un array de unos con dos elementos</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>a_unos <span class="op">=</span> np.ones(<span class="dv">2</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_unos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -372,7 +372,7 @@ Note
 </div>
 </div>
 <p>Además, se pueden crear arrays con un rango de números, utilizando <code>arange()</code> o <code>linspace()</code>:</p>
-<div id="c6befc91" class="cell" data-execution_count="5">
+<div id="4ae97605" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo un array con un rango que empieza en 2 hasta 9 y va de 2 en 2.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>a_rango <span class="op">=</span> np.arange(<span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">2</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_rango)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -380,7 +380,7 @@ Note
 <pre><code>[2 4 6 8]</code></pre>
 </div>
 </div>
-<div id="6c3062f3" class="cell" data-execution_count="6">
+<div id="87f9092f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creo un array con un rango formado por 4 números</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># que empieza en 2 hasta 10 (incluídos). </span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>a_rango_2 <span class="op">=</span> np.linspace(<span class="dv">2</span>, <span class="dv">10</span>, num<span class="op">=</span><span class="dv">4</span>)</span>
@@ -391,7 +391,7 @@ Note
 </div>
 <p>Esto es muy parecido a los rangos que ya vimos en Python, con la sutil diferencia de que el <code>final</code> del rango en este caso <strong>sí se icnluye</strong>.</p>
 <p>Finalmente, para crear arrays de más dimensiones, se utilizan varias listas:</p>
-<div id="b9db1295" class="cell" data-execution_count="7">
+<div id="a5f5ce01" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>matriz <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matriz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -407,10 +407,10 @@ Note
 <section id="dimensión" class="level4" data-number="6.2.1.3">
 <h4 data-number="6.2.1.3" class="anchored" data-anchor-id="dimensión"><span class="header-section-number">6.2.1.3</span> Dimensión</h4>
 <p>Para caracterizar un array es necesario conocer sus dimensiones, utilizando <code>ndim</code>. De esta forma, se puede confirmar que el array llamado <strong>matriz</strong>, definido anteriormente, es bidimensional:</p>
-<div id="da394fac" class="cell" data-execution_count="8">
+<div id="09dd502f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de ejes o dimensiones de la matriz</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>matriz.ndim</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="140">
 <pre><code>2</code></pre>
 </div>
 </div>
@@ -418,10 +418,10 @@ Note
 <section id="forma" class="level4" data-number="6.2.1.4">
 <h4 data-number="6.2.1.4" class="anchored" data-anchor-id="forma"><span class="header-section-number">6.2.1.4</span> Forma</h4>
 <p>Otra característica de interés es su forma o <code>shape</code>: para las matrices bidimensionales, se muestra una tupla (n, m) con el número de filas n y de columnas m:</p>
-<div id="70e49c36" class="cell" data-execution_count="9">
+<div id="f89f6699" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (n = filas, m = columnas)</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>matriz.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="141">
 <pre><code>(2, 3)</code></pre>
 </div>
 </div>
@@ -429,10 +429,10 @@ Note
 <section id="tamaño" class="level4" data-number="6.2.1.5">
 <h4 data-number="6.2.1.5" class="anchored" data-anchor-id="tamaño"><span class="header-section-number">6.2.1.5</span> Tamaño</h4>
 <p>El tamaño de un array es el número total de elementos que contiene, y se obtiene con <code>size</code>:</p>
-<div id="6695a231" class="cell" data-execution_count="10">
+<div id="b3d50110" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número total de elementos de la matriz: 2 filas x 3 columnas = 6 elementos</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>matriz.size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="142">
 <pre><code>6</code></pre>
 </div>
 </div>
@@ -440,7 +440,7 @@ Note
 <section id="posiciones" class="level4" data-number="6.2.1.6">
 <h4 data-number="6.2.1.6" class="anchored" data-anchor-id="posiciones"><span class="header-section-number">6.2.1.6</span> Posiciones</h4>
 <p>Al elemento de una matriz A que se encuentra en la <strong>fila i-ésima y la columna j-ésima</strong> se llama <span class="math inline">\(a_{ij}\)</span>. Así, para acceder a un elemento de un array se debe indicar primero la posición de la fila y luego, de la columna:</p>
-<div id="aee3b775" class="cell" data-execution_count="11">
+<div id="b12528e0" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Elemento de la primera fila y segunda columna: '</span>, matriz[<span class="dv">0</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Elemento de la primera fila y segunda columna:  2</code></pre>
@@ -448,13 +448,13 @@ Note
 </div>
 <p>Nótese la diferencia con las matrices (listas de listas) de Python, donde se accedía a un elemento por separado, primero a la fila y luego a la columna: <code>matriz[0][1]</code>.</p>
 <p>También se puede elegir un rango de elementos en una fila o columna particular:</p>
-<div id="ecbe4d41" class="cell" data-execution_count="12">
+<div id="1642eb37" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Los elementos de la primera fila, columnas 0 y 1: '</span>, matriz[<span class="dv">0</span>, <span class="dv">0</span>:<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Los elementos de la primera fila, columnas 0 y 1:  [1 2]</code></pre>
 </div>
 </div>
-<div id="95b5bc75" class="cell" data-execution_count="13">
+<div id="e4c615b1" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Los elementos de la segunda columna, filas 0 y 1: '</span>, matriz[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Los elementos de la segunda columna, filas 0 y 1:  [2 5]</code></pre>
@@ -464,7 +464,7 @@ Note
 <section id="modificar-arrays" class="level4" data-number="6.2.1.7">
 <h4 data-number="6.2.1.7" class="anchored" data-anchor-id="modificar-arrays"><span class="header-section-number">6.2.1.7</span> Modificar arrays</h4>
 <p>De forma similar a lo aprendido con las listas de Python, se pueden modificar los arrays utilizando ciertas funciones. Para entender y aplicar las mismas, definamos un vector llamado a:</p>
-<div id="eb4b9f87" class="cell" data-execution_count="14">
+<div id="69233301" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>])</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,7 +475,7 @@ Note
 <section id="reshape" class="level5" data-number="6.2.1.7.1">
 <h5 data-number="6.2.1.7.1" class="anchored" data-anchor-id="reshape"><span class="header-section-number">6.2.1.7.1</span> Reshape</h5>
 <p>A este vector, se le puede modificar la forma: pasando de ser <code>(8,)</code> a <code>(4,2)</code>, por dar un ejemplo:</p>
-<div id="22826030" class="cell" data-execution_count="15">
+<div id="e2051bb1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a_reshape <span class="op">=</span> a.reshape(<span class="dv">2</span>, <span class="dv">4</span>) <span class="co"># 2 filas y 4 columnas</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_reshape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -488,7 +488,7 @@ Note
 <section id="insert" class="level5" data-number="6.2.1.7.2">
 <h5 data-number="6.2.1.7.2" class="anchored" data-anchor-id="insert"><span class="header-section-number">6.2.1.7.2</span> Insert</h5>
 <p>También, se modría insertar una fila (<code>axis = 0</code>) o una columna (<code>axis = 1</code>) en una determinada posición. Por ejemplo:</p>
-<div id="085b6eec" class="cell" data-execution_count="16">
+<div id="4ce716bd" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregar fila de cincos en posición 1:</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.insert(a_reshape, <span class="dv">1</span>, <span class="dv">5</span>, axis<span class="op">=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -509,7 +509,7 @@ Note
 <li>El eje que se agrega: una fila (axis = 0) o una columna (axis = 1)<br>
 </li>
 </ul>
-<div id="3b25b5b8" class="cell" data-execution_count="17">
+<div id="c418ce41" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregar columna de cincos en posición 1:</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.insert(a_reshape, <span class="dv">1</span>, <span class="dv">5</span>, axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -518,7 +518,7 @@ Note
 </div>
 </div>
 <p>O lo que es equivalente:</p>
-<div id="b99a092a" class="cell" data-execution_count="18">
+<div id="bbb5d854" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregar columna de cincos en posición 1:</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.insert(a_reshape, <span class="dv">1</span>, [<span class="dv">5</span>, <span class="dv">5</span>], axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -530,7 +530,7 @@ Note
 <section id="append-y-delete" class="level5" data-number="6.2.1.7.3">
 <h5 data-number="6.2.1.7.3" class="anchored" data-anchor-id="append-y-delete"><span class="header-section-number">6.2.1.7.3</span> Append y Delete</h5>
 <p>También podríamos agregar una fila o una columna utilizando <code>append()</code> al final, como ocurría con las listas:</p>
-<div id="fa278265" class="cell" data-execution_count="19">
+<div id="4341dd9c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agregar una última fila</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>a_modificada <span class="op">=</span> np.append(a_reshape, [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]], axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_modificada)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -541,7 +541,7 @@ Note
 </div>
 </div>
 <p>O eliminarlas con <code>delete()</code></p>
-<div id="fbbf4fe9" class="cell" data-execution_count="20">
+<div id="ff1da981" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar la fila de la posición 2.</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.delete(a_modificada, <span class="dv">2</span>, axis<span class="op">=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -553,7 +553,7 @@ Note
 <section id="concatenate-y-sort" class="level5" data-number="6.2.1.7.4">
 <h5 data-number="6.2.1.7.4" class="anchored" data-anchor-id="concatenate-y-sort"><span class="header-section-number">6.2.1.7.4</span> Concatenate y Sort</h5>
 <p>Finalmente, podemos concatenar arrays, como los siguientes:</p>
-<div id="a92f821b" class="cell" data-execution_count="21">
+<div id="4888bcc0" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>])</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>])</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -565,7 +565,7 @@ Note
 </div>
 </div>
 <p>Y ordenar los elementos de un array como numérico o alfabético, ascendente o descendente.</p>
-<div id="a17e4322" class="cell" data-execution_count="22">
+<div id="6ecd9ac3" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.sort(c))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1 2 3 4 5 6 7 8]</code></pre>
@@ -577,7 +577,7 @@ Note
 <section id="operaciones-aritméticas-utilizando-array" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="operaciones-aritméticas-utilizando-array"><span class="header-section-number">6.2.2</span> Operaciones aritméticas utilizando <strong>array</strong></h3>
 <p>Como se ha mencionado anteriormente, Numpy tiene un gran potencial para realizar operaciones, muy superior al de las listas de Python. Por ejemplo, si quisieramos sumar dos listas de python necesitaríamos realizar un <code>for</code>:</p>
-<div id="4ef58906" class="cell" data-execution_count="23">
+<div id="1be88251" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir listas</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>]</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]</span>
@@ -592,7 +592,7 @@ Note
 </div>
 </div>
 <p>Utlizando las funciones de Numpy, esto ya no es más necesario:</p>
-<div id="741d0655" class="cell" data-execution_count="24">
+<div id="6765895a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add() para sumar elemento a elemento de a y b</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.add(a, b)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -601,7 +601,7 @@ Note
 </div>
 </div>
 <p>También podemos realizar otras operaciones, como la resta, multiplicación y división. Usar un arreglo dentro de una ecuación nos devuelve otro arreglo, donde cada elemento es el resultado de aplicar la operación a los elementos correspondientes de los arreglos originales.</p>
-<div id="0f51a427" class="cell" data-execution_count="25">
+<div id="debd5875" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>,  <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>])</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">2</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -651,14 +651,14 @@ Note
 </tbody>
 </table>
 <p>Definimos los vectores a y b con los que operaremos y veremos ejemplos:</p>
-<div id="8841481e" class="cell" data-execution_count="26">
+<div id="5ae92c2d" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>])</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Suma:</li>
 </ul>
-<div id="b5db7e86" class="cell" data-execution_count="27">
+<div id="ea3a7045" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Suma usando +:"</span>, resultado_1) </span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -672,7 +672,7 @@ Suma usando add(): [2 4 7 9]</code></pre>
 <ul>
 <li>Resta:</li>
 </ul>
-<div id="0c9aefc5" class="cell" data-execution_count="28">
+<div id="2249386d" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">-</span> b</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Resta usando -:"</span>, resultado_1) </span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -686,7 +686,7 @@ Resta usando subtract(): [0 2 3 5]</code></pre>
 <ul>
 <li>Multiplicación:</li>
 </ul>
-<div id="af1fc51a" class="cell" data-execution_count="29">
+<div id="fa6bc6b6" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">*</span> b</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Multiplicación usando *:"</span>, resultado_1) </span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -700,7 +700,7 @@ Multiplicación usando multiply(): [ 1  3 10 14]</code></pre>
 <ul>
 <li>División:</li>
 </ul>
-<div id="39b1dda7" class="cell" data-execution_count="30">
+<div id="4c40346b" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">/</span> b</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"División usando /:"</span>, resultado_1) </span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -714,7 +714,7 @@ División usando divide(): [1.  3.  2.5 3.5]</code></pre>
 <ul>
 <li>Potencia:</li>
 </ul>
-<div id="931e8431" class="cell" data-execution_count="31">
+<div id="f047b771" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">**</span> b</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Potencia usando **:"</span>, resultado_1) </span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -738,7 +738,7 @@ Note
 <p>Note que si quisieramos operar con un vector <code>b</code> de elementos iguales, podríamos utilizar un escalar.</p>
 </div>
 </div>
-<div id="bbfb7ed1" class="cell" data-execution_count="32">
+<div id="ba56edea" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>])</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>resultado_1 <span class="op">=</span> a <span class="op">*</span> b</span>
@@ -778,7 +778,7 @@ Usando un escalar b = 2: [ 2  6 10 14]</code></pre>
 </tbody>
 </table>
 <p>Por ejemplo:</p>
-<div id="4ecccb0c" class="cell" data-execution_count="33">
+<div id="8dbdb1cd" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo log2()</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Logaritmo base 2:"</span>, np.log2([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">16</span>]))</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo log10()</span></span>
@@ -804,9 +804,9 @@ Note
 <p>Note que el número de Euler o número e es una constante incluída en NumPy como: <code>np.e</code></p>
 </div>
 </div>
-<div id="acb3669d" class="cell" data-execution_count="34">
+<div id="82139739" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>np.e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="166">
 <pre><code>2.718281828459045</code></pre>
 </div>
 </div>
@@ -849,7 +849,7 @@ Note
 </tbody>
 </table>
 <p>Por ejemplo:</p>
-<div id="ced21cb2" class="cell" data-execution_count="35">
+<div id="5feb1ed9" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de seno</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Seno de π / 2:"</span>, np.sin(np.pi <span class="op">/</span> <span class="dv">2</span>))</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -860,7 +860,7 @@ Note
 1.5707963267948966</code></pre>
 </div>
 </div>
-<div id="d2c3bd37" class="cell" data-execution_count="36">
+<div id="445fd71f" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de coseno</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Coseno de π:"</span>, np.cos(np.pi))</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -871,7 +871,7 @@ Note
 Arcoseno de -1: 3.141592653589793</code></pre>
 </div>
 </div>
-<div id="72693186" class="cell" data-execution_count="37">
+<div id="24b16949" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de tangente:</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tangente de 0:"</span>, np.tan(<span class="dv">0</span>))</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -895,14 +895,14 @@ Note
 <p>Note que el número π es una constante incluída en NumPy como: <code>np.pi</code></p>
 </div>
 </div>
-<div id="5ee870e6" class="cell" data-execution_count="38">
+<div id="6f58e1ea" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>np.pi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div class="cell-output cell-output-display" data-execution_count="170">
 <pre><code>3.141592653589793</code></pre>
 </div>
 </div>
 <p>Para convertir los radianes a grados y viceversa, se utiliza <code>deg2rad()</code> y <code>rad2deg()</code> respectivamente:</p>
-<div id="8c4b3df8" class="cell" data-execution_count="39">
+<div id="8030088d" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"De grados [90, 180, 270, 360] a radianes:"</span>, </span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>      np.deg2rad([<span class="dv">90</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">360</span>]))</span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -964,7 +964,7 @@ De radianes [π/2, π, 1.5*π, 2*π] a grados: [ 90. 180. 270. 360.]</code></pre
 </tbody>
 </table>
 <p>Definimos los arreglos 1 y 2, y matrices 1 y 2 con los que operaremos y veremos ejemplos:</p>
-<div id="67a73ffe" class="cell" data-execution_count="40">
+<div id="e2fe6151" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear arreglos</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>arreglo_1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>arreglo_2 <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>])</span>
@@ -973,14 +973,14 @@ De radianes [π/2, π, 1.5*π, 2*π] a grados: [ 90. 180. 270. 360.]</code></pre
 <span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>matriz_1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">3</span>], [<span class="dv">5</span>, <span class="dv">7</span>]])</span>
 <span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>matriz_2 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">6</span>], [<span class="dv">4</span>, <span class="dv">8</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9798f80a" class="cell" data-execution_count="41">
+<div id="d61cbaf8" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Producto escalar entre el array 1 y 2: </span><span class="ch">\n</span><span class="st">"</span>, np.dot(arreglo_1, arreglo_2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Producto escalar entre el array 1 y 2: 
  11</code></pre>
 </div>
 </div>
-<div id="0861dccb" class="cell" data-execution_count="42">
+<div id="d462c230" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Producto vectorial entre la matriz 1 y 2: </span><span class="ch">\n</span><span class="st">"</span>, np.dot(matriz_1, matriz_2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Producto vectorial entre la matriz 1 y 2: 
@@ -988,7 +988,7 @@ De radianes [π/2, π, 1.5*π, 2*π] a grados: [ 90. 180. 270. 360.]</code></pre
  [38 86]]</code></pre>
 </div>
 </div>
-<div id="7db77a5e" class="cell" data-execution_count="43">
+<div id="1c6f0c1a" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Traspuesta de la matriz 1: </span><span class="ch">\n</span><span class="st">"</span>, np.transpose(matriz_1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Traspuesta de la matriz 1: 
@@ -996,7 +996,7 @@ De radianes [π/2, π, 1.5*π, 2*π] a grados: [ 90. 180. 270. 360.]</code></pre
  [3 7]]</code></pre>
 </div>
 </div>
-<div id="b02aecd9" class="cell" data-execution_count="44">
+<div id="ad0bedb7" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Inversa de la matriz 1: </span><span class="ch">\n</span><span class="st">"</span>, np.linalg.inv(matriz_1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Inversa de la matriz 1: 
@@ -1004,7 +1004,7 @@ De radianes [π/2, π, 1.5*π, 2*π] a grados: [ 90. 180. 270. 360.]</code></pre
  [ 0.625 -0.125]]</code></pre>
 </div>
 </div>
-<div id="c03e3c46" class="cell" data-execution_count="45">
+<div id="d909f4f1" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Determinante de la matriz 1: </span><span class="ch">\n</span><span class="st">"</span>, np.linalg.det(matriz_1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Determinante de la matriz 1: 
@@ -1024,7 +1024,7 @@ Note
 <p>Note que así como existen constantes numéricas, existen las matrices particulares como las compuestas por ceros <code>np.zeros()</code>, por unos <code>np.ones()</code> y la matriz identidad <code>np.eyes</code>.</p>
 </div>
 </div>
-<div id="a014e8fa" class="cell" data-execution_count="46">
+<div id="35fe8544" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz de identidad de 3x3: </span><span class="ch">\n</span><span class="st">"</span>, np.eye(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Matriz de identidad de 3x3: 
@@ -1073,13 +1073,13 @@ Note
 </tbody>
 </table>
 <p>Utilizando la matriz <strong>data</strong> como ejemplo:</p>
-<div id="a5f01fc9" class="cell" data-execution_count="47">
+<div id="cbc5bec0" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">5</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">6</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Valor máximo</li>
 </ul>
-<div id="15d00980" class="cell" data-execution_count="48">
+<div id="54f533d4" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valor máximo de todo el array: "</span>, data.<span class="bu">max</span>())</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valores máximos de cada columna: "</span>, data.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1090,7 +1090,7 @@ Valores máximos de cada columna:  [5 6]</code></pre>
 <ul>
 <li>Valor mínimo</li>
 </ul>
-<div id="428b88e9" class="cell" data-execution_count="49">
+<div id="24cfb344" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valor mínimo de todo el array: "</span>, data.<span class="bu">min</span>())</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valores mínimos de cada fila: "</span>, data.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1101,7 +1101,7 @@ Valores mínimos de cada fila:  [1 3 4]</code></pre>
 <ul>
 <li>Suma de elementos:</li>
 </ul>
-<div id="a4f12faf" class="cell" data-execution_count="50">
+<div id="c00fc9ee" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Suma de todos los elementos del array: "</span>, data.<span class="bu">sum</span>())</span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Suma de los elementos de cada fila: "</span>, data.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1112,7 +1112,7 @@ Suma de los elementos de cada fila:  [ 3  8 10]</code></pre>
 <ul>
 <li>Promedio:</li>
 </ul>
-<div id="bf38bd3b" class="cell" data-execution_count="51">
+<div id="9762d1be" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Promedio de todos los elementos del array: "</span>, data.mean())</span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Promedio de los elementos de cada columna: "</span>, data.mean(axis<span class="op">=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1140,7 +1140,7 @@ Note
 <h2 data-number="6.3" class="anchored" data-anchor-id="pandas"><span class="header-section-number">6.3</span> Pandas</h2>
 <p>Pandas es una librería de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.</p>
 <p>Dado que se basa en NumPy, luego de instalarse, se deben importar ambas librerías. Por convención:</p>
-<div id="6b4ecd17" class="cell" data-execution_count="52">
+<div id="a70eac24" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Los datos a trabajar en Pandas van a tener, en general, una forma muy similar a las tablas:</p>
@@ -1155,12 +1155,12 @@ Note
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="serie"><span class="header-section-number">6.3.1</span> <strong>Serie</strong></h3>
 <p>Una <strong>serie</strong> es un vector <strong>(unidimensional)</strong> capaz de contener cualquier tipo de dato, como por ejemplo, números enteros o decimales, strings, objetos de Python, etc.</p>
 <p>Para crearlas, se puede partir de un escalar, una lista, un diccionario, etc., utilizando <code>pd.Serie()</code>:</p>
-<div id="1335dc1d" class="cell" data-execution_count="53">
+<div id="255b0459" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear serie partiendo de una lista:</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> [<span class="dv">1</span>, <span class="st">"a"</span>, <span class="fl">3.5</span>]</span>
 <span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>pd.Series(lista)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="185">
 <pre><code>0      1
 1      a
 2    3.5
@@ -1169,10 +1169,10 @@ dtype: object</code></pre>
 </div>
 <p>Note que se ven dos líneas verticales de datos. A la derecha se observa una columna con los elementos de la lista antes creada, mientas que a la izquierda se encuentra el <strong>índice</strong>, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, por lo que si se deseara uno particular, se puede establecer utilizando <code>index</code>.</p>
 <p>El índice es de vital importancia ya que permite acceder a los elementos de la serie. Es por ello que al colocar un índice en particular, su longitud debe ser acorde al número de elementos de la misma. De lo contrario, se mostrará un ValueError.</p>
-<div id="54360735" class="cell" data-execution_count="54">
+<div id="55664057" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear serie partiendo de una lista, indicando el índice</span></span>
 <span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>pd.Series(lista, index <span class="op">=</span> [<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="54">
+<div class="cell-output cell-output-display" data-execution_count="186">
 <pre><code>x      1
 y      a
 z    3.5
@@ -1180,13 +1180,13 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>En el caso de crear Series utilizando diccionarios, sus claves (o keys) pasan a formar el índice.</p>
-<div id="b55abfcd" class="cell" data-execution_count="55">
+<div id="73ee010b" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear serie partiendo de un diccionario:</span></span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>diccionario <span class="op">=</span> {<span class="st">"x"</span>: <span class="dv">1</span>, <span class="st">"y"</span>: <span class="st">"a"</span>, <span class="st">"z"</span>: <span class="fl">3.5</span>}</span>
 <span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> pd.Series(diccionario)</span>
 <span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="187">
 <pre><code>x      1
 y      a
 z    3.5
@@ -1194,24 +1194,24 @@ dtype: object</code></pre>
 </div>
 </div>
 <p>Como ya se debe estar imaginando, para acceder a un elemento de la serie, se debe indicar el valor del índice o la posición entre corchetes.</p>
-<div id="8db56d58" class="cell" data-execution_count="56">
+<div id="b5822e00" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acceder al elemento de índice x:</span></span>
 <span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>a[<span class="st">"x"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div class="cell-output cell-output-display" data-execution_count="188">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="3d461161" class="cell" data-execution_count="57">
+<div id="9429613f" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acceder al elemento de posición 0:</span></span>
 <span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
+<div class="cell-output cell-output-display" data-execution_count="189">
 <pre><code>1</code></pre>
 </div>
 </div>
 <p>Otra característica interesante de las series (y de los DataFrames, como se verá a continuación) es la vectorización: así como los arrays, no requieren recorrer valor por valor en un for para realizar operaraciones. Por ejemplo:</p>
-<div id="7c8710cc" class="cell" data-execution_count="58">
+<div id="1099477a" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="190">
 <pre><code>x      2
 y     aa
 z    7.0
@@ -1223,7 +1223,7 @@ dtype: object</code></pre>
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="dataframe"><span class="header-section-number">6.3.2</span> <strong>DataFrame</strong></h3>
 <p>Un <strong>DataFrame</strong> es una estructura de datos tabular <strong>(bidimensional)</strong>, compuesta por filas y columnas, que se asemeja a una hoja de cálculo de Excel. Para crearlos, se utiliza <code>DataFrame()</code> y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes.</p>
 <p>En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario <strong>data</strong> para las columnas y de una lista <strong>label</strong> para el índice:</p>
-<div id="12595b0f" class="cell" data-execution_count="59">
+<div id="fd01d3c5" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'columna_1'</span>: [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>],</span>
 <span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'columna_2'</span>: [<span class="fl">2.5</span>, <span class="dv">3</span>, <span class="fl">0.5</span>, <span class="va">None</span>, <span class="dv">5</span>, <span class="va">None</span>],</span>
 <span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'columna_3'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>]}</span>
@@ -1231,7 +1231,7 @@ dtype: object</code></pre>
 <span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'a1'</span>, <span class="st">'a2'</span>, <span class="st">'a3'</span>, <span class="st">'a4'</span>, <span class="st">'a5'</span>, <span class="st">'a6'</span>]</span>
 <span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb113-7"><a href="#cb113-7" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(data, index<span class="op">=</span>labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="191">
 <div>
 <div>
 
@@ -1339,7 +1339,7 @@ dtype: object</code></pre>
 </tbody>
 </table>
 <p>Para ejemplificar los métodos y las funciones de Pandas, usaremos el <strong>DataFrame df</strong> definido en la siguiente línea de código.</p>
-<div id="9417f3c2" class="cell" data-execution_count="60">
+<div id="f2443d39" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'nombre'</span>: [<span class="st">'José Martínez'</span>, <span class="st">'Rosa Díaz'</span>, <span class="st">'Javier Garcíaz'</span>, <span class="st">'Carmen López'</span>, <span class="st">'Marisa Collado'</span>, <span class="st">'Antonio Ruiz'</span>, <span class="st">'Antonio Fernández'</span>, </span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Pilar González'</span>, <span class="st">'Pedro Tenorio'</span>, <span class="st">'Santiago Manzano'</span>, <span class="st">'Macarena Álvarez'</span>, <span class="st">'José Sanz'</span>, <span class="st">'Miguel Gutiérrez'</span>, <span class="st">'Carolina Moreno'</span>],</span>
 <span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'edad'</span>: [<span class="dv">18</span>, <span class="dv">32</span>, <span class="dv">24</span>, <span class="dv">35</span>, <span class="dv">46</span>, <span class="dv">68</span>, <span class="dv">51</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">46</span>, <span class="dv">53</span>, <span class="dv">58</span>, <span class="dv">27</span>, <span class="dv">20</span>],</span>
@@ -1350,7 +1350,7 @@ dtype: object</code></pre>
 <span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb114-9"><a href="#cb114-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb114-10"><a href="#cb114-10" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="192">
 <div>
 <div>
 
@@ -1504,7 +1504,7 @@ dtype: object</code></pre>
 <section id="info" class="level5" data-number="6.3.2.1.1">
 <h5 data-number="6.3.2.1.1" class="anchored" data-anchor-id="info"><span class="header-section-number">6.3.2.1.1</span> Info</h5>
 <p>Con <code>info()</code> se puede ver: - el índice en la primera línea, que es un rango de 0 a 13 - el número total de columnas en la segunda línea - el uso de la memoria en la última - una tabla con los nombres de las columnas en <strong>Column</strong>, la cantidad de valores no nulos en <strong>Non-Null Count</strong> y el tipo de dato en <strong>Dtype</strong> para cada una de ellas.</p>
-<div id="93f8e6be" class="cell" data-execution_count="61">
+<div id="4d16d6e6" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1523,10 +1523,10 @@ memory usage: 804.0+ bytes</code></pre>
 </div>
 </div>
 <p>Note que utilizando <code>dtypes</code>, <code>columns</code> e <code>index</code> se obtiene parte de esta información:</p>
-<div id="27edbb4a" class="cell" data-execution_count="62">
+<div id="2e025c51" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tipo de dato por columna</span></span>
 <span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="194">
 <pre><code>nombre         object
 edad            int64
 sexo           object
@@ -1536,17 +1536,17 @@ colesterol    float64
 dtype: object</code></pre>
 </div>
 </div>
-<div id="c9b91751" class="cell" data-execution_count="63">
+<div id="8dac60cc" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre de cada columna</span></span>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="195">
 <pre><code>Index(['nombre', 'edad', 'sexo', 'peso', 'altura', 'colesterol'], dtype='object')</code></pre>
 </div>
 </div>
-<div id="a72fe046" class="cell" data-execution_count="64">
+<div id="939605bf" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb121"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># índice</span></span>
 <span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>df.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="196">
 <pre><code>RangeIndex(start=0, stop=14, step=1)</code></pre>
 </div>
 </div>
@@ -1554,17 +1554,17 @@ dtype: object</code></pre>
 <section id="shape" class="level5" data-number="6.3.2.1.2">
 <h5 data-number="6.3.2.1.2" class="anchored" data-anchor-id="shape"><span class="header-section-number">6.3.2.1.2</span> Shape</h5>
 <p>La forma del DataFrame es de 14 filas y 6 columnas, por lo que contiene 84 elementos.</p>
-<div id="b7230351" class="cell" data-execution_count="65">
+<div id="7f49d585" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forma del DataFrame (filas, columnas)</span></span>
 <span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="197">
 <pre><code>(14, 6)</code></pre>
 </div>
 </div>
-<div id="024c161b" class="cell" data-execution_count="66">
+<div id="e6514749" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb125"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de elementos del DataFrame</span></span>
 <span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>df.size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="198">
 <pre><code>84</code></pre>
 </div>
 </div>
@@ -1572,10 +1572,10 @@ dtype: object</code></pre>
 <section id="head" class="level5" data-number="6.3.2.1.3">
 <h5 data-number="6.3.2.1.3" class="anchored" data-anchor-id="head"><span class="header-section-number">6.3.2.1.3</span> Head</h5>
 <p>Asimismo, cuando no conocemos un DataFrame, puede ser importante ver las primeras 5 filas con <code>head()</code> o las últimas con <code>tail()</code>. Si se quisiera observar un número determinado, sólo hay que especificarlo, por ejemplo:</p>
-<div id="8ea4decd" class="cell" data-execution_count="67">
+<div id="e7dd7703" class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb127"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las primeras 3 filas.</span></span>
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="199">
 <div>
 <div>
 
@@ -1627,10 +1627,10 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="a29bc0cb" class="cell" data-execution_count="68">
+<div id="70732f34" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las últimas 5 filas.</span></span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="200">
 <div>
 <div>
 
@@ -1704,9 +1704,9 @@ dtype: object</code></pre>
 <section id="describe" class="level5" data-number="6.3.2.1.4">
 <h5 data-number="6.3.2.1.4" class="anchored" data-anchor-id="describe"><span class="header-section-number">6.3.2.1.4</span> Describe</h5>
 <p>Por otro lado, <code>describe()</code> devuelve un resumen descriptivo de las columnas de valores numéricos, como “edad”, “peso”, “altura” y “colesterol”.</p>
-<div id="3c198d16" class="cell" data-execution_count="69">
+<div id="79f99a10" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb129"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="201">
 <div>
 <div>
 
@@ -1794,9 +1794,9 @@ dtype: object</code></pre>
 <li><code>max()</code>: valor máximo</li>
 </ul>
 <p>Por ejemplo:</p>
-<div id="49c0d2b6" class="cell" data-execution_count="70">
+<div id="8a1e9a7c" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb130"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>df.count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="202">
 <pre><code>nombre        14
 edad          14
 sexo          14
@@ -1808,10 +1808,10 @@ dtype: int64</code></pre>
 </div>
 <p>Finalmente, como ocurre con las series, <strong>para acceder a los elementos de un DataFrame se puede indicar la posición o el nombre de la fila o columna</strong>.</p>
 <p>Para acceder a una <strong>fila</strong> en particular, utilizamos <code>iloc[]</code> con un entero, una lista de enteros o un rango de números que indican las posiciones o con <code>loc[]</code> indicando el valor del índice.</p>
-<div id="371b13b6" class="cell" data-execution_count="71">
+<div id="d8d464a6" class="cell" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb132"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar los datos de la fila de posición 0:</span></span>
 <span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="71">
+<div class="cell-output cell-output-display" data-execution_count="203">
 <pre><code>nombre        José Martínez
 edad                     18
 sexo                      H
@@ -1822,10 +1822,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="7a4de195" class="cell" data-execution_count="72">
+<div id="75063a8c" class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb134"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la fila de posición 0:</span></span>
 <span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">0</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="204">
 <div>
 <div>
 
@@ -1860,10 +1860,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="d169493e" class="cell" data-execution_count="73">
+<div id="c8ba1021" class="cell" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las filas de posición 0 y 3:</span></span>
 <span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">0</span>, <span class="dv">3</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="73">
+<div class="cell-output cell-output-display" data-execution_count="205">
 <div>
 <div>
 
@@ -1907,10 +1907,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="14b08fc2" class="cell" data-execution_count="74">
+<div id="97d4b66c" class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb136"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar las filas de posiciones entre 0 hasta 3 (exclusive):</span></span>
 <span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell-output cell-output-display" data-execution_count="206">
 <div>
 <div>
 
@@ -1963,10 +1963,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="81d79a07" class="cell" data-execution_count="75">
+<div id="da94c002" class="cell" data-execution_count="75">
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalente a df.iloc[:3]:</span></span>
 <span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="207">
 <div>
 <div>
 
@@ -2019,10 +2019,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="f238fe34" class="cell" data-execution_count="76">
+<div id="f3dc90b9" class="cell" data-execution_count="76">
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostar la fila cuyo valor del índice es 0:</span></span>
 <span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div class="cell-output cell-output-display" data-execution_count="208">
 <pre><code>nombre        José Martínez
 edad                     18
 sexo                      H
@@ -2036,10 +2036,10 @@ Name: 0, dtype: object</code></pre>
 <section id="accediendo-a-columnas" class="level5" data-number="6.3.2.1.5">
 <h5 data-number="6.3.2.1.5" class="anchored" data-anchor-id="accediendo-a-columnas"><span class="header-section-number">6.3.2.1.5</span> Accediendo a columnas</h5>
 <p>Por otro lado, para acceder a una <strong>columna</strong> se pueden utilizar los nombres de la mismas con <code>DataFrame[columna]</code> o su equivalente <code>DataFrame.columna</code>.</p>
-<div id="6d9a9519" class="cell" data-execution_count="77">
+<div id="fe768883" class="cell" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb140"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la columna "nombre"</span></span>
 <span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'nombre'</span>]] <span class="co"># o df.nombre</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell-output cell-output-display" data-execution_count="209">
 <div>
 <div>
 
@@ -2116,10 +2116,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="f2d977aa" class="cell" data-execution_count="78">
+<div id="5c5d6198" class="cell" data-execution_count="78">
 <div class="sourceCode cell-code" id="cb141"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar más de una columna: "nombre" y "edad":</span></span>
 <span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'nombre'</span>, <span class="st">'edad'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div class="cell-output cell-output-display" data-execution_count="210">
 <div>
 <div>
 
@@ -2211,10 +2211,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p>Finalmente, se puede utilizar <code>loc[filas, columnas]</code> que devuelve un DataFrame con los elemento que se encuentra en las filas con los nombres de la lista filas y las columnas con los nombres de la lista columna.</p>
-<div id="5be987f5" class="cell" data-execution_count="79">
+<div id="2663266e" class="cell" data-execution_count="79">
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la filas de índice 0, 1, 2, 3, columnas "nombre" y "edad"</span></span>
 <span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>df.loc[:<span class="dv">3</span>, [<span class="st">'nombre'</span>, <span class="st">'edad'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell-output cell-output-display" data-execution_count="211">
 <div>
 <div>
 
@@ -2256,10 +2256,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="c5c3aade" class="cell" data-execution_count="80">
+<div id="691dd0dd" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb143"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O su equivalente:</span></span>
 <span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>df.loc[df.index[[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]], [<span class="st">'nombre'</span>, <span class="st">'edad'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div class="cell-output cell-output-display" data-execution_count="212">
 <div>
 <div>
 
@@ -2365,10 +2365,10 @@ Name: 0, dtype: object</code></pre>
 <section id="set_index-y-reset_index" class="level5" data-number="6.3.2.2.1">
 <h5 data-number="6.3.2.2.1" class="anchored" data-anchor-id="set_index-y-reset_index"><span class="header-section-number">6.3.2.2.1</span> Set_index y reset_index</h5>
 <p>Utilizando <code>set_index()</code> podemos, Por ejemplo, transformar a la columna “nombre” en el nuevo índice, y para volver al predefinido, usando <code>reset_index()</code>.</p>
-<div id="36c19477" class="cell" data-execution_count="81">
+<div id="9a21a601" class="cell" data-execution_count="81">
 <div class="sourceCode cell-code" id="cb144"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.set_index(keys <span class="op">=</span> <span class="st">"nombre"</span>)</span>
 <span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="81">
+<div class="cell-output cell-output-display" data-execution_count="213">
 <div>
 <div>
 
@@ -2441,10 +2441,10 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="9f4aaea3" class="cell" data-execution_count="82">
+<div id="1ccf2f8f" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb145"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.reset_index()</span>
 <span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="82">
+<div class="cell-output cell-output-display" data-execution_count="214">
 <div>
 <div>
 
@@ -2519,11 +2519,11 @@ Name: 0, dtype: object</code></pre>
 <section id="rename-insert-y-drop" class="level5" data-number="6.3.2.2.2">
 <h5 data-number="6.3.2.2.2" class="anchored" data-anchor-id="rename-insert-y-drop"><span class="header-section-number">6.3.2.2.2</span> Rename, insert y drop</h5>
 <p>Para renombrar una columna, se utiliza <code>rename(columns={"nombre_columna": "nuevo_nombre_columna"})</code></p>
-<div id="e75cdcdb" class="cell" data-execution_count="83">
+<div id="85344c78" class="cell" data-execution_count="83">
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reemplazo "nombre" por "nombre y apellido"</span></span>
 <span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">"nombre"</span>: <span class="st">"nombre y apellido"</span>})</span>
 <span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="83">
+<div class="cell-output cell-output-display" data-execution_count="215">
 <div>
 <div>
 
@@ -2594,14 +2594,14 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p>Para agregar una nueva columna, existe el método <code>insert()</code>, que requiere indicar La posición de la nueva columna, el nombre de la nueva columna, y los valores de la misma. Para ello, creamos una lista llamada <strong>direccion</strong> con 14 valores, para cada una de las personas del DataFrame.</p>
-<div id="72c1de17" class="cell" data-execution_count="84">
+<div id="ed9cc37d" class="cell" data-execution_count="84">
 <div class="sourceCode cell-code" id="cb147"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de la nueva columna</span></span>
 <span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>direccion <span class="op">=</span> [<span class="st">"CABA"</span>, <span class="st">"Bs As"</span>, <span class="st">"Bs As"</span>, <span class="st">"Bs As"</span>, <span class="st">"CABA"</span>, <span class="st">"Bs As"</span>, <span class="st">"CABA"</span>, <span class="st">"CABA"</span>, <span class="st">"CABA"</span>, <span class="st">"CABA"</span>, <span class="st">"CABA"</span>, <span class="st">"Bs As"</span>, <span class="st">"CABA"</span>, <span class="st">"CABA"</span>]</span>
 <span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb147-4"><a href="#cb147-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertar la columna "direccion" en la posición 3:</span></span>
 <span id="cb147-5"><a href="#cb147-5" aria-hidden="true" tabindex="-1"></a>df.insert(<span class="dv">3</span>, <span class="st">"direccion"</span>, direccion)</span>
 <span id="cb147-6"><a href="#cb147-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div class="cell-output cell-output-display" data-execution_count="216">
 <div>
 <div>
 
@@ -2678,14 +2678,14 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> Para agregar una nueva fila, se utiliza el ya conocido <code>loc[]</code>, que requiere indicar el índice y los valores de la misma. Para ello, creamos una lista llamada <strong>nueva_fila</strong> con valores para cada columna del DataFrame.</p>
-<div id="6631b17e" class="cell" data-execution_count="85">
+<div id="7ae21af8" class="cell" data-execution_count="85">
 <div class="sourceCode cell-code" id="cb148"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de la nueva fila</span></span>
 <span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>nueva_fila <span class="op">=</span> [<span class="st">'Carlos Rivas'</span>, <span class="dv">28</span>, <span class="st">'H'</span>, <span class="st">"Bs As"</span>, <span class="fl">89.0</span>, <span class="fl">1.78</span>, <span class="fl">245.0</span>]</span>
 <span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb148-4"><a href="#cb148-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertar la fila 14</span></span>
 <span id="cb148-5"><a href="#cb148-5" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">14</span>] <span class="op">=</span> nueva_fila</span>
 <span id="cb148-6"><a href="#cb148-6" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="85">
+<div class="cell-output cell-output-display" data-execution_count="217">
 <div>
 <div>
 
@@ -2763,11 +2763,11 @@ Name: 0, dtype: object</code></pre>
 </div>
 <p><br> <br></p>
 <p>Para eliminar una columna <code>(axis=1)</code> o fila <code>(axis=0)</code>, se utiliza <code>drop()</code>:</p>
-<div id="7388fdd9" class="cell" data-execution_count="86">
+<div id="bac33303" class="cell" data-execution_count="86">
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimino la columna "direccion", equivalente a del df["direccion"]</span></span>
 <span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'direccion'</span>, axis<span class="op">=</span><span class="dv">1</span>)  </span>
 <span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="86">
+<div class="cell-output cell-output-display" data-execution_count="218">
 <div>
 <div>
 
@@ -2838,11 +2838,11 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p><br> <br></p>
-<div id="35152817" class="cell" data-execution_count="87">
+<div id="2ec24975" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb150"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimino la fila 14</span></span>
 <span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="dv">14</span>, axis<span class="op">=</span><span class="dv">0</span>) </span>
 <span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="87">
+<div class="cell-output cell-output-display" data-execution_count="219">
 <div>
 <div>
 
@@ -2928,11 +2928,11 @@ Name: 0, dtype: object</code></pre>
 <p>Por ejemplo, suponga que queremos ingresar una columna el índice de masa corporal de las personas que se calcula de la siguiente manera:</p>
 <p><span class="math display">\[
 IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
-<div id="c02a39ef" class="cell" data-execution_count="88">
+<div id="07d8e946" class="cell" data-execution_count="88">
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear la columna "IMC"</span></span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"IMC"</span>] <span class="op">=</span> df[<span class="st">"peso"</span>] <span class="op">/</span> df[<span class="st">"altura"</span>]<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="88">
+<div class="cell-output cell-output-display" data-execution_count="220">
 <div>
 <div>
 
@@ -3009,10 +3009,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 </div>
 <p>De manera análoga, se puede crear la columna <strong>dirección</strong> sin utilizar <code>insert()</code>. Usando la lista <strong>direccion</strong>:</p>
-<div id="e346cbef" class="cell" data-execution_count="89">
+<div id="8fce3b34" class="cell" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb152"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"direccion"</span>] <span class="op">=</span> direccion</span>
 <span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="89">
+<div class="cell-output cell-output-display" data-execution_count="221">
 <div>
 <div>
 
@@ -3095,10 +3095,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 </div>
 <p>Finalmente, <strong>para cambiar un valor determinado</strong> se utiliza <code>loc[]</code>, como por ejemplo, agregar el peso de Javier García (tercera fila):</p>
-<div id="9a6413be" class="cell" data-execution_count="90">
+<div id="1f069489" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">2</span>, <span class="st">'peso'</span>] <span class="op">=</span> <span class="dv">92</span></span>
 <span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div class="cell-output cell-output-display" data-execution_count="222">
 <div>
 <div>
 
@@ -3182,10 +3182,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 <p><br> <br></p>
 <p>Para transformar los valores de una columna entera, podemos utilizar <code>map()</code> pasando un diccionario del estilo <code>{valor_viejo: valor_nuevo}</code>. Por ejemplo, modificar la columna “sexo” reemplazando “H” por “M” y “M” por “F”:</p>
-<div id="56e41c27" class="cell" data-execution_count="91">
+<div id="bfb3bfed" class="cell" data-execution_count="91">
 <div class="sourceCode cell-code" id="cb154"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'sexo'</span>] <span class="op">=</span> df[<span class="st">'sexo'</span>].<span class="bu">map</span>({<span class="st">'H'</span>: <span class="st">'M'</span>, <span class="st">'M'</span>: <span class="st">'F'</span>})</span>
 <span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="91">
+<div class="cell-output cell-output-display" data-execution_count="223">
 <div>
 <div>
 
@@ -3269,10 +3269,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 <p><br> <br></p>
 <p>Otra manera sería utilizando <code>replace()</code>, como en la columna “direccion” donde se modificó “Bs As” por “Buenos Aires”.</p>
-<div id="33dfe5ff" class="cell" data-execution_count="92">
+<div id="67f37844" class="cell" data-execution_count="92">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'direccion'</span>] <span class="op">=</span> df[<span class="st">'direccion'</span>].replace(<span class="st">'Bs As'</span>, <span class="st">'Buenos Aires'</span>)</span>
 <span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="92">
+<div class="cell-output cell-output-display" data-execution_count="224">
 <div>
 <div>
 
@@ -3359,10 +3359,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 <section id="filtrar-un-dataframe" class="level4" data-number="6.3.2.3">
 <h4 data-number="6.3.2.3" class="anchored" data-anchor-id="filtrar-un-dataframe"><span class="header-section-number">6.3.2.3</span> Filtrar un Dataframe</h4>
 <p>Para filtrar los elementos de un DataFrame se suelen utilizar condiciones lógicas. Por ejemplo:</p>
-<div id="47a47734" class="cell" data-execution_count="93">
+<div id="425b8a89" class="cell" data-execution_count="93">
 <div class="sourceCode cell-code" id="cb156"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar aquellas personas menores de 40 años:</span></span>
 <span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'edad'</span>] <span class="op">&lt;</span> <span class="dv">40</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="225">
 <div>
 <div>
 
@@ -3478,10 +3478,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 </div>
 <p><br> <br> Cuando se requieren múltiples condiciones, se puede adicionar usando símbolos como <code>&amp;</code> para <strong>intersecciones</strong> y <code>|</code> para <strong>uniones</strong>. Por ejemplo:</p>
-<div id="80e02916" class="cell" data-execution_count="94">
+<div id="d71118fc" class="cell" data-execution_count="94">
 <div class="sourceCode cell-code" id="cb157"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar aquellas personas de sexo femenino y menores de 40 años:</span></span>
 <span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a>df[(df[<span class="st">'edad'</span>] <span class="op">&lt;</span> <span class="dv">40</span>) <span class="op">&amp;</span> (df[<span class="st">'sexo'</span>] <span class="op">==</span> <span class="st">'F'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="94">
+<div class="cell-output cell-output-display" data-execution_count="226">
 <div>
 <div>
 
@@ -3553,10 +3553,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 </div>
 <p><br> <br></p>
-<div id="6b6180a2" class="cell" data-execution_count="95">
+<div id="7d675a6a" class="cell" data-execution_count="95">
 <div class="sourceCode cell-code" id="cb158"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seleccionar aquellas personas cuyo peso es 60kg o 90kg:</span></span>
 <span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>df[(df[<span class="st">'peso'</span>] <span class="op">==</span> <span class="fl">60.0</span>) <span class="op">|</span> (df[<span class="st">'peso'</span>] <span class="op">==</span> <span class="fl">90.0</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="95">
+<div class="cell-output cell-output-display" data-execution_count="227">
 <div>
 <div>
 
@@ -3607,10 +3607,10 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 <p><br> <br></p>
 <p>Cuando se desea filtrar con un cierto rango en una determinada columna, se pueden utilizar las condiciones antes mencionadas o la función <code>between()</code>.</p>
-<div id="e71af3fd" class="cell" data-execution_count="96">
+<div id="92b9693e" class="cell" data-execution_count="96">
 <div class="sourceCode cell-code" id="cb159"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalente a df[(df['edad'] &gt; 25) &amp; (df['edad'] &lt; 40)]</span></span>
 <span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'edad'</span>].between(<span class="dv">25</span>, <span class="dv">40</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="96">
+<div class="cell-output cell-output-display" data-execution_count="228">
 <div>
 <div>
 
@@ -3683,9 +3683,9 @@ IMC = \frac{Peso(kg)}{Altura(m)^2}\]</span></p>
 </div>
 <p><br> <br></p>
 <p>Finalmente, puede ser interesante encontrar aquellas las filas con datos faltantes o <code>NaN</code>. Para ello, se utiliza la función <code>isnull()</code> que devuelve <code>True</code> si el valor de la columna es nulo o NaN. Por ejemplo:</p>
-<div id="ca48b35c" class="cell" data-execution_count="97">
+<div id="9dfe1a0c" class="cell" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb160"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'IMC'</span>].isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
+<div class="cell-output cell-output-display" data-execution_count="229">
 <pre><code>0     False
 1     False
 2      True
@@ -3704,9 +3704,9 @@ Name: IMC, dtype: bool</code></pre>
 </div>
 </div>
 <p>Para visualizar aquella fila donde el índice de masa corporal es nulo, filtramos:</p>
-<div id="f2064d86" class="cell" data-execution_count="98">
+<div id="a768741d" class="cell" data-execution_count="98">
 <div class="sourceCode cell-code" id="cb162"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'IMC'</span>].isnull() <span class="op">==</span> <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="98">
+<div class="cell-output cell-output-display" data-execution_count="230">
 <div>
 <div>
 
@@ -3779,9 +3779,9 @@ Name: IMC, dtype: bool</code></pre>
 </ul>
 <p>Para utilizar la función <code>sort_values(by, ascending)</code>, se debe indicar en el parámetro <code>by</code> una lista con las columnas para ordenar el DataFrame y en <code>ascending</code>, <code>True</code> si el orden deseado es creciente o <code>False</code> para decreciente.</p>
 <p>En el siguiente ejemplo ordenamos por “nombre y apellido” en forma alfabética:</p>
-<div id="a7ec1462" class="cell" data-execution_count="99">
+<div id="adf436cf" class="cell" data-execution_count="99">
 <div class="sourceCode cell-code" id="cb163"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">'nombre y apellido'</span>], ascending<span class="op">=</span>[<span class="va">True</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="99">
+<div class="cell-output cell-output-display" data-execution_count="231">
 <div>
 <div>
 
@@ -3963,9 +3963,9 @@ Name: IMC, dtype: bool</code></pre>
 </div>
 </div>
 <p>Ahora, <strong>¿Qué ocurre cuando ordenamos siguiendo varias columnas?</strong> Los valores del DataFrame se ordenan siguiendo la primera columna en primer lugar, luego la segunda, y así sucesivamente.</p>
-<div id="8cf9652b" class="cell" data-execution_count="100">
+<div id="f408c4b8" class="cell" data-execution_count="100">
 <div class="sourceCode cell-code" id="cb164"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">'direccion'</span>, <span class="st">'nombre y apellido'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">True</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="100">
+<div class="cell-output cell-output-display" data-execution_count="232">
 <div>
 <div>
 
@@ -4157,9 +4157,9 @@ Name: IMC, dtype: bool</code></pre>
 <li>Value Count:</li>
 </ul>
 <p>Utilizando <code>value_counts()</code> se pueden contar las filas en cada grupo según “direccion”. Es decir, cuantas filas hay para “Buenos Aires” y para “CABA”.</p>
-<div id="06eb8061" class="cell" data-execution_count="101">
+<div id="15eb759d" class="cell" data-execution_count="101">
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'direccion'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="101">
+<div class="cell-output cell-output-display" data-execution_count="233">
 <pre><code>CABA            9
 Buenos Aires    5
 Name: direccion, dtype: int64</code></pre>
@@ -4180,10 +4180,10 @@ Name: direccion, dtype: int64</code></pre>
 </figure>
 </div>
 <p>Una vez obtenidos los grupos que deseamos analizar, podemos realizar una función de agregación <code>agg()</code> utilizando algunas o todas las columnas restantes. Estas funciones pueder ser suma, media, mínimo, máximo, contar valores no nulos, entre otras. Veamos algunos ejemplos:</p>
-<div id="535afc0e" class="cell" data-execution_count="102">
+<div id="2323839e" class="cell" data-execution_count="102">
 <div class="sourceCode cell-code" id="cb167"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupar por "direccion" y contar los valores no nulos de todas las columnas</span></span>
 <span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'direccion'</span>]).agg(<span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="102">
+<div class="cell-output cell-output-display" data-execution_count="234">
 <div>
 <div>
 
@@ -4239,10 +4239,10 @@ Name: direccion, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="ac47d22f" class="cell" data-execution_count="103">
+<div id="4e70120d" class="cell" data-execution_count="103">
 <div class="sourceCode cell-code" id="cb168"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupar por "direccion" y "sexo" y contar los valores no nulos de alguna columnas</span></span>
 <span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'direccion'</span>, <span class="st">'sexo'</span>])[[<span class="st">'edad'</span>, <span class="st">'peso'</span>]].agg(<span class="st">'count'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="103">
+<div class="cell-output cell-output-display" data-execution_count="235">
 <div>
 <div>
 
@@ -4293,10 +4293,10 @@ Name: direccion, dtype: int64</code></pre>
 </div>
 </div>
 <p>También se puede asignar para cada columna, una operación distinta:</p>
-<div id="5b99817f" class="cell" data-execution_count="104">
+<div id="661f0ba4" class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb169"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupar por "direccion" y "sexo" y calcular el valor máximo de la columna "colesterol" y el promedio de "peso"</span></span>
 <span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'direccion'</span>, <span class="st">'sexo'</span>]).agg({<span class="st">'colesterol'</span>: [<span class="st">'max'</span>], <span class="st">'peso'</span>: [<span class="st">'mean'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="104">
+<div class="cell-output cell-output-display" data-execution_count="236">
 <div>
 <div>
 
@@ -4352,10 +4352,10 @@ Name: direccion, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="f2f9b2aa" class="cell" data-execution_count="105">
+<div id="e871f6a9" class="cell" data-execution_count="105">
 <div class="sourceCode cell-code" id="cb170"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupar por "direccion" y "sexo" y calcular los valores máximos y mínimos de la columna "colesterol" y el promedio de "peso"</span></span>
 <span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'direccion'</span>, <span class="st">'sexo'</span>]).agg({<span class="st">'colesterol'</span>: [<span class="st">'min'</span>, <span class="st">'max'</span>], <span class="st">'peso'</span>: [<span class="st">'mean'</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="105">
+<div class="cell-output cell-output-display" data-execution_count="237">
 <div>
 <div>
 
@@ -4424,7 +4424,7 @@ Name: direccion, dtype: int64</code></pre>
 <h2 data-number="6.4" class="anchored" data-anchor-id="matplotlib"><span class="header-section-number">6.4</span> Matplotlib</h2>
 <p>Matplotlib es probablemente la librería de Python más usada para crear gráficos, también llamados <strong>plots</strong>. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.</p>
 <p>Como ya se imagina, el primer paso es importar la librería. Por convención:</p>
-<div id="b98b7411" class="cell" data-execution_count="106">
+<div id="9203271e" class="cell" data-execution_count="106">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="creación-de-gráficos-con-matplotlib" class="level3" data-number="6.4.1">
@@ -4478,16 +4478,16 @@ plt.show()  </code></pre>
 ax.funcion_grafico_elegido()        # Reemplazar funcion_grafico_elegido() por una función     
 plt.show()  </code></pre>
 <p>Pero, <strong>¿cuál debería usar?</strong> Eso depende de lo que quieras hacer. A continuación, se verá el detalle de lo que está ocurriendo en cada línea, para que así puedas elegir qué es lo mejor para vos.</p>
-<div id="9f12e2c7" class="cell" data-execution_count="107">
+<div id="9004f9b7" class="cell" data-execution_count="107">
 <div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>plt.figure()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div class="cell-output cell-output-display" data-execution_count="239">
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
-<div id="4ef13f61" class="cell" data-execution_count="108">
+<div id="e3fd5768" class="cell" data-execution_count="108">
 <div class="sourceCode cell-code" id="cb177"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>plt.subplots()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -4547,7 +4547,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 <p>Si desea conocer más detalle, puede ingresar a <a href="https://matplotlib.org/stable/tutorials/introductory/quick_start.html">https://matplotlib.org/stable/tutorials/introductory/quick_start.html</a>.</p>
 <p>Con lo aprendido hasta el momento, vamos a realizar nuestro primer gráfico para luego mostrar cómo modificar su aspecto. La función que usaremos es <code>plot()</code>, con la que se obteniene un gráfico de línea; esta recibe los vectores X e Y para formar puntos en el plano cartesiano que son unidos con una línea.</p>
-<div id="c7e508c7" class="cell" data-execution_count="109">
+<div id="aefe3e7f" class="cell" data-execution_count="109">
 <div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico elemental</span></span>
 <span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]</span>
 <span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
@@ -4575,7 +4575,7 @@ plt.show()                          # Mostrar</code></pre>
 <li><strong>markersize, linewidth =</strong> con un número, establecemos el tamaño del marcador y el espesor de la línea respectivamente.</li>
 </ul>
 <p>Note que si no le asignamos un valor, se establecen los predefinidos.</p>
-<div id="292c6a17" class="cell" data-execution_count="110">
+<div id="b67cf706" class="cell" data-execution_count="110">
 <div class="sourceCode cell-code" id="cb181"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
 <span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4597,7 +4597,7 @@ plt.show()                          # Mostrar</code></pre>
 <h4 data-number="6.4.2.2" class="anchored" data-anchor-id="grilla-o-cuadrícula"><span class="header-section-number">6.4.2.2</span> Grilla o cuadrícula:</h4>
 <p>Para leer facilmente el valor de cada punto, podemos agregar una cuadrícula usando <code>grid()</code>.</p>
 <p>Si deseamos modificarle, por ejemplo, el color, el estilo de línea, o sólo queremos ver uno de los ejes, podemos indicarlo utilizando parámetros muy similares a los vistos anteriormente pero en la funcion <code>grid()</code>.</p>
-<div id="edca5c86" class="cell" data-execution_count="111">
+<div id="c891fbcb" class="cell" data-execution_count="111">
 <div class="sourceCode cell-code" id="cb182"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
 <span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4616,7 +4616,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 </div>
-<div id="d647af1c" class="cell" data-execution_count="112">
+<div id="e3d2ed6a" class="cell" data-execution_count="112">
 <div class="sourceCode cell-code" id="cb183"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Gráfica con la grilla preestablecida</span></span>
 <span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
@@ -4641,7 +4641,7 @@ plt.show()                          # Mostrar</code></pre>
 <h4 data-number="6.4.2.3" class="anchored" data-anchor-id="títulos"><span class="header-section-number">6.4.2.3</span> Títulos</h4>
 <p>Una de las partes más importantes para que un gráfico se pueda entender es ponerle un título y explicar qué significa cada eje. Eso se hace con las funciones <code>set_xlabel()</code>, <code>set_ylabel()</code> y <code>set_title()</code>. Cada una recibe un string que se usará como etiqueta del eje X, etiqueta del eje Y o título, respectivamente.</p>
 <p>Siendo que los valores de <strong>x</strong> son el tiempo medido en minutos y los de <strong>y</strong> una distancia en metros, entonces:</p>
-<div id="2c10accf" class="cell" data-execution_count="113">
+<div id="1aeccb2e" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb184"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb184-2"><a href="#cb184-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
 <span id="cb184-3"><a href="#cb184-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4671,7 +4671,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="referencias" class="level4" data-number="6.4.2.4">
 <h4 data-number="6.4.2.4" class="anchored" data-anchor-id="referencias"><span class="header-section-number">6.4.2.4</span> Referencias</h4>
 <p>El gráfico con el que estamos trabajando sólo tiene una línea, pero si contara con más de una, el uso de referencias sería escencial para lograr el entendimiento del mismo. Para rotular las líneas, dentro de <code>plot()</code> se debe definir la referencia como <code>label</code>. Luego se coloca <code>legend()</code></p>
-<div id="84d22999" class="cell" data-execution_count="114">
+<div id="466a60f5" class="cell" data-execution_count="114">
 <div class="sourceCode cell-code" id="cb185"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb185-2"><a href="#cb185-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
 <span id="cb185-3"><a href="#cb185-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4709,7 +4709,7 @@ plt.show()                          # Mostrar</code></pre>
 <li><strong>Eje y</strong>: se extiende del 0 a 5, de 1 en 1.</li>
 </ul>
 <p>Podemos establecer los limites del eje x e y usando <code>set_xlim()</code> y <code>set_ylim()</code> respectivamente.</p>
-<div id="7098ed37" class="cell" data-execution_count="115">
+<div id="1f486083" class="cell" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb186"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]   <span class="co"># Tiempo (min)</span></span>
 <span id="cb186-2"><a href="#cb186-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]       <span class="co"># Distancia (m)</span></span>
 <span id="cb186-3"><a href="#cb186-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4752,7 +4752,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="gráfico-de-línea" class="level4" data-number="6.4.3.1">
 <h4 data-number="6.4.3.1" class="anchored" data-anchor-id="gráfico-de-línea"><span class="header-section-number">6.4.3.1</span> Gráfico de línea</h4>
 <p>El gráfico de línea permite visualizar cambios en los valores lo largo de un rango continuo (tendencias), como puede ser el tiempo o la distancia. Para crearlo, se utiliza la función <code>plot()</code>, como vimos anteriormente:</p>
-<div id="4ebb553b" class="cell" data-execution_count="116">
+<div id="370f68d4" class="cell" data-execution_count="116">
 <div class="sourceCode cell-code" id="cb187"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">18</span>,<span class="dv">25</span>]</span>
 <span id="cb187-2"><a href="#cb187-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
 <span id="cb187-3"><a href="#cb187-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4772,7 +4772,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="gráfico-de-dispersión-o-puntos" class="level4" data-number="6.4.3.2">
 <h4 data-number="6.4.3.2" class="anchored" data-anchor-id="gráfico-de-dispersión-o-puntos"><span class="header-section-number">6.4.3.2</span> Gráfico de dispersión o puntos</h4>
 <p>El gráfico de dispersión o puntos permite visualizar la relación entre las variables. Para crearlo, se utiliza la función <code>scatter()</code>:</p>
-<div id="40bff3ce" class="cell" data-execution_count="117">
+<div id="e31fdd95" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb188"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">17</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">9</span>,<span class="dv">6</span>]</span>
 <span id="cb188-2"><a href="#cb188-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">99</span>,<span class="dv">86</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">111</span>,<span class="dv">86</span>,<span class="dv">103</span>,<span class="dv">87</span>,<span class="dv">94</span>,<span class="dv">78</span>,<span class="dv">77</span>,<span class="dv">85</span>,<span class="dv">86</span>]</span>
 <span id="cb188-3"><a href="#cb188-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4792,7 +4792,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="gráfico-de-barras" class="level4" data-number="6.4.3.3">
 <h4 data-number="6.4.3.3" class="anchored" data-anchor-id="gráfico-de-barras"><span class="header-section-number">6.4.3.3</span> Gráfico de barras</h4>
 <p>El gráfico de barras permite visualizar proporciones, comparando dos o más valores entre sí. Para crearlo, se utiliza la función <code>bar()</code>, la cual primero recibe, en primer lugar, las etiquetas de las barras que se van a mostrar y en segundo lugar, la altura correspondiente a cada una de estas barras.</p>
-<div id="1b11e340" class="cell" data-execution_count="118">
+<div id="803432d9" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb189"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> [<span class="dv">340</span>, <span class="dv">115</span>, <span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">270</span>]</span>
 <span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>ingredientes <span class="op">=</span> [<span class="st">'chocolate'</span>, <span class="st">'manteca'</span>, <span class="st">'azúcar'</span>, <span class="st">'huevo'</span>, <span class="st">'harina'</span>]</span>
 <span id="cb189-3"><a href="#cb189-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4815,7 +4815,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 <p>Note que con la función anterior, las barras adquieren una dirección vertical: si quisieramos verlas de manera horizontal, debemos usar la función <code>barh()</code> y cambiar los títulos de los ejes según corresponda:</p>
-<div id="c9a36446" class="cell" data-execution_count="119">
+<div id="35dda1db" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb190"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> [<span class="dv">340</span>, <span class="dv">115</span>, <span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">270</span>]</span>
 <span id="cb190-2"><a href="#cb190-2" aria-hidden="true" tabindex="-1"></a>ingredientes <span class="op">=</span> [<span class="st">'chocolate'</span>, <span class="st">'manteca'</span>, <span class="st">'azúcar'</span>, <span class="st">'huevo'</span>, <span class="st">'harina'</span>]</span>
 <span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4841,7 +4841,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="gráfico-de-torta" class="level4" data-number="6.4.3.4">
 <h4 data-number="6.4.3.4" class="anchored" data-anchor-id="gráfico-de-torta"><span class="header-section-number">6.4.3.4</span> Gráfico de torta</h4>
 <p>El gráfico de torta, como el de barras, permite visualizar y comparar proporciones pero de manera circular y como partes de un todo. Para crearlo, se utiliza la función <code>pie()</code>, la cual podría recibir solamente números pero es útil también saber qué simboliza cada parte. Por eso, para referenciar cada porción se usa el parámetro <code>labels</code>. Por otro lado, el parámetro <code>autopct</code> establece cómo se mostrará el porcentaje: por ejemplo, <code>%1.1f%%</code> le indica que el porcentaje tendrá un decimal, mientras que <code>%1.2f%%</code> tendrá dos decimales.</p>
-<div id="f9990b69" class="cell" data-execution_count="120">
+<div id="5ee77728" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb191"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> [<span class="dv">340</span>, <span class="dv">115</span>, <span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">270</span>]</span>
 <span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a>ingredientes <span class="op">=</span> [<span class="st">'chocolate'</span>, <span class="st">'manteca'</span>, <span class="st">'azúcar'</span>, <span class="st">'huevo'</span>, <span class="st">'harina'</span>]</span>
 <span id="cb191-3"><a href="#cb191-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4865,7 +4865,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="gráficos-múltiples" class="level3" data-number="6.4.4">
 <h3 data-number="6.4.4" class="anchored" data-anchor-id="gráficos-múltiples"><span class="header-section-number">6.4.4</span> Gráficos múltiples</h3>
 <p>En los casos anteriores, creamos siempre un sólo gráfico con una curva, en una figura. Pero… <strong>¿Cómo podríamos graficar varias curvas en un mismo gráfico?</strong></p>
-<div id="5037e94f" class="cell" data-execution_count="121">
+<div id="deef116f" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb192"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores que se desean graficar</span></span>
 <span id="cb192-2"><a href="#cb192-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb192-3"><a href="#cb192-3" aria-hidden="true" tabindex="-1"></a>y_linear <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -4897,7 +4897,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="grilla-de-gáficos" class="level3" data-number="6.4.5">
 <h3 data-number="6.4.5" class="anchored" data-anchor-id="grilla-de-gáficos"><span class="header-section-number">6.4.5</span> Grilla de gáficos</h3>
 <p>También podríamos querer ver varios axes en una misma figura. Para ello, tenemos que definir, como si se tratase de una matriz o tabla, cuántas columnas <code>ncols</code> y cuantas <code>nrows</code> de gráficos deseamos. Por ejemplo, supongamos que quiero ver dos gráficos en una misma fila:</p>
-<div id="d5da043e" class="cell" data-execution_count="122">
+<div id="990845e9" class="cell" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb193"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>)   <span class="co"># o simplemente plt.subplots(1,2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -4908,7 +4908,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 <p>De manera análoga, podemos representar las 3 curvas anteriores pero viendo 3 filas de gráficos en una única columna:</p>
-<div id="cc17ce64" class="cell" data-execution_count="123">
+<div id="d3f70cdf" class="cell" data-execution_count="123">
 <div class="sourceCode cell-code" id="cb194"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores que se desean graficar</span></span>
 <span id="cb194-2"><a href="#cb194-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb194-3"><a href="#cb194-3" aria-hidden="true" tabindex="-1"></a>x_linear <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -4936,7 +4936,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 <p>Entonces, lo único que debemos hacer es <strong>indicar la posición del axes con números dentro del corchete</strong> . Si tengo varias columnas y filas, dentro del corchete, se indica primero la fila y luego la columna: <code>ax[fila, columna]</code>.</p>
-<div id="99c3b0a5" class="cell" data-execution_count="124">
+<div id="5df90d6c" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb195"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">3</span>, ncols<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a>fig.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.5</span>, hspace<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># Con esto indicamos el espacio libre entre los subplots</span></span>
 <span id="cb195-3"><a href="#cb195-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4954,7 +4954,7 @@ plt.show()                          # Mostrar</code></pre>
 <section id="funciones-de-gráficas" class="level3" data-number="6.4.6">
 <h3 data-number="6.4.6" class="anchored" data-anchor-id="funciones-de-gráficas"><span class="header-section-number">6.4.6</span> Funciones de Gráficas</h3>
 <p>En términos generales, si nos encontramos en la situacion de copiar y pegar las mismas líneas de código para realizar gráficos similares, trendríamos que pensar en crear una función que simplifique esta tarea. Por ejemplo:</p>
-<div id="76e5dc9b" class="cell" data-execution_count="125">
+<div id="74a902be" class="cell" data-execution_count="125">
 <div class="sourceCode cell-code" id="cb196"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb196-2"><a href="#cb196-2" aria-hidden="true" tabindex="-1"></a>x_linear <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb196-3"><a href="#cb196-3" aria-hidden="true" tabindex="-1"></a>x_quadratic <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>]</span>
@@ -4990,7 +4990,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 <p>Para evitar lo anterior, definimos una función a la que le debemos entregar los valores a graficar:</p>
-<div id="ba5ac67b" class="cell" data-execution_count="126">
+<div id="35f47c7e" class="cell" data-execution_count="126">
 <div class="sourceCode cell-code" id="cb197"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crear_grafico(x, y, label, ax, xlabel, ylabel, title, color):</span>
 <span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">"""Crea un gráfico a partir de vectores con valores de los ejes x e y.</span></span>
 <span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Recibe además:</span></span>
@@ -5017,7 +5017,7 @@ plt.show()                          # Mostrar</code></pre>
 <span id="cb197-24"><a href="#cb197-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb197-25"><a href="#cb197-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="93f94f2d" class="cell" data-execution_count="127">
+<div id="f0b06161" class="cell" data-execution_count="127">
 <div class="sourceCode cell-code" id="cb198"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a>fig , ax <span class="op">=</span> plt.subplots(<span class="dv">3</span>)</span>
 <span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb198-3"><a href="#cb198-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En vez de copiar y pegar el código, llamo a la función crear_grafico():</span></span>
@@ -5038,7 +5038,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 <p>Como comentamos dentro de la función, también podemos usar <code>crear_grafico()</code> para un único gráfico:</p>
-<div id="dfbce13e" class="cell" data-execution_count="128">
+<div id="ca7f614b" class="cell" data-execution_count="128">
 <div class="sourceCode cell-code" id="cb199"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a>crear_grafico(x, x_linear, <span class="st">"x"</span>, <span class="va">None</span>, <span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>, <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -5055,7 +5055,7 @@ plt.show()                          # Mostrar</code></pre>
 <li><strong>NumPy:</strong></li>
 </ul>
 <p>Cuando se realizó el gráfico lineal, cuadrático y cúbico de x, se utilizaron listas de Python. A continuación puede ver lo fácil que podría realizarse utilizando NumPy:</p>
-<div id="02e39643" class="cell" data-execution_count="129">
+<div id="780ca82e" class="cell" data-execution_count="129">
 <div class="sourceCode cell-code" id="cb200"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">6</span>)</span>
 <span id="cb200-2"><a href="#cb200-2" aria-hidden="true" tabindex="-1"></a>y_linear <span class="op">=</span> x</span>
 <span id="cb200-3"><a href="#cb200-3" aria-hidden="true" tabindex="-1"></a>y_quadratic <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span></span>
@@ -5085,7 +5085,7 @@ plt.show()                          # Mostrar</code></pre>
 <li><strong>Pandas:</strong></li>
 </ul>
 <p>Si deseamos visualizar los datos contenidos en un DataFrame, podemos realizarlo facilmente. Definimos df:</p>
-<div id="6da9ce4f" class="cell" data-execution_count="130">
+<div id="f821a3f2" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb201"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'animal'</span>: [<span class="st">'gato'</span>,<span class="st">'chinchilla'</span>, <span class="st">'perro'</span>],</span>
 <span id="cb201-2"><a href="#cb201-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'edad'</span>: [<span class="fl">2.5</span>, <span class="dv">3</span>, <span class="dv">7</span>],</span>
 <span id="cb201-3"><a href="#cb201-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'visitas'</span>: [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>],</span>
@@ -5093,7 +5093,7 @@ plt.show()                          # Mostrar</code></pre>
 <span id="cb201-5"><a href="#cb201-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb201-6"><a href="#cb201-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb201-7"><a href="#cb201-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="130">
+<div class="cell-output cell-output-display" data-execution_count="262">
 <div>
 <div>
 
@@ -5137,7 +5137,7 @@ plt.show()                          # Mostrar</code></pre>
 </div>
 </div>
 </div>
-<div id="a304be2d" class="cell" data-execution_count="131">
+<div id="e5e16b1d" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb202"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determino las columnas del DataFrame que queremos graficar</span></span>
 <span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> df[<span class="st">'animal'</span>]</span>
 <span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a>y_values <span class="op">=</span> df[<span class="st">'edad'</span>]</span>
