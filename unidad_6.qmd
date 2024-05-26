@@ -1,5 +1,5 @@
 ---
-title: Librerías de Python
+title: Bibliotecas de Python
 format:
   html:
     code-fold: false
@@ -25,8 +25,8 @@ import numpy as np
 ```
 
 :::{.callout-note collapse="true}
-En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
-::: 
+En nuestro caso, la instalación no es necesaria ya que vamos a utilizar Google Colab o Replit, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
+:::
 
 ## NumPy
 

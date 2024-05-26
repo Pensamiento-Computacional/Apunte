@@ -320,7 +320,7 @@ print(numero_a_adivinar)
 ```
 
 :::{.callout-note collapse="true"}
-### Tip: Librerías
+### Tip: Bibliotecas
 ¿Sabías que Python tiene muchas bibliotecas que podés usar para hacer cosas más complejas? Por ejemplo, la biblioteca `random` tiene funciones para generar números aleatorios. También hay otras bibliotecas como `Pandas` para trabajar con datos, `Matplotlib` para hacer gráficos, `Numpy` para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.
 
 Una biblioteca es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una biblioteca, primero tenemos que importarla. Por ejemplo, para usar la biblioteca `random`, tenemos que poner `import random` al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la biblioteca, como `random.randint(1, 10)`.
@@ -829,6 +829,7 @@ El formato del archivo es el siguiente:
     Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: `El asiento ya se encuentra ocupado`.
 
     Ejemplo
+    
     ```python
     sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
     reservar_butaca(sala, "A", 0)
@@ -892,7 +893,7 @@ El formato del archivo es el siguiente:
 
     Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.
 
-# Guía 6: Librerías de Python
+# Guía 6: Bibliotecas de Python
 
 ## 1. Numpy
 

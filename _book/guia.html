@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Pensamiento Computacional - Guía de Ejercicios</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./contact.html" rel="next">
+<link href="./unidad_6.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guia.html">Guía de Ejercicios</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Pensamiento Computacional</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pensamiento Computacional</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">La Materia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regimen de Cursada, Calendario y Cursos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Videos Teóricos y Diapositivas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estructuras de Control</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./unidad_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./guia.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Guía de Ejercicios</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contacto</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#recomendaciones-al-realizar-las-guías" id="toc-recomendaciones-al-realizar-las-guías" class="nav-link active" data-scroll-target="#recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</a></li>
+  <li><a href="#guía-1-introducción-a-la-algoritmia-y-la-programación" id="toc-guía-1-introducción-a-la-algoritmia-y-la-programación" class="nav-link" data-scroll-target="#guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</a></li>
+  <li><a href="#guía-2-tipos-de-datos-expresiones-y-funciones" id="toc-guía-2-tipos-de-datos-expresiones-y-funciones" class="nav-link" data-scroll-target="#guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</a></li>
+  <li><a href="#guía-3-estructuras-de-control" id="toc-guía-3-estructuras-de-control" class="nav-link" data-scroll-target="#guía-3-estructuras-de-control">Guía 3: Estructuras de Control</a>
+  <ul class="collapse">
+  <li><a href="#decisiones" id="toc-decisiones" class="nav-link" data-scroll-target="#decisiones">1. Decisiones</a></li>
+  <li><a href="#ciclos" id="toc-ciclos" class="nav-link" data-scroll-target="#ciclos">2. Ciclos</a></li>
+  </ul></li>
+  <li><a href="#guía-4-tipos-de-estructuras-de-datos" id="toc-guía-4-tipos-de-estructuras-de-datos" class="nav-link" data-scroll-target="#guía-4-tipos-de-estructuras-de-datos">Guía 4: Tipos de Estructuras de Datos</a>
+  <ul class="collapse">
+  <li><a href="#cadenas-de-caracteres" id="toc-cadenas-de-caracteres" class="nav-link" data-scroll-target="#cadenas-de-caracteres">1. Cadenas de caracteres</a></li>
+  <li><a href="#rangos-tuplas-y-listas" id="toc-rangos-tuplas-y-listas" class="nav-link" data-scroll-target="#rangos-tuplas-y-listas">2. Rangos, Tuplas y Listas</a></li>
+  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">3. Diccionarios</a></li>
+  </ul></li>
+  <li><a href="#guía-5-entrada-y-salida" id="toc-guía-5-entrada-y-salida" class="nav-link" data-scroll-target="#guía-5-entrada-y-salida">Guía 5: Entrada y Salida</a>
+  <ul class="collapse">
+  <li><a href="#archivos" id="toc-archivos" class="nav-link" data-scroll-target="#archivos">1. Archivos</a></li>
+  <li><a href="#manejo-de-errores" id="toc-manejo-de-errores" class="nav-link" data-scroll-target="#manejo-de-errores">2. Manejo de Errores</a></li>
+  </ul></li>
+  <li><a href="#guía-6-bibliotecas-de-python" id="toc-guía-6-bibliotecas-de-python" class="nav-link" data-scroll-target="#guía-6-bibliotecas-de-python">Guía 6: Bibliotecas de Python</a>
+  <ul class="collapse">
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">1. Numpy</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guía de Ejercicios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="recomendaciones-al-realizar-las-guías" class="level2">
+<h2 class="anchored" data-anchor-id="recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</h2>
+<ul>
+<li>Prestá atención al leer el enunciado. En particular:
+<ul>
+<li>Si se pide una función que <em>devuelva</em> o <em>calcule</em> un valor, la función debe tener una función <code>return</code>.</li>
+<li>Si se pide una función que <em>imprima</em> un valor, la función debe tener un <code>print</code>.</li>
+<li>Si se pide una función que <em>pida</em> o <em>pregunte</em> algo al usuario, la función debe tener un <code>input</code>.</li>
+<li>A menos que se diga específicamente “pedirle al usuario”, no es necesario que el programa contenga <code>input</code>. En todo caso, hacer que la función reciba el o los datos por parámetro.</li>
+</ul></li>
+<li>Cada ejercicio puede tener muchas soluciones posibles. Una vez que encuentres una solución, en lugar de pasar al siguiente ejercicio, pensá si se te ocurre una solución cuya codificación sea más simple.</li>
+<li>Es muy importante que el código sea lo más claro y legible posible.
+<ul>
+<li>En particular, nombres de funciones y variables deben ser descriptivos.</li>
+<li>También prestá atención a los espacios en blanco y a la indentación.</li>
+</ul></li>
+<li>No documentes en exceso, pero tampoco ahorres documentación necesaria.</li>
+<li>Probá siempre que el código cumpla con lo solicitado.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Discord
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.<br>
+Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia. Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.</p>
+</div>
+</div>
+</section>
+<section id="guía-1-introducción-a-la-algoritmia-y-la-programación" class="level2">
+<h2 class="anchored" data-anchor-id="guía-1-introducción-a-la-algoritmia-y-la-programación">Guía 1: Introducción a la Algoritmia y la Programación</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recomendación
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En esta guía nos dedicaremos a introducirnos en los conceptos de programación y algoritmo. Para los primeros seis ejercicios, te recomendamos ver <a href="https://www.youtube.com/watch?v=cDA3_5982h8">este video</a> para recordar cómo entiende la computadora nuestras instrucciones.</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Se tiene que explicar a una máquina exactamente cómo servir un vaso de jugo (de los que vienen en cartón) de la heladera. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para lograr el objetivo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Se tiene que explicar a una máquina exactamente cómo hacer una tostada con queso, pensá qué ingredientes se necesitan con sus cantidades, cómo tiene que ser el espacio de trabajo y los elementos que va a necesitar usar. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para hacer una tostada con queso. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Se te pide que organices una colecta de alimentos no perecederos por la Ciudad de Buenos Aires. Contamos con algunos automóviles y camionetas de voluntarios, un listado de donaciones, listado de los alimentos a donar, la disponibilidad horaria y la dirección en la cual se dejan los alimentos. La colecta se realiza en un solo día. ¿Cómo la organizarías? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Tenés que enviar invitaciones personalizadas para tu cumpleaños. Cada invitación tiene que mencionar el nombre de la persona y la relación que tiene con vos. Contamos con una impresora a la que le das el texto a enviar, un listado con los nombres de los invitados y la relación que cada uno tiene con vos. ¿Cómo redactarías el texto de la invitación? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Se te encargó definir qué datos son necesarios para el registro de estudiantes en un curso de inglés. ¿Qué datos crees que deberían ser obligatorios y cuáles opcionales? ¿Y si el curso es de cocina? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Contás con un listado de cosas a comprar y tenes que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.</p></li>
+<li><p>Con el anexo de Replit de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un <code>“¡Hola mundo!”</code>.</p></li>
+</ol>
+</section>
+<section id="guía-2-tipos-de-datos-expresiones-y-funciones" class="level2">
+<h2 class="anchored" data-anchor-id="guía-2-tipos-de-datos-expresiones-y-funciones">Guía 2: Tipos de Datos, Expresiones y Funciones</h2>
+<ol type="1">
+<li><p>Guardar el texto “Hola, Mundo!” en una variable e imprimirla por pantalla.</p></li>
+<li><p>Guardar los números 1, 2 y 3 en tres variables distintas e imprimirlos por pantalla.</p></li>
+<li><ol type="a">
+<li>Guardar los números 1, 2 y 3 en tres variables distintas y luego sumarlos e imprimir el resultado por pantalla.<br>
+</li>
+<li>Repetir con las distintas operaciones disponibles que se vieron en la unidad 2: resta, multiplicación, división, división entera, resto, potencia; combinando los números entre sí.</li>
+</ol></li>
+<li><p>Crear un programa que le solicite al usuario:</p>
+<ol type="a">
+<li>Su nombre y lo imprima por pantalla.</li>
+<li>Su edad y la imprima por pantalla.</li>
+<li>Su edad, le sume 1, y la imprima por pantalla.</li>
+</ol></li>
+<li><p>Crear un programa que le solicite al usuario un número, y que devuelva el resto obtenido de dividirlo por 2.<br>
+¿Qué operador vimos para obtener el resto?</p></li>
+<li><p>Escribir un programa que le pida al usuario su año de nacimiento, y que le diga qué edad tiene en el año actual.</p></li>
+<li><p>Crear un programa que le solicite al usuario 5 enteros y que muestre por pantalla el promedio de ellos. Hacerlo de dos formas:</p>
+<ol type="a">
+<li>Primero, usando 5 variables para cada entero.</li>
+<li>Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?</li>
+</ol></li>
+<li><p>Crear una <strong>función</strong> que reciba un número y que devuelva el valor absoluto.</p></li>
+<li><p>Crear una <strong>función</strong> que reciba un número y que devuelva <code>True</code> si es par, y <code>False</code> si es impar.</p></li>
+<li><p>Crear una <strong>función</strong> que reciba un número y un string, y que devuelva ambos concatenados dentro de un nuevo string.</p></li>
+<li><p>Crear una <strong>función</strong> que reciba dos enteros y que devuelva el resto y el cociente entre ellos.</p></li>
+<li><p>Crear una función que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: “Apellido, Nombre”.</p></li>
+<li><p>Hacer una <strong>función</strong> que reciba una palabra y devuelva la cantidad de letras que tiene.</p></li>
+<li><ol type="a">
+<li>Hacer una <strong>función</strong> que reciba una palabra y que imprima los primeros 5 caracteres únicamente. Ejemplo: Si se recibe “pensamiento” se debe imprimir “pensa”.</li>
+<li>Hacer una <strong>función</strong> que reciba una palabra y que imprima sólo los caracteres ubicados en posiciones pares. Ejemplo: Si se recibe “pensamiento” se debe imprimir “pnaino”.</li>
+<li>Hacer una <strong>función</strong> que reciba una palabra y que imprima la palabra dada vuelta. Ejemplo: Si se recibe “materia” se debe imprimir “airetam”.</li>
+</ol></li>
+<li><p>Hacer una <strong>funcion</strong> que reciba una palabra, le borre todas las letras “a” e imprima el resultado por pantalla. Pista: usar una función predefinida de Python. Ejemplo: Si se recibe “casa” se debe imprimir “cs”.</p></li>
+<li><p>Analizar qué tipo de dato (o error) se obtiene al hacer las siguientes operaciones:</p>
+<ol type="a">
+<li><code>5 / 2</code></li>
+<li><code>5 // 2</code></li>
+<li><code>5 % 2</code></li>
+<li><code>5 ** 2</code></li>
+<li><code>5.0 / 2</code></li>
+<li><code>5.0 // 2</code></li>
+<li><code>5.0 % 2</code></li>
+<li><code>5.0 ** 2</code></li>
+<li><code>5 / 2.0</code></li>
+<li><code>5 // 2.0</code></li>
+<li><code>5 % 2.0</code></li>
+<li><code>5 ** 2.0</code></li>
+<li><code>5.0 / 2.0</code></li>
+<li><code>5.0 // 2.0</code></li>
+<li><code>5.0 % 2.0</code></li>
+<li><code>5.0 ** 2.0</code></li>
+<li><code>"Hola" * 2</code></li>
+<li><code>"Hola" + 2</code></li>
+<li><code>"Hola" + "2"</code></li>
+<li><code>x = "Hola"</code><br>
+<code>x += " mundo"</code></li>
+</ol></li>
+<li><ol type="a">
+<li>Escribir una función que convierta un valor dado en grado Celsius, a Fahrenheit. Recordar que la fórmula para la conversión es: <code>F = 9/5 * C + 32</code>.</li>
+<li>Escribir una función que convierta un valor dado en grados Fahrenheit, a Celsius. Usar la misma fórmula anterior.</li>
+</ol></li>
+<li><p>Escribir una función que calcule el área de un triángulo recibiendo como parámetros su base y su altura.</p></li>
+<li><p>Siendo el cálculo de la norma de un vector <span class="math inline">\(v\)</span> en <span class="math inline">\(R^3\)</span>:<br>
+<span class="math display">\[||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2}\]</span><br>
+Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes <span class="math inline">\(v_1\)</span>, <span class="math inline">\(v_2\)</span> y <span class="math inline">\(v_3\)</span> del mismo.</p></li>
+<li><p><strong>Desafío</strong> (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>), dadas sus coordenadas <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(y_1\)</span> e <span class="math inline">\(y_2\)</span>.</p></li>
+</ol>
+</section>
+<section id="guía-3-estructuras-de-control" class="level2">
+<h2 class="anchored" data-anchor-id="guía-3-estructuras-de-control">Guía 3: Estructuras de Control</h2>
+<section id="decisiones" class="level3">
+<h3 class="anchored" data-anchor-id="decisiones">1. Decisiones</h3>
+<ol type="1">
+<li><p>Escribir una función que, dado un número entero <span class="math inline">\(n\)</span>, calcule si es impar o no.</p></li>
+<li><p>Escribir una implementación propia de la función <span class="math inline">\(abs\)</span>, que devuelva el valor absoluto de cualquier valor que reciba. Ejemplo: <code>mi_abs(5)</code> devuelve <code>5</code> y <code>mi_abs(-5)</code> devuelve <code>5</code>. Pista: No se puede usar la función predefinida <code>abs</code>.</p></li>
+<li><p>Escribir una función que reciba un número y devuelva <code>True</code> si es entero y <code>False</code> si no lo es. Pista: no se puede usar la función <code>isinstance</code>.</p></li>
+<li><p>Escribir una función para determinar si una letra recibida es vocal o no. La misma debe devolver un valor booleano. Luego, escribir una función para determinar si una letra es consonante o no.</p>
+<ol type="a">
+<li>Resolver <em>sin</em> el uso de <code>in</code> ni <code>not in</code>.</li>
+<li>Resolver <em>usando</em> <code>in</code> y <code>not in</code>.</li>
+<li>Resolver para que la función identifique tanto mayúsculas como minúsculas. Pista: investigar los métodos <code>lower</code> y <code>upper</code> de string.</li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: <code>in</code> y <code>not in</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Conocés el uso de <code>in</code>?</p>
+<p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
+<div id="c0afd7ae" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="03156dd3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="61db1828" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="86bcfcb3" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>False</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li><p>Escribir funciones que resuelvan los siguientes problemas:</p>
+<ol type="a">
+<li>Dado un año, que devuelva si es bisiesto. Nota: un año es bisiesto si es un número divisible por 4, pero no si es divisible por 100, excepto que también sea divisible por 400.</li>
+<li>Dado un mes y un año, que devuelva la cantidad de días correspondientes.</li>
+<li>Pedirle al usuario su día y mes de cumpleaños. El programa debe imprimir un mensaje indicando a qué signo corresponde el usuario.</li>
+</ol>
+<pre><code>Aries: 21 de marzo al 20 de abril.
+Tauro: 21 de abril al 20 de mayo.
+Geminis: 21 de mayo al 21 de junio.
+Cancer: 22 de junio al 23 de julio.
+Leo: 24 de julio al 23 de agosto.
+Virgo: 24 de agosto al 23 de septiembre.
+Libra: 24 de septiembre al 22 de octubre.
+Escorpio: 23 de octubre al 22 de noviembre.
+Sagitario: 23 de noviembre al 21 de diciembre.
+Capricornio: 22 de diciembre al 20 de enero.
+Acuario: 21 de enero al 19 de febrero.
+Piscis: 20 de febrero al 20 de marzo.</code></pre></li>
+<li><p>Piedra, papel o tijera: escribir un programa de “Piedra, papel o tijera” tal que sea imposible que el usuario gane. El usuario debe ingresar <strong>R</strong> (piedra), <strong>P</strong> (papel), o <strong>T</strong> (tijera) y la computadora debe siempre ganarle. Ejemplo:</p>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: R
+¡Papel! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: P
+¡Tijera! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: T
+¡Piedra! ¡Gané!</code></pre>
+<pre><code>¡Piedra (R), papel (P) o tijera (T)!
+Ingrese jugada: M
+Esa jugada no está disponible.</code></pre></li>
+<li><p>Suponiendo que el primer día del año fue lunes, escribir una función que reciba un número con el día del año (de 1 a 366) y devuelva el día de la semana que le toca. Por ejemplo: si se recibe ‘3’, debe devolver “miércoles”, y si se recibe ‘9’, debe devolver “martes”.</p></li>
+</ol>
+</section>
+<section id="ciclos" class="level3">
+<h3 class="anchored" data-anchor-id="ciclos">2. Ciclos</h3>
+<ol type="1">
+<li><p>Escribir función que:</p>
+<ol type="a">
+<li>Imprima por pantalla todos los números entre 10 y 20.</li>
+<li>Salude a todas las personas de esta lista <code>[Flaminia, Serena, Agustina, Priscila, Sol, Agostina, Iara, Lu]</code> con el mensaje <code>"Hola &lt;nombre&gt;! Vamos a aprender a programar"</code>.</li>
+<li>Le pida al usuario que ingrese 5 números y le muestre la suma total de todos ellos.</li>
+<li>Imprima por pantalla todos los números entre 100 y 199 que sean divisibles por 7.</li>
+<li>Reciba dos números, y recorra todos los números entre ellos, imprimiendo en pantalla si es par o impar. Por ejemplo, recibiendo 1 y 3, debe imprimir:</li>
+</ol>
+<pre><code>1 es impar
+2 es par
+3 es impar</code></pre></li>
+<li><p>Se quiere hacer un programa para enseñar a los niños las tablas de multiplicar del 1 al 10. Crear una función que reciba un número e imprima por pantalla la tabla de multiplicar de ese número. Ejemplo:</p>
+<pre><code>mostrar_tablas_para(1)</code></pre>
+<p>debe imprimir:</p>
+<pre><code>1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10</code></pre>
+<pre><code>mostrar_tablas_para(-2)</code></pre>
+<p>debe imprimir:</p>
+<pre><code>Error: El número debe ser positivo y estar entre 1 y 10</code></pre></li>
+<li><p>Crear una función que cante el feliz cumpleaños. Dado un entero, debe imprimir ‘Que los cumplas feliz’ en distintas líneas por esa cantidad de veces.</p></li>
+<li><ol type="a">
+<li>Necesitamos escribir un programa de cobro en el supermercado. La función debe recibir un número entero que representa el monto a pagar y debe permitir al usuario que ingrese valores, hasta que el pago se haya realizado en su totalidad. Además, le debe ir indicando cuánto le queda por pagar. El programa no da vuelto.</li>
+</ol>
+<p>Ejemplo:</p>
+<pre><code>Su total a pagar es: 500
+Ingrese el monto a pagar: 100
+Pendientes: 400. Ingrese el monto a pagar: 200
+Pendientes: 200. Ingrese el monto a pagar: 200
+Pendientes: 0. Gracias por su compra.</code></pre>
+<ol start="2" type="a">
+<li>Hacer que el programa anterior dé vuelto:</li>
+</ol>
+<p>Ejemplo:</p>
+<pre><code>Su total a pagar es: 500
+Ingrese el monto a pagar: 100
+Pendientes: 400. Ingrese el monto a pagar: 200
+Pendientes: 200. Ingrese el monto a pagar: 300
+Pendientes: 0. Su vuelto es: 100. Gracias por su compra.</code></pre></li>
+<li><p>Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa “X”, el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese “X”. Se puede reutilizar la función del ejercicio 9 de esta guía.</p>
+<p>Ejemplo:</p>
+<pre><code>Hola! Esto es Tablas de Multiplicar
+Ingrese un número o "X" para salir: 1
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+Ingrese un número o "X" para salir: -2
+Error: El número debe ser positivo y estar entre 1 y 10
+Ingrese un número o "X" para salir: X
+¡Adios!</code></pre></li>
+<li><p><strong>Manejo de contraseñas</strong></p>
+<ol type="a">
+<li>Escribir un programa que contenga una contraseña inventada, que le pregunte al usuario la contraseña, y no le permita continuar hasta que la haya ingresado correctamente.</li>
+<li>Modificar el programa anterior para que solamente permita una cantidad fija de intentos.</li>
+<li>Modificar el programa anterior para que sea una función que devuelva si el usuario ingresó o no la contraseña correctamente, mediante un valor booleano (<code>True</code> o <code>False</code>).</li>
+</ol></li>
+<li><ol type="a">
+<li><p>Hacer una función que reciba un número del 1 al 10, y luego permita al usuario poder adivinar ese número, ingresando valores repetidamente. Para cada ingreso del usuario, el programa debe indicarle si su numero es menor o mayor al número a adivinar. Una vez que el usuario ingresa el número correcto, lo felicita y termina.</p></li>
+<li><p>Repetir permitiendo únicamente 3 intentos.</p></li>
+<li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
+</ol></li>
+</ol>
+<div id="48056b9a" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip: Bibliotecas
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Sabías que Python tiene muchas bibliotecas que podés usar para hacer cosas más complejas? Por ejemplo, la biblioteca <code>random</code> tiene funciones para generar números aleatorios. También hay otras bibliotecas como <code>Pandas</code> para trabajar con datos, <code>Matplotlib</code> para hacer gráficos, <code>Numpy</code> para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.</p>
+<p>Una biblioteca es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una biblioteca, primero tenemos que importarla. Por ejemplo, para usar la biblioteca <code>random</code>, tenemos que poner <code>import random</code> al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la biblioteca, como <code>random.randint(1, 10)</code>.</p>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li><ol type="a">
+<li>Queremos modelar una máquina de sacar juguetes. Debemos hacer una función que reciba un número que representa la cantidad de fichas <span class="math inline">\(x\)</span> que necesita la máquina para funcionar. Se debe imprimir un mensaje en pantalla que indique “Ingresá <span class="math inline">\(x\)</span> fichas para comenzar”. El usuario deberá ingresar entonces letras “F”, que representan a las fichas. Notar que si se ingresa algo distinto a “F”, se ignora.</li>
+</ol>
+<p>Se debe seguir solicitando fichas siempre que no se haya alcanzado la cantidad necesaria para funcionar. Cuando se haya alcanzado la cantidad necesaria, se debe imprimir un mensaje que indique “¡A jugar!”. Ejemplo:</p>
+<pre><code>Ingresá 2 fichas para comenzar: F
+Ingresá 2 fichas para comenzar: B
+Ingresá 2 fichas para comenzar: Hola
+Ingresá 2 fichas para comenzar: F
+¡A jugar!</code></pre>
+<ol start="2" type="a">
+<li>Modificar el programa anterior para que vaya mostrando la cantidad de fichas que faltan para comenzar a jugar. Ejemplo:</li>
+</ol>
+<pre><code>Ingresá 2 fichas para comenzar: F
+Ingresá 1 fichas para comenzar: B
+Ingresá 1 fichas para comenzar: ficha
+Ingresá 1 fichas para comenzar: F
+¡A jugar!</code></pre></li>
+<li><p>Crear una función que calcule si un número es primo o no. Un número es primo cuando solamente es divisible por sí mismo y por 1. Pista: usar el operador módulo <code>%</code>.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio): Crear una función que reciba un número entero e imprima los números primos entre 0 y el número ingresado.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
+<ol type="a">
+<li><p>Crear una función que reciba dos números, y devuelva la suma de todos los números múltiplos de 7 entre esos dos números. Por ejemplo, si recibe 3 y 25, debe devolver 7 + 14 + 21 = 42. Si recibe 3 y 4, debe devolver 0, ya que no hay múltiplos de 7 entre esos dos números.</p></li>
+<li><p>Repetir calculando el promedio en vez de la suma.</p></li>
+<li><p>Repetir calculando únicamente el promedio entre los primeros 3 múltiplos de 7 encontrados. Pista: usar <code>break</code>.</p></li>
+<li><p>Repetir calculando únicamente el promedio entre los múltiplos de 7 encontrados que no sean múltiplos de 2. Pista: usar <code>continue</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
+<ol type="a">
+<li>Escribir una función que dada la cantidad de ejercicios de un examen, y el porcentaje de ejercicios bien resueltos necesario para aprobar dicho examen, revise un grupo de exámenes.</li>
+</ol>
+<p>Para ello, en cada paso debe preguntarle al usuario la cantidad de ejercicios resueltos por el alumno, o pedirle que ingrese “*” para salir. Debe mostrar por pantalla el porcentaje correspondiente a la cantidad de ejercicios resueltos respecto a la cantidad de ejercicios del examen y una leyenda que indique si aprobó o no.</p>
+<ol start="2" type="a">
+<li>Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.<br>
+Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o “*“. De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="guía-4-tipos-de-estructuras-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="guía-4-tipos-de-estructuras-de-datos">Guía 4: Tipos de Estructuras de Datos</h2>
+<section id="cadenas-de-caracteres" class="level3">
+<h3 class="anchored" data-anchor-id="cadenas-de-caracteres">1. Cadenas de caracteres</h3>
+<ol type="1">
+<li><p>Escribir funciones que dada una cadena y un caracter:</p>
+<ol type="a">
+<li><p>Inserte el caracter entre cada letra de la cadena. Ejemplo: <code>'separar'</code> y <code>'-'</code> debería devolver <code>'s-e-p-a-r-a-r'</code>.<br>
+</p></li>
+<li><p>Reemplace todos los espacios por el caracter. Ejemplo: <code>'mi archivo de texto.txt'</code> y <code>'_</code>’ debería devolver <code>'mi_archivo_de_texto.txt'</code>.<br>
+</p></li>
+<li><p>Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: <code>'su clave es: 1540'</code> y <code>'*'</code> debería devolver <code>'su clave es: ****'</code>.<br>
+</p></li>
+<li><p>Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: <code>'2552552550'</code> y <code>'.'</code> debería devolver <code>'255.255.255.0'</code></p></li>
+<li><p>Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: <code>'su clave es: 1540'</code>, <code>'*'</code> y <code>3</code> debería devolver <code>'su clave es: ***0'</code>.</p></li>
+</ol></li>
+<li><p>Escribir una función que reciba una cadena que contiene un largo número entero y devuelva una cadena con el número y las separaciones de miles. Por ejemplo, si recibe <code>1234567890</code>, debe devolver <code>1.234.567.890</code>. Cuidado: no es lo mismo <code>123.456.789.0</code> que <code>1.234.567.890</code>. Tienen que ser separaciones de miles y quedar un número válido.</p></li>
+<li><p>Escribir funciones que dada una cadena de caracteres:</p>
+<ol type="a">
+<li>Devuelva la primera letra de cada palabra. Ejemplo: si se recibe <code>Ciclo Básico Común</code> se debe devolver <code>CBC</code>.</li>
+<li>Indique si se trata de un palíndromo. Por ejemplo, <code>anita lava la tina</code> es un palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda).</li>
+</ol></li>
+<li><p>Escribir funciones que dadas dos cadenas de caracteres:</p>
+<ol type="a">
+<li>Indique si la segunda cadena es subcadena de la primera. Por ejemplo, <code>'compu'</code> es subcadena de <code>'computacional'</code>.</li>
+<li>Devuelva la que sea anterior en orden alfábetico. Por ejemplo, si recibe <code>'kde'</code> y <code>'gnome'</code> debe devolver <code>'gnome'</code>.</li>
+</ol></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: <code>'Hola'</code> debe devolver <code>['H', 'O', 'L', 'A']</code>. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar <code>map</code>.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: <code>'Algoritmos'</code> debe devolver <code>('l', 'g', 'r', 't', 'm', 's')</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p>Escribir una función que, dada una cadena de caracteres, devuelva el número de índice de posición del último caracter. Por ejemplo, para la cadena <code>'Hola'</code> debe devolver <code>3</code>. Restricción: no se permite el uso de ciclos for/while.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio):</p>
+<ol type="a">
+<li><p>Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva la primer aparición de la palabra en el texto. Pista: <code>index</code> arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?</p></li>
+<li><p>Modificar la función anterior para que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: del método usado en el punto anterior, ¿conocemos algún parámetro adicional que le podamos pasar?</p></li>
+<li><p>Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>4</code>. Restricción: No se puede usar el método <code>len</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar <code>lambda</code>.</p></li>
+</ol>
+</section>
+<section id="rangos-tuplas-y-listas" class="level3">
+<h3 class="anchored" data-anchor-id="rangos-tuplas-y-listas">2. Rangos, Tuplas y Listas</h3>
+<ol type="1">
+<li><p>Usar un rango para:</p>
+<ol type="a">
+<li>Imprimir los números del 10 al 50 inclusive, saltando de 5 en 5.</li>
+<li>Imprimir los números del 40 al 20 en orden decreciente, saltando de 2 en 2.</li>
+<li>Crear una lista con los números del 4 al 10. Luego, acceder con el <em>índice</em> a los elementos que contienen a los números 4, 6 y 9 e impimirlos por pantalla. Pista: recordar que los índices comienzan en 0.</li>
+</ol></li>
+<li><p>Escribir una función que reciba:</p>
+<ol type="a">
+<li>Una lista y devuelva <code>True</code> si su longitud es par y <code>False</code> si su longitud es impar.<br>
+</li>
+<li>Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.</li>
+<li>Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe <code>[5, 10, 7, 3]</code> debe devolver <code>[3, 5, 7, 10]</code>.</li>
+</ol></li>
+<li><ol type="a">
+<li><p>Escribir una función que reciba una lista de nombres y un número, que representa el cupo. La función debe devolver en una lista a los nombres que no pudieron entrar al curso por falta de cupo. Ejemplo: <code>chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)</code> debe devolver <code>['Sol', 'Lucía']</code>.</p></li>
+<li><p>Modificar la función anterior para que devuelva únicamente a la última persona de la lista de la gente que pudo entrar. Ejemplo: <code>chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)</code> debe devolver <code>'Priscila'</code>, porque es la última que tuvo cupo.</p></li>
+</ol></li>
+<li><p>Dada la lista de tuplas <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]</code>, donde cada tupla contiene un país y la cantidad de mundiales que ganaron:</p>
+<ol type="a">
+<li>Hacer una función que reciba la lista por parámetro e imprima la información de cada país con el siguiente formato:</li>
+</ol>
+<pre><code>País: &lt;nombre&gt; - Copas: &lt;cantidad&gt;</code></pre>
+<p>Si y sólo si el país es “Argentina”, se debe imprimir el nombre con 3 estrellas: <code>"Argentina⭐⭐⭐"</code>. Usar el operador abreviado <code>+=</code>.</p>
+<ol start="2" type="a">
+<li><p>Hacer una función que reciba la lista por parámetro y devuelva la cantidad de mundiales que ganaron entre todos los países. Ejemplo: <code>contar_mundiales([("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)])</code> debe devolver <code>8</code>.</p></li>
+<li><p>Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.</p></li>
+<li><p>Hacer una función que reciba la lista por parámetro y devuelva en una tupla: una lista con los países que tienen más de una copa ganada, y otra lista con valores booleanos que nos diga si la cantidad de copas es par o impar. Pista: ¿Cómo podemos usar <code>filter</code>? ¿Y <code>map</code>?<br>
+Ejemplo: <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]</code> devuelve:<br>
+<code>([("Argentina", 3), ("Uruguay", 2), ("Francia",2)] , [False, True, True])</code></p></li>
+</ol></li>
+<li><p>Escribir una función que reciba dos fichas de dominó y determine si <em>encajan</em> o no entre sí.</p>
+<ol type="a">
+<li>Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: <code>(3,4)</code> y <code>(5,4)</code>.</li>
+<li>Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: <code>'3-4'</code> y <code>'5-4'</code>.</li>
+</ol></li>
+<li><p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
+<span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p></li>
+<li><ol type="a">
+<li><p>Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.</p></li>
+<li><p>Repetir el ejercicio anterior, pero con una lista.</p></li>
+<li><p>Repetir ambos si ahora, en vez de recibir un índice, se recibe el valor a eliminar. Si no se contiene al valor, se devuelve la estructura tal cual se recibió.</p></li>
+</ol></li>
+<li><p>Escribir una función que reciba una lista y un número <span class="math inline">\(n\)</span>. Para dicho número <span class="math inline">\(n\)</span>, debe imprimir los últimos <span class="math inline">\(n\)</span> elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe <code>[1, 2, 3, 4, 5]</code> y <code>n = 2</code>, debe imprimir <code>5</code>, <code>4</code> y devolver <code>[1, 2, 3]</code>.</p></li>
+<li><p>Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.</p></li>
+<li><p>Escribir una función que dado un valor <span class="math inline">\(n\)</span>, devuelva una lista con los números del 1 a <span class="math inline">\(n\)</span>. Restricción: usar listas por comprensión.</p></li>
+<li><p>Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz <code>[[1, 2], [3, 4]]</code> y la tupla <code>(0, 1)</code>, debe devolver <code>2</code>.</p></li>
+<li><p>Se tiene una lista de supermercado escrita como string con productos separados por coma: <code>"pan, arroz, pescado, jugo, fideos,..."</code>.</p>
+<ol type="a">
+<li><p>Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: <code>['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]</code>.</p></li>
+<li><p>Se tiene además otra cadena de caracteres con los precios de cada producto: <code>"100, 50, 200, 80, 30,..."</code>. Escribir una función que reciba ambas cadenas y devuelva una lista con tuplas de (producto, precio): <code>[('pan', 100), ('arroz', 50), ('pescado', 200), ('jugo', 80), ('fideos', 30), ...]</code>.</p></li>
+<li><p>Para la función del punto anterior, escribir otra función que reciba la lista de tuplas y devuelva el precio total de la lista de compras.</p></li>
+</ol></li>
+<li><p>Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor ‘X’. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa ‘pan’, ‘arroz’, ‘pescado’, ‘X’, debe devolver <code>"pan, arroz, pescado"</code>.</p></li>
+<li><p>Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe <code>['hola', 'como', 'estas']</code>, debe devolver <code>"como estas hola"</code>.</p></li>
+<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4. <span class="math display">\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\]</span></p></li>
+<li><p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz <code>[[1, 2, 3], [4, 5, 6]]</code>, debe devolver <code>[[1, 4], [2, 5], [3, 6]]</code>.</p>
+<p>Si se recibe: <span class="math display">\[
+\begin{bmatrix}
+1 &amp; 2 &amp; 3  \\
+4 &amp; 5 &amp; 6  \\
+\end{bmatrix}
+\]</span></p>
+<p>Se debe devolver:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6 \\
+\end{bmatrix}
+\]</span></p></li>
+<li><p><strong>Desafio</strong> (no obligatorio): Agenda Simplificada<br>
+Escribir una función que reciba una cadena a buscar y una lista de tuplas <code>(nombre_completo, telefono)</code>, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.</p></li>
+<li><p><strong>Desafio</strong> (no obligatorio): Sistema de facturación simplificado.<br>
+Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).</p>
+<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.</p>
+<p>Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.</p></li>
+<li><p><strong>Super Desafio</strong> (no obligatorio): Batalla Naval<br>
+</p>
+<p>Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).</p>
+<p>La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3).</p>
+<p>Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca <code>random</code>), y que permita al usuario intentar adivinar dónde están.</p>
+<p>El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla “¡Hundido!”) o no (“¡Agua!”).</p>
+<p>El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Batalla Naval: Modo Supervivencia
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.</p>
+<p>Te dejamos unos tips:</p>
+<ul>
+<li>Las posiciones son limitadas por el tablero 10x10</li>
+<li>Las posiciones no deberían repetirse</li>
+</ul>
+<p>¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario? En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.</p>
+</div>
+</div>
+</div></li>
+<li><p>Se tiene una base de datos con nombres de libros de la siguiente forma <code>["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]</code>, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.<br>
+Pista: tenés que usar un diccionario.</p></li>
+</ol>
+</section>
+<section id="diccionarios" class="level3">
+<h3 class="anchored" data-anchor-id="diccionarios">3. Diccionarios</h3>
+<ol type="1">
+<li>Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos. Por ejemplo:</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [(<span class="st">'Hola'</span>, <span class="st">'don Pepito'</span>), (<span class="st">'Hola'</span>, <span class="st">'don Jose'</span>), (<span class="st">'Buenos'</span>, <span class="st">'días'</span>)]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}</code></pre>
+<ol start="2" type="1">
+<li><p>Escriba una función que reciba una cadena y devuelva:</p>
+<ol type="a">
+<li>Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe <code>"Que lindo dia que hace hoy"</code> debe devolver: <code>{'que': 2, 'lindo': 1, 'dia': 1, 'hace': 1, 'hoy': 1}</code>.</li>
+<li>Un diccionario con la cantidad de apariciones de cada caracter en la cadena.</li>
+</ol></li>
+<li><p>Escribir una función que reciba una cantidad de iteraciones N.</p>
+<ol type="a">
+<li><p>Se deberá simular una persona que tira un dado N veces, y se deberá devolver un diccionario con la cantidad de apariciones de cada valor en el dado. Nota: para simular una tirada, usar <code>import random</code>y <code>random.randint(1, 6)</code>.</p></li>
+<li><p>Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.</p></li>
+</ol></li>
+<li><p>Escribir un programa que le pida al usuario que ingrese nombres.</p>
+<ol type="a">
+<li>Si el nombre se encuentra en la agenda, debe mostrar el teléfono.</li>
+<li>Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente.</li>
+</ol>
+<p>En ambos casos, El usuario puede utilizar la palabra “EXIT” para dejar de ingresar nombres.</p></li>
+<li><p>Escribir una función que reciba un texto y para cada caracter presente en el texto, devuelva la palabra más larga en la que se encuentra ese caracter.</p></li>
+<li><p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>nombre</th>
+<th>apellido</th>
+<th>dni</th>
+<th>carrera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Violeta</td>
+<td>Perez</td>
+<td>42000000</td>
+<td>Informática</td>
+</tr>
+<tr class="even">
+<td>Carla</td>
+<td>Guanca</td>
+<td>42001001</td>
+<td>Mecánica</td>
+</tr>
+<tr class="odd">
+<td>Manuela</td>
+<td>Gomez</td>
+<td>42002002</td>
+<td>Química</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Crear un diccionario que sirva para representar a cada persona. Debe contener las claves <code>nombre</code>, <code>apellido</code>, <code>dni</code> y <code>carrera</code>. Los diccionarios se deben guardan en una lista llamada <code>estudiantes</code>.</p></li>
+<li><p>Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el <code>codigo</code> y el valor la <code>nota</code> (del 1 al 10) obtenida.</p></li>
+<li><p>Crear código que agregue para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).</p></li>
+<li><p>Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.</p></li>
+</ol></li>
+<li><p>En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especie, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.</p></li>
+<li><p>Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.</p></li>
+<li><p>Se tiene un ticket de supermercado en forma de diccionario con los siguientes datos:</p>
+<ul>
+<li>Nombre del Producto</li>
+<li>Precio por Unidad</li>
+<li>Cantidad</li>
+</ul>
+<p>Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.</p></li>
+<li><p>Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.</p>
+<ol type="a">
+<li>Resolver sin usar <code>filter</code></li>
+<li>Resolver usando <code>filter</code>.</li>
+</ol></li>
+<li><p>La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.</p>
+<p>Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).</p>
+<ol type="a">
+<li><p>Se pide hacer una función que dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad de los alumnos.</p></li>
+<li><p>Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.</p></li>
+</ol></li>
+<li><p>En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.</p>
+<p>Se pude hacer una función que reciba esta lista de diccinoarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.</p></li>
+<li><p>Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).</p>
+<ol type="a">
+<li>Crear un diccionario de ejemplo que represente esta situación.</li>
+<li>Teniendo esta lista de diccionarios, ordenarlos alfabéticamente por el nombre de los maratonistas.</li>
+<li>Teniendo esta lista de diccionarios, ordenar las maratones en tiempo ascendente según el tiempo que tardaron en correrlas.</li>
+</ol></li>
+<li><p><strong>Desafío</strong> (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo.</p>
+<p>Laura quiere entonces actualizar sus diccionarios, para que en vez de guardar el monto exacto del bono, guarde el porcentaje que le corresponde. Ejemplo: si en el 2019 su sueldo era de $1.000.000 y el bono que le dieron era de $40.000, el bono fue del 4% del sueldo.</p>
+<ol type="a">
+<li><p>Hacer una función que reciba la lista de diccionarios, y para cada una de las reviews, modifique el valor del bono por el porcentaje correspondiente.</p></li>
+<li><p>Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar <code>filter</code> y <code>map</code>.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio): <strong>Donarg</strong> (<a href="https://www.donarg.com.ar/">https://www.donarg.com.ar/</a>) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 “Desafío Cuarentena” del FIUBA Consulting Club, destacándose entre más de 100 proyectos.</p>
+<p>Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.</p>
+<p>La base contiene los siguientes datos de cada posible donante:</p>
+<ul>
+<li>Nombre</li>
+<li>Apellido</li>
+<li>Edad</li>
+<li>Peso</li>
+<li>Fecha de la última donación. Puede ser ‘None’ si nunca donó. Formato: (dia,mes,año)</li>
+<li>Fecha del último tatuaje. Puede ser ‘None’ si no tiene tatuajes. Formato: (dia,mes,año)</li>
+<li>Tipo de sangre. Puede ser ‘0+’, ‘0-’, ‘A+’, ‘A-’, ‘B+’, ‘B-’, ‘AB+’, ‘AB-’</li>
+</ul>
+<p>Los requisitos son:</p>
+<ul>
+<li>Tener entre 16 y 65 años</li>
+<li>Pesar más de 50 kilos</li>
+<li>Que hayan pasado 2 meses desde la última donación</li>
+<li>Que hayan pasado 6 meses desde el último tatuaje</li>
+</ul>
+<ol type="a">
+<li><p>Se pide hacer una función que reciba una lista de diccionarios con la información de cada posible donante, y devuelva una lista con los que cumplen los requisitos.</p></li>
+<li><p>Se pide hacer una función que priorice a los donantes que tienen sangre tipo 0 (positivo y negativo) por sobre todos los A, B y AB (positivos y negativos); ya que son los que más se necesitan. La función debe recibir la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos, y devolver una nueva lista ordenados de mayor a menor prioridad.</p></li>
+<li><p>Se pide hacer una función que reciba la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos y ordenada por prioridad, que se quede con los que son 0+ y 0-, y los ordene por órden alfabético de apellido.</p></li>
+</ol>
+<p><img src="./imgs/unidad_4/goti.png" width="200" height="200"></p>
+<blockquote class="blockquote">
+<p>Si querés saber más sobre el proyecto, podés visitar su página web:<br>
+<a href="https://www.donarg.com.ar/">https://www.donarg.com.ar/</a><br>
+o sacar turno para donar sangre en<br>
+<a href="https://www.donarg.com.ar/dondedono">https://www.donarg.com.ar/dondedono</a>.</p>
+</blockquote></li>
+</ol>
+</section>
+</section>
+<section id="guía-5-entrada-y-salida" class="level2">
+<h2 class="anchored" data-anchor-id="guía-5-entrada-y-salida">Guía 5: Entrada y Salida</h2>
+<section id="archivos" class="level3">
+<h3 class="anchored" data-anchor-id="archivos">1. Archivos</h3>
+<ol type="1">
+<li><p>Escribir una función llamada <code>contar</code> (o <code>count</code>) que dado un archivo retorne la cantidad de filas que tiene.</p></li>
+<li><p>Escribir una funcion llamada <code>imprimir</code>(o <code>cat</code>) que dado un archivo imprima por pantalla todo el contenido.</p>
+<ol type="a">
+<li>Agregar un parametro a la funcion llamado <code>ignorar_vacias</code> (o <code>blank</code>) que en caso de ser <code>True</code>, no se impriman las lineas en blanco.</li>
+</ol></li>
+<li><p>Escribir una función llamada <code>ver_encabezado</code> (o <code>head</code>) que dado un archivo y un número N retorne en una lista las primeras N lineas del archivo.</p></li>
+<li><p>Escribir una función llamada <code>ver_final</code> (o <code>tail</code>) que dado un archivo y un número N retorne en una lista las últimas N lineas del archivo.</p></li>
+<li><p>Escribir una función llamada <code>crear</code> (o <code>touch</code>) que dado el nombre de un archivo lo cree. Si el archivo exixte borra todo el contenido.</p></li>
+<li><p>Escribir una función, llamada <code>wc</code>, que dado un archivo de texto, lo procese e imprima por pantalla cuántas líneas, cuantas palabras y cuántos caracteres contiene el archivo.</p></li>
+<li><p>Escribir una función, llamada grep, que reciba una cadena y un archivo de texto, e imprima las líneas del archivo que contienen la cadena recibida.</p></li>
+<li><p>Se tiene un archivo con una pregunta, llamado <code>pregunta.txt</code>. Se pide leerlo y mostrar el contenido en consola. Luego, pedirle al usuario una respuesta, y guardarla en un archivo llamado <code>respuesta.txt</code>.</p></li>
+<li><p>Sea un diccionario cuyas claves y valores son cadenas.</p>
+<ol type="a">
+<li>Escribir una función <code>guardar_diccionario</code> que reciba el diccionario y un nombre de archivo, y guarde el contenido del diccionario en el archivo, en formato CSV, con un par clave-valor por línea.</li>
+<li>Escribir una función <code>cargar_diccionario</code> que reciba el nombre de un archivo con el formato mencionado en el punto anterior, y devuelva el diccionario original.</li>
+</ol></li>
+<li><p><strong>Desafio</strong> (obligatorio): Distribución de Carga<br>
+Se tiene una base de datos en formato CSV con resultados de partidos de futbol. Como el archivo es muy grande, se quiere distribuir la base en varios archivos más pequeños. El formato del archivo es el siguiente:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">local</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">goles_local</span><span class="kw">;</span><span class="ex">goles_visita</span><span class="kw">;</span><span class="ex">gano</span><span class="kw">;</span><span class="ex">penales</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">real</span> madrid<span class="kw">;</span><span class="ex">boca</span> juniors<span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">2</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">N</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">A.C.</span> Milan<span class="kw">;</span> <span class="ex">boca</span> juniors<span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">S</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Utilizando las funciones de los ejercicios 1 a 7, procesar el archivo: Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco. Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco, el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.</p></li>
+<li><p>La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado <code>reporte_plagio.txt</code> la siguiente información:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo</span><span class="kw">;</span><span class="ex">palabras</span><span class="kw">;</span><span class="ex">apariciones</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo1.txt</span><span class="kw">;</span><span class="ex">765030</span><span class="kw">;</span><span class="ex">547</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>archivo: es el nombre del archivo que se proceso.</li>
+<li>palabras: es la cantidad de palabras de ese archivo.</li>
+<li>apariciones: es la cantidad de veces que aparece una palabra especificada.</li>
+</ul>
+<p>En ejemplo de uso podría ser:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>archivos <span class="op">=</span> [<span class="st">"archivo1.txt"</span>, <span class="st">"archivo2.txt"</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>procesar_archivos(archivos, <span class="st">"harry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En <code>procesar_archivos</code> se tiene que analizar los archivos y dejar el resultado en reporte_plagio.txt</p></li>
+<li><p>Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.</p></li>
+<li><p>Se tiene un archivo CSV que contiene información sobre el stock de una biblioteca.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Un</span> posible ejemplo de este archivo es el siguiente: </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">lapiceras</span><span class="kw">;</span><span class="ex">34512</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">120</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cuadernos</span><span class="kw">;</span><span class="ex">41611</span><span class="kw">;</span><span class="ex">500</span><span class="kw">;</span><span class="ex">130</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sacapuntas</span><span class="kw">;</span><span class="ex">62812</span><span class="kw">;</span><span class="ex">30</span><span class="kw">;</span><span class="ex">210</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Donde cada línea representa un producto y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto “X”.</p></li>
+<li><p>En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula Por ejemplo si se tienen los siguientes archivos:<br>
+</p>
+<p>(salas.txt)</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">D2</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">F1</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(peliculas.txt)</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Megamente</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> Menu</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Shrek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El nuevo archivo deberá quedar:<br>
+(funciones.csv)</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">D2</span><span class="kw">;</span><span class="ex">Megamente</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">F1</span><span class="kw">;</span><span class="ex">The</span> Menu</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span><span class="kw">;</span><span class="ex">Shrek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Se tiene un archivo con información de ventas de productos en un supermercado. El archivo tiene el siguiente formato:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">producto</span><span class="kw">;</span><span class="ex">precio</span><span class="kw">;</span><span class="ex">cantidad</span><span class="kw">;</span><span class="ex">fecha</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-01</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-01</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-02</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-02</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-03</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese producto en el archivo.</p></li>
+<li><p>Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: ‘el archivo {nombre} no existe. Se crea y deja vacío.’.</p></li>
+</ol>
+</section>
+<section id="manejo-de-errores" class="level3">
+<h3 class="anchored" data-anchor-id="manejo-de-errores">2. Manejo de Errores</h3>
+<ol type="1">
+<li><p>Crear una función que asegure la apertura de un archivo. Debe recibir un nombre y si el archivo existe, retorna el contenido archivo. Si no existe, imprime un mensaje descriptivo.</p></li>
+<li><p>Escribir una función que le pida al usuario que ingrese 5 números y le muestre la suma total de todos ellos. Si el valor ingresado no es un número, debe mostrar un mensaje de error y seguir pidiendo números.</p></li>
+<li><p>Escribir un programa que le pida números al usuario e imprima si son pares o impares. Si el usuario ingresa un valor que no es un número, el programa debe imprimir un mensaje de error y seguir pidiendo números. El programa termina cuando el usuario ingresa <code>"*"</code>.</p></li>
+<li><p>Un climatólogo tiene archivos donde guarda las temperaturas promedio de la Ciudad de Buenos Aires de cada mes. Cada línea es un número que representa la temperatura promedio del día. Por ejemplo:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">25.5</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">26.0</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="ex">24.5</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como el climatólogo es humano, a veces se equivoca y tipea cosas que no son números. Por ejemplo: <code>25p3</code> o <code>25.5.5</code>. Se pide hacer una función que reciba el nombre del archivo y devuelva la temperatura promedio del archivo. Si en algún momento se encuentra con un valor que no es un número, debe ignorarlo y seguir con el resto de los valores.</p>
+<p>Al final de la ejecución, debe devolverse el valor promedio y el porcentaje de valores que no pudieron ser procesados respecto del total.</p></li>
+<li><p>Crea un programa que pueda procesar un archivo: por cada fila, se debe ejecutar la operacion de división <code>dividendo/divisor</code> y almacenar el resultado en un archivo llamado “resultados.csv”. Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir “Error en la fila X: {descripción específica del error}” donde X es la fila que tiene errores.</p>
+<pre><code>dividendo;divisor
+83848;389
+8762;78
+.
+.
+.</code></pre></li>
+<li><p><strong>Desafio</strong>: Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: “A”, “B”, “C”… y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista <code>["L","O","O","O","L","L","L"]</code> donde “L” es libre y “O” es ocupada.&nbsp;</p>
+<p>Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: <code>El asiento ya se encuentra ocupado</code>.</p>
+<p>Ejemplo</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sala <span class="op">=</span> {<span class="st">"A"</span>:[<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>], <span class="st">"B"</span>: [<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>]}</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>reservar_butaca(sala, <span class="st">"A"</span>, <span class="dv">0</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Desafio</strong> (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ZeroDivisionError</span>(<span class="st">"No se puede dividir por cero"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n1<span class="op">/</span>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La función puede lanzar una excepción <code>ZeroDivisionError</code> si el segundo número es 0 (es decir, la ejecución va a terminar con un error).</p>
+<ol type="a">
+<li><p>Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías evitar que el programa termine con un error?</p></li>
+<li><p>Se pide hacer un programa que le pida al usuario dos números, y muestre el resultado de la división usando la función <code>dividir</code> definida arriba. Si el usuario ingresa un 0 como segundo número, debe mostrar un mensaje de error y retornar <code>None</code>.</p></li>
+<li><p>Considerar ahora también que el usuario podría ingresar algo que no es un número. En ese caso, debe mostrar un mensaje de error y seguir pidiendo números.</p></li>
+</ol></li>
+<li><p><strong>Desafío</strong> (no obligatorio): El kiosko de la facultad quiere automatizar un letrero que tome datos de un programa y le cobre al estudiante.</p>
+<p>Se tienen dos diccionarios, uno con un código y el producto, y otro con el código y el precio de cada producto.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>opciones <span class="op">=</span> {</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>: <span class="st">"hamburguesas"</span>,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>: <span class="st">"milanesas"</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>: <span class="st">"gaseosa"</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>: <span class="st">"alfajor"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>: <span class="st">"papas fritas"</span>,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>: <span class="st">"agua"</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> {</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>:<span class="dv">1000</span>,</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>:<span class="dv">1500</span>,</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>:<span class="dv">500</span>,</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>:<span class="dv">300</span>,</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>:<span class="dv">600</span>,</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>:<span class="dv">350</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se quiere hacer un programa que muestre la información de la siguiente forma en la pantalla:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> hamburguesas <span class="at">-</span> <span class="va">$1</span>000</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> milanesas <span class="at">-</span> <span class="va">$1</span>500</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">3.</span> gaseosa <span class="at">-</span> <span class="va">$5</span>00</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">4.</span> alfajor <span class="at">-</span> <span class="va">$3</span>00</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">5.</span> papas fritas <span class="at">-</span> <span class="va">$6</span>00</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">6.</span> agua <span class="at">-</span> <span class="va">$3</span>50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.</p>
+<p>Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.</p></li>
+</ol>
+</section>
+</section>
+<section id="guía-6-bibliotecas-de-python" class="level1">
+<h1>Guía 6: Bibliotecas de Python</h1>
+<section id="numpy" class="level2">
+<h2 class="anchored" data-anchor-id="numpy">1. Numpy</h2>
+<ol type="1">
+<li><p>Crear un array de 20 números espaciados uniformemente entre 0 y 10. Luego, imprimir:</p>
+<ol type="a">
+<li>La dimensión</li>
+<li>La forma</li>
+<li>El tamaño</li>
+</ol></li>
+<li><p>Crear un array llamado “arr” con números enteros del 0 al 9. Luego:</p>
+<ol type="a">
+<li>Cambiar su forma de manera tal que tenga 2 filas y 5 columnas</li>
+<li>Insertar el valor 100 en la posición 3.</li>
+</ol></li>
+<li><p>Para el array <code>x = np.arange(10)</code>, calcular:</p>
+<ol type="a">
+<li><code>y = x^2</code></li>
+<li><code>y = 3x + 2</code></li>
+<li><code>y = 1/(x+1)</code></li>
+<li><code>y = log10(x)</code></li>
+</ol></li>
+<li><p>Usando el array <code>y = 1/(x+1)</code> del ejercicio anterior:</p>
+<ol type="a">
+<li>Calcular la media de <code>y</code>.</li>
+<li>Calcular la diferencia entre <code>y</code> y su media</li>
+</ol></li>
+<li><p>Repetir el ejercicio 4.2.2 de la Guía 4:</p>
+<blockquote class="blockquote">
+Escribir una función que reciba:<br>
+
+<ol type="a">
+<li>Una lista y devuelva True si su longitud es par y False si su longitud es impar.<br>
+</li>
+<li>Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.<br>
+</li>
+<li>Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe [5, 10, 7, 3] debe devolver [3, 5, 7, 10].</li>
+</ol>
+</blockquote></li>
+<li><p>Repetir el ejercicio 4.2.6. de la Guía 4:</p>
+<blockquote class="blockquote">
+<p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
+<span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p>
+</blockquote></li>
+<li><p>Repetir el ejercicio 4.2.11 de la Guía 4:</p>
+<blockquote class="blockquote">
+<p>Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz [[1, 2], [3, 4]] y la tupla (0, 1), debe devolver 2.</p>
+</blockquote></li>
+<li><p>Repetir el ejercicio 4.2.15 de la Guía 4:</p>
+<blockquote class="blockquote">
+<p>Desafio (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.<br>
+<span class="math display">\[
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\]</span></p>
+</blockquote></li>
+<li><p>Repetir el ejercicio 4.2.16 de la Guía 4:</p>
+<blockquote class="blockquote">
+<p><strong>Desafio</strong> (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz <code>[[1, 2, 3], [4, 5, 6]]</code>, debe devolver <code>[[1, 4], [2, 5], [3, 6]]</code>. Si se recibe:<br>
+<span class="math display">\[
+\begin{bmatrix}
+1 &amp; 2 &amp; 3  \\
+4 &amp; 5 &amp; 6  \\
+\end{bmatrix}
+\]</span><br>
+Se debe devolver:<br>
+<span class="math display">\[
+\begin{bmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6 \\
+\end{bmatrix}
+\]</span><br>
+</p>
+</blockquote></li>
+<li><p>Una persona quiere cercar el frente de su casa con alambre. Los postes se deben poner a 1 metro de distancia entre sí. Hacer una función que reciba un número entero que sea la cantidad de metros a cubrir, y devuelva un array con la posición de los postes necesarios. Por ejemplo, si se reciben <code>5</code> metros, debe devolver: <code>[0.   1.25   2.5   3.75   5.]</code></p></li>
+<li><p>Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el numero de reserva si está ocupado o 0 sino: <code>[1,2,3,0,7,6,4,0,0,8,9, ...]</code>.<br>
+Los asientos en el Jardín Japonés se van a organizar en forma de matriz, teniendo 5 filas de 10 asientos cada uno. Se quiere transformar la lista de asientos en una matriz. Hacer una función que reciba la lista de asientos y devuelva la matriz de asientos organizada por filas.</p>
+<p>Ejemplo: Si se recibe <code>[1,2,3,0,7,6,4,0,0,8,9,10,0,13,11,12]</code>, se debe devolver: <code>[[1,2,3,0,7,6,4,0,0,8],[9,10,0,13,11,12]]</code>.</p></li>
+<li><p><strong>Desafio</strong> (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca <code>random</code>).</p>
+<ol start="2" type="a">
+<li>Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.<br>
+Pista: se puede extender/modificar el <strong>Super Desafio</strong> (no obligatorio) de Batalla Naval de la Guía 4.</li>
+</ol></li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./unidad_6.html" class="pagination-link" aria-label="Bibliotecas de Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./contact.html" class="pagination-link" aria-label="Contacto">
+        <span class="nav-page-text">Contacto</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
