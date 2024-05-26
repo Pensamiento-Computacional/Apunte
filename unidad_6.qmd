@@ -8,29 +8,29 @@ jupyter: python3
 
 ## Introducción
 
-Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de librerías que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las librerías?** La librerías son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos. 
+Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de bibliotecas que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las bibliotecas?** La bibliotecas son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos. 
 
-Entre las librerías disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas librerías y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.
+Entre las bibliotecas disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas bibliotecas y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.
 
-Asimismo, estas librerías se pueden clasificar según su aplicación y funcionalidad en: procesamiento de datos, visualización, aprendizaje automático, desarrollo web, procesamiento de lenguaje y de imágenes, entre otras. En este capítulo se analizarán tres de las librerías más reconocidas y ampliamente utilizadas de Python: **NumPy** y **Pandas** para procesamiento de datos y **Matplotlib**, para visualización.
+Asimismo, estas bibliotecas se pueden clasificar según su aplicación y funcionalidad en: procesamiento de datos, visualización, aprendizaje automático, desarrollo web, procesamiento de lenguaje y de imágenes, entre otras. En este capítulo se analizarán tres de las bibliotecas más reconocidas y ampliamente utilizadas de Python: **NumPy** y **Pandas** para procesamiento de datos y **Matplotlib**, para visualización.
 
-### ¿Cómo se utilizan las librerías?
+### ¿Cómo se utilizan las bibliotecas?
 
-Para acceder a una librería y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos.
+Para acceder a una biblioteca y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos.
 
-En la parte superior de nuestro código debemos correr `import {nombre_de_librería} as {nombre_corto_de_librería}`. El alias o nombre corto de la librería se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
+En la parte superior de nuestro código debemos correr `import {nombre_de_biblioteca} as {nombre_corto_de_biblioteca}`. El alias o nombre corto de la biblioteca se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
 
 ```python
 import numpy as np
 ```
 
 :::{.callout-note collapse="true}
-En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_librería`. 
+En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
 ::: 
 
 ## NumPy
 
-NumPy es una librería de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas. 
+NumPy es una biblioteca de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas. 
 
 Como ya se mencionó anteriormente, para utilizarse se debe instalar e importar. Por convención, se suele importar como: 
 
@@ -529,9 +529,9 @@ Numpy te va a ser muy útil cuando curses materias como Análisis Matemático, �
 
 ## Pandas
 
-Pandas es una librería de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.
+Pandas es una biblioteca de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.
 
-Dado que se basa en NumPy, luego de instalarse, se deben importar ambas librerías. Por convención: 
+Dado que se basa en NumPy, luego de instalarse, se deben importar ambas bibliotecas. Por convención: 
 
 ```{python}
 import pandas as pd
@@ -1070,9 +1070,9 @@ df.groupby(['direccion', 'sexo']).agg({'colesterol': ['min', 'max'], 'peso': ['m
 
 ## Matplotlib
 
-Matplotlib es probablemente la librería de Python más usada para crear gráficos, también llamados **plots**. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.
+Matplotlib es probablemente la biblioteca de Python más usada para crear gráficos, también llamados **plots**. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.
 
-Como ya se imagina, el primer paso es importar la librería. Por convención:
+Como ya se imagina, el primer paso es importar la biblioteca. Por convención:
 
 ```{python}
 import matplotlib.pyplot as plt
