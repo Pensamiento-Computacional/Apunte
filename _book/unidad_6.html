@@ -256,7 +256,7 @@ window.Quarto = {
   <ul>
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">6.1</span> Introducción</a>
   <ul class="collapse">
-  <li><a href="#cómo-se-utilizan-las-librerías" id="toc-cómo-se-utilizan-las-librerías" class="nav-link" data-scroll-target="#cómo-se-utilizan-las-librerías"><span class="header-section-number">6.1.1</span> ¿Cómo se utilizan las librerías?</a></li>
+  <li><a href="#cómo-se-utilizan-las-bibliotecas" id="toc-cómo-se-utilizan-las-bibliotecas" class="nav-link" data-scroll-target="#cómo-se-utilizan-las-bibliotecas"><span class="header-section-number">6.1.1</span> ¿Cómo se utilizan las bibliotecas?</a></li>
   </ul></li>
   <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy"><span class="header-section-number">6.2</span> NumPy</a>
   <ul class="collapse">
@@ -305,13 +305,13 @@ window.Quarto = {
 
 <section id="introducción" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">6.1</span> Introducción</h2>
-<p>Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de librerías que ayudan a que la programación sea más fácil y eficiente. Pero, <strong>¿qué son las librerías?</strong> La librerías son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos.</p>
-<p>Entre las librerías disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas librerías y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.</p>
-<p>Asimismo, estas librerías se pueden clasificar según su aplicación y funcionalidad en: procesamiento de datos, visualización, aprendizaje automático, desarrollo web, procesamiento de lenguaje y de imágenes, entre otras. En este capítulo se analizarán tres de las librerías más reconocidas y ampliamente utilizadas de Python: <strong>NumPy</strong> y <strong>Pandas</strong> para procesamiento de datos y <strong>Matplotlib</strong>, para visualización.</p>
-<section id="cómo-se-utilizan-las-librerías" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="cómo-se-utilizan-las-librerías"><span class="header-section-number">6.1.1</span> ¿Cómo se utilizan las librerías?</h3>
-<p>Para acceder a una librería y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos.</p>
-<p>En la parte superior de nuestro código debemos correr <code>import {nombre_de_librería} as {nombre_corto_de_librería}</code>. El alias o nombre corto de la librería se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.</p>
+<p>Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de bibliotecas que ayudan a que la programación sea más fácil y eficiente. Pero, <strong>¿qué son las bibliotecas?</strong> La bibliotecas son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos.</p>
+<p>Entre las bibliotecas disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas bibliotecas y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.</p>
+<p>Asimismo, estas bibliotecas se pueden clasificar según su aplicación y funcionalidad en: procesamiento de datos, visualización, aprendizaje automático, desarrollo web, procesamiento de lenguaje y de imágenes, entre otras. En este capítulo se analizarán tres de las bibliotecas más reconocidas y ampliamente utilizadas de Python: <strong>NumPy</strong> y <strong>Pandas</strong> para procesamiento de datos y <strong>Matplotlib</strong>, para visualización.</p>
+<section id="cómo-se-utilizan-las-bibliotecas" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="cómo-se-utilizan-las-bibliotecas"><span class="header-section-number">6.1.1</span> ¿Cómo se utilizan las bibliotecas?</h3>
+<p>Para acceder a una biblioteca y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos.</p>
+<p>En la parte superior de nuestro código debemos correr <code>import {nombre_de_biblioteca} as {nombre_corto_de_biblioteca}</code>. El alias o nombre corto de la biblioteca se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -325,7 +325,7 @@ Note
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: <code>pip install –nombre_de_librería</code>.</p>
+<p>En nuestro caso, la instalación no es necesaria ya que utilizamos Google Colab**, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: <code>pip install –nombre_de_biblioteca</code>.</p>
 </div>
 </div>
 </div>
@@ -333,7 +333,7 @@ Note
 </section>
 <section id="numpy" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="numpy"><span class="header-section-number">6.2</span> NumPy</h2>
-<p>NumPy es una librería de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas.</p>
+<p>NumPy es una biblioteca de código abierto muy utilizada en el campo de la ciencia y la ingeniería. Permite trabajar con datos numéricos, matrices multidimensionales, funciones matemáticas y estadísticas avanzadas.</p>
 <p>Como ya se mencionó anteriormente, para utilizarse se debe instalar e importar. Por convención, se suele importar como:</p>
 <div id="b2bfc687" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1138,8 +1138,8 @@ Note
 </section>
 <section id="pandas" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="pandas"><span class="header-section-number">6.3</span> Pandas</h2>
-<p>Pandas es una librería de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.</p>
-<p>Dado que se basa en NumPy, luego de instalarse, se deben importar ambas librerías. Por convención:</p>
+<p>Pandas es una biblioteca de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.</p>
+<p>Dado que se basa en NumPy, luego de instalarse, se deben importar ambas bibliotecas. Por convención:</p>
 <div id="a70eac24" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -4422,8 +4422,8 @@ Name: direccion, dtype: int64</code></pre>
 </section>
 <section id="matplotlib" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="matplotlib"><span class="header-section-number">6.4</span> Matplotlib</h2>
-<p>Matplotlib es probablemente la librería de Python más usada para crear gráficos, también llamados <strong>plots</strong>. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.</p>
-<p>Como ya se imagina, el primer paso es importar la librería. Por convención:</p>
+<p>Matplotlib es probablemente la biblioteca de Python más usada para crear gráficos, también llamados <strong>plots</strong>. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.</p>
+<p>Como ya se imagina, el primer paso es importar la biblioteca. Por convención:</p>
 <div id="9203271e" class="cell" data-execution_count="106">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

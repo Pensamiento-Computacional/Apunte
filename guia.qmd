@@ -321,9 +321,9 @@ print(numero_a_adivinar)
 
 :::{.callout-note collapse="true"}
 ### Tip: Librerías
-¿Sabías que Python tiene muchas librerías que podés usar para hacer cosas más complejas? Por ejemplo, la librería `random` tiene funciones para generar números aleatorios. También hay otras librerías como `Pandas` para trabajar con datos, `Matplotlib` para hacer gráficos, `Numpy` para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.
+¿Sabías que Python tiene muchas bibliotecas que podés usar para hacer cosas más complejas? Por ejemplo, la biblioteca `random` tiene funciones para generar números aleatorios. También hay otras bibliotecas como `Pandas` para trabajar con datos, `Matplotlib` para hacer gráficos, `Numpy` para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.
 
-Una librería es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una librería, primero tenemos que importarla. Por ejemplo, para usar la librería `random`, tenemos que poner `import random` al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la librería, como `random.randint(1, 10)`.
+Una biblioteca es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una biblioteca, primero tenemos que importarla. Por ejemplo, para usar la biblioteca `random`, tenemos que poner `import random` al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la biblioteca, como `random.randint(1, 10)`.
 :::
 
 8. a. Queremos modelar una máquina de sacar juguetes. Debemos hacer una función que reciba un número que representa la cantidad de fichas $x$ que necesita la máquina para funcionar. Se debe imprimir un mensaje en pantalla que indique "Ingresá $x$ fichas para comenzar". El usuario deberá ingresar entonces letras "F", que representan a las fichas. Notar que si se ingresa algo distinto a "F", se ignora.
@@ -531,7 +531,7 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
 
     La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3). 
 
-    Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`), y que permita al usuario intentar adivinar dónde están.
+    Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca `random`), y que permita al usuario intentar adivinar dónde están.
 
     El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
 
@@ -737,7 +737,7 @@ El formato del archivo es el siguiente:
 
 12. Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.
 
-13. Se tiene un archivo CSV que contiene información sobre el stock de una librería.
+13. Se tiene un archivo CSV que contiene información sobre el stock de una biblioteca.
 
     ``` bash
     Un posible ejemplo de este archivo es el siguiente: 
@@ -974,7 +974,7 @@ Los asientos en el Jardín Japonés se van a organizar en forma de matriz, tenie
 
     Ejemplo: Si se recibe `[1,2,3,0,7,6,4,0,0,8,9,10,0,13,11,12]`, se debe devolver: `[[1,2,3,0,7,6,4,0,0,8],[9,10,0,13,11,12]]`.
 
-12. **Desafio** (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria `random`).
+12. **Desafio** (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca `random`).
 
     b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
     Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.
