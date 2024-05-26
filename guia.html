@@ -226,7 +226,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unidad_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Librerías de Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -270,7 +270,7 @@ window.Quarto = {
   <li><a href="#archivos" id="toc-archivos" class="nav-link" data-scroll-target="#archivos">1. Archivos</a></li>
   <li><a href="#manejo-de-errores" id="toc-manejo-de-errores" class="nav-link" data-scroll-target="#manejo-de-errores">2. Manejo de Errores</a></li>
   </ul></li>
-  <li><a href="#guía-6-librerías-de-python" id="toc-guía-6-librerías-de-python" class="nav-link" data-scroll-target="#guía-6-librerías-de-python">Guía 6: Librerías de Python</a>
+  <li><a href="#guía-6-bibliotecas-de-python" id="toc-guía-6-bibliotecas-de-python" class="nav-link" data-scroll-target="#guía-6-bibliotecas-de-python">Guía 6: Bibliotecas de Python</a>
   <ul class="collapse">
   <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">1. Numpy</a></li>
   </ul></li>
@@ -458,25 +458,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="e012e049" class="cell" data-execution_count="1">
+<div id="44057e5f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="25d86885" class="cell" data-execution_count="2">
+<div id="db4f6055" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="96ebe3c1" class="cell" data-execution_count="3">
+<div id="83112f8d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="facce9c1" class="cell" data-execution_count="4">
+<div id="a9f90c0e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -599,12 +599,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="ba000a9b" class="cell" data-execution_count="5">
+<div id="d352ad73" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5</code></pre>
+<pre><code>10</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -613,14 +613,14 @@ Ingrese un número o "X" para salir: X
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip: Librerías
+Tip: Bibliotecas
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>¿Sabías que Python tiene muchas librerías que podés usar para hacer cosas más complejas? Por ejemplo, la librería <code>random</code> tiene funciones para generar números aleatorios. También hay otras librerías como <code>Pandas</code> para trabajar con datos, <code>Matplotlib</code> para hacer gráficos, <code>Numpy</code> para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.</p>
-<p>Una librería es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una librería, primero tenemos que importarla. Por ejemplo, para usar la librería <code>random</code>, tenemos que poner <code>import random</code> al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la librería, como <code>random.randint(1, 10)</code>.</p>
+<p>¿Sabías que Python tiene muchas bibliotecas que podés usar para hacer cosas más complejas? Por ejemplo, la biblioteca <code>random</code> tiene funciones para generar números aleatorios. También hay otras bibliotecas como <code>Pandas</code> para trabajar con datos, <code>Matplotlib</code> para hacer gráficos, <code>Numpy</code> para trabajar con matrices, y muchas más. Vamos a estar viendo estas tres en la última unidad de la materia.</p>
+<p>Una biblioteca es un conjunto de funciones que alguien más escribió y que podemos usar en nuestros programas. Para usar una biblioteca, primero tenemos que importarla. Por ejemplo, para usar la biblioteca <code>random</code>, tenemos que poner <code>import random</code> al principio de nuestro programa (arriba de todo en nuestro archivo). Luego, podemos usar las funciones de la biblioteca, como <code>random.randint(1, 10)</code>.</p>
 </div>
 </div>
 </div>
@@ -792,7 +792,7 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
 </p>
 <p>Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).</p>
 <p>La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3).</p>
-<p>Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria <code>random</code>), y que permita al usuario intentar adivinar dónde están.</p>
+<p>Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca <code>random</code>), y que permita al usuario intentar adivinar dónde están.</p>
 <p>El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla “¡Hundido!”) o no (“¡Agua!”).</p>
 <p>El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -995,7 +995,7 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>procesar_archivos(archivos, <span class="st">"harry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En <code>procesar_archivos</code> se tiene que analizar los archivos y dejar el resultado en reporte_plagio.txt</p></li>
 <li><p>Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.</p></li>
-<li><p>Se tiene un archivo CSV que contiene información sobre el stock de una librería.</p>
+<li><p>Se tiene un archivo CSV que contiene información sobre el stock de una biblioteca.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Un</span> posible ejemplo de este archivo es el siguiente: </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">lapiceras</span><span class="kw">;</span><span class="ex">34512</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">120</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cuadernos</span><span class="kw">;</span><span class="ex">41611</span><span class="kw">;</span><span class="ex">500</span><span class="kw">;</span><span class="ex">130</span></span>
@@ -1050,16 +1050,15 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 .</code></pre></li>
 <li><p><strong>Desafio</strong>: Para la venta de entradas de un teatro se cuenta con un diccionario que contiene las filas: “A”, “B”, “C”… y en cada fila contiene una lista con las ubicaciones disponibles en forma de lista <code>["L","O","O","O","L","L","L"]</code> donde “L” es libre y “O” es ocupada.&nbsp;</p>
 <p>Escribir una funcion que reciba el diccionario, la fila y la ubicación en ella, y reserve el asiento en caso de que este libre. Considerar que el tamaño de la lista de ubicaciones puede variar por fila. Si la fila o la ubicación no son correctas, mostrar un mensaje descriptivo. Si el asiento ya se encuentra ocupado, mostrar el mensaje: <code>El asiento ya se encuentra ocupado</code>.</p>
-<p>Ejemplo
-  <pre><code>
-  sala = {"A":["L","O","O","O","L","L","L"], "B": ["L","O","O","O","L"]}
-  reservar_butaca(sala, "A", 0)  # En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</code></pre>
-</p></li>
+<p>Ejemplo</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sala <span class="op">=</span> {<span class="st">"A"</span>:[<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>], <span class="st">"B"</span>: [<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>]}</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>reservar_butaca(sala, <span class="st">"A"</span>, <span class="dv">0</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Desafio</strong> (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ZeroDivisionError</span>(<span class="st">"No se puede dividir por cero"</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n1<span class="op">/</span>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n2 <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ZeroDivisionError</span>(<span class="st">"No se puede dividir por cero"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n1<span class="op">/</span>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La función puede lanzar una excepción <code>ZeroDivisionError</code> si el segundo número es 0 (es decir, la ejecución va a terminar con un error).</p>
 <ol type="a">
 <li><p>Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías evitar que el programa termine con un error?</p></li>
@@ -1068,37 +1067,37 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 </ol></li>
 <li><p><strong>Desafío</strong> (no obligatorio): El kiosko de la facultad quiere automatizar un letrero que tome datos de un programa y le cobre al estudiante.</p>
 <p>Se tienen dos diccionarios, uno con un código y el producto, y otro con el código y el precio de cada producto.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>opciones <span class="op">=</span> {</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>: <span class="st">"hamburguesas"</span>,</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>: <span class="st">"milanesas"</span>,</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>: <span class="st">"gaseosa"</span>,</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>: <span class="st">"alfajor"</span>,</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>: <span class="st">"papas fritas"</span>,</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>: <span class="st">"agua"</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> {</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>:<span class="dv">1000</span>,</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>:<span class="dv">1500</span>,</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>:<span class="dv">500</span>,</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>:<span class="dv">300</span>,</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>:<span class="dv">600</span>,</span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>:<span class="dv">350</span></span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>opciones <span class="op">=</span> {</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>: <span class="st">"hamburguesas"</span>,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>: <span class="st">"milanesas"</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>: <span class="st">"gaseosa"</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>: <span class="st">"alfajor"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>: <span class="st">"papas fritas"</span>,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>: <span class="st">"agua"</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> {</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>:<span class="dv">1000</span>,</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>:<span class="dv">1500</span>,</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3</span>:<span class="dv">500</span>,</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>:<span class="dv">300</span>,</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>:<span class="dv">600</span>,</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>:<span class="dv">350</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se quiere hacer un programa que muestre la información de la siguiente forma en la pantalla:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> hamburguesas <span class="at">-</span> <span class="va">$1</span>000</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> milanesas <span class="at">-</span> <span class="va">$1</span>500</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">3.</span> gaseosa <span class="at">-</span> <span class="va">$5</span>00</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">4.</span> alfajor <span class="at">-</span> <span class="va">$3</span>00</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="ex">5.</span> papas fritas <span class="at">-</span> <span class="va">$6</span>00</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="ex">6.</span> agua <span class="at">-</span> <span class="va">$3</span>50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> hamburguesas <span class="at">-</span> <span class="va">$1</span>000</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> milanesas <span class="at">-</span> <span class="va">$1</span>500</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">3.</span> gaseosa <span class="at">-</span> <span class="va">$5</span>00</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">4.</span> alfajor <span class="at">-</span> <span class="va">$3</span>00</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">5.</span> papas fritas <span class="at">-</span> <span class="va">$6</span>00</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">6.</span> agua <span class="at">-</span> <span class="va">$3</span>50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.</p>
 <p>Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.</p></li>
 </ol>
 </section>
 </section>
-<section id="guía-6-librerías-de-python" class="level1">
-<h1>Guía 6: Librerías de Python</h1>
+<section id="guía-6-bibliotecas-de-python" class="level1">
+<h1>Guía 6: Bibliotecas de Python</h1>
 <section id="numpy" class="level2">
 <h2 class="anchored" data-anchor-id="numpy">1. Numpy</h2>
 <ol type="1">
@@ -1181,7 +1180,7 @@ Se debe devolver:<br>
 <li><p>Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el numero de reserva si está ocupado o 0 sino: <code>[1,2,3,0,7,6,4,0,0,8,9, ...]</code>.<br>
 Los asientos en el Jardín Japonés se van a organizar en forma de matriz, teniendo 5 filas de 10 asientos cada uno. Se quiere transformar la lista de asientos en una matriz. Hacer una función que reciba la lista de asientos y devuelva la matriz de asientos organizada por filas.</p>
 <p>Ejemplo: Si se recibe <code>[1,2,3,0,7,6,4,0,0,8,9,10,0,13,11,12]</code>, se debe devolver: <code>[[1,2,3,0,7,6,4,0,0,8],[9,10,0,13,11,12]]</code>.</p></li>
-<li><p><strong>Desafio</strong> (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la libreria <code>random</code>).</p>
+<li><p><strong>Desafio</strong> (no obligatorio): Se tiene una matriz de 10x10 que representa un tablero de Batalla Naval. Cada celda contiene un 0 si está vacía, o un 1 si no. Se pide hacer una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca <code>random</code>).</p>
 <ol start="2" type="a">
 <li>Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.<br>
 Pista: se puede extender/modificar el <strong>Super Desafio</strong> (no obligatorio) de Batalla Naval de la Guía 4.</li>
@@ -1604,8 +1603,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./unidad_6.html" class="pagination-link" aria-label="Librerías de Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Librerías de Python</span></span>
+      <a href="./unidad_6.html" class="pagination-link" aria-label="Bibliotecas de Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
