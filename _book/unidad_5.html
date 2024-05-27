@@ -472,7 +472,7 @@ Tip
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(linea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">6.25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función <code>split()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nos permite separar cada linea en una lista que tiene 3 elementos, a nosostros nos interesa el elemento que esta en la posición 2, la nota; por otro lado también utilizamos la función <code>strip()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, esto remueve el caracter de nueva linea <code>\n</code> y nos permite leer la nota como un número.</p>
-<p>Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer linea del archivo no nos interesa ya que contiene los nombres de cada campo. Esto se explica en <a href="#listas-como-secuencias">unidad 4</a>.</p>
+<p>Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer linea del archivo no nos interesa ya que contiene los nombres de cada campo. Esto se explica en <a href="unidad_4.html#listas-como-secuencias">unidad 4</a>.</p>
 </section>
 <section id="tipos-de-archivos" class="level3" data-number="5.1.7">
 <h3 data-number="5.1.7" class="anchored" data-anchor-id="tipos-de-archivos"><span class="header-section-number">5.1.7</span> Tipos de archivos</h3>
@@ -559,7 +559,7 @@ SyntaxError: invalid syntax</code></pre>
 <p>Si bien quien invoca una función debe preocuparse de cumplir con las precondiciones de ésta, si las validaciones están hechas correctamente pueden devolver información valiosa para que el invocante pueda actuar en consecuencia.</p>
 <p>También se debe tener en cuenta qué hará nuestro código cuando una validación falle, ya que queremos darle información al invocante que le sirva para procesar el error. El error producido tiene que ser fácilmente reconocible.</p>
 <p>Ejemplo:</p>
-<div id="98c670de" class="cell" data-execution_count="1">
+<div id="db27c958" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convertir_a_int(ingreso_usuario):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(ingreso_usuario)</span>

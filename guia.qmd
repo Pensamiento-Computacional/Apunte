@@ -737,7 +737,7 @@ El formato del archivo es el siguiente:
 
 12. Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.
 
-13. Se tiene un archivo CSV que contiene información sobre el stock de una biblioteca.
+13. Se tiene un archivo CSV que contiene información sobre el stock de una librería.
 
     ``` bash
     Un posible ejemplo de este archivo es el siguiente: 
