@@ -979,3 +979,50 @@ Los asientos en el Jardín Japonés se van a organizar en forma de matriz, tenie
 
     b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
     Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.
+
+## 2. Pandas
+
+:::{.callout-note}
+Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
+:::
+
+Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
+
+Usando el siguiente DataFrame:
+```{python}
+import pandas as pd
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela', 'Lucia', 'Emilia', 'Mariana', 'Aldo'],
+    'apellido': ['Perez', 'Guanca', 'Gomez', 'Capon', 'Duzac', 'Szischik', 'Rastrelli'],
+    'dni': [42000000, 42001001, 42002002, 37010020, 40001002, 38090080, 38111222],
+    'año_nac': [1997, 1998, 1998, 1993, 2003, 1993, 1994],
+    'mail': ['vp@fi.uba.ar', 'cg@fi.uba.ar', None, None, None, 'ms@fi.uba.ar', 'ar@fi.uba.ar'],
+    'carrera': ['Informática', 'Mecánica', 'Química', 'Informática', 'Informática', 'Electrónica', 'Informática']
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+1. Mostrar el resumen de la información del DataFrame
+2. Mostrar su forma
+3. Mostrar la lista de los nombres de las columnas
+4. Mostrar las primeras 3 columnas
+5. Mostrar las últimas 3 columnas
+6. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
+7. Mostrar a los estudiantes que tienen edad mayor a 25.
+8. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
+9. Mostrar a la persona que es más joven.
+10. Mostrar a la persona que se encuentra en la mitad de la tabla.
+11. Mostrar sólo las columnas: "carrera" y "edad".
+12. Mostrar sólo los estudiantes que estudian Informática.
+13. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
+14. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
+15. Mostrar la cantidad de estudiantes por carrera.
+16. Renombrar la columna "carrera" por "ingeniería".
+17. Para la primer estudiante, cambiar su carrera a "Electrónica".
+18. Agregar una nueva fila al DataFrame con tus datos.
+19. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
+20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
+21. Ordenar el dataFrame por carrera y apellido, en ese orden.
+22. Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.

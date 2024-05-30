@@ -1,0 +1,575 @@
+
+
+## Matplotlib
+
+Matplotlib es probablemente la biblioteca de Python más usada para crear gráficos, también llamados **plots**. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.
+
+Como ya se imagina, el primer paso es importar la biblioteca. Por convención:
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+### Creación de gráficos con matplotlib
+
+Para crear un gráfico con matplotlib, se deben seguir los siguientes pasos:
+
+1. **Crear la figura** que contendrá el gráfico, utilizando las funciones `subplots()` o `figure()`. Se recomienda la primera, como se verá más adelante.
+
+2. **Graficar los datos**, utilizando distintas funciones dependiendo del tipo de gráfico que se desea realizar:
+
+
+| Función | Tipo de Gráfico |
+| --- | --- |
+| `plot()` | Gráfico de línea |
+| `scatter()` | Gráfico de puntos |
+| `bar()` | Gráfico de barras verticales |
+| `barh()` | Gráfico de barras horizontales |
+| `pie()` | Gráfico de torta |
+
+
+3. **Personalizar el gráfico**. Este paso no es mandatorio, pero sí, muy recomendado para lograr un mejor entendimiento de la visualización
+
+4. **Mostrar el gráfico**, utilizando la función `show()`
+
+Esto quiere decir que, si deseamos visualizar datos rápidamente, podríamos realizarlo corriendo únicamente las siguientes tres líneas de código:
+
+**Opción 1**
+```
+fig = plt.figure()  
+plt.funcion_grafico_elegido()       # Reemplazar funcion_grafico_elegido() por una función
+plt.show()  
+```
+
+**Opción 2**
+```
+fig, ax = plt.subplots()  
+ax.funcion_grafico_elegido()        # Reemplazar funcion_grafico_elegido() por una función     
+plt.show()  
+```
+
+Pero, **¿cuál debería usar?** Eso depende de lo que quieras hacer. A continuación, se verá el detalle de lo que está ocurriendo en cada línea, para que así puedas elegir qué es lo mejor para vos.
+
+```{python}
+plt.figure()
+```
+
+```{python}
+plt.subplots()
+```
+
+Si bien no se puede ver un gráfico en ninguno de los outputs, analicemos lo que nos imprime:
+
+1. `fig = plt.figure()` crea una **figura pero sin axes**, por lo que muestra `<Figure size 640x480 with 0 Axes>`.
+2. `fig, ax = plt.subplots()` permite **crear ambos: figura y axes**, por lo que muestra `<Figure size 640x480 with 1 Axes>, <AxesSubplot: >)`.
+
+Note además, que se ha seguido una convención al nombrarse la **figura** como `fig` y los **axes** como `ax`. Pero... **¿qué es una figura y un axes?**
+
+Una **figura** es el marco que delimita la zona donde se trazan los gráficos, mientras que los **axes**, son lo que llamamos comunmente gráficos, es decir, son las áreas donde los puntos se pueden especificar en términos de coordenadas. **Por lo tanto, una figura puede contener muchos axes, pero un axes determinado sólo puede estar contenido en una única figura.**
+
+
+![Esquema de figuras y axes](./imgs/unidad_6/fig_ax.png)
+
+::: {.callout-note}
+#### **¡Ojo! No confundir axes con axis** \
+Los **Axis** son los ejes cartesianos que se encargan de establecer los límites, la escala y las dimensiones del gráfico: un axes puede tener 2 Axis, si es un gráfico plano, o 3, si es un gráfico en 3D.
+:::
+
+Entonces, con lo aprendido hasta el momento, volvamos a revisar las líneas de código anteriores:
+
+**Opción 1**
+```
+fig = plt.figure()                  # Se crea una figura vacía sin Axes
+plt.funcion_grafico_elegido()       # Se grafica según la función elegida
+plt.show()                          # Mostrar 
+```
+Esta opción es más amigable para principiantes ya que es más conciso y resulta muy útil cuando simplemente se desea crear un gráfico para verificar resultados rápidamente.
+
+**Opción 2**
+```
+fig, ax = plt.subplots()            # Se crea una figura con un único Axes
+ax.funcion_grafico_elegido()        # Se grafica según la función elegida
+plt.show()                          # Mostrar
+```
+Esta opción es ideal cuando necesitamos un enfoque más flexible, con gráficos más complejos o con un ajuste fino como los que veremos en este apunte.
+
+### Partes de una Figura y personalización
+
+Esta imagen, fue obtenida de la referencia de matplotlib y resume de manera fácil y visual las modificaciones que podemos hacerla a las figuras creadas.
+
+![Partes de una Figura](./imgs/unidad_6/matplotlib.png)
+
+Si desea conocer más detalle, puede ingresar a [https://matplotlib.org/stable/tutorials/introductory/quick_start.html](https://matplotlib.org/stable/tutorials/introductory/quick_start.html).
+
+Con lo aprendido hasta el momento, vamos a realizar nuestro primer gráfico para luego mostrar cómo modificar su aspecto. La función que usaremos es `plot()`, con la que se obteniene un gráfico de línea; esta recibe los vectores X e Y para formar puntos en el plano cartesiano que son unidos con una línea. 
+
+```{python}
+# Grafico elemental
+x = [0,2,10,11,18,25]
+y = [0,1,2,3,4,5]
+
+fig, ax = plt.subplots()
+
+# Gráfico de línea
+ax.plot(x, y)
+plt.show()
+```
+
+#### Cambiar el aspecto de los gráficos:
+Para diferenciar las curvas o simplemente para modificar los gráficos según nuestros gustos personales, se pueden definir los distintos parámetros dentro de `plot()`, estableciendo el tipo de línea y puntos, el grosor, el color, etc:
+
+*  **color =** nombre del color, por ejemplo: `'blue', 'green', 'red'`, etc.
+*   **marker =** forma de los puntos o marcadores, por ejemplo: `'^', 'o', 'v'`, etc.
+*   **linestyle =** estilo de línea, por ejemplo: `'solid', 'dashed', 'dotted'` o sus equivalentes:` '-', '--', ':',` entre otros.
+*   **markersize, linewidth =** con un número, establecemos el tamaño del marcador y el espesor de la línea respectivamente.
+
+Note que si no le asignamos un valor, se establecen los predefinidos.
+
+```{python}
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
+plt.show()
+```
+
+Para ver las múltiples opciones disponibles, les dejamos el siguiente link de consulta: 
+[https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html](https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html)
+
+#### Grilla o cuadrícula:
+Para leer facilmente el valor de cada punto, podemos agregar una cuadrícula usando `grid()`.
+
+Si deseamos modificarle, por ejemplo, el color, el estilo de línea, o sólo queremos ver uno de los ejes, podemos indicarlo utilizando parámetros muy similares a los vistos anteriormente pero en la funcion `grid()`.
+
+```{python}
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
+
+# Grilla preestablecida
+ax.grid()
+plt.show()
+```
+
+```{python}
+#Gráfica con la grilla preestablecida
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
+
+#Grilla modificada
+ax.grid(axis = 'y', color = 'gray', linestyle = 'dashed')
+plt.show()
+```
+
+#### Títulos
+Una de las partes más importantes para que un gráfico se pueda entender es ponerle un título y explicar qué significa cada eje. Eso se hace con las funciones `set_xlabel()`, `set_ylabel()` y `set_title()`. Cada una recibe un string que se usará como etiqueta del eje X, etiqueta del eje Y o título, respectivamente.
+
+Siendo que los valores de **x** son el tiempo medido en minutos y los de **y** una distancia en metros, entonces:
+
+```{python}
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
+
+# Mostrar el título del gráfico
+ax.set_title("Gráfico de posición")
+
+# Mostrar el título de los ejes
+ax.set_xlabel('Tiempo (min)')
+ax.set_ylabel('Distancia (m)')
+
+# Grilla preestablecida
+ax.grid()
+plt.show()
+```
+
+#### Referencias
+El gráfico con el que estamos trabajando sólo tiene una línea, pero si contara con más de una, el uso de referencias sería escencial para lograr el entendimiento del mismo. Para rotular las líneas, dentro de `plot()` se debe definir la referencia como `label`. Luego se coloca `legend()`
+
+```{python}
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, label='Objeto 1', color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
+
+# Mostrar el título del gráfico
+ax.set_title("Gráfico de posición")
+
+# Mostrar el título de los ejes
+ax.set_xlabel('Tiempo (min)')
+ax.set_ylabel('Distancia (m)')
+
+# Agregar la refencia
+ax.legend()
+
+# Grilla preestablecida
+ax.grid()
+plt.show()
+```
+
+#### Características de los ejes:
+Como podemos identificar en los gráficos anteriores, Python decidió las características de los ejes:
+
+-   **Eje x**: se extiende del 0 a 25, de 5 en 5.
+-   **Eje y**: se extiende del 0 a 5, de 1 en 1.
+
+Podemos establecer los limites del eje x e y usando `set_xlim()` y `set_ylim()` respectivamente.
+
+```{python}
+x = [0,2,10,11,18,25]   # Tiempo (min)
+y = [0,1,2,3,4,5]       # Distancia (m)
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y, label='Objeto 1', color='green', marker='^', linestyle='--',
+        markersize=8, linewidth=1.2)
+
+# Mostrar el título del gráfico
+ax.set_title("Gráfico de posición")
+
+# Mostrar el título de los ejes
+ax.set_xlabel('Tiempo (min)')
+ax.set_ylabel('Distancia (m)')
+
+# Establecer los límites de los ejes
+ax.set_xlim(0, 30)
+ax.set_ylim(0, 6)
+
+# Agregar la refencia
+ax.legend()
+
+# Grilla preestablecida
+ax.grid()
+plt.show()
+```
+
+### Tipos de gráficos
+
+A continuación, vamos a ver ejemplos de los tipos de gráficos más comunes, las funciones que son necesarias para crearlos y cuándo se debe utilizar cada uno de ellos. 
+
+Para estos ejemplos, los datos a graficar son valores de listas únicamente por fines didácticos, ya que podría tratarse de arrays o columnas de DataFrames. Además, recuerden que mucho de lo aprendido para modificar el aspecto de un gráfico, como agregar títulos, cuadrículas, límites a los ejes, etc., se puede aplicar también en estas figuras.:
+
+#### Gráfico de línea
+
+El gráfico de línea permite visualizar cambios en los valores lo largo de un rango continuo (tendencias), como puede ser el tiempo o la distancia. Para crearlo, se utiliza la función `plot()`, como vimos anteriormente:
+
+```{python}
+x = [0,2,10,11,18,25]
+y = [0,1,2,3,4,5]
+
+fig, ax = plt.subplots()
+
+ax.plot(x, y)
+plt.show()
+```
+
+#### Gráfico de dispersión o puntos
+
+El gráfico de dispersión o puntos permite visualizar la relación entre las variables. Para crearlo, se utiliza la función `scatter()`:
+
+```{python}
+x = [5,7,8,7,2,17,2,9,4,11,12,9,6]
+y = [99,86,87,88,111,86,103,87,94,78,77,85,86]
+
+fig, ax = plt.subplots()
+
+ax.scatter(x, y)
+plt.show()
+```
+
+#### Gráfico de barras
+
+El gráfico de barras permite visualizar proporciones, comparando dos o más valores entre sí. Para crearlo, se utiliza la función `bar()`, la cual primero recibe, en primer lugar, las etiquetas de las barras que se van a mostrar y en segundo lugar, la altura correspondiente a cada una de estas barras.
+
+```{python}
+peso = [340, 115, 200, 200, 270]
+ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
+
+fig, ax = plt.subplots()
+
+ax.bar(ingredientes, peso)
+
+ax.set_xlabel('Ingredientes')
+ax.set_ylabel('Masa (g)')
+
+ax.set_title("Receta")
+
+plt.show()
+```
+
+Note que con la función anterior, las barras adquieren una dirección vertical: si quisieramos verlas de manera horizontal, debemos usar la función `barh()` y cambiar los títulos de los ejes según corresponda:
+
+```{python}
+peso = [340, 115, 200, 200, 270]
+ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
+
+fig, ax = plt.subplots()
+
+ax.barh(ingredientes, peso)
+
+ax.set_ylabel('Ingredientes')
+ax.set_xlabel('Masa (g)')
+
+ax.set_title("Receta")
+
+plt.show()
+```
+
+#### Gráfico de torta
+
+El gráfico de torta, como el de barras, permite visualizar y comparar proporciones pero de manera circular y como partes de un todo. Para crearlo, se utiliza la función `pie()`, la cual podría recibir solamente números pero es útil también saber qué simboliza cada parte. Por eso, para referenciar cada porción se usa el parámetro `labels`. Por otro lado, el parámetro `autopct` establece cómo se mostrará el porcentaje: por ejemplo, `%1.1f%%` le indica que el porcentaje tendrá un decimal, mientras que `%1.2f%%` tendrá dos decimales.
+
+```{python}
+peso = [340, 115, 200, 200, 270]
+ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
+
+fig, ax = plt.subplots()
+
+ax.pie(peso, labels= ingredientes, autopct='%1.1f%%')
+
+ax.set_title("Receta")
+
+plt.show()
+```
+
+### Gráficos múltiples
+
+En los casos anteriores, creamos siempre un sólo gráfico con una curva, en una figura. Pero... **¿Cómo podríamos graficar varias curvas en un mismo gráfico?**
+
+```{python}
+# Valores que se desean graficar
+x = [0, 1, 2, 3, 4, 5]
+y_linear = [0, 1, 2, 3, 4, 5]
+y_quadratic = [0, 1, 4, 9, 16, 25]
+y_cubic = [0, 1, 8, 27, 64, 125]
+
+fig, ax = plt.subplots(figsize=(5, 3))
+
+ax.plot(x, y_linear, label='Lineal')
+ax.plot(x, y_quadratic, label='Cuadrático')
+ax.plot(x, y_cubic, label='Cúbico')
+
+ax.set_title("Gráfico de múltiples curvas")
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.legend()
+
+plt.show()
+```
+
+Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`. Asimismo, se estableció un tamaño de la figura con `figsize=(width, height)`
+
+### Grilla de gáficos
+
+También podríamos querer ver varios axes en una misma figura. Para ello, tenemos que definir, como si se tratase de una matriz o tabla, cuántas columnas `ncols` y cuantas `nrows` de gráficos deseamos. Por ejemplo, supongamos que quiero ver dos gráficos en una misma fila:
+
+```{python}
+fig, ax = plt.subplots(nrows=1, ncols=2)   # o simplemente plt.subplots(1,2)
+```
+
+De manera análoga, podemos representar las 3 curvas anteriores pero viendo 3 filas de gráficos en una única columna:
+
+```{python}
+# Valores que se desean graficar
+x = [0, 1, 2, 3, 4, 5]
+x_linear = [0, 1, 2, 3, 4, 5]
+x_quadratic = [0, 1, 4, 9, 16, 25]
+x_cubic = [0, 1, 8, 27, 64, 125]
+
+fig, ax = plt.subplots(nrows=3, ncols=1)
+
+ax[0].plot(x, x_linear)
+ax[0].set_title('Lineal')
+
+ax[1].plot(x, x_quadratic)
+ax[1].set_title('Cuadrático')
+
+ax[2].plot(x, x_cubic)
+ax[2].set_title('Cúbico')
+
+plt.show()
+```
+
+Entonces, lo único que debemos hacer es **indicar la posición del axes con números dentro del corchete** . Si tengo varias columnas y filas, dentro del corchete, se indica primero la fila y luego la columna: `ax[fila, columna]`.
+
+```{python}
+fig, ax = plt.subplots(nrows=3, ncols=3)
+fig.subplots_adjust(wspace=0.5, hspace=0.5) # Con esto indicamos el espacio libre entre los subplots
+
+ax[0, 1].plot(x, x_linear)
+plt.show()
+```
+
+### Funciones de Gráficas
+
+En términos generales, si nos encontramos en la situacion de copiar y pegar las mismas líneas de código para realizar gráficos similares, trendríamos que pensar en crear una función que simplifique esta tarea. Por ejemplo:
+
+```{python}
+x = [0, 1, 2, 3, 4, 5]
+x_linear = [0, 1, 2, 3, 4, 5]
+x_quadratic = [0, 1, 4, 9, 16, 25]
+x_cubic = [0, 1, 8, 27, 64, 125]
+
+fig, ax=plt.subplots(3)
+ax[0].plot(x,x_linear,label="$x$",color="r")
+ax[0].set_xlabel("eje x")
+ax[0].set_ylabel("eje y")
+ax[0].legend()
+ax[0].grid()
+
+
+ax[1].plot(x,x_quadratic,label="$x^2$",color="b")
+ax[1].set_xlabel("eje x")
+ax[1].set_ylabel("eje y")
+ax[1].legend()
+ax[1].grid()
+
+
+ax[2].plot(x,x_cubic,label="$x^3$",color="g")
+ax[2].set_xlabel("eje x")
+ax[2].set_ylabel("eje y")
+ax[2].legend()
+ax[2].grid()
+plt.show()
+```
+
+Para evitar lo anterior, definimos una función a la que le debemos entregar los valores a graficar:
+
+```{python}
+def crear_grafico(x, y, label, ax, xlabel, ylabel, title, color):
+  """Crea un gráfico a partir de vectores con valores de los ejes x e y.
+    Recibe además:
+    - El texto para el label
+    - El subplot a donde graficar
+    - Un label para el eje x
+    - Un label para el eje y
+    - Un título para el gráfico
+    - Un color
+    El color y el eje pueden ser None. En ese caso toman valores por default"""
+
+  if color == None:
+    color = "blue"
+
+  # Si sólo haremos un gráfico, no necesito indicarle la posición
+  if ax == None:
+      fig, ax = plt.subplots()
+
+  # Definimos el gráfico
+  ax.plot(x, y, label=label, color=color)
+  ax.set_xlabel(xlabel)
+  ax.set_ylabel(ylabel)
+  ax.set_title(title)
+
+  return ax
+```
+
+```{python}
+fig , ax = plt.subplots(3)
+
+# En vez de copiar y pegar el código, llamo a la función crear_grafico():
+crear_grafico(x, x_linear, "x", ax[0], "Eje x", "Eje y", "Lineal", color="green")
+crear_grafico(x, x_quadratic, "$x^2$", ax[1], "Eje x", "Eje y", "Cuadrática", color="red")
+crear_grafico(x, x_cubic, "$x^3$", ax[2], "Eje x", "Eje y", "Cúbica", None)
+
+# Hacemos un for para agregar la cuadrícula y las referencias en cada axes:
+for axes in fig.axes[:]:
+  axes.grid()
+  axes.legend()
+```
+
+Como comentamos dentro de la función, también podemos usar `crear_grafico()` para un único gráfico:
+
+```{python}
+crear_grafico(x, x_linear, "x", None, "", "", "", "green")
+```
+
+### Gráficos utilizando NumPy y Pandas
+
+- **NumPy:**
+
+Cuando se realizó el gráfico lineal, cuadrático y cúbico de x, se utilizaron listas de Python. A continuación puede ver lo fácil que podría realizarse
+utilizando NumPy:
+
+```{python}
+x = np.arange(0, 6)
+y_linear = x
+y_quadratic = x**2
+y_cubic = x**3
+
+fig, ax = plt.subplots(figsize=(5, 3))
+
+ax.plot(x, y_linear, label='Lineal')
+ax.plot(x, y_quadratic, label='Cuadrático')
+ax.plot(x, y_cubic, label='Cúbico')
+
+ax.set_title("Gráfico de múltiples curvas")
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.legend()
+
+plt.show()
+```
+
+- **Pandas:**
+
+Si deseamos visualizar los datos contenidos en un DataFrame, podemos realizarlo facilmente. Definimos df:
+
+```{python}
+data = {'animal': ['gato','chinchilla', 'perro'],
+        'edad': [2.5, 3, 7],
+        'visitas': [1, 3, 2],
+        'prioridad': ['si', 'si', 'no']}
+
+df = pd.DataFrame(data)
+df
+```
+
+```{python}
+# Determino las columnas del DataFrame que queremos graficar
+x_values = df['animal']
+y_values = df['edad']
+
+fig, ax = plt.subplots()
+
+ax.bar(x_values, y_values)
+
+ax.set_xlabel('Animal')
+ax.set_ylabel('Edad (años)')
+
+ax.set_title("Mascotas")
+
+plt.show()
+```
+
+## 3. Matplotlib y Numpy
+
+1. Siendo x valores de 0 a 2 pi:
+
+    a. Grafica, con grilla, título y referencias apropiadas, la función seno de x.
+    b. Identifica el máximo de y. Gráficalo como un punto rojo
+
+2. Siendo x valores de 0 a 10:
+
+    a. Grafica, con grilla, título y referencias apropiadas, la función seno de x + x/2.
+    b. ¿Cúantes veces corta una recta y = 1.5 a la curva anterior? Realiza un gráfico de línea punteada que lo muestre
+
+## 4. Pandas y Matplotlib
+1- Realiza un gráfico de barras horizontales que muestre la cantidad de habitantes por jurisdicción. Las provincias con mayor población, deben ubicarse en la parte superior.
+
+2- En un gráfico de tort, muestra la superficie de cada región del país.
+
+3- Realiza una figura con 3 gráficos de barras por región: el de la izquierda que muestre el número de habitantes, el del centro la superficie y el de la derecha el PBI

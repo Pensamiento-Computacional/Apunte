@@ -531,7 +531,7 @@ Numpy te va a ser muy útil cuando curses materias como Análisis Matemático, �
 
 Pandas es una biblioteca de código abierto diseñada específicamente para la manipulación y el análisis de datos en Python. Es una herramienta poderosa que puede ayudar a los usuarios a limpiar, transformar y analizar datos de una manera rápida y eficiente.
 
-Dado que se basa en NumPy, luego de instalarse, se deben importar ambas bibliotecas. Por convención: 
+Al igual que Numpy, se debe importar. Por convención: 
 
 ```{python}
 import pandas as pd
@@ -541,12 +541,66 @@ Los datos a trabajar en Pandas van a tener, en general, una forma muy similar a 
 
 ![Esquema de figuras y axes](./imgs/unidad_6/pandas.png)
 
-Pandas incorpora dos estructuras de datos llamados: **Series** y  **DataFrames**. Los vamos a ver a continuación.
+Como Pandas es una biblioteca un poco más pesada, **no vamos a estar trabajando en Replit**, sino que vamos a usar <a href="https://colab.research.google.com/" ocasion="_blank">Google Colab</a>.
 
-### **Serie**
+### Cómo usar Google Colab
 
-Una **serie** es un vector **(unidimensional)** capaz de contener cualquier tipo de dato, como por ejemplo, números enteros o decimales, strings, objetos de Python, etc.
+Al abrir Google Colab por primera vez, vamos a ver lo siguiente:
 
+![Inicio en Google Colab](./imgs/unidad_6/google_colab1.png)
+
+Vamos entonces a hacer click en "New Notebook", y se va a abrir un archivo nuevo, con extensión `.ipynb` (que es la extensión de un archivo del tipo IPython Notebook). Vamos a cambiarle el nombre de 'Untitled0' a 'Unidad_6_pandas' o el nombre que prefieran.
+
+![Archivo nuevo](./imgs/unidad_6/google_colab2.png)
+
+#### Celdas de Código
+
+Colab es muy similar a Replit, ya que vamos a poder correr código. La diferencia es que Colab se divide en celdas individuales: cada celda es un bloque de código que se puede correr por separado. Para agregar una celda nueva, se hace click en el botón de "+ Code" que aparece en la parte superior izquierda de la celda.
+Para correr la celda, se hace click en el botón de "play" que aparece a la izquierda de la celda. El output de la celda va a aparecer debajo de la misma.
+
+![Ejecución de una celda de código(./imgs/unidad_6/google_colab3.png)
+
+Si tenemos varias celdas con código, podemos correrlas todas juntas haciendo click en "Runtime" en el menú superior y luego en "Run all". Cada celda de código va a tener su propio output debajo de ella. 
+
+![Ejecución simultánea de dos celdas de código](./imgs/unidad_6/google_colab4.png)
+
+Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó).
+
+![](./imgs/unidad_6/google_colab5.png)
+
+Las celdas, además, no necesitan del uso de `print` si la última linea corresponde a un elemento. Entonces, podemos hacer algo así, y aún así ver el contenido de esa variable en el output. Esta es una diferencia con Replit que vamos a ver muy seguido, porque nos permite ver de mejor forma los elementos de Pandas (a diferencia de con el uso de print).
+
+![](./imgs/unidad_6/google_colab6.png)
+
+#### Celdas de Texto
+
+Así también como podemos agregar celdas de código, podemos agregar celdas de texto. Para eso, hacemos click en el botón de "+ Text" que aparece en la parte superior izquierda de la celda. Dentro podemos escribir texto con formato e incluso agregar imágenes. 
+
+![](./imgs/unidad_6/google_colab7.png)
+
+#### Opciones de Celdas
+Para reordenar, eliminar o copiar celdas, al seleccionar una celda aparece un menú a la derecha con distintos íconos. Podemos usar estas opciones para realizar estas distintas acciones.
+
+![](./imgs/unidad_6/google_colab8.png)
+
+#### Beneficios de usar Google Colab
+
+- Google Colab tiene una mejor interfaz para usar Pandas, mostrando el output en forma de tablas.
+- Permite importar datos de Google Drive
+- Permite compartir el código con otras personas, de tal forma que todas ellas puedan editar un mismo archivo
+- Permite guardar los archivos en Google Drive, con guardado automático de cambios
+- Permite exportar el archivo en distintos formatos, como PDF, HTML, etc.
+- Permite intercalar código ejecutable con texto explicativo, lo que lo hace ideal para la creación de informes, presentaciones, o tutoriales.
+
+Para lo que queda de la unidad 6, vamos a estar usando Google Colab.
+
+### Serie
+
+Pandas incorpora dos estructuras de datos nuevas llamadas: **Series** y **DataFrames**.
+
+Una **serie** es un vector capaz de contener cualquier tipo de dato, como por ejemplo, números enteros o decimales, strings, objetos de Python, etc.
+
+#### Creación de una Serie
 Para crearlas, se puede partir de un escalar, una lista, un diccionario, etc., utilizando `pd.Serie()`:
 
 ```{python}
@@ -556,16 +610,19 @@ lista = [1, "a", 3.5]
 pd.Series(lista)
 ```
 
-Note que se ven dos líneas verticales de datos. A la derecha se observa una columna con los elementos de la lista antes creada, mientas que a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, por lo que si se deseara uno particular, se puede establecer utilizando `index`.
+Esto es análogo a lo que se hacía con los arrays de Numpy, pero con la diferencia de que las series de Pandas pueden contener datos de distinto tipo.
 
-El índice es de vital importancia ya que permite acceder a los elementos de la serie. Es por ello que al colocar un índice en particular, su longitud debe ser acorde al número de elementos de la misma. De lo contrario, se mostrará un ValueError. 
+Note que se ven dos líneas verticales de datos en el output. A la derecha se observa una columna con los elementos de la lista antes creada, y a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, que nos muestra la posición de los elementos dentro de la Serie.\
+También podríamos cambiarlo si quisiéramos. En ese caso, se puede establecer utilizando `index`.
+
+El índice es de vital importancia ya que permite acceder a los elementos de la serie (muy parecido a cómo las claves nos permiten acceden a los valores de un diccionario). Al elegir índices personalizados, tenemos que tener en cuenta que su longitud debe ser acorde al número de elementos de la Serie. De lo contrario, se mostrará un ValueError. 
 
 ```{python}
 # Crear serie partiendo de una lista, indicando el índice
 pd.Series(lista, index = ["x", "y", "z"])
 ```
 
-En el caso de crear Series utilizando diccionarios, sus claves (o keys) pasan a formar el índice.
+También podemos crear Series utilizando diccionarios, y en ese caso, sus claves (o keys) pasan a formar el índice.
 
 ```{python}
 # Crear serie partiendo de un diccionario:
@@ -575,11 +632,13 @@ a = pd.Series(diccionario)
 a
 ```
 
-Como ya se debe estar imaginando, para acceder a un elemento de la serie, se debe indicar el valor del índice o la posición entre corchetes.
+#### Accediendo a un elemento
+
+Como ya se debe estar imaginando, para acceder a un elemento de la serie, se debe indicar el valor del índice o la posición entre corchetes. Si el índice no es numérico, podrían ser elementos distintos.
 
 ```{python}
-# Acceder al elemento de índice x:
-a["x"]
+# Acceder al elemento de índice y:
+a["y"]
 ```
 
 ```{python}
@@ -587,17 +646,27 @@ a["x"]
 a[0]
 ```
 
-Otra característica interesante de las series (y de los DataFrames, como se verá a continuación) es la vectorización: así como los arrays, no requieren recorrer valor por valor en un for para realizar operaraciones. Por ejemplo:
+#### Operaciones con Series
+Así como pasaba con los arrays de NumPy, las Series no requieren recorrer valor por valor en un ciclo for si queremos realizar operaraciones. Podemos usar directamente operadores con Series.\
+Por ejemplo:
 
 ```{python}
 a + a
 ```
 
-### **DataFrame**
+```{python}
+a * 3
+```
 
-Un **DataFrame** es una estructura de datos tabular **(bidimensional)**, compuesta por filas y columnas, que se asemeja a una hoja de cálculo de Excel. Para crearlos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes. 
+### DataFrame
 
-En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario **data** para las columnas y de una lista **label** para el índice:
+Un **DataFrame** es una estructura de datos tabular **(bidimensional, en forma de tabla)**, compuesta por filas y columnas, que se parece mucho a una hoja de cálculo de Excel.
+
+#### Creando DataFrames
+
+Para crearlos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes.
+
+En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario llamado `data` para las columnas y de una lista `label` para el índice:
 
 ```{python}
 data = {'columna_1': ['a', 'b', 'c', 'd', 'e', 'f'],
@@ -606,24 +675,29 @@ data = {'columna_1': ['a', 'b', 'c', 'd', 'e', 'f'],
 
 labels = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6']
 
-pd.DataFrame(data, index=labels)
+df = pd.DataFrame(data, index=labels)
+df
 ```
+
+Lo que vemos acá es el output de ejecutar el código de arriba en una celda: una tabla donde tenemos 3 columnas, y el índice de cada fila son los elementos de la lista `labels`.
+
+En vez de tener un valor `None`, Pandas lo recibe y lo transforma en `NaN`, que significa "Not a Number". Esto es muy útil para trabajar con datos faltantes, ya que Pandas nos permite realizar operaciones con ellos sin que nos de error (a diferencia de Python).
 
 #### Atributos y descripción de un Dataframe
 
 A continuación, se observa una tabla con métodos que nos permiten conocer las características de un determinado DataFrame.
 
-| Método | Descripción |
+| Método o atributo | Descripción |
 | --- | --- |
-| `info()` | Resume la información del DataFrame |
-| `shape` | Devuelve una tupla con el número de filas y columnas |
-| `size` | Número de elementos |
-| `columns` | Lista con los nombres de las columnas |
-| `index` | Lista con los nombres de las filas |
-| `dtypes` | Serie con los tipos de datos de las columnas |
-| `head()` | Muestra las primeras filas |
-| `tail()` | Muestra las últimas filas |
-| `df.describe()` | Brinda métricas de las columnas numéricas |
+| `.info()` | Resume la información del DataFrame |
+| `.shape` | Devuelve una tupla con el número de filas y columnas |
+| `.size` | Número de elementos |
+| `.columns` | Lista con los nombres de las columnas |
+| `.index` | Lista con los nombres de las filas |
+| `.dtypes` | Serie con los tipos de datos de las columnas |
+| `.head()` | Muestra las primeras filas |
+| `.tail()` | Muestra las últimas filas |
+| `.describe()` | Brinda métricas de las columnas numéricas |
 
 Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFrame df** definido en la siguiente línea de código.
 
@@ -631,7 +705,7 @@ Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFram
 data = {'nombre': ['José Martínez', 'Rosa Díaz', 'Javier Garcíaz', 'Carmen López', 'Marisa Collado', 'Antonio Ruiz', 'Antonio Fernández', 
                    'Pilar González', 'Pedro Tenorio', 'Santiago Manzano', 'Macarena Álvarez', 'José Sanz', 'Miguel Gutiérrez', 'Carolina Moreno'],
         'edad': [18, 32, 24, 35, 46, 68, 51, 22, 35, 46, 53, 58, 27, 20],
-        'sexo': ['H', 'M', 'H', 'M', 'M', 'H', 'H', 'M', 'H', 'H', 'M', 'H', 'H', 'M'],
+        'genero': ['H', 'M', 'H', 'M', 'X', 'H', 'H', 'M', 'H', 'X', 'M', 'H', 'H', 'M'],
         'peso': [85.0, 65.0, None, 65.0, 51.0, 66.0, 62.0, 60.0, 90.0, 75.0, 55.0, 78.0, 109.0, 61.0],
         'altura': [1.79, 1.73, 1.81, 1.7, 1.58, 1.74, 1.72, 1.66, 1.94, 1.85, 1.62, 1.87, 1.98, 1.77],
         'colesterol': [182.0, 232.0, 191.0, 200.0, 148.0, 249.0, 276.0, None, 241.0, 280.0, 262.0, 198.0, 210.0, 194.0]}
@@ -639,9 +713,16 @@ data = {'nombre': ['José Martínez', 'Rosa Díaz', 'Javier Garcíaz', 'Carmen L
 df = pd.DataFrame(data)
 df
 ```
-##### Info
+
+\
+:::{.callout-note}
+Muchas veces no vamos a querer modificar el dataframe original, pero sí manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
+:::
+
+##### Info, dtypes, columns e index
 
 Con `info()` se puede ver:
+
 - el índice en la primera línea, que es un rango de 0 a 13
 - el número total de columnas en la segunda línea
 - el uso de la memoria en la última
@@ -668,7 +749,9 @@ df.columns
 df.index
 ```
 
-##### Shape
+\ 
+
+##### Shape y Size
 
 La forma del DataFrame es de 14 filas y 6 columnas, por lo que contiene 84 elementos.
 
@@ -682,7 +765,9 @@ df.shape
 df.size
 ```
 
-##### Head
+\
+
+##### Head y Tail
 
 Asimismo, cuando no conocemos un DataFrame, puede ser importante ver las primeras 5 filas con `head()` o las últimas con `tail()`. Si se quisiera observar un número determinado, sólo hay que especificarlo, por ejemplo:
 
@@ -696,6 +781,8 @@ df.head(3)
 df.tail()
 ```
 
+\
+
 ##### Describe
 
 Por otro lado, `describe()` devuelve un resumen descriptivo de las columnas de valores numéricos, como "edad", "peso", "altura" y "colesterol".
@@ -704,7 +791,7 @@ Por otro lado, `describe()` devuelve un resumen descriptivo de las columnas de v
 df.describe()
 ```
 
-Estas métricas podrían obtenerse utilizando funciones determinadas, como:\
+Estas métricas podrían obtenerse de forma puntual (tanto para todo el DataFrame como para sólo una columna) utilizando funciones determinadas, como:\
 
 - `count()`: contabiliza los valores no nulos
 - `mean()`: promedio
@@ -717,28 +804,34 @@ Por ejemplo:
 df.count()
 ```
 
-Finalmente, como ocurre con las series, **para acceder a los elementos de un DataFrame se puede indicar la posición o el nombre de la fila o columna**.
-
-Para acceder a una **fila** en particular, utilizamos `iloc[]` con un entero, una lista de enteros o un rango de números que indican las posiciones o con `loc[]` indicando el valor del índice. 
-
 ```{python}
-# Mostrar los datos de la fila de posición 0:
-df.iloc[0]
+df.min()
 ```
 
-<br>
-<br>
+```{python}
+df.max()
+```
+
+#### Accediendo a filas de un DataFrame
+
+Finalmente, como ocurre con las series, para acceder a los elementos de un DataFrame se puede indicar la posición o el nombre de la fila o columna.
+
+Para acceder a una fila en particular, utilizamos `iloc[]`.
+Podemos pasarle a `iloc` un entero, una lista de enteros, un rango de números (que indican las posiciones) o directamente el valor del índice. 
 
 ```{python}
-# Mostrar la fila de posición 0:
+# Mostrar la fila de posición 0, usando doble corchete [[]]
+# Recibe una lista de elementos a mostrar (que contiene sólo al 0)
 df.iloc[[0]]
 ```
 
 <br>
+Si queremos mostrar un rango, lo hacemos así:
 <br>
 
 ```{python}
-# Mostrar las filas de posición 0 y 3:
+# Mostrar las filas de posición 0 y 3, usando doble corchete [[]]
+# Recibe una lista de elementos a mostrar
 df.iloc[[0, 3]]
 ```
 
@@ -746,36 +839,31 @@ df.iloc[[0, 3]]
 <br>
 
 ```{python}
-# Mostrar las filas de posiciones entre 0 hasta 3 (exclusive):
+# Mostrar las filas de posiciones entre 0 hasta 3 (exclusive)
+# Usa slices
 df.iloc[:3]
 ```
 
 <br>
-<br>
 
 ```{python}
-# Equivalente a df.iloc[:3]:
+# El equivalente a df.iloc[:3] es el uso de head(3)
 df.head(3)
 ```
 
 <br>
-<br>
 
-```{python}
-# Mostar la fila cuyo valor del índice es 0:
-df.loc[0]
-```
+#### Accediendo a columnas de un DataFrame
 
-##### Accediendo a columnas
+A veces no queremos sólo acceder a filas, sino a columnas. Por ejemplo, para calcular sumas, promedios, máximos o mínimos, etc.
 
-Por otro lado, para acceder a una **columna** se pueden utilizar los nombres de la mismas con `DataFrame[columna]` o su equivalente `DataFrame.columna`.
+Para acceder a una **columna** se pueden utilizar una lista con los nombres de las columnas que se quieren mostrar: `DataFrame[[columna1, columna2]]`.
 
 ```{python}
 # Mostrar la columna "nombre"
-df[['nombre']] # o df.nombre
+df[['nombre']]
 ```
 
-<br>
 <br>
 
 ```{python}
@@ -783,127 +871,66 @@ df[['nombre']] # o df.nombre
 df[['nombre', 'edad']]
 ```
 
-Finalmente, se puede utilizar `loc[filas, columnas]` que devuelve un DataFrame con los elemento que se encuentra en las filas con los nombres de la lista filas y las columnas con los nombres de la lista columna.
+De esta forma, podríamos hacer algo así:
 
 ```{python}
-# Mostrar la filas de índice 0, 1, 2, 3, columnas "nombre" y "edad"
-df.loc[:3, ['nombre', 'edad']]
-```
-
-<br>
-<br>
-
-```{python}
-# O su equivalente:
-df.loc[df.index[[0, 1, 2, 3]], ['nombre', 'edad']]
+# calculamos el promedio para los valores de la columna 'edad'
+df[['edad']].mean()
 ```
 
 #### Modificar un Dataframe
 
-A la hora de modificar un DataFrame puede ser que querramos:\
+A la hora de modificar un DataFrame, tenemos distintas posibilidades:\
 
-- cambiar la estructura del mismo, como los nombres de las columnas y de los índices,
-- agregar una nueva filas o columna
-- reemplazar un dato en una determinada posición.
+- Cambiar la estructura del mismo, como los nombres de las columnas y de los índices,
+- Agregar una nueva filas o columna
+- Reemplazar un dato en una determinada posición.
 
 A continuación, se enumeran distintos métodos para llevar a cabo estos cambios.
 
 | Método | Descripción |
 | --- | --- |
-| `set_index()` | Convierte una determinada columna en el nuevo índice. |
-| `reset_index()` | Reestablece el índice predefinido |
 | `rename()` | Renombra las columnas |
 | `insert()` | Agrega columnas |
-| `loc[fila]` | Agrega una fila en un índice dado |
 | `drop()` | Elimina columnas y filas |
+| `loc[fila]` | Agrega una fila en un índice dado |
 | `loc[fila, columna]` | Modifica un valor particular dado un índice y una columna |
 | `map()` | Busca un valor dado en una columna y lo reemplaza |
 | `replace()` | Reemplaza un valor dado en una columna |
 
-##### Set_index y reset_index
-
-Utilizando `set_index()` podemos, Por ejemplo, transformar a la columna "nombre" en el nuevo índice, y para volver al predefinido, usando `reset_index()`.
-
-```{python}
-df = df.set_index(keys = "nombre")
-df.head()
-```
-
-<br>
-<br>
-
-```{python}
-df = df.reset_index()
-df.head()
-```
-
-<br>
 <br>
 
 ##### Rename, insert y drop
 
-Para renombrar una columna, se utiliza `rename(columns={"nombre_columna": "nuevo_nombre_columna"})` 
+Para renombrar una columna, se utiliza un diccionario: `rename(columns={"nombre_columna": "nuevo_nombre_columna"})` 
 
 ```{python}
 # Reemplazo "nombre" por "nombre y apellido"
 df = df.rename(columns={"nombre": "nombre y apellido"})
-df.head()
+df.head() # para que veamos el cambio de nombre en la columna
 ```
 
-Para agregar una nueva columna, existe el método `insert()`, que requiere indicar La posición de la nueva columna, el nombre de la nueva columna, y los valores de la misma. Para ello, creamos una lista llamada **direccion** con 14 valores, para cada una de las personas del DataFrame.
+<br>
+Para agregar una nueva columna, existe el método `insert()`, que requiere indicar la posición de la nueva columna, el nombre de la nueva columna, y los valores de la misma. 
+
+Vamos a crear una lista llamada **direccion** con 14 valores, para cada una de las personas del DataFrame, y luego agregarla en la posición 3:
 
 ```{python}
 # Valores de la nueva columna
 direccion = ["CABA", "Bs As", "Bs As", "Bs As", "CABA", "Bs As", "CABA", "CABA", "CABA", "CABA", "CABA", "Bs As", "CABA", "CABA"]
 
-# Insertar la columna "direccion" en la posición 3:
+# Insertar la columna "direccion" en la posición 3 de columnas:
 df.insert(3, "direccion", direccion)
-df.head()
+df.head() # para que veamos que la columna nueva se agregó
 ```
 
-<br>
-Para agregar una nueva fila, se utiliza el ya conocido `loc[]`, que requiere indicar el índice y los valores de la misma. Para ello, creamos una lista llamada **nueva_fila** con valores para cada columna del DataFrame.
+Para agregar una nueva columna también podemos hacerlo directamente, como si fuera un diccionario: `df['nueva_columna'] = valores`.
 
-```{python}
-# Valores de la nueva fila
-nueva_fila = ['Carlos Rivas', 28, 'H', "Bs As", 89.0, 1.78, 245.0]
+Por ejemplo, supongamos que queremos ingresar una columna con el índice de masa corporal de las personas., que se calcula de la siguiente manera: 
 
-# Insertar la fila 14
-df.loc[14] = nueva_fila
-df.tail()
-```
+$$IMC = \frac{Peso(kg)}{Altura(m)^2}$$
 
-<br>
-<br>
-
-Para eliminar una columna `(axis=1)` o fila `(axis=0)`, se utiliza `drop()`:
-
-```{python}
-# Elimino la columna "direccion", equivalente a del df["direccion"]
-df = df.drop('direccion', axis=1)  
-df.head()
-```
-
-<br>
-<br>
-
-```{python}
-# Elimino la fila 14
-df = df.drop(14, axis=0) 
-df.tail()
-```
-
-::: {.callout-tip}
-##### **Agregar columnas con operaciones** 
-
-Como se ha mencionado anteriormente, gracias a la **vectorización** se pueden agregar columnas partiendo de operaciones entre columnas existentes en el DataFrame.
-
-:::
-
-Por ejemplo, suponga que queremos ingresar una columna el índice de masa corporal de las personas que se calcula de la siguiente manera: 
-
-$$
-IMC = \frac{Peso(kg)}{Altura(m)^2}$$
+Esto podemos hacerlo directamente trabajando sobre las columnas, como trabajábamos sobre los arrays de NumPy; y guardando el resultado en una nueva columna llamada "IMC".
 
 ```{python}
 # Crear la columna "IMC"
@@ -911,14 +938,58 @@ df["IMC"] = df["peso"] / df["altura"]**2
 df.head()
 ```
 
-De manera análoga, se puede crear la columna **dirección** sin utilizar `insert()`. Usando la lista **direccion**:
+Esto lo que va a hacer es tomar todos los valores de peso y altura de cada fila, calcular el IMC y guardarlo en una nueva columna de la línea, bajo el nombre "IMC".
+
+De manera similar, se puede crear la columna **dni** sin utilizar `insert()`, usando la lista **dni**:
 
 ```{python}
-df["direccion"] = direccion
-df.head()
+df_copy = df.copy() # Hacemos una copia, para que no nos afecte el original
+dni = [12345678, 23456789, 34567890, 45678901, 56789012, 67890123, 78901234, 89012345, 90123456, 12345678, 23456789, 34567890, 45678901, 56789012]
+df_copy["dni"] = dni
+df_copy.head()
 ```
 
-Finalmente, **para cambiar un valor determinado** se utiliza `loc[]`, como por ejemplo, agregar el peso de Javier García (tercera fila):
+Por lo que vemos que no es indispensable usar `insert` para poder agregar una nueva columna, pero `insert` nos permite decir *en dónde* queremos agregarla.
+
+<br>
+
+Para eliminar una fila `(axis=0)` o columna `(axis=1)`, se utiliza `drop()`:
+
+```python
+# Elimino una columna llamada "direccion". También podría hacer: `del df["direccion"]`
+df = df.drop('direccion', axis=1)  
+```
+
+<br>
+
+```python
+# Elimino la fila 14
+df = df.drop(14, axis=0) 
+```
+
+#### Insertar filas
+
+Para agregar una nueva fila, se utiliza `loc[]`, que nos pide indicar el índice y los valores de la misma. Para ello, creamos una lista llamada **nueva_fila** con valores para cada columna del DataFrame.
+
+
+```{python}
+# Valores de la nueva fila
+nueva_fila = ['Carlos Rivas', 30, 'H', "CABA", 70.0, 1.75, 203.0, 22]
+
+# Insertamos al final del DataFrame
+len = len(df.index)
+df.loc[len] = nueva_fila
+df.tail() # Para ver que se agregó al final
+```
+
+:::{.callout-note collapse="true"}
+### ¿Por qué usamos 'len' arriba?
+A diferencia de Python, podemos agregar una fila en una posición que no existe aún. Por eso arriba pudimos hacer `df.loc[len]`.
+:::
+
+#### Modificar un valor
+
+Finalmente, **para cambiar un valor determinado** también se utiliza `loc[]`, como por ejemplo, agregar el peso de Javier García (tercera fila), que antes tenía `NaN`:
 
 ```{python}
 df.loc[2, 'peso'] = 92
@@ -926,19 +997,17 @@ df.head()
 ```
 
 <br>
-<br>
 
-Para transformar los valores de una columna entera, podemos utilizar `map()` pasando un diccionario del estilo `{valor_viejo: valor_nuevo}`. Por ejemplo, modificar la columna "sexo" reemplazando "H" por "M" y "M" por "F":
+Para transformar los valores de una columna entera, podemos utilizar `map()` pasando un diccionario del estilo `{valor_viejo: valor_nuevo}`. Por ejemplo, modificar la columna "genero" reemplazando "H" por "M", "M" por "F":
 
 ```{python}
-df['sexo'] = df['sexo'].map({'H': 'M', 'M': 'F'})
+df['genero'] = df['genero'].map({'H': 'M', 'M': 'F', 'X': 'X'})
 df.head()
 ```
 
 <br>
-<br>
 
-Otra manera sería utilizando `replace()`, como en la columna "direccion" donde se modificó "Bs As" por "Buenos Aires".
+Otra manera sería utilizando `replace()`. Por ejemplo, en la columna "direccion" vamos a modificar "Bs As" por "Buenos Aires".
 
 ```{python}
 df['direccion'] = df['direccion'].replace('Bs As', 'Buenos Aires')
@@ -947,23 +1016,24 @@ df.head()
 
 #### Filtrar un Dataframe
 
-Para filtrar los elementos de un DataFrame se suelen utilizar condiciones lógicas. Por ejemplo:
+Para filtrar los elementos de un DataFrame se suelen utilizar condiciones lógicas de la siguiente forma: `DataFrame[ condicion ]`.
+
+Por ejemplo:
 
 ```{python}
-# Seleccionar aquellas personas menores de 40 años:
-df[df['edad'] < 40]
+# Seleccionar aquellas personas menores de 40 años
+# La condición es que la columna 'edad' del dataframe tenga valor menor a 40
+df[ df['edad'] < 40 ] 
 ```
 
 <br>
-<br>
-Cuando se requieren múltiples condiciones, se puede adicionar usando símbolos como `&` para **intersecciones** y `|` para **uniones**. Por ejemplo:
+Cuando se requieren múltiples condiciones, se puede adicionar usando símbolos como `&` para **and** y `|` para **or**. Por ejemplo:
 
 ```{python}
-# Seleccionar aquellas personas de sexo femenino y menores de 40 años:
-df[(df['edad'] < 40) & (df['sexo'] == 'F')]
+# Seleccionar aquellas personas de genero femenino y menores de 40 años:
+df[ (df['edad'] < 40) & (df['genero'] == 'F') ]
 ```
 
-<br>
 <br>
 
 ```{python}
@@ -972,41 +1042,37 @@ df[(df['peso'] == 60.0) | (df['peso'] == 90.0)]
 ```
 
 <br>
-<br>
 
-Cuando se desea filtrar con un cierto rango en una determinada columna, se pueden utilizar las condiciones antes mencionadas o la función `between()`.
-
-```{python}
-# Equivalente a df[(df['edad'] > 25) & (df['edad'] < 40)]
-df[df['edad'].between(25, 40)]
-```
-
-<br>
-<br>
-
-Finalmente, puede ser interesante encontrar aquellas las filas con datos faltantes o `NaN`. Para ello, se utiliza la función `isnull()` que devuelve `True` si el valor de la columna es nulo o NaN. Por ejemplo:
+También puedo filtrar las fillas por el valor `NaN`.\
+Para eso, se utiliza la función `isnull()` que devuelve `True` si el valor de la columna es nulo o NaN. Por ejemplo:
 
 ```{python}
 df['IMC'].isnull()
 ```
 
-Para visualizar aquella fila donde el índice de masa corporal es nulo, filtramos:
+Para visualizar aquellas filas donde el índice de masa corporal es nulo, filtramos:
 
 ```{python}
-df[df['IMC'].isnull() == True]
+df[df['IMC'].isnull()]
 ```
 
-#### Otros métodos útiles
+El método opuesto es `notnull()`, que devuelve `True` si el valor de la columna no es nulo o NaN. Por ejemplo:
+
+```{python}
+df[df['IMC'].notnull()]
+```
+
+#### Ordenando, Contando y Agrupando
 
 A continuación, se muestra una lista con métodos que resultan muy útiles a la hora de analizar datos: 
 
 | Método | Descripción |
 | --- | --- |
-| `sort_values(by, ascending)` | Ordena el DataFrame considerando los valores de la o las columnas determinadas |
+| `sort_values(by, ascending)` | Ordena el DataFrame considerando los valores de la o las columnas determinadas y devuelve un DataFrame nuevo (no modifica el original) |
 | `value_counts()` | Indica los valores únicos de una determinada columna y el número de veces que aparece en ella |
-| `groupby().agg()` | Agrupa las filas según ciertos valores de columnas y aplica funciones |
+| `groupby().func()` | Agrupa las filas según ciertos valores de columnas. Requiere que apliquemos una función luego para que 'agrupe' los datos. |
 
-- Sort value:
+##### Sort value:
   
 Para utilizar la función `sort_values(by, ascending)`, se debe indicar en el parámetro `by` una lista con las columnas para ordenar el DataFrame y en `ascending`, `True` si el orden deseado es creciente o `False` para decreciente.
 
@@ -1016,610 +1082,45 @@ En el siguiente ejemplo ordenamos por "nombre y apellido" en forma alfabética:
 df.sort_values(by=['nombre y apellido'], ascending=[True])
 ```
 
-Ahora, **¿Qué ocurre cuando ordenamos siguiendo varias columnas?** Los valores del DataFrame se ordenan siguiendo la primera columna en primer lugar, luego la segunda, y así sucesivamente.
+**¿Qué ocurre cuando ordenamos siguiendo varias columnas?** Los valores del DataFrame se ordenan siguiendo la primera columna en primer lugar, luego la segunda, y así sucesivamente.
 
 ```{python}
-df.sort_values(by=['direccion', 'nombre y apellido'], ascending=[True, True])
+df.sort_values(by=['genero', 'nombre y apellido'], ascending=[True, True])
 ```
 
-Analicemos el ejemplo anterior, donde queremos ordenar según "direccion" y "nombre y apellido". Allí, primero se ordena de manera creciente por dirección, resultando en dos grupos: el superior con "direccion" = "Buenos Aires" y el inferior con "CABA". Luego, cada uno de esos grupos se ordena por "nombre y apellido" de forma creciente.
+En el ejemplo de arriba, primero se ordena de manera creciente por genero, resultando en tres grupos: "genero" = "F", "M" y "X". Luego, cada uno de esos grupos se ordena por "nombre y apellido" de forma creciente.
 
 ![Ejemplo de sort_values()](./imgs/unidad_6/sortvalues.png)
 
-- Value Count:
+##### Value Count:
 
-Utilizando `value_counts()` se pueden contar las filas en cada grupo según "direccion". Es decir, cuantas filas hay para "Buenos Aires" y para "CABA".
+Utilizando `value_counts()` se pueden contar las filas en cada grupo según "direccion". Es decir, cuenta cuántas apariciones hay de cada valor en una columna.
 
 ```{python}
 df['direccion'].value_counts()
 ```
 
-- Group by:
+##### Group by:
   
-`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, tranformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisieramos agrupar por:
-
-1. "direccion": corremos `df.groupby(['direccion'])` obteniendo una tabla con valores agrupados por "direccion", siendo esta columna el nuevo índice.
-
-2.  "direccion" y "sexo": corremos `df.groupby(['direccion', 'sexo'])` obteniendo una tabla con valores agrupados por "direccion" y "sexo", siendo ambas columnas el nuevo índice.
-
-![Ejemplo de groupby()](./imgs/unidad_6/groupby.png)
-
-Una vez obtenidos los grupos que deseamos analizar, podemos realizar una función de agregación `agg()` utilizando algunas o todas las columnas restantes. Estas funciones pueder ser suma, media, mínimo, máximo, contar valores no nulos, entre otras. Veamos algunos ejemplos:
+`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, tranformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisieramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
 
 ```{python}
-# Agrupar por "direccion" y contar los valores no nulos de todas las columnas
-df.groupby(['direccion']).agg('count')
+# Agrupar por "direccion" y devolver la cantidad de cada uno
+df_copy.groupby(['direccion']).size()
 ```
+
+Obteniendo una tabla con valores agrupados por "direccion", siendo esta columna el nuevo índice.
 
 ```{python}
-# Agrupar por "direccion" y "sexo" y contar los valores no nulos de alguna columnas
-df.groupby(['direccion', 'sexo'])[['edad', 'peso']].agg('count')
+# Agrupar por "direccion" y "genero" y mostrar el promedio de las columnas de 'edad' y 'peso'
+df.groupby(['direccion', 'genero'])[['edad', 'peso']].mean()
 ```
 
-También se puede asignar para cada columna, una operación distinta:
+También puedo agrupar por más de una columna, y aplicar distintas funciones a las columnas. Por ejemplo, si quisiera agrupar por "direccion" y "genero" y obtener el promedio de la columna "edad" y la suma de la columna "peso", puedo usar `agg`, que significa "aggregate" (que significa 'agregar') y me pemite, para cada columna, pasarle una función a aplicar:
 
 ```{python}
-# Agrupar por "direccion" y "sexo" y calcular el valor máximo de la columna "colesterol" y el promedio de "peso"
-df.groupby(['direccion', 'sexo']).agg({'colesterol': ['max'], 'peso': ['mean']})
+df.groupby(['direccion', 'genero']).agg({'edad': 'mean', 'peso': 'sum'})
 ```
 
-```{python}
-# Agrupar por "direccion" y "sexo" y calcular los valores máximos y mínimos de la columna "colesterol" y el promedio de "peso"
-df.groupby(['direccion', 'sexo']).agg({'colesterol': ['min', 'max'], 'peso': ['mean']})
-```
-
-## Matplotlib
-
-Matplotlib es probablemente la biblioteca de Python más usada para crear gráficos, también llamados **plots**. Esta provee una forma rápida de graficar datos en varios formatos de alta calidad que pueden ser compartidos y/o publicados, resultando una alternativa open source de MATLAB. De hecho, matplotlib.pyplot es una colección de funciones que hacen que matplotlib funcione como MATLAB, con comandos análogos y argumentos similares.
-
-Como ya se imagina, el primer paso es importar la biblioteca. Por convención:
-
-```{python}
-import matplotlib.pyplot as plt
-```
-
-### Creación de gráficos con matplotlib
-
-Para crear un gráfico con matplotlib, se deben seguir los siguientes pasos:
-
-1. **Crear la figura** que contendrá el gráfico, utilizando las funciones `subplots()` o `figure()`. Se recomienda la primera, como se verá más adelante.
-
-2. **Graficar los datos**, utilizando distintas funciones dependiendo del tipo de gráfico que se desea realizar:
-
-
-| Función | Tipo de Gráfico |
-| --- | --- |
-| `plot()` | Gráfico de línea |
-| `scatter()` | Gráfico de puntos |
-| `bar()` | Gráfico de barras verticales |
-| `barh()` | Gráfico de barras horizontales |
-| `pie()` | Gráfico de torta |
-
-
-3. **Personalizar el gráfico**. Este paso no es mandatorio, pero sí, muy recomendado para lograr un mejor entendimiento de la visualización
-
-4. **Mostrar el gráfico**, utilizando la función `show()`
-
-Esto quiere decir que, si deseamos visualizar datos rápidamente, podríamos realizarlo corriendo únicamente las siguientes tres líneas de código:
-
-**Opción 1**
-```
-fig = plt.figure()  
-plt.funcion_grafico_elegido()       # Reemplazar funcion_grafico_elegido() por una función
-plt.show()  
-```
-
-**Opción 2**
-```
-fig, ax = plt.subplots()  
-ax.funcion_grafico_elegido()        # Reemplazar funcion_grafico_elegido() por una función     
-plt.show()  
-```
-
-Pero, **¿cuál debería usar?** Eso depende de lo que quieras hacer. A continuación, se verá el detalle de lo que está ocurriendo en cada línea, para que así puedas elegir qué es lo mejor para vos.
-
-```{python}
-plt.figure()
-```
-
-```{python}
-plt.subplots()
-```
-
-Si bien no se puede ver un gráfico en ninguno de los outputs, analicemos lo que nos imprime:
-
-1. `fig = plt.figure()` crea una **figura pero sin axes**, por lo que muestra `<Figure size 640x480 with 0 Axes>`.
-2. `fig, ax = plt.subplots()` permite **crear ambos: figura y axes**, por lo que muestra `<Figure size 640x480 with 1 Axes>, <AxesSubplot: >)`.
-
-Note además, que se ha seguido una convención al nombrarse la **figura** como `fig` y los **axes** como `ax`. Pero... **¿qué es una figura y un axes?**
-
-Una **figura** es el marco que delimita la zona donde se trazan los gráficos, mientras que los **axes**, son lo que llamamos comunmente gráficos, es decir, son las áreas donde los puntos se pueden especificar en términos de coordenadas. **Por lo tanto, una figura puede contener muchos axes, pero un axes determinado sólo puede estar contenido en una única figura.**
-
-
-![Esquema de figuras y axes](./imgs/unidad_6/fig_ax.png)
-
-::: {.callout-note}
-#### **¡Ojo! No confundir axes con axis** \
-Los **Axis** son los ejes cartesianos que se encargan de establecer los límites, la escala y las dimensiones del gráfico: un axes puede tener 2 Axis, si es un gráfico plano, o 3, si es un gráfico en 3D.
-:::
-
-Entonces, con lo aprendido hasta el momento, volvamos a revisar las líneas de código anteriores:
-
-**Opción 1**
-```
-fig = plt.figure()                  # Se crea una figura vacía sin Axes
-plt.funcion_grafico_elegido()       # Se grafica según la función elegida
-plt.show()                          # Mostrar 
-```
-Esta opción es más amigable para principiantes ya que es más conciso y resulta muy útil cuando simplemente se desea crear un gráfico para verificar resultados rápidamente.
-
-**Opción 2**
-```
-fig, ax = plt.subplots()            # Se crea una figura con un único Axes
-ax.funcion_grafico_elegido()        # Se grafica según la función elegida
-plt.show()                          # Mostrar
-```
-Esta opción es ideal cuando necesitamos un enfoque más flexible, con gráficos más complejos o con un ajuste fino como los que veremos en este apunte.
-
-### Partes de una Figura y personalización
-
-Esta imagen, fue obtenida de la referencia de matplotlib y resume de manera fácil y visual las modificaciones que podemos hacerla a las figuras creadas.
-
-![Partes de una Figura](./imgs/unidad_6/matplotlib.png)
-
-Si desea conocer más detalle, puede ingresar a [https://matplotlib.org/stable/tutorials/introductory/quick_start.html](https://matplotlib.org/stable/tutorials/introductory/quick_start.html).
-
-Con lo aprendido hasta el momento, vamos a realizar nuestro primer gráfico para luego mostrar cómo modificar su aspecto. La función que usaremos es `plot()`, con la que se obteniene un gráfico de línea; esta recibe los vectores X e Y para formar puntos en el plano cartesiano que son unidos con una línea. 
-
-```{python}
-# Grafico elemental
-x = [0,2,10,11,18,25]
-y = [0,1,2,3,4,5]
-
-fig, ax = plt.subplots()
-
-# Gráfico de línea
-ax.plot(x, y)
-plt.show()
-```
-
-#### Cambiar el aspecto de los gráficos:
-Para diferenciar las curvas o simplemente para modificar los gráficos según nuestros gustos personales, se pueden definir los distintos parámetros dentro de `plot()`, estableciendo el tipo de línea y puntos, el grosor, el color, etc:
-
-*  **color =** nombre del color, por ejemplo: `'blue', 'green', 'red'`, etc.
-*   **marker =** forma de los puntos o marcadores, por ejemplo: `'^', 'o', 'v'`, etc.
-*   **linestyle =** estilo de línea, por ejemplo: `'solid', 'dashed', 'dotted'` o sus equivalentes:` '-', '--', ':',` entre otros.
-*   **markersize, linewidth =** con un número, establecemos el tamaño del marcador y el espesor de la línea respectivamente.
-
-Note que si no le asignamos un valor, se establecen los predefinidos.
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
-plt.show()
-```
-
-Para ver las múltiples opciones disponibles, les dejamos el siguiente link de consulta: 
-[https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html](https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html)
-
-#### Grilla o cuadrícula:
-Para leer facilmente el valor de cada punto, podemos agregar una cuadrícula usando `grid()`.
-
-Si deseamos modificarle, por ejemplo, el color, el estilo de línea, o sólo queremos ver uno de los ejes, podemos indicarlo utilizando parámetros muy similares a los vistos anteriormente pero en la funcion `grid()`.
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
-
-# Grilla preestablecida
-ax.grid()
-plt.show()
-```
-
-```{python}
-#Gráfica con la grilla preestablecida
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
-
-#Grilla modificada
-ax.grid(axis = 'y', color = 'gray', linestyle = 'dashed')
-plt.show()
-```
-
-#### Títulos
-Una de las partes más importantes para que un gráfico se pueda entender es ponerle un título y explicar qué significa cada eje. Eso se hace con las funciones `set_xlabel()`, `set_ylabel()` y `set_title()`. Cada una recibe un string que se usará como etiqueta del eje X, etiqueta del eje Y o título, respectivamente.
-
-Siendo que los valores de **x** son el tiempo medido en minutos y los de **y** una distancia en metros, entonces:
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
-
-# Mostrar el título del gráfico
-ax.set_title("Gráfico de posición")
-
-# Mostrar el título de los ejes
-ax.set_xlabel('Tiempo (min)')
-ax.set_ylabel('Distancia (m)')
-
-# Grilla preestablecida
-ax.grid()
-plt.show()
-```
-
-#### Referencias
-El gráfico con el que estamos trabajando sólo tiene una línea, pero si contara con más de una, el uso de referencias sería escencial para lograr el entendimiento del mismo. Para rotular las líneas, dentro de `plot()` se debe definir la referencia como `label`. Luego se coloca `legend()`
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, label='Objeto 1', color='green', marker='^', linestyle='--', markersize=8, linewidth=1.2)
-
-# Mostrar el título del gráfico
-ax.set_title("Gráfico de posición")
-
-# Mostrar el título de los ejes
-ax.set_xlabel('Tiempo (min)')
-ax.set_ylabel('Distancia (m)')
-
-# Agregar la refencia
-ax.legend()
-
-# Grilla preestablecida
-ax.grid()
-plt.show()
-```
-
-#### Características de los ejes:
-Como podemos identificar en los gráficos anteriores, Python decidió las características de los ejes:
-
--   **Eje x**: se extiende del 0 a 25, de 5 en 5.
--   **Eje y**: se extiende del 0 a 5, de 1 en 1.
-
-Podemos establecer los limites del eje x e y usando `set_xlim()` y `set_ylim()` respectivamente.
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y, label='Objeto 1', color='green', marker='^', linestyle='--',
-        markersize=8, linewidth=1.2)
-
-# Mostrar el título del gráfico
-ax.set_title("Gráfico de posición")
-
-# Mostrar el título de los ejes
-ax.set_xlabel('Tiempo (min)')
-ax.set_ylabel('Distancia (m)')
-
-# Establecer los límites de los ejes
-ax.set_xlim(0, 30)
-ax.set_ylim(0, 6)
-
-# Agregar la refencia
-ax.legend()
-
-# Grilla preestablecida
-ax.grid()
-plt.show()
-```
-
-### Tipos de gráficos
-
-A continuación, vamos a ver ejemplos de los tipos de gráficos más comunes, las funciones que son necesarias para crearlos y cuándo se debe utilizar cada uno de ellos. 
-
-Para estos ejemplos, los datos a graficar son valores de listas únicamente por fines didácticos, ya que podría tratarse de arrays o columnas de DataFrames. Además, recuerden que mucho de lo aprendido para modificar el aspecto de un gráfico, como agregar títulos, cuadrículas, límites a los ejes, etc., se puede aplicar también en estas figuras.:
-
-#### Gráfico de línea
-
-El gráfico de línea permite visualizar cambios en los valores lo largo de un rango continuo (tendencias), como puede ser el tiempo o la distancia. Para crearlo, se utiliza la función `plot()`, como vimos anteriormente:
-
-```{python}
-x = [0,2,10,11,18,25]
-y = [0,1,2,3,4,5]
-
-fig, ax = plt.subplots()
-
-ax.plot(x, y)
-plt.show()
-```
-
-#### Gráfico de dispersión o puntos
-
-El gráfico de dispersión o puntos permite visualizar la relación entre las variables. Para crearlo, se utiliza la función `scatter()`:
-
-```{python}
-x = [5,7,8,7,2,17,2,9,4,11,12,9,6]
-y = [99,86,87,88,111,86,103,87,94,78,77,85,86]
-
-fig, ax = plt.subplots()
-
-ax.scatter(x, y)
-plt.show()
-```
-
-#### Gráfico de barras
-
-El gráfico de barras permite visualizar proporciones, comparando dos o más valores entre sí. Para crearlo, se utiliza la función `bar()`, la cual primero recibe, en primer lugar, las etiquetas de las barras que se van a mostrar y en segundo lugar, la altura correspondiente a cada una de estas barras.
-
-```{python}
-peso = [340, 115, 200, 200, 270]
-ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
-
-fig, ax = plt.subplots()
-
-ax.bar(ingredientes, peso)
-
-ax.set_xlabel('Ingredientes')
-ax.set_ylabel('Masa (g)')
-
-ax.set_title("Receta")
-
-plt.show()
-```
-
-Note que con la función anterior, las barras adquieren una dirección vertical: si quisieramos verlas de manera horizontal, debemos usar la función `barh()` y cambiar los títulos de los ejes según corresponda:
-
-```{python}
-peso = [340, 115, 200, 200, 270]
-ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
-
-fig, ax = plt.subplots()
-
-ax.barh(ingredientes, peso)
-
-ax.set_ylabel('Ingredientes')
-ax.set_xlabel('Masa (g)')
-
-ax.set_title("Receta")
-
-plt.show()
-```
-
-#### Gráfico de torta
-
-El gráfico de torta, como el de barras, permite visualizar y comparar proporciones pero de manera circular y como partes de un todo. Para crearlo, se utiliza la función `pie()`, la cual podría recibir solamente números pero es útil también saber qué simboliza cada parte. Por eso, para referenciar cada porción se usa el parámetro `labels`. Por otro lado, el parámetro `autopct` establece cómo se mostrará el porcentaje: por ejemplo, `%1.1f%%` le indica que el porcentaje tendrá un decimal, mientras que `%1.2f%%` tendrá dos decimales.
-
-```{python}
-peso = [340, 115, 200, 200, 270]
-ingredientes = ['chocolate', 'manteca', 'azúcar', 'huevo', 'harina']
-
-fig, ax = plt.subplots()
-
-ax.pie(peso, labels= ingredientes, autopct='%1.1f%%')
-
-ax.set_title("Receta")
-
-plt.show()
-```
-
-### Gráficos múltiples
-
-En los casos anteriores, creamos siempre un sólo gráfico con una curva, en una figura. Pero... **¿Cómo podríamos graficar varias curvas en un mismo gráfico?**
-
-```{python}
-# Valores que se desean graficar
-x = [0, 1, 2, 3, 4, 5]
-y_linear = [0, 1, 2, 3, 4, 5]
-y_quadratic = [0, 1, 4, 9, 16, 25]
-y_cubic = [0, 1, 8, 27, 64, 125]
-
-fig, ax = plt.subplots(figsize=(5, 3))
-
-ax.plot(x, y_linear, label='Lineal')
-ax.plot(x, y_quadratic, label='Cuadrático')
-ax.plot(x, y_cubic, label='Cúbico')
-
-ax.set_title("Gráfico de múltiples curvas")
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.legend()
-
-plt.show()
-```
-
-Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`. Asimismo, se estableció un tamaño de la figura con `figsize=(width, height)`
-
-### Grilla de gáficos
-
-También podríamos querer ver varios axes en una misma figura. Para ello, tenemos que definir, como si se tratase de una matriz o tabla, cuántas columnas `ncols` y cuantas `nrows` de gráficos deseamos. Por ejemplo, supongamos que quiero ver dos gráficos en una misma fila:
-
-```{python}
-fig, ax = plt.subplots(nrows=1, ncols=2)   # o simplemente plt.subplots(1,2)
-```
-
-De manera análoga, podemos representar las 3 curvas anteriores pero viendo 3 filas de gráficos en una única columna:
-
-```{python}
-# Valores que se desean graficar
-x = [0, 1, 2, 3, 4, 5]
-x_linear = [0, 1, 2, 3, 4, 5]
-x_quadratic = [0, 1, 4, 9, 16, 25]
-x_cubic = [0, 1, 8, 27, 64, 125]
-
-fig, ax = plt.subplots(nrows=3, ncols=1)
-
-ax[0].plot(x, x_linear)
-ax[0].set_title('Lineal')
-
-ax[1].plot(x, x_quadratic)
-ax[1].set_title('Cuadrático')
-
-ax[2].plot(x, x_cubic)
-ax[2].set_title('Cúbico')
-
-plt.show()
-```
-
-Entonces, lo único que debemos hacer es **indicar la posición del axes con números dentro del corchete** . Si tengo varias columnas y filas, dentro del corchete, se indica primero la fila y luego la columna: `ax[fila, columna]`.
-
-```{python}
-fig, ax = plt.subplots(nrows=3, ncols=3)
-fig.subplots_adjust(wspace=0.5, hspace=0.5) # Con esto indicamos el espacio libre entre los subplots
-
-ax[0, 1].plot(x, x_linear)
-plt.show()
-```
-
-### Funciones de Gráficas
-
-En términos generales, si nos encontramos en la situacion de copiar y pegar las mismas líneas de código para realizar gráficos similares, trendríamos que pensar en crear una función que simplifique esta tarea. Por ejemplo:
-
-```{python}
-x = [0, 1, 2, 3, 4, 5]
-x_linear = [0, 1, 2, 3, 4, 5]
-x_quadratic = [0, 1, 4, 9, 16, 25]
-x_cubic = [0, 1, 8, 27, 64, 125]
-
-fig, ax=plt.subplots(3)
-ax[0].plot(x,x_linear,label="$x$",color="r")
-ax[0].set_xlabel("eje x")
-ax[0].set_ylabel("eje y")
-ax[0].legend()
-ax[0].grid()
-
-
-ax[1].plot(x,x_quadratic,label="$x^2$",color="b")
-ax[1].set_xlabel("eje x")
-ax[1].set_ylabel("eje y")
-ax[1].legend()
-ax[1].grid()
-
-
-ax[2].plot(x,x_cubic,label="$x^3$",color="g")
-ax[2].set_xlabel("eje x")
-ax[2].set_ylabel("eje y")
-ax[2].legend()
-ax[2].grid()
-plt.show()
-```
-
-Para evitar lo anterior, definimos una función a la que le debemos entregar los valores a graficar:
-
-```{python}
-def crear_grafico(x, y, label, ax, xlabel, ylabel, title, color):
-  """Crea un gráfico a partir de vectores con valores de los ejes x e y.
-    Recibe además:
-    - El texto para el label
-    - El subplot a donde graficar
-    - Un label para el eje x
-    - Un label para el eje y
-    - Un título para el gráfico
-    - Un color
-    El color y el eje pueden ser None. En ese caso toman valores por default"""
-
-  if color == None:
-    color = "blue"
-
-  # Si sólo haremos un gráfico, no necesito indicarle la posición
-  if ax == None:
-      fig, ax = plt.subplots()
-
-  # Definimos el gráfico
-  ax.plot(x, y, label=label, color=color)
-  ax.set_xlabel(xlabel)
-  ax.set_ylabel(ylabel)
-  ax.set_title(title)
-
-  return ax
-```
-
-```{python}
-fig , ax = plt.subplots(3)
-
-# En vez de copiar y pegar el código, llamo a la función crear_grafico():
-crear_grafico(x, x_linear, "x", ax[0], "Eje x", "Eje y", "Lineal", color="green")
-crear_grafico(x, x_quadratic, "$x^2$", ax[1], "Eje x", "Eje y", "Cuadrática", color="red")
-crear_grafico(x, x_cubic, "$x^3$", ax[2], "Eje x", "Eje y", "Cúbica", None)
-
-# Hacemos un for para agregar la cuadrícula y las referencias en cada axes:
-for axes in fig.axes[:]:
-  axes.grid()
-  axes.legend()
-```
-
-Como comentamos dentro de la función, también podemos usar `crear_grafico()` para un único gráfico:
-
-```{python}
-crear_grafico(x, x_linear, "x", None, "", "", "", "green")
-```
-
-### Gráficos utilizando NumPy y Pandas
-
-- **NumPy:**
-
-Cuando se realizó el gráfico lineal, cuadrático y cúbico de x, se utilizaron listas de Python. A continuación puede ver lo fácil que podría realizarse
-utilizando NumPy:
-
-```{python}
-x = np.arange(0, 6)
-y_linear = x
-y_quadratic = x**2
-y_cubic = x**3
-
-fig, ax = plt.subplots(figsize=(5, 3))
-
-ax.plot(x, y_linear, label='Lineal')
-ax.plot(x, y_quadratic, label='Cuadrático')
-ax.plot(x, y_cubic, label='Cúbico')
-
-ax.set_title("Gráfico de múltiples curvas")
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.legend()
-
-plt.show()
-```
-
-- **Pandas:**
-
-Si deseamos visualizar los datos contenidos en un DataFrame, podemos realizarlo facilmente. Definimos df:
-
-```{python}
-data = {'animal': ['gato','chinchilla', 'perro'],
-        'edad': [2.5, 3, 7],
-        'visitas': [1, 3, 2],
-        'prioridad': ['si', 'si', 'no']}
-
-df = pd.DataFrame(data)
-df
-```
-
-```{python}
-# Determino las columnas del DataFrame que queremos graficar
-x_values = df['animal']
-y_values = df['edad']
-
-fig, ax = plt.subplots()
-
-ax.bar(x_values, y_values)
-
-ax.set_xlabel('Animal')
-ax.set_ylabel('Edad (años)')
-
-ax.set_title("Mascotas")
-
-plt.show()
-```
-
+### Conclusiones
+Pandas nos permite trabajar con datos de una manera muy sencilla y eficiente. Nos permite importar datos de distintas fuentes, limpiarlos, transformarlos y analizarlos. Además, nos permite visualizar los datos de una manera muy amigable, lo que nos va a permitir entender mejor los datos con los que estamos trabajando.

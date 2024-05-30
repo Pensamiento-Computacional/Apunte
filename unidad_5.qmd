@@ -339,7 +339,7 @@ Además nos da información contextual que puede indicar en la ejecucuión de qu
 - Linea 1: `----> 1 archivo = open("archivo_falso.txt","r")`.
 
 
-En algunas ocaciones es parte del programa manejar operaciones que puedan lanzar este tipo de excepciones sin que el programa detenga su ejecución, para estos casos Python nos provee las sentencias `try`y `except`. 
+En algunas ocasiones es parte del programa manejar operaciones que puedan lanzar este tipo de excepciones sin que el programa detenga su ejecución, para estos casos Python nos provee las sentencias `try`y `except`. 
 
 
 
