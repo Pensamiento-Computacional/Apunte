@@ -462,25 +462,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="e0317a61" class="cell" data-execution_count="1">
+<div id="85a36519" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="c9d9491e" class="cell" data-execution_count="2">
+<div id="ec3b1d69" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="fee196a8" class="cell" data-execution_count="3">
+<div id="de90cebd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="ff9d7290" class="cell" data-execution_count="4">
+<div id="0a2e611b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -603,12 +603,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="a701b923" class="cell" data-execution_count="5">
+<div id="b600876c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5</code></pre>
+<pre><code>4</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1208,7 +1208,7 @@ Note
 </div>
 <p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.</p>
 <p>Usando el siguiente DataFrame:</p>
-<div id="5274b2c1" class="cell" data-execution_count="6">
+<div id="8adccc96" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>, <span class="st">'Lucia'</span>, <span class="st">'Emilia'</span>, <span class="st">'Mariana'</span>, <span class="st">'Aldo'</span>],</span>
@@ -1310,29 +1310,112 @@ Note
 </div>
 </div>
 <ol type="1">
-<li>Mostrar el resumen de la información del DataFrame</li>
-<li>Mostrar su forma</li>
-<li>Mostrar la lista de los nombres de las columnas</li>
-<li>Mostrar las primeras 3 columnas</li>
-<li>Mostrar las últimas 3 columnas</li>
-<li>Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante</li>
-<li>Mostrar a los estudiantes que tienen edad mayor a 25.</li>
-<li>Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.</li>
-<li>Mostrar a la persona que es más joven.</li>
-<li>Mostrar a la persona que se encuentra en la mitad de la tabla.</li>
-<li>Mostrar sólo las columnas: “carrera” y “edad”.</li>
-<li>Mostrar sólo los estudiantes que estudian Informática.</li>
-<li>Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.</li>
-<li>Reemplazar <code>Informática</code> por <code>Informática o Sistemas</code> en la columna “carrera”.</li>
-<li>Mostrar la cantidad de estudiantes por carrera.</li>
-<li>Renombrar la columna “carrera” por “ingeniería”.</li>
-<li>Para la primer estudiante, cambiar su carrera a “Electrónica”.</li>
-<li>Agregar una nueva fila al DataFrame con tus datos.</li>
-<li>Agregar una nueva columna ‘tiene_mail’, con un valor booleano que indique si la estudiante tiene mail en el sistema.</li>
-<li>Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna ‘tiene_mail’.</li>
-<li>Ordenar el dataFrame por carrera y apellido, en ese orden.</li>
-<li>Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.</li>
+<li><p>Mostrar el resumen de la información del DataFrame</p></li>
+<li><p>Mostrar su forma</p></li>
+<li><p>Mostrar la lista de los nombres de las columnas</p></li>
+<li><p>Mostrar las primeras 3 columnas</p></li>
+<li><p>Mostrar las últimas 3 columnas</p></li>
+<li><p>Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante</p></li>
+<li><p>Mostrar a los estudiantes que tienen edad mayor a 25.</p></li>
+<li><p>Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.</p></li>
+<li><p>Mostrar a la persona que es más joven.</p></li>
+<li><p>Mostrar a la persona que se encuentra en la mitad de la tabla.</p></li>
+<li><p>Mostrar sólo las columnas: “carrera” y “edad”.</p></li>
+<li><p>Mostrar sólo los estudiantes que estudian Informática.</p></li>
+<li><p>Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.</p></li>
+<li><p>Reemplazar <code>Informática</code> por <code>Informática o Sistemas</code> en la columna “carrera”.</p></li>
+<li><p>Mostrar la cantidad de estudiantes por carrera.</p></li>
+<li><p>Renombrar la columna “carrera” por “ingeniería”.</p></li>
+<li><p>Para la primer estudiante, cambiar su carrera a “Electrónica”.</p></li>
+<li><p>Agregar una nueva fila al DataFrame con tus datos.</p></li>
+<li><p>Agregar una nueva columna ‘tiene_mail’, con un valor booleano que indique si la estudiante tiene mail en el sistema.</p></li>
+<li><p>Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna ‘tiene_mail’.</p></li>
+<li><p>Ordenar el dataFrame por carrera y apellido, en ese orden.</p></li>
+<li><p>Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.</p></li>
+<li><p>Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.</p></li>
+<li><p>La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.<br>
+Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).<br>
+</p></li>
 </ol>
+<ol type="a">
+<li>Obtener el promedio de las notas en la primera oportunidad de los alumnos.<br>
+Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.</li>
+</ol>
+<div id="fdfb9864" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>],</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'apellido'</span>: [<span class="st">'Perez'</span>, <span class="st">'Guanca'</span>, <span class="st">'Gomez'</span>],</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dni'</span>: [<span class="dv">42000000</span>, <span class="dv">42001001</span>, <span class="dv">42002002</span>],</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'carrera'</span>: [<span class="st">'Informática'</span>, <span class="st">'Mecánica'</span>, <span class="st">'Química'</span>],</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nota'</span>: [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>],</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'intento'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>df_notas <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>df_notas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nombre</th>
+<th data-quarto-table-cell-role="th">apellido</th>
+<th data-quarto-table-cell-role="th">dni</th>
+<th data-quarto-table-cell-role="th">carrera</th>
+<th data-quarto-table-cell-role="th">nota</th>
+<th data-quarto-table-cell-role="th">intento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Violeta</td>
+<td>Perez</td>
+<td>42000000</td>
+<td>Informática</td>
+<td>7</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Carla</td>
+<td>Guanca</td>
+<td>42001001</td>
+<td>Mecánica</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Manuela</td>
+<td>Gomez</td>
+<td>42002002</td>
+<td>Química</td>
+<td>6</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<ol start="25" type="1">
+<li>Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7. Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.</li>
+</ol>
+<pre class="{Python}"><code>data = {
+    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
+    'año': [2001, 2003, 1972, 2040],
+    'puntuacion': [8, 9, 8, 3]
+}
+
+df_pelis = pd.DataFrame(data)
+df_pelis</code></pre>
 
 
 </section>
