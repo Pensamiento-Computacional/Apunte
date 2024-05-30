@@ -1025,4 +1025,38 @@ df
 19. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
 20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
 21. Ordenar el dataFrame por carrera y apellido, en ese orden.
-22. Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.
+22. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
+23. Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.
+
+24. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
+Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
+a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
+Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
+
+```{python}
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela'],
+    'apellido': ['Perez', 'Guanca', 'Gomez'],
+    'dni': [42000000, 42001001, 42002002],
+    'carrera': ['Informática', 'Mecánica', 'Química'],
+    'nota': [7, 4, 6],
+    'intento': [1, 2, 1]
+}
+
+df_notas = pd.DataFrame(data)
+df_notas
+```
+
+25. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
+Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
+
+```{Python}
+data = {
+    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
+    'año': [2001, 2003, 1972, 2040],
+    'puntuacion': [8, 9, 8, 3]
+}
+
+df_pelis = pd.DataFrame(data)
+df_pelis
+```
