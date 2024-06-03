@@ -558,7 +558,7 @@ Vamos entonces a hacer click en "New Notebook", y se va a abrir un archivo nuevo
 Colab es muy similar a Replit, ya que vamos a poder correr código. La diferencia es que Colab se divide en celdas individuales: cada celda es un bloque de código que se puede correr por separado. Para agregar una celda nueva, se hace click en el botón de "+ Code" que aparece en la parte superior izquierda de la celda.
 Para correr la celda, se hace click en el botón de "play" que aparece a la izquierda de la celda. El output de la celda va a aparecer debajo de la misma.
 
-![Ejecución de una celda de código(./imgs/unidad_6/google_colab3.png)
+![Ejecución de una celda de código](./imgs/unidad_6/google_colab3.png)
 
 Si tenemos varias celdas con código, podemos correrlas todas juntas haciendo click en "Runtime" en el menú superior y luego en "Run all". Cada celda de código va a tener su propio output debajo de ella. 
 
