@@ -277,6 +277,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">1. Numpy</a></li>
   <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">2. Pandas</a></li>
+  <li><a href="#matplotlib" id="toc-matplotlib" class="nav-link" data-scroll-target="#matplotlib">3. Matplotlib</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -462,25 +463,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="85a36519" class="cell" data-execution_count="1">
+<div id="0d4128da" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="ec3b1d69" class="cell" data-execution_count="2">
+<div id="88dd9789" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="de90cebd" class="cell" data-execution_count="3">
+<div id="efd871ac" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="0a2e611b" class="cell" data-execution_count="4">
+<div id="b02a36fd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -603,12 +604,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="b600876c" class="cell" data-execution_count="5">
+<div id="cba8afff" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4</code></pre>
+<pre><code>5</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -744,7 +745,7 @@ Ejemplo: <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]<
 <li>Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: <code>(3,4)</code> y <code>(5,4)</code>.</li>
 <li>Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: <code>'3-4'</code> y <code>'5-4'</code>.</li>
 </ol></li>
-<li><p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
+<li><p>Escribir una función que reciba dos vectores y devuelva su prod_escalar. El prod_escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
 <span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p></li>
 <li><ol type="a">
 <li><p>Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.</p></li>
@@ -790,7 +791,7 @@ Ejemplo: <code>[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]<
 Escribir una función que reciba una cadena a buscar y una lista de tuplas <code>(nombre_completo, telefono)</code>, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.</p></li>
 <li><p><strong>Desafio</strong> (no obligatorio): Sistema de facturación simplificado.<br>
 Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).</p>
-<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.</p>
+<p>Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada prod_comprado, y al final imprima el total general.</p>
 <p>Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.</p></li>
 <li><p><strong>Super Desafio</strong> (no obligatorio): Batalla Naval<br>
 </p>
@@ -1004,7 +1005,7 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">lapiceras</span><span class="kw">;</span><span class="ex">34512</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">120</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cuadernos</span><span class="kw">;</span><span class="ex">41611</span><span class="kw">;</span><span class="ex">500</span><span class="kw">;</span><span class="ex">130</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sacapuntas</span><span class="kw">;</span><span class="ex">62812</span><span class="kw">;</span><span class="ex">30</span><span class="kw">;</span><span class="ex">210</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Donde cada línea representa un producto y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto “X”.</p></li>
+<p>Donde cada línea representa un prod_y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo prod_y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como prod_“X”.</p></li>
 <li><p>En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula Por ejemplo si se tienen los siguientes archivos:<br>
 </p>
 <p>(salas.txt)</p>
@@ -1028,7 +1029,7 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-02</span></span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-03</span></span>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese producto en el archivo.</p></li>
+<p>Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.</p></li>
 <li><p>Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: ‘el archivo {nombre} no existe. Se crea y deja vacío.’.</p></li>
 </ol>
 </section>
@@ -1142,7 +1143,7 @@ Escribir una función que reciba:<br>
 </blockquote></li>
 <li><p>Repetir el ejercicio 4.2.6. de la Guía 4:</p>
 <blockquote class="blockquote">
-<p>Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
+<p>Escribir una función que reciba dos vectores y devuelva su prod_escalar. El prod_escalar se calcula como: Siendo <span class="math inline">\(v1 = (v1_1, v1_2, ..., v1_n)\)</span> y <span class="math inline">\(v2 = (v2_1, v2_2, ..., v2_n)\)</span>, entonces<br>
 <span class="math display">\[v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)\]</span> Si los vectores no tienen las mismas dimensiones, la función debe devolver <code>None</code>.</p>
 </blockquote></li>
 <li><p>Repetir el ejercicio 4.2.11 de la Guía 4:</p>
@@ -1208,7 +1209,7 @@ Note
 </div>
 <p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.</p>
 <p>Usando el siguiente DataFrame:</p>
-<div id="8adccc96" class="cell" data-execution_count="6">
+<div id="f0be431a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>, <span class="st">'Lucia'</span>, <span class="st">'Emilia'</span>, <span class="st">'Mariana'</span>, <span class="st">'Aldo'</span>],</span>
@@ -1341,7 +1342,7 @@ Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si es
 <li>Obtener el promedio de las notas en la primera oportunidad de los alumnos.<br>
 Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.</li>
 </ol>
-<div id="fdfb9864" class="cell" data-execution_count="7">
+<div id="c81993ed" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>],</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'apellido'</span>: [<span class="st">'Perez'</span>, <span class="st">'Guanca'</span>, <span class="st">'Gomez'</span>],</span>
@@ -1416,6 +1417,120 @@ Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11
 
 df_pelis = pd.DataFrame(data)
 df_pelis</code></pre>
+</section>
+<section id="matplotlib" class="level2">
+<h2 class="anchored" data-anchor-id="matplotlib">3. Matplotlib</h2>
+<ol type="1">
+<li><p>Graficar las funciones obtenidas en el ejercicio 3 de Numpy, usando los números del 1 al 100 del eje x. Hacerlo primero en un mismo gráfico y luego las 4 en el mismo.</p>
+<blockquote class="blockquote">
+<ol type="a">
+<li>y = x^2</li>
+<li>y = 3x + 2</li>
+<li>y = 1/(x+1)</li>
+<li>y = log10(x)</li>
+<li>¿Hay alguna función que no se esté viendo correctamente en el gráfico? Tratar de entender por qué y graficarla en otro gráfico. Pista: mirar los valores que toma la función en el eje <code>y</code>.</li>
+</ol>
+</blockquote></li>
+<li><p>Usando Numpy: Siendo <code>x</code> un conjunto de 1000 valores de 0 a 2 * pi separados de forma uniforme:</p>
+<ol type="a">
+<li>Graficar, con grilla, título y referencias apropiadas, la función <code>seno de x</code> (<code>sin(x)</code>).</li>
+<li>Graficar, con grilla, título y referencias apropiadas, la función <code>coseno de x</code> (<code>cos(x)</code>).</li>
+<li>Graficar, con grilla, título y referencias apropiadas, la función <code>(seno de x) + x/2</code>.</li>
+</ol></li>
+<li><p>Se tienen los siguientes datos de ventas de un prod_en los últimos 10 años:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>años <span class="op">=</span> np.arange(<span class="dv">2012</span>, <span class="dv">2022</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>ventas <span class="op">=</span> [<span class="dv">140</span>, <span class="dv">60</span>, <span class="dv">120</span>, <span class="dv">250</span>, <span class="dv">200</span>, <span class="dv">180</span>, <span class="dv">100</span>, <span class="dv">300</span>, <span class="dv">120</span>, <span class="dv">160</span>]</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>ganancias <span class="op">=</span> [<span class="dv">14000</span>, <span class="dv">45000</span>, <span class="dv">20400</span>, <span class="dv">100000</span>, <span class="dv">50000</span>, <span class="dv">25000</span>, <span class="dv">100000</span>, <span class="dv">30000</span>, <span class="dv">15000</span>, <span class="dv">35000</span>]</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>productos <span class="op">=</span> [<span class="st">"prod_1"</span>, <span class="st">"prod_2"</span>, <span class="st">"prod_3"</span>, <span class="st">"prod_4"</span>, <span class="st">"prod_5"</span>, <span class="st">"prod_6"</span>, <span class="st">"prod_7"</span>, <span class="st">"prod_8"</span>, <span class="st">"prod_9"</span>, <span class="st">"prod_10"</span>]</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>cant_ventas_productos_2024 <span class="op">=</span> [<span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">190</span>, <span class="dv">140</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">120</span>, <span class="dv">130</span>, <span class="dv">150</span>, <span class="dv">170</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En gráficos separados:</p>
+<ol type="a">
+<li>Graficar las ventas en función de los años usando gráfico de línea y gráfico de barras horizontal. ¿Cuál te parece que es mejor para este caso?</li>
+<li>Graficar las ganancias en función de los años usando gráfico de línea y gráfico de barras. ¿Cuál te parece que es el mejor gráfico para este caso?</li>
+<li>Graficar la cantidad de ventas en el año 2024 en función de los productos usando gráfico de barras y gráfico de torta. ¿Cuál te parece que es el mejor gráfico para este caso?</li>
+</ol></li>
+<li><p>Usando el siguiente dataframe:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Jurisdicción'</span>: [</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Ciudad Autónoma de Buenos Aires'</span>, <span class="st">'Buenos Aires'</span>, <span class="st">'Catamarca'</span>, <span class="st">'Chaco'</span>, <span class="st">'Chubut'</span>,</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Córdoba'</span>, <span class="st">'Corrientes'</span>, <span class="st">'Entre Ríos'</span>, <span class="st">'Formosa'</span>, <span class="st">'Jujuy'</span>, <span class="st">'La Pampa'</span>, <span class="st">'La Rioja'</span>,</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mendoza'</span>, <span class="st">'Misiones'</span>, <span class="st">'Neuquén'</span>, <span class="st">'Río Negro'</span>, <span class="st">'Salta'</span>, <span class="st">'San Juan'</span>, <span class="st">'San Luis'</span>,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Santa Cruz'</span>, <span class="st">'Santa Fe'</span>, <span class="st">'Santiago del Estero'</span>, <span class="st">'Tierra del Fuego, Antártida e Islas del Atlántico Sur'</span>,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Tucumán'</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Capital'</span>: [</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">''</span>, <span class="st">'La Plata'</span>, <span class="st">'San Fernando del Valle de Catamarca'</span>, <span class="st">'Resistencia'</span>, <span class="st">'Rawson'</span>,</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Córdoba'</span>, <span class="st">'Corrientes'</span>, <span class="st">'Paraná'</span>, <span class="st">'Formosa'</span>, <span class="st">'San Salvador de Jujuy'</span>, <span class="st">'Santa Rosa'</span>, <span class="st">'La Rioja'</span>,</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Mendoza'</span>, <span class="st">'Posadas'</span>, <span class="st">'Neuquén'</span>, <span class="st">'Viedma'</span>, <span class="st">'Salta'</span>, <span class="st">'San Juan'</span>, <span class="st">'San Luis'</span>,</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Río Gallegos'</span>, <span class="st">'Santa Fe'</span>, <span class="st">'Santiago del Estero'</span>, <span class="st">'Ushuaia'</span>, <span class="st">'San Miguel de Tucumán'</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Población (hab)'</span>: [</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>        <span class="dv">3075646</span>, <span class="dv">17541141</span>, <span class="dv">415438</span>, <span class="dv">1204541</span>, <span class="dv">618994</span>, <span class="dv">3760450</span>, <span class="dv">1120801</span>, <span class="dv">1385961</span>,</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        <span class="dv">605193</span>, <span class="dv">770881</span>, <span class="dv">358428</span>, <span class="dv">393531</span>, <span class="dv">1990338</span>, <span class="dv">1261294</span>, <span class="dv">664057</span>, <span class="dv">747610</span>,</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>        <span class="dv">1424397</span>, <span class="dv">781217</span>, <span class="dv">508328</span>, <span class="dv">365698</span>, <span class="dv">3536418</span>, <span class="dv">978313</span>, <span class="dv">173715</span>, <span class="dv">1694656</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Superficie (km2)'</span>: [</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>        <span class="fl">205.9</span>, <span class="fl">305907.4</span>, <span class="fl">101486.1</span>, <span class="fl">99763.3</span>, <span class="fl">224302.3</span>, <span class="fl">164707.8</span>, <span class="fl">89123.3</span>, <span class="fl">78383.7</span>,</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>        <span class="fl">75488.3</span>, <span class="fl">53244.2</span>, <span class="fl">143492.5</span>, <span class="fl">91493.7</span>, <span class="fl">149069.2</span>, <span class="fl">29911.4</span>, <span class="dv">94422</span>, <span class="fl">202168.6</span>,</span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>        <span class="fl">155340.5</span>, <span class="fl">88296.2</span>, <span class="fl">75347.1</span>, <span class="fl">244457.5</span>, <span class="fl">133249.1</span>, <span class="fl">136934.3</span>, <span class="fl">910324.4</span>, <span class="fl">22592.1</span></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'PBI'</span>: [</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>        <span class="fl">154863803.5</span>, <span class="dv">292689868</span>, <span class="fl">6150949.159</span>, <span class="fl">9832642.672</span>, <span class="fl">17747854.21</span>, <span class="fl">69363739.19</span>,</span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>        <span class="fl">7968012.982</span>, <span class="fl">20743409.1</span>, <span class="fl">3807057.419</span>, <span class="fl">6484938.334</span>, <span class="fl">6990262.458</span>, <span class="fl">5590515.628</span>,</span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>        <span class="fl">33431369.11</span>, <span class="fl">9646825.835</span>, <span class="fl">22564106.16</span>, <span class="fl">10264584.42</span>, <span class="fl">13438834.91</span>, <span class="fl">8262308.568</span>,</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>        <span class="fl">11780849.36</span>, <span class="fl">11663738.04</span>, <span class="fl">81588690.27</span>, <span class="fl">8387858.731</span>, <span class="fl">7049276.383</span>, <span class="fl">13856198.9</span></span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Realizar un gráfico de barras horizontales que muestre la cantidad de habitantes por jurisdicción. Las provincias con mayor población, deben ubicarse en la parte superior.</li>
+<li>Realizar un gráfico de torta que muestre el porcentaje de superficie de cada región del país.</li>
+<li>Realizar un gráfico de barras verticales que muestre el PBI de cada jurisdicción. Las provincias con mayor PBI, deben ubicarse a la derecha.</li>
+<li>Realizar un gráfico de puntos que muestre la relación entre la población y la superficie de cada jurisdicción. ¿Qué conclusión se puede tomar respecto al gráfico obtenido? ¿Hay alguna excepción? De ser así, analice cuál, incluyendo también un análisis de los gráficos anteriores.</li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+datos.gob.ar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Sabías que en Argentina hay un portal de datos abiertos?<br>
+Podés ingresar a <a href="https://www.datos.gob.ar/dataset">datos.gob.ar</a> y obtener información de diferentes áreas, como salud, educación, justicia, entre otras. ¡Es una excelente fuente de datos para hacer análisis!<br>
+Para usarlos, podés guardar el archivo csv en google drive e importarlo de la siguiente forma como un dataframe:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Acá va el link público de tu archivo de google drive + '/export?format=csv'</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://drive.google.com/drive/folders/ABC123XYZ456/export?format=csv"</span> </span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="5" type="1">
+<li><p><strong>Desafio</strong> (obligatorio): Teniendo la planilla de notas del primer parcial del 1C2024 de los alumnos de la materia “Pensamiento Computacional”, importar los datos como dataframe usando el siguiente código:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>url_sheet <span class="op">=</span> <span class="st">"https://docs.google.com/spreadsheets/d/17ei_NER5i_R-9QLnkeIjNprzTyoSqGowJ8yrT9tbi_8/export?format=csv"</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url_sheet)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si la nota es “NaN”, significa que el o la estudiante no rindió el examen.<br>
+En gráficos diferentes:</p>
+<ol type="a">
+<li>Realizar un gráfico de torta que muestre el porcentaje entre la cantidad de alumnos que asistieron al parcial y los que no.</li>
+<li>Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.</li>
+<li>Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?</li>
+<li>Realizar un gráfico de linea que muestre la evolución de la nota promedio de los aprobados a través de los cursos.</li>
+</ol></li>
+</ol>
 
 
 </section>
