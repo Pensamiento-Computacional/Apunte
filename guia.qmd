@@ -455,7 +455,7 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
     a. Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: `(3,4)`  y `(5,4)`.
     b. Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: `'3-4'` y `'5-4'`.
 
-6. Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
+6. Escribir una función que reciba dos vectores y devuelva su prod_escalar. El prod_escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
 $$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
 Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
 
@@ -521,7 +521,7 @@ Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nom
 18. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
 Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).
 
-    Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada producto comprado, y al final imprima el total general.
+    Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada prod_comprado, y al final imprima el total general.
 
     Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
 
@@ -746,7 +746,7 @@ El formato del archivo es el siguiente:
         sacapuntas;62812;30;210
     ```
 
-    Donde cada línea representa un producto y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto "X".
+    Donde cada línea representa un prod_y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo prod_y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como prod_"X".
 
 14. En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula
 	Por ejemplo si se tienen los siguientes archivos:\
@@ -788,7 +788,7 @@ El formato del archivo es el siguiente:
     fideos;40;200;2021-01-03
     ```
 
-    Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese producto en el archivo.
+    Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.
 
 16. Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: 'el archivo {nombre} no existe. Se crea y deja vacío.'.
 
@@ -929,7 +929,7 @@ El formato del archivo es el siguiente:
 
 6. Repetir el ejercicio 4.2.6. de la Guía 4:
 
-    > Escribir una función que reciba dos vectores y devuelva su producto escalar. El producto escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
+    > Escribir una función que reciba dos vectores y devuelva su prod_escalar. El prod_escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
         $$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
         Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
 
@@ -1060,3 +1060,115 @@ data = {
 df_pelis = pd.DataFrame(data)
 df_pelis
 ```
+
+## 3. Matplotlib
+
+1. Graficar las funciones obtenidas en el ejercicio 3 de Numpy, usando los números del 1 al 100 del eje x. Hacerlo primero en un mismo gráfico y luego las 4 en el mismo.
+    
+    > a. y = x^2
+    > b. y = 3x + 2
+    > c. y = 1/(x+1)
+    > d. y = log10(x)
+    > e. ¿Hay alguna función que no se esté viendo correctamente en el gráfico? Tratar de entender por qué y graficarla en otro gráfico. Pista: mirar los valores que toma la función en el eje `y`.
+
+2. Usando Numpy: Siendo `x` un conjunto de 1000 valores de 0 a 2 * pi separados de forma uniforme:
+
+    a. Graficar, con grilla, título y referencias apropiadas, la función `seno de x` (`sin(x)`).
+    b. Graficar, con grilla, título y referencias apropiadas, la función `coseno de x` (`cos(x)`).
+    c. Graficar, con grilla, título y referencias apropiadas, la función `(seno de x) + x/2`.
+
+3. Se tienen los siguientes datos de ventas de un prod_en los últimos 10 años:
+
+    ```python
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    años = np.arange(2012, 2022)
+
+    ventas = [140, 60, 120, 250, 200, 180, 100, 300, 120, 160]
+    ganancias = [14000, 45000, 20400, 100000, 50000, 25000, 100000, 30000, 15000, 35000]
+    productos = ["prod_1", "prod_2", "prod_3", "prod_4", "prod_5", "prod_6", "prod_7", "prod_8", "prod_9", "prod_10"]
+    cant_ventas_productos_2024 = [180, 160, 190, 140, 100, 200, 120, 130, 150, 170]
+    ```
+
+    En gráficos separados:
+    a. Graficar las ventas en función de los años usando gráfico de línea y gráfico de barras horizontal. ¿Cuál te parece que es mejor para este caso?
+    b. Graficar las ganancias en función de los años usando gráfico de línea y gráfico de barras. ¿Cuál te parece que es el mejor gráfico para este caso?
+    c. Graficar la cantidad de ventas en el año 2024 en función de los productos usando gráfico de barras y gráfico de torta. ¿Cuál te parece que es el mejor gráfico para este caso?
+
+4. Usando el siguiente dataframe:
+
+    ```python
+    data = {
+        'Jurisdicción': [
+            'Ciudad Autónoma de Buenos Aires', 'Buenos Aires', 'Catamarca', 'Chaco', 'Chubut',
+            'Córdoba', 'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja',
+            'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan', 'San Luis',
+            'Santa Cruz', 'Santa Fe', 'Santiago del Estero', 'Tierra del Fuego, Antártida e Islas del Atlántico Sur',
+            'Tucumán'
+        ],
+        'Capital': [
+            '', 'La Plata', 'San Fernando del Valle de Catamarca', 'Resistencia', 'Rawson',
+            'Córdoba', 'Corrientes', 'Paraná', 'Formosa', 'San Salvador de Jujuy', 'Santa Rosa', 'La Rioja',
+            'Mendoza', 'Posadas', 'Neuquén', 'Viedma', 'Salta', 'San Juan', 'San Luis',
+            'Río Gallegos', 'Santa Fe', 'Santiago del Estero', 'Ushuaia', 'San Miguel de Tucumán'
+        ],
+        'Población (hab)': [
+            3075646, 17541141, 415438, 1204541, 618994, 3760450, 1120801, 1385961,
+            605193, 770881, 358428, 393531, 1990338, 1261294, 664057, 747610,
+            1424397, 781217, 508328, 365698, 3536418, 978313, 173715, 1694656
+        ],
+        'Superficie (km2)': [
+            205.9, 305907.4, 101486.1, 99763.3, 224302.3, 164707.8, 89123.3, 78383.7,
+            75488.3, 53244.2, 143492.5, 91493.7, 149069.2, 29911.4, 94422, 202168.6,
+            155340.5, 88296.2, 75347.1, 244457.5, 133249.1, 136934.3, 910324.4, 22592.1
+        ],
+        'PBI': [
+            154863803.5, 292689868, 6150949.159, 9832642.672, 17747854.21, 69363739.19,
+            7968012.982, 20743409.1, 3807057.419, 6484938.334, 6990262.458, 5590515.628,
+            33431369.11, 9646825.835, 22564106.16, 10264584.42, 13438834.91, 8262308.568,
+            11780849.36, 11663738.04, 81588690.27, 8387858.731, 7049276.383, 13856198.9
+        ],
+    }
+
+    df = pd.DataFrame(data)
+    df.head()
+    ```
+
+    a. Realizar un gráfico de barras horizontales que muestre la cantidad de habitantes por jurisdicción. Las provincias con mayor población, deben ubicarse en la parte superior.
+    b. Realizar un gráfico de torta que muestre el porcentaje de superficie de cada región del país.
+    c. Realizar un gráfico de barras verticales que muestre el PBI de cada jurisdicción. Las provincias con mayor PBI, deben ubicarse a la derecha.
+    d. Realizar un gráfico de puntos que muestre la relación entre la población y la superficie de cada jurisdicción. ¿Qué conclusión se puede tomar respecto al gráfico obtenido? ¿Hay alguna excepción? De ser así, analice cuál, incluyendo también un análisis de los gráficos anteriores.
+
+:::{.callout-note}
+### datos.gob.ar
+¿Sabías que en Argentina hay un portal de datos abiertos?\
+Podés ingresar a [datos.gob.ar](https://www.datos.gob.ar/dataset) y obtener información de diferentes áreas, como salud, educación, justicia, entre otras. ¡Es una excelente fuente de datos para hacer análisis!\
+Para usarlos, podés guardar el archivo csv en google drive e importarlo de la siguiente forma como un dataframe:
+
+```python
+import pandas as pd
+
+# Acá va el link público de tu archivo de google drive + '/export?format=csv'
+url = "https://drive.google.com/drive/folders/ABC123XYZ456/export?format=csv" 
+df = pd.read_csv(url)
+```
+:::
+
+5. **Desafio** (obligatorio): Teniendo la planilla de notas del primer parcial del 1C2024 de los alumnos de la materia "Pensamiento Computacional", importar los datos como dataframe usando el siguiente código:
+
+    ```python
+    import pandas as pd
+
+    url_sheet = "https://docs.google.com/spreadsheets/d/17ei_NER5i_R-9QLnkeIjNprzTyoSqGowJ8yrT9tbi_8/export?format=csv"
+    df = pd.read_csv(url_sheet)
+    df.head()
+    ``` 
+
+    Si la nota es "NaN", significa que el o la estudiante no rindió el examen.\
+    En gráficos diferentes:
+    
+    a. Realizar un gráfico de torta que muestre el porcentaje entre la cantidad de alumnos que asistieron al parcial y los que no.
+    b. Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.
+    c. Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?
+    d. Realizar un gráfico de linea que muestre la evolución de la nota promedio de los aprobados a través de los cursos.

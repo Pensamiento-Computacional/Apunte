@@ -11,6 +11,12 @@ La materia usa Discord como plataforma adicional para la resolución de los ejer
 Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
 Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.
 
-## Dejanos Feedback!
+## Dejanos Feedback!{#feedback}
 
 Podés dejarnos feedback de las clases prácticas completando <a href="https://forms.gle/javW6JXGbmaayUUK8" target="_blank">este formulario</a>.
+
+## Ser Docente{#docentes}
+
+Para ser docente de la materia es necesario haber aprobado el CBC y ser estudiante de FIUBA.\
+Si cumplís con estos requisitos y te interesa ser docente de la práctica, podés escribirnos a nuestro mail de Contacto (arriba) para más información.\
+La materia se dicta los días lunes, martes, jueves y viernes, en los turnos 7-10, 10-13 y 13-16.
