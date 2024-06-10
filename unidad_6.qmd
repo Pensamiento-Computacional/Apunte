@@ -715,6 +715,7 @@ df
 ```
 
 \
+
 :::{.callout-note}
 Muchas veces no vamos a querer modificar el dataframe original, pero sí manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
 :::
@@ -1102,7 +1103,7 @@ df['direccion'].value_counts()
 
 ##### Group by:
   
-`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, tranformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisieramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
+`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, transformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisieramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
 
 ```{python}
 # Agrupar por "direccion" y devolver la cantidad de cada uno

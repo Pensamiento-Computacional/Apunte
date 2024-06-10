@@ -1063,7 +1063,7 @@ df_pelis
 
 ## 3. Matplotlib
 
-1. Graficar las funciones obtenidas en el ejercicio 3 de Numpy, usando los números del 1 al 100 del eje x. Hacerlo primero en un mismo gráfico y luego las 4 en el mismo.
+1. Graficar las funciones obtenidas en el ejercicio 3 de Numpy, usando los números del 1 al 100 del eje x. Hacerlo primero en distintos gráficos y luego las 4 en el mismo.
     
     > a. y = x^2
     > b. y = 3x + 2
