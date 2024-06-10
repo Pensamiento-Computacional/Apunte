@@ -968,7 +968,7 @@ El formato del archivo es el siguiente:
     \end{bmatrix}
     $$\
 
-10. Una persona quiere cercar el frente de su casa con alambre. Los postes se deben poner a 1 metro de distancia entre sí. Hacer una función que reciba un número entero que sea la cantidad de metros a cubrir, y devuelva un array con la posición de los postes necesarios. Por ejemplo, si se reciben `5` metros, debe devolver: `[0.   1.25   2.5   3.75   5.]`
+10. Una persona quiere cercar el frente de su casa con alambre. Los postes se deben poner a 1 metro de distancia como mínimo entre sí. Hacer una función que reciba un número entero que sea la cantidad de metros a cubrir, y devuelva un array con la posición de los postes necesarios. Por ejemplo, si se reciben `5` metros, debe devolver: `[0.   1.25   2.5   3.75   5.]`
 
 11. Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el numero de reserva si está ocupado o 0 sino: `[1,2,3,0,7,6,4,0,0,8,9, ...]`.\
 Los asientos en el Jardín Japonés se van a organizar en forma de matriz, teniendo 5 filas de 10 asientos cada uno. Se quiere transformar la lista de asientos en una matriz. Hacer una función que reciba la lista de asientos y devuelva la matriz de asientos organizada por filas.
