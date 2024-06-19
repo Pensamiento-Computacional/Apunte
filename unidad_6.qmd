@@ -1448,6 +1448,20 @@ ax.set_title("Mascotas")
 plt.show()
 ```
 
+:::{.callout-note}
+#### ¿Qué pasa si nuestros labels no llegan a verse?
+Puede pasar, sobre todo si tenemos muchos datos con nombres largos, que nuestros labels no lleguen a verse de forma correcta si los presentamos de forma horizontal.\
+Por ejemplo:
+
+<img src="./imgs/unidad_6/matplotlib_labels_horizontales.png" width="300" />
+
+En esos casos, podemos pedirle a matplotlib que los presente de forma vertical, para que no se superpongan. Para eso, usamos `xticks()` y `rotation`: `plt.xticks(rotation=90)`.\
+El ángulo de rotación se mide en grados, por lo que `rotation=90` significa que se rotarán 90 grados. De esta forma, los labels se presentarán de forma vertical. Podríamos también usar otro ángulo, y se mostrarían los labels de forma inclinada.\
+Esta es la forma en que se visualizan los datos con los labels rotados:
+
+<img src="./imgs/unidad_6/matplotlib_labels_rotados.png" width="300" />
+
+:::
 
 ### Bonus Track: Personalización (opcional)
 
