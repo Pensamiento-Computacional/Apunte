@@ -979,13 +979,13 @@ nueva_fila = ['Carlos Rivas', 30, 'H', "CABA", 70.0, 1.75, 203.0, 22]
 
 # Insertamos al final del DataFrame
 largo = len(df.index) # o también: largo = df.shape[0], para obtener la cantidad de filas
-df.loc[len] = nueva_fila
+df.loc[largo] = nueva_fila
 df.tail() # Para ver que se agregó al final
 ```
 
 :::{.callout-note collapse="true"}
 ### ¿Por qué usamos 'len' arriba?
-A diferencia de Python, podemos agregar una fila en una posición que no existe aún. Por eso arriba pudimos hacer `df.loc[len]`.
+A diferencia de Python, podemos agregar una fila en una posición que no existe aún. Por eso arriba pudimos hacer `df.loc[largo]`.
 :::
 
 #### Modificar un valor
