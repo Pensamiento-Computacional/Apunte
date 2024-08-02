@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pensamiento Computacional - 2&nbsp; Tipos de Datos, Expresiones y Funciones</title>
+<title>2&nbsp; Tipos de Datos, Expresiones y Funciones – Pensamiento Computacional</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -112,13 +112,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -307,21 +307,38 @@ Esta línea se ejecutaría a lo último    </code></pre>
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="valores-y-tipos"><span class="header-section-number">2.1.2</span> Valores y Tipos</h3>
 <p>Si tenemos la operación <code>7 * 5</code>, sabemos que el resultado es <code>35</code>. Decimos que tanto <code>7</code>, <code>5</code> como <code>35</code> son <em>valores</em>. En los lenguajes de programación, cada valor tiene un <em>tipo</em>.</p>
 <p>En este caso, <code>7</code>, <code>5</code> y <code>35</code> son <em>enteros</em> (o <em>integers</em> en inglés). En Python, los enteros se representan con el tipo <code>int</code>.</p>
-<p>Python tiene dos tipos de datos numéricos: - número enteros - números de punto flotante</p>
+<p>Python tiene dos tipos de datos numéricos:</p>
+<ul>
+<li>número enteros</li>
+<li>números de punto flotante</li>
+</ul>
 <p>Los <strong>números enteros</strong> representan un valor entero exacto, como <code>42</code>, <code>0</code>, <code>-5</code> o <code>10000</code>.<br>
 Los <strong>números de punto flotante</strong> tienen una parte fraccionaria, como <code>3.14159</code>, <code>1.0</code> o <code>0.0</code>.</p>
 <p>Según los operandos (los valores que se operan) y el operador (el símbolo que indica la operación), el resultado puede ser de un tipo u otro. Por ejemplo, si tenemos <code>7 / 5</code>, el resultado es <code>1.4</code>, que es un número de punto flotante. Si tenemos <code>7 + 5</code>, el resultado es <code>12</code>, que es un número entero.</p>
-<div id="a3fc3ba0" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div id="11ac138e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>print</code> es una función de Python que nos deja imprimir cosas por pantalla. Al hacer <code>print(1+2)</code>, Python está calculando el resultado de 1+2 e imprimiéndolo para que podamos verlo.</p>
 </div>
 </div>
 <p>Vamos a elegir usar enteros cada vez que necesitemos recordar, almacenar o representar un valor exacto, como pueden ser por ejemplo: la cantidad de alumnos, cuántas veces repetimos una operación, un número de documento, etc.<br>
 Vamos a elegir usar números de punto flotante cada vez que necesitemos recordar, almacenar o representar un valor aproximado, como pueden ser por ejemplo: la altura o el peso de una persona, la temperatura de un día, una distancia recorrida, etc.</p>
-<div id="9c2df6a4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div id="a4972127" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>0.30000000000000004</code></pre>
 </div>
 </div>
@@ -341,20 +358,20 @@ Uso de punto
 </div>
 <p>Además de efectuar operaciones matemáticas, Python nos permite trabajar con porciones de texto, que se llaman <strong>cadenas</strong> (o <em>strings</em> en inglés). Las cadenas se representan con el tipo <code>str</code>.<br>
 Las cadenas se escriben entre comillas simples (<code>'</code>) o dobles (<code>"</code>).</p>
-<div id="20635f7a" class="cell" data-execution_count="3">
+<div id="09bd1746" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"¡Hola!"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>¡Hola!</code></pre>
 </div>
 </div>
-<div id="b40a86b0" class="cell" data-execution_count="4">
+<div id="f5082fa9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">'¡Hola!'</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>¡Hola!</code></pre>
 </div>
 </div>
 <p>Las cadenas también tienen operaciones disponibles, como por ejemplo la concatenación, que es la unión de dos cadenas en una sola. Esto se hace con el operador <code>+</code>.</p>
-<div id="d0e2e942" class="cell" data-execution_count="5">
+<div id="d1105f6b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">"¡Hola!"</span> <span class="op">+</span> <span class="st">" ¿Cómo estás?"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>¡Hola! ¿Cómo estás?</code></pre>
@@ -365,29 +382,29 @@ Las cadenas se escriben entre comillas simples (<code>'</code>) o dobles (<code>
 <section id="variables" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.1.3</span> Variables</h3>
 <p>Python nos permite asignarle un nombre a un valor, de forma tal que podamos “recordarlo” y usarlo más adelante. A esto se le llama <strong>asignación</strong>.<br>
-Estos nombres se llaman <strong>variables</strong>, y son espacios donde podemos almacenar valores.<br>
+Estos nombres se llaman <strong>variables</strong>, y son espacios de memoria donde podemos almacenar valores.<br>
 </p>
 <p>La asignación se hace con el operador <code>=</code> de la siguiente forma: <code>&lt;nombre&gt; = &lt;valor o expresion&gt;</code>.</p>
-<p><strong>Ejemplos:</strong></p>
-<div id="82d42ccd" class="cell" data-execution_count="6">
+<p><strong>Ejemplos:</strong> Vamos a guardar el valor 5 en la variable <code>x</code>. Luego, vamos a sumarle 2 y guardarlo en la variable <code>y</code>.</p>
+<div id="4c4c39ad" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2f54851f" class="cell" data-execution_count="7">
+<div id="d6478a2b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ff90a211" class="cell" data-execution_count="8">
+<div id="1e92b01d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>7</code></pre>
 </div>
 </div>
-<div id="eaf2ebea" class="cell" data-execution_count="9">
+<div id="5071a018" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>14</code></pre>
 </div>
 </div>
-<div id="fa95e932" class="cell" data-execution_count="10">
+<div id="5e4bf217" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lenguaje <span class="op">=</span> <span class="st">"Python"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">"Estoy programando en "</span> <span class="op">+</span> lenguaje</span>
@@ -416,7 +433,7 @@ Variables y Constantes
 <div class="callout-body-container callout-body">
 <p>Si el dato es inmutable (no puede cambiar) durante la ejecución del programa, se dice que ese dato es una <strong>constante</strong>. Si tiene la habilidad de cambiar, se dice que es una variable. En Python, todas las variables son mutables, es decir, pueden cambiar su valor durante la ejecución del programa.<br>
 Y no sólo pueden cambiar su valor, sino también su tipo: <code>x = 5</code> y <code>x = "Hola"</code> son dos asignaciones válidas, y se pueden hacer una debajo de la otra:</p>
-<div id="9ab1e330" class="cell" data-execution_count="11">
+<div id="c7cd71b3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"Hola"</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,21 +463,21 @@ Nombres de Variables
 <p>Para poder realizar algunas operaciones particulares, necesitamos introducir el concepto de <em>función</em>. Una función es un bloque de código que se ejecuta cuando se la llama.<br>
 Es un fragmento de programa que permite efectuar una operación determinada. <code>abs</code>, <code>print</code>, <code>max</code> son ejemplos de funciones de Python: <code>abs</code>permite calcular el valor absoluto de un número, <code>print</code> permite mostrar un valor por pantalla y <code>max</code> permite calcular el máximo entre dos valores.<br>
 </p>
-<p>Una función puede recibir 0 o más <em>parámetros</em> o <em>argumentos</em>, que son valores que se le pasan a la función entre paréntesis y separados por comas, para que los use.<br>
+<p>Una función puede recibir cero o más <em>parámetros</em> o <em>argumentos</em>, que son valores que se le pasan a la función entre paréntesis y separados por comas, para que los use.<br>
 </p>
-<div id="f3f852ff" class="cell" data-execution_count="12">
+<div id="839ddb3c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>5</code></pre>
 </div>
 </div>
-<div id="4ea1b834" class="cell" data-execution_count="13">
+<div id="ef782c7e" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Hola!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>¡Hola!</code></pre>
 </div>
 </div>
-<div id="4b47af0e" class="cell" data-execution_count="14">
+<div id="cf23ef84" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(<span class="dv">5</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>7</code></pre>
@@ -489,10 +506,11 @@ Es muy importante respetar mayúsculas y minúsculas: PRINT() o prINT() no será
 </div>
 </div>
 <p>Si queremos crear una función que nos devuelva un saludo a Lucia cada vez que se la llama, debemos ingresar el siguiente conjunto de líneas en Python:</p>
-<div id="44093b92" class="cell" data-execution_count="15">
+<div id="ba394a1e" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar_lucia():</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"Hola, Lucia!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Podés copiar el código y pegarlo en Replit. Luego, apretá “Run”. Vas a notar que no pasa nada, ahora vamos a ver por qué.</p>
 <p>Varias cosas a notar del código:</p>
 <ol type="1">
 <li><code>saludar_lucia</code> es el nombre de la función. Podría ser cualquier otro nombre, pero es una buena práctica que el nombre de la función describa lo que hace.<br>
@@ -514,7 +532,7 @@ Sangría
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete.</p>
+<p>La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete (en nuestro caso, Replit).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -527,29 +545,31 @@ Firma de la función
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La firma de una función es la primera línea de la misma, donde se indica el nombre de la función y los parámetros que recibe. La firma permite identificar y diferenciar a una función de otra.</p>
+<p>La firma de una función es la primera línea de la misma, donde se indica el nombre de la función y los parámetros que recibe. Así como la firma de una persona permite identificarla de otra, la firma de una función permite identificarla y diferenciarla de otra.</p>
 </div>
 </div>
-<p>Pero, como vemos, el bloque de código anterior no hace nada. Para que la función haga algo, tenemos que llamarla. Para llamar a una función, escribimos su nombre, seguido de paréntesis y los parámetros que recibe, separados por comas.</p>
+<p>Como vimos más arriba, el bloque de código anterior no hace nada. Para que la función haga algo, tenemos que llamarla. Para llamar a una función, escribimos su nombre, seguido de paréntesis y los parámetros que recibe (si es que recibe alguno), separados por comas.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>saludar_lucia()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se dice que estamos <em>invocando</em> o <em>llamando</em> a la función. Y al invocar una función, se ejecutan las instrucciones que habíamos escrito en su cuerpo.<br>
 </p>
 <p>Pero de nuevo, vemos que no pasa nada. ¿Por qué? Porque la función usa <code>return</code> para devolver un valor. Pero nosotros no estamos haciendo nada con ese valor. Para poder verlo, tenemos que imprimirlo por pantalla.</p>
-<div id="b9bdd9a0" class="cell" data-execution_count="16">
+<div id="787facdc" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>saludo <span class="op">=</span> saludar_lucia()</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(saludo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, Lucia!</code></pre>
 </div>
 </div>
-<p>Lo que hicimos fue asignar el resultado devuelto por <code>saludar_lucia</code> a la variable <code>saludo</code>, y luego imprimir el valor de la variable por pantalla.</p>
-<p>Bueno, ahora podemos saludar a Lucia. Pero vamos a querer saludar a otras personas también. ¿Cómo hacemos? Podemos hacer una función que reciba el nombre de la persona a saludar como parámetro.</p>
-<div id="6ba75f91" class="cell" data-execution_count="17">
+<p>Lo que hicimos fue asignar el resultado devuelto por <code>saludar_lucia</code> a la variable <code>saludo</code>, y luego imprimir el valor de la variable por pantalla (aunque el paso de guardado es opcional, podríamos imprimirlo directamente).</p>
+<p>Bueno, ahora podemos saludar a Lucia. Pero vamos a querer saludar a otras personas también. ¿Tiene sentido hacer una función por cada persona? No, porque tendríamos muchas funciones (llamadas por ejemplo <code>saludar_lucia</code>, <code>saludar_mariana</code>, <code>saludar_emilia</code>, etc) que básicamente hacen lo mismo: saludar a alguien.</p>
+<p>Una de las características de una función es que sea una solución reutilizable a un problema. En nuestro caso, queremos saludar personas.</p>
+<p>¿Cómo hacemos entonces? Podemos hacer una función que reciba el nombre de la persona a saludar como parámetro. Un parámetro es un valor necesario para la ejecución de la función. En nuestro caso, indica a quién vamos a saludar:</p>
+<div id="d878d4d5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"Hola, "</span> <span class="op">+</span> nombre <span class="op">+</span> <span class="st">"!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>De esta forma, podemos saludar a cualquier persona, pasando su nombre como parámetro.</p>
-<div id="e07619c6" class="cell" data-execution_count="18">
+<div id="62995318" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Esta es otra forma de imprimir, sin necesidad de guardarnos</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># el resultado de la función en una variable,</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># simplemente la imprimimos</span></span>
@@ -558,10 +578,24 @@ Firma de la función
 <pre><code>Hola, Lucia!</code></pre>
 </div>
 </div>
-<div id="534c46fa" class="cell" data-execution_count="19">
+<div id="d329549c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(saludar(<span class="st">"Serena"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, Serena!</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Return vs Print
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Qué significa que una función devuelva o retorne algo?<br>
+Que una función devuelva o retorne algo, significa que no se está encargando de mostrar el resultado en pantalla. Pero, ¿está haciendo algo si no lo puedo ver en pantalla? Por supuesto, hay muchas cosas que ocurren “por detrás”, sin que nos demos cuenta, en una computadora. Si nosotros llamamos a la función <code>saludar</code> pasándole un nombre de esta forma <code>saludar("Serena")</code>, la función está armando el saludo y devolviéndolo, aunque nosotros no estemos viendo nada en la pantalla. Incluso si lo guardáramos en una variable (<code>saludo = saludar("Serena")</code>), también se está ejecutando y la variable <code>saludo</code> está almacenando el saludo, por más de que no veamos eso en ningún lado.&nbsp; La gran mayoría de las funciones van a retornar valores calculados, pero no van a ser responsables de mostrarlos en pantalla. Eso es algo que vamos a tener que ocuparnos por fuera, si quisiéramos ver el resultado.</p>
 </div>
 </div>
 <section id="ejemplos" class="level4" data-number="2.1.4.1">
@@ -570,12 +604,12 @@ Firma de la función
 <p><strong>Ejemplo</strong><br>
 Escribir una función que calcule el doble de un número.</p>
 </blockquote>
-<div id="3203de4d" class="cell" data-execution_count="20">
+<div id="e5cb3a90" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_doble(numero):</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> numero <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para invocarla, debemos llamarla pasándole un número:</p>
-<div id="767207e6" class="cell" data-execution_count="21">
+<div id="3fa57441" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> obtener_doble(<span class="dv">5</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -586,11 +620,11 @@ Escribir una función que calcule el doble de un número.</p>
 <p><strong>Ejemplo</strong><br>
 Pensá un número, duplícalo, súmale 6, divídelo por 2 y resta el número que elegiste al comienzo. El número que queda es siempre 3.</p>
 </blockquote>
-<div id="56ce8443" class="cell" data-execution_count="22">
+<div id="abd2dcc5" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(numero):</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ((numero <span class="op">*</span> <span class="dv">2</span>) <span class="op">+</span> <span class="dv">6</span>) <span class="op">/</span> <span class="dv">2</span> <span class="op">-</span> numero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="bbd81c8a" class="cell" data-execution_count="23">
+<div id="0ef797d4" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.0</code></pre>
@@ -600,13 +634,13 @@ Pensá un número, duplícalo, súmale 6, divídelo por 2 y resta el número que
 </section>
 <section id="ingreso-de-datos-por-consola" class="level3" data-number="2.1.5">
 <h3 data-number="2.1.5" class="anchored" data-anchor-id="ingreso-de-datos-por-consola"><span class="header-section-number">2.1.5</span> Ingreso de Datos por Consola</h3>
-<p>Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programas sean más útiles, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función <code>input</code>.</p>
+<p>Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programaspuedan interactuar, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función <code>input</code>.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Input es una función que bloquea el flujo del programa, esperando a que el usuario ingrese una entrada por consola y presione <em>enter</em>. Cuando el usuario presiona <em>enter</em>, la función devuelve el valor ingresado por el usuario.<br>
 </p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span>()</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"terminé!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si corremos el bloque de código anterior, vamos a tener un comportamiento como este:</p>
+<p>Si corremos el bloque de código anterior (te recomendamos que lo hagas), vamos a tener un comportamiento como este:</p>
 <ol type="1">
 <li>La consola va a quedar vacía, esperando el ingreso del usuario</li>
 <li>Ingresamos un valor, el que tengamos ganas, y presionamos enter.</li>
@@ -681,23 +715,23 @@ Los comentarios se escriben con el símbolo <code>#</code>. Todo lo que esté a 
 </section>
 <section id="sobre-convención-de-nombres" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="sobre-convención-de-nombres"><span class="header-section-number">2.2.2</span> Sobre Convención de Nombres</h3>
-<p>Para nombres de variables y funciones, se usa snake_case, que es básicamente dejar todas las palabras en minúscula y unirlas con un guión bajo. Ejemplos: <code>numero_positivo</code>, <code>sumar_cinco</code>, <code>pedir_numero</code>, etc.&nbsp; Siempre emplear un nombre que nos remita al significado que tendrá ese dato, siempre en snake_case: <code>numero</code>, <code>letra</code>, <code>letra2</code>, <code>edad_hermano</code>, etc.</p>
+<p>Para nombres de variables y funciones, en Python se usa <em>snake_case</em>, que es básicamente dejar todas las palabras en minúscula y unirlas con un guión bajo. Ejemplos: <code>numero_positivo</code>, <code>sumar_cinco</code>, <code>pedir_numero</code>, etc.&nbsp; Siempre emplear un nombre que nos remita al significado que tendrá ese dato, siempre en snake_case: <code>numero</code>, <code>letra</code>, <code>letra2</code>, <code>edad_hermano</code>, etc.</p>
 <section id="variables-1" class="level4" data-number="2.2.2.1">
 <h4 data-number="2.2.2.1" class="anchored" data-anchor-id="variables-1"><span class="header-section-number">2.2.2.1</span> Variables</h4>
-<p>Las variables son cosas. Entonces sus nombres son sustantivos: <code>nombre</code>, <code>numero</code>, <code>suma</code>, <code>resta</code>, <code>resultado</code>, <code>respuesta_usuario</code>. La única excepción son las variables booleanas (ya las vamos a ver, son aquellas que pueden guardar dos posibles valores: verdadero o falso), que suelen tener nombres como <code>es_par</code>, <code>es_cero</code>, <code>es_entero</code>, porque su valor es true o false.</p>
+<p>Las variables son cosas. Entonces sus nombres son <em>sustantivos</em>: <code>nombre</code>, <code>numero</code>, <code>suma</code>, <code>resta</code>, <code>resultado</code>, <code>respuesta_usuario</code>. La única excepción son las variables booleanas (ya las vamos a ver, son aquellas que pueden guardar dos posibles valores: verdadero o falso), que suelen tener nombres como <code>es_par</code>, <code>es_cero</code>, <code>es_entero</code>, porque su valor es true o false.</p>
 <p>A veces es útil alguna frase para identificar mejor el contenido:<br>
 <code>edad_mayor_hijo</code>, <code>apellido_conyuge</code></p>
 </section>
 <section id="funciones-1" class="level4" data-number="2.2.2.2">
 <h4 data-number="2.2.2.2" class="anchored" data-anchor-id="funciones-1"><span class="header-section-number">2.2.2.2</span> Funciones</h4>
-<p>Las funciones hacen algo. Entonces sus nombres son verbos. Se usan siempre verbos en infinitivo (terminan en <code>-ar</code>, <code>-er</code>, <code>-ir</code>): <code>calcular_suma</code>, <code>imprimir_mensaje</code>, <code>correr_prueba</code>, <code>obtener_triplicado</code>, etc.<br>
+<p>Las funciones hacen algo. Entonces sus nombres son <em>verbos</em>. Se usan siempre verbos en infinitivo (terminan en <code>-ar</code>, <code>-er</code>, <code>-ir</code>): <code>calcular_suma</code>, <code>imprimir_mensaje</code>, <code>correr_prueba</code>, <code>obtener_triplicado</code>, etc.<br>
 De nuevo, las excepciones son las funciones que devuelven un valor booleano (V o F). Esas pueden llamarse como: <code>es_par</code>, <code>da_cero</code>, <code>tiene_letra_a</code>, porque devuelven verdadero o falso, y eso nos confirma o niega la afirmación que hace el nombre.</p>
 </section>
 </section>
 <section id="sobre-ordenamiento-de-código" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="sobre-ordenamiento-de-código"><span class="header-section-number">2.2.3</span> Sobre Ordenamiento de Código</h3>
 <p>Cuando uno corre Python, lo que hace el lenguaje es leer línea a línea nuestro código. Lo que se puede ejecutar, lo ejecuta. Las funciones las guarda en memoria para poder usarlas luego.<br>
-Entonces es más ordenado y prolijo primero poner todas las funciones, y después el código “ejecutable” (si van a dejar código suelto en el archivo).<br>
+Entonces es más ordenado y prolijo primero poner todas las funciones, y después el código “ejecutable” (si van a dejar código suelto en el archivo, cosa que en general no se suele recomendar).<br>
 </p>
 <p>Además, no olvidemos que Python tiene un flujo de control de arriba para abajo. Si intentamos invocar funciones antes de que estén definidas (<code>def</code>), Python no va a saber qué hacer, y nos va a tirar un error.<br>
 </p>
@@ -793,7 +827,7 @@ Tip
 Pero dependiendo de la naturaleza o el <strong>tipo</strong> de información, cabrá la posibilidad de realizar distintas transformaciones aplicando <strong>operadores</strong>. Por eso, a la hora de representar información no sólo es importante que identifiquemos al dato y podamos conocer su valor, sino saber qué tipo de tratamiento podemos darle.</p>
 <p>Todos los lenguajes tienen tipos predefinidos de datos. Se llaman predefinidos porque el lenguaje ya los conoce: sabe cómo guardarlos en memoria y qué transformaciones puede aplicarles.</p>
 <p>En Python, tenemos los siguientes tipos de datos:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -855,7 +889,7 @@ Un string permite almacenar cualquier tipo de caracter unicode dentro (letras, n
 <p>Los operadores son símbolos que representan una operación. Por ejemplo, el operador <code>+</code> representa la suma.<br>
 </p>
 <p>Para transformar datos numéricos, emplearemos los siguientes operadores:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Símbolo</th>
@@ -932,13 +966,13 @@ Un string permite almacenar cualquier tipo de caracter unicode dentro (letras, n
 </tbody>
 </table>
 <p>Como pasa en matemática, para alterar cualquier precedencia (prioridad de operadores) se pueden usar paréntesis.</p>
-<div id="19d7af02" class="cell" data-execution_count="24">
+<div id="0794919d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span>) <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>16</code></pre>
 </div>
 </div>
-<div id="492638f9" class="cell" data-execution_count="25">
+<div id="f8df380a" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">+</span> (<span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>11</code></pre>
@@ -949,7 +983,7 @@ Un string permite almacenar cualquier tipo de caracter unicode dentro (letras, n
 <section id="operadores-de-texto" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="operadores-de-texto"><span class="header-section-number">2.3.3</span> Operadores de Texto</h3>
 <p>Para transformar datos de texto, emplearemos los siguientes operadores:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1002,7 +1036,7 @@ Un string permite almacenar cualquier tipo de caracter unicode dentro (letras, n
 </p>
 <p>Por ejemplo, la cadena <code>"Hola"</code> tiene 4 caracteres: <code>"H"</code>, <code>"o"</code>, <code>"l"</code> y <code>"a"</code>.<br>
 La posición de cada caracter es la siguiente:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Posición</th>
@@ -1038,7 +1072,7 @@ Tip
 </p>
 </div>
 </div>
-<div id="a6adb3a1" class="cell" data-execution_count="26">
+<div id="efc37ed0" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>letra <span class="op">=</span> <span class="st">"Hola"</span>[<span class="dv">0</span>]</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(letra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1173,7 +1207,7 @@ Recomendación
 <p>Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.</p>
 </div>
 </div>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1319,18 +1353,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1362,7 +1385,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1370,7 +1415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

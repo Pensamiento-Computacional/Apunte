@@ -66,6 +66,10 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
     a. Primero, usando 5 variables para cada entero.
     b. Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?
 
+:::{.callout-info}
+A partir de ahora y en adelante, todo lo que se nos pida (incluso si dice "programa") se debe realizar dentro de una o más funciones.
+:::
+
 8. Crear una **función** que reciba un número y que devuelva el valor absoluto.
 
 9. Crear una **función** que reciba un número y que devuelva `True` si es par, y `False` si es impar.
@@ -74,7 +78,7 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
 
 11. Crear una **función** que reciba dos enteros y que devuelva el resto y el cociente entre ellos.
 
-12. Crear una función que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: "Apellido, Nombre".
+12. Crear una **función** que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: "Apellido, Nombre".
 
 13. Hacer una **función** que reciba una palabra y devuelva la cantidad de letras que tiene.
 
@@ -412,7 +416,7 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
 
     b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
 
-9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar `lambda`.
+9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while.
 
 ### 2. Rangos, Tuplas y Listas
 
@@ -578,7 +582,7 @@ print(tuplas_a_diccionario(l))
 
     b. Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.
 
-4. Escribir un programa que le pida al usuario que ingrese nombres. 
+4. Se tiene una agenda implementada como diccionario, que guarda nombres de personas y sus números de teléfono. Escribir un programa que le pida al usuario que ingrese nombres. 
 
     a. Si el nombre se encuentra en la agenda, debe mostrar el teléfono. 
     b. Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente. 
@@ -644,7 +648,11 @@ print(tuplas_a_diccionario(l))
 
     b. Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar `filter` y `map`. 
 
-17. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
+
+17. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guia de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
+Se quiere que el usuario que está usando el programa pueda acceder por pantalla a un enunciado puntual de una guía con sólo pedirlo (si existe). Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
+
+18. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
 
     Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.
 
@@ -791,6 +799,11 @@ El formato del archivo es el siguiente:
     Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.
 
 16. Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: 'el archivo {nombre} no existe. Se crea y deja vacío.'.
+
+17. **Desafío** (obligatorio): Los docentes de Pensamiento Computacional saben que los ejercicios de las primeras guías son cortitos de resolver, entonces les dicen a los estudiantes que “si el ejercicio tiene más de 5 líneas, probablemente haya que revisarlo”. Los estudiantes se lo toman muy literal, y quieren buscar la forma de chequear si un ejercicio que resolvieron tiene más de 5 líneas, pero sin contar a la firma de la función.\
+El ejercicio puede estar guardado en un archivo o en un string todo junto, lo que resulte más cómodo para su resolución. Además, quieren la posibilidad de poder pasar varios ejercicios juntos para ahorrar tiempo, y saber en cuáles se pasaron de las 5 líneas o si algun archivo (en caso de elegir esa forma de almacenamiento) no existe. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
+
+18. **Desafío** (obligatorio): Los estudiantes del CBC pensaron que podía ser buena idea guardar los apuntes de todas las materias en un mismo archivo, para no marearse con tantos documentos diferentes. Pero terminó siendo un dolor de cabeza y es muy dificil encontrar las notas de cada materia. Para poder acceder facil a esa informacion, decidieron extraer del archivo original la informacion de las notas. Sabemos que a cada materia se le puso de título un hashtag, por ejemplo “#analisisMatematico”, y que la fila que contiene un título no contiene nada más. Lo que se quiere hacer es obtener un nuevo archivo CSV con el nombre de la sección/materia, la posición (número de línea) donde comienza la misma, y la posición donde termina. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
 
 ### 2. Manejo de Errores
 
@@ -1007,8 +1020,8 @@ df
 1. Mostrar el resumen de la información del DataFrame
 2. Mostrar su forma
 3. Mostrar la lista de los nombres de las columnas
-4. Mostrar las primeras 3 columnas
-5. Mostrar las últimas 3 columnas
+4. Mostrar las primeras 3 filas
+5. Mostrar las últimas 3 filas
 6. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
 7. Mostrar a los estudiantes que tienen edad mayor a 25.
 8. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
@@ -1155,7 +1168,42 @@ df = pd.read_csv(url)
 ```
 :::
 
-5. **Desafio** (obligatorio): Teniendo la planilla de notas del primer parcial del 1C2024 de los alumnos de la materia "Pensamiento Computacional", importar los datos como dataframe usando el siguiente código:
+5. Para calcular la energía potencial elástica (*Ep*) almacenada en un material elástico, se utiliza la siguiente fórmula:
+
+    $$
+    Ep = \frac{1}{2}*k*x^{2}
+    $$
+
+    donde *k* es la constante elástica (con unidad N/m) y *x* es la distancia que el resorte se estira o comprime (metros). La energía *Ep* resultante tiene como unidad el Joule (J).
+
+    Para un resorte con valor $*k=0.15 N/m*$, graficar en línea continua la energía potencial elástica $*Ep*$ en un rango de distancia $x$ de 0 a 10m con pasos de 0.5. Incluir título, grilla, nombres de ejes y label (leyenda) con el valor de $k$.
+
+6. Para calcular la posición final de un móvil dada una posición inicial, velocidad inicial, tiempo y aceleración, se tiene la siguiente fórmula:
+
+    $$
+    x = x_0+v_0 . t + \frac{1}{2}.a.t^2
+    $$
+
+    Donde $x_0$ es la posición inicial, $v_0$ la velocidad inicial, $t$ el tiempo y $a$ la aceleración.
+
+    Se tiene la siguiente información de dos móviles:
+
+    **movil 1:**
+
+    - Comienza a 0m
+    - Arranca desde el reposo con velocidad $ 0 \ m/s$
+    - Su aceleración es $1 \ m/s^2$
+
+    **movil 2:**
+
+    - Comienza a 500m
+    - Arranca con velocidad $4 \ m/s$
+    - Su aceleración es $0.5 \ m/s^2$
+
+    Para 5000 valores del tiempo del 0 al 100, mostrar un único gráfico con la posición respecto del tiempo de ambos móviles. Incluir grilla, títulos y label (leyenda) indicando el valor de la posicion inicial, velocidad y aceleración.
+
+
+7. **Desafio** (obligatorio): Teniendo la planilla de notas del primer parcial del 1C2024 de los alumnos de la materia "Pensamiento Computacional", importar los datos como dataframe usando el siguiente código:
 
     ```python
     import pandas as pd

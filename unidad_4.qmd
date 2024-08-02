@@ -15,7 +15,7 @@ Una secuencia en Python es un grupo de elementos con una organización interna, 
 Las secuencias son tipos de datos que pueden ser iterados, y que tienen un orden definido. Las secuencias más comunes son los rangos, las cadenas de caracteres, las listas y las tuplas. En este capítulo vamos a ver las características de cada una de ellas y cómo podemos manipularlas.
 
 ## Rangos
-Los rangos ya los hemos visto antes, pero lo que no habíamos definido es que son secuencias. Los rangos representan específicamente una secuencia de números inmutable.
+Los rangos ya los hemos visto antes, pero lo que no habíamos comentado es que son secuencias. Los rangos representan específicamente una secuencia de números inmutable.
 
 Los rangos se definen con la función `range()`, que recibe como parámetros el inicio, el fin y el paso. El inicio es opcional y por defecto es 0, el paso también es opcional y por defecto es 1.
 
@@ -164,7 +164,7 @@ TypeError: 'str' object does not support item assignment
 
 Si queremos realizar una modificación sobre una cadena, lo que tenemos que hacer es crear una nueva cadena con la modificación que queremos:
 
-```python
+```{python}
 saludo = "Hola Mundo"
 saludo = "h" + saludo[1:]
 print(saludo)
@@ -173,28 +173,23 @@ print(saludo)
 #### Otros Métodos de Cadenas de Caracteres
 Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten manipularlas. Algunos ya los vimos, como `len()`, `in` y `not in`. Veamos otros.
 
+:::{.callout-note}
+### Recomendación
+Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.
+:::
+
 | Método | Descripción | Ejemplo |
 |---|---|---|
-| `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
 | `count(subcadena)` | Devuelve la cantidad de veces que aparece la subcadena en la cadena | `"Hola mundo".count("o")` devuelve `2` |
 | `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra. Cada vez que se llama, devuelve la primer aparición. Puede recibir un parámetro adicional para buscar a partir de una posición particular. | `"Hola mundo".find("mundo")` devuelve `5`.`"Hola mundo".find("Hola",6)` devuelve `-1`. |
 | `upper()` | Devuelve una copia de la cadena con todos los caracteres en mayúscula | `"Hola mundo".upper()` devuelve `"HOLA MUNDO"` |
 | `lower()` | Devuelve una copia de la cadena con todos los caracteres en minúscula | `"Hola mundo".lower()` devuelve `"hola mundo"` |
-| `strip()` | Devuelve una copia de la cadena sin los espacios en blanco al principio y al final | `" Hola mundo ".strip()` devuelve `"Hola mundo"`. |
-| `strip(subcadena)` | Devuelve una copia de la cadena sin los caracteres de la subcadena al principio y al final. Sólo funciona para quitar elementos de los extremos del string | `"Hola mundo".strip("do")` devuelve `"Hola mun"` |
 | `replace(subcadena1, subcadena2)` | Devuelve una copia de la cadena reemplazando todas las apariciones de la subcadena1 por la subcadena2 | `"Hola mundo".replace("mundo", "amigos")` devuelve `"Hola amigos"` |
 | `split()` | Devuelve una lista de subcadenas separando la cadena por los espacios en blanco | `"Hola mundo  ".split()` devuelve `["Hola", "mundo"]` |
 | `split(separador)` | Devuelve una lista de subcadenas separando la cadena por el separador | `"Hola, mundo".split(", ")` devuelve `["Hola", "mundo"]` |
 | `isdigit()` | Devuelve `True` si todos los caracteres de la cadena son dígitos, `False` en caso contrario | `"123".isdigit()` devuelve `True` |
 | `isalpha()` | Devuelve `True` si todos los caracteres de la cadena son letras, `False` en caso contrario | `"Hola".isalpha()` devuelve `True` |
-| `isalnum()` | Devuelve `True` si todos los caracteres de la cadena son letras o dígitos, `False` en caso contrario | `"Hola123".isalnum()` devuelve `True` |
-| `capitalize()` | Devuelve una copia de la cadena con el primer caracter en mayúscula y el resto en minúscula | `"hola mundo".capitalize()` devuelve `"Hola mundo"` |
 | `index(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o produce un error si no se encuentra | `"Hola mundo".index("mundo")` devuelve `5` |
-
-:::{.callout-note}
-### Recomendación
-Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.
-:::
 
 ## Tuplas
 Las tuplas son una secuencia de elementos inmutable. Esto significa que no se pueden modificar una vez creadas. En Python, el tipo de dato asociado a las tuplas se llama `tuple` y se definen con paréntesis `()`:
@@ -539,33 +534,6 @@ print(lista)
 Lo importante de momento es que sepas que existe esta forma de ordenar. A *key* se le puede pasar una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `str.lower` convierte todo a minúscula antes de intentar ordenar.
 :::
 
-### Listas por Comprensión
-Las listas por comprensión son una forma de crear listas de forma concisa y elegante.
-
-Por ejemplo, si queremos crear una lista con los números del 1 al 10, podemos hacerlo de la siguiente forma:
-
-```{python}
-numeros = []
-for i in range(1, 11):
-    numeros.append(i)
-print(numeros)
-```
-
-Sin embargo, podemos hacerlo de forma más concisa usando una lista por comprensión:
-
-```{python}
-numeros = [i for i in range(1, 11)]
-print(numeros)
-```
-
-La sintaxis de una lista por comprensión es la siguiente:
-
-```python
-[<expresión> for <elemento> in <secuencia>]
-```
-
-La expresión se evalúa para cada elemento de la secuencia, y el resultado de esa evaluación se agrega a la lista.
-
 ### Listas anidadas
 Las listas también puede estar anidadas, es decir, una lista puede contener a otras listas. Por ejemplo, podemos tener una lista de listas de números:
 
@@ -693,15 +661,6 @@ La sintaxis del método join es:
 
 El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio `" "`, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.
 
-:::{.callout-note collapse="true"}
-### Set
-Adicional a las estructuras vistas (cadenas, rangos, listas y tuplas), también tenemos los `sets`. Los sets **no** son secuencias, y por lo tanto no tienen índices y no se pueden *slicear*. Sin embargo, son muy útiles para realizar operaciones de conjuntos, como unión, intersección, diferencia, etc.\
-
-La gracia de un set es que es desordenado (no tiene orden predeterminado) pero cada uno de sus elementos es único. Por lo que agregar varias veces el mismo elemento a un set (`set.add(elem)`) no tiene efecto, sólo se agrega la primera vez.\
-
-De sets vamos a ver más en la siguiente unidad, junto con los diccionarios.
-:::
-
 ## Operaciones de las Secuencias
 Tanto las cadenas, como las tuplas y las listas son secuencias, y por lo tanto comparten una serie de operaciones que podemos realizar sobre ellas.
 
@@ -716,7 +675,6 @@ Tanto las cadenas, como las tuplas y las listas son secuencias, y por lo tanto c
 | `min(s)` | Devuelve el elemento mínimo de la secuencia `s` |
 | `max(s)` | Devuelve el elemento máximo de la secuencia `s` |
 | `sum(s)` | Devuelve la suma de los elementos de la secuencia `s` |
-| `enumerate(s)` | Devuelve una secuencia de tuplas de la forma `(i, s[i])` para cada elemento de la secuencia `s` |
 | `count(x)` | Devuelve la cantidad de veces que aparece el elemento `x` en la secuencia `s` |
 | `index(x)` | Devuelve el índice de la primera aparición del elemento `x` en la secuencia `s` |
 
@@ -1073,12 +1031,9 @@ Cuando se recibe una clave, se le calcula su *hash* y se busca en el diccionario
 | `d.keys()` | Devuelve una lista con las claves del diccionario `d` |
 | `d.values()` | Devuelve una lista con los valores del diccionario `d` |
 | `d.items()` | Devuelve una lista de tuplas con los pares clave-valor del diccionario `d` |
-| `d.clear()` | Elimina todos los pares clave-valor del diccionario `d` |
 | `d.copy()` | Devuelve una copia del diccionario `d` |
 | `d.pop(k)` | Elimina la clave `k` y su valor asociado del diccionario `d`, y devuelve el valor asociado |
-| `d.popitem()` | Elimina un par clave-valor del diccionario `d`, y devuelve una tupla con la clave y el valor eliminados |
 | `d.get(k, v)` | Devuelve el valor asociado a la clave `k` si la clave existe, o el valor `v` en caso contrario |
-| `d.update(d2)` | Agrega los pares clave-valor del diccionario `d2` al diccionario `d`. Si una clave ya existe en `d`, actualiza su valor asociado. |
 
 :::{.callout-note}
 Existen más métodos de diccionarios, pero estos son los más utilizados y los que vamos a ver en la materia. Recomendamos que pruebes cada uno de ellos con los diccionarios que vimos en este capítulo.
@@ -1156,79 +1111,3 @@ Lo que estamos haciendo es declarar una función que recibe un parámetro `alumn
 La función se declara en una sola línea, y no tiene nombre.\
 La función se pasa como parámetro `key` a `sorted`, y se ejecuta para cada elemento de la lista antes de ordenar.
 :::
-
-## Sets
-Un set es una estructura de datos mutable (como las listas y los diccionarios), que permite agregar y quitar elementos cumpliendo los requisitos de unicidad y búsqueda en tiempo constante. Además, es posible hacer operaciones entre sets como la unión, intersección y diferencia.
-
-La sintaxis de un set es con llaves `{}`, al igual que el diccionario, pero no contiene pares de clave-valor asociados, únicamente elementos.
-
-
-```{python}
-s1 = {1, 2, 3, 4}
-print(s1)
-```
-
-El set no permite tener elementos repetidos, por lo que tratar de agregar un elemento a un set en donde ya existe, no lo agrega por duplicado:
-
-```{python}
-s1.add(1)
-print(s1)
-```
-
-Para unir dos sets, podemos usar el método `union`:
-
-```{python}
-s2 = {3,4,5,6}
-s1.union(s2)
-print(s1)
-```
-
-También podemos ver la intersección, y la diferencia:
-
-```{python}
-intersection = s1.intersection(s2)
-diff = s1.difference(s2)
-
-print(f"La intersección de s1 y s2 es {intersection} y la diferencia es: {diff}")
-```
-
-Para crear un set vacío, no podemos usar un par de llaves `{}`, porque esa es sintaxis para crear un diccionario vacío. Lo que tenemos que hacer es usar el método `set()`.
-
-```{python}
-legajos = set()
-
-legajos.add(105609)
-print(legajos)
-```
-
-### Operaciones con Sets
-
-| Operación | Descripción |
-|---|---|
-| `s.add(x)` | Agrega el elemento `x` al set `s` |
-| `s.remove(x)` | Elimina el elemento `x` del set `s`. Si `x` no se encuentra en `s`, se produce un error |
-| `s.discard(x)` | Elimina el elemento `x` del set `s`. Si `x` no se encuentra en `s`, no se produce un error |
-| `s.clear()` | Elimina todos los elementos del set `s` |
-| `s.copy()` | Devuelve una copia del set `s` |
-| `s.union(s2)` | Devuelve un set con los elementos de `s` y `s2` |
-| `s.intersection(s2)` | Devuelve un set con los elementos que están en `s` y en `s2` |
-| `s.difference(s2)` | Devuelve un set con los elementos que están en `s` pero no en `s2` |
-| len(s) | Devuelve la cantidad de elementos en `s` |
-| x in s | Devuelve True si el elemento `x` se encuentra en `s` |
-
-### Ordenamiento e Iteración de Sets
-Un set es un conjunto de datos sin ordenar. Sin embargo, podemos de todas formas y si quisiéramos, ordenar los elementos haciendo uso de `sorted`. El método `sort()` no está disponible para los sets.
-
-```{python}
-s3 = {1,7,2,8,4}
-print(sorted(s3))
-```
-
-Los elementos también pueden iterarse:
-
-```{python}
-s4 = {1, 2, 3, 4}
-for e in s4:
-  print(e)
-```
-

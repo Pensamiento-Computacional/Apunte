@@ -370,8 +370,9 @@ Note que el número de Euler o número e es una constante incluída en NumPy com
 np.e
 ```
 
-#### Funciones trigonométricas:
-
+:::{.callout-note collapse="true"}
+#### Funciones trigonométricas (opcional)
+Esta parte del apunte es opcional, es decir, no se evalúa en los exámenes.
 A continuación, una lista con las funciones trigonométricas más utilizadas, que toman los valores en radianes:
 
 | Función trigonométrica | Función |
@@ -426,6 +427,7 @@ print("De grados [90, 180, 270, 360] a radianes:",
 print("De radianes [π/2, π, 1.5*π, 2*π] a grados:", 
       np.rad2deg([np.pi/2, np.pi, 1.5*np.pi, 2*np.pi]))
 ```
+:::
 
 #### Operaciones con matrices:
 
@@ -612,7 +614,7 @@ pd.Series(lista)
 
 Esto es análogo a lo que se hacía con los arrays de Numpy, pero con la diferencia de que las series de Pandas pueden contener datos de distinto tipo.
 
-Note que se ven dos líneas verticales de datos en el output. A la derecha se observa una columna con los elementos de la lista antes creada, y a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, que nos muestra la posición de los elementos dentro de la Serie.\
+Notemos que se ven dos líneas verticales de datos en el output. A la derecha se observa una columna con los elementos de la lista antes creada, y a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, que nos muestra la posición de los elementos dentro de la Serie.\
 También podríamos cambiarlo si quisiéramos. En ese caso, se puede establecer utilizando `index`.
 
 El índice es de vital importancia ya que permite acceder a los elementos de la serie (muy parecido a cómo las claves nos permiten acceden a los valores de un diccionario). Al elegir índices personalizados, tenemos que tener en cuenta que su longitud debe ser acorde al número de elementos de la Serie. De lo contrario, se mostrará un ValueError. 
@@ -634,17 +636,14 @@ a
 
 #### Accediendo a un elemento
 
-Como ya se debe estar imaginando, para acceder a un elemento de la serie, se debe indicar el valor del índice o la posición entre corchetes. Si el índice no es numérico, podrían ser elementos distintos.
+Como ya se debe estar imaginando, para acceder a un elemento de la serie, se debe indicar el valor del índice.
 
 ```{python}
 # Acceder al elemento de índice y:
 a["y"]
 ```
 
-```{python}
-# Acceder al elemento de posición 0:
-a[0]
-```
+Si los índices son numéricos, simplemente se le pasa entre corchetes un número.
 
 #### Operaciones con Series
 Así como pasaba con los arrays de NumPy, las Series no requieren recorrer valor por valor en un ciclo for si queremos realizar operaraciones. Podemos usar directamente operadores con Series.\
@@ -691,7 +690,7 @@ A continuación, se observa una tabla con métodos que nos permiten conocer las 
 | --- | --- |
 | `.info()` | Resume la información del DataFrame |
 | `.shape` | Devuelve una tupla con el número de filas y columnas |
-| `.size` | Número de elementos |
+| `.size` | Número de elementos, aunque también puede usarse `len` |
 | `.columns` | Lista con los nombres de las columnas |
 | `.index` | Lista con los nombres de las filas |
 | `.dtypes` | Serie con los tipos de datos de las columnas |
@@ -699,7 +698,7 @@ A continuación, se observa una tabla con métodos que nos permiten conocer las 
 | `.tail()` | Muestra las últimas filas |
 | `.describe()` | Brinda métricas de las columnas numéricas |
 
-Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFrame df** definido en la siguiente línea de código.
+Para ejemplificar los métodos y las funciones de Pandas, usaremos el **DataFrame df** definido en el siguiente bloque de código.
 
 ```{python}
 data = {'nombre': ['José Martínez', 'Rosa Díaz', 'Javier Garcíaz', 'Carmen López', 'Marisa Collado', 'Antonio Ruiz', 'Antonio Fernández', 
@@ -717,7 +716,7 @@ df
 \
 
 :::{.callout-note}
-Muchas veces no vamos a querer modificar el dataframe original, pero sí manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
+Muchas veces no vamos a querer modificar el dataframe original, pero sin manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
 :::
 
 ##### Info, dtypes, columns e index
@@ -1144,7 +1143,7 @@ import matplotlib.pyplot as plt
 
 Para crear un gráfico con matplotlib, se deben seguir los siguientes pasos:
 
-1. **Crear la figura** que contendrá el gráfico, utilizando las funciones `subplots()` o `figure()`. Se recomienda la primera, como se verá más adelante.
+1. **Crear la figura** que contendrá el gráfico, utilizando las funciones `subplots()` o `figure()`. Se recomienda la primera, es la que va a utilizarse en la materia.
 
 2. **Graficar los datos**, utilizando distintas funciones dependiendo del tipo de gráfico que se desea realizar:
 
@@ -1167,36 +1166,6 @@ Para crear un gráfico con matplotlib, se deben seguir los siguientes pasos:
   ```
 
 <hr>
-
-Dijimos que podíamos usar `subplots`o `figure` para crear una figura.\
-Pero, **¿en qué se diferencian?** Eso depende de lo que quieras hacer. A continuación, se verá el detalle de lo que está ocurriendo en cada línea, para que así puedas elegir qué es lo mejor para tu caso.
-
-```{python}
-plt.figure()
-```
-
-```{python}
-plt.subplots()
-```
-
-No se puede ver un gráfico en ninguno de los outputs, pero analicemos lo que nos imprime:
-
-1. `fig = plt.figure()` crea una **figura, pero sin axes**, por lo que muestra `<Figure size 640x480 with 0 Axes>`.
-2. `fig, ax = plt.subplots()` permite **crear ambos: figura y axes**, por lo que muestra un plot vacío.
-
-Una **figura** es el marco que delimita la zona donde se trazan los gráficos, mientras que los **axes**, son lo que llamamos comunmente gráficos, es decir, son las áreas donde los puntos se pueden especificar en términos de coordenadas. 
-Explicado de forma más simple: **una figura es el lienzo y un axes es el dibujo**.
-**Por lo tanto, una figura puede contener muchos axes, pero un axes determinado sólo puede estar contenido en una única figura.**
-
-<img src="./imgs/unidad_6/fig_ax.png" width="200" />
-
-::: {.callout-note}
-#### **¡Ojo! No confundir axes con axis** \
-Los **Axis** son los ejes cartesianos que se encargan de establecer los límites, la escala y las dimensiones del gráfico: un axes puede tener 2 Axis (x e y), si es un gráfico plano, o 3, si es un gráfico en 3D.
-:::
-
-Entonces, con lo aprendido hasta el momento, podemos decir que `figure` puede llegar a ser más amigable para principiantes ya que es más conciso y resulta muy útil cuando simplemente se desea crear un gráfico para verificar resultados rápidamente; y `subplots` es ideal cuando necesitamos un enfoque más flexible, con gráficos más complejos o con un ajuste fino.\
-Pero los dos, al final, logran lo mismo (al menos para las cosas que vamos a ver en esta materia).
 
 ### Creando una figura
 
@@ -1448,8 +1417,8 @@ ax.set_title("Mascotas")
 plt.show()
 ```
 
-:::{.callout-note}
-#### ¿Qué pasa si nuestros labels no llegan a verse?
+:::{.callout-note collapse="true"}
+#### ¿Qué pasa si nuestros labels no llegan a verse? (opcional)
 Puede pasar, sobre todo si tenemos muchos datos con nombres largos, que nuestros labels no lleguen a verse de forma correcta si los presentamos de forma horizontal.\
 Por ejemplo:
 

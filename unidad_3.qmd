@@ -18,12 +18,12 @@ if <expresion>:
     <cuerpo>
 ```
 
-Donde `if` es una palabra reservada, `<expresion>` es una *condición* y `<cuerpo` es un bloque de código que se ejecuta sólo si la condición es verdadera.
+Donde `if` es una palabra reservada, `<expresion>` es una *condición* y `<cuerpo>` es un bloque de código que se ejecuta sólo si la condición es verdadera.
 
 Por lo tanto, antes de seguir explicando sobre la instrucción `if`, debemos entender qué es una *condición*. Estas expresiones tendrán valores del tipo *sí* o *no*.
 
 ### Expresiones Booleanas
-Las expresiones booleanas forman parte de la lógica binomial, es decir, sólo pueden tener dos valores: `True` o `False`.
+Las expresiones booleanas forman parte de la lógica binomial, es decir, sólo pueden tener dos valores: `True` (verdadero) o `False` (falso).
 Estos valores no tienen elementos en común, por lo que no se pueden comparar entre sí. Por ejemplo, `True > False` no tiene sentido. Y además, son complementarios: algo que **no** es True, es False; y algo que **no** es False, es True. Son las únicas dos opciones posibles.
 
 Python, además de los tipos numéricos como `int`y `float`, y de las cadenas de caracteres `str`, tiene un tipo de datos llamado `bool`. Este tipo de datos sólo puede tener dos valores: `True` o `False`. Por ejemplo:
@@ -39,7 +39,7 @@ Las expresiones booleanas se pueden construir usando los operadores de comparaci
 Por ejemplo, si quisiéramos saber si `5` es mayor a `3`, podemos construir la expresión:
 
 ```{python}
-5 > 3
+print(5 > 3)
 ```
 
 Como 5 es en efecto mayor a 3, esta expresión, al ser evaluada, nos devuelve el valor `True`.
@@ -47,7 +47,7 @@ Como 5 es en efecto mayor a 3, esta expresión, al ser evaluada, nos devuelve el
 Si quisiéramos saber si `5` es menor a `3`, podemos construir la expresión:
 
 ```{python}
-5 < 3
+print(5 < 3)
 ```
 
 Como 5 no es menor a 3, esta expresión, al ser evaluada, nos devuelve el valor `False`.
@@ -79,8 +79,9 @@ Veamos algunos ejemplos:
 5 <= 4
 ```
 
+
 :::{.callout-tip}
-Te recomendamos probar estas expresiones para ver qué valores devuelven.
+Te recomendamos fuertemente probar estas expresiones para ver qué valores devuelven.
 Podés hacerlo de dos formas:
 
 1. Guardando el resultado de la expresión en una variable, para luego imprimirla:
@@ -108,9 +109,9 @@ Python tiene tres operadores lógicos: `and`, `or` y `not`. Veamos qué hacen:
 
 | Operador | Significado |
 |----------|-------------|
-| `a and b` | El resultado es `True`solamente si `a`es `True`**y** `b`es `True`. Ambos deben ser `True`, de lo contrario devuelve `False`. |
-| `a or b` | El resultado es `True`si `a`es `True` **o** `b`es `True` (o ambos). Si ambos son `False`, devuelve `False`. |
-| `not a` | El resultado es `True` si `a`es `False`, y viceversa. |
+| `a and b` | El resultado es `True`solamente si `a` es `True` **y** `b` es `True`. Ambos deben ser `True`, de lo contrario devuelve `False`. |
+| `a or b` | El resultado es `True` si `a` es `True` **o** `b` es `True` (o ambos). Si ambos son `False`, devuelve `False`. |
+| `not a` | El resultado es `True` si `a` es `False`, y viceversa. |
 
 
 Algunos ejemplos:
@@ -150,7 +151,7 @@ not 5 > 2
 
 :::{.callout-caution collapse="true"}
 ### Prioridad de Operadores
-Las expresiones lógicas complejas (con más de un operador), se resuelven al igual que en matemáticas: respetando precedencias y de izquierda a derecha. También admiten el uso de `()` para alterar las precedencias.
+Las expresiones lógicas complejas (con más de un operador), se resuelven al igual que en matemática: respetando precedencias y de izquierda a derecha. También admiten el uso de `()` para alterar las precedencias.
 
 Sin embargo, si no tenemos precedencias explícitas con `()`, Python prioriza resolver primero los `and`, luego los `or` y por último los `not`.
 
@@ -336,8 +337,8 @@ if not x:
 :::
 
 
-::: {.callout-important}
-### Ejercicio Desafío
+::: {.callout-important collapse="true"}
+### Ejercicio Desafío (opcional)
 Debemos calcular el pago de una persona empleada en nuestra empresa. El cálculo debe hacerse por la cantidad de horas trabajadas, y se le debe pedir al usuario la cantidad de horas y cuánto vale cada hora.\
 Adicionalmente, se abona un plus fijo de guardería a todo empleado/a con infantes a su cargo. Y se paga un 10% de incentivo a todo empleado/a que haya trabajado 30 horas o más y **no** reciba el plus por guardería.\
 
@@ -358,19 +359,19 @@ Supongamos que en una fábrica se nos pide hacer un procedimiento para entrenar 
 
 ```
 1 Abrir la puerta del depósito y encender luces 
+
 2 Ir al garage o playón donde estacionó el camión 
 3 Abrir las puertas traseras de la caja del transporte
-
 4 Tomar una caja con ambas manos, asegurándola para no tirarla 
 5 Caminar sosteniendo la caja hasta el depósito 
-6 Colocar la caja sobre el piso en el sector correspondiente 
-7 Ir al garage o playón donde estacionó el camión
+6 Colocar la caja sobre el piso en el sector correspondiente
 
+7 Ir al garage o playón donde estacionó el camión
 8 Tomar OTRA caja con ambas manos, asegurándola para no tirarla 
 9 Caminar sosteniendo la caja hasta el depósito 
 10 Colocar la caja sobre la caja anterior 
-11 Ir al garage o playón donde estacionó el camión
 
+11 Ir al garage o playón donde estacionó el camión
 12 Tomar OTRA caja con ambas manos, asegurándola para no tirarla 
 13 Caminar sosteniendo la caja hasta el depósito 
 14 Colocar la caja sobre la caja anterior
@@ -448,7 +449,7 @@ Y si le pasamos tres, los toma como `start`, `end` y `step`.
 ¿Te suena quizás a algo que ya vimos? Quizás... ¿los *slices* de las cadenas de caracteres?
 :::
 
-Además, la variable `<nombre>` va a ir tomando el valor de cada elemento de la `<expresion>` en cada iteración. En nuestro ejemplo de imprimir los números del 1 al 10, vemos que i toma los valores 1, 2, 3, 4, 5, 6, 7, 8, 9 y 10, en ese orden.
+Además, la variable `<nombre>` va a ir tomando el valor de cada elemento de la `<expresion>` en cada iteración. En nuestro ejemplo de imprimir los números del 1 al 10, vemos que `i` toma los valores 1, 2, 3, 4, 5, 6, 7, 8, 9 y 10, en ese orden.
 \
 
 >**Ejemplo**\
@@ -542,7 +543,11 @@ Repetir el ejercicio 7.b de la guía 2 usando un ciclo `while`. Repetir usando u
 \ 
 
 ### Break, Continue y Return
-`break` y `continue`son dos palabras clave en Python que se utilizan en bucles (tanto `for` como `while`) para alterar el flujo de ejecución del bucle.
+`break` y `continue` son dos palabras clave en Python que se utilizan en bucles (tanto `for` como `while`) para alterar el flujo de ejecución del bucle.
+
+:::{.callout-warning}
+Si bien son parte del apunte, desrecomendamos fuertemente su uso de forma ligera: el comportamiento de un ciclo while no debería depender ni de break ni de continue. Si es que decidimos usarlos, es porque le estamos dando **funcionalidad adicional** al código. Por ejemplo, si estamos intentando realizar operaciones y podemos encontrarnos con un error. En ese caso, tenemos la posibilidad de ignorar el error (continuar con el bucle) o cortar la ejecución (dejar de iterar). Pero esto lo vamos a ver más adelante.
+:::
 
 #### Break
 La declaración `break` se usa para salir inmediatamente de un bucle antes de que se complete su iteración normal. Cuando se encuentra una declaración `break` dentro de un bucle, el bucle `for` o `while` se detiene inmediatamente y continúa con la ejecución de las instrucciones que están después del mismo.
@@ -589,7 +594,7 @@ for numero in range(1, 21):
 ```
 
 :::{.callout-note}
-Notemos que tanto para el uso de `break` como de `continue`, si el código se encuentra con uno de ellos en la ejecución, no ejecuta nada posterior a ellos: en el caso de `break`, corta o interrumpe la ejecución del bucle; en el case de `continue`, saltea el resto del código de esa iteración y pasa a la siguiente, volviendo a evaluar la condición si el bucle es `while`.
+Notemos que tanto para el uso de `break` como de `continue`, si el código se encuentra con uno de ellos en la ejecución, no ejecuta nada posterior a ellos: en el caso de `break`, corta o interrumpe la ejecución del bucle; en el case de `continue`, saltea el resto del código de esa iteración y pasa a la siguiente, volviendo a evaluar la condición si el bucle es `while`. Es por esto que en el último ejemplo no necesitamos un `else`, sino que con sólo tener un `if` alcanza: si se ejecuta el cuerpo del if, nos encontramos con un `continue` y el resto del código no se ejecuta (el print).
 :::
 
 #### Return
@@ -614,6 +619,8 @@ Como vemos, la función `obtener_primer_par_desde` recibe un número `n`, y devu
 Si encuentra un número par, no sigue analizando el resto de los números. Usa `return` para salir del ciclo y devuelve el número encontrado.
 
 ### Consideraciones del While
+
+#### No repitas
 Es importante **no** ser redundantes con el código y no "hacer preguntas" que ya sabemos.
 
 ```python
@@ -712,7 +719,7 @@ La instrucción `while` está hecha para que se ejecute mientras la condición s
 
 Como no tenemos una condición a evaluar ni modificar en cada iteración, el bucle se ejecuta infinitamente. Dependería de nosotros, como programadores, que el bucle se corte en algún momento. Es decir, dependería de que nos acordemos de poner dentro del `while` alguna decisión que haga que el bucle se corte. Y si por alguna razón no nos acordamos, el bucle se ejecutaría infinitamente, dejando al programa "congelado" o "colgado", sin responder, y usando todos los recursos de la computadora.
 
-En pocas palabras, podemos afirmar que el uso de `while True` en Python es una mala práctica de programación, y recomendamos evitarla fuertemente.
+En pocas palabras, podemos afirmar que el uso de `while True` en Python es una **mala práctica de programación**, y en el transcurso de la materia, pedimos **evitar usarla**.
 
 #### Modificando la Condición
 ```python
@@ -743,6 +750,31 @@ while numero < 3:
 ```
 
 De esta forma, todo lo que se encuentre antes de la última línea del cuerpo se ejecuta mientras la condición sea verdadera. Y la última línea del cuerpo es la que modifica la condición.
+
+
+Una forma genérica, bastante común, de plantear un problema es:
+
+
+```python
+<actualizar condición>
+
+while <condición>:
+  <hacer algo>
+  <actualizar condición/es>
+```
+
+Donde `atualizar condición` implica actualizar todas las variables (una o más) relacionadas a la condición del ciclo, y `hacer algo` incluye al comportamiento repetitivo que queremos tener si la condición se cumple.
+
+Por ejemplo: Queremos imprimir un número, empezando de 0, siempre que sea menor a 10.
+
+
+```{python}
+i = 0 # actualizar condición
+
+while i < 10: # condicion
+  print(i) # hacer algo
+  i += 1 # actualizar condición
+```
 
 \
 \

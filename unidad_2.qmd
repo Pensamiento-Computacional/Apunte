@@ -41,6 +41,7 @@ Si tenemos la operación `7 * 5`, sabemos que el resultado es `35`. Decimos que 
 En este caso, `7`, `5` y `35` son *enteros* (o *integers* en inglés). En Python, los enteros se representan con el tipo `int`.
 
 Python tiene dos tipos de datos numéricos:
+
 - número enteros
 - números de punto flotante
 
@@ -50,14 +51,18 @@ Los **números de punto flotante** tienen una parte fraccionaria, como `3.14159`
 Según los operandos (los valores que se operan) y el operador (el símbolo que indica la operación), el resultado puede ser de un tipo u otro. Por ejemplo, si tenemos `7 / 5`, el resultado es `1.4`, que es un número de punto flotante. Si tenemos `7 + 5`, el resultado es `12`, que es un número entero.
 
 ```{python}
-1 + 2
+print(1 + 2)
 ```
+
+:::{.callout-note}
+`print` es una función de Python que nos deja imprimir cosas por pantalla. Al hacer `print(1+2)`, Python está calculando el resultado de 1+2 e imprimiéndolo para que podamos verlo.
+:::
 
 Vamos a elegir usar enteros cada vez que necesitemos recordar, almacenar o representar un valor exacto, como pueden ser por ejemplo: la cantidad de alumnos, cuántas veces repetimos una operación, un número de documento, etc.\
 Vamos a elegir usar números de punto flotante cada vez que necesitemos recordar, almacenar o representar un valor aproximado, como pueden ser por ejemplo: la altura o el peso de una persona, la temperatura de un día, una distancia recorrida, etc.
 
 ```{python}
-0.1 + 0.2
+print(0.1 + 0.2)
 ```
 
 Como vemos, cuando hay números de punto flotante, el resultado es aproximado. `0.1 + 0.2` nos debería dar `0.3`, pero nos da `0.30000000000000004`. Esto es porque los números de punto flotante son aproximados, y no pueden representar todos los valores de forma exacta. Esto es algo que vamos a tener que tener en cuenta cuando trabajemos con números de punto flotante.
@@ -88,11 +93,12 @@ Vamos a ver más de estas operaciones más adelante.
 
 ### Variables
 Python nos permite asignarle un nombre a un valor, de forma tal que podamos "recordarlo" y usarlo más adelante. A esto se le llama **asignación**.\
-Estos nombres se llaman **variables**, y son espacios donde podemos almacenar valores.\
+Estos nombres se llaman **variables**, y son espacios de memoria donde podemos almacenar valores.\
 
 La asignación se hace con el operador `=` de la siguiente forma: `<nombre> = <valor o expresion>`.
 
 **Ejemplos:**
+Vamos a guardar el valor 5 en la variable `x`. Luego, vamos a sumarle 2 y guardarlo en la variable `y`.
 ```{python}
 x = 5
 ```
@@ -145,7 +151,7 @@ No se puede usar el mismo nombre para dos datos diferentes a la vez; una variabl
 Para poder realizar algunas operaciones particulares, necesitamos introducir el concepto de *función*. Una función es un bloque de código que se ejecuta cuando se la llama.\
 Es un fragmento de programa que permite efectuar una operación determinada. `abs`, `print`, `max` son ejemplos de funciones de Python: `abs`permite calcular el valor absoluto de un número, `print` permite mostrar un valor por pantalla y `max` permite calcular el máximo entre dos valores.\
 
-Una función puede recibir 0 o más *parámetros* o *argumentos*, que son valores que se le pasan a la función entre paréntesis y separados por comas, para que los use.\
+Una función puede recibir cero o más *parámetros* o *argumentos*, que son valores que se le pasan a la función entre paréntesis y separados por comas, para que los use.\
 
 ```{python}
 abs(-5)
@@ -178,6 +184,8 @@ def saludar_lucia():
   return "Hola, Lucia!"
 ```
 
+Podés copiar el código y pegarlo en Replit. Luego, apretá "Run". Vas a notar que no pasa nada, ahora vamos a ver por qué.
+
 Varias cosas a notar del código:
 
 1. `saludar_lucia` es el nombre de la función. Podría ser cualquier otro nombre, pero es una buena práctica que el nombre de la función describa lo que hace.\
@@ -187,15 +195,15 @@ Varias cosas a notar del código:
 
 :::{.callout-note}
 ### Sangría
-La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete.
+La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete (en nuestro caso, Replit).
 :::
 
 :::{.callout-tip}
 ### Firma de la función
-La firma de una función es la primera línea de la misma, donde se indica el nombre de la función y los parámetros que recibe. La firma permite identificar y diferenciar a una función de otra.
+La firma de una función es la primera línea de la misma, donde se indica el nombre de la función y los parámetros que recibe. Así como la firma de una persona permite identificarla de otra, la firma de una función permite identificarla y diferenciarla de otra.
 :::
 
-Pero, como vemos, el bloque de código anterior no hace nada. Para que la función haga algo, tenemos que llamarla. Para llamar a una función, escribimos su nombre, seguido de paréntesis y los parámetros que recibe, separados por comas.
+Como vimos más arriba, el bloque de código anterior no hace nada. Para que la función haga algo, tenemos que llamarla. Para llamar a una función, escribimos su nombre, seguido de paréntesis y los parámetros que recibe (si es que recibe alguno), separados por comas.
 
 
 ```python
@@ -211,9 +219,14 @@ saludo = saludar_lucia()
 print(saludo)
 ```
 
-Lo que hicimos fue asignar el resultado devuelto por `saludar_lucia` a la variable `saludo`, y luego imprimir el valor de la variable por pantalla.
+Lo que hicimos fue asignar el resultado devuelto por `saludar_lucia` a la variable `saludo`, y luego imprimir el valor de la variable por pantalla (aunque el paso de guardado es opcional, podríamos imprimirlo directamente).
 
-Bueno, ahora podemos saludar a Lucia. Pero vamos a querer saludar a otras personas también. ¿Cómo hacemos? Podemos hacer una función que reciba el nombre de la persona a saludar como parámetro.
+Bueno, ahora podemos saludar a Lucia. Pero vamos a querer saludar a otras personas también. ¿Tiene sentido hacer una función por cada persona? No, porque tendríamos muchas funciones (llamadas por ejemplo `saludar_lucia`, `saludar_mariana`, `saludar_emilia`, etc) que básicamente hacen lo mismo: saludar a alguien. 
+
+Una de las características de una función es que sea una solución reutilizable a un problema. En nuestro caso, queremos saludar personas.
+
+
+¿Cómo hacemos entonces? Podemos hacer una función que reciba el nombre de la persona a saludar como parámetro. Un parámetro es un valor necesario para la ejecución de la función. En nuestro caso, indica a quién vamos a saludar:
 
 ```{python}
 def saludar(nombre):
@@ -232,6 +245,13 @@ print(saludar("Lucia"))
 ```{python}
 print(saludar("Serena"))
 ```
+
+:::{.callout-note}
+### Return vs Print
+¿Qué significa que una función devuelva o retorne algo?\
+Que una función devuelva o retorne algo, significa que no se está encargando de mostrar el resultado en pantalla. Pero, ¿está haciendo algo si no lo puedo ver en pantalla? Por supuesto, hay muchas cosas que ocurren "por detrás", sin que nos demos cuenta, en una computadora. Si nosotros llamamos a la función `saludar` pasándole un nombre de esta forma `saludar("Serena")`, la función está armando el saludo y devolviéndolo, aunque nosotros no estemos viendo nada en la pantalla. Incluso si lo guardáramos en una variable (`saludo = saludar("Serena")`), también se está ejecutando y la variable `saludo` está almacenando el saludo, por más de que no veamos eso en ningún lado.\ 
+La gran mayoría de las funciones van a retornar valores calculados, pero no van a ser responsables de mostrarlos en pantalla. Eso es algo que vamos a tener que ocuparnos por fuera, si quisiéramos ver el resultado.
+:::
 
 #### Ejemplos
 > **Ejemplo**\
@@ -261,7 +281,7 @@ print(f(5))
 ```
 
 ### Ingreso de Datos por Consola
-Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programas sean más útiles, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función `input`.
+Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programaspuedan interactuar, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función `input`.
 
 ```python
 input()
@@ -275,7 +295,7 @@ input()
 print("terminé!")
 ```
 
-Si corremos el bloque de código anterior, vamos a tener un comportamiento como este:
+Si corremos el bloque de código anterior (te recomendamos que lo hagas), vamos a tener un comportamiento como este:
 
 1. La consola va a quedar vacía, esperando el ingreso del usuario
 2. Ingresamos un valor, el que tengamos ganas, y presionamos enter.
@@ -329,24 +349,24 @@ No es correcto escribir comentarios que no aporten nada al código, o tener el c
 
 
 ### Sobre Convención de Nombres
-Para nombres de variables y funciones, se usa snake_case, que es básicamente dejar todas las palabras en minúscula y unirlas con un guión bajo. Ejemplos: `numero_positivo`, `sumar_cinco`, `pedir_numero`, etc.\ 
+Para nombres de variables y funciones, en Python se usa *snake_case*, que es básicamente dejar todas las palabras en minúscula y unirlas con un guión bajo. Ejemplos: `numero_positivo`, `sumar_cinco`, `pedir_numero`, etc.\ 
 Siempre emplear un nombre que nos remita al significado que tendrá ese dato, siempre en snake_case:
 `numero`, `letra`, `letra2`, `edad_hermano`, etc.
 
 #### Variables
-Las variables son cosas. Entonces sus nombres son sustantivos: `nombre`, `numero`, `suma`, `resta`, `resultado`, `respuesta_usuario`. La única excepción son las variables booleanas (ya las vamos a ver, son aquellas que pueden guardar dos posibles valores: verdadero o falso), que suelen tener nombres como `es_par`, `es_cero`, `es_entero`, porque su valor es true o false.
+Las variables son cosas. Entonces sus nombres son *sustantivos*: `nombre`, `numero`, `suma`, `resta`, `resultado`, `respuesta_usuario`. La única excepción son las variables booleanas (ya las vamos a ver, son aquellas que pueden guardar dos posibles valores: verdadero o falso), que suelen tener nombres como `es_par`, `es_cero`, `es_entero`, porque su valor es true o false.
 
 A veces es útil alguna frase para identificar mejor el contenido: \
 `edad_mayor_hijo`, `apellido_conyuge`
 
 #### Funciones
-Las funciones hacen algo. Entonces sus nombres son verbos. Se usan siempre verbos en infinitivo (terminan en `-ar`, `-er`, `-ir`):
+Las funciones hacen algo. Entonces sus nombres son *verbos*. Se usan siempre verbos en infinitivo (terminan en `-ar`, `-er`, `-ir`):
 `calcular_suma`, `imprimir_mensaje`, `correr_prueba`, `obtener_triplicado`, etc.\
 De nuevo, las excepciones son las funciones que devuelven un valor booleano (V o F). Esas pueden llamarse como: `es_par`, `da_cero`, `tiene_letra_a`, porque devuelven verdadero o falso, y eso nos confirma o niega la afirmación que hace el nombre.
 
 ### Sobre Ordenamiento de Código
 Cuando uno corre Python, lo que hace el lenguaje es leer línea a línea nuestro código. Lo que se puede ejecutar, lo ejecuta. Las funciones las guarda en memoria para poder usarlas luego.\
-Entonces es más ordenado y prolijo primero poner todas las funciones, y después el código "ejecutable" (si van a dejar código suelto en el archivo).\
+Entonces es más ordenado y prolijo primero poner todas las funciones, y después el código "ejecutable" (si van a dejar código suelto en el archivo, cosa que en general no se suele recomendar).\
 
 Además, no olvidemos que Python tiene un flujo de control de arriba para abajo. Si intentamos invocar funciones antes de que estén definidas (`def`), Python no va a saber qué hacer, y nos va a tirar un error.\
 

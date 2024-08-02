@@ -192,28 +192,58 @@ with open(ruta_archivo) as archivo:
 Veamos un ejemplo en el que trabajaremos con dos archivos.
 
 > **Ejemplo**
-Obtener un el promedio de notas y guardarlo en un nuevo archivo llamado "promedio.txt"
+Obtener el promedio de un archivo de notas recibido por parámetro y guardarlo en un nuevo archivo llamado "promedio.txt"
+
+Ejemplo de notas.txt:
+```
+4
+7
+10
+5
+```
 
 ``` python
 # Abrimos el archivo de notas
-ruta_archivo = "alumnos.txt"
-archivo = open(ruta_archivo, 'r')
-lineas = archivo.readlines()
-archivo.close()
+def calcular_guardar_promedio(ruta_notas): # La funcion puede recibir "notas.txt"
+  archivo = open(ruta_notas, 'r')
+  lineas = archivo.readlines()
+  archivo.close()
 
-# Leemos linea por linea cada nota 
-suma_notas = 0
-cantidad_notas = 0
-for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
-  nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
-  suma_notas += int(nota)
-  cantidad_notas += 1
+  # Leemos linea por linea cada nota 
+  suma_notas = 0
+  cantidad_notas = 0
+  for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
+    nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
+    suma_notas += int(nota)
+    cantidad_notas += 1
 
-# Guardamos el promedio en un nuevo archivo
-ruta_archivo_promedios = "promedio.txt"
-archivo = open(ruta_archivo_promedios, 'w')
-archivo.write(str(suma_notas/cantidad_notas))
-archivo.close()
+  # Guardamos el promedio en un nuevo archivo
+  ruta_archivo_promedios = "promedio.txt"
+  archivo = open(ruta_archivo_promedios, 'w')
+  archivo.write(str(suma_notas/cantidad_notas))
+  archivo.close()
+```
+
+Otra forma de resolverlo podría haber sido:
+
+``` python
+# Abrimos el archivo de notas
+def calcular_guardar_promedio(ruta_notas): # La funcion puede recibir "notas.txt"
+  archivo = open(ruta_notas, 'r')
+  lineas = archivo.readlines()
+  archivo.close()
+
+  # Leemos linea por linea cada nota 
+  notas = []
+  for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
+    nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
+    notas.append(int(nota))
+
+  # Guardamos el promedio en un nuevo archivo
+  ruta_archivo_promedios = "promedio.txt"
+  archivo = open(ruta_archivo_promedios, 'w')
+  archivo.write(str(sum(notas)/len(notas)))
+  archivo.close()
 ```
 
 
@@ -222,13 +252,13 @@ Veamos el contenido del archivo "promedio.txt"
 ``` python
 ruta_archivo = "promedio.txt"
 archivo = open(ruta_archivo, 'r')
-linea = archivo.readline()
+linea = archivo.readline() # o read
 archivo.close()
 print(linea)
 ```
 
 ``` bash
-6.25
+6.5
 ```
 
 En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada linea en una lista que tiene 3 elementos, a nosostros nos interesa el elemento que esta en la posición 2, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva linea ```\n``` y nos permite leer la nota como un número. 
@@ -361,6 +391,10 @@ No se puede dividir por cero.
 
 Como se ve en el ejemplo se "envuelve" la operación que puede generar ese tipo de excepción para que lo que resulte de esa operación se pueda controlar. Como vimos más arriba hay distintos tipos de excepciones, la lista completa se puede ver en [excepciones](https://docs.python.org/es/3/library/exceptions.html#base-classes).
 
+:::{.callout-tip}
+Es **extremadamente importante** que el bloque `try` **sólo tenga dentro** la porción de código que **tiene posibilidad de romper**. No es correcto colocar todo nuestro código dentro del try, porque si tenemos varios posibles puntos de falla, deberían tratarse por separado. Adicionalmente, es una mala práctica tener demasiado código dentro de un bloque try, cuando es innecesario.
+:::
+
 ### Validaciones
 Las validaciones son técnicas que permiten asegurar que los valores con los que se vaya a
 operar estén dentro de determinado conjunto de posibilidades o que tengan ciertas características.
@@ -386,22 +420,13 @@ convertir_a_int("cuarenta")
 ```
 
 :::{.callout-note collapse="true}
-En Python también tenemos una forma de *arrojar* nosotros un error, es decir, hacer que la función falle y devuelva un mensaje de error. Esto se hace con la sentencia `raise`. No lo vemos en la materia, pero se usaría de la siguiente manera:
-
-```python
-def dividir(n1, n2):
-  if n2 == 0:
-    raise ZeroDivisionError("No se puede dividir por cero")
-  return n1/n2
-
-dividir(10, 0)
-```
-```
-ZeroDivisionError: No se puede dividir por cero
-```
-
+En Python también tenemos una forma de *arrojar* nosotros un error, es decir, hacer que la función falle y devuelva un mensaje de error. Esto se hace con la sentencia `raise`. No lo vemos en la materia, pero se puede leer más [en la documentación de Python](https://docs.python.org/es/3/c-api/exceptions.html#raising-exceptions).\
 Arrojar o levantar excepciones es un tema complejo, porque además de arrojarlas, debemos ser capaces de capturarlas y manejarlas. Es por esto que no se incluye en el temario de la materia.
 :::
+
+:::{.callout-info}
+### Varias Excepciones
+Una misma línea podría arrojar varios tipos de excepciones distintos. Existe una forma de atajar varios casos de error sobre un mismo try, pero no lo vemos en la materia. Cada par try-except debería hacer referencia a un sólo tipo de error.
 
 ### Conclusiones
 
