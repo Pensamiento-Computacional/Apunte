@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pensamiento Computacional - Guía de Ejercicios</title>
+<title>Guía de Ejercicios – Pensamiento Computacional</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -144,13 +144,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guia.html">Guía de Ejercicios</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -387,11 +387,16 @@ Recomendación
 <li>Primero, usando 5 variables para cada entero.</li>
 <li>Después, usando una sola variable para almacenar la suma de los 5 enteros. ¿Cómo se te ocurre que podrías hacer?</li>
 </ol></li>
+</ol>
+<div class="callout-info">
+<p>A partir de ahora y en adelante, todo lo que se nos pida (incluso si dice “programa”) se debe realizar dentro de una o más funciones.</p>
+</div>
+<ol start="8" type="1">
 <li><p>Crear una <strong>función</strong> que reciba un número y que devuelva el valor absoluto.</p></li>
 <li><p>Crear una <strong>función</strong> que reciba un número y que devuelva <code>True</code> si es par, y <code>False</code> si es impar.</p></li>
 <li><p>Crear una <strong>función</strong> que reciba un número y un string, y que devuelva ambos concatenados dentro de un nuevo string.</p></li>
 <li><p>Crear una <strong>función</strong> que reciba dos enteros y que devuelva el resto y el cociente entre ellos.</p></li>
-<li><p>Crear una función que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: “Apellido, Nombre”.</p></li>
+<li><p>Crear una <strong>función</strong> que le pida al usuario su nombre y apellido, e los imprima con el siguiente formato: “Apellido, Nombre”.</p></li>
 <li><p>Hacer una <strong>función</strong> que reciba una palabra y devuelva la cantidad de letras que tiene.</p></li>
 <li><ol type="a">
 <li>Hacer una <strong>función</strong> que reciba una palabra y que imprima los primeros 5 caracteres únicamente. Ejemplo: Si se recibe “pensamiento” se debe imprimir “pensa”.</li>
@@ -463,25 +468,25 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="4607efda" class="cell" data-execution_count="1">
+<div id="1a4aa897" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="e6c3ad6c" class="cell" data-execution_count="2">
+<div id="8c5e2c0d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="67ef72a3" class="cell" data-execution_count="3">
+<div id="df799c32" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="c63d5b25" class="cell" data-execution_count="4">
+<div id="f9c9b827" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
@@ -604,12 +609,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="a5e5e014" class="cell" data-execution_count="5">
+<div id="fc0fcaac" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5</code></pre>
+<pre><code>10</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -704,7 +709,7 @@ Validar que el usuario siempre ingrese números positivos y menor o iguales a la
 <li><p>Modificar la función anterior para que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>[1, 18, 22, 31]</code>. Pista: del método usado en el punto anterior, ¿conocemos algún parámetro adicional que le podamos pasar?</p></li>
 <li><p>Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca <code>'al'</code> en <code>'calcule el precio al valor actual'</code>, debe devolver <code>4</code>. Restricción: No se puede usar el método <code>len</code>.</p></li>
 </ol></li>
-<li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while. Pista: investigar cómo usar <code>lambda</code>.</p></li>
+<li><p><strong>Desafío</strong> (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: <code>'Python'</code> y <code>'Hola'</code> debería devolver el conjunto de letras <code>['P', 'y', 't', 'l', 'a', 'n']</code>, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while.</p></li>
 </ol>
 </section>
 <section id="rangos-tuplas-y-listas" class="level3">
@@ -845,7 +850,7 @@ Pista: tenés que usar un diccionario.</p></li>
 <li><p>Se deberá simular una persona que tira un dado N veces, y se deberá devolver un diccionario con la cantidad de apariciones de cada valor en el dado. Nota: para simular una tirada, usar <code>import random</code>y <code>random.randint(1, 6)</code>.</p></li>
 <li><p>Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.</p></li>
 </ol></li>
-<li><p>Escribir un programa que le pida al usuario que ingrese nombres.</p>
+<li><p>Se tiene una agenda implementada como diccionario, que guarda nombres de personas y sus números de teléfono. Escribir un programa que le pida al usuario que ingrese nombres.</p>
 <ol type="a">
 <li>Si el nombre se encuentra en la agenda, debe mostrar el teléfono.</li>
 <li>Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente.</li>
@@ -853,7 +858,7 @@ Pista: tenés que usar un diccionario.</p></li>
 <p>En ambos casos, El usuario puede utilizar la palabra “EXIT” para dejar de ingresar nombres.</p></li>
 <li><p>Escribir una función que reciba un texto y para cada caracter presente en el texto, devuelva la palabra más larga en la que se encuentra ese caracter.</p></li>
 <li><p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>nombre</th>
@@ -923,6 +928,7 @@ Pista: tenés que usar un diccionario.</p></li>
 <li><p>Hacer una función que reciba la lista de diccionarios, y para cada una de las reviews, modifique el valor del bono por el porcentaje correspondiente.</p></li>
 <li><p>Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar <code>filter</code> y <code>map</code>.</p></li>
 </ol></li>
+<li><p><strong>Desafío</strong> (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guia de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None). Se quiere que el usuario que está usando el programa pueda acceder por pantalla a un enunciado puntual de una guía con sólo pedirlo (si existe). Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.</p></li>
 <li><p><strong>Desafío</strong> (no obligatorio): <strong>Donarg</strong> (<a href="https://www.donarg.com.ar/">https://www.donarg.com.ar/</a>) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 “Desafío Cuarentena” del FIUBA Consulting Club, destacándose entre más de 100 proyectos.</p>
 <p>Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.</p>
 <p>La base contiene los siguientes datos de cada posible donante:</p>
@@ -1031,6 +1037,9 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.</p></li>
 <li><p>Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: ‘el archivo {nombre} no existe. Se crea y deja vacío.’.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio): Los docentes de Pensamiento Computacional saben que los ejercicios de las primeras guías son cortitos de resolver, entonces les dicen a los estudiantes que “si el ejercicio tiene más de 5 líneas, probablemente haya que revisarlo”. Los estudiantes se lo toman muy literal, y quieren buscar la forma de chequear si un ejercicio que resolvieron tiene más de 5 líneas, pero sin contar a la firma de la función.<br>
+El ejercicio puede estar guardado en un archivo o en un string todo junto, lo que resulte más cómodo para su resolución. Además, quieren la posibilidad de poder pasar varios ejercicios juntos para ahorrar tiempo, y saber en cuáles se pasaron de las 5 líneas o si algun archivo (en caso de elegir esa forma de almacenamiento) no existe. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.</p></li>
+<li><p><strong>Desafío</strong> (obligatorio): Los estudiantes del CBC pensaron que podía ser buena idea guardar los apuntes de todas las materias en un mismo archivo, para no marearse con tantos documentos diferentes. Pero terminó siendo un dolor de cabeza y es muy dificil encontrar las notas de cada materia. Para poder acceder facil a esa informacion, decidieron extraer del archivo original la informacion de las notas. Sabemos que a cada materia se le puso de título un hashtag, por ejemplo “#analisisMatematico”, y que la fila que contiene un título no contiene nada más. Lo que se quiere hacer es obtener un nuevo archivo CSV con el nombre de la sección/materia, la posición (número de línea) donde comienza la misma, y la posición donde termina. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.</p></li>
 </ol>
 </section>
 <section id="manejo-de-errores" class="level3">
@@ -1209,7 +1218,7 @@ Note
 </div>
 <p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.</p>
 <p>Usando el siguiente DataFrame:</p>
-<div id="c5d5c04a" class="cell" data-execution_count="6">
+<div id="328bf725" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>, <span class="st">'Lucia'</span>, <span class="st">'Emilia'</span>, <span class="st">'Mariana'</span>, <span class="st">'Aldo'</span>],</span>
@@ -1224,10 +1233,9 @@ Note
 <span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1309,13 +1317,12 @@ Note
 </div>
 </div>
 </div>
-</div>
 <ol type="1">
 <li><p>Mostrar el resumen de la información del DataFrame</p></li>
 <li><p>Mostrar su forma</p></li>
 <li><p>Mostrar la lista de los nombres de las columnas</p></li>
-<li><p>Mostrar las primeras 3 columnas</p></li>
-<li><p>Mostrar las últimas 3 columnas</p></li>
+<li><p>Mostrar las primeras 3 filas</p></li>
+<li><p>Mostrar las últimas 3 filas</p></li>
 <li><p>Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante</p></li>
 <li><p>Mostrar a los estudiantes que tienen edad mayor a 25.</p></li>
 <li><p>Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.</p></li>
@@ -1342,7 +1349,7 @@ Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si es
 <li>Obtener el promedio de las notas en la primera oportunidad de los alumnos.<br>
 Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.</li>
 </ol>
-<div id="7b6ec77f" class="cell" data-execution_count="7">
+<div id="45c6c410" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>],</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'apellido'</span>: [<span class="st">'Perez'</span>, <span class="st">'Guanca'</span>, <span class="st">'Gomez'</span>],</span>
@@ -1356,10 +1363,9 @@ Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>df_notas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1402,7 +1408,6 @@ Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1516,6 +1521,31 @@ Para usarlos, podés guardar el archivo csv en google drive e importarlo de la s
 </div>
 </div>
 <ol start="5" type="1">
+<li><p>Para calcular la energía potencial elástica (<em>Ep</em>) almacenada en un material elástico, se utiliza la siguiente fórmula:</p>
+<p><span class="math display">\[
+Ep = \frac{1}{2}*k*x^{2}
+\]</span></p>
+<p>donde <em>k</em> es la constante elástica (con unidad N/m) y <em>x</em> es la distancia que el resorte se estira o comprime (metros). La energía <em>Ep</em> resultante tiene como unidad el Joule (J).</p>
+<p>Para un resorte con valor <span class="math inline">\(*k=0.15 N/m*\)</span>, graficar en línea continua la energía potencial elástica <span class="math inline">\(*Ep*\)</span> en un rango de distancia <span class="math inline">\(x\)</span> de 0 a 10m con pasos de 0.5. Incluir título, grilla, nombres de ejes y label (leyenda) con el valor de <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Para calcular la posición final de un móvil dada una posición inicial, velocidad inicial, tiempo y aceleración, se tiene la siguiente fórmula:</p>
+<p><span class="math display">\[
+x = x_0+v_0 . t + \frac{1}{2}.a.t^2
+\]</span></p>
+<p>Donde <span class="math inline">\(x_0\)</span> es la posición inicial, <span class="math inline">\(v_0\)</span> la velocidad inicial, <span class="math inline">\(t\)</span> el tiempo y <span class="math inline">\(a\)</span> la aceleración.</p>
+<p>Se tiene la siguiente información de dos móviles:</p>
+<p><strong>movil 1:</strong></p>
+<ul>
+<li>Comienza a 0m</li>
+<li>Arranca desde el reposo con velocidad $ 0 &nbsp;m/s$</li>
+<li>Su aceleración es <span class="math inline">\(1 \ m/s^2\)</span></li>
+</ul>
+<p><strong>movil 2:</strong></p>
+<ul>
+<li>Comienza a 500m</li>
+<li>Arranca con velocidad <span class="math inline">\(4 \ m/s\)</span></li>
+<li>Su aceleración es <span class="math inline">\(0.5 \ m/s^2\)</span></li>
+</ul>
+<p>Para 5000 valores del tiempo del 0 al 100, mostrar un único gráfico con la posición respecto del tiempo de ambos móviles. Incluir grilla, títulos y label (leyenda) indicando el valor de la posicion inicial, velocidad y aceleración.</p></li>
 <li><p><strong>Desafio</strong> (obligatorio): Teniendo la planilla de notas del primer parcial del 1C2024 de los alumnos de la materia “Pensamiento Computacional”, importar los datos como dataframe usando el siguiente código:</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1572,18 +1602,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1615,7 +1634,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1623,7 +1664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
