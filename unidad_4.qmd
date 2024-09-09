@@ -1090,24 +1090,3 @@ Si se tiene `[{"nombre": "Priscila", "legajo": 1234}, {"nombre": "Iara", "legajo
 una vez ejecutada, la función debe devolver:\
 `[{"nombre": "Agostina", "legajo": 9012}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Priscila", "legajo": 1234}]`\
 :::
-
-:::{.callout-tip collapse="true"}
-### Lambda
-En el ejemplo anterior, la función `obtener_nombre` es muy simple, y sólo la usamos una vez.\
-En estos casos, podemos usar una *función lambda*, que es una función anónima que se declara en una sola línea.\
-
-```{python}
-alumnos = [
-  {"nombre": "Priscila", "legajo": 1234},
-  {"nombre": "Iara", "legajo": 5678},
-  {"nombre": "Agostina", "legajo": 9012}
-]
-
-alumnos_ordenados = sorted(alumnos, key=lambda alumno: alumno["nombre"])
-print(alumnos_ordenados)
-```
-
-Lo que estamos haciendo es declarar una función que recibe un parámetro `alumno` y devuelve el valor de la clave `"nombre"` de ese diccionario.\
-La función se declara en una sola línea, y no tiene nombre.\
-La función se pasa como parámetro `key` a `sorted`, y se ejecuta para cada elemento de la lista antes de ordenar.
-:::
