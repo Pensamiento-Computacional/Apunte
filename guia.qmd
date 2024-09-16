@@ -416,7 +416,7 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
 
     b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
 
-9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición. Restricción: no se permite el uso de ciclos for/while.
+9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición.
 
 ### 2. Rangos, Tuplas y Listas
 
@@ -473,7 +473,7 @@ Si los vectores no tienen las mismas dimensiones, la función debe devolver `Non
 
 9. Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.
 
-10. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$. Restricción: usar listas por comprensión.
+10. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$.
 
 11. Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
 
