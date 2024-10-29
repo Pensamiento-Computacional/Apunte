@@ -904,7 +904,7 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 
     Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.
 
-    Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y volver a pedirle al usuario que ingrese una opción.
+    Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El usuario debe en esos casos imprimir un mensaje de error que sea descriptivo y terminar el programa.
 
 # Guía 6: Bibliotecas de Python
 

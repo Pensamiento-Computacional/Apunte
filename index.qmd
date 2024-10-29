@@ -23,7 +23,8 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 - Maciel, Laura
 - Maxwell, Julian
 - Notari, Pablo
-- Ortielli, Bruno 
+- Ortielli, Bruno
+- Pratto, Florencia
 - Rastrelli, Aldana
 - Retamozo, Melina
 - Szischik, Mariana
