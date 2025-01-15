@@ -298,7 +298,7 @@ También podemos crear un nuevo archivo usando el menú de "sample_data" (los tr
 
 El archivo luego hay que arrastrarlo *fuera* de la carpeta de sample data para poder usar como ruta su nombre directamente.
 
-![Mover archivo](./imgs/unidad_5/colab4.gif)
+<img src="./imgs/unidad_5/colab4.png" width="500" />
 
 De esta forma, podemos abrirlo usando como ruta su nombre: `open("archivo_nuevo")`.
 
