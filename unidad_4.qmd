@@ -288,7 +288,7 @@ print(c)
 
 :::{.callout-warning}
 ### ¡Cuidado!
-Si estamos desempaquetando una tupla de largo $k$ pero lo hacemos en una cantidad de variables menor a $k$, se producirá un error.
+Si estamos desempaquetando una tupla de largo $k$, pero lo hacemos en una cantidad de variables menor a $k$, se producirá un error.
 
 ```python
 d = (1, 2, 3)
@@ -541,7 +541,7 @@ Las listas también puede estar anidadas, es decir, una lista puede contener a o
 valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 
-Aquía $valores$ es una lista que contiene 3 elementos, que a su vez son también listas. Entonces, `valores[0]` sería la lista `[1,2,3]`. Si quisiéramos, por ejemplo, acceder al número `2` de dicha lista, tendríamos que volver a acceder al índice `1` de la lista `valores[0]`:
+Aquí $valores$ es una lista que contiene 3 elementos, que a su vez son también listas. Entonces, `valores[0]` sería la lista `[1,2,3]`. Si quisiéramos, por ejemplo, acceder al número `2` de dicha lista, tendríamos que volver a acceder al índice `1` de la lista `valores[0]`:
 
 ```{python}
 valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]

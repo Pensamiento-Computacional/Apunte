@@ -8,14 +8,14 @@ jupyter: python3
 
 ## Archivos
 
-Cuando un programa se esta ejecutando los datos están en la memoria, pero cuando el programa termina los datos se pierden. 
+Cuando un programa se está ejecutando los datos están en la memoria, pero cuando el programa termina los datos se pierden. 
 
-Para almacenar los datos de forma permanente se hace uso de **archivos**. Cada archivo se identifica con un nombre unico dentro de directorio o carpeta en que se encuentre. Por ejemplo dentro la carpeta *Documentos* puede existir solo un archivo con el nombre *Apuntes.txt*.
+Para almacenar los datos de forma permanente se hace uso de **archivos**. Cada archivo se identifica con un nombre único dentro de directorio o carpeta en que se encuentre. Por ejemplo dentro la carpeta *Documentos* puede existir solo un archivo con el nombre *Apuntes.txt*.
 
-Los archivos se utilizan para organizar los datos e intercambiarlos para distintos fines. El modo de trabajar con archivos es como trabajar con libros, se pueden abrir, leer, escribir y cerrar. Además se puede leer en orden o secuencialmente o yendo a un lugar especifico. 
+Los archivos se utilizan para organizar los datos e intercambiarlos para distintos fines. El modo de trabajar con archivos es como trabajar con libros, se pueden abrir, leer, escribir y cerrar. Además se puede leer en orden o secuencialmente o yendo a un lugar específico. 
 
 :::{.callout-note}
-Toda la organización de las computadoras esta basada en archivos y directorios.
+Toda la organización de las computadoras está basada en archivos y directorios.
 :::
 
 ### Abriendo un Archivo
@@ -27,7 +27,7 @@ ruta_archivo = "alumnos.txt"
 archivo = open(ruta_archivo)
 ```
 
-Esta función intentara abrir el archivo "alumnos.txt" y si tiene éxito en la variable archivo quedara un tipo de dato que nos permitira manipularlo. 
+Esta función intentara abrir el archivo "alumnos.txt" y si tiene éxito en la variable archivo quedara un tipo de dato que nos á manipularlo. 
 
 ### Leyendo un Archivo
 
@@ -35,18 +35,18 @@ La operación más frecuente con los archivos es leerlos de forma secuencial
 
 ``` python
 archivo = open(ruta_archivo)
-linea = archivo.readline()
+línea = archivo.readline()
 
-while linea != '':
-  # hacer algo con la linea
-  linea = archivo.readline()
+while línea != '':
+  # hacer algo con la línea
+  línea = archivo.readline()
 
 archivo.close()
 ```
 
-Este último bloque de código lee todas las lineas (renglones) del archivo hasta que no queden más. 
+Este último bloque de código lee todas las líneas (renglones) del archivo hasta que no queden más. 
 
-La variable ```archivo```, que mencionamos más arriba como un "tipo de dato que nos permitira manipularlo" guarda cual es la siguiente posición que debe leer y cuando se ejecuta ```archivo.readline()``` lee esa posición y avanza una posición más.
+La variable ```archivo```, que mencionamos más arriba como un "tipo de dato que nos permitirá manipularlo" guarda cuál es la siguiente posición que debe leer y cuando se ejecuta ```archivo.readline()``` lee esa posición y avanza una posición más.
 
 La función ```close()``` cierra el archivo, esta operación es importante para mantener la consistencia de la información. Volveremos más adelante sobre este tema.
 
@@ -60,31 +60,31 @@ DNI;Nombre;Nota
 ```
 
 
-En el ejemplo anterior leimos el archivo linea por linea, pero existe otra forma de leer un archivo. Veamos otro ejemplo. 
+En el ejemplo anterior leímos el archivo línea por línea, pero existe otra forma de leer un archivo. Veamos otro ejemplo. 
 
 
 ``` python
 archivo = open(ruta_archivo)
-lineas = archivo.readlines()
+líneas = archivo.readlines()
 archivo.close()
 
-for linea in lineas:
-  # hacer algo con la linea
-  print(linea)
+for línea in líneas:
+  # hacer algo con la línea
+  print(línea)
 
 ```
 
 ``` bash
-linea número 0 
-linea número 1 
-linea número 2 
-linea número 3 
-linea número 4 
+línea número 0 
+línea número 1 
+línea número 2 
+línea número 3 
+línea número 4 
 ```
 
-**¿ Que diferencias hay entre el ejemplo de más arriba y éste ?**
+**¿Que diferencias hay entre el ejemplo de más arriba y éste?**
 
-La diferencia pricipal y que condiciona el resto de los cambios es que en lugar de leer linea por linea utilizamos la funcion ```readlines()```. Esta función leer *todo* el contenido del archivo y devueve una lista donde cada elemento de la lista es un renglón. Por otro lado se llama a la función ```close()``` inmediatamente después de leer todo el archivo. ¿ Por qué ? ¿ Te animas a analizar todas las diferencias ? 
+La diferencia principal y que condiciona el resto de los cambios es que en lugar de leer línea por línea utilizamos la función ```readlines()```. Esta función lee *todo* el contenido del archivo y devuelve una lista donde cada elemento de la lista es un renglón. Por otro lado se llama a la función ```close()``` inmediatamente después de leer todo el archivo. ¿Por qué? ¿Te animás a analizar todas las diferencias? 
 
 #### Resumen
 
@@ -109,10 +109,10 @@ archivo.close()
 ```
 
 ::: {.callout-tip}
-En este ejemplo se puede ver el uso de ```\n```. Este caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva linea.
+En este ejemplo se puede ver el uso de ```\n```. Este caracter es lo que indica a los medios de salida de información que lo que se escribió finaliza con una nueva línea.
 Ninguno de los métodos de escritura agrega automáticamente un salto de línea al final de lo que se escribe, a menos que se lo indiquemos explícitamente.
 
-Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada linea va a ser ```\n```
+Cuando leemos un archivo tenemos que tener en cuenta que el último caracter de cada línea va a ser ```\n```
 :::
 
 Pero no todos los archivos pueden ser escritos, por ejemplo los archivos que se encuentran en modo lectura ('r'). ¿De qué depende? Depende del tipo de acceso con el que se abrió el archivo.
@@ -133,8 +133,8 @@ ruta_archivo_nuevo = "alumnos_nuevo.txt"
 archivo = open(ruta_archivo_nuevo, 'w')
 
 for x in range(5):
-  # hacer algo con la linea
-  archivo.write(f"linea número {x} \n")
+  # hacer algo con la línea
+  archivo.write(f"línea número {x} \n")
 
 archivo.close()
 ``` 
@@ -143,19 +143,19 @@ archivo.close()
 
 ``` python
 archivo = open(ruta_archivo_nuevo, 'r')
-lineas = archivo.readlines()
+líneas = archivo.readlines()
 archivo.close()
 
-for linea in lineas:
-  # hacer algo con la linea
-  print(linea)
+for línea in líneas:
+  # hacer algo con la línea
+  print(línea)
 
 ```
 
 > **Ejemplo Append (a)**
 ``` python
 archivo = open(ruta_archivo_nuevo, 'a')
-archivo.write("linea número 5 \n") # agrega una nueva linea al final del archivo
+archivo.write("línea número 5 \n") # agrega una nueva línea al final del archivo
 archivo.close()
 ```
 
@@ -165,7 +165,7 @@ algunos sistemas los archivos sólo pueden ser abiertos de a un programa por la 
 
 ``` python
 archivo = open(ruta_archivo)
-lineas = archivo.readlines()
+líneas = archivo.readlines()
 archivo.close()
 ```
 
@@ -177,14 +177,14 @@ Una forma de asegurarse de que un archivo se cierre es utilizar la sentencia `wi
 
 ``` python
 with open(ruta_archivo) as archivo:
-  lineas = archivo.readlines()
+  líneas = archivo.readlines()
 
 # Acá el archivo ya se cerró sólo
 ```
 
 
 ::: {.callout-tip}
-¿ Te animas a probar que pasa si intentas escribir en un archivo que fue abierto para lectura ('r') y a leer en uno que fue abierto para escritura ('w') ?
+¿Te animás a probar que pasa si intentas escribir en un archivo que fue abierto para lectura ('r') y a leer en uno que fue abierto para escritura ('w')?
 :::
 
 ### Ejemplos
@@ -204,16 +204,16 @@ Ejemplo de notas.txt:
 
 ``` python
 # Abrimos el archivo de notas
-def calcular_guardar_promedio(ruta_notas): # La funcion puede recibir "notas.txt"
+def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.txt"
   archivo = open(ruta_notas, 'r')
-  lineas = archivo.readlines()
+  líneas = archivo.readlines()
   archivo.close()
 
-  # Leemos linea por linea cada nota 
+  # Leemos línea por línea cada nota 
   suma_notas = 0
   cantidad_notas = 0
-  for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
-    nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
+  for línea in líneas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
+    nota = línea.split(";")[2].strip('\n') # nos quedamos con la nota
     suma_notas += int(nota)
     cantidad_notas += 1
 
@@ -228,15 +228,15 @@ Otra forma de resolverlo podría haber sido:
 
 ``` python
 # Abrimos el archivo de notas
-def calcular_guardar_promedio(ruta_notas): # La funcion puede recibir "notas.txt"
+def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.txt"
   archivo = open(ruta_notas, 'r')
-  lineas = archivo.readlines()
+  líneas = archivo.readlines()
   archivo.close()
 
-  # Leemos linea por linea cada nota 
+  # Leemos línea por línea cada nota 
   notas = []
-  for linea in lineas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
-    nota = linea.split(";")[2].strip('\n') # nos quedamos con la nota
+  for línea in líneas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
+    nota = línea.split(";")[2].strip('\n') # nos quedamos con la nota
     notas.append(int(nota))
 
   # Guardamos el promedio en un nuevo archivo
@@ -252,25 +252,25 @@ Veamos el contenido del archivo "promedio.txt"
 ``` python
 ruta_archivo = "promedio.txt"
 archivo = open(ruta_archivo, 'r')
-linea = archivo.readline() # o read
+línea = archivo.readline() # o read
 archivo.close()
-print(linea)
+print(línea)
 ```
 
 ``` bash
 6.5
 ```
 
-En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada linea en una lista que tiene 3 elementos, a nosostros nos interesa el elemento que esta en la posición 2, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva linea ```\n``` y nos permite leer la nota como un número. 
+En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada línea en una lista que tiene 3 elementos, a nosotros nos interesa el elemento que está en la posición 2, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva línea ```\n``` y nos permite leer la nota como un número. 
 
-Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer linea del archivo no nos interesa ya que contiene los nombres de cada campo. Esto se explica en [unidad 4](#listas-como-secuencias).
+Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer línea del archivo no nos interesa, ya que contiene los nombres de cada campo. Esto se explica en [unidad 4](#listas-como-secuencias).
 
 
 ### Tipos de archivos
 
-En la sección anterior utilizamos para todos los archivos la extención '.txt' el uso de extenciónes es una **convención**, una manera de nombrar las cosas que nos da una idea de lo que hay en el contenido del archivo. 
+En la sección anterior utilizamos para todos los archivos la extensión '.txt' el uso de extensiónes es una **convención**, una manera de nombrar las cosas que nos da una idea de lo que hay en el contenido del archivo. 
 
-Comunmente a los archivos que estuvimos usando como ejemplo se los nombra con la extención '.csv' las siglas de "comma separated values"[^3].
+Comúnmente a los archivos que estuvimos usando como ejemplo se los nombra con la extensión '.csv' las siglas de "comma separated values"[^3].
 
 
 ### Conclusiones
@@ -283,7 +283,7 @@ necesite, se lo debe cerrar.
 
 ## Manejo de errores
 
-Cuando cometemos un error de tipeo o utilizamos mal una sentencia el interprete nos muestra un error de sintaxis. En la practica lo vemos como un ```SintaxisError```, este tipo de errores se los llama errores sintácticos, la menera de resolverlo es revisar la sintáxis y corregirlo. 
+Cuando cometemos un error de tipeo o utilizamos mal una sentencia el intérprete nos muestra un error de sintaxis. En la práctica lo vemos como un ```SintaxisError```, este tipo de errores se los llama errores sintácticos, la manera de resolverlo es revisar la sintaxis y corregirlo. 
 
 **Ejemplo: Función mal definida**
 
@@ -300,7 +300,7 @@ SyntaxError: invalid syntax
 ```
 
 
-Cuando un programa se esta ejecutando y ocurre un error se crea una excepción, normalmente el programa detiene su ejecución y se imprime un mensaje. Este tipo de errores se los llama **errores de ejecución**, vamos a ver como manejarlos.
+Cuando un programa se está ejecutando y ocurre un error se crea una excepción, normalmente el programa detiene su ejecución y se imprime un mensaje. Este tipo de errores se los llama **errores de ejecución**, vamos a ver como manejarlos.
 
 
 
@@ -362,11 +362,11 @@ La segunda tiene una descripción:
 - `list index out of range`
 - `No such file or directory`
 
-Además nos da información contextual que puede indicar en la ejecucuión de qué linea se dió el error:  
+Además nos da información contextual que puede indicar en la ejecución de qué línea se dio el error:  
 
-- Linea 3: `----> 3 resultado = dividendo/divisor`.
-- Linea 2: `----> 2 segundo_elemento = lista[2]`.
-- Linea 1: `----> 1 archivo = open("archivo_falso.txt","r")`.
+- línea 3: `----> 3 resultado = dividendo/divisor`.
+- línea 2: `----> 2 segundo_elemento = lista[2]`.
+- línea 1: `----> 1 archivo = open("archivo_falso.txt","r")`.
 
 
 En algunas ocasiones es parte del programa manejar operaciones que puedan lanzar este tipo de excepciones sin que el programa detenga su ejecución, para estos casos Python nos provee las sentencias `try`y `except`. 
@@ -430,7 +430,7 @@ Una misma línea podría arrojar varios tipos de excepciones distintos. Existe u
 
 ### Conclusiones
 
-- El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funcionalidad que se está programando. 
+- El manejo de errores es un parte fundamental en el desarrollo de software, tan importante como la funciónalidad que se está programando. 
 - Los errores que se dan en tiempo de ejecución los podemos "atrapar" con el bloque `try`.
 - Hay tipos de excepciones que describen distintos tipos de errores de ejecución.
 

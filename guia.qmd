@@ -16,7 +16,7 @@
 
 :::{.callout-note}
 ### Discord
-La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.\
+La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guías.\
 Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
 Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.
 :::
@@ -39,7 +39,7 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
 
 5. Se te encargó definir qué datos son necesarios para el registro de estudiantes en un curso de inglés. ¿Qué datos crees que deberían ser obligatorios y cuáles opcionales?  ¿Y si el curso es de cocina? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
-6. Contás con un listado de cosas a comprar y tenes que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+6. Contás con un listado de cosas a comprar y tenés que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
 7. Con el anexo de Replit de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `“¡Hola mundo!”`.
 
@@ -171,8 +171,8 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     ```
     Aries: 21 de marzo al 20 de abril.
     Tauro: 21 de abril al 20 de mayo.
-    Geminis: 21 de mayo al 21 de junio.
-    Cancer: 22 de junio al 23 de julio.
+    Géminis: 21 de mayo al 21 de junio.
+    Cáncer: 22 de junio al 23 de julio.
     Leo: 24 de julio al 23 de agosto.
     Virgo: 24 de agosto al 23 de septiembre.
     Libra: 24 de septiembre al 22 de octubre.
@@ -311,7 +311,7 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     b. Modificar el programa anterior para que solamente permita una cantidad fija de intentos.
     c. Modificar el programa anterior para que sea una función que devuelva si el usuario ingresó o no la contraseña correctamente, mediante un valor booleano (`True` o `False`).
 
-7. a. Hacer una función que reciba un número del 1 al 10, y luego permita al usuario poder adivinar ese número, ingresando valores repetidamente. Para cada ingreso del usuario, el programa debe indicarle si su numero es menor o mayor al número a adivinar. Una vez que el usuario ingresa el número correcto, lo felicita y termina.
+7. a. Hacer una función que reciba un número del 1 al 10, y luego permita al usuario poder adivinar ese número, ingresando valores repetidamente. Para cada ingreso del usuario, el programa debe indicarle si su número es menor o mayor al número a adivinar. Una vez que el usuario ingresa el número correcto, lo felicita y termina.
 
     b. Repetir permitiendo únicamente 3 intentos.
 
@@ -649,7 +649,7 @@ print(tuplas_a_diccionario(l))
     b. Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar `filter` y `map`. 
 
 
-17. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guia de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
+17. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guía de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
 Se quiere que el usuario que está usando el programa pueda acceder por pantalla a un enunciado puntual de una guía con sólo pedirlo (si existe). Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
 
 18. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
@@ -983,7 +983,7 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 
 10. Una persona quiere cercar el frente de su casa con alambre. Los postes se deben poner a 1 metro de distancia como mínimo entre sí. Hacer una función que reciba un número entero que sea la cantidad de metros a cubrir, y devuelva un array con la posición de los postes necesarios. Por ejemplo, si se reciben `5` metros, debe devolver: `[0.   1.25   2.5   3.75   5.]`
 
-11. Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el numero de reserva si está ocupado o 0 sino: `[1,2,3,0,7,6,4,0,0,8,9, ...]`.\
+11. Se va a realizar un concierto gratis en el Jardín Japonés, para lo cual se habilitó la reserva de asientos por internet. Por un error, las reservas se hicieron en una lista de 50 asientos, guardando el número de reserva si está ocupado o 0 sino: `[1,2,3,0,7,6,4,0,0,8,9, ...]`.\
 Los asientos en el Jardín Japonés se van a organizar en forma de matriz, teniendo 5 filas de 10 asientos cada uno. Se quiere transformar la lista de asientos en una matriz. Hacer una función que reciba la lista de asientos y devuelva la matriz de asientos organizada por filas.
 
     Ejemplo: Si se recibe `[1,2,3,0,7,6,4,0,0,8,9,10,0,13,11,12]`, se debe devolver: `[[1,2,3,0,7,6,4,0,0,8],[9,10,0,13,11,12]]`.

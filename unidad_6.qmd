@@ -8,7 +8,7 @@ jupyter: python3
 
 ## Introducción
 
-Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de bibliotecas que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las bibliotecas?** La bibliotecas son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos. 
+Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de bibliotecas que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las bibliotecas?** Las bibliotecas son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos. 
 
 Entre las bibliotecas disponibles se encuentran las estándares, que se incluye con cada instalación de Python, y las de código abierto creadas por la gran comunidad de desarrolladores, que constantemente genera nuevas bibliotecas y mejora las existentes. Por ello es aconsejable que, al momento de utilizarlas, se verifique si existe alguna actualización en las guías de usuario.
 
@@ -18,14 +18,14 @@ Asimismo, estas bibliotecas se pueden clasificar según su aplicación y funcion
 
 Para acceder a una biblioteca y sus funciones, se debe instalar por única vez y luego, importar cada vez que la necesitemos.
 
-En la parte superior de nuestro código debemos correr `import {nombre_de_biblioteca} as {nombre_corto_de_biblioteca}`. El alias o nombre corto de la biblioteca se suele agregar para lograr una mayor legilibilidad del código, pero no es mandatorio.
+En la parte superior de nuestro código debemos correr `import {nombre_de_biblioteca} as {nombre_corto_de_biblioteca}`. El alias o nombre corto de la biblioteca se suele agregar para lograr una mayor legibilidad del código, pero no es mandatorio.
 
 ```python
 import numpy as np
 ```
 
 :::{.callout-note collapse="true}
-En nuestro caso, la instalación no es necesaria ya que vamos a utilizar Google Colab o Replit, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
+En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google Colab o Replit, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
 :::
 
 ## NumPy
@@ -44,9 +44,9 @@ NumPy incorpora una estructura de datos propia llamados **arrays** que es simila
 
 Un **array** es un conjunto de elementos del mismo tipo, donde cada uno de ellos posee una posición y esta es única para cada elemento. Como dijimos arriba, en Python vimos las listas, que es lo más parecido a un Array.
 
-Analicemos el siguiente ejemplo: si pensamos en una matriz, lo primero que nos viene a la mente es una tabla con valores ordenados en filas y columnas, donde una fila es la línea horizontal y una columna es la vertical. Es decir, una matriz es un conjunto de elementos que posee una posición o índice determinado determinado por la fila y la columna, por lo que sería un array.
+Analicemos el siguiente ejemplo: si pensamos en una matriz, lo primero que nos viene a la mente es una tabla con valores ordenados en filas y columnas, donde una fila es la línea horizontal y una columna es la vertical. Es decir, una matriz es un conjunto de elementos que posee una posición o índice determinado por la fila y la columna, por lo que sería un array.
 
-En este capítulo se trabajará principalmente con vectores y matrices ya que consideramos que les será útil para aplicar los conocimientos de Numpy en otras materias.
+En este capítulo se trabajará principalmente con vectores y matrices, ya que consideramos que les será útil para aplicar los conocimientos de Numpy en otras materias.
 
 #### Creación de un Array
 
@@ -57,7 +57,7 @@ a = np.array([1, 2, 3])
 print(a)
 ```
 
-También, se pueden crear arrays particulares, constituídos por ceros con `zeros()` o por unos con `ones()`:
+También, se pueden crear arrays particulares, constituidos por ceros con `zeros()` o por unos con `ones()`:
 
 ```{python}
 # Creo un array de ceros con dos elementos
@@ -81,11 +81,11 @@ print(a_rango)
 
 ```{python}
 # Creo un array con un rango formado por 4 números
-# que empieza en 2 hasta 10 (incluídos). 
+# que empieza en 2 hasta 10 (incluidos). 
 a_rango_2 = np.linspace(2, 10, num=4)
 print(a_rango_2)
 ```
-Esto es muy parecido a los rangos que ya vimos en Python, con la sutil diferencia de que el `final` del rango en este caso **sí se icnluye**.
+Esto es muy parecido a los rangos que ya vimos en Python, con la sutil diferencia de que el `final` del rango en este caso **sí se incluye**.
 
 Finalmente, para crear arrays de más dimensiones, se utilizan varias listas:
 
@@ -160,7 +160,7 @@ print(a_reshape)
 
 ##### Insert
 
-También, se modría insertar una fila (`axis = 0`) o una columna (`axis = 1`) en una determinada posición. Por ejemplo:
+También, se podría insertar una fila (`axis = 0`) o una columna (`axis = 1`) en una determinada posición. Por ejemplo:
 
 ```{python}
 # Agregar fila de cincos en posición 1:
@@ -224,7 +224,7 @@ print(np.sort(c))
 
 ### Operaciones aritméticas utilizando **array**
 
-Como se ha mencionado anteriormente, Numpy tiene un gran potencial para realizar operaciones, muy superior al de las listas de Python. Por ejemplo, si quisieramos sumar dos listas de python necesitaríamos realizar un `for`:
+Como se ha mencionado anteriormente, Numpy tiene un gran potencial para realizar operaciones, muy superior al de las listas de Python. Por ejemplo, si quisiéramos sumar dos listas de python necesitaríamos realizar un `for`:
 
 ```{python}
 # Definir listas
@@ -238,7 +238,7 @@ for i in range(len(a)):
 print(c)
 ```
 
-Utlizando las funciones de Numpy, esto ya no es más necesario:
+Utilizando las funciones de Numpy, esto ya no es más necesario:
 
 ```{python}
 # add() para sumar elemento a elemento de a y b
@@ -328,7 +328,7 @@ print("Potencia usando power():", resultado_2)
 ```
 
 ::: {.callout-note}
-Note que si quisieramos operar con un vector `b` de elementos iguales, podríamos utilizar un escalar.
+Note que si quisiéramos operar con un vector `b` de elementos iguales, podríamos utilizar un escalar.
 :::
 
 ```{python}
@@ -363,7 +363,7 @@ print("Logaritmo base e:", np.log([1, np.e, np.e**2]))
 ```
 
 ::: {.callout-note}
-Note que el número de Euler o número e es una constante incluída en NumPy como: `np.e`
+Note que el número de Euler o número e es una constante incluida en NumPy como: `np.e`
 :::
 
 ```{python}
@@ -411,7 +411,7 @@ print("Arcotangente de 0:", np.arctan(0))
 ```
 
 ::: {.callout-note}
-Note que el número π es una constante incluída en NumPy como: `np.pi`
+Note que el número π es una constante incluida en NumPy como: `np.pi`
 :::
 
 ```{python}
@@ -570,7 +570,7 @@ Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al in
 
 ![](./imgs/unidad_6/google_colab5.png)
 
-Las celdas, además, no necesitan del uso de `print` si la última linea corresponde a un elemento. Entonces, podemos hacer algo así, y aún así ver el contenido de esa variable en el output. Esta es una diferencia con Replit que vamos a ver muy seguido, porque nos permite ver de mejor forma los elementos de Pandas (a diferencia de con el uso de print).
+Las celdas, además, no necesitan del uso de `print` si la última línea corresponde a un elemento. Entonces, podemos hacer algo así, y aún así ver el contenido de esa variable en el output. Esta es una diferencia con Replit que vamos a ver muy seguido, porque nos permite ver de mejor forma los elementos de Pandas (a diferencia de con el uso de print).
 
 ![](./imgs/unidad_6/google_colab6.png)
 
@@ -1102,7 +1102,7 @@ df['direccion'].value_counts()
 
 ##### Group by:
   
-`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, transformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisieramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
+`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, transformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisiéramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
 
 ```{python}
 # Agrupar por "direccion" y devolver la cantidad de cada uno
@@ -1204,7 +1204,7 @@ plt.show()
 ### Grillas
 ¿Ves cómo en el gráfico de puntos quizás no se entiende bien la ubicación de cada punto?\
 Esto es porque no tenemos una guía que nos ayude. Para eso, vamos a agregar una grilla.
-La grilla se puede agregar con al función `grid()`, y es una buena forma de darle legibilidad a un gráfico como puede ser el de linea y el de puntos.\
+La grilla se puede agregar con al función `grid()`, y es una buena forma de darle legibilidad a un gráfico como puede ser el de línea y el de puntos.\
 :::
 
 ```{python}

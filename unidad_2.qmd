@@ -281,7 +281,7 @@ print(f(5))
 ```
 
 ### Ingreso de Datos por Consola
-Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programaspuedan interactuar, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función `input`.
+Hasta ahora, los programas que hicimos no interactuaban con el usuario. Pero para que nuestros programas puedan interactuar, vamos a querer que el usuario pueda ingresar datos, y que el programa pueda mostrarle datos por pantalla. Para esto, vamos a usar la función `input`.
 
 ```python
 input()
@@ -386,7 +386,7 @@ La puerta de entrada son los `parámetros` y la de salida es el `output` (el res
 <img src="./imgs/unidad_2/funciones1.png" alt="image" width="300" height="auto">
 </div>
 
-Cuando se llama o invoca a la función, la puerta de entrada se abre, permitiéndonos enviarle (pasarle) cero, uno o más parámetros a la función (según cómo esté definida). Los parámetros son datos que la función necesida para funcionar, y como ya dijimos, se le pasan a la misma entre los paréntesis de la llamada.\
+Cuando se llama o invoca a la función, la puerta de entrada se abre, permitiéndonos enviarle (pasarle) cero, uno o más parámetros a la función (según cómo esté definida). Los parámetros son datos que la función necesita para funcionar, y como ya dijimos, se le pasan a la misma entre los paréntesis de la llamada.\
 
 >**Ejemplo:**
 `saludar(nombre)`, `imprimir_elementos(lista)`, `sumar(numero1, numero2)`, etc.
