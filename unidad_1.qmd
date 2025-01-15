@@ -68,7 +68,7 @@ Un lenguaje de programación tiene reglas estrictas que se deben respetar y no s
 ### Entorno de Desarrollo
 Un entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, editar, compilar y ejecutar programas.\
 
-En la materia utilizaremos un entorno de desarrollo llamado Replit, que nos permite escribir código en un editor de texto, compilarlo y ejecutarlo en un mismo lugar de forma online. Pero existen muchos otros entornos de desarrollo, como por ejemplo Visual Studio Code, Eclipse, NetBeans, etc.
+En la materia utilizaremos un entorno de desarrollo llamado Google Colab, que nos permite escribir código en un editor de texto, compilarlo y ejecutarlo en un mismo lugar de forma online. Pero existen muchos otros entornos de desarrollo, como por ejemplo Visual Studio Code, Eclipse, NetBeans, etc.
 
 ## Lenguaje Python
 
@@ -99,65 +99,57 @@ Al igual que Rosita, al hacer nuestro primer 'Hola, Mundo!' nos convertimos en p
 
 A partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes.
 
-## Anexo: Replit
+## Anexo: Google Colab
 
-### Creación de una nueva cuenta
-Para utilizar replit vamos a ingresar a [https://replit.com/](https://replit.com/).\
+### Cómo usar Google Colab
 
-![Página de inicio de Replit](./imgs/unidad_1/replit_start.png)
+Para usar Google Colab, debemos ingresar a <a href="https://colab.research.google.com/" target="_blank">este link</a>. Si es necesario, debemos crear una cuenta de Google.
 
-Vamos a presionar luego en `Sign Up`, donde va a pedir crear una cuenta, o iniciar sesión si ya tenemos una. Una de nuestras opciones es, si tenemos una cuenta google ya creada, iniciar sesión con eso. De lo contrario, podemos crear una cuenta nueva con un mail.
+Al abrir Google Colab por primera vez, vamos a ver lo siguiente:
 
-![Página de creación de cuenta de Replit](./imgs/unidad_1/replit_signup.png)
+![Inicio en Google Colab](./imgs/unidad_6/google_colab1.png)
 
-### Creación de un nuevo proyecto
-Una vez creada la cuenta e iniciado sesión, vamos a ver esta pantalla:
+Vamos entonces a hacer click en "New Notebook", y se va a abrir un archivo nuevo, con extensión `.ipynb` (que es la extensión de un archivo del tipo IPython Notebook). Vamos a cambiarle el nombre de 'Untitled0' a 'Unidad_1' o el nombre que prefieran.
 
-![Home de Replit](./imgs/unidad_1/replit_home.png)
+![Archivo nuevo](./imgs/unidad_6/google_colab2.png)
 
-En la misma vamos a ver muchas opciones, pero la que nosotros nos interesa es el botón de `+ Create Repl`, que nos va a permitir crear un nuevo proyecto.
+#### Celdas de Código
 
-![Botón de creación de un nuevo proyecto en Replit](./imgs/unidad_1/replit_create_repl.png)
+Con Colab vamos a poder correr nuestro código. Colab se divide en celdas individuales: cada celda es un bloque de código que se puede correr por separado. Para agregar una celda nueva, se hace click en el botón de "+ Code" que aparece en la parte superior izquierda de la celda.
+Para correr la celda, se hace click en el botón de "play" que aparece a la izquierda de la celda. El output (la salida) de la celda va a aparecer debajo de la misma.
 
-Se va a abrir la siguiente ventana:
-![Ventana de creación de un nuevo proyecto en Replit](./imgs/unidad_1/replit_create_repl2.png)
-
-Donde vamos a buscar y elegir en "Templates" el lenguaje de programación Python. Luego, vamos a asignarle un nombre y seleccionar "Create repl".\
-Se debería ver algo así:
-
-![Ventana completa de creación de un nuevo proyecto en Replit](./imgs/unidad_1/replit_create_repl3.png)
-
-### Uso del nuevo proyecto
-Los espacios o proyectos en replit se llaman `Workspace`, que significa `espacio de trabajo`. En este espacio de trabajo vamos a poder escribir código, ejecutarlo, y ver los resultados de la ejecución.
-
-Una vez creado el espacio de trabajo, se nos va a abrir una pantalla donde vamos a ver varias cosas.
-
-Inicialmente, tenemos en el centro el espacio de edición de código, donde vamos a escribir nuestro programa.
-![Espacio de edición de código](./imgs/unidad_1/replit_workspace1.png)
-
-En la parte superior, vamos a ver un botón de `Run`, que nos va a permitir ejecutar el programa que escribimos.
-
-![Botón de ejecución de código](./imgs/unidad_1/replit_workspace2.png)
-
-En la parte derecha, vamos a ver el resultado de la ejecución del programa. En este caso, como no escribimos nada, no hay nada para mostrar.
-
-![Resultado de la ejecución de código](./imgs/unidad_1/replit_workspace3.png)
-
-Finalmente, en la parte izquierda vamos a tener el menú de archivos, donde vamos a poder crear nuevos archivos, borrarlos, etc. También tiene el acceso a otras herramientas que de momento no vamos a estar usando.
-
-![Menú de archivos](./imgs/unidad_1/replit_workspace4.png)
-
-Vamos a ver que en el menú de archivos ya tenemos un archivo creado, llamado `main.py`. Este archivo es el archivo principal de nuestro programa, y es el que se ejecuta cuando presionamos el botón de `Run`.\
-Si bien podemos tener otros archivos, el único que se ejecuta cuando presionamos `Run` es `main.py`. Por lo tanto, es importante que nuestro programa principal o lo que nosotros queremos correr, esté en este archivo. Lo que podemos hacer, es crear otros archivos para ir guardando nuestro código y ejercicios anteriores sin necesidad de que se ejecuten cada vez que presionamos `Run`.
-
-> **¡Probemos el espacio de trabajo!**
-Vamos a escribir en el archivo `main.py` el siguiente código:
-`print("Hola, Mundo!")`. Luego, vamos a presionar el botón de `Run` y vamos a ver el resultado en la parte derecha de la pantalla.
-
-¡Felicitaciones! Ya escribiste tu primer programa en Python.
-
-::: {.callout-note}
-###
-¿Lograste ver el resultado? ¿Qué pasa si presionás el botón de `Run` varias veces seguidas?\
+::: {.callout-tip}
+### Cómo usar las celdas
+Les recomendamos que cada ejercicio de la guía esté en una celda separada.
+A medida que avance la materia vamos a terminar de entender bien por qué.
 :::
 
+![Ejecución de una celda de código](./imgs/unidad_6/google_colab3.png)
+
+Si tenemos varias celdas con código, podemos correrlas todas juntas haciendo click en "Runtime" o "Entorno de Ejecución" en el menú superior y luego en "Run all" (o "Ejecutar Todo"). Cada celda de código va a tener su propio output debajo de ella. 
+
+![Ejecución simultánea de dos celdas de código](./imgs/unidad_6/google_colab4.png)
+
+#### Celdas de Texto
+
+Así también como podemos agregar celdas de código, podemos agregar celdas de texto. Para eso, hacemos click en el botón de "+ Text" que aparece en la parte superior izquierda de la celda. Dentro podemos escribir texto con formato e incluso agregar imágenes. 
+
+![](./imgs/unidad_6/google_colab7.png)
+
+#### Opciones de Celdas
+Para reordenar, eliminar o copiar celdas, al seleccionar una celda aparece un menú a la derecha con distintos íconos. Podemos usar estas opciones para realizar estas distintas acciones.
+
+![](./imgs/unidad_6/google_colab8.png)
+
+#### Aclaración IA
+
+- Para desactivar las sugerencias con IA (recomendado hacerlo) pueden ir a: Herramientas > Configuración > Asistente IA > Tildar "Ocultar funciones de IA generativa".
+
+#### Beneficios de usar Google Colab
+
+- Google Colab tiene una mejor interfaz para usar Pandas, mostrando el output en forma de tablas.
+- Permite importar datos de Google Drive
+- Permite compartir el código con otras personas, de tal forma que todas ellas puedan editar un mismo archivo
+- Permite guardar los archivos en Google Drive, con guardado automático de cambios
+- Permite exportar el archivo en distintos formatos, como PDF, HTML, etc.
+- Permite intercalar código ejecutable con texto explicativo, lo que lo hace ideal para la creación de informes, presentaciones, o tutoriales.

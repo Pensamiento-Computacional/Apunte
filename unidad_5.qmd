@@ -272,14 +272,46 @@ En la sección anterior utilizamos para todos los archivos la extensión '.txt' 
 
 Comúnmente a los archivos que estuvimos usando como ejemplo se los nombra con la extensión '.csv' las siglas de "comma separated values"[^3].
 
-
 ### Conclusiones
 - Para utilizar un archivo desde un programa, es necesario abrirlo, y cuando ya no se lo
 necesite, se lo debe cerrar.
 - Las instrucciones más básicas para manejar un archivo son leer y escribir.
 - Los archivos de texto se procesan generalmente línea por línea y sirven para intercambiar información entre diversos programas o entre programas y humanos.
 
+## Colab y Archivos
+Para usar y crear archivos en Colab, se debe ingresar al último item del menú derecho, que tiene forma de carpeta.
 
+![Menu Derecho](./imgs/unidad_5/colab1.png)
+
+Allí, con el menú interno de archivos vamos a poder:
+
+- Subir un archivo que tengamos en la computadora / celular
+- Refrescar los archivos para ver el contenido actualizado
+- Subir un archivo desde Drive
+- Ver archivos ocultos (no vamos a usar esto)
+
+![Menú Archivos](./imgs/unidad_5/colab2.png)
+
+También podemos crear un nuevo archivo usando el menú de "sample_data" (los tres puntitos) y seleccionando "Nuevo Archivo".
+
+![Nuevo archivo en sample data](./imgs/unidad_5/colab3.png)
+
+El archivo luego hay que arrastrarlo *fuera* de la carpeta de sample data para poder usar como ruta su nombre directamente.
+
+![Mover archivo](./imgs/unidad_5/colab4.gif)
+
+De esta forma, podemos abrirlo usando como ruta su nombre: `open("archivo_nuevo")`.
+
+Si hacemos doble clic en el archivo, podemos verlo. Si además el archivo es del tipo txt, podemos editarlo. Los archivos CSV no pueden editarse, pero un truco sería cambiarle la extensión a txt, editarlo, y luego volver a cambiarle la extensión a CSV. No es lo ideal, pero nos permite realizar cambios manuales en un archivo para poder trabajar con mayor comodidad.
+
+
+:::{.callout-warning}
+¡Los archivos creados en Colab no se guardan para siempre!
+
+Te recomendamos que si los vas a necesitar o vas a querer trabajar con ellos en un futuro, los descargues. Lo podés haciendo con clic derecho sobre el archivo, o con el menú del mismo (los tres puntitos).
+:::
+
+Con estos tips, ya podrías manejarte correctamente para hacer la guía de archivos en Colab.
 
 ## Manejo de errores
 

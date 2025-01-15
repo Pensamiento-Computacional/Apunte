@@ -41,7 +41,7 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
 
 6. Contás con un listado de cosas a comprar y tenés que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
-7. Con el anexo de Replit de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `“¡Hola mundo!”`.
+7. Con el anexo de Google Colab de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `“¡Hola mundo!”`.
 
 ## Guía 2: Tipos de Datos, Expresiones y Funciones
 

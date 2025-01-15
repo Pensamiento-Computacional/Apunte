@@ -515,7 +515,7 @@ lista.sort(reverse=True)
 print(lista)
 ```
 
-Existe un método `reverse` (no disponible en Replit) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando *slices*, como ya vimos: `lista[::-1]`.
+Existe un método `reverse` (no disponible en todos los ambientes de codeo) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando *slices*, como ya vimos: `lista[::-1]`.
 
 :::{.callout-warning collapse="true"}
 ### ¡Cuidado con los Ordenamientos!

@@ -25,8 +25,16 @@ import numpy as np
 ```
 
 :::{.callout-note collapse="true}
-En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google Colab o Replit, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca`. 
+En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google Colab, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: “Command Prompt”, o terminal o consola), corriendo: `pip install –nombre_de_biblioteca` o similares. 
 :::
+
+## Adaptaciones para Colab
+
+A partir de esta guía es probable que debamos reutilizar ciertas cosas o adaptar la forma en la que venimos trabajando. Para esto, vamos a hacer una modificación:
+
+Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó).
+
+![](./imgs/unidad_6/google_colab5.png)
 
 ## NumPy
 
@@ -543,58 +551,7 @@ Los datos a trabajar en Pandas van a tener, en general, una forma muy similar a 
 
 ![Esquema de figuras y axes](./imgs/unidad_6/pandas.png)
 
-Como Pandas es una biblioteca un poco más pesada, **no vamos a estar trabajando en Replit**, sino que vamos a usar <a href="https://colab.research.google.com/" ocasion="_blank">Google Colab</a>.
-
-### Cómo usar Google Colab
-
-Al abrir Google Colab por primera vez, vamos a ver lo siguiente:
-
-![Inicio en Google Colab](./imgs/unidad_6/google_colab1.png)
-
-Vamos entonces a hacer click en "New Notebook", y se va a abrir un archivo nuevo, con extensión `.ipynb` (que es la extensión de un archivo del tipo IPython Notebook). Vamos a cambiarle el nombre de 'Untitled0' a 'Unidad_6_pandas' o el nombre que prefieran.
-
-![Archivo nuevo](./imgs/unidad_6/google_colab2.png)
-
-#### Celdas de Código
-
-Colab es muy similar a Replit, ya que vamos a poder correr código. La diferencia es que Colab se divide en celdas individuales: cada celda es un bloque de código que se puede correr por separado. Para agregar una celda nueva, se hace click en el botón de "+ Code" que aparece en la parte superior izquierda de la celda.
-Para correr la celda, se hace click en el botón de "play" que aparece a la izquierda de la celda. El output de la celda va a aparecer debajo de la misma.
-
-![Ejecución de una celda de código](./imgs/unidad_6/google_colab3.png)
-
-Si tenemos varias celdas con código, podemos correrlas todas juntas haciendo click en "Runtime" en el menú superior y luego en "Run all". Cada celda de código va a tener su propio output debajo de ella. 
-
-![Ejecución simultánea de dos celdas de código](./imgs/unidad_6/google_colab4.png)
-
-Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó).
-
-![](./imgs/unidad_6/google_colab5.png)
-
-Las celdas, además, no necesitan del uso de `print` si la última línea corresponde a un elemento. Entonces, podemos hacer algo así, y aún así ver el contenido de esa variable en el output. Esta es una diferencia con Replit que vamos a ver muy seguido, porque nos permite ver de mejor forma los elementos de Pandas (a diferencia de con el uso de print).
-
-![](./imgs/unidad_6/google_colab6.png)
-
-#### Celdas de Texto
-
-Así también como podemos agregar celdas de código, podemos agregar celdas de texto. Para eso, hacemos click en el botón de "+ Text" que aparece en la parte superior izquierda de la celda. Dentro podemos escribir texto con formato e incluso agregar imágenes. 
-
-![](./imgs/unidad_6/google_colab7.png)
-
-#### Opciones de Celdas
-Para reordenar, eliminar o copiar celdas, al seleccionar una celda aparece un menú a la derecha con distintos íconos. Podemos usar estas opciones para realizar estas distintas acciones.
-
-![](./imgs/unidad_6/google_colab8.png)
-
-#### Beneficios de usar Google Colab
-
-- Google Colab tiene una mejor interfaz para usar Pandas, mostrando el output en forma de tablas.
-- Permite importar datos de Google Drive
-- Permite compartir el código con otras personas, de tal forma que todas ellas puedan editar un mismo archivo
-- Permite guardar los archivos en Google Drive, con guardado automático de cambios
-- Permite exportar el archivo en distintos formatos, como PDF, HTML, etc.
-- Permite intercalar código ejecutable con texto explicativo, lo que lo hace ideal para la creación de informes, presentaciones, o tutoriales.
-
-Para lo que queda de la unidad 6, vamos a estar usando Google Colab.
+Pandas es una biblioteca un poco más pesada, por lo que vamos a poder aprovechar mucho más <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, que maneja grandes datos de forma rápida y eficiente.
 
 ### Serie
 

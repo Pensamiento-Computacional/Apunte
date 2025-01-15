@@ -19,7 +19,7 @@ Esta línea se ejecutaría después        ↓
 Esta línea se ejecutaría a lo último    
 ```
 
-En este curso, la comunicación de los programas con el mundo exterior se realizará casi exclusivamente con el usuario por medio de la consola (o terminal, la presentamos en la unidad anterior en el anexo de Replit).
+En este curso, la comunicación de los programas con el mundo exterior se realizará casi exclusivamente con el usuario por medio de la consola (o terminal, la presentamos en la unidad anterior en el anexo de Colab).
 
 :::{.callout-warning} 
 ### ¡Cuidado!
@@ -184,7 +184,7 @@ def saludar_lucia():
   return "Hola, Lucia!"
 ```
 
-Podés copiar el código y pegarlo en Replit. Luego, apretá "Run". Vas a notar que no pasa nada, ahora vamos a ver por qué.
+Podés copiar el código y pegarlo en Colab. Luego, apretá "Run". Vas a notar que no pasa nada, ahora vamos a ver por qué.
 
 Varias cosas a notar del código:
 
@@ -195,7 +195,7 @@ Varias cosas a notar del código:
 
 :::{.callout-note}
 ### Sangría
-La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete (en nuestro caso, Replit).
+La sangría puede ingresarse utilizando dos o más espacios, o presionando la tecla Tab. Es importante prestar atención en no mezclar espacios con tabs, para evitar “confundir” al intérprete (en nuestro caso, Colab).
 :::
 
 :::{.callout-tip}
