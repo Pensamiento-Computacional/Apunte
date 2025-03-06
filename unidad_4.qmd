@@ -424,15 +424,6 @@ print(lista)
 
 Al igual que antes, el método `pop()` devuelve el elemento que se eliminó de la lista. Si la lista está vacía, se produce un error.
 
-- `extend()` agrega los elementos de una lista al final de otra. Es lo mismo que concatenar dos listas con el operador `+`:
-
-```{python} 
-lista1 = [1, 2, 3]
-lista2 = [4, 5, 6]
-lista1.extend(lista2)
-print(lista1)
-```
-
 ### Referencias de Listas
 ```{python}
 a = [1,2,3,4]
@@ -1079,14 +1070,4 @@ print(alumnos_ordenados)
 :::{.callout-note}
 En el ejemplo de arriba, estamos ordenando una lista de diccionarios por el valor de la clave `"nombre"`.\
 El parámetro `key` recibe una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `obtener_nombre` devuelve el valor de la clave `"nombre"` de cada diccionario, y es lo que se usa para ordenar.
-:::
-
-:::{.callout-important}
-### Ejercicio Desafío
-Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los diccionarios ordenados según la clave.\
-
-Ejemplo:\
-Si se tiene `[{"nombre": "Priscila", "legajo": 1234}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Agostina", "legajo": 9012}]` y se recibe la clave `nombre`\
-una vez ejecutada, la función debe devolver:\
-`[{"nombre": "Agostina", "legajo": 9012}, {"nombre": "Iara", "legajo": 5678}, {"nombre": "Priscila", "legajo": 1234}]`\
 :::

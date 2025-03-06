@@ -120,7 +120,7 @@ A partir de ahora y en adelante, todo lo que se nos pida (incluso si dice "progr
     $$||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2}$$\
     Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes $v_1$, $v_2$ y $v_3$ del mismo.
 
-20. **Desafío** (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes $x$ e $y$), dadas sus coordenadas $x_1$, $x_2$, $y_1$ e $y_2$.
+20. **Desafío** (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes $x$ e $y$), dadas sus coordenadas $x_1$, $x_2$, $y_1$ e $y_2$. Nota: considerar que tiene que funcionar para cualquier cuadrado, independientemente de los cuadrantes en los que tenga sus vértices.
 
 ## Guía 3: Estructuras de Control
 

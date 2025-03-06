@@ -7,24 +7,22 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 - **Prof. Titular:** Méndez, Mariano
 
 - Areco, Lucas
-- Balbiano, Jose Luis 
-- Balbiano, Jose Luis 
 - Bulacios, Juan
 - Cabibbo Arteaga, Nehuén Daniel
 - Cáceres, Fernando
 - Capón, Lucía
-- Carletti, Joaquin
 - Corti, Bautista
 - Duchen, Leonardo
 - Duzac, Emilia
+- Fulco, Victoria
 - Juarez Goldemberg, Mariana 
-- Lopez, Fernando
 - Lourengo Caridade, Lucía Gabriela 
 - Maciel, Laura
 - Maxwell, Julian
 - Notari, Pablo
 - Ortielli, Bruno
 - Pratto, Florencia
+- Ponti, Julieta
 - Rastrelli, Aldana
 - Retamozo, Melina
 - Szischik, Mariana
