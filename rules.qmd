@@ -1,5 +1,8 @@
 # Regimen de Cursada, Calendario y Cursos {.unnumbered}
 
+## Calendario y Cursos
+Se puede acceder al calendario de la cursada y a las aulas y horarios de los cursos a través del <a href="https://docs.google.com/spreadsheets/d/10Yq2xWmJWPjhRe5drH_XikpsTIGYoP5nQTfJhKuhSX4/edit?usp=sharing" target="_blank">siguiente link</a>.
+
 ## Formas de Evaluación
 
 La cursada de la materia cuenta con dos parciales:
@@ -8,8 +11,9 @@ La cursada de la materia cuenta con dos parciales:
     - Unidad 1
     - Unidad 2
     - Unidad 3
-    - Unidad 4
+    - Unidad 4 (rangos, cadenas, tuplas y listas)
 - Segundo Parcial
+    - Unidad 4 (diccionarios)
     - Unidad 5
     - Unidad 6
 
@@ -57,6 +61,3 @@ Si se desaprueba alguno de los parciales, el mismo puede recuperarse una sola ve
 Si se desaprueba un recuperatorio, se debe volver a cursar la materia el cuatrimestre siguiente.\
 Si se desaprueba 3 (tres) veces el examen final integrador, se debe volver a cursar la materia el cuatrimestre siguiente.
 :::
-
-## Calendario y Cursos
-Se puede acceder al calendario de la cursada y a las aulas y horarios de los cursos a través del <a href="https://docs.google.com/spreadsheets/d/10Yq2xWmJWPjhRe5drH_XikpsTIGYoP5nQTfJhKuhSX4/edit?usp=sharing" target="_blank">siguiente link</a>.

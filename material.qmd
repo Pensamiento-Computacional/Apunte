@@ -1,4 +1,4 @@
-# Videos Teóricos y Diapositivas {.unnumbered}
+# Videos y Diapositivas {.unnumbered}
 
 La parte teórica de la materia incluye ver los videos y leer los apuntes que se encuentran en esta página. Los apuntes contienen información que se tendrá en cuenta al momento de evaluar la materia en los parciales.
 
@@ -7,3 +7,8 @@ Tanto videos teóricos como diapositivas usadas en la práctica se encuentran en
 Las clases teóricas son virtuales y asincrónicas. Los videos se encuentran en el link de arriba, en la carpeta titulada "Teóricas".
 
 Las clases prácticas son presenciales. Las diapositivas usadas se encuentran en el link de arriba, en la carpeta titulada "Prácticas". Las mismas están organizadas por curso.
+
+## Taller de Herramientas
+La materia cuenta con un "Taller de Herramientas" en el <a href="https://www.youtube.com/@pensamientocomputacional-fiuba/playlists", target="_blank"> canal de Youtube</a>.
+
+En esta lista de videos, se explica cómo utilizar las herramientas de la materia como Discord, la página oficial y Google Colab.
