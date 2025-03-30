@@ -650,7 +650,6 @@ A continuación, se observa una tabla con métodos que nos permiten conocer las 
 | `.size` | Número de elementos, aunque también puede usarse `len` |
 | `.columns` | Lista con los nombres de las columnas |
 | `.index` | Lista con los nombres de las filas |
-| `.dtypes` | Serie con los tipos de datos de las columnas |
 | `.head()` | Muestra las primeras filas |
 | `.tail()` | Muestra las últimas filas |
 | `.describe()` | Brinda métricas de las columnas numéricas |
@@ -689,12 +688,7 @@ Con `info()` se puede ver:
 df.info()
 ```
 
-Note que utilizando `dtypes`, `columns` e `index` se obtiene parte de esta información:
-
-```{python}
-# Tipo de dato por columna
-df.dtypes
-```
+Note que utilizando `columns` e `index` se obtiene parte de esta información:
 
 ```{python}
 # Nombre de cada columna
@@ -1019,7 +1013,7 @@ El método opuesto es `notnull()`, que devuelve `True` si el valor de la columna
 df[df['IMC'].notnull()]
 ```
 
-#### Ordenando, Contando y Agrupando
+#### Ordenando y Contando
 
 A continuación, se muestra una lista con métodos que resultan muy útiles a la hora de analizar datos: 
 
@@ -1027,7 +1021,6 @@ A continuación, se muestra una lista con métodos que resultan muy útiles a la
 | --- | --- |
 | `sort_values(by, ascending)` | Ordena el DataFrame considerando los valores de la o las columnas determinadas y devuelve un DataFrame nuevo (no modifica el original) |
 | `value_counts()` | Indica los valores únicos de una determinada columna y el número de veces que aparece en ella |
-| `groupby().func()` | Agrupa las filas según ciertos valores de columnas. Requiere que apliquemos una función luego para que 'agrupe' los datos. |
 
 ##### Sort value:
   
@@ -1055,28 +1048,6 @@ Utilizando `value_counts()` se pueden contar las filas en cada grupo según "dir
 
 ```{python}
 df['direccion'].value_counts()
-```
-
-##### Group by:
-  
-`groupby()` es un método que nos permite agrupar los datos del DataFrame según los valores de una o unas columnas dadas, transformándose estas en el nuevo índice de los grupos. Por ejemplo, si quisiéramos agrupar por dirección y obtener la cantidad de apariciones de cada valor:
-
-```{python}
-# Agrupar por "direccion" y devolver la cantidad de cada uno
-df_copy.groupby(['direccion']).size()
-```
-
-Obteniendo una tabla con valores agrupados por "direccion", siendo esta columna el nuevo índice.
-
-```{python}
-# Agrupar por "direccion" y "genero" y mostrar el promedio de las columnas de 'edad' y 'peso'
-df.groupby(['direccion', 'genero'])[['edad', 'peso']].mean()
-```
-
-También puedo agrupar por más de una columna, y aplicar distintas funciones a las columnas. Por ejemplo, si quisiera agrupar por "direccion" y "genero" y obtener el promedio de la columna "edad" y la suma de la columna "peso", puedo usar `agg`, que significa "aggregate" (que significa 'agregar') y me pemite, para cada columna, pasarle una función a aplicar:
-
-```{python}
-df.groupby(['direccion', 'genero']).agg({'edad': 'mean', 'peso': 'sum'})
 ```
 
 ### Conclusiones

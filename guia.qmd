@@ -1039,9 +1039,8 @@ df
 20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
 21. Ordenar el dataFrame por carrera y apellido, en ese orden.
 22. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
-23. Agrupar a las personas por carrera y mostrar el promedio de edad por cada carrera.
 
-24. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
+23. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
 Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
 a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
 Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
@@ -1060,7 +1059,7 @@ df_notas = pd.DataFrame(data)
 df_notas
 ```
 
-25. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
+24. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
 Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
 
 ```{Python}
