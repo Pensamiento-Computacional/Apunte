@@ -3,11 +3,11 @@
 ## Recomendaciones al realizar las guías
 
 - Prestá atención al leer el enunciado. En particular:
-    - Si se pide una función que *devuelva* o *calcule* un valor, la función debe tener una función `return`.
+    - Si se pide una función que *devuelva* o *calcule* un valor, la función debe hacer uso de `return`.
     - Si se pide una función que *imprima* un valor, la función debe tener un `print`.
     - Si se pide una función que *pida* o *pregunte* algo al usuario, la función debe tener un `input`.
     - A menos que se diga específicamente "pedirle al usuario", no es necesario que el programa contenga `input`. En todo caso, hacer que la función reciba el o los datos por parámetro.
-- Cada ejercicio puede tener muchas soluciones posibles. Una vez que encuentres una solución, en lugar de pasar al siguiente ejercicio, pensá si se te ocurre una solución cuya codificación sea más simple.
+- Cada ejercicio puede tener muchas soluciones posibles. Una vez que encuentres una solución, en lugar de pasar al siguiente ejercicio, pensá si se te ocurre una solución cuyo código sea más simple o incluso mejor en términos de calidad.
 - Es muy importante que el código sea lo más claro y legible posible.
     - En particular, nombres de funciones y variables deben ser descriptivos.
     - También prestá atención a los espacios en blanco y a la indentación.
