@@ -33,7 +33,7 @@ n = 3 # n es de tipo 'int' y tiene valor 3
 b = True # b es de tipo 'bool' y tiene valor True
 ```
 
-### Expresiones de Comparación
+### Operadores de Comparación
 Las expresiones booleanas se pueden construir usando los operadores de comparación: sirven para comparar valores entre sí, y permiten construir una pregunta en forma de código.
 
 Por ejemplo, si quisiéramos saber si `5` es mayor a `3`, podemos construir la expresión:
