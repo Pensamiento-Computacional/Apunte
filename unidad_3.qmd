@@ -756,20 +756,25 @@ Una forma genérica, bastante común, de plantear un problema es:
 
 
 ```python
-<actualizar condición>
+<setear condición>
 
 while <condición>:
   <hacer algo>
   <actualizar condición/es>
 ```
 
-Donde `atualizar condición` implica actualizar todas las variables (una o más) relacionadas a la condición del ciclo, y `hacer algo` incluye al comportamiento repetitivo que queremos tener si la condición se cumple.
+Donde:
+
+- `setear condición` es inicializar o setear variables que necesitemos para la condicion (es opcional).
+- `condición`es 'qué se tiene que cumplir para que yo quiera repetir cierto comportamiento'.
+- `hacer algo` es el comportamiento repetitivo que queremos tener si la condición se cumple.
+- `actualizar condición` implica actualizar todas las variables (una o más) relacionadas a la condición del ciclo.
 
 Por ejemplo: Queremos imprimir un número, empezando de 0, siempre que sea menor a 10.
 
 
 ```{python}
-i = 0 # actualizar condición
+i = 0 # setear condición
 
 while i < 10: # condicion
   print(i) # hacer algo
