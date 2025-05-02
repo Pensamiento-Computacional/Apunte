@@ -8,13 +8,13 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 
 - Areco, Lucas
 - Bulacios, Juan
-- Cabibbo Arteaga, Nehuén Daniel
 - Cáceres, Fernando
 - Capón, Lucía
 - Corti, Bautista
 - Duchen, Leonardo
 - Duzac, Emilia
 - Fulco, Victoria
+- Ginestet, Joaquin
 - Juarez Goldemberg, Mariana 
 - Lourengo Caridade, Lucía Gabriela 
 - Maciel, Laura
