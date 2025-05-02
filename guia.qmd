@@ -57,7 +57,7 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
     b. Su edad y la imprima por pantalla.
     c. Su edad, le sume 1, y la imprima por pantalla.
 
-5. Crear un programa que le solicite al usuario un número, y que devuelva el resto obtenido de dividirlo por 2.\
+5. Crear un programa que le solicite al usuario un número, y que imprima el resto obtenido de dividirlo por 2.\
 ¿Qué operador vimos para obtener el resto?
 
 6. Escribir un programa que le pida al usuario su año de nacimiento, y que le diga qué edad tiene en el año actual.
