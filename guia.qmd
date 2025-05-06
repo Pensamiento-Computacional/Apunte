@@ -356,7 +356,7 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
 
 9. Crear una función que calcule si un número es primo o no. Un número es primo cuando solamente es divisible por sí mismo y por 1. Pista: usar el operador módulo `%`.
 
-10. **Desafío** (obligatorio): Crear una función que reciba un número entero e imprima los números primos entre 0 y el número ingresado.
+10. **Desafío** (obligatorio): Crear una función que reciba un número entero e imprima los números primos entre 1 y el número ingresado.
 
 11. **Desafío**  (obligatorio): 
 
