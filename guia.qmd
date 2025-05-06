@@ -183,7 +183,9 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     Piscis: 20 de febrero al 20 de marzo.
     ```
 
-6. Piedra, papel o tijera: escribir un programa de "Piedra, papel o tijera" tal que sea imposible que el usuario gane. El usuario debe ingresar **R** (piedra), **P** (papel), o **T** (tijera) y la computadora debe siempre ganarle. Ejemplo:
+6. Piedra, papel o tijera: escribir un programa de "Piedra, papel o tijera" tal que sea imposible que el usuario gane. El usuario debe ingresar **R** (piedra), **P** (papel), o **T** (tijera) y la computadora debe siempre ganarle. Las ejecuciones son individuales: el usuario sólo ingresa una sola vez su jugada, el programa le gana, y la ejecución termina.
+
+    Ejemplo 1 de Ejecución:
 
     ```
     ¡Piedra (R), papel (P) o tijera (T)!
@@ -191,17 +193,23 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     ¡Papel! ¡Gané!
     ```
 
+    Ejemplo 2 de Ejecución:
+
     ```
     ¡Piedra (R), papel (P) o tijera (T)!
     Ingrese jugada: P
     ¡Tijera! ¡Gané!
     ```
 
+    Ejemplo 3 de Ejecución:
+
     ```
     ¡Piedra (R), papel (P) o tijera (T)!
     Ingrese jugada: T
     ¡Piedra! ¡Gané!
     ```
+
+    Ejemplo 4 de Ejecución:
 
     ```
     ¡Piedra (R), papel (P) o tijera (T)!
