@@ -579,7 +579,7 @@ print("Su edad es:", edad_nueva)
 ```
 
 :::{.callout-tip}
-### Imprimiendo Strings y Variables (Iterpolación de Cadenas)
+### Imprimiendo Strings y Variables (interpolación de Cadenas)
 Existen muchas formas de concatenar variables con texto.
 
 1. Usando el operador `+`: `"Su edad es: " + edad`
