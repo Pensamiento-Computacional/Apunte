@@ -861,19 +861,17 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 
     ```python
     def dividir(n1, n2):
-        if n2 == 0:
-            raise ZeroDivisionError("No se puede dividir por cero")
         return n1/n2
 
     ```
 
     La función puede lanzar una excepción `ZeroDivisionError` si el segundo número es 0 (es decir, la ejecución va a terminar con un error).
     
-    a. Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías evitar que el programa termine con un error?
+    a. Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías modificar la función para evitar que el programa termine con un error? Considerar qué valor podría llegar a devolver la función si ocurre un error.
 
-    b. Se pide hacer un programa que le pida al usuario dos números, y muestre el resultado de la división usando la función `dividir` definida arriba. Si el usuario ingresa un 0 como segundo número, debe mostrar un mensaje de error y retornar `None`.
+    b. Se pide hacer un programa que le pida al usuario dos números, y muestre el resultado de la división usando/invocando a la función `dividir` definida arriba. Si el usuario ingresa un 0 como segundo número, se debería mostrar un mensaje de error y retornar `None`.
 
-    c. Considerar ahora también que el usuario podría ingresar algo que no es un número. En ese caso, debe mostrar un mensaje de error y seguir pidiendo números.
+    c. Considerar ahora también que el usuario podría ingresar algo que no es un número. En ese caso, debe mostrar otro mensaje de error diferente, y seguir pidiendo números.
 
 8. **Desafío** (no obligatorio): El kiosko de la facultad quiere automatizar un letrero que tome datos de un programa y le cobre al estudiante.
 
