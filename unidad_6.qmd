@@ -1380,6 +1380,16 @@ Como dijimos más arriba, las figuras pueden ser personalizadas de muchas manera
 
 ¡y más!
 
+#### Girando los labels
+
+No siempre nuestros labels van a tener todo el espacio disponible para mostrarse de forma correcta.
+
+![Los labels son muy grandes y no hay espacio para mostrarlos correctamente](./imgs/unidad_6/pbi_wrong.png)
+
+Podemos darle un *ángulo* a los labels usando `xticks`: `plt.xticks(rotation=90)`. El valor que le pasemos indica el ángulo de rotación que le vamos a dar a los labels. De esta forma, no se pisan.
+
+![Los labels presentan un ángulo de 90 grados](./imgs/unidad_6/pbi_ok.png)
+
 #### Cambiando colores y estilos
 
 Para cambiar los colores de los gráficos, podemos utilizar los parámetros `color`, `marker`, `linestyle`, `markersize` y `linewidth` dentro de la función `plot()`.
