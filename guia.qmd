@@ -1173,7 +1173,7 @@ df = pd.read_csv(url)
 ```
 :::
 
-5. Para calcular la energía potencial elástica (*Ep*) almacenada en un material elástico, se utiliza la siguiente fórmula:
+5. Para calcular la energía potencial elástica (Ep) almacenada en un material elástico, se utiliza la siguiente fórmula:
 
     $$
     Ep = \frac{1}{2}*k*x^{2}
@@ -1181,7 +1181,7 @@ df = pd.read_csv(url)
 
     donde *k* es la constante elástica (con unidad N/m) y *x* es la distancia que el resorte se estira o comprime (metros). La energía *Ep* resultante tiene como unidad el Joule (J).
 
-    Para un resorte con valor $*k=0.15 N/m*$, graficar en línea continua la energía potencial elástica $*Ep*$ en un rango de distancia $x$ de 0 a 10m con pasos de 0.5. Incluir título, grilla, nombres de ejes y label (leyenda) con el valor de $k$.
+    Para un resorte con valor $k=0.15 N/m$, graficar en línea continua la energía potencial elástica $Ep$ en un rango de distancia $x$ de 0 a 10m con pasos de 0.5. Incluir título, grilla, nombres de ejes y label (leyenda) con el valor de $k$.
 
 6. Para calcular la posición final de un móvil dada una posición inicial, velocidad inicial, tiempo y aceleración, se tiene la siguiente fórmula:
 
