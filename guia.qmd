@@ -1196,7 +1196,7 @@ df = pd.read_csv(url)
     **movil 1:**
 
     - Comienza a 0m
-    - Arranca desde el reposo con velocidad $ 0 \ m/s$
+    - Arranca desde el reposo con velocidad $0 \ m/s$
     - Su aceleración es $1 \ m/s^2$
 
     **movil 2:**
