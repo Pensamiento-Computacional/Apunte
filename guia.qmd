@@ -1224,4 +1224,3 @@ df = pd.read_csv(url)
     a. Realizar un gráfico de torta que muestre el porcentaje entre la cantidad de alumnos que asistieron al parcial y los que no.
     b. Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.
     c. Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?
-    d. Realizar un gráfico de linea que muestre la evolución de la nota promedio de los aprobados a través de los cursos.
