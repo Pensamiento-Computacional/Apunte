@@ -194,17 +194,18 @@ Veamos un ejemplo en el que trabajaremos con dos archivos.
 > **Ejemplo**
 Obtener el promedio de un archivo de notas recibido por parámetro y guardarlo en un nuevo archivo llamado "promedio.txt"
 
-Ejemplo de notas.txt:
+Ejemplo de notas.csv:
 ```
-4
-7
-10
-5
+fecha;nota
+15/10;4
+30/10;7
+15/11;10
+30/11;5
 ```
 
 ``` python
 # Abrimos el archivo de notas
-def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.txt"
+def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.csv"
   archivo = open(ruta_notas, 'r')
   líneas = archivo.readlines()
   archivo.close()
@@ -213,7 +214,8 @@ def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.tx
   suma_notas = 0
   cantidad_notas = 0
   for línea in líneas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
-    nota = línea.split(";")[2].strip('\n') # nos quedamos con la nota
+    datos = línea.strip('\n').split(";")
+    nota = datos[1] # nos quedamos con la nota
     suma_notas += int(nota)
     cantidad_notas += 1
 
@@ -228,22 +230,21 @@ Otra forma de resolverlo podría haber sido:
 
 ``` python
 # Abrimos el archivo de notas
-def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.txt"
-  archivo = open(ruta_notas, 'r')
-  líneas = archivo.readlines()
-  archivo.close()
+def calcular_guardar_promedio(ruta_notas): # La función puede recibir "notas.csv"
+  with open(ruta_notas, 'r') as archivo: # usamos with open
+    líneas = archivo.readlines()
 
   # Leemos línea por línea cada nota 
   notas = []
   for línea in líneas[1:]: # la primer línea no contiene datos, solo los nombres de los campos
-    nota = línea.split(";")[2].strip('\n') # nos quedamos con la nota
+    datos = línea.strip('\n').split(";")
+    nota = datos[1] # nos quedamos con la nota
     notas.append(int(nota))
 
   # Guardamos el promedio en un nuevo archivo
   ruta_archivo_promedios = "promedio.txt"
-  archivo = open(ruta_archivo_promedios, 'w')
-  archivo.write(str(sum(notas)/len(notas)))
-  archivo.close()
+  with open(ruta_archivo_promedios, 'w') as archivo_destino:
+    archivo_destino.write(str(sum(notas)/len(notas)))
 ```
 
 
@@ -261,9 +262,9 @@ print(línea)
 6.5
 ```
 
-En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada línea en una lista que tiene 3 elementos, a nosotros nos interesa el elemento que está en la posición 2, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva línea ```\n``` y nos permite leer la nota como un número. 
+En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función ```split()```[^1] nos permite separar cada línea en una lista que tiene 2 elementos, a nosotros nos interesa el elemento que está en la posición 1, la nota; por otro lado también utilizamos la función ```strip()```[^2], esto remueve el caracter de nueva línea ```\n```.
 
-Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer línea del archivo no nos interesa, ya que contiene los nombres de cada campo. Esto se explica en [unidad 4](#listas-como-secuencias).
+Un detalle que no hay que evadir es cómo se recorre la lista teniendo en cuenta que la primer línea del archivo no nos interesa, ya que contiene los nombres de cada campo. Esto se explica en [unidad 4](#listas-como-secuencias).
 
 
 ### Tipos de archivos
