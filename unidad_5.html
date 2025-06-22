@@ -444,13 +444,14 @@ Tip
 <blockquote class="blockquote">
 <p><strong>Ejemplo</strong> Obtener el promedio de un archivo de notas recibido por parámetro y guardarlo en un nuevo archivo llamado “promedio.txt”</p>
 </blockquote>
-<p>Ejemplo de notas.txt:</p>
-<pre><code>4
-7
-10
-5</code></pre>
+<p>Ejemplo de notas.csv:</p>
+<pre><code>fecha;nota
+15/10;4
+30/10;7
+15/11;10
+30/11;5</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo de notas</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_guardar_promedio(ruta_notas): <span class="co"># La función puede recibir "notas.txt"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_guardar_promedio(ruta_notas): <span class="co"># La función puede recibir "notas.csv"</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  archivo <span class="op">=</span> <span class="bu">open</span>(ruta_notas, <span class="st">'r'</span>)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  líneas <span class="op">=</span> archivo.readlines()</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  archivo.close()</span>
@@ -459,33 +460,33 @@ Tip
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  suma_notas <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  cantidad_notas <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> línea <span class="kw">in</span> líneas[<span class="dv">1</span>:]: <span class="co"># la primer línea no contiene datos, solo los nombres de los campos</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    nota <span class="op">=</span> línea.split(<span class="st">";"</span>)[<span class="dv">2</span>].strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>) <span class="co"># nos quedamos con la nota</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    suma_notas <span class="op">+=</span> <span class="bu">int</span>(nota)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    cantidad_notas <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Guardamos el promedio en un nuevo archivo</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  ruta_archivo_promedios <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_promedios, <span class="st">'w'</span>)</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  archivo.write(<span class="bu">str</span>(suma_notas<span class="op">/</span>cantidad_notas))</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    datos <span class="op">=</span> línea.strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>).split(<span class="st">";"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    nota <span class="op">=</span> datos[<span class="dv">1</span>] <span class="co"># nos quedamos con la nota</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    suma_notas <span class="op">+=</span> <span class="bu">int</span>(nota)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    cantidad_notas <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Guardamos el promedio en un nuevo archivo</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  ruta_archivo_promedios <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_promedios, <span class="st">'w'</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  archivo.write(<span class="bu">str</span>(suma_notas<span class="op">/</span>cantidad_notas))</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Otra forma de resolverlo podría haber sido:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrimos el archivo de notas</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_guardar_promedio(ruta_notas): <span class="co"># La función puede recibir "notas.txt"</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  archivo <span class="op">=</span> <span class="bu">open</span>(ruta_notas, <span class="st">'r'</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  líneas <span class="op">=</span> archivo.readlines()</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  archivo.close()</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Leemos línea por línea cada nota </span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  notas <span class="op">=</span> []</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> línea <span class="kw">in</span> líneas[<span class="dv">1</span>:]: <span class="co"># la primer línea no contiene datos, solo los nombres de los campos</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    nota <span class="op">=</span> línea.split(<span class="st">";"</span>)[<span class="dv">2</span>].strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>) <span class="co"># nos quedamos con la nota</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_guardar_promedio(ruta_notas): <span class="co"># La función puede recibir "notas.csv"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> <span class="bu">open</span>(ruta_notas, <span class="st">'r'</span>) <span class="im">as</span> archivo: <span class="co"># usamos with open</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    líneas <span class="op">=</span> archivo.readlines()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Leemos línea por línea cada nota </span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  notas <span class="op">=</span> []</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> línea <span class="kw">in</span> líneas[<span class="dv">1</span>:]: <span class="co"># la primer línea no contiene datos, solo los nombres de los campos</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    datos <span class="op">=</span> línea.strip(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>).split(<span class="st">";"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    nota <span class="op">=</span> datos[<span class="dv">1</span>] <span class="co"># nos quedamos con la nota</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    notas.append(<span class="bu">int</span>(nota))</span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Guardamos el promedio en un nuevo archivo</span></span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  ruta_archivo_promedios <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo_promedios, <span class="st">'w'</span>)</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  archivo.write(<span class="bu">str</span>(<span class="bu">sum</span>(notas)<span class="op">/</span><span class="bu">len</span>(notas)))</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  archivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">with</span> <span class="bu">open</span>(ruta_archivo_promedios, <span class="st">'w'</span>) <span class="im">as</span> archivo_destino:</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    archivo_destino.write(<span class="bu">str</span>(<span class="bu">sum</span>(notas)<span class="op">/</span><span class="bu">len</span>(notas)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Veamos el contenido del archivo “promedio.txt”</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ruta_archivo <span class="op">=</span> <span class="st">"promedio.txt"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>archivo <span class="op">=</span> <span class="bu">open</span>(ruta_archivo, <span class="st">'r'</span>)</span>
@@ -493,8 +494,8 @@ Tip
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>archivo.close()</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(línea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">6.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función <code>split()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nos permite separar cada línea en una lista que tiene 3 elementos, a nosotros nos interesa el elemento que está en la posición 2, la nota; por otro lado también utilizamos la función <code>strip()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, esto remueve el caracter de nueva línea <code>\n</code> y nos permite leer la nota como un número.</p>
-<p>Un detalle que no hay que evadir cómo se recorre la lista teniendo en cuenta que la primer línea del archivo no nos interesa, ya que contiene los nombres de cada campo. Esto se explica en <a href="unidad_4.html#listas-como-secuencias">unidad 4</a>.</p>
+<p>En el ejemplo anterior hay al menos dos cosas que vale la pena remarcar: el uso de la función <code>split()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> nos permite separar cada línea en una lista que tiene 2 elementos, a nosotros nos interesa el elemento que está en la posición 1, la nota; por otro lado también utilizamos la función <code>strip()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, esto remueve el caracter de nueva línea <code>\n</code>.</p>
+<p>Un detalle que no hay que evadir es cómo se recorre la lista teniendo en cuenta que la primer línea del archivo no nos interesa, ya que contiene los nombres de cada campo. Esto se explica en <a href="unidad_4.html#listas-como-secuencias">unidad 4</a>.</p>
 </section>
 <section id="tipos-de-archivos" class="level3" data-number="5.1.7">
 <h3 data-number="5.1.7" class="anchored" data-anchor-id="tipos-de-archivos"><span class="header-section-number">5.1.7</span> Tipos de archivos</h3>
@@ -643,7 +644,7 @@ Tip
 <p>Si bien quien invoca una función debe preocuparse de cumplir con las precondiciones de ésta, si las validaciones están hechas correctamente pueden devolver información valiosa para que el invocante pueda actuar en consecuencia.</p>
 <p>También se debe tener en cuenta qué hará nuestro código cuando una validación falle, ya que queremos darle información al invocante que le sirva para procesar el error. El error producido tiene que ser fácilmente reconocible.</p>
 <p>Ejemplo:</p>
-<div id="cdb3b727" class="cell" data-execution_count="1">
+<div id="fd20f006" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convertir_a_int(ingreso_usuario):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(ingreso_usuario)</span>
