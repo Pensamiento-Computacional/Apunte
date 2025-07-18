@@ -187,7 +187,6 @@ Te recomendamos que te animes a probar estas funciones, para ver qué hacen y te
 | `replace(subcadena1, subcadena2)` | Devuelve una copia de la cadena reemplazando todas las apariciones de la subcadena1 por la subcadena2 | `"Hola mundo".replace("mundo", "amigos")` devuelve `"Hola amigos"` |
 | `split()` | Devuelve una lista de subcadenas separando la cadena por los espacios en blanco | `"Hola mundo  ".split()` devuelve `["Hola", "mundo"]` |
 | `split(separador)` | Devuelve una lista de subcadenas separando la cadena por el separador | `"Hola, mundo".split(", ")` devuelve `["Hola", "mundo"]` |
-| `isalpha()` | Devuelve `True` si todos los caracteres de la cadena son letras, `False` en caso contrario | `"Hola".isalpha()` devuelve `True` |
 | `index(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o produce un error si no se encuentra | `"Hola mundo".index("mundo")` devuelve `5` |
 
 ## Tuplas
