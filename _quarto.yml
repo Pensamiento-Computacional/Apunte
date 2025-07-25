@@ -1,6 +1,9 @@
 project:
   type: book
 
+website:
+  google-analytics: "G-T2F5HZEG2J"
+
 book:
   title: "Pensamiento Computacional"
   author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamell Martínez Gorbik, Pablo Notari"
