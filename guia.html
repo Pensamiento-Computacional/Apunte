@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Guía de Ejercicios – Pensamiento Computacional</title>
+<title>guia – Pensamiento Computacional</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./contact.html" rel="next">
-<link href="./unidad_6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,13 +74,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d620ae66fe3ff667882d4aa2f337a214.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-eb6dbbc2560d5eb89ff97a4492710dc0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -91,19 +89,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T2F5HZEG2J"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T2F5HZEG2J', { 'anonymize_ip': true});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -140,120 +147,92 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guia.html">Guía de Ejercicios</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Pensamiento Computacional</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-unidades" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Unidades</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-unidades">    
+        <li>
+    <a class="dropdown-item" href="./unidad_1.html">
+ <span class="dropdown-text">Unidad 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_2.html">
+ <span class="dropdown-text">Unidad 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_3.html">
+ <span class="dropdown-text">Unidad 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_4.html">
+ <span class="dropdown-text">Unidad 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_5.html">
+ <span class="dropdown-text">Unidad 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_6.html">
+ <span class="dropdown-text">Unidad 6</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./material.html"> 
+<span class="menu-text">Material de Cátedra</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./guia.html" aria-current="page"> 
+<span class="menu-text">Guía de Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./rules.html"> 
+<span class="menu-text">Pautas de Convivencia</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Pensamiento Computacional</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pensamiento Computacional</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">La Materia</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regimen de Cursada, Calendario y Cursos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./material.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Videos y Diapositivas</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estructuras de Control</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guia.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Guía de Ejercicios</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./contact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contacto</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
   <li><a href="#recomendaciones-al-realizar-las-guías" id="toc-recomendaciones-al-realizar-las-guías" class="nav-link active" data-scroll-target="#recomendaciones-al-realizar-las-guías">Recomendaciones al realizar las guías</a></li>
@@ -282,7 +261,7 @@ window.Quarto = {
   <li><a href="#matplotlib" id="toc-matplotlib" class="nav-link" data-scroll-target="#matplotlib">3. Matplotlib</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="guia.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -470,26 +449,26 @@ Tip: <code>in</code> y <code>not in</code>
 <div class="callout-body-container callout-body">
 <p>¿Conocés el uso de <code>in</code>?</p>
 <p>Para saber si un elemento está en una lista o en un string, podemos usar <code>in</code> y <code>not in</code>. Por ejemplo:</p>
-<div id="16386293" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="acb1e86e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="cbca42ae" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fc33d683" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="f00746c2" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="255e12c7" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'w'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="st">'hola'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="09429e32" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="26e172a0" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'casa'</span> <span class="kw">in</span> [<span class="st">'cama'</span>, <span class="st">'mesa'</span>, <span class="st">'silla'</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>False</code></pre>
 </div>
@@ -615,12 +594,12 @@ Ingrese un número o "X" para salir: X
 <li><p>Repetir generando el número aleatoriamente de la siguiente forma dentro de la función, sin recibirlo por parámetro:</p></li>
 </ol></li>
 </ol>
-<div id="d827b051" class="cell" data-execution_count="5">
+<div id="acdf4aa2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>numero_a_adivinar <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numero_a_adivinar)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>8</code></pre>
+<pre><code>5</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -843,7 +822,7 @@ Pista: tenés que usar un diccionario.</p></li>
 <li>Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos. Por ejemplo:</li>
 </ol>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [(<span class="st">'Hola'</span>, <span class="st">'don Pepito'</span>), (<span class="st">'Hola'</span>, <span class="st">'don Jose'</span>), (<span class="st">'Buenos'</span>, <span class="st">'días'</span>)]</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tuplas_a_diccionario(l))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}</code></pre>
 <ol start="2" type="1">
 <li><p>Escriba una función que reciba una cadena y devuelva:</p>
@@ -997,11 +976,11 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="ex">A.C.</span> Milan<span class="kw">;</span> <span class="ex">boca</span> juniors<span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">1</span><span class="kw">;</span><span class="ex">visita</span><span class="kw">;</span><span class="ex">S</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Utilizando las funciones de los ejercicios 1 a 7, procesar el archivo: Se desea que el archivo original se separe en archivos resultantes de no mas de 10 lineas, además no tienen que quedar filas en blanco. Por ejemplo si el archivo original tiene 100 lineas de las cuales 20 están en blanco, el resultado del procesamiento tienen que ser 8 archivos de 10 lineas cada uno. El tamaño del archivo original puede variar en cada ejecución.</p></li>
 <li><p>La señora Rowling sospecha que su vecino le robo algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos y guardar en un archivo llamado <code>reporte_plagio.txt</code> la siguiente información:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo</span><span class="kw">;</span><span class="ex">palabras</span><span class="kw">;</span><span class="ex">apariciones</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo1.txt</span><span class="kw">;</span><span class="ex">765030</span><span class="kw">;</span><span class="ex">547</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">archivo1.txt</span><span class="kw">;</span><span class="ex">765030</span><span class="kw">;</span><span class="ex">547</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>archivo: es el nombre del archivo que se proceso.</li>
 <li>palabras: es la cantidad de palabras de ese archivo.</li>
@@ -1009,30 +988,30 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 </ul>
 <p>En ejemplo de uso podría ser:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>archivos <span class="op">=</span> [<span class="st">"archivo1.txt"</span>, <span class="st">"archivo2.txt"</span>]</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>procesar_archivos(archivos, <span class="st">"harry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>procesar_archivos(archivos, <span class="st">"harry"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En <code>procesar_archivos</code> se tiene que analizar los archivos y dejar el resultado en reporte_plagio.txt</p></li>
 <li><p>Hacer una función que reciba un archivo y dos palabras: una que se quiere reemplazar, y otra por la que se quiere reemplazar. La función debe modificar el archivo reemplazando todas las apariciones de la primera palabra por la segunda.</p></li>
 <li><p>Se tiene un archivo CSV que contiene información sobre el stock de una librería.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Un</span> posible ejemplo de este archivo es el siguiente: </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">lapiceras</span><span class="kw">;</span><span class="ex">34512</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">120</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">cuadernos</span><span class="kw">;</span><span class="ex">41611</span><span class="kw">;</span><span class="ex">500</span><span class="kw">;</span><span class="ex">130</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sacapuntas</span><span class="kw">;</span><span class="ex">62812</span><span class="kw">;</span><span class="ex">30</span><span class="kw">;</span><span class="ex">210</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sacapuntas</span><span class="kw">;</span><span class="ex">62812</span><span class="kw">;</span><span class="ex">30</span><span class="kw">;</span><span class="ex">210</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donde cada línea representa un prod_y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que le solicite al usuario datos de un nuevo prod_y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como prod_“X”.</p></li>
 <li><p>En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula Por ejemplo si se tienen los siguientes archivos:<br>
 </p>
 <p>(salas.txt)</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">D2</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">F1</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(peliculas.txt)</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Megamente</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> Menu</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Shrek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Shrek</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>El nuevo archivo deberá quedar:<br>
 (funciones.csv)</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">D2</span><span class="kw">;</span><span class="ex">Megamente</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">F1</span><span class="kw">;</span><span class="ex">The</span> Menu</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span><span class="kw">;</span><span class="ex">Shrek</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="ex">E4</span><span class="kw">;</span><span class="ex">Shrek</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Se tiene un archivo con información de ventas de productos en un supermercado. El archivo tiene el siguiente formato:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">producto</span><span class="kw">;</span><span class="ex">precio</span><span class="kw">;</span><span class="ex">cantidad</span><span class="kw">;</span><span class="ex">fecha</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-01</span></span>
@@ -1040,7 +1019,7 @@ Se tiene una base de datos en formato CSV con resultados de partidos de futbol. 
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-02</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-02</span></span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="ex">arroz</span><span class="kw">;</span><span class="ex">50</span><span class="kw">;</span><span class="ex">100</span><span class="kw">;</span><span class="ex">2021-01-03</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-03</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fideos</span><span class="kw">;</span><span class="ex">40</span><span class="kw">;</span><span class="ex">200</span><span class="kw">;</span><span class="ex">2021-01-03</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.</p></li>
 <li><p>Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: ‘el archivo {nombre} no existe. Se crea y deja vacío.’.</p></li>
 <li><p><strong>Desafío</strong> (obligatorio): Los docentes de Pensamiento Computacional saben que los ejercicios de las primeras guías son cortitos de resolver, entonces les dicen a los estudiantes que “si el ejercicio tiene más de 5 líneas, probablemente haya que revisarlo”. Los estudiantes se lo toman muy literal, y quieren buscar la forma de chequear si un ejercicio que resolvieron tiene más de 5 líneas, pero sin contar a la firma de la función.<br>
@@ -1058,7 +1037,7 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 <div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">25.5</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">26.0</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="ex">24.5</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># etc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># etc</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como el climatólogo es humano, a veces se equivoca y tipea cosas que no son números. Por ejemplo: <code>25p3</code> o <code>25.5.5</code>. Se pide hacer una función que reciba el nombre del archivo y devuelva la temperatura promedio del archivo. Si en algún momento se encuentra con un valor que no es un número, debe ignorarlo y seguir con el resto de los valores.</p>
 <p>Al final de la ejecución, debe devolverse el valor promedio y el porcentaje de valores que no pudieron ser procesados respecto del total.</p></li>
 <li><p>Crea un programa que pueda procesar un archivo: por cada fila, se debe ejecutar la operacion de división <code>dividendo/divisor</code> y almacenar el resultado en un archivo llamado “resultados.csv”. Tener en cuenta que en el archivo se pueden encontar filas con errores de carga y que el divisor sea 0 o que no sean números, en tal caso en lugar de escribir el resultado escribir “Error en la fila X: {descripción específica del error}” donde X es la fila que tiene errores.</p>
@@ -1073,10 +1052,10 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 <p>Ejemplo</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sala <span class="op">=</span> {<span class="st">"A"</span>:[<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>,<span class="st">"L"</span>], <span class="st">"B"</span>: [<span class="st">"L"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"L"</span>]}</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>reservar_butaca(sala, <span class="st">"A"</span>, <span class="dv">0</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># En este ejemplo la fila "A" deberia quedar ["O","O","O","O","L","L","L"]</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Desafio</strong> (obligatorio): Se tiene esta función, que recibe dos números y devuelve la división entre ellos:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dividir(n1, n2):</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n1<span class="op">/</span>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n1<span class="op">/</span>n2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La función puede lanzar una excepción <code>ZeroDivisionError</code> si el segundo número es 0 (es decir, la ejecución va a terminar con un error).</p>
 <ol type="a">
 <li><p>Probar usar la función de arriba, pasándole 5 y 0 como argumentos. ¿Qué pasa? ¿Cómo podrías modificar la función para evitar que el programa termine con un error? Considerar qué valor podría llegar a devolver la función si ocurre un error.</p></li>
@@ -1101,14 +1080,14 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 <span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">4</span>:<span class="dv">300</span>,</span>
 <span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>:<span class="dv">600</span>,</span>
 <span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">6</span>:<span class="dv">350</span></span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se quiere hacer un programa que muestre la información de la siguiente forma en la pantalla:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> hamburguesas <span class="at">-</span> <span class="va">$1</span>000</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> milanesas <span class="at">-</span> <span class="va">$1</span>500</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">3.</span> gaseosa <span class="at">-</span> <span class="va">$5</span>00</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">4.</span> alfajor <span class="at">-</span> <span class="va">$3</span>00</span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">5.</span> papas fritas <span class="at">-</span> <span class="va">$6</span>00</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">6.</span> agua <span class="at">-</span> <span class="va">$3</span>50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">6.</span> agua <span class="at">-</span> <span class="va">$3</span>50</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Y le pida al usuario una opción y una cantidad. Luego, debe imprimir el total a pagar.</p>
 <p>Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El programa debe en esos casos imprimir un mensaje de error que sea descriptivo y terminar su ejecución.</p></li>
 </ol>
@@ -1213,7 +1192,7 @@ Pista: se puede extender/modificar el <strong>Super Desafio</strong> (no obligat
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1222,7 +1201,7 @@ Note
 </div>
 <p>Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.</p>
 <p>Usando el siguiente DataFrame:</p>
-<div id="c4d3c76e" class="cell" data-execution_count="6">
+<div id="975b47f8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>, <span class="st">'Lucia'</span>, <span class="st">'Emilia'</span>, <span class="st">'Mariana'</span>, <span class="st">'Aldo'</span>],</span>
@@ -1234,7 +1213,7 @@ Note
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -1352,7 +1331,7 @@ Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si es
 <li>Obtener el promedio de las notas en la primera oportunidad de los alumnos.<br>
 Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.</li>
 </ol>
-<div id="58840028" class="cell" data-execution_count="7">
+<div id="eb023843" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nombre'</span>: [<span class="st">'Violeta'</span>, <span class="st">'Carla'</span>, <span class="st">'Manuela'</span>],</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'apellido'</span>: [<span class="st">'Perez'</span>, <span class="st">'Guanca'</span>, <span class="st">'Gomez'</span>],</span>
@@ -1363,7 +1342,7 @@ Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>df_notas <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>df_notas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>df_notas</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
@@ -1454,7 +1433,7 @@ df_pelis</code></pre>
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>ventas <span class="op">=</span> [<span class="dv">140</span>, <span class="dv">60</span>, <span class="dv">120</span>, <span class="dv">250</span>, <span class="dv">200</span>, <span class="dv">180</span>, <span class="dv">100</span>, <span class="dv">300</span>, <span class="dv">120</span>, <span class="dv">160</span>]</span>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>ganancias <span class="op">=</span> [<span class="dv">14000</span>, <span class="dv">45000</span>, <span class="dv">20400</span>, <span class="dv">100000</span>, <span class="dv">50000</span>, <span class="dv">25000</span>, <span class="dv">100000</span>, <span class="dv">30000</span>, <span class="dv">15000</span>, <span class="dv">35000</span>]</span>
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>productos <span class="op">=</span> [<span class="st">"prod_1"</span>, <span class="st">"prod_2"</span>, <span class="st">"prod_3"</span>, <span class="st">"prod_4"</span>, <span class="st">"prod_5"</span>, <span class="st">"prod_6"</span>, <span class="st">"prod_7"</span>, <span class="st">"prod_8"</span>, <span class="st">"prod_9"</span>, <span class="st">"prod_10"</span>]</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>cant_ventas_productos_2024 <span class="op">=</span> [<span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">190</span>, <span class="dv">140</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">120</span>, <span class="dv">130</span>, <span class="dv">150</span>, <span class="dv">170</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>cant_ventas_productos_2024 <span class="op">=</span> [<span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">190</span>, <span class="dv">140</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">120</span>, <span class="dv">130</span>, <span class="dv">150</span>, <span class="dv">170</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>En gráficos separados:</p>
 <ol type="a">
 <li>Graficar las ventas en función de los años usando gráfico de línea y gráfico de barras horizontal. ¿Cuál te parece que es mejor para este caso?</li>
@@ -1495,7 +1474,7 @@ df_pelis</code></pre>
 <span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="a">
 <li>Realizar un gráfico de barras horizontales que muestre la cantidad de habitantes por jurisdicción. Las provincias con mayor población, deben ubicarse en la parte superior.</li>
 <li>Realizar un gráfico de torta que muestre el porcentaje de superficie de cada región del país.</li>
@@ -1520,7 +1499,7 @@ Para usarlos, podés guardar el archivo csv en google drive e importarlo de la s
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Acá va el link público de tu archivo de google drive + '/export?format=csv'</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://drive.google.com/drive/folders/ABC123XYZ456/export?format=csv"</span> </span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ol start="5" type="1">
@@ -1554,7 +1533,7 @@ x = x_0+v_0 . t + \frac{1}{2}.a.t^2
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>url_sheet <span class="op">=</span> <span class="st">"https://docs.google.com/spreadsheets/d/17ei_NER5i_R-9QLnkeIjNprzTyoSqGowJ8yrT9tbi_8/export?format=csv"</span></span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url_sheet)</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si la nota es “NaN”, significa que el o la estudiante no rindió el examen.<br>
 En gráficos diferentes:</p>
 <ol type="a">
@@ -1594,12 +1573,12 @@ En gráficos diferentes:</p>
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1641,7 +1620,7 @@ En gráficos diferentes:</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pensamientocomputacional\.dev\.ar");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1968,18 +1947,6 @@ En gráficos diferentes:</p>
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./unidad_6.html" class="pagination-link" aria-label="Bibliotecas de Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./contact.html" class="pagination-link" aria-label="Contacto">
-        <span class="nav-page-text">Contacto</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

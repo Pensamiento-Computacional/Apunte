@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introducción a la Algoritmia y a la Programación – Pensamiento Computacional</title>
+<title>Introducción a la Algoritmia y a la Programación – Pensamiento Computacional</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./unidad_2.html" rel="next">
-<link href="./material.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,13 +74,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d620ae66fe3ff667882d4aa2f337a214.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-eb6dbbc2560d5eb89ff97a4492710dc0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -91,19 +89,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T2F5HZEG2J"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T2F5HZEG2J', { 'anonymize_ip': true});
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -137,139 +144,111 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unidad_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Pensamiento Computacional</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./intro.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-unidades" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Unidades</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-unidades">    
+        <li>
+    <a class="dropdown-item" href="./unidad_1.html">
+ <span class="dropdown-text">Unidad 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_2.html">
+ <span class="dropdown-text">Unidad 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_3.html">
+ <span class="dropdown-text">Unidad 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_4.html">
+ <span class="dropdown-text">Unidad 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_5.html">
+ <span class="dropdown-text">Unidad 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unidad_6.html">
+ <span class="dropdown-text">Unidad 6</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./material.html"> 
+<span class="menu-text">Material de Cátedra</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./guia.html"> 
+<span class="menu-text">Guía de Ejercicios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./rules.html"> 
+<span class="menu-text">Pautas de Convivencia</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Pensamiento Computacional</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pensamiento Computacional</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">La Materia</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regimen de Cursada, Calendario y Cursos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./material.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Videos y Diapositivas</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Estructuras de Control</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Estructuras de Datos</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Entrada y Salida</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./unidad_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bibliotecas de Python</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Guía de Ejercicios</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./contact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contacto</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1.1</span> Introducción</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a>
   <ul class="collapse">
-  <li><a href="#la-computadora" id="toc-la-computadora" class="nav-link" data-scroll-target="#la-computadora"><span class="header-section-number">1.1.1</span> La Computadora</a></li>
-  <li><a href="#software-y-hardware" id="toc-software-y-hardware" class="nav-link" data-scroll-target="#software-y-hardware"><span class="header-section-number">1.1.2</span> Software y Hardware</a></li>
-  <li><a href="#sistema-operativo" id="toc-sistema-operativo" class="nav-link" data-scroll-target="#sistema-operativo"><span class="header-section-number">1.1.3</span> Sistema Operativo</a></li>
-  <li><a href="#algoritmo" id="toc-algoritmo" class="nav-link" data-scroll-target="#algoritmo"><span class="header-section-number">1.1.4</span> Algoritmo</a></li>
-  <li><a href="#programa" id="toc-programa" class="nav-link" data-scroll-target="#programa"><span class="header-section-number">1.1.5</span> Programa</a></li>
-  <li><a href="#lenguaje-de-programación" id="toc-lenguaje-de-programación" class="nav-link" data-scroll-target="#lenguaje-de-programación"><span class="header-section-number">1.1.6</span> Lenguaje de Programación</a></li>
-  <li><a href="#entorno-de-desarrollo" id="toc-entorno-de-desarrollo" class="nav-link" data-scroll-target="#entorno-de-desarrollo"><span class="header-section-number">1.1.7</span> Entorno de Desarrollo</a></li>
+  <li><a href="#la-computadora" id="toc-la-computadora" class="nav-link" data-scroll-target="#la-computadora">La Computadora</a></li>
+  <li><a href="#software-y-hardware" id="toc-software-y-hardware" class="nav-link" data-scroll-target="#software-y-hardware">Software y Hardware</a></li>
+  <li><a href="#sistema-operativo" id="toc-sistema-operativo" class="nav-link" data-scroll-target="#sistema-operativo">Sistema Operativo</a></li>
+  <li><a href="#algoritmo" id="toc-algoritmo" class="nav-link" data-scroll-target="#algoritmo">Algoritmo</a></li>
+  <li><a href="#programa" id="toc-programa" class="nav-link" data-scroll-target="#programa">Programa</a></li>
+  <li><a href="#lenguaje-de-programación" id="toc-lenguaje-de-programación" class="nav-link" data-scroll-target="#lenguaje-de-programación">Lenguaje de Programación</a></li>
+  <li><a href="#entorno-de-desarrollo" id="toc-entorno-de-desarrollo" class="nav-link" data-scroll-target="#entorno-de-desarrollo">Entorno de Desarrollo</a></li>
   </ul></li>
-  <li><a href="#lenguaje-python" id="toc-lenguaje-python" class="nav-link" data-scroll-target="#lenguaje-python"><span class="header-section-number">1.2</span> Lenguaje Python</a>
+  <li><a href="#lenguaje-python" id="toc-lenguaje-python" class="nav-link" data-scroll-target="#lenguaje-python">Lenguaje Python</a>
   <ul class="collapse">
-  <li><a href="#hola-mundo" id="toc-hola-mundo" class="nav-link" data-scroll-target="#hola-mundo"><span class="header-section-number">1.2.1</span> Hola, Mundo!</a></li>
+  <li><a href="#hola-mundo" id="toc-hola-mundo" class="nav-link" data-scroll-target="#hola-mundo">Hola, Mundo!</a></li>
   </ul></li>
-  <li><a href="#anexo-google-colab" id="toc-anexo-google-colab" class="nav-link" data-scroll-target="#anexo-google-colab"><span class="header-section-number">1.3</span> Anexo: Google Colab</a>
+  <li><a href="#anexo-google-colab" id="toc-anexo-google-colab" class="nav-link" data-scroll-target="#anexo-google-colab">Anexo: Google Colab</a>
   <ul class="collapse">
-  <li><a href="#cómo-usar-google-colab" id="toc-cómo-usar-google-colab" class="nav-link" data-scroll-target="#cómo-usar-google-colab"><span class="header-section-number">1.3.1</span> Cómo usar Google Colab</a></li>
+  <li><a href="#cómo-usar-google-colab" id="toc-cómo-usar-google-colab" class="nav-link" data-scroll-target="#cómo-usar-google-colab">Cómo usar Google Colab</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -279,7 +258,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción a la Algoritmia y a la Programación</span></h1>
+<h1 class="title">Introducción a la Algoritmia y a la Programación</h1>
 </div>
 
 
@@ -296,16 +275,16 @@ window.Quarto = {
 </header>
 
 
-<section id="introducción" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">1.1</span> Introducción</h2>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
 <p>Como en todas las disciplinas, la Ingeniería de Software y la Programación de Sistemas en general tienen un <strong>lenguaje técnico</strong> específico. La utilización de ciertos términos y el compartir de ciertos conceptos agiliza el diálogo y mejora la comprensión con los pares.</p>
 <p>En este capítulo vamos a hacer una breve introducción de ciertos conceptos, ideas y modelos que van a permitirnos establecer acuerdos y manejar un lenguaje común.</p>
-<section id="la-computadora" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="la-computadora"><span class="header-section-number">1.1.1</span> La Computadora</h3>
+<section id="la-computadora" class="level3">
+<h3 class="anchored" data-anchor-id="la-computadora">La Computadora</h3>
 <p>Una computadora es un dispositivo físico de procesamiento de datos, con un propósito general. Todos los programas que escribiremos serán ejecutados (o <em>corridos</em>) en una computadora. Una computadora es capaz de procesar datos y obtener nueva información o resultados.</p>
 </section>
-<section id="software-y-hardware" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="software-y-hardware"><span class="header-section-number">1.1.2</span> Software y Hardware</h3>
+<section id="software-y-hardware" class="level3">
+<h3 class="anchored" data-anchor-id="software-y-hardware">Software y Hardware</h3>
 <p>Toda computadora funciona con software y hardware. El software es el conjunto de herramientas abstractas (programas), y se le llama <strong>componente lógica</strong> del modelo computacional. El hardware es el <strong>componente físico</strong> del dispositivo. Básicamente, el software dice qué hacer, y el hardware lo hace.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -322,13 +301,13 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sistema-operativo" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="sistema-operativo"><span class="header-section-number">1.1.3</span> Sistema Operativo</h3>
+<section id="sistema-operativo" class="level3">
+<h3 class="anchored" data-anchor-id="sistema-operativo">Sistema Operativo</h3>
 <p>El sistema operativo es el programa encargado de administrar los recursos del sistema. Los recursos (como la memoria, por ejemplo) son disputados entre diferentes programas o procesos ejecutándose al mismo tiempo. El sistema operativo es el que decide cómo administrar y asignar los recursos disponibles.</p>
 <p>Los sistemas operativos más comunes el día de hoy son: Windows, Linux, iOS, Android; por ejemplo.</p>
 </section>
-<section id="algoritmo" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="algoritmo"><span class="header-section-number">1.1.4</span> Algoritmo</h3>
+<section id="algoritmo" class="level3">
+<h3 class="anchored" data-anchor-id="algoritmo">Algoritmo</h3>
 <p><strong>Un algoritmo es una serie finita de pasos precisos para alcanzar un objetivo.</strong></p>
 <ul>
 <li>“serie”: porque son continuados uno detrás del otro, de forma ordenada.</li>
@@ -338,8 +317,8 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Ejemplo</strong> Un algoritmo puede ser una receta de cocina: tiene una serie finita de pasos (son ordenados, uno detrás de otro, finitos porque en algún momento deben terminar), que son precisos (porque tienen indicaciones de cuánto agregar de cada ingrediente, cómo incorporarlo a la preparación, etc) y están orientados en alcanzar un objetivo (obtener una comida en particular).</p>
 </blockquote>
-<section id="creación-de-un-algoritmo" class="level4" data-number="1.1.4.1">
-<h4 data-number="1.1.4.1" class="anchored" data-anchor-id="creación-de-un-algoritmo"><span class="header-section-number">1.1.4.1</span> Creación de un Algoritmo</h4>
+<section id="creación-de-un-algoritmo" class="level4">
+<h4 class="anchored" data-anchor-id="creación-de-un-algoritmo">Creación de un Algoritmo</h4>
 <p>La forma en la que trabajaremos la creación de un algoritmo es siguiendo los siguientes pasos:</p>
 <ol type="1">
 <li>Análisis del problema: entender el objetivo y los posibles casos puntuales del mismo.<br>
@@ -354,12 +333,12 @@ window.Quarto = {
 <p>Estos cuatro pasos podrán iterarse (repetirse) la cantidad de veces que sean necesarios, para poder lograr acercarnos más a la solución en cada iteración.</p>
 </section>
 </section>
-<section id="programa" class="level3" data-number="1.1.5">
-<h3 data-number="1.1.5" class="anchored" data-anchor-id="programa"><span class="header-section-number">1.1.5</span> Programa</h3>
+<section id="programa" class="level3">
+<h3 class="anchored" data-anchor-id="programa">Programa</h3>
 <p><strong>Un programa es un algoritmo escrito en un lenguaje de programación.</strong></p>
 </section>
-<section id="lenguaje-de-programación" class="level3" data-number="1.1.6">
-<h3 data-number="1.1.6" class="anchored" data-anchor-id="lenguaje-de-programación"><span class="header-section-number">1.1.6</span> Lenguaje de Programación</h3>
+<section id="lenguaje-de-programación" class="level3">
+<h3 class="anchored" data-anchor-id="lenguaje-de-programación">Lenguaje de Programación</h3>
 <p>Un lenguaje de programación es un <strong>protocolo de comunicación</strong>.<br>
 Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <span class="math inline">\(\implies\)</span> Entonces, un lenguaje de programación es un conjunto de normas consensuadas, entre la persona y la máquina, para poder comunicarse.</p>
@@ -367,31 +346,31 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <p>Un buen ejemplo de cómo una computadora interpreta nuestras instrucciones sin pensar al respecto, sin tener sentido común y sin ambigüedades, es <a href="https://www.youtube.com/watch?v=cDA3_5982h8">este video</a>. La computadora lo único que hace es <em>interpretar</em> de forma explícita lo que nosotros le pedimos que haga.</p>
 <p>Un lenguaje de programación tiene reglas estrictas que se deben respetar y no se admiten ambiguedades o sobreentendidos.</p>
 </section>
-<section id="entorno-de-desarrollo" class="level3" data-number="1.1.7">
-<h3 data-number="1.1.7" class="anchored" data-anchor-id="entorno-de-desarrollo"><span class="header-section-number">1.1.7</span> Entorno de Desarrollo</h3>
+<section id="entorno-de-desarrollo" class="level3">
+<h3 class="anchored" data-anchor-id="entorno-de-desarrollo">Entorno de Desarrollo</h3>
 <p>Un entorno de desarrollo es un conjunto de herramientas que nos permiten escribir, editar, compilar y ejecutar programas.<br>
 </p>
 <p>En la materia utilizaremos un entorno de desarrollo llamado Google Colab, que nos permite escribir código en un editor de texto, compilarlo y ejecutarlo en un mismo lugar de forma online. Pero existen muchos otros entornos de desarrollo, como por ejemplo Visual Studio Code, Eclipse, NetBeans, etc.</p>
 </section>
 </section>
-<section id="lenguaje-python" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="lenguaje-python"><span class="header-section-number">1.2</span> Lenguaje Python</h2>
+<section id="lenguaje-python" class="level2">
+<h2 class="anchored" data-anchor-id="lenguaje-python">Lenguaje Python</h2>
 <p>En este curso utilizaremos el lenguaje de programación <strong>Python</strong>. Python es un lenguaje de programación de propósito general, que se utiliza en muchos ámbitos de la industria y la academia.</p>
 <p>Python es un lenguaje realmente fácil de aprender, con una curva de aprendizaje muy suave. Es un lenguaje de alto nivel, lo que significa que es un lenguaje que se asemeja mucho al lenguaje natural, y que no requiere de conocimientos de bajo nivel para poder utilizarlo.</p>
-<section id="hola-mundo" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="hola-mundo"><span class="header-section-number">1.2.1</span> Hola, Mundo!</h3>
+<section id="hola-mundo" class="level3">
+<h3 class="anchored" data-anchor-id="hola-mundo">Hola, Mundo!</h3>
 <p>El primer programa que se escribe en cualquier lenguaje de programación es el programa “Hola, Mundo!”. Este programa es un programa que imprime en pantalla el texto “Hola, Mundo!”.</p>
 <p>En Python, el programa “Hola, Mundo!” se escribe de la siguiente forma:</p>
-<div id="0cf17397" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3b3ec7c9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Mundo!"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, Mundo!</code></pre>
 </div>
 </div>
 <p><code>print</code> es una función que imprime en pantalla el texto que se le pasa entre paréntesis. En este caso, el texto que se le pasa como parámetro es <code>"Hola, Mundo!"</code>. Al escribir las comillas dobles, estamos indicando que el texto que se encuentra entre ellas es un texto literal.</p>
 <p>De la misma forma, podremos imprimir cualquier otro mensaje en pantalla, como por ejemplo:</p>
-<div id="7587b5fb" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Rosita y soy programadora"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="612119e5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, me llamo Rosita y soy programadora"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hola, me llamo Rosita y soy programadora</code></pre>
 </div>
@@ -400,10 +379,10 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <p>A partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes.</p>
 </section>
 </section>
-<section id="anexo-google-colab" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="anexo-google-colab"><span class="header-section-number">1.3</span> Anexo: Google Colab</h2>
-<section id="cómo-usar-google-colab" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="cómo-usar-google-colab"><span class="header-section-number">1.3.1</span> Cómo usar Google Colab</h3>
+<section id="anexo-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="anexo-google-colab">Anexo: Google Colab</h2>
+<section id="cómo-usar-google-colab" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-usar-google-colab">Cómo usar Google Colab</h3>
 <p>Para usar Google Colab, debemos ingresar a <a href="https://colab.research.google.com/" target="_blank">este link</a>. Si es necesario, debemos crear una cuenta de Google.</p>
 <p>Al abrir Google Colab por primera vez, vamos a ver lo siguiente:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -419,8 +398,8 @@ Un protocolo es un <strong>conjunto de normas consensuadas</strong>.<br>
 <figcaption>Archivo nuevo</figcaption>
 </figure>
 </div>
-<section id="celdas-de-código" class="level4" data-number="1.3.1.1">
-<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="celdas-de-código"><span class="header-section-number">1.3.1.1</span> Celdas de Código</h4>
+<section id="celdas-de-código" class="level4">
+<h4 class="anchored" data-anchor-id="celdas-de-código">Celdas de Código</h4>
 <p>Con Colab vamos a poder correr nuestro código. Colab se divide en celdas individuales: cada celda es un bloque de código que se puede correr por separado. Para agregar una celda nueva, se hace click en el botón de “+ Code” que aparece en la parte superior izquierda de la celda. Para correr la celda, se hace click en el botón de “play” que aparece a la izquierda de la celda. El output (la salida) de la celda va a aparecer debajo de la misma.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -449,24 +428,24 @@ Cómo usar las celdas
 </figure>
 </div>
 </section>
-<section id="celdas-de-texto" class="level4" data-number="1.3.1.2">
-<h4 data-number="1.3.1.2" class="anchored" data-anchor-id="celdas-de-texto"><span class="header-section-number">1.3.1.2</span> Celdas de Texto</h4>
+<section id="celdas-de-texto" class="level4">
+<h4 class="anchored" data-anchor-id="celdas-de-texto">Celdas de Texto</h4>
 <p>Así también como podemos agregar celdas de código, podemos agregar celdas de texto. Para eso, hacemos click en el botón de “+ Text” que aparece en la parte superior izquierda de la celda. Dentro podemos escribir texto con formato e incluso agregar imágenes.</p>
 <p><img src="./imgs/unidad_6/google_colab7.png" class="img-fluid"></p>
 </section>
-<section id="opciones-de-celdas" class="level4" data-number="1.3.1.3">
-<h4 data-number="1.3.1.3" class="anchored" data-anchor-id="opciones-de-celdas"><span class="header-section-number">1.3.1.3</span> Opciones de Celdas</h4>
+<section id="opciones-de-celdas" class="level4">
+<h4 class="anchored" data-anchor-id="opciones-de-celdas">Opciones de Celdas</h4>
 <p>Para reordenar, eliminar o copiar celdas, al seleccionar una celda aparece un menú a la derecha con distintos íconos. Podemos usar estas opciones para realizar estas distintas acciones.</p>
 <p><img src="./imgs/unidad_6/google_colab8.png" class="img-fluid"></p>
 </section>
-<section id="aclaración-ia" class="level4" data-number="1.3.1.4">
-<h4 data-number="1.3.1.4" class="anchored" data-anchor-id="aclaración-ia"><span class="header-section-number">1.3.1.4</span> Aclaración IA</h4>
+<section id="aclaración-ia" class="level4">
+<h4 class="anchored" data-anchor-id="aclaración-ia">Aclaración IA</h4>
 <ul>
 <li>Para desactivar las sugerencias con IA (recomendado hacerlo) pueden ir a: Herramientas &gt; Configuración &gt; Asistente IA &gt; Tildar “Ocultar funciones de IA generativa”.</li>
 </ul>
 </section>
-<section id="beneficios-de-usar-google-colab" class="level4" data-number="1.3.1.5">
-<h4 data-number="1.3.1.5" class="anchored" data-anchor-id="beneficios-de-usar-google-colab"><span class="header-section-number">1.3.1.5</span> Beneficios de usar Google Colab</h4>
+<section id="beneficios-de-usar-google-colab" class="level4">
+<h4 class="anchored" data-anchor-id="beneficios-de-usar-google-colab">Beneficios de usar Google Colab</h4>
 <ul>
 <li>Google Colab tiene una mejor interfaz para usar Pandas, mostrando el output en forma de tablas.</li>
 <li>Permite importar datos de Google Drive</li>
@@ -507,12 +486,12 @@ Cómo usar las celdas
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -554,7 +533,7 @@ Cómo usar las celdas
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/pensamientocomputacional\.dev\.ar");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -881,18 +860,6 @@ Cómo usar las celdas
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./material.html" class="pagination-link" aria-label="Videos y Diapositivas">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Videos y Diapositivas</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./unidad_2.html" class="pagination-link" aria-label="Tipos de Datos, Expresiones y Funciones">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tipos de Datos, Expresiones y Funciones</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
