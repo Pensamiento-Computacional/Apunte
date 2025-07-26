@@ -1,1 +1,71 @@
 /.quarto/
+
+
+# ===================================================================
+# Archivo .gitignore para un proyecto de Quarto
+# ===================================================================
+
+# 1. Directorios de salida de Quarto
+# -------------------------------------------------------------------
+# Estos directorios contienen los archivos HTML, PDF, etc., generados.
+# No deben ser versionados porque se pueden recrear en cualquier momento
+# ejecutando `quarto render`.
+_site/
+_book/*
+
+# Si usas un directorio de salida personalizado (ej. para GitHub Pages),
+# agrégalo aquí.
+docs/
+
+
+# 2. Caché y metadatos de Quarto
+# -------------------------------------------------------------------
+# Quarto guarda aquí información para acelerar compilaciones futuras.
+# No es parte del código fuente.
+.quarto/
+*_cache/
+
+
+# 3. Archivos de salida y temporales
+# -------------------------------------------------------------------
+# Ignora archivos HTML/PDF generados en el directorio raíz al renderizar
+# un único archivo. Si necesitas versionar un PDF específico, puedes
+# agregar una excepción con `!mi-documento.pdf`.
+*.html
+*.pdf
+
+# Archivos temporales de LaTeX (generados al crear PDFs)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+
+
+# 4. Archivos de entorno y dependencias
+# -------------------------------------------------------------------
+# Entornos virtuales de Python
+venv/
+env/
+.venv/
+__pycache__/
+
+# Archivos de R y RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Renviron
+.Ruserdata
+
+
+# 5. Archivos del sistema operativo y editores
+# -------------------------------------------------------------------
+# Archivos específicos de macOS, Windows y Linux
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de editores como VS Code
+.vscode/

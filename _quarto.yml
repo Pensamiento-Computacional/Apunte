@@ -1,34 +1,47 @@
 project:
-  type: book
+  type: website
+  output-dir: docs 
+
+lang: es
 
 website:
+  title: "Pensamiento Computacional" 
   google-analytics: "G-T2F5HZEG2J"
-
-book:
-  title: "Pensamiento Computacional"
-  author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamell Martínez Gorbik, Pablo Notari"
-  date: "12/27/2023"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - rules.qmd
-    - material.qmd
-    - unidad_1.qmd
-    - unidad_2.qmd
-    - unidad_3.qmd
-    - unidad_4.qmd
-    - unidad_5.qmd
-    - unidad_6.qmd
-    - guia.qmd
-    - contact.qmd
+  
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Inicio"
+      - href: intro.qmd
+        text: "Introducción"
+      - text: "Unidades"
+        menu:
+          - href: unidad_1.qmd
+            text: "Unidad 1"
+          - href: unidad_2.qmd
+            text: "Unidad 2"
+          - href: unidad_3.qmd
+            text: "Unidad 3"
+          - href: unidad_4.qmd
+            text: "Unidad 4"
+          - href: unidad_5.qmd
+            text: "Unidad 5"
+          - href: unidad_6.qmd
+            text: "Unidad 6"
+      - href: material.qmd
+        text: "Material de Cátedra"
+      - href: guia.qmd
+        text: "Guía de Ejercicios"
+      - href: rules.qmd
+        text: "Pautas de Convivencia"
+      - href: contact.qmd
+        text: "Contacto"
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    toc: true # Opcional: Agrega una tabla de contenidos a la derecha en cada página
   pdf:
     documentclass: scrreprt
-
-
-

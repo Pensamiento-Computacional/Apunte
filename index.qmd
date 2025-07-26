@@ -1,3 +1,4 @@
+
 # Pensamiento Computacional {.unnumbered}
 
 Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo Básico Común de la Facultad de Ingeniería - UBA.
@@ -26,3 +27,9 @@ Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo B
 - Rastrelli, Aldana
 - Retamozo, Melina
 - Szischik, Mariana
+
+
+---
+author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamell Martínez Gorbik, Pablo Notari"
+date: "12/27/2023"
+---
