@@ -11,7 +11,7 @@
 # No deben ser versionados porque se pueden recrear en cualquier momento
 # ejecutando `quarto render`.
 _site/
-_book/*
+_book/
 
 # Si usas un directorio de salida personalizado (ej. para GitHub Pages),
 # agrégalo aquí.
