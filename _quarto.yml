@@ -37,11 +37,9 @@ website:
       - href: contact.qmd
         text: "Contacto"
 
-bibliography: references.bib
-
 format:
   html:
     theme: cosmo
-    toc: true # Opcional: Agrega una tabla de contenidos a la derecha en cada página
+    toc: true
   pdf:
     documentclass: scrreprt
