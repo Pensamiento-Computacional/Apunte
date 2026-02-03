@@ -260,3 +260,51 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
 
     b. Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.\
     Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o "*". De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.
+
+### Evaluación de Código
+
+:::{.callout-note}
+En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
+:::
+
+1. El siguiente código intenta verificar si un número está entre 1 y 10 (inclusive), pero no funciona correctamente para todos los casos. Identificá el error lógico y corregilo.
+
+    ```python
+    def esta_en_rango(numero):
+        if numero > 1 and numero < 10:
+            return True
+        else:
+            return False
+
+    print(esta_en_rango(1))   # Debería dar True
+    print(esta_en_rango(5))   # Debería dar True
+    print(esta_en_rango(10))  # Debería dar True
+    ```
+
+2. El siguiente código intenta sumar los números del 1 al 5 usando un ciclo while, pero entra en un bucle infinito. Identificá el error y corregilo.
+
+    ```python
+    def sumar_hasta(n):
+        suma = 0
+        i = 1
+        while i <= n:
+            suma = suma + i
+        return suma
+
+    resultado = sumar_hasta(5)
+    print("La suma es:", resultado)
+    ```
+
+3. El siguiente código intenta contar cuántos números pares hay en un rango, pero el resultado siempre es incorrecto. Identificá el error y corregilo.
+
+    ```python
+    def contar_pares(inicio, fin):
+        contador = 0
+        for i in range(inicio, fin):
+            if i % 2 == 0:
+                contador = contador + 1
+            return contador
+
+    resultado = contar_pares(1, 10)
+    print("Cantidad de pares:", resultado)  # Debería dar 4 (2, 4, 6, 8)
+    ```
