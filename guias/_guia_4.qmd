@@ -1,0 +1,306 @@
+## Guía 4: Tipos de Estructuras de Datos
+
+### 1. Cadenas de caracteres
+
+1. Escribir funciones que dada una cadena y un caracter:
+
+    a. Inserte el caracter entre cada letra de la cadena. Ejemplo: `'separar'` y `'-'` debería devolver `'s-e-p-a-r-a-r'`.\
+    b. Reemplace todos los espacios por el caracter. Ejemplo: `'mi archivo de texto.txt'` y `'_`' debería devolver `'mi_archivo_de_texto.txt'`.\
+    c. Reemplace todos los dígitos de la cadena por el caracter. Ejemplo: `'su clave es: 1540'` y `'*'` debería devolver `'su clave es: ****'`.\
+    d. Inserte el caracter cada 3 dígitos en la cadena. Ejemplo: `'2552552550'` y `'.'` debería devolver `'255.255.255.0'`
+
+    e. Modificar todas las anteriores para que, adicionalmente, reciba un parámetro que indique la cantidad máxima de reemplazos o inserciones a realizar. Ejemplo: `'su clave es: 1540'`, `'*'` y `3` debería devolver `'su clave es: ***0'`.
+
+2. Escribir una función que reciba una cadena que contiene un largo número entero y devuelva una cadena con el número y las separaciones de miles. Por ejemplo, si recibe `1234567890`, debe devolver `1.234.567.890`. Cuidado: no es lo mismo `123.456.789.0` que `1.234.567.890`. Tienen que ser separaciones de miles y quedar un número válido.
+
+3. Escribir funciones que dada una cadena de caracteres:
+
+    a. Devuelva la primera letra de cada palabra. Ejemplo: si se recibe `Ciclo Básico Común` se debe devolver `CBC`.
+    b. Indique si se trata de un palíndromo. Por ejemplo, `anita lava la tina` es un palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda).
+
+4. Escribir funciones que dadas dos cadenas de caracteres:
+
+    a. Indique si la segunda cadena es subcadena de la primera. Por ejemplo, `'compu'` es subcadena de `'computacional'`.
+    b. Devuelva la que sea anterior en orden alfábetico. Por ejemplo, si recibe `'kde'` y `'gnome'` debe devolver `'gnome'`.
+
+5. Escribir una función que, dada una cadena de caracteres, devuelva una lista con cada uno de los caracteres que la componen en mayúscula. Ejemplo: `'Hola'` debe devolver `['H', 'O', 'L', 'A']`. Restricción: no se permite el uso de ciclos for/while. Pista: Buscá en el apunte cómo usar `map`.
+
+6. Escribir una función que, dada una cadena de caracteres, devuelva una tupla con cada uno de los caracteres que no es una vocal. Ejemplo: `'Algoritmos'` debe devolver `('l', 'g', 'r', 't', 'm', 's')`. Restricción: no se permite el uso de ciclos for/while.
+
+7. Escribir una función que, dada una cadena de caracteres, devuelva el número de índice de posición del último caracter. Por ejemplo, para la cadena `'Hola'` debe devolver `3`. Restricción: no se permite el uso de ciclos for/while.
+
+8. **Desafío** (obligatorio):
+
+    a. Se quiere implementar un buscador dentro de un editor de texto, que permita encontrar todas las ocurrencias de una palabra en un texto. Para ello, se debe implementar una función que reciba como parámetro una palabra y un texto, y que devuelva la primer aparición de la palabra en el texto. Pista: `index` arrojará un error si la subcadena no se encuentra. ¿Qué otro método tenemos disponible para buscar subcadenas?
+
+    b. Modificar la función anterior para que devuelva una lista con las posiciones de inicio de cada ocurrencia de la palabra dentro del texto. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `[1, 18, 22, 31]`. Pista: del método usado en el punto anterior, ¿conocemos algún parámetro adicional que le podamos pasar?
+
+    b. Modificar la función anterior para que devuelva la cantidad de ocurrencias encontradas. Ejemplo: si se busca `'al'` en `'calcule el precio al valor actual'`, debe devolver `4`. Restricción: No se puede usar el método `len`.
+
+9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición.
+
+### 2. Rangos, Tuplas y Listas
+
+1. Usar un rango para:
+
+    a. Imprimir los números del 10 al 50 inclusive, saltando de 5 en 5.
+    b. Imprimir los números del 40 al 20 en orden decreciente, saltando de 2 en 2.
+    c. Crear una lista con los números del 4 al 10. Luego, acceder con el *índice* a los elementos que contienen a los números 4, 6 y 9 e impimirlos por pantalla. Pista: recordar que los índices comienzan en 0.
+
+2. Escribir una función que reciba:
+
+    a. Una lista y devuelva `True` si su longitud es par y `False` si su longitud es impar.\
+    b. Una lista de números cualesquiera y devuelva el elemento máximo y el mínimo.
+    c. Una lista de números y devuelva otra lista con los mismos números ordenados de menor a mayor. Por ejemplo, si recibe `[5, 10, 7, 3]` debe devolver `[3, 5, 7, 10]`.
+
+3. a. Escribir una función que reciba una lista de nombres y un número, que representa el cupo. La función debe devolver en una lista a los nombres que no pudieron entrar al curso por falta de cupo. Ejemplo: `chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)` debe devolver `['Sol', 'Lucía']`.
+
+    b. Modificar la función anterior para que devuelva únicamente a la última persona de la lista de la gente que pudo entrar. Ejemplo: `chequear_cupo(['Agustina', 'Iara', 'Priscila', 'Sol', 'Lucía'], 3)` debe devolver `'Priscila'`, porque es la última que tuvo cupo.
+
+4. Dada la lista de tuplas `[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]`, donde cada tupla contiene un país y la cantidad de mundiales que ganaron:
+
+    a. Hacer una función que reciba la lista por parámetro e imprima la información de cada país con el siguiente formato:
+    ```
+    País: <nombre> - Copas: <cantidad>
+    ```
+
+    Si y sólo si el país es "Argentina", se debe imprimir el nombre con 3 estrellas: `"Argentina⭐⭐⭐"`. Usar el operador abreviado `+=`.
+
+    b. Hacer una función que reciba la lista por parámetro y devuelva la cantidad de mundiales que ganaron entre todos los países. Ejemplo: `contar_mundiales([("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)])` debe devolver `8`.
+
+    c. Hacer una función que reciba la lista por parámetro y la devuelva, ordenada por cantidad de copas ganadas.
+
+    d. Hacer una función que reciba la lista por parámetro y devuelva en una tupla: una lista con los países que tienen más de una copa ganada, y otra lista con valores booleanos que nos diga si la cantidad de copas es par o impar. Pista: ¿Cómo podemos usar `filter`? ¿Y `map`?\
+    Ejemplo: `[("Argentina", 3), ("España",1), ("Uruguay", 2), ("Francia",2)]` devuelve:\
+    `([("Argentina", 3), ("Uruguay", 2), ("Francia",2)] , [False, True, True])`
+
+
+5. Escribir una función que reciba dos fichas de dominó y determine si *encajan* o no entre sí.
+
+    a. Resolver teniendo en cuenta que las fichas se reciben con formato de tuplas. Ejemplo: `(3,4)`  y `(5,4)`.
+    b. Resolver teniendo en cuenta que las fichas se reciben con formato de string. Ejemplo: `'3-4'` y `'5-4'`.
+
+6. Escribir una función que reciba dos vectores y devuelva su prod_escalar. El prod_escalar se calcula como: Siendo $v1 = (v1_1, v1_2, ..., v1_n)$ y $v2 = (v2_1, v2_2, ..., v2_n)$, entonces\
+$$v1 \cdot v2 = (v1_1 \cdot v2_1) + (v1_2 \cdot v2_2) + ... + (v1_n \cdot v2_n)$$
+Si los vectores no tienen las mismas dimensiones, la función debe devolver `None`.
+
+7. a. Escribir una función que reciba una tupla, un índice, y un nuevo valor. La función debe modificar la tupla, cambiando el valor en la posición dada por el índice, por el nuevo valor pasado como parámetro. Devolver la tupla modificada.
+
+    b. Repetir el ejercicio anterior, pero con una lista.
+
+    c. Repetir ambos si ahora, en vez de recibir un índice, se recibe el valor a eliminar. Si no se contiene al valor, se devuelve la estructura tal cual se recibió.
+
+8. Escribir una función que reciba una lista y un número $n$. Para dicho número $n$, debe imprimir los últimos $n$ elementos de la lista en orden inverso, y luego devolver la lista sin ellos. Ejemplo: Si se recibe `[1, 2, 3, 4, 5]` y `n = 2`, debe imprimir `5`, `4` y devolver `[1, 2, 3]`.
+
+9. Escribir una función que reciba una lista de números y devuelva la misma lista en orden inverso.
+
+10. Escribir una función que dado un valor $n$, devuelva una lista con los números del 1 a $n$.
+
+11. Escribir una función que reciba una matriz y una tupla (fila, columna), y devuelva el valor ubicado en esa posición de la matriz. Ejemplo: si se recibe la matriz `[[1, 2], [3, 4]]` y la tupla `(0, 1)`, debe devolver `2`.
+
+12. Se tiene una lista de supermercado escrita como string con productos separados por coma: `"pan, arroz, pescado, jugo, fideos,..."`.
+
+    a. Escribir una función que reciba la cadena de caracteres de los productos de supermercado y devuelva una lista con cada uno de los productos por separado: `['pan', 'arroz', 'pescado', 'jugo', 'fideos', ...]`.
+
+    b. Se tiene además otra cadena de caracteres con los precios de cada producto: `"100, 50, 200, 80, 30,..."`. Escribir una función que reciba ambas cadenas y devuelva una lista con tuplas de (producto, precio): `[('pan', 100), ('arroz', 50), ('pescado', 200), ('jugo', 80), ('fideos', 30), ...]`.
+
+    c. Para la función del punto anterior, escribir otra función que reciba la lista de tuplas y devuelva el precio total de la lista de compras.
+
+13. Se quiere crear una lista de supermercado, solicitándole al usuario productos hasta que ingrese el valor 'X'. La función debe devolver los productos en un string, separados por comas. Ejemplo: si se ingresa 'pan', 'arroz', 'pescado', 'X', debe devolver `"pan, arroz, pescado"`.
+
+14. Hacer una función que reciba una lista de palabras, las ordene en orden alfabético y luego las una en un string separadas por espacios. Ejemplo: si recibe `['hola', 'como', 'estas']`, debe devolver `"como estas hola"`.
+
+15. **Desafio** (obligatorio): Escribir una función que reciba un tamaño y devuelva una matriz con 1 en la diagonal principal y 0 en el resto. Ejemplo: si recibe 4, debe devolver la matriz identidad de tamaño 4x4.
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+16. **Desafio** (obligatorio): Escribir una función que reciba una matriz y devuelva su transpuesta. Ejemplo: si recibe la matriz `[[1, 2, 3], [4, 5, 6]]`, debe devolver `[[1, 4], [2, 5], [3, 6]]`.
+
+    Si se recibe:
+    $$
+    \begin{bmatrix}
+    1 & 2 & 3  \\
+    4 & 5 & 6  \\
+    \end{bmatrix}
+    $$
+
+    Se debe devolver:
+
+    $$
+    \begin{bmatrix}
+    1 & 4 \\
+    2 & 5 \\
+    3 & 6 \\
+    \end{bmatrix}
+    $$
+
+17. **Desafio** (no obligatorio): Agenda Simplificada\
+Escribir una función que reciba una cadena a buscar y una lista de tuplas `(nombre_completo, telefono)`, y busque dentro de la lista todas las entradas que contengan en el nombre completo la cadena recibida (puede ser el nombre, el apellido o sólo una parte de cualquiera de ellos). Debe devolver una lista con todas las tuplas encontradas.
+
+18. **Desafio** (no obligatorio): Sistema de facturación simplificado.\
+Se cuenta con una lista ordenada de productos con tuplas de (identificador, descripción, precio), y una lista de los productos a facturar, con tuplas de (identificador, cantidad).
+
+    Se desea generar una factura que incluya la cantidad, la descripción, el precio unitario y el precio total de cada prod_comprado, y al final imprima el total general.
+
+    Escribir una función que reciba ambas listas e imprima por pantalla la factura solicitada.
+
+19. **Super Desafio** (no obligatorio): Batalla Naval\
+
+    Se tiene una matriz de 10x10 que representa un tablero. Cada celda contiene un 0 si está vacía, o un 1 si hay un barco (consideramos que en este caso, sólo hay barcos unitarios que ocupan un espacio).
+
+    La posición de los barcos se representa con tuplas de (fila, columna). Por ejemplo, si se tiene un barco en la fila 1, columna 3, se representa con la tupla (1, 3).
+
+    Escribir una función que cree un tablero con 10 barcos ubicados aleatoriamente (usar la biblioteca `random`), y que permita al usuario intentar adivinar dónde están.
+
+    El usuario luego ingresa una posición, y la máquina indica si había un barco en esa posición (mostrando un mensaje por pantalla "¡Hundido!") o no ("¡Agua!").
+
+    El usuario gana cuando hunde todos los barcos del tablero. Si se equivoca más de 5 veces, pierde.
+
+    :::{.callout-important collapse="true"}
+    ### Batalla Naval: Modo Supervivencia
+
+    ¿Te animás a que el juego sea un ida y vuelta? Es decir, que el usuario también pueda poner barcos y la máquina intente adivinar dónde están. Una posibilidad es que el usuario tenga su propio tablero en un papel, y una vez cada uno, la máquina y el usuario elijan una posición para atacar.
+
+    Te dejamos unos tips:
+
+    - Las posiciones son limitadas por el tablero 10x10
+    - Las posiciones no deberían repetirse
+
+    ¿Se te ocurre una forma fácil de generar y guardar todas las posiciones posibles del tablero, e ir sacando de a una para que no se repitan? ¿Quién pensás que ganaría, la máquina o el usuario?
+    En este caso, el usuario y la máquina tienen intentos ilimitados intercalados hasta que alguno de los dos gane.
+    :::
+
+20. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.\
+Pista: tenés que usar un diccionario.
+
+### 3. Diccionarios
+
+1. Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos.
+Por ejemplo:
+
+```python
+l = [('Hola', 'don Pepito'), ('Hola', 'don Jose'), ('Buenos', 'días')]
+print(tuplas_a_diccionario(l))
+```
+
+```
+{'Hola': ['don Pepito', 'don Jose'], 'Buenos': ['días']}
+```
+
+2. Escriba una función que reciba una cadena y devuelva:
+
+    a. Un diccionario con la cantidad de apariciones de cada palabra en la cadena. Por ejemplo, si recibe `"Que lindo dia que hace hoy"` debe devolver: `{'que': 2, 'lindo': 1, 'dia': 1, 'hace': 1, 'hoy': 1}`.
+    b. Un diccionario con la cantidad de apariciones de cada caracter  en la cadena.
+
+3. Escribir una función que reciba una cantidad de iteraciones N.
+    a. Se deberá simular una persona que tira un dado N veces, y se deberá devolver un diccionario con la cantidad de apariciones de cada valor en el dado. Nota: para simular una tirada, usar `import random`y `random.randint(1, 6)`.
+
+    b. Repetir el punto anterior, si ahora en vez de tirar 1 dado, tira 2. Se debe devolver un diccionario con la cantidad de apariciones de cada valor de la suma de ambos dados.
+
+4. Se tiene una agenda implementada como diccionario, que guarda nombres de personas y sus números de teléfono. Escribir un programa que le pida al usuario que ingrese nombres.
+
+    a. Si el nombre se encuentra en la agenda, debe mostrar el teléfono.
+    b. Si el nombre no se encuentra, debe permitir ingresar el teléfono correspondiente.
+
+    En ambos casos, El usuario puede utilizar la palabra "EXIT" para dejar de ingresar nombres.
+
+5. Escribir una función que reciba un texto y para cada caracter presente en el texto, devuelva la palabra más larga en la que se encuentra ese caracter.
+
+6. Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes:
+
+    | nombre | apellido | dni | carrera |
+    | ------ | -------- | --- | ------- |
+    | Violeta   | Perez    | 42000000 | Informática |
+    | Carla    | Guanca | 42001001 | Mecánica |
+    | Manuela  | Gomez    | 42002002 | Química |
+
+    a. Crear un diccionario que sirva para representar a cada persona. Debe contener las claves `nombre`, `apellido`, `dni` y `carrera`. Los diccionarios se deben guardan en una lista llamada `estudiantes`.
+    b. Agregar al diccionario creado un nuevo elemento, que debe ser otro diccionario y represente las notas obtenidas en la carrera. La clave debe ser el `codigo` y el valor la `nota` (del 1 al 10) obtenida.
+    c. Crear código que agregue para la estudiante Violeta Perez la nota 7 en la materia Algoritmos y Programación III (7507), y la nota 4 en la materia Análisis Matemático II (6103).
+
+    d. Teniendo la lista de estudiantes, buscar en la lista la persona con mayor cantidad de notas e imprimirla por pantalla.
+
+7. En un vivero se guardan las plantas en una lista de diccionarios con la siguiente información: especie, luz directa (si/no), precio. Se necesita un sistema que guarde las plantas a medida que van llegando. Hacer una función que reciba la lista de diccionarios de plantas, y los datos de la planta nueva, y agregue esa planta a la lista de diccionarios.
+
+8. Escribir una función que reciba una lista de diccionarios y una clave, y devuelva una lista con los valores correspondientes a esa clave.
+
+9. Se tiene un ticket de supermercado en forma de diccionario con los siguientes datos:
+
+    - Nombre del Producto
+    - Precio por Unidad
+    - Cantidad
+
+    Se pide hacer una función que reciba el ticket y devuelva el monto a pagar total.
+
+10. Rosita tiene una lista de diccionarios donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Hacer una función que reciba el diccionario y devuelva una nueva lista de diccionarios donde sólo estén las películas que tienen puntaje mayor a 7.
+
+    a. Resolver sin usar `filter`
+    b. Resolver usando `filter`.
+
+13. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
+
+    Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).
+
+    a. Se pide hacer una función que dada esta lista de diccionarios, se devuelva el promedio de las notas en la primera oportunidad de los alumnos.
+
+    b. Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.
+
+14. En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.
+
+    Se pude hacer una función que reciba esta lista de diccinoarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.
+
+15. Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).
+
+    a. Crear un diccionario de ejemplo que represente esta situación.
+    b. Teniendo esta lista de diccionarios, ordenarlos alfabéticamente por el nombre de los maratonistas.
+    c. Teniendo esta lista de diccionarios, ordenar las maratones en tiempo ascendente según el tiempo que tardaron en correrlas.
+
+16. **Desafío** (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo.
+
+    Laura quiere entonces actualizar sus diccionarios, para que en vez de guardar el monto exacto del bono, guarde el porcentaje que le corresponde. Ejemplo: si en el 2019 su sueldo era de $1.000.000 y el bono que le dieron era de $40.000, el bono fue del 4% del sueldo.
+
+    a. Hacer una función que reciba la lista de diccionarios, y para cada una de las reviews, modifique el valor del bono por el porcentaje correspondiente.
+
+    b. Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar `filter` y `map`.
+
+
+17. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guía de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
+Se quiere que el usuario que está usando el programa pueda acceder por pantalla a un enunciado puntual de una guía con sólo pedirlo (si existe). Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
+
+18. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
+
+    Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.
+
+    La base contiene los siguientes datos de cada posible donante:
+    - Nombre
+    - Apellido
+    - Edad
+    - Peso
+    - Fecha de la última donación. Puede ser 'None' si nunca donó. Formato: (dia,mes,año)
+    - Fecha del último tatuaje. Puede ser 'None' si no tiene tatuajes. Formato: (dia,mes,año)
+    - Tipo de sangre. Puede ser '0+', '0-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'
+
+    Los requisitos son:
+    - Tener entre 16 y 65 años
+    - Pesar más de 50 kilos
+    - Que hayan pasado 2 meses desde la última donación
+    - Que hayan pasado 6 meses desde el último tatuaje
+
+    a. Se pide hacer una función que reciba una lista de diccionarios con la información de cada posible donante, y devuelva una lista con los que cumplen los requisitos.
+
+    b. Se pide hacer una función que priorice a los donantes que tienen sangre tipo 0 (positivo y negativo) por sobre todos los A, B y AB (positivos y negativos); ya que son los que más se necesitan. La función debe recibir la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos, y devolver una nueva lista ordenados de mayor a menor prioridad.
+
+    c. Se pide hacer una función que reciba la lista de diccionarios con la información de cada posible donante ya filtrada por requisitos y ordenada por prioridad, que se quede con los que son 0+ y 0-, y los ordene por órden alfabético de apellido.
+
+    <img src="./imgs/unidad_4/goti.png" width="200" height="200" />
+
+    > Si querés saber más sobre el proyecto, podés visitar su página web:\
+    [https://www.donarg.com.ar/](https://www.donarg.com.ar/)\
+    o sacar turno para donar sangre en\
+    [https://www.donarg.com.ar/dondedono](https://www.donarg.com.ar/dondedono).
