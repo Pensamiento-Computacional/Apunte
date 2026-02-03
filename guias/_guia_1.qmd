@@ -3,8 +3,10 @@
 :::{.callout-note}
 ### Recomendación
 En esta guía nos dedicaremos a introducirnos en los conceptos de programación y algoritmo.
-Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.youtube.com/watch?v=cDA3_5982h8) para recordar cómo entiende la computadora nuestras instrucciones.
+Para los primeros ejercicios, te recomendamos ver [este video](https://www.youtube.com/watch?v=cDA3_5982h8) para recordar cómo entiende la computadora nuestras instrucciones.
 :::
+
+### Ejercicios de descomposición
 
 1. Se tiene que explicar a una máquina exactamente cómo servir un vaso de jugo (de los que vienen en cartón) de la heladera. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para lograr el objetivo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
@@ -18,4 +20,14 @@ Para los primeros seis ejercicios, te recomendamos ver [este video](https://www.
 
 6. Contás con un listado de cosas a comprar y tenés que ir a un supermercado que cuenta con distintas góndolas o pasillos. Cada góndola o pasillo puede contar con varios, uno o ninguno de los productos de tu lista. ¿Cuál sería el listado de instrucciones para poder terminar lo más rápido posible? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
-7. Con el anexo de Google Colab de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `"¡Hola mundo!"`.
+7. Querés explicarle a una persona que nunca usó un cajero automático cómo extraer dinero. Describí paso a paso todas las instrucciones necesarias, considerando que la persona no sabe nada sobre cajeros. ¿Qué información necesita tener antes de empezar? ¿Qué decisiones debe tomar durante el proceso? Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+8. Una biblioteca quiere organizar sus libros en estantes. Cada libro tiene: título, autor, género (novela, ciencia, historia, etc.) y año de publicación. Los estantes tienen capacidad limitada. Describí un algoritmo para decidir en qué estante va cada libro, considerando que queremos que sea fácil encontrarlos después. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+9. Tenés que explicarle a un robot cómo ordenar una pila de cartas numeradas del 1 al 10 que están desordenadas. El robot solo puede hacer estas acciones: mirar la carta de arriba de la pila, tomar una carta, dejar una carta en una de tres pilas auxiliares, y comparar dos cartas para ver cuál es mayor. Describí los pasos para que el robot ordene las cartas de menor a mayor. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+10. Una aplicación de delivery necesita asignar pedidos a repartidores. Cada pedido tiene: dirección de entrega, hora límite de entrega y tipo de producto (comida caliente, bebidas, productos frágiles). Cada repartidor tiene: ubicación actual, tipo de vehículo (bicicleta, moto, auto) y pedidos ya asignados. Describí qué criterios usarías para decidir qué repartidor debe tomar cada pedido nuevo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
+
+### Primer programa
+
+11. Con el anexo de Google Colab de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `"¡Hola mundo!"`.
