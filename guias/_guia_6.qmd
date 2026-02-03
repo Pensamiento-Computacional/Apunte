@@ -1,6 +1,121 @@
 # Guía 6: Bibliotecas de Python
 
-## 1. Numpy
+## 1. Pandas
+
+:::{.callout-note}
+Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
+:::
+
+### 1.1. Lectura y Escritura de Archivos CSV
+
+1. Se tiene un archivo CSV llamado `futbol.csv` con información de jugadores de fútbol. El archivo tiene las columnas: nombre, equipo, posicion, goles, asistencias.
+
+    a. Leer el archivo usando Pandas y mostrar las primeras 5 filas.
+    b. Mostrar la información del DataFrame (tipos de datos, cantidad de filas, etc.).
+    c. Guardar sólo los jugadores que tienen más de 10 goles en un nuevo archivo llamado `goleadores.csv`.
+
+2. Se tiene un archivo CSV llamado `ventas_supermercado.csv` con las columnas: fecha, producto, cantidad, precio_unitario.
+
+    a. Leer el archivo y agregar una nueva columna `total` que sea el resultado de multiplicar cantidad por precio_unitario.
+    b. Guardar el resultado en un nuevo archivo llamado `ventas_con_total.csv`.
+    c. Calcular el total de ventas por producto y guardarlo en un archivo llamado `resumen_ventas.csv`.
+
+3. Se tiene un archivo CSV llamado `peliculas.csv` con las columnas: titulo, año, genero, calificacion.
+
+    a. Leer el archivo y filtrar sólo las películas con calificación mayor a 7.
+    b. Agrupar las películas por género y calcular el promedio de calificación de cada uno.
+    c. Guardar las películas de género "Acción" en un archivo llamado `peliculas_accion.csv`.
+
+4. Se tiene un archivo CSV con datos de temperaturas diarias de una ciudad. Las columnas son: fecha, temperatura_min, temperatura_max.
+
+    a. Leer el archivo y agregar una columna con la temperatura promedio del día.
+    b. Encontrar el día con la temperatura máxima más alta y el día con la temperatura mínima más baja.
+    c. Guardar los días donde la temperatura promedio superó los 25 grados en un archivo llamado `dias_calurosos.csv`.
+
+5. **Desafío** (obligatorio): Una empresa de cine quiere analizar sus datos de venta de entradas. Se tiene un archivo `cine.csv` con las columnas: pelicula, sala, fecha, horario, entradas_vendidas, precio_entrada.
+
+    a. Leer el archivo y calcular los ingresos totales (entradas_vendidas * precio_entrada).
+    b. Obtener la película más taquillera (la que más ingresos generó).
+    c. Calcular el promedio de entradas vendidas por sala.
+    d. Guardar un resumen con los ingresos por película en un archivo llamado `ingresos_por_pelicula.csv`.
+
+### 1.2. Operaciones con DataFrames
+
+Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
+
+Usando el siguiente DataFrame:
+```{python}
+import pandas as pd
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela', 'Lucia', 'Emilia', 'Mariana', 'Aldo'],
+    'apellido': ['Perez', 'Guanca', 'Gomez', 'Capon', 'Duzac', 'Szischik', 'Rastrelli'],
+    'dni': [42000000, 42001001, 42002002, 37010020, 40001002, 38090080, 38111222],
+    'año_nac': [1997, 1998, 1998, 1993, 2003, 1993, 1994],
+    'mail': ['vp@fi.uba.ar', 'cg@fi.uba.ar', None, None, None, 'ms@fi.uba.ar', 'ar@fi.uba.ar'],
+    'carrera': ['Informática', 'Mecánica', 'Química', 'Informática', 'Informática', 'Electrónica', 'Informática']
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+6. Mostrar el resumen de la información del DataFrame
+7. Mostrar su forma
+8. Mostrar la lista de los nombres de las columnas
+9. Mostrar las primeras 3 filas
+10. Mostrar las últimas 3 filas
+11. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
+12. Mostrar a los estudiantes que tienen edad mayor a 25.
+13. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
+14. Mostrar a la persona que es más joven.
+15. Mostrar a la persona que se encuentra en la mitad de la tabla.
+16. Mostrar sólo las columnas: "carrera" y "edad".
+17. Mostrar sólo los estudiantes que estudian Informática.
+18. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
+19. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
+20. Mostrar la cantidad de estudiantes por carrera.
+21. Renombrar la columna "carrera" por "ingeniería".
+22. Para la primer estudiante, cambiar su carrera a "Electrónica".
+23. Agregar una nueva fila al DataFrame con tus datos.
+24. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
+25. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
+26. Ordenar el dataFrame por carrera y apellido, en ese orden.
+27. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
+
+28. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
+Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
+a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
+Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
+
+```{python}
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela'],
+    'apellido': ['Perez', 'Guanca', 'Gomez'],
+    'dni': [42000000, 42001001, 42002002],
+    'carrera': ['Informática', 'Mecánica', 'Química'],
+    'nota': [7, 4, 6],
+    'intento': [1, 2, 1]
+}
+
+df_notas = pd.DataFrame(data)
+df_notas
+```
+
+29. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
+Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
+
+```{Python}
+data = {
+    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
+    'año': [2001, 2003, 1972, 2040],
+    'puntuacion': [8, 9, 8, 3]
+}
+
+df_pelis = pd.DataFrame(data)
+df_pelis
+```
+
+## 2. Numpy
 
 1. Crear un array de 20 números espaciados uniformemente entre 0 y 10. Luego, imprimir:
 
@@ -84,86 +199,6 @@ Los asientos en el Jardín Japonés se van a organizar en forma de matriz, tenie
 
     b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
     Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.
-
-## 2. Pandas
-
-:::{.callout-note}
-Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
-:::
-
-Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
-
-Usando el siguiente DataFrame:
-```{python}
-import pandas as pd
-data = {
-    'nombre': ['Violeta', 'Carla', 'Manuela', 'Lucia', 'Emilia', 'Mariana', 'Aldo'],
-    'apellido': ['Perez', 'Guanca', 'Gomez', 'Capon', 'Duzac', 'Szischik', 'Rastrelli'],
-    'dni': [42000000, 42001001, 42002002, 37010020, 40001002, 38090080, 38111222],
-    'año_nac': [1997, 1998, 1998, 1993, 2003, 1993, 1994],
-    'mail': ['vp@fi.uba.ar', 'cg@fi.uba.ar', None, None, None, 'ms@fi.uba.ar', 'ar@fi.uba.ar'],
-    'carrera': ['Informática', 'Mecánica', 'Química', 'Informática', 'Informática', 'Electrónica', 'Informática']
-}
-
-df = pd.DataFrame(data)
-df
-```
-
-1. Mostrar el resumen de la información del DataFrame
-2. Mostrar su forma
-3. Mostrar la lista de los nombres de las columnas
-4. Mostrar las primeras 3 filas
-5. Mostrar las últimas 3 filas
-6. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
-7. Mostrar a los estudiantes que tienen edad mayor a 25.
-8. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
-9. Mostrar a la persona que es más joven.
-10. Mostrar a la persona que se encuentra en la mitad de la tabla.
-11. Mostrar sólo las columnas: "carrera" y "edad".
-12. Mostrar sólo los estudiantes que estudian Informática.
-13. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
-14. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
-15. Mostrar la cantidad de estudiantes por carrera.
-16. Renombrar la columna "carrera" por "ingeniería".
-17. Para la primer estudiante, cambiar su carrera a "Electrónica".
-18. Agregar una nueva fila al DataFrame con tus datos.
-19. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
-20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
-21. Ordenar el dataFrame por carrera y apellido, en ese orden.
-22. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
-
-23. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
-Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
-a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
-Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
-
-```{python}
-data = {
-    'nombre': ['Violeta', 'Carla', 'Manuela'],
-    'apellido': ['Perez', 'Guanca', 'Gomez'],
-    'dni': [42000000, 42001001, 42002002],
-    'carrera': ['Informática', 'Mecánica', 'Química'],
-    'nota': [7, 4, 6],
-    'intento': [1, 2, 1]
-}
-
-df_notas = pd.DataFrame(data)
-df_notas
-```
-
-24. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
-Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
-
-```{Python}
-data = {
-    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
-    'año': [2001, 2003, 1972, 2040],
-    'puntuacion': [8, 9, 8, 3]
-}
-
-df_pelis = pd.DataFrame(data)
-df_pelis
-```
 
 ## 3. Matplotlib
 
@@ -310,3 +345,51 @@ df = pd.read_csv(url)
     a. Realizar un gráfico de torta que muestre el porcentaje entre la cantidad de alumnos que asistieron al parcial y los que no.
     b. Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.
     c. Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?
+
+### Evaluación de Código
+
+:::{.callout-note}
+En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
+:::
+
+1. El siguiente código intenta leer un archivo CSV y mostrar los estudiantes mayores de 20 años, pero tiene un error. Identificá cuál es y corregilo.
+
+    ```python
+    import pandas as pd
+
+    df = pd.read_csv('estudiantes.csv')
+    # El archivo tiene columnas: nombre, edad, carrera
+
+    mayores = df[df['edad'] > '20']
+    print(mayores)
+    ```
+
+2. El siguiente código intenta crear un array de NumPy y calcular su promedio, pero produce un resultado incorrecto. Identificá el error y corregilo.
+
+    ```python
+    import numpy as np
+
+    datos = [10, 20, 30, 40, 50]
+    array = np.array(datos)
+    promedio = sum(datos) / len(array)
+
+    print("Promedio:", promedio)
+    # El código funciona pero no usa las ventajas de NumPy
+    # ¿Cómo se podría mejorar?
+    ```
+
+3. El siguiente código intenta agregar una columna calculada a un DataFrame, pero produce un error. Identificá por qué falla y corregilo.
+
+    ```python
+    import pandas as pd
+
+    data = {
+        'producto': ['Manzana', 'Banana', 'Naranja'],
+        'precio': [100, 80, 120],
+        'cantidad': [5, 10, 3]
+    }
+    df = pd.DataFrame(data)
+
+    df['total'] = df['precio'] * df['catidad']
+    print(df)
+    ```
