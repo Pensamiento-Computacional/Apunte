@@ -304,3 +304,45 @@ Se quiere que el usuario que está usando el programa pueda acceder por pantalla
     [https://www.donarg.com.ar/](https://www.donarg.com.ar/)\
     o sacar turno para donar sangre en\
     [https://www.donarg.com.ar/dondedono](https://www.donarg.com.ar/dondedono).
+
+### Evaluación de Código
+
+:::{.callout-note}
+En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
+:::
+
+1. El siguiente código intenta obtener el último elemento de una lista, pero produce un error. Identificá por qué falla y corregilo.
+
+    ```python
+    def obtener_ultimo(lista):
+        ultimo = lista[len(lista)]
+        return ultimo
+
+    numeros = [10, 20, 30, 40, 50]
+    print(obtener_ultimo(numeros))
+    ```
+
+2. El siguiente código intenta modificar una tupla, pero produce un error. Explicá por qué ocurre y proponé una solución alternativa.
+
+    ```python
+    def cambiar_segundo_elemento(tupla, nuevo_valor):
+        tupla[1] = nuevo_valor
+        return tupla
+
+    mi_tupla = (1, 2, 3)
+    resultado = cambiar_segundo_elemento(mi_tupla, 100)
+    print(resultado)
+    ```
+
+3. El siguiente código intenta contar la cantidad de veces que aparece cada letra en una palabra usando un diccionario, pero tiene un error. Identificá cuál es y corregilo.
+
+    ```python
+    def contar_letras(palabra):
+        contador = {}
+        for letra in palabra:
+            contador[letra] = contador[letra] + 1
+        return contador
+
+    resultado = contar_letras("hola")
+    print(resultado)
+    ```
