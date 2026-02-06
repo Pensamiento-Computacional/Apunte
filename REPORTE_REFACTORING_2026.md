@@ -82,6 +82,7 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 2. **Escritura de archivos CSV** con `df.to_csv()`
 3. **Tabla comparativa** entre Pandas y `open()` para manejo de datos
 4. **Manejo de errores** comunes en Pandas (FileNotFoundError, KeyError, TypeError)
+5. **Ejemplo integrador:** Función que filtra notas de un alumno por DNI desde un CSV y las guarda en un nuevo archivo
 
 **Sección eliminada de NumPy:**
 - Se eliminó la sección "Reshape" por considerarse un tema avanzado no esencial
@@ -123,17 +124,17 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 **Archivos modificados:** `_guia_2.qmd`, `_guia_3.qmd`, `_guia_4.qmd`, `_guia_5.qmd`, `_guia_6.qmd`
 
 **Descripción:**
-Se agregó una nueva sección al final de cada guía (excepto Guía 1) con 3 ejercicios de código con errores para que los estudiantes identifiquen y corrijan.
+Se agregó una nueva sección al final de cada guía (excepto Guía 1) con ejercicios de código con errores para que los estudiantes identifiquen y corrijan.
 
 **Ejercicios por guía:**
 
-| Guía | Ejercicio 1 | Ejercicio 2 | Ejercicio 3 |
-|------|-------------|-------------|-------------|
-| 2 | Función sin `return` | Error de tipo en `input()` | Concatenación int+str |
-| 3 | Error en condición de rango | Bucle infinito (falta incremento) | `return` mal indentado |
-| 4 | Error de índice (off-by-one) | Intento de modificar tupla | KeyError en diccionario |
-| 5 | Archivo no cerrado | Modo de apertura incorrecto | Manejo de excepciones incompleto |
-| 6 | Comparación string vs int en Pandas | Uso ineficiente de NumPy | Typo en nombre de columna |
+| Guía | Ejercicio 1 | Ejercicio 2 | Ejercicio 3 | Ejercicio 4 |
+|------|-------------|-------------|-------------|-------------|
+| 2 | Función sin `return` | Error de tipo en `input()` | Concatenación int+str | - |
+| 3 | Error en condición de rango | Bucle infinito (falta incremento) | `return` mal indentado | - |
+| 4 | Error de índice (off-by-one) | Intento de modificar tupla | KeyError en diccionario | Modificar diccionario mientras se itera |
+| 5 | Archivo no cerrado | Modo de apertura incorrecto | Manejo de excepciones incompleto | - |
+| 6 | Comparación string vs int en Pandas | Uso ineficiente de NumPy | Typo en nombre de columna | - |
 
 **Justificación:**
 - Responde a la nueva realidad donde los estudiantes usan IA para generar código
