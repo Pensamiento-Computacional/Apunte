@@ -6,40 +6,7 @@
 Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
 :::
 
-### 1.1. Lectura y Escritura de Archivos CSV
-
-1. Se tiene un archivo CSV llamado `futbol.csv` con información de jugadores de fútbol. El archivo tiene las columnas: nombre, equipo, posicion, goles, asistencias.
-
-    a. Leer el archivo usando Pandas y mostrar las primeras 5 filas.
-    b. Mostrar la información del DataFrame (tipos de datos, cantidad de filas, etc.).
-    c. Guardar sólo los jugadores que tienen más de 10 goles en un nuevo archivo llamado `goleadores.csv`.
-
-2. Se tiene un archivo CSV llamado `ventas_supermercado.csv` con las columnas: fecha, producto, cantidad, precio_unitario.
-
-    a. Leer el archivo y agregar una nueva columna `total` que sea el resultado de multiplicar cantidad por precio_unitario.
-    b. Guardar el resultado en un nuevo archivo llamado `ventas_con_total.csv`.
-    c. Calcular el total de ventas por producto y guardarlo en un archivo llamado `resumen_ventas.csv`.
-
-3. Se tiene un archivo CSV llamado `peliculas.csv` con las columnas: titulo, año, genero, calificacion.
-
-    a. Leer el archivo y filtrar sólo las películas con calificación mayor a 7.
-    b. Agrupar las películas por género y calcular el promedio de calificación de cada uno.
-    c. Guardar las películas de género "Acción" en un archivo llamado `peliculas_accion.csv`.
-
-4. Se tiene un archivo CSV con datos de temperaturas diarias de una ciudad. Las columnas son: fecha, temperatura_min, temperatura_max.
-
-    a. Leer el archivo y agregar una columna con la temperatura promedio del día.
-    b. Encontrar el día con la temperatura máxima más alta y el día con la temperatura mínima más baja.
-    c. Guardar los días donde la temperatura promedio superó los 25 grados en un archivo llamado `dias_calurosos.csv`.
-
-5. **Desafío** (obligatorio): Una empresa de cine quiere analizar sus datos de venta de entradas. Se tiene un archivo `cine.csv` con las columnas: pelicula, sala, fecha, horario, entradas_vendidas, precio_entrada.
-
-    a. Leer el archivo y calcular los ingresos totales (entradas_vendidas * precio_entrada).
-    b. Obtener la película más taquillera (la que más ingresos generó).
-    c. Calcular el promedio de entradas vendidas por sala.
-    d. Guardar un resumen con los ingresos por película en un archivo llamado `ingresos_por_pelicula.csv`.
-
-### 1.2. Operaciones con DataFrames
+### 1.1. Operaciones con DataFrames
 
 Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
 
@@ -114,6 +81,49 @@ data = {
 df_pelis = pd.DataFrame(data)
 df_pelis
 ```
+
+### 1.2. Lectura y Escritura de Archivos CSV
+
+1. Se tiene un archivo CSV llamado `futbol.csv` con información de jugadores de fútbol. El archivo tiene las columnas: nombre, equipo, posicion, goles, asistencias.
+
+    a. Leer el archivo usando Pandas y mostrar las primeras 5 filas.
+    b. Mostrar la información del DataFrame (tipos de datos, cantidad de filas, etc.).
+    c. Guardar sólo los jugadores que tienen más de 10 goles en un nuevo archivo llamado `goleadores.csv`.
+
+2. Se tiene un archivo CSV llamado `ventas_supermercado.csv` con las columnas: fecha, producto, cantidad, precio_unitario.
+
+    a. Leer el archivo y agregar una nueva columna `total` que sea el resultado de multiplicar cantidad por precio_unitario.
+    b. Guardar el resultado en un nuevo archivo llamado `ventas_con_total.csv`.
+    c. Calcular el total de ventas por producto y guardarlo en un archivo llamado `resumen_ventas.csv`.
+
+3. Se tiene un archivo CSV que contiene información sobre el stock de una librería. Un posible ejemplo de este archivo es el siguiente:
+
+    ``` bash
+        lapiceras;34512;50;120
+        cuadernos;41611;500;130
+        sacapuntas;62812;30;210
+    ```
+
+    Donde cada línea representa un prod y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que reciba la ruta del archivo y le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto "X".
+
+3. Se tiene un archivo CSV llamado `peliculas.csv` con las columnas: titulo, año, genero, calificacion.
+
+    a. Leer el archivo y filtrar sólo las películas con calificación mayor a 7.
+    b. Agrupar las películas por género y calcular el promedio de calificación de cada uno.
+    c. Guardar las películas de género "Acción" en un archivo llamado `peliculas_accion.csv`.
+
+4. Se tiene un archivo CSV con datos de temperaturas diarias de una ciudad. Las columnas son: fecha, temperatura_min, temperatura_max.
+
+    a. Leer el archivo y agregar una columna con la temperatura promedio del día.
+    b. Encontrar el día con la temperatura máxima más alta y el día con la temperatura mínima más baja.
+    c. Guardar los días donde la temperatura promedio superó los 25 grados en un archivo llamado `dias_calurosos.csv`.
+
+5. **Desafío** (obligatorio): Una empresa de cine quiere analizar sus datos de venta de entradas. Se tiene un archivo `cine.csv` con las columnas: pelicula, sala, fecha, horario, entradas_vendidas, precio_entrada.
+
+    a. Leer el archivo y calcular los ingresos totales.
+    b. Obtener la película más taquillera (la que más ingresos generó).
+    c. Calcular el promedio de entradas vendidas por sala.
+    d. Guardar un resumen con los ingresos por película (sólo esos dos datos) en un archivo llamado `ingresos_por_pelicula.csv`.
 
 ## 2. Numpy
 
@@ -346,37 +356,41 @@ df = pd.read_csv(url)
     b. Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.
     c. Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?
 
-### Evaluación de Código
+## Evaluación de Código
 
 :::{.callout-note}
 En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
 :::
 
-1. El siguiente código intenta leer un archivo CSV y mostrar los estudiantes mayores de 20 años, pero tiene un error. Identificá cuál es y corregilo.
+1. La siguiente función intenta leer un archivo CSV y mostrar los estudiantes mayores de 20 años. El archivo tiene columnas: nombre, edad, carrera. Identificá el problema y corregilo.
 
     ```python
     import pandas as pd
 
-    df = pd.read_csv('estudiantes.csv')
-    # El archivo tiene columnas: nombre, edad, carrera
+    def devolver_mayores_20(archivo):
+        df = pd.read_csv(archivo)
 
-    mayores = df[df['edad'] > '20']
-    print(mayores)
+        mayores = df[df[1] > '20']
+        print(mayores)
     ```
 
-2. El siguiente código intenta crear un array de NumPy y calcular su promedio, pero produce un resultado incorrecto. Identificá el error y corregilo.
+    <!-- Acceso a la columna es incorrecto. Print en vez de return. -->
+
+2. La siguiente función intenta crear un array de NumPy y mostrar en pantalla su promedio, pero produce un resultado incorrecto. Identificá el error y corregilo.
 
     ```python
     import numpy as np
 
     datos = [10, 20, 30, 40, 50]
     array = np.array(datos)
-    promedio = sum(datos) / len(array)
-
-    print("Promedio:", promedio)
-    # El código funciona pero no usa las ventajas de NumPy
-    # ¿Cómo se podría mejorar?
+    for d in array:
+        suma += d
+        cant += d
+    
+    return suma / cant
     ```
+
+    <!-- Falta la firma de la funcion. No usa la funcion promedio de numpy. Las variables acumuladoras no estan definidas. La suma en cada variable acumuladora es incorrecta. Usa return y no print. -->
 
 3. El siguiente código intenta agregar una columna calculada a un DataFrame, pero produce un error. Identificá por qué falla y corregilo.
 
@@ -390,6 +404,8 @@ En estos ejercicios se presenta código con errores, malas prácticas de program
     }
     df = pd.DataFrame(data)
 
-    df['total'] = df['precio'] * df['catidad']
+    df = df[ df['precio'] * df['cantidad'] ]
     print(df)
     ```
+
+     <!-- El acceso a las columnas no es correcto, el calculo tampoco -->

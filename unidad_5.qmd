@@ -88,9 +88,14 @@ La diferencia principal y que condiciona el resto de los cambios es que en lugar
 
 #### Resumen
 
-- `read()`: Lee todo el archivo y lo devuelve como una cadena de texto.
+- `read()`: Lee todo el archivo y lo devuelve como una cadena de texto. El archivo se guarda en memoria, por lo que puede resultar pesado leer todo el archivo con `read()` si el mismo es muy largo.
 - `readline()`: Lee una línea del archivo y la devuelve como una cadena de texto. Cuando se llega al final del archivo, devuelve una cadena vacía.
-- `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto.
+- `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto. Las líneas se guardan en memoria, por lo que puede resultar pesado leer todas las líneas juntas si el mismo el archivo es muy largo.
+
+::: {.callout-tip}
+Decidir usar read, readline o readlines dependerá de nuestro archivo, su tamaño y la información que contenga.
+Debemos analizar cada caso para decidir qué método de lectura queremos usar.
+:::
 
 ### Escribiendo en un archivo
 
@@ -263,12 +268,10 @@ Otra función muy útil es ```read()```, que lee todo el contenido del archivo d
 
 En la sección anterior utilizamos para todos los archivos la extensión '.txt'. El uso de extensiones es una **convención**, una manera de nombrar las cosas que nos da una idea de lo que hay en el contenido del archivo.
 
-Existen muchos tipos de archivos de texto:
+Existen muchos tipos de archivos de texto. Los que vamos a ver en la materia son:
 
 - **`.txt`**: Archivos de texto plano, sin formato especial.
 - **`.csv`**: Archivos de "comma separated values" (valores separados por comas). Son muy utilizados para almacenar datos tabulares. Los veremos en detalle en la **Unidad 6** cuando trabajemos con la biblioteca **Pandas**, que nos facilita enormemente su manipulación.
-- **`.json`**: Archivos con formato JSON, muy utilizados para intercambiar datos entre aplicaciones.
-- **`.md`**: Archivos de texto con formato Markdown.
 
 En esta unidad nos enfocamos en archivos de texto plano (`.txt`). Aprender a manipularlos correctamente nos da las bases para entender cómo funcionan todos los demás tipos de archivos de texto.
 
@@ -276,7 +279,8 @@ En esta unidad nos enfocamos en archivos de texto plano (`.txt`). Aprender a man
 - Para utilizar un archivo desde un programa, es necesario abrirlo, y cuando ya no se lo
 necesite, se lo debe cerrar.
 - Las instrucciones más básicas para manejar un archivo son leer y escribir.
-- Los archivos de texto se procesan generalmente línea por línea y sirven para intercambiar información entre diversos programas o entre programas y humanos.
+- Los archivos sirven para intercambiar información entre diversos programas o entre programas y humanos.
+- Los archivos de texto se pueden procesar línea por línea o leyendo la totalidad del archivo y guardándolo en memoria. La elección entre una opción o la otra dependerá del tamaño del archivo. Si el archivo es muy grande, no suele ser eficiente guardarlo en memoria, porque el uso de recursos es muy grande. Otra limitación es la cantidad de veces que abrimos o cerramos el archivo, ya que queremos que sea la menor posible. El manejo de archivos requiere analizar cada caso particular y decidir la forma en la cual interactuaremos con el mismo.
 
 ## Colab y Archivos
 Para usar y crear archivos en Colab, se debe ingresar al último item del menú derecho, que tiene forma de carpeta.

@@ -6,7 +6,7 @@ En esta guía nos dedicaremos a introducirnos en los conceptos de programación 
 Para los primeros ejercicios, te recomendamos ver [este video](https://www.youtube.com/watch?v=cDA3_5982h8) para recordar cómo entiende la computadora nuestras instrucciones.
 :::
 
-### Ejercicios de descomposición
+### 1.1. Ejercicios de descomposición
 
 1. Se tiene que explicar a una máquina exactamente cómo servir un vaso de jugo (de los que vienen en cartón) de la heladera. Recordando la definición de algoritmo, hacer una descripción paso a paso de lo que se tiene que hacer y usar para lograr el objetivo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
@@ -28,6 +28,6 @@ Para los primeros ejercicios, te recomendamos ver [este video](https://www.youtu
 
 10. Una aplicación de delivery necesita asignar pedidos a repartidores. Cada pedido tiene: dirección de entrega, hora límite de entrega y tipo de producto (comida caliente, bebidas, productos frágiles). Cada repartidor tiene: ubicación actual, tipo de vehículo (bicicleta, moto, auto) y pedidos ya asignados. Describí qué criterios usarías para decidir qué repartidor debe tomar cada pedido nuevo. Pista: No vas a necesitar nada de código en este ejercicio, sólo nombrar los pasos.
 
-### Primer programa
+### 1.2. Primer programa
 
 11. Con el anexo de Google Colab de la Unidad 1, realizá tu primer programa: hacé que se imprima por pantalla un `"¡Hola mundo!"`.

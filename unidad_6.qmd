@@ -24,7 +24,7 @@ En la parte superior de nuestro código debemos correr `import {nombre_de_biblio
 import pandas as pd
 ```
 
-:::{.callout-note collapse="true}
+:::{.callout-note}
 En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google Colab, pero en caso de usar otro IDE (como por ejemplo, Visual Studio Code), se realiza desde el símbolo del sistema (o en inglés: "Command Prompt", o terminal o consola), corriendo: `pip install –nombre_de_biblioteca` o similares.
 :::
 
@@ -48,13 +48,13 @@ import pandas as pd
 
 Los datos a trabajar en Pandas van a tener, en general, una forma muy similar a las tablas:
 
-![Esquema de figuras y axes](./imgs/unidad_6/pandas.png)
+![Ejemplo de tabla](./imgs/unidad_6/pandas.png)
 
-Pandas es una biblioteca un poco más pesada, por lo que vamos a poder aprovechar mucho más <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, que maneja grandes datos de forma rápida y eficiente.
+Pandas es una biblioteca un poco más pesada que otras por todo lo que incluye, por lo que vamos a poder aprovechar mucho más <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, que maneja grandes datos de forma rápida y eficiente.
 
 ### Trabajando con archivos CSV
 
-Una de las funcionalidades más útiles de Pandas es la capacidad de leer y escribir archivos CSV de forma muy sencilla. Los archivos CSV (Comma Separated Values) son archivos de texto donde los datos están organizados en filas y columnas, separados por comas o punto y coma.
+Una de las funcionalidades más útiles de Pandas es la capacidad de leer y escribir archivos CSV de forma muy sencilla. Como ya charlamos en la unidad 5, los archivos CSV (Comma Separated Values) son archivos de texto donde los datos están organizados en filas y columnas, separados por comas o punto y coma.
 
 #### Leyendo un archivo CSV
 
@@ -67,15 +67,20 @@ import pandas as pd
 df = pd.read_csv('datos.csv')
 ```
 
-Si el archivo usa punto y coma (`;`) como separador en lugar de coma:
+Si el archivo usa punto y coma (`;`) como separador en lugar de coma, podemos aclararlo:
 
 ```python
 df = pd.read_csv('datos.csv', sep=';')
 ```
 
 :::{.callout-important}
-### ¿Por qué no necesitamos cerrar el archivo?
+### ¿Y no necesitamos cerrar el archivo?
 A diferencia de cuando trabajamos con archivos de texto usando `open()`, con Pandas **no necesitamos cerrar el archivo manualmente**. Esto es porque `read_csv()` lee todo el contenido del archivo de una sola vez, lo carga en memoria como un DataFrame, y automáticamente cierra el archivo. El DataFrame queda en memoria y podemos trabajar con él sin mantener el archivo abierto.
+:::
+
+:::{.callout-warning}
+### ¿Qué beneficio le ves hasta el momento al manejo de archivos con Pandas? 🤔
+¿Qué te llama la atención respecto de lo que vimos en la unidad 5?
 :::
 
 #### Escribiendo un archivo CSV
@@ -87,9 +92,11 @@ Para guardar un DataFrame como archivo CSV usamos `to_csv()`:
 df.to_csv('nuevo_archivo.csv', index=False)
 ```
 
-El parámetro `index=False` evita que se guarde el índice del DataFrame como una columna adicional.
+El parámetro `index=False` evita que se guarde el índice del DataFrame como una columna adicional dentro del archivo, algo que muchas veces no nos aporta información y no es relevante como para guardarlo.
 
 #### Pandas vs. Manipulación manual de archivos
+
+Existen pros y contras de la manipulación de archivos con Pandas, en comparación con una manipulación manual.
 
 | Aspecto | Archivos con `open()` | Archivos con Pandas |
 |---------|----------------------|---------------------|
@@ -104,6 +111,8 @@ El parámetro `index=False` evita que se guarde el índice del DataFrame como un
 - Usá **Pandas** cuando necesites analizar y manipular datos tabulares (CSV, Excel).
 - Usá **`open()` con lectura línea por línea** cuando el archivo sea muy grande y no entre en memoria, o cuando necesites un control más fino sobre el procesamiento.
 :::
+
+Una vez creado nuestro "DataFrame" (en unos momentos definiremos qué es un DataFrame) a partir de un archivo CSV con Pandas, podemos simplemente manipularlo con la biblioteca.
 
 ### Serie
 
@@ -121,12 +130,12 @@ lista = [1, "a", 3.5]
 pd.Series(lista)
 ```
 
-Esto es análogo a lo que se hacía con los arrays de Numpy, pero con la diferencia de que las series de Pandas pueden contener datos de distinto tipo.
+Esto es parecido a las listas de Python.
 
 Notemos que se ven dos líneas verticales de datos en el output. A la derecha se observa una columna con los elementos de la lista antes creada, y a la izquierda se encuentra el **índice**, formado por valores desde 0 a n-1, siendo n la cantidad de elementos. Este índice numérico es el predefinido, que nos muestra la posición de los elementos dentro de la Serie.\
 También podríamos cambiarlo si quisiéramos. En ese caso, se puede establecer utilizando `index`.
 
-El índice es de vital importancia ya que permite acceder a los elementos de la serie (muy parecido a cómo las claves nos permiten acceden a los valores de un diccionario). Al elegir índices personalizados, tenemos que tener en cuenta que su longitud debe ser acorde al número de elementos de la Serie. De lo contrario, se mostrará un ValueError.
+El índice es de vital importancia ya que permite acceder a los elementos de la serie (muy parecido a cómo las claves nos permiten acceden a los valores de un diccionario, o el índice a un elemento de una lista). Al elegir índices personalizados, tenemos que tener en cuenta que su longitud debe ser acorde al número de elementos de la Serie. De lo contrario, se mostrará un ValueError.
 
 ```{python}
 # Crear serie partiendo de una lista, indicando el índice
@@ -155,7 +164,7 @@ a["y"]
 Si los índices son numéricos, simplemente se le pasa entre corchetes un número.
 
 #### Operaciones con Series
-Así como pasaba con los arrays de NumPy, las Series no requieren recorrer valor por valor en un ciclo for si queremos realizar operaraciones. Podemos usar directamente operadores con Series.\
+Las Series no requieren recorrer valor por valor en un ciclo for si queremos realizar operaraciones. Podemos usar directamente operadores con Series.\
 Por ejemplo:
 
 ```{python}
@@ -190,7 +199,7 @@ df = pd.read_csv('estudiantes.csv', sep=';')
 
 #### Creando DataFrames
 
-Para crearlos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes.
+Para crear un dataframe a partir de datos en vez de archivos, se utiliza `DataFrame()` y se ingresan diferentes estructuras como arrays, diccionarios, listas, series u otros dataframes.
 
 En el siguiente ejemplo, se crea un Dataframe partiendo de un diccionario llamado `data` para las columnas y de una lista `label` para el índice:
 
@@ -239,10 +248,12 @@ df = pd.DataFrame(data)
 df
 ```
 
-\
-
 :::{.callout-note}
-Muchas veces no vamos a querer modificar el dataframe original, pero sin manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
+Muchas veces no vamos a querer modificar el dataframe original, pero sí vamos a querer manipularlo. En ese caso, podemos hacer una copia del dataframe original, de esta forma: `df_copy = df.copy()`
+:::
+
+:::{.callout-important}
+Editar un dataframe creado *a partir de un archivo*, no modifica el archivo en sí. Sólo los datos que tenemos en memoria.
 :::
 
 ##### Info, dtypes, columns e index
@@ -656,6 +667,114 @@ except TypeError:
 
 ### Conclusiones
 Pandas nos permite trabajar con datos de una manera muy sencilla y eficiente. Nos permite importar datos de distintas fuentes, limpiarlos, transformarlos y analizarlos. Además, nos permite visualizar los datos de una manera muy amigable, lo que nos va a permitir entender mejor los datos con los que estamos trabajando.
+
+### Ejemplo integrador: Filtrar notas de un alumno
+
+Veamos un ejercicio completo donde aplicamos lo aprendido de Pandas para resolver un problema real.
+
+#### Enunciado
+
+Escribir un programa que reciba por parámetro:
+
+1. La ruta de un archivo CSV con datos de alumnos (formato: `nombre;dni;materia;nota`)
+2. Un número de DNI
+
+El programa debe copiar todas las líneas correspondientes al alumno con ese DNI a un nuevo archivo llamado `<dni>.csv`.
+
+Por ejemplo, si el archivo `alumnos.csv` contiene:
+
+```
+nombre;dni;materia;nota
+Juan Pérez;12345678;Matemática;8
+María García;23456789;Física;9
+Juan Pérez;12345678;Física;7
+Ana López;34567890;Matemática;10
+Juan Pérez;12345678;Química;6
+```
+
+Y ejecutamos el programa con DNI `12345678`, se debe crear un archivo `12345678.csv` con:
+
+```
+nombre;dni;materia;nota
+Juan Pérez;12345678;Matemática;8
+Juan Pérez;12345678;Física;7
+Juan Pérez;12345678;Química;6
+```
+
+#### Resolución paso a paso
+
+```python
+import pandas as pd
+
+def copiar_notas_alumno(archivo_entrada, dni_buscado):
+    # Paso 1: Leer el archivo CSV con Pandas
+    # Usamos sep=';' porque el separador es punto y coma
+    df = pd.read_csv(archivo_entrada, sep=';')
+
+    # Paso 2: Filtrar las filas donde el DNI coincide
+    # Esto nos devuelve un nuevo DataFrame solo con las filas del alumno buscado
+    df_filtrado = df[df['dni'] == dni_buscado]
+
+    # Paso 3: Guardar el resultado en un nuevo archivo CSV
+    # El nombre del archivo será el DNI con extensión .csv
+    ruta_salida = f"{dni_buscado}.csv"
+    df_filtrado.to_csv(ruta_salida, sep=';', index=False) # Esto es lo mismo que usar open(ruta_salida, "w") + writelines.
+```
+
+Ejemplo de uso:
+
+```python
+filtrar_notas_alumno('alumnos.csv', 12345678)
+```
+
+#### Explicación de cada paso
+
+**Paso 1: Leer el archivo CSV**
+
+```python
+df = pd.read_csv(archivo_entrada, sep=';')
+```
+
+- `pd.read_csv()` lee el archivo y lo convierte en un DataFrame
+- `sep=';'` indica que el separador de columnas es el punto y coma
+
+**Paso 2: Filtrar por DNI**
+
+```python
+df_filtrado = df[df['dni'] == dni_buscado]
+```
+
+Esta línea hace lo siguiente:
+
+1. `df['dni']` accede a la columna `dni` del DataFrame
+2. `df['dni'] == dni_buscado` compara cada valor con el DNI buscado, devolviendo `True` o `False` para cada fila
+3. `df[...]` filtra el DataFrame, quedándose solo con las filas donde la condición es `True`
+
+El resultado es un nuevo DataFrame con todas las filas del alumno.
+
+**Paso 3: Guardar en un nuevo archivo**
+
+```python
+ruta_salida = f"{dni_buscado}.csv"
+df_filtrado.to_csv(ruta_salida, sep=';', index=False)
+```
+
+- Construimos el nombre/ruta del archivo de salida usando el DNI
+- `to_csv()` guarda el DataFrame como archivo CSV
+- `sep=';'` mantiene el mismo separador que el archivo original
+- `index=False` evita que se agregue una columna extra con los índices
+
+En este caso, usar `to_csv` nos ahorra usar `open(ruta_salida, "w")` para crear el archivo, y luego `writelines` para escribir en el mismo.
+
+:::{.callout-tip}
+### Ventajas de usar Pandas para este ejercicio
+Comparado con la manipulación manual de archivos (usando `open()` y recorriendo línea por línea), con Pandas:
+
+- No necesitamos parsear manualmente cada línea ni separar por `;`
+- El filtrado se hace en una sola línea de código
+- La escritura del archivo mantiene automáticamente el formato correcto
+- El código es más legible y fácil de mantener
+:::
 
 ## NumPy
 

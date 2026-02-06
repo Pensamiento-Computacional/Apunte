@@ -1,6 +1,6 @@
 ## Guía 4: Tipos de Estructuras de Datos
 
-### 1. Cadenas de caracteres
+### 4.1. Cadenas de caracteres
 
 1. Escribir funciones que dada una cadena y un caracter:
 
@@ -39,7 +39,7 @@
 
 9. **Desafío** (no obligatorio): Escribir una función que reciba dos cadenas de caracteres y devuelva una lista con todos los caracteres que no tienen en común. Ejemplo: `'Python'` y `'Hola'` debería devolver el conjunto de letras `['P', 'y', 't', 'l', 'a', 'n']`, indiferentemente del orden y de si está en mayúscula o minúscula. Nota: para que un caracter esté en la lista, no es necesario que esté en la misma posición.
 
-### 2. Rangos, Tuplas y Listas
+### 4.2. Rangos, Tuplas y Listas
 
 1. Usar un rango para:
 
@@ -179,7 +179,7 @@ Se cuenta con una lista ordenada de productos con tuplas de (identificador, desc
 20. Se tiene una base de datos con nombres de libros de la siguiente forma `["La Noche de la Usina", "La Pregunta de sus Ojos", "Ser Feliz era Esto",...]`, y se quiere saber cuántos libros repetidos tienen. Escribir una función que reciba la base de datos y devuelva, para cada uno de los títulos, cuántos ejemplares hay. La lista no tiene un tamaño fijo, y puede contener muchos títulos repetidos.\
 Pista: tenés que usar un diccionario.
 
-### 3. Diccionarios
+### 4.3. Diccionarios
 
 1. Escribir una función que reciba una lista de tuplas, y que devuelva un diccionario en donde las claves sean los primeros elementos de las tuplas, y los valores una lista con los segundos.
 Por ejemplo:
@@ -253,7 +253,7 @@ print(tuplas_a_diccionario(l))
 
 14. En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.
 
-    Se pude hacer una función que reciba esta lista de diccinoarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.
+    Se pude hacer una función que reciba esta lista de diccionarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.
 
 15. Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).
 
@@ -305,44 +305,61 @@ Se quiere que el usuario que está usando el programa pueda acceder por pantalla
     o sacar turno para donar sangre en\
     [https://www.donarg.com.ar/dondedono](https://www.donarg.com.ar/dondedono).
 
-### Evaluación de Código
+### 4.4. Evaluación de Código
 
 :::{.callout-note}
 En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
 :::
 
-1. El siguiente código intenta obtener el último elemento de una lista, pero produce un error. Identificá por qué falla y corregilo.
+1. El siguiente código intenta obtener el último elemento de una lista, pero contiene errores. Identificá por qué falla y corregilo.
 
     ```python
-    def obtener_ultimo(lista):
+    def obtener_ultimo():
         ultimo = lista[len(lista)]
         return ultimo
-
-    numeros = [10, 20, 30, 40, 50]
-    print(obtener_ultimo(numeros))
     ```
 
-2. El siguiente código intenta modificar una tupla, pero produce un error. Explicá por qué ocurre y proponé una solución alternativa.
+2. El siguiente código intenta modificar una tupla, pero contiene errores. Explicá qué ocurre y proponé una solución alternativa.
 
     ```python
     def cambiar_segundo_elemento(tupla, nuevo_valor):
         tupla[1] = nuevo_valor
         return tupla
-
-    mi_tupla = (1, 2, 3)
-    resultado = cambiar_segundo_elemento(mi_tupla, 100)
-    print(resultado)
     ```
 
-3. El siguiente código intenta contar la cantidad de veces que aparece cada letra en una palabra usando un diccionario, pero tiene un error. Identificá cuál es y corregilo.
+3. El siguiente código intenta contar la cantidad de veces que aparece cada letra en una palabra usando un diccionario, pero presenta varios problemas. Identificá cuál es y corregilo.
 
     ```python
+    contador = {
+        'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'g': 0, 'h': 0, 'i': 0, 'j': 0, 'k': 0, 'l': 0, 'm': 0, 'n': 0, 'o': 0, 'p': 0, 'q': 0, 'r': 0, 's': 0, 't': 0, 'u': 0, 'v': 0, 'w': 0, 'x': 0, 'y': 0, 'z': 0
+    }
+
     def contar_letras(palabra):
-        contador = {}
         for letra in palabra:
             contador[letra] = contador[letra] + 1
         return contador
+    ```
 
-    resultado = contar_letras("hola")
-    print(resultado)
+4. En una biblioteca se tiene un catálogo de libros donde cada código de libro es una clave de un diccionario. Los valores son diccionarios con la información del libro: título, autor y si está disponible para préstamo o no.
+
+    El siguiente código intenta eliminar del catálogo todos los libros que no están disponibles y devolver en una tupla los libros eliminados. Identificá los errores y corregilo.
+
+    ```python
+    # Ejemplo de catálogo de libros
+    catalogo = {
+        "LIB001": {"titulo": "Cien años de soledad", "autor": "García Márquez", "disponible": True},
+        "LIB002": {"titulo": "El túnel", "autor": "Ernesto Sabato", "disponible": False},
+        "LIB003": {"titulo": "Rayuela", "autor": "Julio Cortázar", "disponible": True},
+        "LIB004": {"titulo": "Ficciones", "autor": "Jorge Luis Borges", "disponible": False},
+    }
+    ```
+
+    ```python
+    def eliminar_no_disponibles_devolver_eliminados_de_diccionario(libros):
+        eliminados = {}
+        for codigo in libros:
+            if libros[codigo]["disponible"] == False and libros[codigo]["disponible"] != True:
+                eliminados.append(libros[codigo])
+                del libros[codigo]
+        return eliminados.filter( { libros[codigo]["disponible"] != True })
     ```

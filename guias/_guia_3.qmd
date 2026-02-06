@@ -1,6 +1,6 @@
 ## Guía 3: Estructuras de Control
 
-### 1. Decisiones
+### 3.1. Decisiones
 
 1. Escribir una función que, dado un número entero $n$, calcule si es impar o no.
 
@@ -95,7 +95,7 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
 
 7. Suponiendo que el primer día del año fue lunes, escribir una función que reciba un número con el día del año (de 1 a 366) y devuelva el día de la semana que le toca. Por ejemplo: si se recibe '3', debe devolver "miércoles", y si se recibe '9', debe devolver "martes".
 
-### 2. Ciclos
+### 3.2. Ciclos
 
 1. Escribir función que:
     a. Imprima por pantalla todos los números entre 10 y 20.
@@ -261,50 +261,48 @@ Una biblioteca es un conjunto de funciones que alguien más escribió y que pode
     b. Adicional al punto anterior: imprimir un mensaje informándole al usuario la cantidad de ejercicios y el % de aprobación.\
     Validar que el usuario siempre ingrese números positivos y menor o iguales a la cantidad de ejercicios del examen, o "*". De lo contrario, mostrar un mensaje de error y volver a pedirle el dato al usuario.
 
-### Evaluación de Código
+### 3.3. Evaluación de Código
 
 :::{.callout-note}
 En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
 :::
 
-1. El siguiente código intenta verificar si un número está entre 1 y 10 (inclusive), pero no funciona correctamente para todos los casos. Identificá el error lógico y corregilo.
+1. El siguiente código intenta verificar si un número está entre 1 y 10 (inclusive), pero no funciona correctamente para todos los casos y tiene varios problemas. Identificá lo que está mal y corregilo.
 
     ```python
-    def esta_en_rango(numero):
-        if numero > 1 and numero < 10:
-            return True
+    def esta_en_rango_entre_numero_1_y_10_con_extremos_inclusive(numero):
+        if numero > 1:
+            if numero < 10:
+                return True
+            else:
+                return False
         else:
             return False
 
+    # Pruebas:
     print(esta_en_rango(1))   # Debería dar True
     print(esta_en_rango(5))   # Debería dar True
     print(esta_en_rango(10))  # Debería dar True
     ```
 
-2. El siguiente código intenta sumar los números del 1 al 5 usando un ciclo while, pero entra en un bucle infinito. Identificá el error y corregilo.
+2. El siguiente código intenta sumar los números del 1 al N usando un ciclo while, pero ocurre un error. Identificá los posibles problemas y corregilo.
 
     ```python
-    def sumar_hasta(n):
+    def suma_hasta(n):
         suma = 0
         i = 1
         while i <= n:
             suma = suma + i
         return suma
-
-    resultado = sumar_hasta(5)
-    print("La suma es:", resultado)
     ```
 
-3. El siguiente código intenta contar cuántos números pares hay en un rango, pero el resultado siempre es incorrecto. Identificá el error y corregilo.
+3. El siguiente código intenta contar cuántos números pares hay en un rango, pero el resultado siempre es incorrecto. Identificá los posibles problemas y corregilo.
 
     ```python
-    def contar_pares(inicio, fin):
+    def contar(i, f):
         contador = 0
-        for i in range(inicio, fin):
+        for i in range(i, f):
             if i % 2 == 0:
-                contador = contador + 1
+                contador = 1
             return contador
-
-    resultado = contar_pares(1, 10)
-    print("Cantidad de pares:", resultado)  # Debería dar 4 (2, 4, 6, 8)
     ```

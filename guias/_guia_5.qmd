@@ -1,6 +1,6 @@
 ## Guía 5: Entrada y Salida
 
-### 1. Archivos
+### 5.1. Archivos
 
 1. Escribir una función llamada `contar` (o `count`) que dado un archivo retorne la cantidad de filas que tiene.
 
@@ -21,19 +21,21 @@
 
 9. Sea un diccionario cuyas claves y valores son cadenas.
 
-    a. Escribir una función `guardar_diccionario` que reciba el diccionario y un nombre de archivo, y guarde el contenido del diccionario en el archivo de texto, con un par clave-valor por línea separados por dos puntos. Ejemplo: `nombre: Juan`.
+    a. Escribir una función `guardar_diccionario` que reciba el diccionario y un nombre de archivo, y guarde el contenido del diccionario en el archivo, en formato CSV, con un par clave-valor por línea.
     b. Escribir una función `cargar_diccionario` que reciba el nombre de un archivo con el formato mencionado en el punto anterior, y devuelva el diccionario original.
 
 10. **Desafío** (obligatorio): Distribución de Carga\
 Se tiene un archivo de texto muy grande con un libro completo. Como el archivo es muy pesado para procesarlo de una vez, se quiere dividir en archivos más pequeños.
 
-    Utilizando las funciones de los ejercicios 1 a 7, procesar el archivo: Se desea que el archivo original se separe en archivos resultantes de no más de 50 líneas cada uno, además no tienen que quedar líneas en blanco. Por ejemplo si el archivo original tiene 200 líneas de las cuales 20 están en blanco, el resultado del procesamiento tienen que ser 4 archivos de no más de 50 líneas cada uno (sin líneas en blanco). El tamaño del archivo original puede variar en cada ejecución.
+    Procesar el archivo: Se desea que el archivo original se separe en archivos resultantes de no más de 50 líneas cada uno, además no tienen que quedar líneas en blanco. Por ejemplo si el archivo original tiene 200 líneas de las cuales 20 están en blanco, el resultado del procesamiento tienen que ser 4 archivos de no más de 50 líneas cada uno (sin líneas en blanco). El tamaño del archivo original puede variar en cada ejecución.
+    De necesitarlo, se pueden usar las funciones pedidas en los ejercicios anteriores.
 
 11. La señora Rowling sospecha que su vecino le robó algunos manuscritos y los publicó como propios con algunas modificaciones. Se desea procesar una lista de archivos de texto y guardar en un archivo llamado `reporte_plagio.txt` la siguiente información por cada archivo procesado:
 
-    - nombre del archivo
-    - cantidad de palabras
-    - cantidad de veces que aparece una palabra especificada
+    ```bash
+    archivo;palabras;apariciones
+    archivo1.txt;765030;547
+    ```
 
     Un ejemplo de uso podría ser:
 
@@ -56,61 +58,66 @@ Se tiene un archivo de texto muy grande con un libro completo. Como el archivo e
     ```
 
     a. Hacer una función que lea el archivo y devuelva dos listas: una con las tareas pendientes y otra con las tareas completadas.
-    b. Hacer una función que reciba una descripción de tarea y la agregue al archivo como pendiente.
+    b. Hacer una función que le pida al usuario la descripción de una tarea y la agregue al final del archivo como pendiente. Debe seguir pidiéndole al usuario descripciones de tareas hasta que este ingrese como tarea "X".
     c. Hacer una función que reciba un número de línea y marque esa tarea como completada.
 
-14. Se tienen dos archivos de texto: uno con nombres de estudiantes y otro con sus notas (cada estudiante en la misma línea que su nota correspondiente). Se pide leer ambos archivos y crear un nuevo archivo que combine la información.
+14. En un cine tienen dos archivos .txt, uno con salas y otro con nombres de películas. Se sabe que en la sala de una fila del archivo se va a transmitir la película de la misma fila del archivo de películas. Se pide leer los dos archivos, y crear un nuevo archivo csv que tenga el nuevo formato sala;pelicula
 
     Por ejemplo si se tienen los siguientes archivos:\
 
-    (estudiantes.txt)
-    ```
-    Ana García
-    Juan Pérez
-    María López
+    (salas.txt)
+
+    ``` bash
+    D2
+    F1
+    E4
     ```
 
-    (notas.txt)
-    ```
-    8
-    6
-    9
+    (peliculas.txt)
+
+    ``` bash
+    Megamente
+    The Menu
+    Shrek
     ```
 
     El nuevo archivo deberá quedar:\
-    (resultados.txt)
-    ```
-    Ana García: 8
-    Juan Pérez: 6
-    María López: 9
+    (funciones.csv)
+
+    ``` bash
+    D2;Megamente
+    F1;The Menu
+    E4;Shrek
     ```
 
-15. Se tiene un archivo de texto con un diario personal. Cada entrada comienza con una fecha en formato `[DD/MM/AAAA]` seguida del texto de ese día.
+15. Se tiene un archivo con información de ventas de productos en un supermercado. El archivo tiene el siguiente formato:
 
-    Ejemplo de archivo `diario.txt`:
-    ```
-    [15/03/2024]
-    Hoy fue un día productivo.
-    Terminé de estudiar el capítulo 3.
-    [16/03/2024]
-    No pude concentrarme mucho.
-    Mañana será mejor.
-    [18/03/2024]
-    Excelente día, aprobé el parcial!
+    ``` bash
+    producto;precio;cantidad;fecha
+    arroz;50;100;2021-01-01
+    fideos;40;200;2021-01-01
+    arroz;50;100;2021-01-02
+    fideos;40;200;2021-01-02
+    arroz;50;100;2021-01-03
+    fideos;40;200;2021-01-03
     ```
 
-    a. Hacer una función que reciba el archivo y una fecha, y devuelva el contenido de esa entrada.
-    b. Hacer una función que cuente cuántas entradas tiene el diario.
-    c. Hacer una función que agregue una nueva entrada con la fecha actual y un texto recibido por parámetro.
+    Se pide hacer una función que reciba el nombre del archivo y un producto, y devuelva el precio promedio de ese prod_en el archivo.
 
 16. Se tiene una lista de archivos y se quiere imprimir las primeras 5 líneas de cada uno. Si el archivo no existe, se lo debe crear e imprimir el mensaje: 'el archivo {nombre} no existe. Se crea y deja vacío.'.
 
 17. **Desafío** (obligatorio): Los docentes de Pensamiento Computacional saben que los ejercicios de las primeras guías son cortitos de resolver, entonces les dicen a los estudiantes que "si el ejercicio tiene más de 5 líneas, probablemente haya que revisarlo". Los estudiantes se lo toman muy literal, y quieren buscar la forma de chequear si un ejercicio que resolvieron tiene más de 5 líneas, pero sin contar a la firma de la función.\
 El ejercicio puede estar guardado en un archivo o en un string todo junto, lo que resulte más cómodo para su resolución. Además, quieren la posibilidad de poder pasar varios ejercicios juntos para ahorrar tiempo, y saber en cuáles se pasaron de las 5 líneas o si algun archivo (en caso de elegir esa forma de almacenamiento) no existe. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
 
-18. **Desafío** (obligatorio): Los estudiantes del CBC pensaron que podía ser buena idea guardar los apuntes de todas las materias en un mismo archivo, para no marearse con tantos documentos diferentes. Pero terminó siendo un dolor de cabeza y es muy dificil encontrar las notas de cada materia. Para poder acceder facil a esa informacion, decidieron extraer del archivo original la informacion de las notas. Sabemos que a cada materia se le puso de título un hashtag, por ejemplo "#analisisMatematico", y que la fila que contiene un título no contiene nada más. Lo que se quiere hacer es obtener un archivo de texto con el nombre de la sección/materia, la línea donde comienza y la línea donde termina. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
+18. **Desafío** (obligatorio): Los estudiantes del CBC pensaron que podía ser buena idea guardar los apuntes de todas las materias en un mismo archivo, para no marearse con tantos documentos diferentes. Pero terminó siendo un dolor de cabeza y es muy dificil encontrar las notas de cada materia. Para poder acceder facil a esa informacion, decidieron extraer del archivo original la informacion de las notas. Sabemos que a cada materia se le puso de título un hashtag, por ejemplo "#analisisMatematico", y que la fila que contiene un título no contiene nada más. Lo que se quiere hacer es obtener un archivo de texto con el nombre de cada sección/materia, donde el contenido del mismo es el número de línea donde comienza la sección y el número de línea donde termina, separados por `;`. Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
 
-### 2. Manejo de Errores
+    Por ejemplo, el archivo `analisisMatematico.txt` podría ser:
+    
+    ```bash
+    3;97
+    ```
+
+### 5.2. Manejo de Errores
 
 1. Crear una función que asegure la apertura de un archivo. Debe recibir un nombre y si el archivo existe, retorna el contenido archivo. Si no existe, imprime un mensaje descriptivo.
 
@@ -133,10 +140,11 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 
 5. Se tiene un archivo de texto donde cada línea contiene dos números separados por un espacio. Se debe leer el archivo y, por cada línea, realizar la división del primer número por el segundo. Los resultados se guardan en un archivo llamado "resultados.txt".
 
-    Tener en cuenta que en el archivo se pueden encontrar filas con errores: el divisor podría ser 0 o los valores podrían no ser números. En esos casos, en lugar de escribir el resultado, escribir "Error en la línea X: {descripción específica del error}" donde X es el número de línea.
+    Se debe tener en cuenta que en el archivo se pueden encontrar filas con errores. En esos casos, en lugar de escribir el resultado, escribir "Error en la línea X: {descripción específica del error}" donde X es el número de línea.
 
     Ejemplo de archivo de entrada:
-    ```
+    
+    ```bash
     100 5
     50 0
     abc 10
@@ -210,52 +218,87 @@ El ejercicio puede estar guardado en un archivo o en un string todo junto, lo qu
 
     Se debe considerar que el usuario podría ingresar una opción que no está en el diccionario, o ingresar una opción que no sea un número. El programa debe en esos casos imprimir un mensaje de error que sea descriptivo y terminar su ejecución.
 
-### Evaluación de Código
+### 5.3. Evaluación de Código
 
 :::{.callout-note}
 En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
 :::
 
-1. El siguiente código intenta leer un archivo y contar las líneas, pero no funciona correctamente. Identificá el error y corregilo.
+1. El siguiente código intenta leer un archivo y contar las líneas, pero presenta varios problemas. Identificalos y corregilos.
 
     ```python
     def contar_lineas(nombre_archivo):
-        archivo = open(nombre_archivo, 'r')
-        lineas = archivo.readlines()
+        archivo = open(nombre_archivo, 'w')
+        contenido = archivo.read()
+        lineas = contenido.split("\n")
         cantidad = len(lineas)
         return cantidad
-
-    resultado = contar_lineas("datos.txt")
-    print("El archivo tiene", resultado, "líneas")
-    # Si se ejecuta muchas veces, podría causar problemas
     ```
+    <!-- No está cerrando el archivo -->
 
-2. El siguiente código intenta escribir una lista de nombres en un archivo, pero sobrescribe el contenido en cada iteración. Identificá el error y corregilo.
+2. El siguiente código intenta escribir una lista de nombres en un archivo, pero presenta varios problemas. Identificalos y corregilos.
 
     ```python
-    def guardar_nombres(lista_nombres, nombre_archivo):
+    def guardar(lista_nombres, nombre_archivo):
         for nombre in lista_nombres:
             archivo = open(nombre_archivo, 'w')
             archivo.write(nombre + '\n')
             archivo.close()
-
-    nombres = ["Ana", "Juan", "María", "Pedro"]
-    guardar_nombres(nombres, "nombres.txt")
-    # Al final el archivo solo contiene "Pedro"
     ```
 
-3. El siguiente código intenta manejar el caso en que un archivo no existe, pero el manejo de errores no está completo. Identificá el problema y corregilo.
+    <!-- Al final de la ejecición, el archivo sólo tiene "pedro". Ademas, se abre y cierra el archivo varias veces. -->
+
+3. El siguiente código intenta leer un archivo y devolver su primera línea. Si el archivo no existe, debe devolver None. Identificá los problemas y corregilos.
 
     ```python
-    def leer_archivo_seguro(nombre_archivo):
+    def leer_primera_linea(nombre_archivo):
         try:
             archivo = open(nombre_archivo, 'r')
             contenido = archivo.read()
-            return contenido
+            lineas = contenido.split("\n")
+            return lineas[0]
         except:
             print("Ocurrió un error")
-
-    resultado = leer_archivo_seguro("archivo_inexistente.txt")
-    print("Contenido:", resultado)
-    # ¿Qué valor tiene resultado si el archivo no existe?
+            return None
     ```
+    <!-- Mucho codigo en try. Mal uso de read, poco eficiente (puede usar readline). No cierra el archivo-->
+    <!--
+    ```python
+    def leer_primera_linea(nombre_archivo):
+        try:
+            # tambien se puede usar with open
+            archivo = open(nombre_archivo, 'r')
+        except:
+            print("Ocurrió un error")
+            return None
+        
+        primera_linea = archivo.readline()
+        archivo.close()
+        return contenido.primera_linea
+    ```
+    -->
+
+4. El siguiente codigo es un buscador de palabras en un archivo que sabemos que tiene más de un millón de líneas y es muy pesado. La función recibe una ruta de archivo y una palabra, y devuelve una lista con los números de las líneas en donde se encontró la palabra. Si el archivo no existe, se debe devolver una lista vacía. Identificar los problemas y corregirlo.
+
+    ```python
+    def encontrar_apariciones(nombre_archivo, palabra):
+        try:
+            archivo = open(nombre_archivo, 'r')
+            contenido = archivo.read()
+            lineas = contenido.split("\n")
+
+            indice_linea = 1
+            for linea in lineas:
+                apariciones = []
+
+                if linea in palabra:
+                    apariciones.append(palabra)
+                else:
+                    palabra = None
+
+            return lineas
+        except:
+            print("Ocurrió un error")
+            return None
+    ```
+    <!-- Mucho codigo en try. Mal uso de read, poco eficiente (puede usar readline). No cierra el archivo. La logica del for reinicia las apariciones en cada iteracion. "for linea in palabra" no tiene sentido. Appendea palabra, no el numero de linea. Nunca actualiza "indice_linea". El "else" es innecesario y ademas resetea la palabra. Se devuelve lineas en vez de apariciones. En el except, se devuelve None en vez de una lista vacia.-->
