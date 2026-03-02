@@ -554,3 +554,51 @@ En estos ejercicios se presenta código con errores, malas prácticas de program
     ```
 
      <!-- El acceso a las columnas no es correcto, el calculo tampoco -->
+
+4. Leer el siguiente código. Identificar y explicar qué es lo que hace. El código contiene tres errores; identificarlos y solucionarlos.
+
+    ```python
+    import pandas as pd
+
+    def analizar_control_calidad(archivo):
+        df = pd.read_csv(archivo)
+        
+        yogures = df[df['producto'] == 'yogur']
+        yogures_validos = yogures[yogures['volumen_ml'].notnull()]
+        total_volumen = yogures_validos[ yogures_validos['volumen_ml'].sum() ]
+        
+        completos = df['volumen_ml'].notnull() & df['temperatura_c'].notnull()
+        cant_completos = len(completos)
+        
+        aptos = df[df['estado'] == 'aprobado']
+        cant_aptos = len(aptos)
+        
+        total = len(df)
+        cant_incompletos = total - cant_completos
+        porcentaje_incompletos_del_total = (cant_incompletos / cant_completos) * 100
+        
+        lote_observado = porcentaje_incompletos_del_total >= 30
+        
+        resumen = {
+            'concepto': [
+                'Volumen total yogur',
+                'Registros totales',
+                'Registros completos',
+                'Lotes aptos',
+                'Porcentaje incompletos',
+                'Lote observado'
+            ],
+            'valor': [
+                total_volumen,
+                total,
+                cant_completos,
+                cant_aptos,
+                f"{porcentaje_incompletos_del_total:.0f}%",
+                lote_observado
+            ]
+        }
+        
+        df_resumen = pd.DataFrame(resumen)
+        df_resumen.to_csv('control_calidad.csv', index=False)
+        print("Reporte generado exitosamente: control_calidad.csv")
+    ```
