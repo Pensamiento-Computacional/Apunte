@@ -185,6 +185,7 @@ unidad_6.qmd       (reordenado + CSV en Pandas)
 2. Archivos CSV con Pandas (Unidad 6)
 
 **Ventajas:**
+
 - Se enseña la herramienta correcta para cada tarea
 - Pandas es el estándar en la industria para datos tabulares
 - Se evita enseñar patrones que los estudiantes no usarán
