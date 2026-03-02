@@ -100,22 +100,28 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 
 **Cambios estructurales:**
 - Reordenamiento: Sección 1 (Pandas), Sección 2 (NumPy), Sección 3 (Matplotlib)
-- Nueva subsección "1.1. Lectura y Escritura de Archivos CSV" con 5 ejercicios
-- Ejercicios originales de DataFrames movidos a "1.2. Operaciones con DataFrames"
+- Nueva subsección "1.2. Lectura y Escritura de Archivos CSV" con 9 ejercicios
+- Ejercicios originales de DataFrames en "1.1. Operaciones Básicas con DataFrames"
 
-**Nuevos ejercicios de CSV (sección 1.1):**
+**Ejercicios de CSV (sección 1.2):**
 
-| Ejercicio | Tema |
-|-----------|------|
-| 1 | Archivo `futbol.csv` - filtrar goleadores |
-| 2 | Archivo `ventas_supermercado.csv` - calcular totales |
-| 3 | Archivo `peliculas.csv` - filtrar y agrupar |
-| 4 | Archivo de temperaturas - promedios y filtros |
-| 5 (Desafío) | Archivo `cine.csv` - análisis de ventas de entradas |
+| Ejercicio | Tema | Conceptos |
+|-----------|------|-----------|
+| 1 | Archivo `futbol.csv` - filtrar goleadores | `read_csv`, filtrado, `to_csv` |
+| 2 | Archivo `compras_supermercado.csv` - calcular totales | Columnas calculadas, `sum()` |
+| 3 | Archivo de stock de librería | Agregar datos con `input()` |
+| 3 | Archivo `peliculas.csv` - filtrar por calificación | Filtrado, promedio |
+| 4 | Archivo de temperaturas - promedios y filtros | Columnas calculadas, `to_csv` |
+| 5 (Desafío) | Archivo `cine.csv` - análisis de ventas | `sort_values`, `head` |
+| 6 | Yerba "La Hoja Verde" - control de calidad | Filtrado por rangos, asignación de columnas |
+| 7 | Logística "Rapiflash" - cumplimiento de rutas | Múltiples archivos, `try/except`, diferencias |
+| 8 | Fábrica de alimentos - datos faltantes | `notnull()`, `isnull()`, porcentajes |
+| 9 | Bibliotecas Abiertas - registro de voluntarios | Múltiples archivos, `try/except`, errores a CSV |
 
 **Justificación:**
 - Los ejercicios de CSV que antes estaban en la Guía 5 ahora están donde corresponden
 - Se mantiene consistencia con el contenido teórico de la Unidad 6
+- Los ejercicios 6-9 practican casos más complejos: múltiples archivos, manejo de errores, datos faltantes
 
 ---
 
@@ -134,7 +140,7 @@ Se agregó una nueva sección al final de cada guía (excepto Guía 1) con ejerc
 | 3 | Error en condición de rango | Bucle infinito (falta incremento) | `return` mal indentado | - |
 | 4 | Error de índice (off-by-one) | Intento de modificar tupla | KeyError en diccionario | Modificar diccionario mientras se itera |
 | 5 | Archivo no cerrado | Modo de apertura incorrecto | Manejo de excepciones incompleto | - |
-| 6 | Comparación string vs int en Pandas | Uso ineficiente de NumPy | Typo en nombre de columna | - |
+| 6 | Comparación string vs int en Pandas | Uso ineficiente de NumPy | Typo en nombre de columna | Análisis de control de calidad (múltiples errores) |
 
 **Justificación:**
 - Responde a la nueva realidad donde los estudiantes usan IA para generar código
