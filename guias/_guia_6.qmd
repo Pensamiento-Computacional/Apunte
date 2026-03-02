@@ -1,6 +1,276 @@
 # Guía 6: Bibliotecas de Python
 
-## 1. Numpy
+## 1. Pandas
+
+:::{.callout-note}
+Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
+:::
+
+### 1.1. Operaciones Básicas con DataFrames
+
+Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
+
+Usando el siguiente DataFrame:
+```{python}
+import pandas as pd
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela', 'Lucia', 'Emilia', 'Mariana', 'Aldo'],
+    'apellido': ['Perez', 'Guanca', 'Gomez', 'Capon', 'Duzac', 'Szischik', 'Rastrelli'],
+    'dni': [42000000, 42001001, 42002002, 37010020, 40001002, 38090080, 38111222],
+    'año_nac': [1997, 1998, 1998, 1993, 2003, 1993, 1994],
+    'mail': ['vp@fi.uba.ar', 'cg@fi.uba.ar', None, None, None, 'ms@fi.uba.ar', 'ar@fi.uba.ar'],
+    'carrera': ['Informática', 'Mecánica', 'Química', 'Informática', 'Informática', 'Electrónica', 'Informática']
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+6. Mostrar el resumen de la información del DataFrame
+7. Mostrar su forma
+8. Mostrar la lista de los nombres de las columnas
+9. Mostrar las primeras 3 filas
+10. Mostrar las últimas 3 filas
+11. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
+12. Mostrar a los estudiantes que tienen edad mayor a 25.
+13. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
+14. Mostrar a la persona que es más joven.
+15. Mostrar a la persona que se encuentra en la mitad de la tabla.
+16. Mostrar sólo las columnas: "carrera" y "edad".
+17. Mostrar sólo los estudiantes que estudian Informática.
+18. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
+19. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
+20. Mostrar la cantidad de estudiantes por carrera.
+21. Renombrar la columna "carrera" por "ingeniería".
+22. Para la primer estudiante, cambiar su carrera a "Electrónica".
+23. Agregar una nueva fila al DataFrame con tus datos.
+24. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
+25. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
+26. Ordenar el dataFrame por carrera y apellido, en ese orden.
+27. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
+
+28. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
+Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
+a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
+Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
+
+```{python}
+data = {
+    'nombre': ['Violeta', 'Carla', 'Manuela'],
+    'apellido': ['Perez', 'Guanca', 'Gomez'],
+    'dni': [42000000, 42001001, 42002002],
+    'carrera': ['Informática', 'Mecánica', 'Química'],
+    'nota': [7, 4, 6],
+    'intento': [1, 2, 1]
+}
+
+df_notas = pd.DataFrame(data)
+df_notas
+```
+
+29. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
+Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
+
+```{Python}
+data = {
+    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
+    'año': [2001, 2003, 1972, 2040],
+    'puntuacion': [8, 9, 8, 3]
+}
+
+df_pelis = pd.DataFrame(data)
+df_pelis
+```
+
+### 1.2. Lectura y Escritura de Archivos CSV
+
+1. Se tiene un archivo CSV llamado `futbol.csv` con información de jugadores de fútbol. El archivo tiene las columnas: nombre, equipo, posicion, goles, asistencias.
+
+    a. Leer el archivo usando Pandas y mostrar las primeras 5 filas.
+    b. Mostrar la información del DataFrame (tipos de datos, cantidad de filas, etc.).
+    c. Guardar sólo los jugadores que tienen más de 10 goles en un nuevo archivo llamado `goleadores.csv`.
+
+2. Se tiene un archivo CSV llamado `compras_supermercado.csv`, donde se describen las compras realizadas por una empresa para el desayuno de sus empleados. El archivo tiene las columnas: fecha, producto, cantidad, precio_unitario.
+
+    a. Leer el archivo y agregar una nueva columna `total` que indique el precio total que se tiene del producto, según la cantidad y el precio unitario.
+    b. Guardar el resultado en un nuevo archivo llamado `compras_con_total.csv`.
+    c. Calcular el gasto total de la compra e imprimirlo por pantalla.
+
+3. Se tiene un archivo CSV que contiene información sobre el stock de una librería. Un posible ejemplo de este archivo es el siguiente:
+
+    ``` bash
+        lapiceras;34512;50;120
+        cuadernos;41611;500;130
+        sacapuntas;62812;30;210
+    ```
+
+    Donde cada línea representa un prod y contiene el nombre del producto, el código de barras, la cantidad en stock y el precio unitario. Hacer una función que reciba la ruta del archivo y le solicite al usuario datos de un nuevo producto y lo agregue al final del archivo. Debe seguir pidiéndole al usuario datos de productos hasta que este ingrese como producto "X".
+    Hacer una función que reciba la ruta del archivo y realice lo pedido.
+    Considerar que el archivo podría no existir. En ese caso, retornar.
+
+3. Se tiene un archivo CSV llamado `peliculas.csv` con las columnas: titulo, año, genero, calificacion.
+
+    a. Leer el archivo y filtrar sólo las películas con calificación mayor a 7.
+    b. Calcular el promedio de calificación de todas las peliculas.
+    c. Guardar las películas de género "Acción" en un archivo llamado `peliculas_accion.csv`.
+
+4. Se tiene un archivo CSV con datos de temperaturas diarias de una ciudad. Las columnas son: fecha, temperatura_min, temperatura_max.
+
+    a. Leer el archivo y agregar una columna con la temperatura promedio del día.
+    b. Encontrar el día con la temperatura máxima más alta y el día con la temperatura mínima más baja. Mostrar todos sus datos.
+    c. Guardar los días donde la temperatura promedio superó los 25 grados en un archivo llamado `dias_calurosos.csv`.
+
+5. **Desafío** (obligatorio): Una empresa de cine quiere analizar sus datos de venta de entradas por película de un sábado por la noche. Se tiene un archivo `cine.csv` con las columnas: pelicula, sala, fecha, horario, entradas_vendidas, precio_entrada. Las películas no se repiten.
+
+    a. Leer el archivo y calcular los ingresos totales. Mostrarlos en pantalla.
+    b. Obtener la película más taquillera (la que más ingresos generó).
+    c. Encontrar las 5 peliculas que tuvieron más entradas vendidas, y mostrar su nombre y su sala.
+    d. Guardar los datos "pelicula, fecha, horario" por cada película, en un archivo llamado `historial_proyecciones_peliculas.csv`.
+
+6. La empresa yerbatera "La Hoja Verde" realiza controles de calidad diarios en sus lotes de producción. Cada lote es analizado para medir el **porcentaje de palo** (ramas) que contiene, ya que un exceso afecta la calidad del producto. La información se guarda en un archivo CSV con las columnas: **lote**, **fecha**, **porcentaje_palo**, **humedad**.
+
+    Los tres tipos de calidad son:
+
+    - **Premium**: menor a 15% palo
+    - **Estándar**: entre 15% y 30% palo
+    - **Baja**: mayor a 30% palo
+
+    Se pide:
+
+    a. Filtrar los lotes por cada tipo de calidad y agregar a cada grupo una columna `calidad` con el valor correspondiente.
+    b. Mostrar los 3 lotes con mayor porcentaje de palo.
+    c. Mostrar solo los lotes de calidad Premium.
+
+    Ejemplo de archivo `control_calidad_yerba.csv`:
+
+    ```
+    lote,fecha,porcentaje_palo,humedad
+    Lote A,2026-02-19,12.5,9.8
+    Lote B,2026-02-19,28.3,11.2
+    Lote C,2026-02-20,8.2,10.5
+    Lote D,2026-02-20,32.7,8.9
+    Lote E,2026-02-21,18.4,9.3
+    Lote F,2026-02-21,35.8,10.1
+    ```
+
+7. La empresa de logística "Rapiflash" necesita analizar el cumplimiento de sus rutas de entrega. Cada vehículo tiene un archivo CSV con su registro de entregas, donde cada línea contiene: **direccion**, **minutos_planificados**, **minutos_reales**.
+    Se considera un **incumplimiento** cuando un vehículo llega a una dirección con más de 5 minutos de diferencia respecto a lo planificado (ya sea adelantado o atrasado).
+
+    Se pide implementar un programa que:
+
+    a. Reciba una lista con las rutas de archivos de varios vehículos.
+    b. Para cada archivo, calcular la diferencia entre minutos reales y planificados, y contar los incumplimientos.
+    c. Si un archivo no existe, mostrar un mensaje de error y continuar con el siguiente.
+    d. Guardar en un archivo `resumen_entregas.csv` el nombre del archivo y la cantidad de incumplimientos.
+    
+    Considerar que los archivos podrían no existir. En ese caso, imprimir un mensaje descriptivo y avanzar con el siguiente.
+
+    Ejemplo de archivo `vehiculo_34.csv`:
+
+    ```
+    direccion,minutos_planificados,minutos_reales
+    Av. San Martín 123,156,158
+    Lavalle 456,206,198
+    Sarmiento 789,209,209
+    Belgrano 321,244,260
+    ```
+
+    Ejemplo de uso:
+
+    ```python
+    archivos = ["vehiculo_34.csv", "vehiculo_12.csv", "vehiculo_78.csv"]
+    ```
+
+    Ejemplo de salida `resumen_entregas.csv`:
+
+    ```
+    archivo,incumplimientos
+    vehiculo_34.csv,2
+    vehiculo_12.csv,1
+    vehiculo_78.csv,0
+    ```
+
+    (En el ejemplo, vehículo 34 tiene 2 incumplimientos: Lavalle con 8 min de diferencia y Belgrano con 16 min)
+
+8. En una fábrica de alimentos detectaron que las planillas diarias de producción tienen datos faltantes, causando problemas con los envíos. La Ingeniera de planta decide analizar qué tan confiables son estos registros.
+
+    Cada día se genera una planilla CSV con las columnas: **operacion**, **codigo**, **unidades**, **tiempo**, **observaciones**. Algunas celdas pueden estar vacías (datos faltantes).
+
+    Se pide implementar un programa que:
+
+    a. Calcule el total de unidades producidas (solo operaciones de tipo "produccion").
+    b. Cuente los registros válidos (aquellos donde `unidades` y `tiempo` no están vacíos).
+    c. Cuente las operaciones "ordenadas" (donde `observaciones` es "-").
+    d. Calcule el porcentaje de registros inválidos.
+    e. Determine si los datos son "sucios" (si el porcentaje de inválidos es mayor o igual a 50%).
+    f. Guarde un resumen en `reporte_produccion.csv`.
+
+    Ejemplo de archivo `05-09-2024.csv`:
+
+    ```
+    operacion,codigo,unidades,tiempo,observaciones
+    produccion,JG30,50,20,-
+    envio,HP45,,15.05,-
+    produccion,FRE54,100,,revisión
+    envio,FRE54,100,105.70,-
+    produccion,Hy78,40,8,-
+    ```
+
+    Ejemplo de salida `reporte_produccion.csv`:
+
+    ```
+    concepto,valor
+    Total unidades producidas,190
+    Operaciones totales,5
+    Operaciones válidas,3
+    Operaciones ordenadas,4
+    Porcentaje inválidos,40%
+    Datos sucios,False
+    ```
+
+9. La organización **"Bibliotecas Abiertas"** lleva un registro mensual de voluntarios. Cada archivo CSV mensual contiene: **nombre**, **apellido**, **dni**, **horas_donadas**. El campo `horas_donadas` puede estar vacío si hubo errores de carga.
+
+    Se pide implementar una función que reciba una lista de archivos mensuales y:
+
+    a. Calcule la suma total de horas donadas (solo registros válidos).
+    b. Cuente la cantidad total de registros y la cantidad de registros válidos.
+    c. Calcule el porcentaje de registros sin errores.
+    d. Guarde en `errores.csv` los registros con datos faltantes para revisión manual.
+    e. Guarde las estadísticas en `estadisticas_voluntarios.csv`.
+
+    Considerar que algunos archivos podrían no existir. En ese caso, mostrar un mensaje de error y continuar con el siguiente.
+
+    Ejemplo de archivo `08_2025.csv`:
+
+    ```
+    nombre,apellido,dni,horas_donadas
+    Lucía,López,22334455,8.0
+    Marcos,Pérez,39800222,12.5
+    Ana,Gómez,18900222,
+    Laura,Sosa,41111222,10.0
+    Roberto,Medina,35000888,
+    Sofía,Luna,29999999,15.8
+    ```
+
+    Ejemplo de salida `estadisticas_voluntarios.csv`:
+
+    ```
+    concepto,valor
+    suma_horas,46.3
+    registros_totales,6
+    registros_validos,4
+    porcentaje_sin_errores,66.7%
+    ```
+
+    Ejemplo de salida `errores.csv`:
+
+    ```
+    nombre,apellido,dni,horas_donadas
+    Ana,Gómez,18900222,
+    Roberto,Medina,35000888,
+    ```
+
+## 2. Numpy
 
 1. Crear un array de 20 números espaciados uniformemente entre 0 y 10. Luego, imprimir:
 
@@ -84,86 +354,6 @@ Los asientos en el Jardín Japonés se van a organizar en forma de matriz, tenie
 
     b. Luego, se debe hacer una función que reciba la matriz y permita al usuario intentar adivinar dónde están.\
     Pista: se puede extender/modificar el **Super Desafio** (no obligatorio) de Batalla Naval de la Guía 4.
-
-## 2. Pandas
-
-:::{.callout-note}
-Para estos ejercicios, recomendamos usar Google Colab (ver apunte) y tener una celda por ejercicio.
-:::
-
-Nos contratan para hacer un nuevo sistema de FIUBA para almacenar información de sus estudiantes.
-
-Usando el siguiente DataFrame:
-```{python}
-import pandas as pd
-data = {
-    'nombre': ['Violeta', 'Carla', 'Manuela', 'Lucia', 'Emilia', 'Mariana', 'Aldo'],
-    'apellido': ['Perez', 'Guanca', 'Gomez', 'Capon', 'Duzac', 'Szischik', 'Rastrelli'],
-    'dni': [42000000, 42001001, 42002002, 37010020, 40001002, 38090080, 38111222],
-    'año_nac': [1997, 1998, 1998, 1993, 2003, 1993, 1994],
-    'mail': ['vp@fi.uba.ar', 'cg@fi.uba.ar', None, None, None, 'ms@fi.uba.ar', 'ar@fi.uba.ar'],
-    'carrera': ['Informática', 'Mecánica', 'Química', 'Informática', 'Informática', 'Electrónica', 'Informática']
-}
-
-df = pd.DataFrame(data)
-df
-```
-
-1. Mostrar el resumen de la información del DataFrame
-2. Mostrar su forma
-3. Mostrar la lista de los nombres de las columnas
-4. Mostrar las primeras 3 filas
-5. Mostrar las últimas 3 filas
-6. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
-7. Mostrar a los estudiantes que tienen edad mayor a 25.
-8. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
-9. Mostrar a la persona que es más joven.
-10. Mostrar a la persona que se encuentra en la mitad de la tabla.
-11. Mostrar sólo las columnas: "carrera" y "edad".
-12. Mostrar sólo los estudiantes que estudian Informática.
-13. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
-14. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
-15. Mostrar la cantidad de estudiantes por carrera.
-16. Renombrar la columna "carrera" por "ingeniería".
-17. Para la primer estudiante, cambiar su carrera a "Electrónica".
-18. Agregar una nueva fila al DataFrame con tus datos.
-19. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
-20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
-21. Ordenar el dataFrame por carrera y apellido, en ese orden.
-22. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
-
-23. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
-Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
-a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
-Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
-
-```{python}
-data = {
-    'nombre': ['Violeta', 'Carla', 'Manuela'],
-    'apellido': ['Perez', 'Guanca', 'Gomez'],
-    'dni': [42000000, 42001001, 42002002],
-    'carrera': ['Informática', 'Mecánica', 'Química'],
-    'nota': [7, 4, 6],
-    'intento': [1, 2, 1]
-}
-
-df_notas = pd.DataFrame(data)
-df_notas
-```
-
-24. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
-Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
-
-```{Python}
-data = {
-    'nombre': ['Harry Potter', 'El Señor de los Anillos', 'Barbie', 'Rapido y Furioso 18'],
-    'año': [2001, 2003, 1972, 2040],
-    'puntuacion': [8, 9, 8, 3]
-}
-
-df_pelis = pd.DataFrame(data)
-df_pelis
-```
 
 ## 3. Matplotlib
 
@@ -310,3 +500,105 @@ df = pd.read_csv(url)
     a. Realizar un gráfico de torta que muestre el porcentaje entre la cantidad de alumnos que asistieron al parcial y los que no.
     b. Realizar un gráfico de barras que muestre la cantidad de alumnos que aprobaron y desaprobaron el parcial, sin contar a los ausentes.
     c. Realizar un gráfico de puntos que muestre la relación entre el curso y la nota obtenida en el parcial. ¿Diría que existe una relación?
+
+## Evaluación de Código
+
+:::{.callout-note}
+En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
+:::
+
+1. La siguiente función intenta leer un archivo CSV y mostrar los estudiantes mayores de 20 años. El archivo tiene columnas: nombre, edad, carrera. Identificá el problema y corregilo.
+
+    ```python
+    import pandas as pd
+
+    def devolver_mayores_20(archivo):
+        df = pd.read_csv(archivo)
+
+        mayores = df[df[1] > '20']
+        print(mayores)
+    ```
+
+    <!-- Acceso a la columna es incorrecto. Print en vez de return. -->
+
+2. La siguiente función intenta crear un array de NumPy y mostrar en pantalla su promedio, pero produce un resultado incorrecto. Identificá el error y corregilo.
+
+    ```python
+    import numpy as np
+
+    datos = [10, 20, 30, 40, 50]
+    array = np.array(datos)
+    for d in array:
+        suma += d
+        cant += d
+    
+    return suma / cant
+    ```
+
+    <!-- Falta la firma de la funcion. No usa la funcion promedio de numpy. Las variables acumuladoras no estan definidas. La suma en cada variable acumuladora es incorrecta. Usa return y no print. -->
+
+3. El siguiente código intenta agregar una columna calculada a un DataFrame, pero produce un error. Identificá por qué falla y corregilo.
+
+    ```python
+    import pandas as pd
+
+    data = {
+        'producto': ['Manzana', 'Banana', 'Naranja'],
+        'precio': [100, 80, 120],
+        'cantidad': [5, 10, 3]
+    }
+    df = pd.DataFrame(data)
+
+    df = df[ df['precio'] * df['cantidad'] ]
+    print(df)
+    ```
+
+     <!-- El acceso a las columnas no es correcto, el calculo tampoco -->
+
+4. Leer el siguiente código. Identificar y explicar qué es lo que hace. El código contiene tres errores; identificarlos y solucionarlos.
+
+    ```python
+    import pandas as pd
+
+    def analizar_control_calidad(archivo):
+        df = pd.read_csv(archivo)
+        
+        yogures = df[df['producto'] == 'yogur']
+        yogures_validos = yogures[yogures['volumen_ml'].notnull()]
+        total_volumen = yogures_validos[ yogures_validos['volumen_ml'].sum() ]
+        
+        completos = df['volumen_ml'].notnull() & df['temperatura_c'].notnull()
+        cant_completos = len(completos)
+        
+        aptos = df[df['estado'] == 'aprobado']
+        cant_aptos = len(aptos)
+        
+        total = len(df)
+        cant_incompletos = total - cant_completos
+        porcentaje_incompletos_del_total = (cant_incompletos / cant_completos) * 100
+        
+        lote_observado = porcentaje_incompletos_del_total >= 30
+        
+        resumen = {
+            'concepto': [
+                'Volumen total yogur',
+                'Registros totales',
+                'Registros completos',
+                'Lotes aptos',
+                'Porcentaje incompletos',
+                'Lote observado'
+            ],
+            'valor': [
+                total_volumen,
+                total,
+                cant_completos,
+                cant_aptos,
+                f"{porcentaje_incompletos_del_total:.0f}%",
+                lote_observado
+            ]
+        }
+        
+        df_resumen = pd.DataFrame(resumen)
+        df_resumen.to_csv('control_calidad.csv', index=False)
+        print("Reporte generado exitosamente: control_calidad.csv")
+    ```

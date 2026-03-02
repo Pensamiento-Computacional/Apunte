@@ -69,3 +69,4 @@ Thumbs.db
 
 # Archivos de configuración de editores como VS Code
 .vscode/
+**/*.quarto_ipynb

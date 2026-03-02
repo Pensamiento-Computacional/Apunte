@@ -1,5 +1,7 @@
 ## Guía 2: Tipos de Datos, Expresiones y Funciones
 
+### 2.1. Ejercicios de Programación 
+
 1. Guardar el texto "Hola, Mundo!" en una variable e imprimirla por pantalla.
 
 2. Guardar los números 1, 2 y 3 en tres variables distintas e imprimirlos por pantalla.
@@ -76,3 +78,34 @@ A partir de ahora y en adelante, todo lo que se nos pida (incluso si dice "progr
     Escribir una función que calcule la norma de un vector en R3 recibiendo como parámetros las 3 componentes $v_1$, $v_2$ y $v_3$ del mismo.
 
 20. **Desafío** (no obligatorio): Calcular el área de un rectángulo (alineado con los ejes $x$ e $y$), dadas sus coordenadas $x_1$, $x_2$, $y_1$ e $y_2$. Nota: considerar que tiene que funcionar para cualquier cuadrado, independientemente de los cuadrantes en los que tenga sus vértices.
+
+### 2.2. Evaluación de Código
+
+:::{.callout-note}
+En estos ejercicios se presenta código con errores, malas prácticas de programación o problemas de eficiencia. El objetivo es identificar los errores, explicar por qué fallan y proponer una corrección. Podés probar el código en tu entorno y, opcionalmente, consultar con herramientas de IA para verificar tu análisis.
+:::
+
+1. El siguiente código intenta calcular el promedio de tres números, pero tiene varios problemas. Identificá cuál es y corregilo.
+
+    ```python
+    def prom(a, b, c):
+        suma = a + b + c
+        promedio = suma / 3
+    ```
+
+2. El siguiente código intenta convertir una temperatura de Celsius a Kelvin, pero tiene varios problemas. Identificá el error y corregilo.
+
+    ```python
+    def celsius_a_kelvin(celsius):
+        celsius = input("Ingrese la temperatura en Celsius: ")
+        kelvin = celsius + 273.15
+        print kelvin
+    ```
+
+3. El siguiente código intenta concatenar un nombre con un número entero para crear un usuario, pero tiene varios problemas. Identificá por qué falla y proponé una solución.
+
+    ```python
+    funcion CrearUsuario(nombre, numero):
+        usuario = nombre + numero
+        return usuario
+    ```
