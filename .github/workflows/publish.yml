@@ -29,6 +29,9 @@ jobs:
       - name: Install TinyTeX
         run: quarto install tinytex
 
+      - name: Install Spanish language packages for LaTeX
+        run: tlmgr install babel-spanish hyphen-spanish
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
