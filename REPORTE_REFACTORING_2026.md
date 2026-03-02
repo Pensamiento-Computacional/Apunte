@@ -17,6 +17,7 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 - Se reorganizó la estructura con la sección "### Primer programa"
 
 **Nuevos ejercicios agregados:**
+
 | Ejercicio | Descripción |
 |-----------|-------------|
 | 7 | Instrucciones para usar un cajero automático |
@@ -33,12 +34,14 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 **Archivo modificado:** `unidad_5.qmd`
 
 **Cambios:**
+
 - Se reemplazaron los ejemplos que usaban formato CSV por ejemplos con archivos de texto plano
 - El ejemplo de "alumnos.txt" (formato CSV) fue reemplazado por "poema.txt" (texto libre)
 - El ejemplo de "notas.csv" fue reemplazado por "texto.txt" (conteo de palabras)
 - Se actualizó la sección "Tipos de archivos" para indicar que CSV se verá en la Unidad 6 con Pandas
 
 **Justificación:**
+
 - Se separó la enseñanza de archivos de texto (Unidad 5) de archivos CSV (Unidad 6)
 - Los archivos CSV se manejan mejor con Pandas que con `open()`/`close()` manual
 - Se evita enseñar técnicas que los estudiantes no usarán en la práctica profesional
@@ -88,6 +91,7 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 - Se eliminó la sección "Reshape" por considerarse un tema avanzado no esencial
 
 **Justificación:**
+
 - Pandas es más relevante para los estudiantes de ingeniería que NumPy puro
 - Los estudiantes aprenden CSV cuando tienen la herramienta adecuada (Pandas)
 - El orden pedagógico fluye mejor: datos tabulares → cálculo numérico → visualización
@@ -99,6 +103,7 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 **Archivo modificado:** `guias/_guia_6.qmd`
 
 **Cambios estructurales:**
+
 - Reordenamiento: Sección 1 (Pandas), Sección 2 (NumPy), Sección 3 (Matplotlib)
 - Nueva subsección "1.2. Lectura y Escritura de Archivos CSV" con 9 ejercicios
 - Ejercicios originales de DataFrames en "1.1. Operaciones Básicas con DataFrames"
@@ -119,6 +124,7 @@ Este documento detalla los cambios realizados al material didáctico de la mater
 | 9 | Bibliotecas Abiertas - registro de voluntarios | Múltiples archivos, `try/except`, errores a CSV |
 
 **Justificación:**
+
 - Los ejercicios de CSV que antes estaban en la Guía 5 ahora están donde corresponden
 - Se mantiene consistencia con el contenido teórico de la Unidad 6
 - Los ejercicios 6-9 practican casos más complejos: múltiples archivos, manejo de errores, datos faltantes
@@ -143,6 +149,7 @@ Se agregó una nueva sección al final de cada guía (excepto Guía 1) con ejerc
 | 6 | Comparación string vs int en Pandas | Uso ineficiente de NumPy | Typo en nombre de columna | Análisis de control de calidad (múltiples errores) |
 
 **Justificación:**
+
 - Responde a la nueva realidad donde los estudiantes usan IA para generar código
 - Desarrolla habilidades críticas de evaluación y depuración
 - Los estudiantes pueden opcionalmente usar herramientas de IA para verificar su análisis
@@ -173,6 +180,7 @@ unidad_6.qmd       (reordenado + CSV en Pandas)
 **Antes:** Los estudiantes aprendían a manejar CSV manualmente con `open()`, `split()`, etc.
 
 **Ahora:** Los estudiantes aprenden:
+
 1. Archivos de texto plano con `open()` (Unidad 5)
 2. Archivos CSV con Pandas (Unidad 6)
 
