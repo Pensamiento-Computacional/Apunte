@@ -27,7 +27,9 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install TinyTeX
-        run: quarto install tinytex
+        run: |
+          quarto install tinytex
+          echo "$HOME/bin" >> $GITHUB_PATH
 
       - name: Install Spanish language packages for LaTeX
         run: tlmgr install babel-spanish hyphen-spanish
