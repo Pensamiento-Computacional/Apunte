@@ -31,7 +31,7 @@ Para regularizar la cursada, se deben aprobar los dos parciales (o recuperatorio
 La cursada regularizada habilita a rendir el examen final  integrador, para el cual se tienen 3 (tres) oportunidades de rendir (más información abajo).
 
 ### Promoción
-Para promocionar la materia, se debe tener un promedio entre los dos parciales (o recuperatorios) de 7 (siete).\
+Para promocionar la materia, se requiere un promedio de 6.50 o superior entre los dos parciales.\
 
 :::{.callout-tip collapse="true"}
 ## Rendir Recuperatorios para Promoción
