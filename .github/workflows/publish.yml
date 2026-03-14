@@ -29,6 +29,7 @@ jobs:
       - name: Install TinyTeX and Spanish language packages
         run: |
           quarto install tinytex
+          ~/.TinyTeX/bin/x86_64-linux/tlmgr update --self
           ~/.TinyTeX/bin/x86_64-linux/tlmgr install babel-spanish hyphen-spanish
 
       - name: Setup Python
