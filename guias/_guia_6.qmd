@@ -26,30 +26,30 @@ df = pd.DataFrame(data)
 df
 ```
 
-6. Mostrar el resumen de la información del DataFrame
-7. Mostrar su forma
-8. Mostrar la lista de los nombres de las columnas
-9. Mostrar las primeras 3 filas
-10. Mostrar las últimas 3 filas
-11. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
-12. Mostrar a los estudiantes que tienen edad mayor a 25.
-13. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
-14. Mostrar a la persona que es más joven.
-15. Mostrar a la persona que se encuentra en la mitad de la tabla.
-16. Mostrar sólo las columnas: "carrera" y "edad".
-17. Mostrar sólo los estudiantes que estudian Informática.
-18. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
-19. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
-20. Mostrar la cantidad de estudiantes por carrera.
-21. Renombrar la columna "carrera" por "ingeniería".
-22. Para la primer estudiante, cambiar su carrera a "Electrónica".
-23. Agregar una nueva fila al DataFrame con tus datos.
-24. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
-25. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
-26. Ordenar el dataFrame por carrera y apellido, en ese orden.
-27. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
+1. Mostrar el resumen de la información del DataFrame
+2. Mostrar su forma
+3. Mostrar la lista de los nombres de las columnas
+4. Mostrar las primeras 3 filas
+5. Mostrar las últimas 3 filas
+6. Agregar la nueva columna al DataFrame con la información de la edad de los estudiantes para el año actual y mostrar el DataFrame resultante
+7. Mostrar a los estudiantes que tienen edad mayor a 25.
+8. Para los estudiantes que tienen edad mayor a 25, mostrar el promedio de edad.
+9. Mostrar a la persona que es más joven.
+10. Mostrar a la persona que se encuentra en la mitad de la tabla.
+11. Mostrar sólo las columnas: "carrera" y "edad".
+12. Mostrar sólo los estudiantes que estudian Informática.
+13. Mostrar sólo los estudiantes que estudian informática y tienen menos de 25 años.
+14. Reemplazar `Informática` por `Informática o Sistemas` en la columna "carrera".
+15. Mostrar la cantidad de estudiantes por carrera.
+16. Renombrar la columna "carrera" por "ingeniería".
+17. Para la primer estudiante, cambiar su carrera a "Electrónica".
+18. Agregar una nueva fila al DataFrame con tus datos.
+19. Agregar una nueva columna 'tiene_mail', con un valor booleano que indique si la estudiante tiene mail en el sistema.
+20. Agregar una nueva columna, con un valor booleano que indique si a la estudiante se le necesita pedir un mail (sólo se le tiene que pedir un mail si no tiene mail asignado). Asumir que todavía no se tiene la columna 'tiene_mail'.
+21. Ordenar el dataFrame por carrera y apellido, en ese orden.
+22. Ordenar el dataFrame por carrera y edad. Carrera por forma ascendente, edad por forma descendente.
 
-28. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
+23. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en un dataFrame. Cada fila tiene la siguiente información: nombre, apellido, intento, nota.\
 Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).\
 a. Obtener el promedio de las notas en la primera oportunidad de los alumnos.\
 Nota: Este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.11.
@@ -68,7 +68,7 @@ df_notas = pd.DataFrame(data)
 df_notas
 ```
 
-29. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
+24. Rosita tiene un dataFrame donde guarda todas las películas que vió. La información para cada una es: el nombre de la película, año en que salió, y la puntuación que le puso del 1 al 10. Obtener sólo las películas que tienen puntaje mayor a 7.
 Nota: este ejercicio ya fue resuelto en la Guía 4 de Diccionarios, es el 4.3.10.
 
 ```{Python}
