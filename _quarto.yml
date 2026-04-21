@@ -1,6 +1,10 @@
 project:
   type: website
-  output-dir: docs 
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!REPORTE_REFACTORING_2026.md"
+    - "!README.md"
 
 lang: es
 
