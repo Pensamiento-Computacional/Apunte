@@ -1,8 +1,5 @@
 ---
 title: Bibliotecas de Python
-format:
-  html:
-    code-fold: false
 jupyter: python3
 ---
 
