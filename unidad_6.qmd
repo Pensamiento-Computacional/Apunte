@@ -49,68 +49,6 @@ Los datos a trabajar en Pandas van a tener, en general, una forma muy similar a 
 
 Pandas es una biblioteca un poco más pesada que otras por todo lo que incluye, por lo que vamos a poder aprovechar mucho más <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>, que maneja grandes datos de forma rápida y eficiente.
 
-### Trabajando con archivos CSV
-
-Una de las funcionalidades más útiles de Pandas es la capacidad de leer y escribir archivos CSV de forma muy sencilla. Como ya charlamos en la unidad 5, los archivos CSV (Comma Separated Values) son archivos de texto donde los datos están organizados en filas y columnas, separados por comas o punto y coma.
-
-#### Leyendo un archivo CSV
-
-Para leer un archivo CSV usamos la función `read_csv()`:
-
-```python
-import pandas as pd
-
-# Leer un archivo CSV
-df = pd.read_csv('datos.csv')
-```
-
-Si el archivo usa punto y coma (`;`) como separador en lugar de coma, podemos aclararlo:
-
-```python
-df = pd.read_csv('datos.csv', sep=';')
-```
-
-:::{.callout-important}
-### ¿Y no necesitamos cerrar el archivo?
-A diferencia de cuando trabajamos con archivos de texto usando `open()`, con Pandas **no necesitamos cerrar el archivo manualmente**. Esto es porque `read_csv()` lee todo el contenido del archivo de una sola vez, lo carga en memoria como un DataFrame, y automáticamente cierra el archivo. El DataFrame queda en memoria y podemos trabajar con él sin mantener el archivo abierto.
-:::
-
-:::{.callout-warning}
-### ¿Qué beneficio le ves hasta el momento al manejo de archivos con Pandas? 🤔
-¿Qué te llama la atención respecto de lo que vimos en la unidad 5?
-:::
-
-#### Escribiendo un archivo CSV
-
-Para guardar un DataFrame como archivo CSV usamos `to_csv()`:
-
-```python
-# Guardar el DataFrame en un archivo CSV
-df.to_csv('nuevo_archivo.csv', index=False)
-```
-
-El parámetro `index=False` evita que se guarde el índice del DataFrame como una columna adicional dentro del archivo, algo que muchas veces no nos aporta información y no es relevante como para guardarlo.
-
-#### Pandas vs. Manipulación manual de archivos
-
-Existen pros y contras de la manipulación de archivos con Pandas, en comparación con una manipulación manual.
-
-| Aspecto | Archivos con `open()` | Archivos con Pandas |
-|---------|----------------------|---------------------|
-| **Memoria** | Podemos leer línea por línea (bajo consumo) | Carga todo en memoria (alto consumo para archivos grandes) |
-| **Cerrar archivo** | Debemos cerrar manualmente o usar `with` | Se cierra automáticamente |
-| **Facilidad de uso** | Requiere parsear manualmente cada línea | Funciones listas para usar |
-| **Manipulación de datos** | Debemos programar cada operación | Operaciones predefinidas (filtrar, ordenar, agrupar) |
-| **Cuándo usar** | Archivos muy grandes o formato no estándar | Análisis de datos tabulares |
-
-:::{.callout-tip}
-### Recomendación
-- Usá **Pandas** cuando necesites analizar y manipular datos tabulares (CSV, Excel).
-- Usá **`open()` con lectura línea por línea** cuando el archivo sea muy grande y no entre en memoria, o cuando necesites un control más fino sobre el procesamiento.
-:::
-
-Una vez creado nuestro "DataFrame" (en unos momentos definiremos qué es un DataFrame) a partir de un archivo CSV con Pandas, podemos simplemente manipularlo con la biblioteca.
-
 ### Serie
 
 Pandas incorpora dos estructuras de datos nuevas llamadas: **Series** y **DataFrames**.
@@ -627,6 +565,68 @@ Utilizando `value_counts()` se pueden contar las filas en cada grupo según "dir
 ```{python}
 df['direccion'].value_counts()
 ```
+
+### Trabajando con archivos CSV
+
+Una de las funcionalidades más útiles de Pandas es la capacidad de leer y escribir archivos CSV de forma muy sencilla. Como ya charlamos en la unidad 5, los archivos CSV (Comma Separated Values) son archivos de texto donde los datos están organizados en filas y columnas, separados por comas o punto y coma.
+
+#### Leyendo un archivo CSV
+
+Para leer un archivo CSV usamos la función `read_csv()`:
+
+```python
+import pandas as pd
+
+# Leer un archivo CSV
+df = pd.read_csv('datos.csv')
+```
+
+Si el archivo usa punto y coma (`;`) como separador en lugar de coma, podemos aclararlo:
+
+```python
+df = pd.read_csv('datos.csv', sep=';')
+```
+
+:::{.callout-important}
+### ¿Y no necesitamos cerrar el archivo?
+A diferencia de cuando trabajamos con archivos de texto usando `open()`, con Pandas **no necesitamos cerrar el archivo manualmente**. Esto es porque `read_csv()` lee todo el contenido del archivo de una sola vez, lo carga en memoria como un DataFrame, y automáticamente cierra el archivo. El DataFrame queda en memoria y podemos trabajar con él sin mantener el archivo abierto.
+:::
+
+:::{.callout-warning}
+### ¿Qué beneficio le ves hasta el momento al manejo de archivos con Pandas? 🤔
+¿Qué te llama la atención respecto de lo que vimos en la unidad 5?
+:::
+
+#### Escribiendo un archivo CSV
+
+Para guardar un DataFrame como archivo CSV usamos `to_csv()`:
+
+```python
+# Guardar el DataFrame en un archivo CSV
+df.to_csv('nuevo_archivo.csv', index=False)
+```
+
+El parámetro `index=False` evita que se guarde el índice del DataFrame como una columna adicional dentro del archivo, algo que muchas veces no nos aporta información y no es relevante como para guardarlo.
+
+#### Pandas vs. Manipulación manual de archivos
+
+Existen pros y contras de la manipulación de archivos con Pandas, en comparación con una manipulación manual.
+
+| Aspecto | Archivos con `open()` | Archivos con Pandas |
+|---------|----------------------|---------------------|
+| **Memoria** | Podemos leer línea por línea (bajo consumo) | Carga todo en memoria (alto consumo para archivos grandes) |
+| **Cerrar archivo** | Debemos cerrar manualmente o usar `with` | Se cierra automáticamente |
+| **Facilidad de uso** | Requiere parsear manualmente cada línea | Funciones listas para usar |
+| **Manipulación de datos** | Debemos programar cada operación | Operaciones predefinidas (filtrar, ordenar, agrupar) |
+| **Cuándo usar** | Archivos muy grandes o formato no estándar | Análisis de datos tabulares |
+
+:::{.callout-tip}
+### Recomendación
+- Usá **Pandas** cuando necesites analizar y manipular datos tabulares (CSV, Excel).
+- Usá **`open()` con lectura línea por línea** cuando el archivo sea muy grande y no entre en memoria, o cuando necesites un control más fino sobre el procesamiento.
+:::
+
+Una vez creado nuestro "DataFrame" (en unos momentos definiremos qué es un DataFrame) a partir de un archivo CSV con Pandas, podemos simplemente manipularlo con la biblioteca.
 
 ### Manejo de errores en Pandas
 
