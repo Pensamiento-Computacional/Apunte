@@ -13,9 +13,9 @@ Pueden ingresar al servidor a través del <a href="https://discord.com/invite/By
 
 ### Unidad 1
 
-- <a href="#unidad_1" target="_blank">Apuntes</a>
+- <a href="unidad_1.html" target="_blank">Apuntes</a>
 - <a href="https://www.youtube.com/watch?v=94kWDFmxUak&list=PLREanPs7CWghISlGW_nXf-pTbtnBpveow" target="_blank">Videos</a>
-- <a href="#_guia_1" target="_blank">Guía de Ejercicios</a>
+- <a href="_guia_1.html" target="_blank">Guía de Ejercicios</a>
 
 
 ### Unidad 2
