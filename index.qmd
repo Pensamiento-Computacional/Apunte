@@ -1,35 +1,34 @@
-
 # Pensamiento Computacional {.unnumbered}
 
 Bienvenidos y bienvenidas a la cátedra de Pensamiento Computacional del Ciclo Básico Común de la Facultad de Ingeniería - UBA.
 
-## Docentes de la Cátedra
+## Herramientas
 
-- **Prof. Titular:** Méndez, Mariano
+### Discord
+La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.\
+Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
+Pueden ingresar al servidor a través del <a href="https://discord.com/invite/ByXUJZxSgR" target="_blank">siguiente link</a>.
 
-- Areco, Lucas
-- Bulacios, Juan
-- Cáceres, Fernando
-- Capón, Lucía
-- Corti, Bautista
-- Duchen, Leonardo
-- Duzac, Emilia
-- Fulco, Victoria
-- Ginestet, Joaquin
-- Juarez Goldemberg, Mariana 
-- Lourengo Caridade, Lucía Gabriela 
-- Maciel, Laura
-- Maxwell, Julian
-- Notari, Pablo
-- Ortielli, Bruno
-- Pratto, Florencia
-- Ponti, Julieta
-- Rastrelli, Aldana
-- Retamozo, Melina
-- Szischik, Mariana
+## Material por Unidades
 
+### Unidad 1
+
+- <a href="#unidad_1" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=94kWDFmxUak&list=PLREanPs7CWghISlGW_nXf-pTbtnBpveow" target="_blank">Videos</a>
+- <a href="#_guia_1" target="_blank">Guía de Ejercicios</a>
+
+
+### Unidad 2
+
+### Unidad 3
+
+### Unidad 4
+
+### Unidad 5
+
+### Unidad 6
 
 ---
-author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamell Martínez Gorbik, Pablo Notari"
-date: "12/27/2023"
+author: "Aldana Rastrelli"
+date: "1/8/2026"
 ---

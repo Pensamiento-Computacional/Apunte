@@ -1,0 +1,35 @@
+
+# La Cátedra de Pensamiento Computacional {.unnumbered}
+
+Cátedra de Pensamiento Computacional del Ciclo Básico Común de la Facultad de Ingeniería - UBA.
+
+## Docentes de la Cátedra
+
+- **Prof. Titular:** Méndez, Mariano
+
+- Areco, Lucas
+- Bulacios, Juan
+- Cáceres, Fernando
+- Capón, Lucía
+- Corti, Bautista
+- Duchen, Leonardo
+- Duzac, Emilia
+- Fulco, Victoria
+- Ginestet, Joaquin
+- Juarez Goldemberg, Mariana 
+- Lourengo Caridade, Lucía Gabriela 
+- Maciel, Laura
+- Maxwell, Julian
+- Notari, Pablo
+- Ortielli, Bruno
+- Pratto, Florencia
+- Ponti, Julieta
+- Rastrelli, Aldana
+- Retamozo, Melina
+- Szischik, Mariana
+
+
+---
+author: "Aldana Rastrelli, Juan Pablo Bulacios, Llamell Martínez Gorbik, Pablo Notari"
+date: "12/27/2023"
+---

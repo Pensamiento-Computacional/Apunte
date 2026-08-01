@@ -37,7 +37,9 @@ website:
       - href: guia.qmd
         text: "Guía de Ejercicios"
       - href: rules.qmd
-        text: "Régimen, Calendario y Cursos"
+        text: "Régimen e Información General"
+      - href: nosotros.qmd
+        text: "La Cátedra"
       - href: contact.qmd
         text: "Contacto"
 

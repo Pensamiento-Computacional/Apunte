@@ -1,7 +1,8 @@
-# Regimen de Cursada, Calendario y Cursos {.unnumbered}
+# Regimen de Cursada, Calendarios, Cursos y Notas {.unnumbered}
 
-## Calendario y Cursos
-Se puede acceder al calendario de la cursada y a las aulas y horarios de los cursos a través del <a href="https://docs.google.com/spreadsheets/d/10Yq2xWmJWPjhRe5drH_XikpsTIGYoP5nQTfJhKuhSX4/edit?usp=sharing" target="_blank">siguiente link</a>.
+## Planilla de Información de la Materia
+Para ver el calendario de la cursada, las aulas y horarios de los cursos y las notas, se puede acceder a través del <a href="https://docs.google.com/spreadsheets/d/10Yq2xWmJWPjhRe5drH_XikpsTIGYoP5nQTfJhKuhSX4/edit?usp=sharing" target="_blank">siguiente link</a>.
+
 
 ## Formas de Evaluación
 
