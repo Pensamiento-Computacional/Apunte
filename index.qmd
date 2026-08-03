@@ -15,18 +15,38 @@ Pueden ingresar al servidor a través del <a href="https://discord.com/invite/By
 
 - <a href="unidad_1.html" target="_blank">Apuntes</a>
 - <a href="https://www.youtube.com/watch?v=94kWDFmxUak&list=PLREanPs7CWghISlGW_nXf-pTbtnBpveow" target="_blank">Videos</a>
-- <a href="_guia_1.html" target="_blank">Guía de Ejercicios</a>
+- <a href="guia.html#guía-1-introducción-a-la-algoritmia-y-la-programación" target="_blank">Guía de Ejercicios</a>
 
 
 ### Unidad 2
 
+- <a href="unidad_2.html" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=prcbKZAof0I&list=PLREanPs7CWghIQVmvKHdMOW1sAtdbuHDs" target="_blank">Videos</a>
+- <a href="guia.html#guía-2-tipos-de-datos-expresiones-y-funciones" target="_blank">Guía de Ejercicios</a>
+
 ### Unidad 3
+
+- <a href="unidad_3.html" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=PVMbwW373pM&list=PLREanPs7CWggJ7WeWBg2mnI4U7jvzaPhT" target="_blank">Videos</a>
+- <a href="guia.html#guía-3-estructuras-de-control" target="_blank">Guía de Ejercicios</a>
 
 ### Unidad 4
 
+- <a href="unidad_4.html" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=PreFwGCD5xM&list=PLREanPs7CWggmxukv8izOFXpvlM2NLT43" target="_blank">Videos</a>
+- <a href="guia.html#guía-4-tipos-de-estructuras-de-datos" target="_blank">Guía de Ejercicios</a>
+
 ### Unidad 5
 
+- <a href="unidad_5.html" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=N5n6sLInUNw&list=PLREanPs7CWgiFL9S_hgejGLMfZ-6eY95c" target="_blank">Videos</a>
+- <a href="guia.html#guía-5-entrada-y-salida" target="_blank">Guía de Ejercicios</a>
+
 ### Unidad 6
+
+- <a href="unidad_6.html" target="_blank">Apuntes</a>
+- <a href="https://www.youtube.com/watch?v=kvljFoKc5ew&list=PLREanPs7CWgjUz9aF4O4T7KWvCznlsKUy" target="_blank">Videos</a>
+- <a href="guia.html#guía-6-bibliotecas-de-python" target="_blank">Guía de Ejercicios</a>
 
 ---
 author: "Aldana Rastrelli"
