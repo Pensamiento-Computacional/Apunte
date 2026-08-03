@@ -3,6 +3,11 @@ title: "Tipos de Estructuras de Datos"
 jupyter: python3
 ---
 
+:::{.callout-note}
+### Videos Teóricos
+Los videos teóricos de esta unidad se encuentran en <a href="https://www.youtube.com/watch?v=PreFwGCD5xM&list=PLREanPs7CWggmxukv8izOFXpvlM2NLT43" target="_blank">esta lista de reproducción</a>. Los videos son a modo introductorio: para la correcta aprobación de la materia se deben leer los apuntes.
+:::
+
 ## Introducción: Secuencias
 
 Una secuencia es una serie de elementos ordenados que se suceden unos a otros.

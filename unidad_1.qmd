@@ -3,6 +3,11 @@ title: "Introducción a la Algoritmia y a la Programación"
 jupyter: python3
 ---
 
+:::{.callout-note}
+### Videos Teóricos
+Los videos teóricos de esta unidad se encuentran en <a href="https://www.youtube.com/watch?v=94kWDFmxUak&list=PLREanPs7CWghISlGW_nXf-pTbtnBpveow" target="_blank">esta lista de reproducción</a>. Los videos son a modo introductorio: para la correcta aprobación de la materia se deben leer los apuntes.
+:::
+
 ## Introducción
 
 Como en todas las disciplinas, la Ingeniería de Software y la Programación de Sistemas en general tienen un **lenguaje técnico** específico. La utilización de ciertos términos y el compartir de ciertos conceptos agiliza el diálogo y mejora la comprensión con los pares.

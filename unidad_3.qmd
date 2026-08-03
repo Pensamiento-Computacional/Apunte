@@ -3,6 +3,11 @@ title: "Estructuras de Control"
 jupyter: python3
 ---
 
+:::{.callout-note}
+### Videos Teóricos
+Los videos teóricos de esta unidad se encuentran en <a href="https://www.youtube.com/watch?v=PVMbwW373pM&list=PLREanPs7CWggJ7WeWBg2mnI4U7jvzaPhT" target="_blank">esta lista de reproducción</a>. Los videos son a modo introductorio: para la correcta aprobación de la materia se deben leer los apuntes.
+:::
+
 ## Decisiones
 
 >**Ejemplo**

@@ -3,6 +3,11 @@ title: Bibliotecas de Python
 jupyter: python3
 ---
 
+:::{.callout-note}
+### Videos Teóricos
+Los videos teóricos de esta unidad se encuentran en <a href="https://www.youtube.com/watch?v=kvljFoKc5ew&list=PLREanPs7CWgjUz9aF4O4T7KWvCznlsKUy" target="_blank">esta lista de reproducción</a>. Los videos son a modo introductorio: para la correcta aprobación de la materia se deben leer los apuntes.
+:::
+
 ## Introducción
 
 Python es un lenguaje de programación muy popular, poderoso y versátil que cuenta con una amplia gama de bibliotecas que ayudan a que la programación sea más fácil y eficiente. Pero,  **¿qué son las bibliotecas?** Las bibliotecas son conjuntos de módulos que contienen funciones, clases y variables relacionadas, que permiten realizar tareas sin tener que escribir el código desde cero y este se puede reutilizar en múltiples programas y proyectos.
