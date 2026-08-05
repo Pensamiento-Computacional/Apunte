@@ -9,10 +9,19 @@ project:
 lang: es
 
 website:
-  title: "Pensamiento Computacional" 
+  title: "Pensamiento Computacional"
   google-analytics: "G-T2F5HZEG2J"
-  
+  back-to-top-navigation: true
+
+  search:
+    location: navbar
+    type: overlay
+
+  page-footer:
+    center: "Pensamiento Computacional · Ciclo Básico Común · Facultad de Ingeniería (UBA)"
+
   navbar:
+    pinned: true
     left:
       - href: index.qmd
         text: "Inicio"
@@ -45,7 +54,11 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme.scss, theme-dark.scss]
     toc: true
+    code-copy: true
+    smooth-scroll: true
   pdf:
     documentclass: scrreprt

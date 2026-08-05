@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+
+$primary: #60a5fa;
+$body-bg: #0b1220;
+$body-color: #cbd5e1;
+$headings-color: #f1f5f9;
+$link-color: #93c5fd;
+
+$code-color: #bfdbfe;
+$code-bg: #16233d;
+
+$navbar-bg: #0b1220;
+$navbar-fg: #e2e8f0;
+
+$border-color: #26314e;
+
+$dropdown-bg: #111a30;
+$dropdown-border-color: #26314e;
+$dropdown-link-color: #cbd5e1;
+$dropdown-link-hover-bg: rgba(96, 165, 250, 0.18);
+$dropdown-link-hover-color: #dbeafe;
+$dropdown-link-active-bg: #60a5fa;
+$dropdown-link-active-color: #0b1220;
+
+/*-- scss:rules --*/
+
+:root {
+  --pc-surface: #111a30;
+  --pc-surface-2: #0e1628;
+  --pc-border: #26314e;
+  --pc-muted: #8ea0bd;
+  --pc-accent: #93c5fd;
+  --pc-accent-soft: rgba(96, 165, 250, 0.14);
+  --pc-accent-border: #2f4a7d;
+  --pc-shadow: 0 14px 32px -14px rgba(0, 0, 0, 0.65);
+}
+
+.navbar {
+  box-shadow: none;
+}
+
+.hero h1 {
+  background-image: linear-gradient(100deg, #dbeafe, #93c5fd 55%, #7dd3fc);
+}
+
+.quarto-color-scheme-toggle::before {
+  content: "\f495"; // bi-moon-stars-fill
+  color: #93c5fd;
+}

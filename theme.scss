@@ -1,0 +1,235 @@
+/*-- scss:defaults --*/
+
+// Tipografía
+$web-font-path: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" !default;
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !default;
+
+// Paleta
+$primary: #2563eb !default;
+$body-bg: #fdfdfd !default;
+$body-color: #334155 !default;
+$headings-color: #0f172a !default;
+$link-color: #2563eb !default;
+
+$headings-font-weight: 700 !default;
+
+$border-radius: 0.5rem !default;
+$border-radius-lg: 0.75rem !default;
+
+$code-color: #1d4ed8 !default;
+$code-bg: #eff6ff !default;
+
+$navbar-bg: #ffffff !default;
+$navbar-fg: #1e293b !default;
+
+$dropdown-link-hover-bg: #dbeafe !default;
+$dropdown-link-hover-color: #1e40af !default;
+$dropdown-link-active-bg: #2563eb !default;
+$dropdown-link-active-color: #ffffff !default;
+
+/*-- scss:rules --*/
+
+:root {
+  --pc-surface: #ffffff;
+  --pc-surface-2: #f8fafc;
+  --pc-border: #e2e8f0;
+  --pc-muted: #64748b;
+  --pc-accent: #2563eb;
+  --pc-accent-soft: #eff6ff;
+  --pc-accent-border: #bfdbfe;
+  --pc-shadow: 0 12px 28px -14px rgba(37, 99, 235, 0.35);
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Navbar
+.navbar {
+  border-bottom: 1px solid var(--pc-border);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-link {
+    font-weight: 500;
+  }
+}
+
+// Ícono de sol/luna junto al toggle de tema
+.quarto-color-scheme-toggle {
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &::before {
+    font-family: "bootstrap-icons";
+    content: "\f5a1"; // bi-sun-fill
+    display: inline-block;
+    font-size: 0.95rem;
+    margin-right: 0.4rem;
+    vertical-align: -0.1em;
+    color: #f59e0b;
+  }
+}
+
+// Títulos
+h1, .quarto-title-block .title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  border-bottom: 1px solid var(--pc-border);
+  padding-bottom: 0.4rem;
+  margin-top: 2.2rem;
+}
+
+h3, h4 {
+  margin-top: 1.6rem;
+}
+
+// Bloques de código
+div.sourceCode {
+  border: 1px solid var(--pc-border);
+  border-radius: $border-radius-lg;
+  background-color: var(--pc-surface-2);
+}
+
+pre.sourceCode {
+  padding: 1rem 1.15rem;
+}
+
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+}
+
+// Callouts
+div.callout {
+  border-radius: $border-radius-lg;
+  border: 1px solid var(--pc-border);
+  border-left-width: 4px;
+  overflow: hidden;
+
+  .callout-header {
+    font-weight: 600;
+  }
+}
+
+// Imágenes del contenido
+main img {
+  border-radius: $border-radius;
+  max-width: 100%;
+}
+
+// TOC
+nav[role="doc-toc"] {
+  a {
+    color: var(--pc-muted);
+    transition: color 0.15s ease;
+  }
+
+  a.active,
+  a:hover {
+    color: var(--pc-accent);
+  }
+}
+
+// Portada
+.hero {
+  padding: 2.5rem 0 0.5rem;
+
+  h1 {
+    font-size: clamp(2.3rem, 6vw, 3.3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    background-image: linear-gradient(100deg, #172554, #2563eb 55%, #0ea5e9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lead {
+    display: block;
+    max-width: 46rem;
+    font-size: 1.12rem;
+    color: var(--pc-muted);
+    margin-bottom: 1.4rem;
+  }
+}
+
+.btn-primary {
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  font-weight: 600;
+}
+
+// Tarjetas de unidades
+.unit-grid {
+  margin: 1.4rem 0 2.5rem;
+}
+
+.unit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: var(--pc-surface);
+  border: 1px solid var(--pc-border);
+  border-radius: 1rem;
+  padding: 1.3rem 1.4rem;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--pc-shadow);
+    border-color: var(--pc-accent-border);
+  }
+
+  p {
+    margin-bottom: 0.4rem;
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 0.92rem;
+  }
+}
+
+.unit-num {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pc-accent);
+  background: var(--pc-accent-soft);
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.55rem;
+}
+
+.unit-title {
+  display: block;
+  font-weight: 700;
+  color: $headings-color;
+  font-size: 1.03rem;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+// Footer
+.nav-footer {
+  border-top: 1px solid var(--pc-border);
+  color: var(--pc-muted);
+  font-size: 0.9rem;
+}
