@@ -1031,7 +1031,7 @@ Existen más métodos de diccionarios, pero estos son los más utilizados y los 
 :::
 
 ### Diccionarios y Funciones
-Los diccionarios son mutables, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función.
+Los diccionarios son mutables por referencia, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función sin la necesidad de retornarlos.
 
 ```{python}
 def agregar_alumno(alumnos, nombre, legajo):

@@ -34,7 +34,7 @@ En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google
 
 A partir de esta guía es probable que debamos reutilizar ciertas cosas o adaptar la forma en la que venimos trabajando. Para esto, vamos a hacer una modificación:
 
-Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó).
+Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó). De la misma forma, si tenemos un `import biblioteca` en una celda que no se ejecutó y tratamos de ejecutar otra celda que usa esa biblioteca, vamos a obtener un error.
 
 ![](./imgs/unidad_6/google_colab5.png)
 
@@ -953,7 +953,7 @@ df.tail() # Para ver que se agregó al final
 
 :::{.callout-note collapse="true"}
 ### ¿Por qué usamos 'len' arriba?
-A diferencia de Python, podemos agregar una fila en una posición que no existe aún. Por eso arriba pudimos hacer `df.loc[largo]`.
+A diferencia de las listas en Python, podemos agregar una fila en una posición que no existe aún. Por eso arriba pudimos hacer `df.loc[largo]`.
 :::
 
 #### Modificar un valor
@@ -1406,24 +1406,6 @@ ax.set_title("Receta")
 plt.show()
 ```
 
-#### Cambio de Tamaño
-
-Podemos establecer el tamaño de la figura con el parámetro `figsize` dentro de la función `subplots()`. Este parámetro recibe una tupla con dos valores: el ancho y el alto de la figura, en pulgadas.
-
-Veamos este ejemplo: **x** es el tiempo medido en minutos e **y** una distancia en metros, entonces:
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots(figsize=(3, 5))
-
-ax.plot(x, y)
-
-plt.show()
-```
-
-
 ### Títulos
 Así como los nombres de las variables en nuestro código, es importante que nuestro gráfico tenga un Título descriptivo que nos ayude a entender qué es lo que estamos viendo. Lo mismo pasa con los ejes: queremos poder entender qué representa cada uno.
 
@@ -1501,7 +1483,7 @@ ax.legend()
 plt.show()
 ```
 
-Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`. Asimismo, se estableció un tamaño de la figura con `figsize=(width, height)`
+Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`..
 
 ### Uniendo Bibliotecas
 

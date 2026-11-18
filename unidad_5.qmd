@@ -95,8 +95,24 @@ La diferencia principal y que condiciona el resto de los cambios es que en lugar
 - `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista de cadenas de texto. Las líneas se guardan en memoria, por lo que puede resultar pesado leer todas las líneas juntas si el mismo el archivo es muy largo.
 
 ::: {.callout-tip}
-Decidir usar read, readline o readlines dependerá de nuestro archivo, su tamaño y la información que contenga.
-Debemos analizar cada caso para decidir qué método de lectura queremos usar.
+### ¿Cómo elijo entre read, readline y readlines?
+Decidir usar read, readline o readlines dependerá de nuestro archivo, su tamaño y la información que contenga. Para elegir, hay que cuidar dos recursos de la computadora: la **memoria** que ocupa lo que leemos y el **tiempo que el archivo queda abierto**.
+
+**Archivos muy pesados** (millones de líneas, o líneas muy largas): leerlos enteros con `read()` o `readlines()` guarda todo su contenido en memoria al mismo tiempo, lo que puede ocupar muchos recursos o incluso hacer fallar al programa. En ese caso conviene `readline()`, que lee de a una línea: procesamos esa línea y pasamos a la siguiente, sin tener nunca el archivo completo en memoria.
+
+**Archivos livianos**: como su contenido ocupa poca memoria, conviene abrirlos, leerlos enteros con `readlines()` (o `read()`) y cerrarlos enseguida. Así el archivo queda abierto el menor tiempo posible, y después trabajamos tranquilos con la lista que ya está en memoria.
+
+**Al escribir** pasa algo parecido: abrir y cerrar un archivo también consume recursos del sistema, así que no tiene sentido abrirlo y cerrarlo una vez por cada línea que queremos escribir. Es mejor ir guardando las líneas en una lista y, al final, abrir el archivo una sola vez, escribir todo junto con `writelines()` (lo vemos en la próxima sección) y cerrarlo:
+
+``` python
+lineas = []
+for nombre in ["Ana", "Juan", "Sol"]:
+    lineas.append(f"Hola {nombre}!\n")
+
+archivo = open("saludos.txt", "w")
+archivo.writelines(lineas)
+archivo.close()
+```
 :::
 
 ### Escribiendo en un archivo
@@ -177,7 +193,7 @@ archivo.close()
 ```
 
 :::{.callout-warning}
-Cuando abrimos un archivo, queremos dejarlo abierto siempre la **menor cantidad de tiempo posible**. Si abrimos un archivo y no lo cerramos, estamos ocupando recursos del sistema que podrían ser utilizados por otros programas. Por lo que tenemos que pensar muy bien la forma de armar nuestro código para que los archivos se abran y cierren sólo cuando los necesitamos usar.
+Como dijimos más arriba, cuando abrimos un archivo, queremos dejarlo abierto siempre la **menor cantidad de tiempo posible**. Si abrimos un archivo y no lo cerramos, estamos ocupando recursos del sistema que podrían ser utilizados por otros programas. Por lo que tenemos que pensar muy bien la forma de armar nuestro código para que los archivos se abran y cierren sólo cuando los necesitamos usar.
 :::
 
 Una forma de asegurarse de que un archivo se cierre es utilizar la sentencia `with`. Esta sentencia se encarga de cerrar el archivo automáticamente al finalizar el bloque de código que se le pasa.
