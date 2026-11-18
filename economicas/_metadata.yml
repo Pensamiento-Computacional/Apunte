@@ -1,0 +1,10 @@
+search: false
+include-in-header:
+  text: |
+    <style>
+      #quarto-header { display: none; }
+      .economicas-nav { margin: 1rem 0 0; font-size: 0.95rem; }
+    </style>
+include-before-body:
+  text: |
+    <nav class="economicas-nav container"><a href="index.html">&larr; Pensamiento Computacional · Ciencias Económicas</a></nav>
