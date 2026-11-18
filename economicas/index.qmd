@@ -9,13 +9,19 @@ toc: false
 [Bienvenidos y bienvenidas a Pensamiento Computacional de la Licenciatura en Sistemas Complejos, Facultad de Ciencias Económicas - UBA.]{.lead}
 :::
 
-## Herramientas
+## Posible Régimen de Cursada
 
-### Discord
-La materia usa Discord como plataforma adicional para la resolución de los ejercicios de las guias.\
-Tengan a bien leer con atención el mensaje de bienvenida y las reglas de convivencia.
+- 5 semanas de clase:
+    - Semana 1: Unidades 1 y 2
+    - Semana 2: Unidad 3
+    - Semana 3: Unidad 4
+    - Semana 4: Unidad 5
+    - Semana 5: Unidad 6
+- Semana 6: examen integrador
 
-<a class="btn btn-primary disabled" role="button" aria-disabled="true">Ingresar al servidor de Discord</a>
+Cada semana constará de una actividad a entregar obligatoria sobre los temas de la materia, integrada con el uso de un agente de IA.
+
+Las clases semanales tendrán un enfoque práctico: el material teórico de la materia lo debe ver el estudiante por su cuenta.
 
 ## Cambios respecto del apunte del CBC
 
@@ -29,6 +35,10 @@ Tengan a bien leer con atención el mensaje de bienvenida y las reglas de conviv
 
 ::: {.callout-warning}
 Tanto los **videos** como la **guía de ejercicios** son los que se usan en FIUBA y **aún no fueron editados** para esta versión. Pueden incluir temas que acá no se dan (por ejemplo, tuplas, `map`, `filter` o NumPy).
+:::
+
+::: {.callout-note}
+Las Unidades 1 y 2 posiblemente se unan en la misma semana, porque son 5 semanas de cursada.
 :::
 
 ::: {.grid .unit-grid}
