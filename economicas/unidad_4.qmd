@@ -1,0 +1,874 @@
+---
+title: "Tipos de Estructuras de Datos"
+jupyter: python3
+---
+
+:::{.callout-note}
+### Videos Teóricos
+Los videos teóricos de esta unidad se encuentran en <a href="https://www.youtube.com/watch?v=PreFwGCD5xM&list=PLREanPs7CWggmxukv8izOFXpvlM2NLT43" target="_blank">esta lista de reproducción</a>. Los videos son a modo introductorio: para la correcta aprobación de la materia se deben leer los apuntes.
+:::
+
+## Introducción: Secuencias
+
+Una secuencia es una serie de elementos ordenados que se suceden unos a otros.
+
+Una secuencia en Python es un grupo de elementos con una organización interna, que se alojan de manera contigua en memoria.
+
+Las secuencias son tipos de datos que pueden ser iterados, y que tienen un orden definido. Las secuencias más comunes son los rangos, las cadenas de caracteres y las listas. En este capítulo vamos a ver las características de cada una de ellas y cómo podemos manipularlas.
+
+## Rangos
+Los rangos ya los hemos visto antes, pero lo que no habíamos comentado es que son secuencias. Los rangos representan específicamente una secuencia de números inmutable.
+
+Los rangos se definen con la función `range()`, que recibe como parámetros el inicio, el fin y el paso. El inicio es opcional y por defecto es 0, el paso también es opcional y por defecto es 1.
+
+:::{.callout-note}
+Para más información de los rangos, ver la [unidad 3](#ciclo-for).
+:::
+
+## Cadenas de Caracteres
+
+Un `string` es un tipo de secuencia que sólo admite caracteres como elementos. Los strings son inmutables, es decir, no se pueden modificar una vez creados.
+
+Internamente, cada uno de los caracteres se almacenará de forma contigua en memoria. Es por esto que podemos acceder a cada uno de los caracteres de un string a través de su índice haciendo uso de  `[]`.
+
+|Índice| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+|Letra| H | o | l | a |   | M | u | n | d | o |
+
+Hasta ahora, vimos que:
+
+1. Las cadenas de caracteres pueden ser concatenadas con el operador `+`:
+
+```{python}
+saludo = "Hola"
+despedida = "Chau"
+print(saludo + despedida)
+```
+
+2. Las cadenas de caracteres pueden ser *sliceadas* o incluso acceder a un único elemento usando `[]`:
+
+```{python}
+saludo = "Hola Mundo"
+print(saludo[0:4])
+print(saludo[5])
+```
+
+Podemos agregar también que:
+
+3. Las cadenas de caracteres pueden ser multiplicadas por un número entero (y el resultado es la concatenación de la cadena consigo misma esa cantidad de veces):
+
+```{python}
+saludo = "Hola"
+print(saludo * 3)
+```
+
+Adicional a esas 3 operaciones, las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten manipularlas. Veamos algunos de ellos.
+
+### Métodos de Cadenas de Caracteres
+
+Todos los métodos de las cadenas de caracteres devuelven una nueva cadena de caracteres o un valor, y no modifican la cadena original (ya que las cadenas de caracteres son inmutables).
+
+#### Longitud de una Cadena
+Se puede averiguar la cantidad de caracteres que conforman una cadena utilizando la función predefinida `len()`:
+
+```{python}
+print(len("Pensamiento Computacional"))
+```
+
+Existe también una cadena especial, la cadena vacía (ya la hemos visto antes), que es la cadena que no contiene ningún caracter entre las comillas. La longitud de la cadena vacía es 0.
+
+:::{.callout-tip collapse="true"}
+### Tip: Len e Índices de la Cadena
+
+Es interesante notar lo siguiente: si tenemos una cadena de caracteres de longitud `n`, los índices de la cadena van desde `0` hasta `n-1`. Esto es porque el índice `n` no existe, ya que el primer índice es `0` y el último es `n-1`.
+
+Veámoslo con un ejemplo: tenemos el caracter `Hola`.
+
+|Índice| 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+|Letra| H | o | l | a |
+
+La longitud de la cadena es 4, pero el último índice es 3. Si intentamos acceder al índice 4, nos dará un error:
+
+```python
+saludo = "Hola"
+print(saludo[4])
+```
+```{error}
+IndexError: string index out of range
+```
+
+Lo que nos indica el error es que el índice está fuera del rango de la cadena. Esto es porque el índice `4` no existe, ya que el último índice es `3`. El largo de la cadena es `4`, y el último índice disponible es `4-1=3`.
+
+- Los índices positivos (entre `0` y `len(s) - 1`) son los caracteres de la cadena del primero al último.
+- Los índices negativos (entre `-len(s)` y `-1`) proveen una notación que hace más fácil indicar cuál es el último caracter de la cadena: `s[-1]` es el último caracter, `s[-2]` es el penúltimo, y así sucesivamente.
+
+```{python}
+saludo = "Hola"
+print(saludo[-1])
+print(saludo[-2])
+print(saludo[-3])
+print(saludo[-4])
+```
+
+Además, el uso de índices negativos también es válido para *slices*:
+  
+```{python}
+saludo = "Hola"
+print(saludo[-3:-1])
+```
+
+Al usar índices negativos, es importante no salirse del rango de los índices permitidos.
+:::
+
+#### Recorriendo Cadenas de Caracteres
+Dijimos que los strings son secuencias, y por lo tanto podemos iterar sobre ellos. Esto significa que podemos recorrerlos con un ciclo `for`:
+
+```{python}
+saludo = "Hola Mundo"
+for caracter in saludo:
+    print(caracter)
+```
+
+Si bien esto ya lo habíamos nombrado en la sección anterior como una posibilidad, ahora sabemos por qué: todas las secuencias son iterables, y por lo tanto, podemos recorrerlas.
+
+#### Buscando Subcadenas
+El operador `in` nos permite saber si una subcadena se encuentra dentro de otra cadena. En la guía de la unidad 3 te pedimos que investigues acerca del operador `in` y `not in` para el ejercicio de vocales y consonantes. 
+
+`a in b` es una expresión (¿qué era una expresión?, repasar de ser necesario la [unidad 3](#expresiones-booleanas)) que devuelve `True` si `a` es una subcadena de `b`, y `False` en caso contrario.
+
+```{python}
+print( "Hola" in "Hola Mundo")
+```
+
+Al ser una expresión booleana, se puede usar como condición tanto de un `if` como de un `while`:
+
+```{python}
+if "Hola" in "Hola Mundo":
+    print("Se encontró una subcadena!")
+```
+
+>**Ejercicio**\
+1. Investigar, para un string dado $s$, cuál es el resultado del slice `s[:]`\
+2. Investigar, para un string dado $s$, cuál es el resultado del slice `s[j:]` con $j$ un número entero negativo.
+
+#### Inmutabilidad
+Las cadenas son inmutables. Esto significa que no se pueden modificar una vez creadas. Por ejemplo, si queremos cambiar un caracter de una cadena, no podemos hacerlo:
+
+```python
+saludo = "Hola Mundo"
+saludo[0] = "h"
+```
+
+```error
+TypeError: 'str' object does not support item assignment
+```
+
+Si queremos realizar una modificación sobre una cadena, lo que tenemos que hacer es crear una nueva cadena con la modificación que queremos:
+
+```{python}
+saludo = "Hola Mundo"
+saludo = "h" + saludo[1:]
+print(saludo)
+```
+
+#### Otros Métodos de Cadenas de Caracteres
+Las cadenas de caracteres tienen una gran cantidad de métodos que nos permiten manipularlas. Algunos ya los vimos, como `len()`, `in` y `not in`. Veamos otros.
+
+:::{.callout-note}
+### Recomendación
+Te recomendamos que te animes a probar estas funciones, para ver qué hacen y terminar de entenderlas.
+:::
+
+| Método | Descripción | Ejemplo |
+|---|---|---|
+| `count(subcadena)` | Devuelve la cantidad de veces que aparece la subcadena en la cadena | `"Hola mundo".count("o")` devuelve `2` |
+| `find(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o `-1` si no se encuentra. Cada vez que se llama, devuelve la primer aparición. Puede recibir un parámetro adicional para buscar a partir de una posición particular. | `"Hola mundo".find("mundo")` devuelve `5`.`"Hola mundo".find("Hola",6)` devuelve `-1`. |
+| `upper()` | Devuelve una copia de la cadena con todos los caracteres en mayúscula | `"Hola mundo".upper()` devuelve `"HOLA MUNDO"` |
+| `lower()` | Devuelve una copia de la cadena con todos los caracteres en minúscula | `"Hola mundo".lower()` devuelve `"hola mundo"` |
+| `replace(subcadena1, subcadena2)` | Devuelve una copia de la cadena reemplazando todas las apariciones de la subcadena1 por la subcadena2 | `"Hola mundo".replace("mundo", "amigos")` devuelve `"Hola amigos"` |
+| `split()` | Devuelve una lista de subcadenas separando la cadena por los espacios en blanco | `"Hola mundo  ".split()` devuelve `["Hola", "mundo"]` |
+| `split(separador)` | Devuelve una lista de subcadenas separando la cadena por el separador | `"Hola, mundo".split(", ")` devuelve `["Hola", "mundo"]` |
+| `index(subcadena)` | Devuelve el índice de la primera aparición de la subcadena en la cadena, o produce un error si no se encuentra | `"Hola mundo".index("mundo")` devuelve `5` |
+
+## Listas
+Las listas pueden usarse para modelar datos compuestos, cuya cantidad y valor pueden variar a lo largo del tiempo. Son secuencias *mutables*, y vienen dotadas de una variedad de operaciones muy útiles.
+
+La notación para lista es una secuencia de valores entre corchetes y separados por comas.
+
+```python
+lista = [1, 2, 3]
+
+lista_vacia = []
+```
+
+### Longitud de una Lista
+La longitud de una lista se puede obtener con la función predefinida `len()`, que devuelve la cantidad de elementos que tiene esa lista:
+
+```{python}
+lista = [1, 2, 3]
+print(len(lista))
+```
+
+### Listas como Secuencias
+De la misma forma que venimos haciendo con las cadenas, podremos acceder a los elementos de una lista a través de su índice, *slicear* y recorrerla con un ciclo `for`.
+
+```{python}
+lista = [1, 2, 3]
+print(lista[0])
+```
+
+```{python}
+lista = ["Civil", "Informática", "Química", "Industrial"]
+print(lista[1:3])
+```
+
+```{python}
+lista = ["Civil", "Informática", "Química", "Industrial"]
+for elemento in lista:
+    print(elemento)
+```
+
+### Listas como Mutables
+A diferencia de las cadenas, las listas son mutables. Esto significa que podemos modificar sus elementos una vez creadas.
+
+- Para cambiar un elemento de una lista, se usa la notación de índices:
+
+```{python}
+lista = [1, 2, 3]
+lista[0] = 4
+print(lista)
+```
+
+- Para agregar un elemento al final de una lista, se usa el método `append()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.append(4)
+print(lista)
+```
+
+- Para agregar un elemento en una posición específica de una lista, se usa el método `insert()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.insert(0, 4)
+print(lista)
+```
+
+El método ingresa el número `4` en la posición `0` de la lista, y desplaza el resto de los elementos hacia la derecha.
+
+```{python}
+lista = [1, 2, 3]
+lista.insert(1, 3)
+print(lista)
+```
+
+El método ingresa el número `3` en la posición `1` de la lista, y desplaza el resto de los elementos hacia la derecha.
+
+Las listas no controlan si se insertan elementos repetidos, por lo que si queremos exigir unicidad, debemos hacerlo mediante otras herramientas en nuestro código.
+
+- Para eliminar un elemento de una lista, se usa el método `remove()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.remove(2)
+print(lista)
+```
+
+Remove busca el elemento `2` en la lista y lo elimina. Si el elemento no existe, se produce un error.
+
+Si el valor está repetido, se eliminará la primera aparición del elemento, empezando por la izquierda.
+
+```{python}
+lista = [1, 2, 3, 2]
+lista.remove(2)
+print(lista)
+```
+
+- Para quitar el último elemento de una lista, se usa el método `pop()`:
+
+```{python}
+lista = [1, 2, 3]
+lista.pop()
+print(lista)
+```
+
+El método `pop()` devuelve el elemento que se eliminó de la lista. Si la lista está vacía, se produce un error.
+
+```{python}
+lista = [1, 2, 3]
+elemento = lista.pop()
+print(elemento)
+```
+
+- Para quitar un elemento de una lista en una posición específica, se usa el método `pop()` con un índice:
+
+```{python}
+lista = [1, 2, 3]
+lista.pop(1)
+print(lista)
+```
+
+Al igual que antes, el método `pop()` devuelve el elemento que se eliminó de la lista. Si la lista está vacía, se produce un error.
+
+### Referencias de Listas
+```{python}
+a = [1,2,3,4]
+b = a
+a.pop()
+
+print(b)
+```
+
+Se dice que `b` es una referencia a `a`. Esto significa que `b` no es una copia de `a`, sino que es `a` misma. Por lo tanto, si modificamos `a`, también modificamos `b`.
+
+Una forma de crear una copia de una lista es usando el método `copy()`:
+
+```{python}
+a = [1,2,3,4]
+b = a.copy()
+a.pop()
+
+print(b)
+```
+
+### Búsqueda de Elementos en una Lista
+- Para saber si un elemento se encuentra en una lista, se puede utilizar el operador `in`:
+
+```{python}
+lista = [1, 2, 3]
+print(2 in lista)
+```
+
+Como vemos, el operador `in` es válido para todas las secuencias, incluyendo las cadenas.
+
+- Para averiguar la posición de un valor dentro de una lista, usaremos el método `index()`:
+
+```{python}
+lista = ["a", "b", "t", "z"]
+print(lista.index("t"))
+```
+
+Si el valor no se encuentra en la lista, se produce un error.\
+Si el valor se encuentra repetido, se devuelve la posición de la primera aparición del elemento, empezando por la izquierda.
+
+### Iterando sobre Listas
+Las listas son secuencias, y por lo tanto podemos iterar sobre ellas. Esto significa que podemos recorrerlas con un ciclo `for`:
+
+```{python}
+lista = [1, 2, 3]
+for elemento in lista:
+    print(elemento)
+```
+
+Esta forma de recorrer elementos usando `for` es utilizable con todos los tipos de secuencias.
+
+### Ordenando Listas
+Nos puede interesar que los elementos de una lista estén ordenados según algún criterio. Python provee dos operaciones para obtener una lista ordenada a partir de la desordenada.
+
+- `sorted(s)` devuelve una lista ordenada con los elementos de la secuencia `s`. La secuencia `s` no se modifica.
+
+```{python}
+lista = [3, 1, 2]
+lista_nueva = sorted(lista)
+
+print(lista)
+print(lista_nueva)
+```
+
+- `s.sort()` ordena la lista `s` en el lugar. Es decir, modifica la lista `s` y no devuelve nada.
+
+```{python}
+lista = [3, 1, 2]
+lista.sort()
+
+print(lista)
+```
+
+Tanto el método `sort()` como el método `sorted()` ordenan la lista en orden ascendente. Si queremos ordenarla en orden descendente, podemos usar el parámetro `reverse`:
+
+```{python}
+lista = [3, 1, 2]
+lista.sort(reverse=True)
+print(lista)
+```
+
+Existe un método `reverse` (no disponible en todos los ambientes de codeo) que invierte la lista sin ordenarla. Una forma de reemplazarlo es usando *slices*, como ya vimos: `lista[::-1]`.
+
+:::{.callout-warning collapse="true"}
+### ¡Cuidado con los Ordenamientos!
+1. Todos los elementos de la secuencia deben ser comparables entre sí. Si no lo son, se producirá un error. Por ejemplo, no se puede ordenar una lista que contenga números y strings.
+
+2. Al ordenar, las letras en minúscula no valen lo mismo que las letras en mayúscula. Si queremos ordenar "hola" y "HOLA" (por ejemplo), tenemos que compararlas convirtiendo todo a minúscula o todo a mayúscula.\
+De lo contrario, se ordena poniendo las mayúsculas primero y luego las minúsculas.
+Es decir, para una lista con los valores `["hola", "HOLA"]`, el ordenamiento será `["HOLA", "hola"]`.
+
+¿Existe una forma mejor de hacerlo? Sí. Usando *keys* de ordenamiento:
+```{python}
+lista = ["hola", "HOLA"]
+lista.sort(key=str.lower)
+print(lista)
+```
+Lo importante de momento es que sepas que existe esta forma de ordenar. A *key* se le puede pasar una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `str.lower` convierte todo a minúscula antes de intentar ordenar.
+:::
+
+### Listas anidadas
+Las listas también puede estar anidadas, es decir, una lista puede contener a otras listas. Por ejemplo, podemos tener una lista de listas de números:
+
+```python
+valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+Aquí $valores$ es una lista que contiene 3 elementos, que a su vez son también listas. Entonces, `valores[0]` sería la lista `[1,2,3]`. Si quisiéramos, por ejemplo, acceder al número `2` de dicha lista, tendríamos que volver a acceder al índice `1` de la lista `valores[0]`:
+
+```{python}
+valores = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+numero = valores[0][1]
+print(numero)
+```
+
+Las listas anidadas suelen usarse para representar matrices. Para ello, se puede pensar que cada lista representa una fila de la matriz, y cada elemento de la lista representa un elemento de la fila. Por ejemplo, la matriz:
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+se puede representar como la lista de listas:
+
+```python
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+::: {.callout-important}
+### Ejercicio Desafío
+Escribir una función que reciba una cantidad de filas y una cantidad de columnas y devuelva una matriz de ceros de ese tamaño.\
+Ejemplo: `matrix(2,3)` devuelve `[[0, 0, 0], [0, 0, 0]]`
+:::
+\
+
+### Desempaquetado de listas
+Si tenemos una lista de largo $k$, podemos asignar cada uno de sus elementos a $k$ variables distintas en una sola línea. A esto se lo llama *desempaquetado*.
+
+```{python}
+fecha = [1, 12, 2020]
+dia, mes, anio = fecha
+
+print(dia)
+print(mes)
+print(anio)
+```
+
+#### Acceder por posición vs. desempaquetar
+El mismo resultado se puede obtener accediendo a cada elemento por su posición:
+
+```{python}
+fecha = [1, 12, 2020]
+dia = fecha[0]
+mes = fecha[1]
+anio = fecha[2]
+
+print(dia)
+print(mes)
+print(anio)
+```
+
+| | Acceso por posición | Desempaquetado |
+|---|---|---|
+| Código | Una línea por cada elemento | Una sola línea para todos los elementos |
+| Legibilidad | Hay que recordar qué representa cada índice (`fecha[2]` es el año) | Cada elemento queda con un nombre que dice qué es (`anio`) |
+| Cuándo conviene | Cuando necesitamos sólo uno o algunos elementos puntuales | Cuando necesitamos todos los elementos y sabemos cuántos son y qué representa cada uno |
+
+:::{.callout-warning}
+### ¡Cuidado!
+La cantidad de variables tiene que ser igual a la cantidad de elementos de la lista. Si no coinciden, se produce un error:
+
+```python
+fecha = [1, 12, 2020]
+dia, mes = fecha
+```
+
+Obtendremos:
+```error
+ValueError: too many values to unpack
+```
+
+Y si hay más variables que elementos:
+```error
+ValueError: not enough values to unpack
+```
+:::
+
+El desempaquetado es muy útil al recorrer listas anidadas con un ciclo `for`.
+
+> **Ejemplo**
+Dada una lista de listas de dos elementos [precio, producto], separarla en dos listas: una con los precios y otra con los productos.
+
+```{python}
+lista = [[100, "Coca Cola"], [200, "Pepsi"], [300, "Sprite"]]
+
+precios = []
+productos = []
+
+for precio, producto in lista: # Acá estamos desempaquetando: precio, producto
+    precios.append(precio)
+    productos.append(producto)
+
+print(precios)
+print(productos)
+```
+
+## Listas y Cadenas
+Vimos que las cadenas tienen el método `split`, que nos permite separar una cadena en una lista de subcadenas. Por ejemplo:
+
+```{python}
+cadena = "Esta es una      cadena con    espacios   varios"
+lista = cadena.split()
+
+print(lista)
+```
+
+También podemos hacer lo contrario: podemos unir una lista de subcadenas en una cadena usando el método `join`:
+
+```{python}
+lista = ["Esta", "es", "una", "cadena", "con", "espacios", "varios"]
+cadena = " ".join(lista)
+
+print(cadena)
+```
+
+La sintaxis del método join es:
+  
+```python
+<separador>.join(<lista>)
+```
+
+El separador es el caracter que se va a usar para unir los elementos de la lista. En el ejemplo, el separador es un espacio `" "`, pero puede ser cualquier caracter. La lista contiene a las subcadenas que se van a unir.
+
+## Operaciones de las Secuencias
+Tanto las cadenas como las listas son secuencias, y por lo tanto comparten una serie de operaciones que podemos realizar sobre ellas.
+
+| Operación | Descripción |
+|---|---|
+| `x in s` | Devuelve `True` si el elemento `x` se encuentra en la secuencia `s`, `False` en caso contrario |
+| `s + t ` | Concatena las secuencias `s` y `t` |
+| `s * n` | Repite la secuencia `s` `n` veces |
+| `s[i]` | Devuelve el elemento de la secuencia `s` en la posición `i` |
+| `s[i:j:k]` | Devuelve un *slice* de la secuencia `s` desde la posición `i` hasta la posición `j` (no incluída), con pasos de a `k` |
+| `len(s)` | Devuelve la cantidad de elementos de la secuencia `s` |
+| `min(s)` | Devuelve el elemento mínimo de la secuencia `s` |
+| `max(s)` | Devuelve el elemento máximo de la secuencia `s` |
+| `sum(s)` | Devuelve la suma de los elementos de la secuencia `s` |
+| `count(x)` | Devuelve la cantidad de veces que aparece el elemento `x` en la secuencia `s` |
+| `index(x)` | Devuelve el índice de la primera aparición del elemento `x` en la secuencia `s` |
+
+:::{.callout-tip}
+Te recomendamos que pruebes cada una de estas operaciones con las distintas secuencias que vimos en este capítulo.
+:::
+
+Además, es posible crear una lista a partir de cualquier otra secuencia, usando la función `list`:
+
+```{python}
+lista = list("Hola")
+print(lista)
+```
+
+```{python}
+lista = list(range(5))
+print(lista)
+```
+
+>**Ejercicio**
+Escribir una función que le pida al usuario que ingrese números enteros positivos, los vaya agregando a una lista, y que cuando el usuario ingrese un 0, devuelva la lista de números ingresados.
+
+```python
+def ingresar_numeros():
+    numeros = []
+    numero = int(input("Ingrese un número: "))
+
+    while numero != 0:
+        numeros.append(numero)
+        numero = int(input("Ingrese un número: "))
+    return numeros
+```
+\
+
+---
+
+\
+
+> **Ejercicio**
+Escribir una función que cuente la cantidad de letras que tiene una cadena de caracteres, y devuelva su valor.\
+Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.
+
+```{python}
+def contar_letras(cadena):
+    return len(cadena)
+
+lista = ["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]
+lista.sort(key=contar_letras)
+
+print(lista)
+```
+
+:::{.callout-important}
+### Ejercicio Desafío
+Escribir una función que cuente la cantidad de vocales que tiene una cadena de caracteres, y devuelva su valor. Debe considerar mayúsculas y minúsculas. Pista: podés usar la función para saber si una letra es vocal que hiciste en la unidad 3.
+
+Luego, usar esa función como *key* para ordenar la siguiente lista: `["Año", "Onomatopeya", "Murcielago", "Arañas", "Messi", "Camiseta"]`.\
+:::
+## Diccionarios
+Un diccionario es una colección de pares clave-valor. Es una estructura de datos que nos permite guardar información de forma organizada, y acceder a ella de forma eficiente. Cada clave está asociada a un valor determinado.
+
+![Diccionario cuyas claves son dominios de internet (.ar, .es, .tv) y cuyos valores asociados son los países correspondientes.](../imgs/unidad_4/diccionarios1.png)
+
+Las claves deben ser únicas, es decir, no puede haber dos claves iguales en un mismo diccionario. Los valores pueden repetirse. Si se asigna un valor a una clave ya existente, se reemplaza el valor anterior.
+
+Podemos acceder a un valor a través de su clave porque las claves son únicas, pero no a la inversa. Es decir, no podemos acceder a una clave a través de su valor, porque los valores pueden repetirse y podría haber varias claves asociadas al mismo valor.
+
+Además, los diccionarios no tienen un orden interno particular. Se consideran entonces iguales dos diccionarios si tienen las mismas claves asociadas a los mismos valores, independientemente del orden en que se hayan agregado.
+
+Al igual que las listas, los diccionarios son mutables. Esto significa que podemos modificar sus elementos una vez creados.
+
+- Cualquier valor de tipo inmutable puede ser `clave` de un diccionario: cadenas, enteros, booleanos.
+- No hay restricciones para los `valores`, pueden ser de cualquier tipo: cadenas, enteros, listas, otros diccionarios, etc.
+
+### Diccionarios en Python
+Para definir un diccionario, se utilizan llaves `{}` y se separan las claves de los valores con dos puntos `:`. Cada par clave-valor se separa con comas `,`.
+
+```{python}
+dominios = {"ar": "Argentina", "es": "España", "tv": "Tuvalu"}
+```
+
+El tipo asociado a los diccionarios es `dict`:
+```{python}
+print(type(dominios))
+```
+
+Para declararlo vacío y luego ingresar valores, se lo declara como un par de llaves vacías. Luego, haciendo uso de la notación de corchetes `[]`, se le asigna un valor a una clave:
+
+```{python}
+materias = {}
+materias["lunes"] = [6103, 7540]
+materias["martes"] = [6201]
+materias["miércoles"] = [6103, 7540]
+materias["jueves"] = []
+materias["viernes"] = [6201]
+```
+
+En el código de arriba, se está creando una variable `materias` de tipo `dict`, y se le están asignando valores a las claves `"lunes"`, `"martes"`, `"miércoles"`, `"jueves"` y `"viernes"`.\
+Los valores asociados a cada clave son listas con los códigos de las materias que se dan esos días.
+El diccionario se ve algo así:
+
+```
+{
+    "lunes": [6103, 7540],
+    "martes": [6201],
+    "miércoles": [6103, 7540],
+    "jueves": [],
+    "viernes": [6201]
+}
+```
+
+### Accediendo a los Valores de un Diccionario
+Para acceder a los valores de un diccionario, se utiliza la notación de corchetes `[]` con la clave correspondiente:
+
+```{python}
+cods_lunes = materias["lunes"]
+print(cods_lunes)
+```
+
+Veamos que la clave "lunes" no va a ser igual a la clave "Lunes" o "LUNES", porque como ya dijimos antes, Python es *case sensitive*.
+
+:::{.callout-warning}
+### ¡Cuidado! Acceso a Claves que no Existen
+Si intentamos acceder a una clave que no existe en el diccionario, se produce un error:
+
+```python
+print(materias["sábado"])
+```
+
+```{error}
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+KeyError: 'sábado'
+```
+:::
+
+\
+Para evitar tratar de acceder a una clave que no existe, podemos verificar si una clave se encuentra o no en el diccionario haciendo uso del operador `in`:
+
+```{python}
+if "sábado" in materias:
+    print(materias["sábado"])
+else:
+    print("No hay clases el sábado")
+```
+
+También podemos usar la función `get`, que recibe una clave `k`y un valor por omisión `v`, y devuelve el valor asociado a la clave `k`, en caso de existir, o el valor `v` en caso contrario.
+
+```{python}
+print(materias.get("sábado", "Error de clave: sábado"))
+```
+
+```{python}
+print(materias.get("domingo",[]))
+```
+
+Como vemos el valor por omisión puede ser de cualquier tipo.
+
+### Iterando Elementos del Diccionario
+
+#### Por Claves
+Para iterar sobre las claves de un diccionario, podemos usar un ciclo `for`:
+
+```{python}
+for dia in materias:
+    print(f"El {dia} tengo que cursar las materias {materias[dia]}")
+```
+
+También podemos obtener las claves del diccionario como una lista usando el método `keys()`:
+
+```{python}
+for dia in materias.keys():
+    print(f"El {dia} tengo que cursar las materias {materias[dia]}")
+```
+
+#### Por Valores
+Para iterar sobre los valores de un diccionario, podemos usar el método `values()`:
+
+```{python}
+for codigos in materias.values():
+    print(codigos)
+```
+
+Nótese que en este último ejemplo, no podemos obtener la clave a partir de los valores. Por eso no imprimimos los `días`.
+
+#### Por Clave-Valor
+Para iterar sobre los pares clave-valor de un diccionario, podemos usar el método `items()`, que nos devuelve los pares `(clave, valor)`: el primer elemento de cada par es una clave y el segundo, su valor asociado:
+
+```{python}
+for par in materias.items():
+  dia = par[0]
+  codigos = par[1]
+  print(f"El {dia} tengo que cursar las materias {codigos}")
+```
+
+También podemos desempaquetar cada par, como vimos con las listas:
+  
+```{python}
+for dia, codigos in materias.items():
+  print(f"El {dia} tengo que cursar las materias {codigos}")
+```
+
+:::{.callout-note}
+Como los diccionarios no son secuencias, no tienen orden interno específico, por lo que no podemos obtener porciones de un diccionario usando *slices* o `[:]` como hacíamos con otras estructuras de datos.
+:::
+
+:::{.callout-tip}
+### Acerca de la Iteración de un Diccionario
+El mayor beneficio de los diccionarios es que podemos acceder a sus valores de forma eficiente, a través de sus claves.\
+Si la única funcionalidad que necesitamos de un diccionario es iterarlo, entonces no estamos aprovechando su potencial. En ese caso, es preferible usar una o más listas, que es más simple y más eficiente.\
+Iterar un diccionario es una funcionalidad adicional que nos brinda Python, pero no es su principal uso.
+
+Un error frecuente es recorrer el diccionario para buscar una clave y cambiarle el valor. Por ejemplo, si queremos actualizar el precio de la leche:
+
+**Esto está MAL** ❌
+
+```python
+precios = {"pan": 1500, "leche": 1200, "yerba": 3000}
+
+for producto in precios:
+    if producto == "leche":
+        precios[producto] = 1300
+```
+
+El resultado es correcto, pero recorremos todo el diccionario para encontrar una clave a la que podíamos acceder directamente. Con miles de claves, el programa revisa una por una, y estamos usando el diccionario como si fuera una lista.
+
+**Esto está BIEN** ✅
+
+```python
+precios = {"pan": 1500, "leche": 1200, "yerba": 3000}
+
+precios["leche"] = 1300
+```
+
+Asignando con corchetes, Python va directo a la clave: no hace falta recorrer nada. Si la clave no existiera, se agregaría al diccionario.
+:::
+
+### Usos de un Diccionario
+Los diccionarios son muy versátiles. Se puede utilizar un diccionario para, por ejemplo, contar cuántas apariciones de cada palabra hay en un texto, o cuántas apariciones por cada letra.
+
+También se puede usar un diccionario para tener una agenda de contactos, donde la clave es el nombre de la persona y el valor el número de teléfono.
+
+:::{.callout-note collapse="true"}
+### Hashmaps: Dato interesante
+Los diccionarios de Python son implementados usando una estructura de datos llamada *hashmap*.\
+Para cada clave, se le calcula un valor numérico llamado *hash*, que es el que se usa para acceder al valor asociado a esa clave.\
+Cuando se recibe una clave, se le calcula su *hash* y se busca en el diccionario el valor asociado a ese *hash*.\
+:::
+
+### Operaciones de los Diccionarios
+| Operación | Descripción |
+|---|---|
+| `d[k]` | Devuelve el valor asociado a la clave `k` |
+| `d[k] = v` | Asigna el valor `v` a la clave `k`. Si la clave no existe, la agrega al diccionario. Si ya existe, le actualiza el valor asociado. |
+| `del d[k]` | Elimina la clave `k` y su valor asociado del diccionario `d` |
+| `k in d` | Devuelve `True` si la clave `k` se encuentra en el diccionario `d`, `False` en caso contrario |
+| `len(d)` | Devuelve la cantidad de pares clave-valor del diccionario `d` |
+| `d.keys()` | Devuelve una lista con las claves del diccionario `d` |
+| `d.values()` | Devuelve una lista con los valores del diccionario `d` |
+| `d.items()` | Devuelve los pares clave-valor del diccionario `d` |
+| `d.copy()` | Devuelve una copia del diccionario `d` |
+| `d.pop(k)` | Elimina la clave `k` y su valor asociado del diccionario `d`, y devuelve el valor asociado |
+| `d.get(k, v)` | Devuelve el valor asociado a la clave `k` si la clave existe, o el valor `v` en caso contrario |
+
+:::{.callout-note}
+Existen más métodos de diccionarios, pero estos son los más utilizados y los que vamos a ver en la materia. Recomendamos que pruebes cada uno de ellos con los diccionarios que vimos en este capítulo.
+:::
+
+### Diccionarios y Funciones
+Los diccionarios son mutables por referencia, por lo que podemos pasarlos como parámetros a funciones y modificarlos dentro de la función sin la necesidad de retornarlos.
+
+```{python}
+def agregar_alumno(alumnos, nombre, legajo):
+  alumnos[nombre] = legajo
+
+alumnos = {}
+agregar_alumno(alumnos, "Juan", 1234)
+agregar_alumno(alumnos, "María", 5678)
+print(alumnos)
+```
+
+### Ordenamiento de Diccionarios
+Tenemos algunas operaciones que nos permiten ordenar un diccionario:
+
+| Operación | Descripción |
+|---|---|
+| `dict()` | Crea un diccionario vacío |
+| `sorted(d)` | Devuelve una lista ordenada con las claves del diccionario `d` |
+| `dict(sorted(d.items()))` | Devuelve un diccionario ordenado con las claves del diccionario `d` |
+
+Si lo que necesitamos es ordenar diccionarios entre sí (por ejemplo, teniendo una lista de diccionarios), vamos a usar el parámetro `key` de la función `sorted`:
+
+```{python}
+def obtener_nombre(alumno):
+  return alumno["nombre"]
+
+alumnos = [
+  {"nombre": "Priscila", "legajo": 1234},
+  {"nombre": "Iara", "legajo": 5678},
+  {"nombre": "Agostina", "legajo": 9012}
+]
+alumnos_ordenados = sorted(alumnos, key=obtener_nombre)
+print(alumnos_ordenados)
+```
+
+:::{.callout-note}
+En el ejemplo de arriba, estamos ordenando una lista de diccionarios por el valor de la clave `"nombre"`.\
+El parámetro `key` recibe una función que se va a aplicar a cada elemento de la lista antes de ordenar. En este caso, la función `obtener_nombre` devuelve el valor de la clave `"nombre"` de cada diccionario, y es lo que se usa para ordenar.
+:::
