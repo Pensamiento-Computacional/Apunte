@@ -34,7 +34,7 @@ En nuestro caso, la instalación no es necesaria, ya que vamos a utilizar Google
 
 A partir de esta guía es probable que debamos reutilizar ciertas cosas o adaptar la forma en la que venimos trabajando. Para esto, vamos a hacer una modificación:
 
-Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó).
+Si tenemos variables o imports definidos en otra celda y no la ejecutamos, al intentar usarla nos va a dar error. Es importante entonces o correr todas las celdas, o que cada celda tenga la información necesaria para poder correrse de forma independiente. Acá vemos cómo, al querer ejecutar sólo la segunda celda, nos da error porque la variable `saludo` está definida en la celda anterior (que no se ejecutó). De la misma forma, si tenemos un `import biblioteca` en una celda que no se ejecutó y tratamos de ejecutar otra celda que usa esa biblioteca, vamos a obtener un error.
 
 ![](./imgs/unidad_6/google_colab5.png)
 
