@@ -30,6 +30,10 @@ Tengan a bien leer con atención el mensaje de bienvenida y las reglas de conviv
 
 ## Material por Unidades
 
+::: {.callout-warning}
+Tanto los **videos** como la **guía de ejercicios** son los que se usan en FIUBA y **aún no fueron editados** para esta versión. Pueden incluir temas que acá no se dan (por ejemplo, tuplas, `map`, `filter` o NumPy).
+:::
+
 ::: {.grid .unit-grid}
 
 ::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .unit-card}
