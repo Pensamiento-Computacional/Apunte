@@ -22,10 +22,7 @@ Tengan a bien leer con atención el mensaje de bienvenida y las reglas de conviv
 1. El núcleo del apunte actual (Unidades 1 a 3, listas, diccionarios, archivos y bibliotecas) se mantiene.
 2. Quitamos tuplas.
 3. Para los operadores lógicos, presentamos las tablas de verdad.
-4. "Empaquetado y desempaquetado de tuplas" pasa a ser "Desempaquetado de listas", después de la parte de listas, y compara acceder por posición con acceder desempaquetando.
 5. Sacamos `map` y `filter`.
-6. En "Acerca de la Iteración de un Diccionario", agregamos un ejemplo de cómo **no** hay que modificar el valor de una clave.
-7. Los diccionarios se presentan como mutables por referencia: se pueden modificar dentro de una función sin necesidad de retornarlos.
 8. Quitamos NumPy de las bibliotecas.
 
 ## Material por Unidades
