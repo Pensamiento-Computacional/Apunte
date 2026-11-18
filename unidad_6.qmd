@@ -1406,24 +1406,6 @@ ax.set_title("Receta")
 plt.show()
 ```
 
-#### Cambio de Tamaño
-
-Podemos establecer el tamaño de la figura con el parámetro `figsize` dentro de la función `subplots()`. Este parámetro recibe una tupla con dos valores: el ancho y el alto de la figura, en pulgadas.
-
-Veamos este ejemplo: **x** es el tiempo medido en minutos e **y** una distancia en metros, entonces:
-
-```{python}
-x = [0,2,10,11,18,25]   # Tiempo (min)
-y = [0,1,2,3,4,5]       # Distancia (m)
-
-fig, ax = plt.subplots(figsize=(3, 5))
-
-ax.plot(x, y)
-
-plt.show()
-```
-
-
 ### Títulos
 Así como los nombres de las variables en nuestro código, es importante que nuestro gráfico tenga un Título descriptivo que nos ayude a entender qué es lo que estamos viendo. Lo mismo pasa con los ejes: queremos poder entender qué representa cada uno.
 
@@ -1501,7 +1483,7 @@ ax.legend()
 plt.show()
 ```
 
-Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`. Asimismo, se estableció un tamaño de la figura con `figsize=(width, height)`
+Note que se agregan nuevos datos al mismo axes, por lo que siempre usamos `plot()` pero con distintos valores de `y`..
 
 ### Uniendo Bibliotecas
 
