@@ -27,6 +27,8 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install TinyTeX and Spanish language packages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           quarto install tinytex
           ~/.TinyTeX/bin/x86_64-linux/tlmgr update --self
