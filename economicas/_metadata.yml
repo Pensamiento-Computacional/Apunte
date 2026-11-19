@@ -9,4 +9,4 @@ format:
         </style>
     include-before-body:
       text: |
-        <nav class="economicas-nav container"><a href="index.html">&larr; Pensamiento Computacional · Ciencias Económicas</a></nav>
+        <nav class="economicas-nav container"><a href="https://pensamientocomputacional.dev.ar/">Ir a Pensamiento Computacional FIUBA</a></nav>
