@@ -23,14 +23,6 @@ Cada semana constará de una actividad a entregar obligatoria sobre los temas de
 
 Las clases semanales tendrán un enfoque práctico: el material teórico de la materia lo debe ver el estudiante por su cuenta.
 
-## Cambios respecto del apunte del CBC
-
-1. El núcleo del apunte actual (Unidades 1 a 3, listas, diccionarios, archivos y bibliotecas) se mantiene.
-2. Quitamos tuplas.
-3. Para los operadores lógicos, presentamos las tablas de verdad.
-5. Sacamos `map` y `filter`.
-8. Quitamos NumPy de las bibliotecas.
-
 ## Material por Unidades
 
 ::: {.callout-warning}
