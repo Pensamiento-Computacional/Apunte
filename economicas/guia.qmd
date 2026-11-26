@@ -1,0 +1,15 @@
+# Guía de Ejercicios {.unnumbered}
+
+{{< include guias/_intro.qmd >}}
+
+{{< include guias/_guia_1.qmd >}}
+
+{{< include guias/_guia_2.qmd >}}
+
+{{< include guias/_guia_3.qmd >}}
+
+{{< include guias/_guia_4.qmd >}}
+
+{{< include guias/_guia_5.qmd >}}
+
+{{< include guias/_guia_6.qmd >}}
