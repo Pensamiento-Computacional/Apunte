@@ -101,6 +101,147 @@ Al igual que Rosita, al hacer nuestro primer 'Hola, Mundo!' nos convertimos en p
 
 A partir de la próxima clase, comenzaremos a ver cómo escribir programas más complejos, que nos permitan resolver problemas más interesantes.
 
+## Trabajar con Inteligencia Artificial
+
+### 1. ¿Qué es una IA?
+
+"Inteligencia Artificial" es un nombre amplio para los sistemas que hacen tareas que asociamos con la inteligencia humana: reconocer imágenes, traducir, jugar al ajedrez, recomendar una película o responder una pregunta. En el libro "Inteligencia Artificial: Un Enfoque Moderno" (Russell y Norvig) se define a la IA como el estudio de **agentes** que perciben su entorno y actúan sobre él para alcanzar objetivos.
+
+Dentro de ese paraguas hay capas:
+
+| Término | Qué es | Ejemplo |
+| --- | --- | --- |
+| Inteligencia Artificial | Cualquier sistema que resuelve tareas "inteligentes", con reglas escritas a mano o aprendidas | Un programa de ajedrez de los 90 |
+| Aprendizaje automático (*machine learning*) | Sistemas que **aprenden reglas a partir de datos** en vez de que alguien las programe | Un filtro de spam |
+| Aprendizaje profundo (*deep learning*) | Aprendizaje automático con **redes neuronales** de muchas capas | Reconocimiento de caras |
+| Modelos de lenguaje grandes (LLM) | Redes neuronales enormes entrenadas con texto para **continuar texto** | ChatGPT, Claude, Gemini |
+| Agentes de IA | Un LLM que además puede **usar herramientas**: ejecutar código, buscar en la web, leer y escribir archivos, en varios pasos | Claude Code, Codex, el modo agente de Gemini |
+
+Cuando en la materia digamos "IA" nos vamos a referir casi siempre a los dos últimos: modelos de lenguaje y agentes.
+
+Un LLM es, en el fondo, **un programa**. Recibe una entrada (texto), aplica una función matemática gigante y devuelve una salida (también texto). Todo lo que veremos en las unidades 1 a 3 (entrada, proceso, salida, funciones, algoritmos) también es un programa, pero mucho más simple.
+
+### 2. ¿Cómo funciona y de dónde saca los datos?
+
+#### 2.1 La tarea básica: predecir la próxima palabra
+
+Un modelo de lenguaje se entrena con una sola tarea: **dado un texto, adivinar cuál es el próximo fragmento** (un *token*, que es una palabra o un pedazo de palabra).
+
+Ejemplo: si el texto es `"El cielo es de color"`, el modelo calcula una probabilidad para cada token posible:
+
+| Próximo token | Probabilidad (ilustrativa) |
+| --- | --- |
+| azul | 0.62 |
+| gris | 0.14 |
+| celeste | 0.11 |
+| negro | 0.04 |
+| ... | ... |
+
+Elige uno (no siempre el más probable), lo agrega al texto y repite. Una respuesta larga es este paso repetido cientos de veces. Stephen Wolfram (informático y físico) lo resume así: el modelo está "agregando una palabra por vez" de forma que el texto siga pareciendo razonable.
+
+#### 2.2 Las tres etapas del entrenamiento
+
+1. **Preentrenamiento.** El modelo lee una cantidad enorme de texto: páginas web públicas (por ejemplo, el archivo Common Crawl), libros, artículos científicos, Wikipedia, código de GitHub, y datos licenciados. Ajusta miles de millones de números internos (*parámetros*) para predecir mejor el próximo token. Al terminar, el modelo "sabe" mucho del mundo, pero solo continúa textos: no conversa ni sigue instrucciones.
+2. **Ajuste por instrucciones.** Se lo sigue entrenando con ejemplos escritos por personas del tipo "pregunta → buena respuesta", para que aprenda el formato de un asistente.
+3. **Aprendizaje por refuerzo con preferencias (RLHF y variantes).** Personas (o, cada vez más, otros modelos) comparan respuestas y marcan cuál es mejor. El modelo se ajusta para producir las respuestas preferidas. De acá salen el tono amable, las negativas a ciertos pedidos y también algunos defectos, como la tendencia a darle la razón al usuario.
+
+#### 2.3 Consecuencias prácticas de cómo aprende
+
+1. **Tiene fecha de corte.** Sabe lo que había en sus datos hasta cierto mes. Lo posterior no lo sabe, salvo que tenga una herramienta de búsqueda.
+2. **No "busca" en una base de datos.** Lo aprendido queda comprimido en los parámetros, de forma parecida a como uno recuerda algo leído hace años: la idea general suele estar bien, los detalles exactos (fechas, citas, números) no siempre.
+3. **Refleja sus datos.** Si un tema aparece mucho en internet, lo maneja bien. Si aparece poco (por ejemplo, normativa específica de la UBA), inventa con más facilidad. También hereda los sesgos de esos textos.
+4. **Las herramientas cambian esto.** Un agente que busca en la web, lee un PDF que le damos o ejecuta código ya no depende solo de su memoria. Por eso **darle el material concreto mejora tanto las respuestas**.
+
+### 3. ¿Son predictivos?
+
+Depende de qué entendamos por "predecir".
+
+**Sí, en un sentido técnico.** Literalmente son máquinas de predicción: predicen el próximo token. Y para hacerlo bien tuvieron que aprender mucha estructura del lenguaje y del mundo. Investigaciones de interpretabilidad de Anthropic (2025) mostraron, por ejemplo, que al escribir un poema con rima el modelo **elige la palabra final del verso antes de escribirlo** y construye la línea para llegar ahí. No es "solo autocompletar palabra por palabra sin plan".
+
+**Pero no predice, en el sentido que solemos usar.** No predicen el mundo ni los hechos:
+
+1. **Predicen texto plausible, no texto verdadero.** Una respuesta puede sonar perfecta y ser falsa. A esto se lo llama "alucinación". Un trabajo de OpenAI (Kalai y otros, 2025) explica que en parte es un efecto de cómo se los entrena y evalúa: los exámenes premian acertar y no dan puntos por decir "no sé", así que **el modelo aprende que adivinar conviene más que no saber**.
+2. **No son deterministas.** La misma pregunta puede dar respuestas distintas, porque el modelo *muestrea* entre los tokens probables. Por eso conviene repetir o verificar.
+3. **No son buenos pronosticando el futuro.** Para pronosticar (precios, elecciones, demanda) se usan modelos estadísticos o de *machine learning* entrenados con datos del problema. Un LLM puede ayudar a **escribir el código** de ese modelo, pero no *reemplaza* al modelo.
+4. **Su confianza no es una medida de certeza.** El tono seguro es parte del estilo aprendido, no una señal de que la respuesta esté bien. Los modelos base tienen cierta calibración interna, pero el ajuste para ser "asistentes" la empeora.
+
+::: {.callout-important}
+**Un LLM predice qué texto es probable, no qué es cierto.**
+:::
+
+### 4. Cómo comunicarse con ellos, a partir de cómo funcionan
+
+Cada recomendación sale de algo de las secciones 2 y 3. Están basadas en las guías oficiales de Anthropic y OpenAI.
+
+| Porque el modelo... | Entonces conviene... | Ejemplo |
+| --- | --- | --- |
+| Continúa el texto que recibe y no conoce tu situación | **Dar contexto**: quién sos, para qué es, qué ya sabés | "Soy estudiante de primer año, estoy aprendiendo listas en Python, no vimos diccionarios todavía." |
+| Elige la continuación más probable para una pregunta vaga, que es una respuesta genérica | **Ser específico** con la tarea y el formato de salida | "Explicame el error en 3 líneas y no me des el código corregido." |
+| Aprende muy bien de patrones | **Dar ejemplos** de entrada y salida esperada | "Para `[1, 2, 3]` debería devolver `6`." |
+| Recuerda de forma imprecisa y alucina detalles | **Darle las fuentes** (el enunciado, el archivo, el apunte) en vez de pedirle que las recuerde | Proveer la información completa, no sólo el contexto. |
+| Genera token por token, y lo que escribe antes condiciona lo que sigue | **Pedirle que razone paso a paso** o que primero haga un plan | "Antes de escribir código, listá los pasos del algoritmo." |
+| Tiende a darte la razón | **No sugerir la respuesta** que querés escuchar; pedir críticas explícitas | "¿Qué está mal en este razonamiento?" en vez de "¿Está bien, no?" |
+| No es determinista y puede equivocarse con confianza | **Verificar**: ejecutar el código, probar casos borde, contrastar con el apunte | Correr el programa con una lista vacía. |
+| Una conversación larga acumula errores y contexto viejo | **Empezar de nuevo** cuando se desvía, con un pedido mejor | Abrir un chat nuevo con el enunciado y lo aprendido. |
+| Con herramientas (agentes) puede actuar, no solo responder | **Dar tareas acotadas y revisar cada paso** | "Agregá una función que valide el DNI y corré los tests." |
+
+#### Usarlo para aprender, no solo para resolver
+
+Los estudios de la sección 5 muestran que importa **cómo** se lo usa. Pedidos que ayudan a aprender:
+
+1. "No me des la respuesta. Haceme preguntas para que llegue yo."
+2. "Explicame este concepto y después tomame un ejercicio parecido."
+3. "Acá está mi solución. Señalá errores sin corregirlos."
+4. "Explicame qué hace este código línea por línea."
+
+Pedidos que ***reemplazan*** el aprendizaje: "Resolveme el ejercicio 4 de la guía."
+
+### 5. Qué dicen los estudios sobre su efecto cognitivo
+
+**La evidencia es reciente, todavía despareja y depende mucho de cómo se use la IA.** El patrón que se repite es que usarla para **reemplazar** el esfuerzo *perjudica* el aprendizaje, y usarla para **acompañar** el esfuerzo puede ayudar.
+
+| Estudio | Qué hicieron | Qué encontraron | Limitaciones del estudio |
+| --- | --- | --- | --- |
+| Bastani y otros, *PNAS* 2025 | Experimento con ~1000 estudiantes de matemática de secundaria en Turquía. Tres grupos: sin IA, ChatGPT común, y un "GPT Tutor" con instrucciones que no da respuestas | Con ChatGPT común resolvieron 48% mejor durante la práctica, pero en el examen **sin** IA les fue 17% peor que a quienes nunca la tuvieron. El GPT Tutor eliminó casi todo ese efecto negativo | Una sola escuela, una materia, momento en que la herramienta era novedad. |
+| Kestin y otros, *Scientific Reports* 2025 | 194 estudiantes de física en Harvard; tutor de IA diseñado con principios pedagógicos vs. clase activa presencial | Ganancias de aprendizaje mayores con el tutor de IA, en menos tiempo | Dos temas, evaluación inmediata, no medido a largo plazo. Los autores dicen que no reemplaza al docente |
+| Kosmyna y otros (MIT Media Lab), preprint 2025 | 54 personas escriben ensayos con ChatGPT, con buscador o sin nada, midiendo actividad cerebral con EEG | El grupo con ChatGPT mostró menor conectividad cerebral, menos sensación de autoría y le costó citar su propio ensayo. Los autores hablan de "deuda cognitiva" | Muestra chica, sin revisión por pares, una sola tarea. La prensa exageró sus conclusiones |
+| Lee y otros (Microsoft y CMU), CHI 2025 | Encuesta a 319 trabajadores del conocimiento sobre 936 usos reales | Más confianza en la IA se asocia con menos pensamiento crítico; más confianza en uno mismo, con más. El trabajo pasa de producir a verificar e integrar | Autorreporte; no mide habilidad ni causalidad |
+| Gerlich, *Societies* 2025 | Encuestas y entrevistas a 666 personas | Correlación negativa entre uso frecuente de IA y pensamiento crítico, explicada en parte por la "descarga cognitiva". Más fuerte en jóvenes | Correlación, no causalidad |
+| Anthropic, Informe de Educación 2025 | Análisis de ~575.000 conversaciones académicas de estudiantes universitarios con Claude | Casi la mitad fueron "directas": buscar la respuesta con el mínimo esfuerzo | Datos de una sola empresa; no mide aprendizaje |
+| AI Hub for Education (Stanford), revisión 2026 | Revisión de 52 estudios experimentales y cuasiexperimentales | Usar IA como apoyo (explicaciones, práctica) da mejores resultados que usarla para terminar el trabajo. Los estudiantes pueden **creer** que aprenden más aunque no sea así | Reportado por EdWeek; revisar el paper original antes de citar |
+
+#### Conceptos clave
+
+1. **Descarga cognitiva (*cognitive offloading*).** Delegar en una herramienta algo que antes hacía nuestra mente. No es malo en sí (anotar en una agenda también lo es), pero si se delega justo lo que se está aprendiendo, no se aprende.
+2. **Ilusión de aprendizaje.** Entender una explicación no es lo mismo que poder hacerlo. La IA hace que todo parezca entendido.
+3. **Dificultad deseable.** El esfuerzo de equivocarse y corregir es parte de cómo se aprende. Una herramienta que lo saca todo, saca también el aprendizaje.
+
+### Lecturas recomendadas no obligatorias
+
+1. Stephen Wolfram, *What Is ChatGPT Doing... and Why Does It Work?* (2023). Gratis en <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/" target="_blank">writings.stephenwolfram.com</a>. Explicación clara de la predicción de tokens.
+2. Ethan Mollick, *Co-Intelligence: Living and Working with AI* (2024). Cómo trabajar con IA, incluida la idea de frontera irregular.
+3. Arvind Narayanan y Sayash Kapoor, *AI Snake Oil* (2024). Qué puede y qué no puede hacer la IA, en especial para predecir.
+4. Anthropic, <a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">guía de *prompt engineering*</a>.
+5. OpenAI, <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank">guía de *prompt engineering*</a>.
+
+### Fuentes
+
+1. Bastani, H. y otros (2025). *Generative AI without guardrails can harm learning: Evidence from high school mathematics.* PNAS 122(26). <https://papers.ssrn.com/abstract=4895486>
+2. Kestin, G. y otros (2025). *AI tutoring outperforms in-class active learning.* Scientific Reports 15, 17458. <https://pmc.ncbi.nlm.nih.gov/articles/PMC12179260/>
+3. Kosmyna, N. y otros (2025). *Your Brain on ChatGPT.* arXiv:2506.08872. <https://www.media.mit.edu/publications/your-brain-on-chatgpt/>
+4. Lee, H.-P. y otros (2025). *The Impact of Generative AI on Critical Thinking.* CHI '25. <https://advait.org/files/lee_2025_ai_critical_thinking_survey.pdf>
+5. Gerlich, M. (2025). *AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking.* Societies 15(1), 6. <https://doaj.org/article/d5c17dd91ce64775a065095d8af730ce>
+6. Dell'Acqua, F. y otros (2023). *Navigating the Jagged Technological Frontier.* HBS Working Paper / SSRN 4573321. <https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf>
+7. Becker, J. y otros, METR (2025). *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.* arXiv:2507.09089. <https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/>
+8. Kalai, A. T. y otros (2025). *Why Language Models Hallucinate.* arXiv:2509.04664. <https://openai.com/index/why-language-models-hallucinate/>
+9. Anthropic (2025). *Tracing the thoughts of a large language model.* <https://www.anthropic.com/research/tracing-thoughts-language-model>
+10. Anthropic (2025). *Anthropic Education Report: How University Students Use Claude.* <https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude>
+11. EdWeek (nov. 2026). *Is AI good or bad for learning? The answer isn't so simple.* <https://www.edweek.org/technology/is-ai-good-or-bad-for-learning-the-answer-isnt-so-simple/2026/11>
+12. Sharma, M. y otros (2023). *Towards Understanding Sycophancy in Language Models.* arXiv:2310.13548
+13. Kadavath, S. y otros (2022). *Language Models (Mostly) Know What They Know.* arXiv:2207.05221
+14. Ouyang, L. y otros (2022). *Training language models to follow instructions with human feedback.* arXiv:2203.02155
+15. UNESCO (2024). *AI competency framework for students.* <https://raise.mit.edu/wp-content/uploads/2025/04/391105eng.pdf>
+
 ## Anexo: Google Colab
 
 ### Cómo usar Google Colab
