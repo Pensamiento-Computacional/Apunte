@@ -208,33 +208,45 @@ Modifiquemos el diseño:
 1. Si $x>0$, se imprime "Número positivo".
 2. En caso contrario, se imprime "Número no positivo".
 
+Cada vez que modifiquemos la función le vamos a cambiar el nombre (`_2`, `_3`, etc.), para no confundirla con la versión anterior.
+
 Podríamos probar con el siguiente código:
 
 ```{python}
-def imprimir_si_positivo(x):
+def imprimir_si_positivo_2(x):
   if x > 0:
       print("Número positivo")
   if not x > 0:
       print("Número no positivo")
 ```
+
+Probemos:
+
+```{python}
+imprimir_si_positivo_2(5)
+imprimir_si_positivo_2(-5)
+imprimir_si_positivo_2(0)
+```
+
 Otra solución posible es:
   
 ```{python}
-def imprimir_si_positivo(x):
+def imprimir_si_positivo_3(x):
   if x > 0:
       print("Número positivo")
   if x <= 0:
       print("Número no positivo")
 ```
 
-Ambas están bien.
-Si lo probamos, vemos que funciona:
+Si la probamos, vemos que también funciona:
   
 ```{python}
-imprimir_si_positivo(5)
-imprimir_si_positivo(-5)
-imprimir_si_positivo(0)
+imprimir_si_positivo_3(5)
+imprimir_si_positivo_3(-5)
+imprimir_si_positivo_3(0)
 ```
+
+Ambas están bien.
 
 Sin embargo, hay una mejor forma de hacer esta función. Existe una condición alternativa para la estructura de decisión `if`, que tiene la forma:
 
@@ -256,7 +268,7 @@ donde `if` y `else` son palabras reservadas. Su efecto es el siguiente:
 Por lo tanto, podemos reescribir nuestra función de la siguiente forma:
 
 ```{python}
-def imprimir_si_positivo_o_no(x): # le cambiamos el nombre
+def imprimir_si_positivo_4(x):
   if x > 0:
       print("Número positivo")
   else:
@@ -266,9 +278,9 @@ def imprimir_si_positivo_o_no(x): # le cambiamos el nombre
 Probemos:
 
 ```{python}
-imprimir_si_positivo_o_no(5)
-imprimir_si_positivo_o_no(-5)
-imprimir_si_positivo_o_no(0)
+imprimir_si_positivo_4(5)
+imprimir_si_positivo_4(-5)
+imprimir_si_positivo_4(0)
 ```
 
 ¡Sigue funcionando!
@@ -289,16 +301,32 @@ def imprimir_si_positivo_negativo_o_cero(x):
           print("Número negativo")    # todo esto es el cuerpo del primer else
 ```
 
+Probemos:
+
+```{python}
+imprimir_si_positivo_negativo_o_cero(5)
+imprimir_si_positivo_negativo_o_cero(-5)
+imprimir_si_positivo_negativo_o_cero(0)
+```
+
 A esto se le llama *anidar*, y es donde dentro de unas ramas de la decisión (en este caso, la del `else`), se anida una nueva decisión. Pero no es la única forma de implementarlo. Podríamos hacerlo de la siguiente forma:
 
 ```{python}
-def imprimir_si_positivo_negativo_o_cero(x):
+def imprimir_si_positivo_negativo_o_cero_2(x):
   if x > 0:
       print("Número positivo")
   elif x == 0:
       print("Número cero")
   else:
       print("Número negativo")
+```
+
+Probemos:
+
+```{python}
+imprimir_si_positivo_negativo_o_cero_2(5)
+imprimir_si_positivo_negativo_o_cero_2(-5)
+imprimir_si_positivo_negativo_o_cero_2(0)
 ```
 
 La estructura `elif` es una abreviatura de `else if`. Es decir, es un `else` que tiene una condición. Su efecto es el siguiente:
