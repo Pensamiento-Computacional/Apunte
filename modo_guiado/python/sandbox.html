@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Se carga en un iframe con sandbox="allow-scripts": origen opaco, sin acceso a la
+     página, a sus cookies ni a su localStorage. El código de estudiantes sólo puede
+     hablar con el CDN de Pyodide. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval' blob: https://cdn.jsdelivr.net; worker-src blob:; connect-src https://cdn.jsdelivr.net">
+<title>Sandbox de Python</title>
+</head>
+<body>
+<script id="codigo-worker" type="text/plain">
+const PYODIDE = "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/";
+importScripts(PYODIDE + "pyodide.js");
+
+// input() tiene dos modos:
+// pausa: con JSPI, Python se suspende hasta que llega la respuesta (Chrome, Edge).
+// repetir: sin JSPI, input() corta el programa al pedir un dato nuevo; la página
+//   lo vuelve a correr desde el principio con las respuestas ya dadas.
+const PREPARAR = `
+class __NecesitaEntrada__(BaseException):
+    pass
+
+def input(mensaje=""):
+    print(mensaje, end="", flush=True)
+    if __entradas__:
+        valor = __entradas__.pop(0)
+    elif __modo_pausa__:
+        from pyodide.ffi import run_sync
+        valor = str(run_sync(__pedir_entrada__()))
+    else:
+        raise __NecesitaEntrada__()
+    print(valor)
+    return valor
+`;
+
+// Como en Colab: si la última línea es una expresión, se muestra su valor.
+const EJECUTAR = `
+from pyodide.code import eval_code_async as __eval_code_async__
+__pide_entrada__ = False
+try:
+    __valor__ = await __eval_code_async__(__codigo__, globals(), filename="<exec>")
+    if __valor__ is not None:
+        print(repr(__valor__))
+except __NecesitaEntrada__:
+    __pide_entrada__ = True
+__valor__ = None
+`;
+
+// Un ciclo infinito con print inunda la página de mensajes y la congela.
+const LIMITE_SALIDA = 20_000;
+const SALIDA_CORTADA = "Se cortó: el programa imprimió demasiado (más de 20.000 caracteres). ¿Hay un ciclo que no termina?";
+
+const espacios = new Map();
+const decodificador = new TextDecoder();
+let idActual = null;
+let escritoEnCorrida = 0;
+let responderEntrada = null;
+
+const pedirEntrada = () =>
+  new Promise((resolver) => {
+    responderEntrada = resolver;
+    postMessage({ tipo: "pide", id: idActual });
+  });
+
+async function hayPausa(pyodide) {
+  if (typeof WebAssembly.Suspending !== "function") return false;
+  try {
+    await pyodide.runPythonAsync("from pyodide.ffi import run_sync\nimport js\nrun_sync(js.Promise.resolve(1))");
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+const listo = loadPyodide({ indexURL: PYODIDE }).then(async (pyodide) => {
+  const escribir = (flujo) => ({
+    write(bytes) {
+      escritoEnCorrida += bytes.length;
+      if (escritoEnCorrida > LIMITE_SALIDA) throw new Error(SALIDA_CORTADA);
+      postMessage({ tipo: flujo, id: idActual, texto: decodificador.decode(bytes) });
+      return bytes.length;
+    },
+  });
+  pyodide.setStdout(escribir("salida"));
+  pyodide.setStderr(escribir("error"));
+  const modoPausa = await hayPausa(pyodide);
+  postMessage({ tipo: "listo", modoPausa });
+  return { pyodide, modoPausa };
+});
+
+onmessage = async ({ data }) => {
+  if (data.tipo === "entrada") {
+    responderEntrada?.(data.valor);
+    responderEntrada = null;
+    return;
+  }
+  const { pyodide, modoPausa } = await listo;
+  if (data.tipo === "olvidar") {
+    espacios.delete(data.espacio);
+    return;
+  }
+  idActual = data.id;
+  escritoEnCorrida = 0;
+  if (!espacios.has(data.espacio)) espacios.set(data.espacio, pyodide.globals.get("dict")());
+  const espacio = espacios.get(data.espacio);
+  // En modo repetir, una corrida que se corta para pedir un dato no deja rastros:
+  // corre sobre una copia que sólo se guarda si el programa terminó.
+  // dict(espacio) y no espacio.copy(): copy() de un PyProxy duplica la referencia, no el diccionario.
+  const globales = modoPausa ? espacio : pyodide.globals.get("dict")(espacio);
+  globales.set("__entradas__", pyodide.toPy(data.entradas));
+  globales.set("__modo_pausa__", modoPausa);
+  globales.set("__pedir_entrada__", pedirEntrada);
+  globales.set("__codigo__", data.codigo);
+  let pideEntrada = false;
+  try {
+    pyodide.runPython(PREPARAR, { globals: globales, filename: "<preparar>" });
+    await pyodide.runPythonAsync(EJECUTAR, { globals: globales, filename: "<ejecutar>" });
+    pideEntrada = globales.get("__pide_entrada__");
+    postMessage({ tipo: "fin", id: data.id, ok: true, pideEntrada });
+  } catch (error) {
+    const mensaje = escritoEnCorrida > LIMITE_SALIDA ? SALIDA_CORTADA : String(error.message ?? error);
+    postMessage({ tipo: "fin", id: data.id, ok: false, error: mensaje });
+  } finally {
+    if (!modoPausa && !pideEntrada) espacio.update(globales);
+  }
+};
+</script>
+<script>
+  const fuente = document.getElementById("codigo-worker").textContent;
+  const worker = new Worker(URL.createObjectURL(new Blob([fuente], { type: "text/javascript" })));
+  worker.onmessage = ({ data }) => parent.postMessage(data, "*");
+  worker.onerror = (evento) => parent.postMessage({ tipo: "caido", error: evento.message }, "*");
+  window.addEventListener("message", (evento) => {
+    if (evento.source === parent) worker.postMessage(evento.data);
+  });
+</script>
+</body>
+</html>
