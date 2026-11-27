@@ -156,7 +156,7 @@ Es un fragmento de programa que permite efectuar una operación determinada. `ab
 Una función puede recibir cero o más *parámetros* o *argumentos*, que son valores que se le pasan a la función entre paréntesis y separados por comas, para que los use.\
 
 ```{python}
-abs(-5)
+print(abs(-5))
 ```
 
 ```{python}
@@ -164,7 +164,7 @@ print("¡Hola!")
 ```
 
 ```{python}
-max(5, 7)
+print(max(5, 7))
 ```
 
 La función recibe los parámetros, efectúa una operación y devuelve un *resultado*.
@@ -504,11 +504,11 @@ Para transformar datos numéricos, emplearemos los siguientes operadores:
 Como pasa en matemática, para alterar cualquier precedencia (prioridad de operadores) se pueden usar paréntesis.
 
 ```{python}
-(5 + 3) * 2
+print((5 + 3) * 2)
 ```
 
 ```{python}
-5 + (3 * 2)
+print(5 + (3 * 2))
 ```
 
 El orden de prioridad de ejecución para los operadores va a ser el mismo que en matemática.
@@ -617,7 +617,7 @@ Para poder operar con `edad` como si fuese un número, tenemos que transformarla
 Para castear un valor a un tipo de dato, usamos el nombre del tipo de dato, seguido de paréntesis y el valor que queremos castear.
 
 ```python
-int("25")
+print(int("25"))
 ```
 
 De esta forma, podemos modificar nuestro código anterior:

@@ -68,17 +68,12 @@ Las expresiones booleanas de comparación que ofrece Python son:
 Veamos algunos ejemplos:
 
 ```python
-5 == 5
-
-5 != 5
-
-5 < 5
-
-5 >= 5
-
-5 > 4
-
-5 <= 4
+print(5 == 5)
+print(5 != 5)
+print(5 < 5)
+print(5 >= 5)
+print(5 > 4)
+print(5 <= 4)
 ```
 
 
@@ -104,7 +99,7 @@ Podés hacerlo de dos formas:
 Además de los operadores de comparación, Python también tiene operadores lógicos, que permiten combinar expresiones booleanas para construir expresiones más complejas. Por ejemplo, quizás no sólo queremos saber si `5` es mayor a `3`, sino que también queremos saber si `5` es menor que `10`. Para esto, podemos usar el operador `and`:
 
 ```python
-5 > 3 and 5 < 10
+print(5 > 3 and 5 < 10)
 ```
 
 Python tiene tres operadores lógicos: `and`, `or` y `not`. Veamos qué hacen:
@@ -119,36 +114,35 @@ Python tiene tres operadores lógicos: `and`, `or` y `not`. Veamos qué hacen:
 Algunos ejemplos:
   
 ```{python}
-5 > 2 and 5 > 3
+print(5 > 2 and 5 > 3)
 ```
 
 ```{python}
-5 > 2 or 5 > 3
+print(5 > 2 or 5 > 3)
 ```
 
 ```{python}
-5 > 2 and 5 > 6
+print(5 > 2 and 5 > 6)
 ```
 
 ```{python}
-5 > 2 or 5 > 6
+print(5 > 2 or 5 > 6)
 ```
 
 ```{python}
-5 > 6
+print(5 > 6)
 ```
 
 ```{python}
-not 5 > 6
+print(not 5 > 6)
 ```
 
 ```{python}
-5 > 2
+print(5 > 2)
 ```
 
 ```{python}
-
-not 5 > 2
+print(not 5 > 2)
 ```
 
 :::{.callout-caution collapse="true"}
@@ -160,18 +154,18 @@ Sin embargo, si no tenemos precedencias explícitas con `()`, Python prioriza re
 Ejemplos:
 
 ```{python}
-True or False and False
+print(True or False and False)
 ```
 Por la prioridad del `and`, primero se resuelve `False and False`, que da `False`. Luego, se resuelve `True or False`, que da `True`.
 
 
 ```{python}
-True or False or False
+print(True or False or False)
 ```
 Como no hay `and`, se resuelve de izquierda a derecha. Primero se resuelve `True or False`, que da `True`. Luego, se resuelve `True or False`, que da `True`.
 
 ```{python}
-(True or False) and False
+print((True or False) and False)
 ```
 Como hay paréntesis, se resuelve primero lo que está dentro de los paréntesis. `True or False` da `True`. Luego, `True and False` da `False`.
 :::
@@ -614,7 +608,7 @@ def obtener_primer_par_desde(n):
 ```
 
 ```{python}
-obtener_primer_par_desde(9)
+print(obtener_primer_par_desde(9))
 ```
 
 Como vemos, la función `obtener_primer_par_desde` recibe un número `n`, y devuelve el primer número par que encuentra a partir de `n`. Si no encuentra ningún número par, devuelve `None`.\
