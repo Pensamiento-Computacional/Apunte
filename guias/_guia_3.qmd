@@ -167,7 +167,7 @@ Para saber si un elemento está en una lista o en un string, podemos usar `in` y
     Pendientes: 0. Su vuelto es: 100. Gracias por su compra.
     ```
 
-5. Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa "X", el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese "X". Se puede reutilizar la función del ejercicio 9 de esta guía.
+5. Escribir un programa que le pida al usuario que ingrese un número. Para ese número, se imprime la tabla de multiplicar del 1 al 10. Luego, se le vuelve a pedir otro número. Si el usuario ingresa "X", el programa debe terminar. El usuario debe poder ingresar números indefinidamente hasta que ingrese "X". Se puede reutilizar la función del ejercicio 2 de esta guía.
 
     Ejemplo:
 
