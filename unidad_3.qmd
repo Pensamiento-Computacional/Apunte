@@ -642,9 +642,9 @@ else:
 
 El output va a ser siempre el mismo:
 ```
+0
 1
 2
-3
 El número es 3
 ```
 
