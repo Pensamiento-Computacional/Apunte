@@ -70,3 +70,6 @@ Thumbs.db
 # Archivos de configuración de editores como VS Code
 .vscode/
 **/*.quarto_ipynb
+
+# El modo guiado sí versiona sus páginas HTML
+!modo_guiado/**/*.html
