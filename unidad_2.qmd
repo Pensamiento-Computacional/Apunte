@@ -576,7 +576,7 @@ Por ejemplo, si le pedimos al usuario que ingrese un número, el usuario puede i
 Por ejemplo:
 
 ```python
-edad = input("Indique su edad:")
+edad = input("Indique su edad: ")
 print("Su edad es:", edad_nueva)
 ```
 
@@ -595,7 +595,7 @@ El problema es que, si bien nuestro código anterior funciona, no podemos operar
 El siguiente código va a fallar:
 
 ```python
-edad = input("Indique su edad:")
+edad = input("Indique su edad: ")
 edad_nueva = edad + 1
 print("Edad siguiente:", edad_nueva)
 ```
@@ -623,7 +623,7 @@ int("25")
 De esta forma, podemos modificar nuestro código anterior:
 
 ```python
-edad = int(input("Indique su edad:")) # Le agregamos int
+edad = int(input("Indique su edad: ")) # Le agregamos int
 edad_nueva = edad + 1
 print("Edad siguiente:", edad_nueva)
 ```
@@ -635,8 +635,8 @@ Y obtenemos un código que funciona correctamente.
 De esta forma, podemos castear a varios tipos de datos:
 
 ```python
-numero_entero = int(input("Ingrese un número"))
-punto_flotante = float(input("Ingrese un número"))
+numero_entero = int(input("Ingrese un número: "))
+punto_flotante = float(input("Ingrese un número: "))
 
 punto_flotante2 = float(numero_entero)
 
@@ -646,10 +646,10 @@ numero_en_str = str(numero_entero)
 Ejemplo:
 
 ```python
-nombre_menor = input('Ingresá el nombre de un conocido/a:')
-edad_menor = int(input(f'Ingresá la edad de { nombre_menor } '))
+nombre_menor = input('Ingresá el nombre de un conocido/a: ')
+edad_menor = int(input(f'Ingresá la edad de {nombre_menor}: '))
 nombre_mayor = input(f'Cómo se llama el hermano/a mayor de {nombre_menor}? ')
-diferencia = int(input(f'Cuántos años más grande es {nombre_mayor}?  '))
+diferencia = int(input(f'Cuántos años más grande es {nombre_mayor}? '))
 
 edad_mayor = edad_menor + diferencia
 
