@@ -149,7 +149,7 @@ print(not 5 > 2)
 ### Prioridad de Operadores
 Las expresiones lógicas complejas (con más de un operador), se resuelven al igual que en matemática: respetando precedencias y de izquierda a derecha. También admiten el uso de `()` para alterar las precedencias.
 
-Sin embargo, si no tenemos precedencias explícitas con `()`, Python prioriza resolver primero los `and`, luego los `or` y por último los `not`.
+Sin embargo, si no tenemos precedencias explícitas con `()`, Python prioriza resolver primero los `not`, luego los `and` y por último los `or`.
 
 Ejemplos:
 
