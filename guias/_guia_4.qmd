@@ -243,7 +243,7 @@ print(tuplas_a_diccionario(l))
     a. Resolver sin usar `filter`
     b. Resolver usando `filter`.
 
-13. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
+11. La profesora Llamell guarda las notas del parcial de Pensamiento Computacional en una lista de diccionarios. Cada diccionario tiene la siguiente información: nombre, apellido, intento, nota.
 
     Los intentos pueden ser 1 (si es la primera vez que rinde el parcial) o 2 (si está en el recuperatorio).
 
@@ -251,17 +251,17 @@ print(tuplas_a_diccionario(l))
 
     b. Generalizar la función anterior, para que también reciba el número de intento y se pueda devolver el promedio de cualquiera de los dos intentos.
 
-14. En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.
+12. En una fábrica se tiene una base de datos donde se guardan todos los códigos de los productos que se fabrican como claves de un diccionario. Los valores de cada clave son nuevos diccionarios, con la siguiente información: fecha de vencimiento (mes,año), si pasó el chequeo de calidad o no.
 
     Se pude hacer una función que reciba esta lista de diccionarios, y elimine a todos los productos que no pasaron el chequeo de calidad. Devolver en una tuple todos los productos eliminados en formato {codigo: diccionario del producto}.
 
-15. Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).
+13. Se quiere guardar información de un grupo de maratonistas. Se necesita guardar su nombre, DNI y todas las maratones que corrió. Para esto último, se guardan: nombre de cada una, año, puesto y el tiempo que tardaron en correrlas (en minutos).
 
     a. Crear un diccionario de ejemplo que represente esta situación.
     b. Teniendo esta lista de diccionarios, ordenarlos alfabéticamente por el nombre de los maratonistas.
     c. Teniendo esta lista de diccionarios, ordenar las maratones en tiempo ascendente según el tiempo que tardaron en correrlas.
 
-16. **Desafío** (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo.
+14. **Desafío** (obligatorio): Laura tiene una lista de diccionarios donde guarda el valor de todas las reviews laborales anuales que le hicieron. La información de cada una es año, seniority en ese momento (trainee, junior, semisenior, senior), el sueldo en ese momento y el valor del bono de performance que le dieron. La semana pasada le avisaron que por políticas de la empresa, los bonos ahora deben calcularse como un porcentaje de su sueldo.
 
     Laura quiere entonces actualizar sus diccionarios, para que en vez de guardar el monto exacto del bono, guarde el porcentaje que le corresponde. Ejemplo: si en el 2019 su sueldo era de $1.000.000 y el bono que le dieron era de $40.000, el bono fue del 4% del sueldo.
 
@@ -270,10 +270,10 @@ print(tuplas_a_diccionario(l))
     b. Hacer una función que reciba la lista de diccionarios ya modificada y devuelva los años en los que Laura tuvo un bono mayor al 50% de su sueldo. Restricción: usar `filter` y `map`.
 
 
-17. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guía de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
+15. **Desafío** (obligatorio): Los estudiantes de la materia Pensamiento Computacional quieren crear un programa que les facilite la cursada. Uno de los problemas es que no se tiene fácil acceso a los enunciados de los ejercicios, porque la guía es larga y hay que scrollear mucho. En el programa, la guía de ejercicios se guarda en un diccionario, donde cada clave es el número de guía y cada valor una lista con los enunciados de los ejercicios, cada uno en su posición correspondiente (la posición 0 de la lista sólo guarda None).
 Se quiere que el usuario que está usando el programa pueda acceder por pantalla a un enunciado puntual de una guía con sólo pedirlo (si existe). Para el problema mencionado, hacer una función o más que lo resuelva. Usar los temas visto en la materia hasta el momento, en la forma que se considere mejor y siguiendo las buenas prácticas y convenciones enseñadas.
 
-18. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
+16. **Desafío** (no obligatorio): **Donarg** ([https://www.donarg.com.ar/](https://www.donarg.com.ar/)) es un proyecto que nació con estudiantes de FIUBA con el fin de optimizar procesos tanto para donantes de sangre como para hospitales y servicios de hemoterapia. Formado por estudiantes y graduados universitarios comprometidos, fue galardonado con el primer puesto en la FIUBATON 2020 "Desafío Cuarentena" del FIUBA Consulting Club, destacándose entre más de 100 proyectos.
 
     Donarg necesita un sistema que permita filtrar una base de datos de posibles donantes de sangre, quedándose con los que cumplen los requisitos.
 
