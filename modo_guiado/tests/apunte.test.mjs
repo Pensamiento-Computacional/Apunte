@@ -104,6 +104,18 @@ test("protegerFormulas saca las fórmulas fuera del código", () => {
   ]);
 });
 
+test("protegerFormulas toma fórmulas $$ de varias líneas", () => {
+  const md = "La matriz:\n\n$$\n\\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix}\n$$\n\nsigue";
+  const { texto, formulas } = protegerFormulas(md);
+  assert.equal(texto, "La matriz:\n\nFORMULA0FIN\n\nsigue");
+  assert.deepEqual(formulas, [{ tex: "\\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix}", bloque: true }]);
+});
+
+test("limpiarSaltos no toca las barras dentro de una fórmula $$", () => {
+  const md = "$$\n1 & 2 \\\\\n3 & 4 \\\\\n$$";
+  assert.equal(limpiarSaltos(md), md);
+});
+
 test("los ids del parser coinciden con los del sitio publicado", (t) => {
   let html;
   try {
@@ -134,6 +146,12 @@ test("limpiarSaltos deja la barra sólo cuando el párrafo sigue", () => {
     limpiarSaltos(md),
     ["1. Uno.", "2. Dos.", "", "Línea A.\\", "Línea B.\\", "Línea C.", "", "```python", "x = 1 \\", "```"].join("\n")
   );
+});
+
+test("limpiarSaltos saca las barras sueltas que empiezan un párrafo", () => {
+  assert.equal(limpiarSaltos("Texto.\n\n\\\n\\\n\nOtro."), "Texto.\n\n\n\n\nOtro.");
+  assert.equal(limpiarSaltos("Texto.\n\n\\\nSigue."), "Texto.\n\n\nSigue.");
+  assert.equal(limpiarSaltos("\\\nSigue."), "\nSigue.");
 });
 
 test("limpiarSaltos convierte el espacio escapado de Pandoc salvo en código", () => {

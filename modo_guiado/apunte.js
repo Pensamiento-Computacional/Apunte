@@ -102,21 +102,26 @@ function espaciosEscapados(linea) {
 }
 
 // Una "\" al final de línea es un salto sólo si el párrafo sigue en la línea
-// siguiente. Pandoc descarta las demás; los parsers de markdown las muestran.
+// siguiente y ya tiene texto antes. Pandoc descarta las demás; los parsers de
+// markdown las muestran.
 export function limpiarSaltos(markdown) {
   const lineas = markdown.split("\n");
+  const salida = [];
   let enCodigo = false;
-  return lineas
-    .map((linea, indice) => {
-      if (FENCE.test(linea)) enCodigo = !enCodigo;
-      if (enCodigo) return linea;
-      linea = espaciosEscapados(linea);
-      if (!/\\\s*$/.test(linea)) return linea;
-      const siguiente = lineas[indice + 1];
-      const sigueElParrafo = siguiente !== undefined && !CORTA_PARRAFO.test(siguiente);
-      return linea.replace(/\s*\\\s*$/, sigueElParrafo ? "\\" : "");
-    })
-    .join("\n");
+  let enFormula = false;
+  lineas.forEach((linea, indice) => {
+    if (FENCE.test(linea)) enCodigo = !enCodigo;
+    if (enCodigo) return salida.push(linea);
+    if ((linea.match(/\$\$/g) ?? []).length % 2 === 1) enFormula = !enFormula;
+    if (enFormula) return salida.push(linea);
+    linea = espaciosEscapados(linea);
+    if (!/\\\s*$/.test(linea)) return salida.push(linea);
+    const siguiente = lineas[indice + 1];
+    const sigueElParrafo = siguiente !== undefined && !CORTA_PARRAFO.test(siguiente);
+    const empiezaParrafo = /^\s*\\\s*$/.test(linea) && CORTA_PARRAFO.test(salida.at(-1) ?? "");
+    salida.push(linea.replace(/\s*\\\s*$/, sigueElParrafo && !empiezaParrafo ? "\\" : ""));
+  });
+  return salida.join("\n");
 }
 
 // Pasa la sintaxis propia de Quarto a markdown + HTML que entiende cualquier parser.
@@ -168,17 +173,27 @@ export function prepararMarkdown(markdown) {
 // Saca las fórmulas antes del parser de markdown, que si no rompe los "_" y "\".
 export function protegerFormulas(markdown) {
   const formulas = [];
-  let enCodigo = false;
-  const texto = markdown
-    .split("\n")
-    .map((linea) => {
-      if (FENCE.test(linea)) enCodigo = !enCodigo;
-      if (enCodigo || FENCE.test(linea)) return linea;
-      return linea.replace(/\$\$([^$]+)\$\$|\$([^$\n]+)\$/g, (_, bloque, enLinea) => {
-        formulas.push({ tex: bloque ?? enLinea, bloque: bloque !== undefined });
-        return `FORMULA${formulas.length - 1}FIN`;
-      });
-    })
+  const proteger = (texto) =>
+    texto.replace(/\$\$([\s\S]+?)\$\$|\$([^$\n]+)\$/g, (_, bloque, enLinea) => {
+      formulas.push({ tex: (bloque ?? enLinea).trim(), bloque: bloque !== undefined });
+      return `FORMULA${formulas.length - 1}FIN`;
+    });
+  const texto = partirPorCodigo(markdown)
+    .map(({ codigo, texto }) => (codigo ? texto : proteger(texto)))
     .join("\n");
   return { texto, formulas };
+}
+
+function partirPorCodigo(markdown) {
+  const partes = [];
+  let enCodigo = false;
+  for (const linea of markdown.split("\n")) {
+    const esFence = FENCE.test(linea);
+    const codigo = enCodigo || esFence;
+    if (esFence) enCodigo = !enCodigo;
+    const ultima = partes.at(-1);
+    if (ultima?.codigo === codigo) ultima.texto += `\n${linea}`;
+    else partes.push({ codigo, texto: linea });
+  }
+  return partes;
 }
